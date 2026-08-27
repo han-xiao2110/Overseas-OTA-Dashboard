@@ -89,6 +89,7 @@ def fetch_incremental(ticker: str, start_after: str | None) -> dict | None:
       - Auto-detect system proxy for fallback
       - Final fallback: fast_info for latest price only
     """
+    global _PROXY  # must be declared before any use of _PROXY in this function
     try:
         import yfinance as yf
     except ImportError:
@@ -151,7 +152,6 @@ def fetch_incremental(ticker: str, start_after: str | None) -> dict | None:
                 
                 # On retry, try with proxy if available
                 if not _PROXY and attempt == 2:
-                    global _PROXY
                     _PROXY = _check_proxy()
                     if _PROXY:
                         print(f"    detected system proxy on retry: {_PROXY['http']}")
