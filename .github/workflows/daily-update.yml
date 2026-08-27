@@ -54,7 +54,8 @@ jobs:
       - name: Deploy to Surge
         env:
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-        run: surge ./deploy bkng-expe-abnb-1q26.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./deploy bkng-expe-abnb-1q26.surge.sh
+        continue-on-error: true
 
       # ── 5. 把更新后的数据 commit 回仓库 ──
       - name: Commit & push data updates
