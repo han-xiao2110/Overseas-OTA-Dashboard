@@ -3933,14 +3933,9 @@ def merge_with_cache(new_data, old_data):
     return new_data
 
 
-# 保留期（天）：每日更新类 7 天，每周更新类 28 天（4周）
-RETENTION_DAYS = {
-    ("international", "sec_filings"): 7,
-    ("international", "industry_news"): 7,
-    ("domestic", "china_industry"): 28,
-    ("domestic", "regulatory"): 28,
-    ("domestic", "company_news"): 28,
-}
+# 保留期（天）：统一 14 天（用户要求只保留最近 2 周新闻）
+# 注意: SEC 定期/重大报告 (10-K/10-Q/8-K/S-1 等) 仍保留 28 天（季度才出一次）
+NEWS_RETENTION_DAYS = 14
 # SEC 定期/重大报告保留更久（10-K/10-Q 等季度才出一次）
 SEC_LONG_RETENTION_TYPES = {"10-K", "10-Q", "8-K", "S-1", "DEFA14A",
                             "SC 13D", "SC 13G", "20-F", "6-K", "DEF 14A"}
@@ -3982,7 +3977,7 @@ def prune_and_dedupe(news_data):
             items = sec_data.get(cat, [])
             if not isinstance(items, list):
                 continue
-            retention = RETENTION_DAYS.get((section, cat), 28)
+            retention = NEWS_RETENTION_DAYS
             cap = MAX_ITEMS.get((section, cat), 50)
 
             seen_urls = set()
@@ -4005,17 +4000,11 @@ def prune_and_dedupe(news_data):
                         and str(item.get("type", "")) == "INFO":
                     continue
 
-                # SEC：定期/重大报告保留 28 天，常规 Form 4/144 保留 7 天
+                # SEC：定期/重大报告(10-K/10-Q/8-K)保留 28 天, 常规 Form 4/144 等保留 14 天
                 item_retention = retention
                 if (section, cat) == ("international", "sec_filings"):
                     if str(item.get("type", "")).strip() in SEC_LONG_RETENTION_TYPES:
                         item_retention = SEC_LONG_RETENTION_DAYS
-
-                # 环球旅讯条目在国际区也按 28 天保留（与国内一致）:
-                # 该源条目少而精, 若按国际区 7 天保留, 分流过去的国际条目
-                # 一周内即被剪掉, 国内外分流形同虚设（2026-08-18 实测只剩 1 条）
-                if item.get("source") == "环球旅讯":
-                    item_retention = max(item_retention, 28)
 
                 # 东航动态栏目：只保留东航相关条目（清理旧缓存的错误标签数据）
                 if (section, cat) == ("domestic", "company_news"):
@@ -4036,11 +4025,7 @@ def prune_and_dedupe(news_data):
                     fa = str(item.get("fetched_at", "") or "")[:10]
                     anchor = _valid_date_str(fa)
                     anchor = datetime.datetime.strptime(anchor, "%Y-%m-%d").date() if anchor else None
-                # IR 官方新闻稿豁免保留期: 财报/业绩等 IR 内容在 7 天保留期后仍有参考价值
-                # 2026-08-20: 修复 IR 条目被 7 天保留期误杀 (Google News RSS 返回的 IR 文章可能有数周历史)
-                # 延长至 120 天, 覆盖超过一个季度的财报周期
-                if item.get("is_ir_source"):
-                    item_retention = max(item_retention, 120)
+                # IR 官方新闻稿: 不再豁免，统一 14 天保留（用户要求）
                 if anchor is not None and (today - anchor).days > item_retention:
                     continue
                 kept.append(item)
@@ -4050,6 +4035,8 @@ def prune_and_dedupe(news_data):
                 kept = dedupe_same_article(kept)
                 kept = group_same_events(kept)
 
+            # 去重后重新按日期降序排列（去重可能打乱顺序）
+            # 关键修复: 确保最新的新闻永远在最上面
             kept.sort(key=lambda x: x.get("date") or "", reverse=True)
             sec_data[cat] = kept[:cap]
     return news_data
