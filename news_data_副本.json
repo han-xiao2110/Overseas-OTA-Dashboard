@@ -8,7 +8,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007317/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -27,7 +27,7 @@
         ],
         "summary": "Expedia Group, Inc.于2026-08-25向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-21",
@@ -36,7 +36,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361412/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -55,7 +55,7 @@
         ],
         "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-21",
@@ -64,7 +64,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361408/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -83,7 +83,7 @@
         ],
         "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-20",
@@ -92,7 +92,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007235/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-20",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -111,7 +111,344 @@
         ],
         "summary": "Expedia Group, Inc.于2026-08-20向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "BKNG",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000122926526000022/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "BKNG",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000121461226000007/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007166/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007164/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007168/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007169/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007165/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007167/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-17",
+        "company": "BKNG",
+        "type": "144",
+        "title": "证券出售登记 (Rule 144)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000196430626000389/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-17",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-17向SEC提交证券出售登记 (Rule 144)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-17",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007141/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-17",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-17向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-13",
+        "company": "BKNG",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000157491826000006/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-13",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-13向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-13",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007100/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-13",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-13向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-06",
@@ -120,7 +457,7 @@
         "title": "季度报告 (10-Q)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442426000053/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-06",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -137,7 +474,7 @@
         "impact_dimensions": [],
         "summary": "Expedia Group, Inc.于2026-08-06向SEC提交季度报告 (10-Q)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-06",
@@ -146,7 +483,7 @@
         "title": "EX-32.1",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000027/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-06",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -163,7 +500,7 @@
         "impact_dimensions": [],
         "summary": "Airbnb, Inc.于2026-08-06向SEC提交EX-32.1。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-06",
@@ -172,7 +509,7 @@
         "title": "重大事件 (8-K) (Item 2.02, 9.01)",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526337928/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-06",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -189,7 +526,7 @@
         "impact_dimensions": [],
         "summary": "Airbnb, Inc.于2026-08-06向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-05",
@@ -198,7 +535,7 @@
         "title": "EX-99.1 (Item 2.02, 7.01, 8.01)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442426000051/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-05",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -215,7 +552,7 @@
         "impact_dimensions": [],
         "summary": "Expedia Group, Inc.于2026-08-05向SEC提交EX-99.1 (Item 2.02, 7.01, 8.01)。（涉及条款 Item 2.02, 7.01, 8.01）",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-04",
@@ -224,7 +561,7 @@
         "title": "EX-3.1",
         "url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000037/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-04",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -241,7 +578,7 @@
         "impact_dimensions": [],
         "summary": "Booking Holdings Inc.于2026-08-04向SEC提交EX-3.1。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-04",
@@ -250,7 +587,7 @@
         "title": "重大事件 (8-K) (Item 2.02, 9.01)",
         "url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000036/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-04",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -267,7 +604,7 @@
         "impact_dimensions": [],
         "summary": "Booking Holdings Inc.于2026-08-04向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       }
     ],
     "industry_news": [
@@ -280,7 +617,7 @@
         "summary": "酒店领导者如何充满信心地进行投资 PhocusWire",
         "title_original": "How hotel leaders can invest with confidence",
         "summary_original": "How hotel leaders can invest with confidence&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-27",
         "date_status": "known",
         "entity_id": null,
@@ -301,7 +638,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -309,10 +646,10 @@
         "category": "industry_news",
         "title": "随着商旅市场整合，Flight Centre 接受 TMC 收购",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNS0tGNmpFY2FnbnM3Rng4TGw4M2RpZFF1b2d2VW9PWVdkQU9KWmFXVWNGT3hFQ3dZQUZiay1IOUxaTUpZOUUyVWdOUHU4SExKYV9sMFVlZXVzSFZWdUxTSVJBd2ZhTVhrTDdfc2tnLW4wMkM1OTl6em9TZU1yWnpSSmROMERCNVRlbUdzU2FSYXliVzFtOVh4dHpUWUp5X0MyMjZDN3ctYmpEdnRETENNNw?oc=5",
-        "summary": "随着商务旅行市场的整合，Flight Center 接受 TMC 收购 PhocusWire",
+        "summary": "随着商务旅行市场的整合，Flight Center 对 TMC 收购开放 &nbsp;&nbsp;PhocusWire",
         "title_original": "Flight Centre open to TMC acquisitions as corporate travel market consolidates",
         "summary_original": "Flight Centre open to TMC acquisitions as corporate travel market consolidates&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -323,7 +660,7 @@
         "selection_score": 68,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "评分(相关3/重要25/基本面0/证据10/来源4)",
           "重要并购/融资保底60",
           "旅游垂直媒体加分(+8)"
         ],
@@ -333,7 +670,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -344,7 +681,7 @@
         "summary": "威尔士旅游科技公司通过 Trip.com 进行扩张&nbsp;&nbsp;商业新闻",
         "title_original": "Welsh Travel Tech Firm Expands Through Trip.com Launch",
         "summary_original": "Welsh Travel Tech Firm Expands Through Trip.com Launch&nbsp;&nbsp;Business News Wales",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": "TCOM",
@@ -364,7 +701,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -376,7 +713,7 @@
         "company": "EXPE",
         "title_original": "Expedia Executive Sells 3,133 Shares for $1 Million",
         "summary_original": "Expedia Executive Sells 3,133 Shares for $1 Million&nbsp;&nbsp;The Motley Fool",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -399,7 +736,7 @@
           "core_company"
         ],
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -411,7 +748,7 @@
         "company": "EXPE",
         "title_original": "Expedia Group Inc. stock outperforms competitors despite losses on the day",
         "summary_original": "Expedia Group Inc. stock outperforms competitors despite losses on the day&nbsp;&nbsp;MarketWatch",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -432,7 +769,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -443,7 +780,7 @@
         "summary": "投资者提高了人工智能驱动的旅游初创公司的门槛PhocusWire",
         "title_original": "Investors raise the bar for AI-powered travel startups",
         "summary_original": "Investors raise the bar for AI-powered travel startups&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -464,7 +801,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -475,7 +812,7 @@
         "summary": "Spotnana 收购 Troop 以整合临时旅行、会议和活动 PhocusWire",
         "title_original": "Spotnana acquires Troop to consolidate transient travel, meetings and events",
         "summary_original": "Spotnana acquires Troop to consolidate transient travel, meetings and events&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -496,7 +833,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -507,7 +844,7 @@
         "summary": "2026 年印度投资额最高的 30 家旅游科技初创公司 &nbsp;&nbsp;Inc42",
         "title_original": "Top 30 Funded Travel Tech Startups In India 2026",
         "summary_original": "Top 30 Funded Travel Tech Startups In India 2026&nbsp;&nbsp;Inc42",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -526,20 +863,21 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
         "source": "Trip.com",
         "category": "industry_news",
         "title": "锦江酒店与携程签署战略谅解备忘录，深化东盟合作",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNeEZKa2RWOXB3MEg4Y0NsZXhFTG5TeS1hMlRKLWx0bEh6QVp4Wko2UkxIZ01vc3FYYUJyQnZsY2xIVHZPVFhzbU5YUnJYOC1xR21XanA5cHRjVnVuNlNyNVFaRF85dXNyUmxqNUlrcHJNZ0Vjc2ZuSXRvRU1ITmxLc3p6RHRRejFPb2VzOGFpR0NwLUdSSnAxVkxmWlZSRW1CSjhESGRqTkI?oc=5",
-        "summary": "",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQa0lBV083X1FvQ0dVVXc3VG5iVU5VNDQ3YnF2eUo0SWZOTUZjcEZNYk9zM0xDTkxfYU9KZ0dMbUJyZ25rMVJ4Q21YVVZ0U3AxUlk3WjJET0J5T3ZKZ3R4NVYzQks0TFhvY0RRbi1ud1hDZEhzZHNhTEVWU2xzMFV1SjVsTnpkUVZYRXNwNXNlVEU1S0hwN1hiNmk5MWVFbGVzTTBFQTV6TU5qX3VzdlFpaTVkRldhSnFGdzRB?oc=5",
+        "summary": "锦江酒店与携程签署战略谅解备忘录，深化东盟合作 马来西亚储备银行",
         "title_original": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement",
-        "summary_original": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement&nbsp;&nbsp;Macau Business",
-        "fetched_at": "2026-08-27 09:30:43",
+        "summary_original": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement&nbsp;&nbsp;The Malaysian Reserve",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
+        "merged_same_article": 1,
         "entity_id": "TCOM",
         "is_core_company": true,
         "source_channel": "",
@@ -550,7 +888,6 @@
         "selection_reasons": [
           "评分(相关11/重要10/基本面0/证据10/来源2)",
           "重点公司(TCOM)",
-          "摘要重复标题(-20)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -558,8 +895,8 @@
           "cooperation",
           "core_company"
         ],
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -603,7 +940,7 @@
         "company": "EXPE",
         "title_original": "Airbnb And Expedia Stocks Are Riding High. Here's Why.",
         "summary_original": "Airbnb And Expedia Stocks Are Riding High. Here's Why.&nbsp;&nbsp;Investor's Business Daily",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -625,7 +962,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-25",
@@ -637,7 +974,7 @@
         "company": "EXPE",
         "title_original": "Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]",
         "summary_original": "Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]&nbsp;&nbsp;Upgraded Points",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -657,7 +994,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-25",
@@ -667,11 +1004,11 @@
         "url": "https://skift.com/2026/08/25/ixigo-tests-packaged-tours-for-trains-uber-becomes-a-new-distribution-engine/",
         "summary": "Ixigo Trains 周二推出了 Ixigo Bharat Darshan，这是该旅游平台首次涉足套餐旅游。",
         "title_original": "Ixigo Tests Packaged Tours for Trains, Uber Becomes a New Distribution Engine",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
+        "summary_generated_at": "2026-08-27 10:00:18",
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
@@ -778,7 +1115,7 @@
         "company": "EXPE",
         "title_original": "Expedia Cuts Eight Tech Leaders in AI-Driven Reorganization",
         "summary_original": "Expedia Cuts Eight Tech Leaders in AI-Driven Reorganization&nbsp;&nbsp;AirGuide Business",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-23",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -799,7 +1136,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-21",
@@ -811,7 +1148,7 @@
         "company": "EXPE",
         "title_original": "Expedia Group makes AI-motivated leadership cuts",
         "summary_original": "Expedia Group makes AI-motivated leadership cuts&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -833,7 +1170,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-21",
@@ -844,7 +1181,7 @@
         "summary": "",
         "title_original": "Tesla, Uber, and Waymo all get the OK to operate thousands of robotaxis in Nevada",
         "summary_original": "Tesla, Uber, and Waymo all get the OK to operate thousands of robotaxis in Nevada&nbsp;&nbsp;TechCrunch",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": null,
@@ -862,7 +1199,7 @@
         "rejection_reason": null,
         "impact_dimensions": [],
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-20",
@@ -874,7 +1211,7 @@
         "company": "EXPE",
         "title_original": "Expedia Cuts Eight Executives as It Reorganizes Around AI",
         "summary_original": "Expedia Cuts Eight Executives as It Reorganizes Around AI&nbsp;&nbsp;Skift",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-20",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -897,7 +1234,42 @@
           "core_company"
         ],
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-19",
+        "source": "Expedia",
+        "category": "industry_news",
+        "title": "内部备忘录：Expedia Group 八名高管因人工智能驱动的重组而离职",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV0tXRUZlcXNTMzBCX0Vlbno3UE9NTUd6SFdvMEF1clNzRWJvLTZjZF8xM3pzMGlMTkpGekZ3ZjV3YVRqcC1mZXNtdlpBX2JwYU9WS2lTWFlxTm9XeDhESVFMQVQxX194ZTFXQXhyUkswQ3NOM0NoQWI2QWNOcTRncmVmTHNGLTRrem9wZTRNSjJGRVBQREhPdTZtNjY0S28?oc=5",
+        "summary": "",
+        "company": "EXPE",
+        "title_original": "Internal memo: Eight execs out at Expedia Group in AI-driven shakeup",
+        "summary_original": "Internal memo: Eight execs out at Expedia Group in AI-driven shakeup&nbsp;&nbsp;GeekWire",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-19",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
+          "重点公司(EXPE)",
+          "正式制度/组织变化",
+          "摘要重复标题(-20)",
+          "实质动态/官方清单保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization",
+          "core_company"
+        ],
+        "summary_status": "insufficient_evidence",
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-14",
@@ -907,12 +1279,12 @@
         "url": "https://www.traveldaily.cn/expressPage/190535/",
         "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
         "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-14",
         "date_status": "known",
         "merged_same_article": 1,
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
+        "summary_generated_at": "2026-08-27 10:00:18",
         "entity_id": null,
         "is_core_company": false,
         "content_type": "ma_investment",
@@ -930,483 +1302,34 @@
         ]
       },
       {
-        "date": "2026-08-06",
-        "source": "Expedia Group IR",
+        "date": "2026-08-13",
+        "source": "Bloomberg Mobility (GN)",
         "category": "industry_news",
-        "title": "Vrbo 赞助商列表：更快地填补日历空白",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMThqeUV4UGZBdFVoMHg4YTNzQlNyZDgxdW04RmozZzlabjAtcGRTUnBDUjZ0bV9ZNG4yWjlhejA0MHJXUTFqc1VTX2Q1VkNEMkd2UVlLdTE1cUpwNm1mems0OWZzcjFzMkJVbkZYRlk2YWM0VlNIdkxOVFE3LUVOTzhyS2Q1eFVKT1ZuMDNKSXZxNnVBaWNpUUJRakR5QWxRSlA5bEZ6QXMtc0l5U1cyMnBB?oc=5",
-        "summary": "Vrbo 赞助商信息：更快地填补日历空白&nbsp;&nbsp;Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Vrbo Sponsored Listings: Fill calendar gaps faster",
-        "summary_original": "Vrbo Sponsored Listings: Fill calendar gaps faster&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-06",
+        "title": "Uber和中国小马智行将在欧洲部署2000辆机器人出租车",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNGxSVjE2azc0QTRBUC1yQXQtSzA5RExGOEVDVUUxWGlRYkN6czBSRFczcmJzTDRMQU05RXZKUHpabHNSQjcxc095QTdEOF9PWWwwelNTamRKNGZkemNMSl85NVlRWGxIblVuT2Y4eVUwVU1JR0JIREV5MTZUMFRoYy1QZkJBZVRPMzI1OFBLRFFwU1haRHY2MlFpV2lqcTc5MW8wT25HcVNoNXNsTHBaWg?oc=5",
+        "summary": "Uber 和中国小马智行将在欧洲部署 2,000 辆机器人出租车&nbsp;&nbsp;Bloomberg.com",
+        "title_original": "Uber and China’s Pony AI to Deploy 2,000 Robotaxis in Europe",
+        "summary_original": "Uber and China’s Pony AI to Deploy 2,000 Robotaxis in Europe&nbsp;&nbsp;Bloomberg.com",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-13",
         "date_status": "known",
-        "content_type": "general",
+        "entity_id": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "content_type": "ai_application",
         "substantive_company_change": false,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据14/来源5)",
-          "重点公司(EXPE)",
+          "评分(相关10/重要4/基本面0/证据10/来源4)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "core_company"
+          "technology"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-08-06",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "AI旅行保障平台Faye完成5000万美元C轮融资",
-        "url": "https://www.traveldaily.cn/expressPage/190501/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-06",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 72,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面15/证据20/来源4)",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ]
-      },
-      {
-        "date": "2026-08-04",
-        "source": "Booking Holdings IR",
-        "category": "industry_news",
-        "title": "Booking Holdings 将于 8 月 4 日在公司投资者关系网站上发布 2026 年第二季度收益新闻稿",
-        "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPWTdUQlJ1bWZfZ0NBaHZRY3k4aC13QnBvZmlSeDlnYmdocFF0Z3QyN2FFZzZoSjZLN2lxdHRjOVpsTS05bTlVVFhHV0VfOWtXazVsZXVGVEFhUzY0dVhPUzdXT0p6Y3MzeHpIaXRzSGludnAtZXB4Y3dtVVNlVE9zRkJoaHdEQkFHYXRYQ2xPNXVUdlpXV1d3ZFlKaERlNDQ2emtrNjlZSXloNU1tTlRTS1BmSXpLVnI4NnlNMUpfNUU1SmdwU2pTMVQwMGVvVmRrLW9rdVM5d3NsUjdzbnFyajFqVzE1c0hzLU5iRFU1U3ozNlduYWpqR1NIeDVSUUd2WXVJeEF6N2h0LU5ONERseTRORWc4M21vMmZ2b1FzN3g?oc=5",
-        "summary": "",
-        "entity_id": "BKNG",
-        "company": "BKNG",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Booking Holdings to Make Second Quarter 2026 Earnings Press Release Available on Company's Investor Relations Website on August 4",
-        "summary_original": "Booking Holdings to Make Second Quarter 2026 Earnings Press Release Available on Company's Investor Relations Website on August 4&nbsp;&nbsp;Booking Holdings",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-04",
-        "date_status": "known",
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要25/基本面0/证据14/来源5)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-08-03",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "旅游与费用管理平台Engine收购企业差旅管理公司Options Travel",
-        "url": "https://www.traveldaily.cn/expressPage/190479/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-03",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 68,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ]
-      },
-      {
-        "date": "2026-08-03",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "Expedia收购AI旅行规划平台Layla",
-        "url": "https://www.traveldaily.cn/expressPage/190478/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "company": "EXPE",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-03",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": "EXPE",
-        "is_core_company": true,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 81,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关8/重要22/基本面0/证据14/来源4)",
-          "重点公司(EXPE)",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition",
-          "core_company"
-        ]
-      },
-      {
-        "date": "2026-07-31",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia Group 收购 Layla，加速其人工智能驱动的旅行规划和预订战略",
-        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQNGpVTjN1eld4S3NaSkJmajRKQnpIRHVvblRFZEtzWDlxWVNhR3ZxcEluNHJrTTFfUGktOHBCMVMwY0xGU0VHaVJJUHlsQ08xVTY1Nlp3cW9UWGFwT1UxQ0J2RDFCaWY4VkltVUNkRHBmejBta3pnQWZvUmM3Q0hLQV92RmNWX0xzMkZ5UnoyVEdZWGpxdThxZFJrT1dsbkZ5ZDQwaThwZDRXTURCMkpyZVFoS2pqQTNyZk1JdVJRZlBjSFRzUEt3WUtSbVQzNlJySUdyc3lHMi1paXl4bXpYVkNTQmVwNl96YUpuanBHR3FsUTdueWg1SXZDZ3c0Rmlw?oc=5",
-        "summary": "Expedia 集团收购 Layla，加速其人工智能驱动的旅行规划和预订战略&nbsp;&nbsp;Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group acquires Layla, accelerating its AI-powered trip planning and booking strategy",
-        "summary_original": "Expedia Group acquires Layla, accelerating its AI-powered trip planning and booking strategy&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-07-31",
-        "date_status": "known",
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 76,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-07-31",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "BCD Travel战略投资企业差旅AI平台Amgine",
-        "url": "https://www.traveldaily.cn/expressPage/190473/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-07-31",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 68,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要4/基本面0/证据10/来源4)",
-          "重要并购/融资保底60",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ]
-      },
-      {
-        "date": "2026-05-20",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团宣布协议收购 CarTrawler，推进战略打造最完整的 B2B 旅游平台",
-        "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQRk44Z3Q0Ymw2RjZuVGNzWXNlajFiS3EtUmtNVHBKY1V6enhKX0NIVUVHdllTYlUxeTdYdTEzWENsbUJiMGtzRDFxbk5zZF9sYkxTVkNHc1VrZ3VZdzhhcGxBdnNFaUZ2cmFHQmNSTFdKRGNGTXdqaklNSld2c3c2UGJWQ3hjcnB4ekU1cGtsNG9zT2hkbzVOU01sRjdadWZMR2tpSHo2LWlVUXE1SGRUbVFwazRKUzZLWmtWcHlwS2V3N3picWtxVlJESkRMTGhMSktfT2k4MkRUTkJwODNrXzNCVDk3aHZVTXZhY05qb0ZDN0p2RnFRaVhiU0E0NFR4MG9QdTItdWNHOUgzY0pMZVpta28tWExlaWVvdWgwc21Gcy1pVmZSOQ?oc=5",
-        "summary": "Expedia 集团宣布同意收购 CarTrawler，推进打造最完整 B2B 旅游平台的战略 Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group announces agreement to acquire CarTrawler, advancing strategy to build the most complete B2B travel platform",
-        "summary_original": "Expedia Group announces agreement to acquire CarTrawler, advancing strategy to build the most complete B2B travel platform&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-20",
-        "date_status": "known",
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 84,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关18/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-14",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团 2025 年第一季度财报电话会议",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbjdrUVZ5SWJ0dVROQmhVX3BCaWc2Y2pZZGpGM1EwSl9NOU1iVG9oVEdjVldoX3FRWXhtWUxOZXUzTjQ1YVNiZWN3X0M0cUV0YV9Pd2lkbHRjd0xWWnpHVEh1ODI2M3dKQ1VhX1luZk5LdlFMd3Y4UkRBdE5DWWxxN19uVXNIN1lqZ1h0ZlM2bVk1RWczVUM0RVFOenJNWFBmZUhINFppSXNWdjhsMk85TERDS21kTDhzNHFYSURaYUpDdW8tMlE?oc=5",
-        "summary": "Expedia 集团 2025 年第一季度财报电话会议 Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "paywall": false,
-        "ai_category": "company_news",
-        "ai_category_label": "公司新闻",
-        "featured": false,
-        "title_original": "Expedia Group Q1 2025 Earnings Call",
-        "summary_original": "Expedia Group Q1 2025 Earnings Call&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-05-14",
-        "date_status": "known",
-        "event_id": "ev_2ca1cd3d28",
-        "related_sources": [
-          "Expedia Group IR"
-        ],
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 71,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-05-13",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团 2026 年第一季度财报电话会议",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaUFDN2x4VGdOTms5QzNOZjcwZEplR2hCOUt0Nkd4NUhMMzlRV1dCc0JPSkc1Y0tMcU9lWDFhVlp5OWdtRW9LVjdTYWNUZjREUVU3RjNraTcwcmxzVjcxanVjMkNPam1hdzdtVXVfSm9neE5RZnpBclBLV1VSczdtUXR0MEF0VjdiZnhTSW9ZVlByTXBINHYyWjF2VGlLdFRkQVJBRjF3Y3lXLXZKZ0E2RE5lZWJ4S243QU9aamU1eHJKelppb3c?oc=5",
-        "summary": "Expedia 集团 2026 年第一季度财报电话会议 Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "paywall": false,
-        "ai_category": "company_news",
-        "ai_category_label": "公司新闻",
-        "featured": false,
-        "title_original": "Expedia Group Q1 2026 Earnings Call",
-        "summary_original": "Expedia Group Q1 2026 Earnings Call&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-05-13",
-        "date_status": "known",
-        "event_id": "ev_2ca1cd3d28",
-        "folded_into": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbjdrUVZ5SWJ0dVROQmhVX3BCaWc2Y2pZZGpGM1EwSl9NOU1iVG9oVEdjVldoX3FRWXhtWUxOZXUzTjQ1YVNiZWN3X0M0cUV0YV9Pd2lkbHRjd0xWWnpHVEh1ODI2M3dKQ1VhX1luZk5LdlFMd3Y4UkRBdE5DWWxxN19uVXNIN1lqZ1h0ZlM2bVk1RWczVUM0RVFOenJNWFBmZUhINFppSXNWdjhsMk85TERDS21kTDhzNHFYSURaYUpDdW8tMlE?oc=5",
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 71,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-05-12",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团公布 2026 年第一季度业绩",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNnl5TWFoRDFRLWkyb1RuSElpcVFZMndVSkp0Y0stN1FIM0M1SG9jcm1nWXppRXJucks2aEhfcTdNaV9jTm5Pc0FwZGVZdlRoMnNDby1DOV9zWU5LOU43NUVPck1KajZlVWdjOVVQcXVpSlYwcXdNM1F0YnZSXzdUSlhOa2V4Q01hSW04SUFidE4zc3VZTzZsNVJNeXRnbi1FaFNlT1JlTmJJNWNGOVFvSVJRclNLVmZoUk1zdnl0WXlJUGxRd3Nn?oc=5",
-        "summary": "Expedia 集团公布 2026 年第一季度业绩Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group Reports First Quarter 2026 Results",
-        "summary_original": "Expedia Group Reports First Quarter 2026 Results&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-12",
-        "date_status": "known",
-        "event_id": "ev_2ca1cd3d28",
-        "folded_into": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbjdrUVZ5SWJ0dVROQmhVX3BCaWc2Y2pZZGpGM1EwSl9NOU1iVG9oVEdjVldoX3FRWXhtWUxOZXUzTjQ1YVNiZWN3X0M0cUV0YV9Pd2lkbHRjd0xWWnpHVEh1ODI2M3dKQ1VhX1luZk5LdlFMd3Y4UkRBdE5DWWxxN19uVXNIN1lqZ1h0ZlM2bVk1RWczVUM0RVFOenJNWFBmZUhINFppSXNWdjhsMk85TERDS21kTDhzNHFYSURaYUpDdW8tMlE?oc=5",
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 71,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-12",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团 |以值得信赖的品牌推动全球旅行",
-        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFA5UWhFWDFhT0hRbHowMml2RWtDTi13VmpqOGYzSlR0TG04NmEyNERCMDFpWWtmVnNqYk9tOTZ6cDh4aTZVcDdDTVZn?oc=5",
-        "summary": "Expedia 集团 |通过值得信赖的品牌推动全球旅行&nbsp;&nbsp;Expedia 集团",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group | Powering Global Travel with Trusted Brands",
-        "summary_original": "Expedia Group | Powering Global Travel with Trusted Brands&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-12",
-        "date_status": "known",
-        "content_type": "strategy_marketing",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关8/重要4/基本面0/证据14/来源5)",
-          "重点公司(EXPE)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "marketing",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-12",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团品牌新闻中心",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBBeGw3UUZDbGx2NnpsVmp2RTdGWE5VY09FOFplNk1JZkxwYU81N05ZMTNkT3V2ZHpEaUxNV3A1anpMaERmNkxxMUJDTUt2N2JlMzlzRlRuX3JXbmtTU1pNekhKcWVuR09ibEUxUVB6Yw?oc=5",
-        "summary": "Expedia 集团品牌新闻中心Expedia 集团",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group Brands Newsroom",
-        "summary_original": "Expedia Group Brands Newsroom&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-12",
-        "date_status": "known",
-        "content_type": "strategy_marketing",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据14/来源5)",
-          "重点公司(EXPE)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "marketing",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-07",
-        "source": "Airbnb IR",
-        "category": "industry_news",
-        "title": "Airbnb 公布 2026 年第一季度业绩",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOLVhHZzNneGhUWVJtdzJ0NnBlWnotbjBza1FmaGFBcFF0S1ZCMFFHLTFMUkdVZXkxbXlLMVB1VFU2WE54MDBwaTV1Q2x6YnkwZVQzXzdoblppWjVmNzVnX1lXdnpjMnc3bXU2bnV5czFsTm5DQWpyZWdHc3NHSl9WX05aUDBSZmtIN1RnTEdnQUZyMUItTUtDekltT3NFZkVZS0d5RzdwbzVYMVNwRm9renctZGNFZDNyTGc?oc=5",
-        "summary": "",
-        "entity_id": "ABNB",
-        "company": "ABNB",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Airbnb Announces First Quarter 2026 Results",
-        "summary_original": "Airbnb Announces First Quarter 2026 Results&nbsp;&nbsp;Airbnb",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-07",
-        "date_status": "known",
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据14/来源5)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       }
     ]
   },
@@ -1420,7 +1343,7 @@
         "url": "https://www.traveldaily.cn/article/190579/",
         "summary": "一套把物业、产品、运营和品牌放在一起考量的经营模型。",
         "source_channel": "home",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": null,
@@ -1440,7 +1363,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-19",
@@ -1529,69 +1452,9 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-08-10",
-        "source": "环球旅讯",
-        "category": "china_industry",
-        "title": "复星锐正领投近亿元融资，玩点旅行要补上旅游AI的“最后一公里”",
-        "url": "https://www.traveldaily.cn/article/190513/",
-        "summary": "从真实业务中长出的AI能力",
-        "source_channel": "ai",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-10",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 68,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面15/证据10/来源4)",
-          "重要并购/融资保底60",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
       }
     ],
-    "regulatory": [
-      {
-        "date": "2026-08-05",
-        "source": "文旅部",
-        "category": "regulatory",
-        "title": "旅游市场强制消费问题典型案例（2026年第五批）",
-        "url": "https://www.mct.gov.cn/whzx/whyw/202608/t20260805_966784.htm",
-        "summary": "张某杰在未取得旅行社业务经营许可证的情况下，在自媒体平台发布出境海岛游、香港直飞游等旅游招徕信息，通过账号私信功能与游客建立联系，为游客提供机票、酒店、导游等旅游服务。张某杰的行为违反了《中华人民共和国旅游法》第二十八条的规定。2025年12月，大连市文化和旅游局对张某杰作出没收违法所得、罚款10000元的行政处罚。",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-05",
-        "date_status": "known",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "product",
-        "substantive_company_change": true,
-        "selection_score": 65,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "官方来源保留清单(文旅部)",
-          "评分(相关15/重要25/基本面0/证据20/来源5)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product",
-          "demand"
-        ]
-      }
-    ],
+    "regulatory": [],
     "company_news": [
       {
         "date": "2026-08-26",
@@ -1724,260 +1587,6 @@
           "capital",
           "competition"
         ]
-      },
-      {
-        "date": "2026-08-10",
-        "title": "东航有序恢复沪浙等地航班运力",
-        "url": "http://www.caacnews.com.cn/1/6/202608/t20260810_1396653.html",
-        "source": "中国民航网",
-        "category": "company_news",
-        "company": "中国东航",
-        "transport_security": "http",
-        "fetched_at": "2026-08-26 13:42:23",
-        "published_at": "2026-08-10",
-        "date_status": "known",
-        "summary": "与此同时，浙江宁波、杭州、台州等地也已开始恢复航班运行。东航正根据各地天气实时变化和机场适航条件，分批次、分区域推进航班恢复工作。针对此前受台风影响取消的航班，东航正统筹安排补班与增班计划，加快疏运滞留旅客。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-26 13:42:23",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "operating_data",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关11/重要12/基本面14/证据10/来源5)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "operating_data",
-          "supply"
-        ]
-      },
-      {
-        "date": "2026-08-07",
-        "source": "中国科技网",
-        "category": "company_news",
-        "title": "东航：国内客票提前14天免费退改",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5",
-        "summary": "东航：国内客票提前14天免费退改&nbsp;&nbsp;中国科技网",
-        "company": "中国东航",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "event_id": "ev_ba3a9d9b9a",
-        "related_sources": [
-          "观察者",
-          "新京报",
-          "东方财富"
-        ],
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航14天免费退改(固定保留样本)",
-          "评分(相关5/重要4/基本面0/证据16/来源2)",
-          "东航14天退改样本加分(+30)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-08-07",
-        "source": "观察者",
-        "category": "company_news",
-        "title": "东航：国内客票提前14天免费退改-观察者网",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA1VVAwTnN6RFBxVkx2SEhtUWRaSW5RdkxzeUVka3dvb3MxdUNrMEQ0WTJ6dDgyOE1Ma0JtdEtLOHNGSEVfWEU1MmV1cmh6Q3U0cWF0dEExTnpUbXdZT1A3WUZ0enI?oc=5",
-        "summary": "东航：国内客票提前14天免费退改-观察者网&nbsp;&nbsp;观察者",
-        "company": "中国东航",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "event_id": "ev_ba3a9d9b9a",
-        "folded_into": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "opinion",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航14天免费退改(固定保留样本)",
-          "评分(相关5/重要4/基本面0/证据16/来源2)",
-          "东航14天退改样本加分(+30)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-08-07",
-        "source": "东方财富",
-        "category": "company_news",
-        "title": "东航率先更新机票免费退改规则，网友喊话其他航司跟进",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9ncFFIdmVNWFN4SVdIc2FIdDFjdllwWWwtVy12MnZYanpnWTdlZE9lODQtNW5keFFUNHgxSWNhdzFGN0RzdTJ5azZCTVY1cG5lZWoybGtSS0hnQUJhZFhxUw?oc=5",
-        "summary": "东航率先更新机票免费退改规则，网友喊话其他航司跟进&nbsp;&nbsp;东方财富",
-        "company": "中国东航",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关11/重要4/基本面0/证据6/来源2)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03",
-        "event_id": "ev_ba3a9d9b9a",
-        "folded_into": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5"
-      },
-      {
-        "date": "2026-08-07",
-        "source": "新京报",
-        "category": "company_news",
-        "title": "中国东航：国内客票提前14天免费退改",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBjV0daMXJod1h1Q1hQeGo2NDhLSXRsZmVUdndON0QxQnBmSTJqZGEtTlVPaXhzSjNEaWtkbDdNd2kxYnhyMUVDRXlTeDk5Ql83XzZ1MWpEZ19GT0FKcFhTeFpB?oc=5",
-        "summary": "中国东航：国内客票提前14天免费退改&nbsp;&nbsp;新京报",
-        "company": "中国东航",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "event_id": "ev_ba3a9d9b9a",
-        "folded_into": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航14天免费退改(固定保留样本)",
-          "评分(相关5/重要4/基本面0/证据16/来源2)",
-          "东航14天退改样本加分(+30)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-08-07",
-        "source": "东方财富",
-        "category": "company_news",
-        "title": "东航发布新规：国内客票提前14天免费退改",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9xa2IwOXBpNGZTY2hEaXppZlZBR0V5RXhYZGpGVnNXODY3eUhkQnhFRmhfV29pVE4wSWQxZTJYMEFOZXlMa2pIVnUzVGo1dWhTV1B1LWVuX0lwQ0paWVlaaQ?oc=5",
-        "summary": "东航发布新规：国内客票提前14天免费退改&nbsp;&nbsp;东方财富",
-        "company": "中国东航",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "event_id": "ev_ba3a9d9b9a",
-        "folded_into": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "product",
-        "substantive_company_change": true,
-        "selection_score": 67,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航14天免费退改(固定保留样本)",
-          "评分(相关5/重要14/基本面0/证据16/来源2)",
-          "东航14天退改样本加分(+30)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-08-07",
-        "source": "新京报",
-        "category": "company_news",
-        "title": "小螺号|东航按下“14天免费”退改按钮，民航服务内卷终于卷到了“正地方”",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1EbngwZ081WU5aVFBKbDFHMmsyaVJwdEhISXk1UlJZRHJJVnR1Q0JPUnFlcUpRLWZsZ3g2UF9zT21Fd2lBdXdBcmN3U21RcTFWVWx6YXVid0N5UnhMV2REX0R3?oc=5",
-        "summary": "小螺号|东航按下“14天免费”退改按钮，民航服务内卷终于卷到了“正地方”&nbsp;&nbsp;新京报",
-        "company": "中国东航",
-        "fetched_at": "2026-08-19 11:42:16",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关5/重要4/基本面0/证据16/来源2)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-19 11:43:28",
-        "event_id": "ev_ba3a9d9b9a",
-        "folded_into": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5"
-      },
-      {
-        "date": "2026-08-07",
-        "source": "东方财富",
-        "category": "company_news",
-        "title": "东航免费退改签，冲上热搜！",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBVMUtTNnV2T0NBS085NFNQY0tPaDh0dmJNQnFoUXJ3RHNpU1BKQ2RzOWFHVTFrbXVKbnVJUVRRTEtfNXhveDVnMDg0Nkh0WmNmaFZqY0pPdmo5cFNBS2Nvcg?oc=5",
-        "summary": "东航免费退改签，冲上热搜！&nbsp;&nbsp;东方财富",
-        "company": "中国东航",
-        "fetched_at": "2026-08-18 14:48:30",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "policy_commission",
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关5/重要12/基本面0/证据6/来源2)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "policy",
-          "distribution"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-18 14:49:31",
-        "event_id": "ev_ba3a9d9b9a",
-        "folded_into": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5"
       }
     ]
   },
@@ -1993,7 +1602,7 @@
         "company": "EXPE",
         "title_original": "Expedia Group makes AI-motivated leadership cuts",
         "summary_original": "Expedia Group makes AI-motivated leadership cuts&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -2015,74 +1624,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-20",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团宣布协议收购 CarTrawler，推进战略打造最完整的 B2B 旅游平台",
-        "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQRk44Z3Q0Ymw2RjZuVGNzWXNlajFiS3EtUmtNVHBKY1V6enhKX0NIVUVHdllTYlUxeTdYdTEzWENsbUJiMGtzRDFxbk5zZF9sYkxTVkNHc1VrZ3VZdzhhcGxBdnNFaUZ2cmFHQmNSTFdKRGNGTXdqaklNSld2c3c2UGJWQ3hjcnB4ekU1cGtsNG9zT2hkbzVOU01sRjdadWZMR2tpSHo2LWlVUXE1SGRUbVFwazRKUzZLWmtWcHlwS2V3N3picWtxVlJESkRMTGhMSktfT2k4MkRUTkJwODNrXzNCVDk3aHZVTXZhY05qb0ZDN0p2RnFRaVhiU0E0NFR4MG9QdTItdWNHOUgzY0pMZVpta28tWExlaWVvdWgwc21Gcy1pVmZSOQ?oc=5",
-        "summary": "Expedia 集团宣布同意收购 CarTrawler，推进打造最完整 B2B 旅游平台的战略 Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group announces agreement to acquire CarTrawler, advancing strategy to build the most complete B2B travel platform",
-        "summary_original": "Expedia Group announces agreement to acquire CarTrawler, advancing strategy to build the most complete B2B travel platform&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-20",
-        "date_status": "known",
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 84,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关18/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-08-03",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "Expedia收购AI旅行规划平台Layla",
-        "url": "https://www.traveldaily.cn/expressPage/190478/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "company": "EXPE",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-03",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": "EXPE",
-        "is_core_company": true,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 81,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关8/重要22/基本面0/证据14/来源4)",
-          "重点公司(EXPE)",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition",
-          "core_company"
-        ]
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-23",
@@ -2094,7 +1636,7 @@
         "company": "EXPE",
         "title_original": "Expedia Cuts Eight Tech Leaders in AI-Driven Reorganization",
         "summary_original": "Expedia Cuts Eight Tech Leaders in AI-Driven Reorganization&nbsp;&nbsp;AirGuide Business",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-23",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -2115,41 +1657,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-07-31",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia Group 收购 Layla，加速其人工智能驱动的旅行规划和预订战略",
-        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQNGpVTjN1eld4S3NaSkJmajRKQnpIRHVvblRFZEtzWDlxWVNhR3ZxcEluNHJrTTFfUGktOHBCMVMwY0xGU0VHaVJJUHlsQ08xVTY1Nlp3cW9UWGFwT1UxQ0J2RDFCaWY4VkltVUNkRHBmejBta3pnQWZvUmM3Q0hLQV92RmNWX0xzMkZ5UnoyVEdZWGpxdThxZFJrT1dsbkZ5ZDQwaThwZDRXTURCMkpyZVFoS2pqQTNyZk1JdVJRZlBjSFRzUEt3WUtSbVQzNlJySUdyc3lHMi1paXl4bXpYVkNTQmVwNl96YUpuanBHR3FsUTdueWg1SXZDZ3c0Rmlw?oc=5",
-        "summary": "Expedia 集团收购 Layla，加速其人工智能驱动的旅行规划和预订战略&nbsp;&nbsp;Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group acquires Layla, accelerating its AI-powered trip planning and booking strategy",
-        "summary_original": "Expedia Group acquires Layla, accelerating its AI-powered trip planning and booking strategy&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-07-31",
-        "date_status": "known",
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 76,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -2161,7 +1669,7 @@
         "company": "EXPE",
         "title_original": "Expedia Executive Sells 3,133 Shares for $1 Million",
         "summary_original": "Expedia Executive Sells 3,133 Shares for $1 Million&nbsp;&nbsp;The Motley Fool",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -2184,7 +1692,7 @@
           "core_company"
         ],
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-25",
@@ -2196,7 +1704,7 @@
         "company": "EXPE",
         "title_original": "Airbnb And Expedia Stocks Are Riding High. Here's Why.",
         "summary_original": "Airbnb And Expedia Stocks Are Riding High. Here's Why.&nbsp;&nbsp;Investor's Business Daily",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -2218,7 +1726,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-25",
@@ -2230,7 +1738,7 @@
         "company": "EXPE",
         "title_original": "Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]",
         "summary_original": "Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]&nbsp;&nbsp;Upgraded Points",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -2250,7 +1758,7 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-20",
@@ -2262,7 +1770,7 @@
         "company": "EXPE",
         "title_original": "Expedia Cuts Eight Executives as It Reorganizes Around AI",
         "summary_original": "Expedia Cuts Eight Executives as It Reorganizes Around AI&nbsp;&nbsp;Skift",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-20",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -2285,108 +1793,42 @@
           "core_company"
         ],
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
-        "date": "2026-08-06",
-        "source": "Expedia Group IR",
+        "date": "2026-08-19",
+        "source": "Expedia",
         "category": "industry_news",
-        "title": "Vrbo 赞助商列表：更快地填补日历空白",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMThqeUV4UGZBdFVoMHg4YTNzQlNyZDgxdW04RmozZzlabjAtcGRTUnBDUjZ0bV9ZNG4yWjlhejA0MHJXUTFqc1VTX2Q1VkNEMkd2UVlLdTE1cUpwNm1mems0OWZzcjFzMkJVbkZYRlk2YWM0VlNIdkxOVFE3LUVOTzhyS2Q1eFVKT1ZuMDNKSXZxNnVBaWNpUUJRakR5QWxRSlA5bEZ6QXMtc0l5U1cyMnBB?oc=5",
-        "summary": "Vrbo 赞助商信息：更快地填补日历空白&nbsp;&nbsp;Expedia Group",
-        "entity_id": "EXPE",
+        "title": "内部备忘录：Expedia Group 八名高管因人工智能驱动的重组而离职",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV0tXRUZlcXNTMzBCX0Vlbno3UE9NTUd6SFdvMEF1clNzRWJvLTZjZF8xM3pzMGlMTkpGekZ3ZjV3YVRqcC1mZXNtdlpBX2JwYU9WS2lTWFlxTm9XeDhESVFMQVQxX194ZTFXQXhyUkswQ3NOM0NoQWI2QWNOcTRncmVmTHNGLTRrem9wZTRNSjJGRVBQREhPdTZtNjY0S28?oc=5",
+        "summary": "",
         "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Vrbo Sponsored Listings: Fill calendar gaps faster",
-        "summary_original": "Vrbo Sponsored Listings: Fill calendar gaps faster&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-06",
+        "title_original": "Internal memo: Eight execs out at Expedia Group in AI-driven shakeup",
+        "summary_original": "Internal memo: Eight execs out at Expedia Group in AI-driven shakeup&nbsp;&nbsp;GeekWire",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-19",
         "date_status": "known",
-        "content_type": "general",
-        "substantive_company_change": false,
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据14/来源5)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
-          "IR/ Bloomberg垂直源保底60"
+          "正式制度/组织变化",
+          "摘要重复标题(-20)",
+          "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "organization",
           "core_company"
         ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-12",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团 |以值得信赖的品牌推动全球旅行",
-        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFA5UWhFWDFhT0hRbHowMml2RWtDTi13VmpqOGYzSlR0TG04NmEyNERCMDFpWWtmVnNqYk9tOTZ6cDh4aTZVcDdDTVZn?oc=5",
-        "summary": "Expedia 集团 |通过值得信赖的品牌推动全球旅行&nbsp;&nbsp;Expedia 集团",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group | Powering Global Travel with Trusted Brands",
-        "summary_original": "Expedia Group | Powering Global Travel with Trusted Brands&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-12",
-        "date_status": "known",
-        "content_type": "strategy_marketing",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关8/重要4/基本面0/证据14/来源5)",
-          "重点公司(EXPE)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "marketing",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-12",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团品牌新闻中心",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBBeGw3UUZDbGx2NnpsVmp2RTdGWE5VY09FOFplNk1JZkxwYU81N05ZMTNkT3V2ZHpEaUxNV3A1anpMaERmNkxxMUJDTUt2N2JlMzlzRlRuX3JXbmtTU1pNekhKcWVuR09ibEUxUVB6Yw?oc=5",
-        "summary": "Expedia 集团品牌新闻中心Expedia 集团",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Expedia Group Brands Newsroom",
-        "summary_original": "Expedia Group Brands Newsroom&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-12",
-        "date_status": "known",
-        "content_type": "strategy_marketing",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据14/来源5)",
-          "重点公司(EXPE)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "marketing",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_status": "insufficient_evidence",
+        "summary_generated_at": "2026-08-27 10:00:46"
       }
     ],
     "intl_industry": [
@@ -2398,42 +1840,12 @@
         "url": "https://www.traveldaily.cn/expressPage/190535/",
         "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
         "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-14",
         "date_status": "known",
         "merged_same_article": 1,
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 72,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面15/证据20/来源4)",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ]
-      },
-      {
-        "date": "2026-08-06",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "AI旅行保障平台Faye完成5000万美元C轮融资",
-        "url": "https://www.traveldaily.cn/expressPage/190501/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-06",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
+        "summary_generated_at": "2026-08-27 10:00:18",
         "entity_id": null,
         "is_core_company": false,
         "content_type": "ma_investment",
@@ -2459,7 +1871,7 @@
         "summary": "酒店领导者如何充满信心地进行投资 PhocusWire",
         "title_original": "How hotel leaders can invest with confidence",
         "summary_original": "How hotel leaders can invest with confidence&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-27",
         "date_status": "known",
         "entity_id": null,
@@ -2480,7 +1892,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -2488,10 +1900,10 @@
         "category": "industry_news",
         "title": "随着商旅市场整合，Flight Centre 接受 TMC 收购",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNS0tGNmpFY2FnbnM3Rng4TGw4M2RpZFF1b2d2VW9PWVdkQU9KWmFXVWNGT3hFQ3dZQUZiay1IOUxaTUpZOUUyVWdOUHU4SExKYV9sMFVlZXVzSFZWdUxTSVJBd2ZhTVhrTDdfc2tnLW4wMkM1OTl6em9TZU1yWnpSSmROMERCNVRlbUdzU2FSYXliVzFtOVh4dHpUWUp5X0MyMjZDN3ctYmpEdnRETENNNw?oc=5",
-        "summary": "随着商务旅行市场的整合，Flight Center 接受 TMC 收购 PhocusWire",
+        "summary": "随着商务旅行市场的整合，Flight Center 对 TMC 收购开放 &nbsp;&nbsp;PhocusWire",
         "title_original": "Flight Centre open to TMC acquisitions as corporate travel market consolidates",
         "summary_original": "Flight Centre open to TMC acquisitions as corporate travel market consolidates&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -2502,7 +1914,7 @@
         "selection_score": 68,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "评分(相关3/重要25/基本面0/证据10/来源4)",
           "重要并购/融资保底60",
           "旅游垂直媒体加分(+8)"
         ],
@@ -2512,7 +1924,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -2523,7 +1935,7 @@
         "summary": "投资者提高了人工智能驱动的旅游初创公司的门槛PhocusWire",
         "title_original": "Investors raise the bar for AI-powered travel startups",
         "summary_original": "Investors raise the bar for AI-powered travel startups&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -2544,7 +1956,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -2555,7 +1967,7 @@
         "summary": "Spotnana 收购 Troop 以整合临时旅行、会议和活动 PhocusWire",
         "title_original": "Spotnana acquires Troop to consolidate transient travel, meetings and events",
         "summary_original": "Spotnana acquires Troop to consolidate transient travel, meetings and events&nbsp;&nbsp;PhocusWire",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -2576,7 +1988,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -2587,7 +1999,7 @@
         "summary": "2026 年印度投资额最高的 30 家旅游科技初创公司 &nbsp;&nbsp;Inc42",
         "title_original": "Top 30 Funded Travel Tech Startups In India 2026",
         "summary_original": "Top 30 Funded Travel Tech Startups In India 2026&nbsp;&nbsp;Inc42",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": null,
@@ -2606,7 +2018,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -2679,68 +2091,6 @@
         "summary_orig": "On this bonus episode of ⁠Good Morning Hospitality, A Skift Podcast⁠, ⁠Wil Slickers⁠ sits down with ⁠Dan Gaertner⁠, CEO of ⁠VayKLife⁠, to break the news that VayKLife has acquired ⁠Xplorie⁠, bringing "
       },
       {
-        "date": "2026-08-03",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "旅游与费用管理平台Engine收购企业差旅管理公司Options Travel",
-        "url": "https://www.traveldaily.cn/expressPage/190479/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-03",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 68,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ]
-      },
-      {
-        "date": "2026-07-31",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "BCD Travel战略投资企业差旅AI平台Amgine",
-        "url": "https://www.traveldaily.cn/expressPage/190473/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-07-31",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 68,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要4/基本面0/证据10/来源4)",
-          "重要并购/融资保底60",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ]
-      },
-      {
         "date": "2026-08-25",
         "source": "Skift",
         "category": "industry_news",
@@ -2748,11 +2098,11 @@
         "url": "https://skift.com/2026/08/25/ixigo-tests-packaged-tours-for-trains-uber-becomes-a-new-distribution-engine/",
         "summary": "Ixigo Trains 周二推出了 Ixigo Bharat Darshan，这是该旅游平台首次涉足套餐旅游。",
         "title_original": "Ixigo Tests Packaged Tours for Trains, Uber Becomes a New Distribution Engine",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
+        "summary_generated_at": "2026-08-27 10:00:18",
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
@@ -2779,7 +2129,7 @@
         "summary": "威尔士旅游科技公司通过 Trip.com 进行扩张&nbsp;&nbsp;商业新闻",
         "title_original": "Welsh Travel Tech Firm Expands Through Trip.com Launch",
         "summary_original": "Welsh Travel Tech Firm Expands Through Trip.com Launch&nbsp;&nbsp;Business News Wales",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": "TCOM",
@@ -2799,20 +2149,21 @@
           "core_company"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
         "source": "Trip.com",
         "category": "industry_news",
         "title": "锦江酒店与携程签署战略谅解备忘录，深化东盟合作",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNeEZKa2RWOXB3MEg4Y0NsZXhFTG5TeS1hMlRKLWx0bEh6QVp4Wko2UkxIZ01vc3FYYUJyQnZsY2xIVHZPVFhzbU5YUnJYOC1xR21XanA5cHRjVnVuNlNyNVFaRF85dXNyUmxqNUlrcHJNZ0Vjc2ZuSXRvRU1ITmxLc3p6RHRRejFPb2VzOGFpR0NwLUdSSnAxVkxmWlZSRW1CSjhESGRqTkI?oc=5",
-        "summary": "",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQa0lBV083X1FvQ0dVVXc3VG5iVU5VNDQ3YnF2eUo0SWZOTUZjcEZNYk9zM0xDTkxfYU9KZ0dMbUJyZ25rMVJ4Q21YVVZ0U3AxUlk3WjJET0J5T3ZKZ3R4NVYzQks0TFhvY0RRbi1ud1hDZEhzZHNhTEVWU2xzMFV1SjVsTnpkUVZYRXNwNXNlVEU1S0hwN1hiNmk5MWVFbGVzTTBFQTV6TU5qX3VzdlFpaTVkRldhSnFGdzRB?oc=5",
+        "summary": "锦江酒店与携程签署战略谅解备忘录，深化东盟合作 马来西亚储备银行",
         "title_original": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement",
-        "summary_original": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement&nbsp;&nbsp;Macau Business",
-        "fetched_at": "2026-08-27 09:30:43",
+        "summary_original": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement&nbsp;&nbsp;The Malaysian Reserve",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
+        "merged_same_article": 1,
         "entity_id": "TCOM",
         "is_core_company": true,
         "source_channel": "",
@@ -2823,7 +2174,6 @@
         "selection_reasons": [
           "评分(相关11/重要10/基本面0/证据10/来源2)",
           "重点公司(TCOM)",
-          "摘要重复标题(-20)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -2831,8 +2181,8 @@
           "cooperation",
           "core_company"
         ],
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-24",
@@ -2884,7 +2234,7 @@
         "summary": "",
         "title_original": "Tesla, Uber, and Waymo all get the OK to operate thousands of robotaxis in Nevada",
         "summary_original": "Tesla, Uber, and Waymo all get the OK to operate thousands of robotaxis in Nevada&nbsp;&nbsp;TechCrunch",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": null,
@@ -2902,7 +2252,37 @@
         "rejection_reason": null,
         "impact_dimensions": [],
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-13",
+        "source": "Bloomberg Mobility (GN)",
+        "category": "industry_news",
+        "title": "Uber和中国小马智行将在欧洲部署2000辆机器人出租车",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNGxSVjE2azc0QTRBUC1yQXQtSzA5RExGOEVDVUUxWGlRYkN6czBSRFczcmJzTDRMQU05RXZKUHpabHNSQjcxc095QTdEOF9PWWwwelNTamRKNGZkemNMSl85NVlRWGxIblVuT2Y4eVUwVU1JR0JIREV5MTZUMFRoYy1QZkJBZVRPMzI1OFBLRFFwU1haRHY2MlFpV2lqcTc5MW8wT25HcVNoNXNsTHBaWg?oc=5",
+        "summary": "Uber 和中国小马智行将在欧洲部署 2,000 辆机器人出租车&nbsp;&nbsp;Bloomberg.com",
+        "title_original": "Uber and China’s Pony AI to Deploy 2,000 Robotaxis in Europe",
+        "summary_original": "Uber and China’s Pony AI to Deploy 2,000 Robotaxis in Europe&nbsp;&nbsp;Bloomberg.com",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-13",
+        "date_status": "known",
+        "entity_id": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "content_type": "ai_application",
+        "substantive_company_change": false,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关10/重要4/基本面0/证据10/来源4)",
+          "IR/ Bloomberg垂直源保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "technology"
+        ],
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
       }
     ],
     "intl_disclosures": [
@@ -2913,7 +2293,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007317/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -2932,7 +2312,7 @@
         ],
         "summary": "Expedia Group, Inc.于2026-08-25向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-21",
@@ -2941,7 +2321,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361412/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -2960,7 +2340,7 @@
         ],
         "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-21",
@@ -2969,7 +2349,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361408/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-21",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -2988,7 +2368,7 @@
         ],
         "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-20",
@@ -2997,7 +2377,7 @@
         "title": "董事/高管交易 (Form 4)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007235/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-20",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -3016,7 +2396,344 @@
         ],
         "summary": "Expedia Group, Inc.于2026-08-20向SEC提交董事/高管交易 (Form 4)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "BKNG",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000122926526000022/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "BKNG",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000121461226000007/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007166/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007164/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007168/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007169/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007165/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-18",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007167/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-18",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-17",
+        "company": "BKNG",
+        "type": "144",
+        "title": "证券出售登记 (Rule 144)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000196430626000389/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-17",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-17向SEC提交证券出售登记 (Rule 144)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-17",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007141/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-17",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-17向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-13",
+        "company": "BKNG",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000157491826000006/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-13",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-13向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
+      },
+      {
+        "date": "2026-08-13",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007100/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-27 10:00:18",
+        "published_at": "2026-08-13",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-13向SEC提交董事/高管交易 (Form 4)。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-06",
@@ -3025,7 +2742,7 @@
         "title": "季度报告 (10-Q)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442426000053/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-06",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -3042,7 +2759,7 @@
         "impact_dimensions": [],
         "summary": "Expedia Group, Inc.于2026-08-06向SEC提交季度报告 (10-Q)。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-06",
@@ -3051,7 +2768,7 @@
         "title": "EX-32.1",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000027/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-06",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -3068,7 +2785,7 @@
         "impact_dimensions": [],
         "summary": "Airbnb, Inc.于2026-08-06向SEC提交EX-32.1。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-06",
@@ -3077,7 +2794,7 @@
         "title": "重大事件 (8-K) (Item 2.02, 9.01)",
         "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526337928/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-06",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -3094,7 +2811,7 @@
         "impact_dimensions": [],
         "summary": "Airbnb, Inc.于2026-08-06向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-05",
@@ -3103,7 +2820,7 @@
         "title": "EX-99.1 (Item 2.02, 7.01, 8.01)",
         "url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442426000051/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-05",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -3120,7 +2837,7 @@
         "impact_dimensions": [],
         "summary": "Expedia Group, Inc.于2026-08-05向SEC提交EX-99.1 (Item 2.02, 7.01, 8.01)。（涉及条款 Item 2.02, 7.01, 8.01）",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-04",
@@ -3129,7 +2846,7 @@
         "title": "EX-3.1",
         "url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000037/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-04",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3146,7 +2863,7 @@
         "impact_dimensions": [],
         "summary": "Booking Holdings Inc.于2026-08-04向SEC提交EX-3.1。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-04",
@@ -3155,7 +2872,7 @@
         "title": "重大事件 (8-K) (Item 2.02, 9.01)",
         "url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000036/",
         "source": "SEC EDGAR",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-04",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3172,7 +2889,7 @@
         "impact_dimensions": [],
         "summary": "Booking Holdings Inc.于2026-08-04向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-26",
@@ -3184,7 +2901,7 @@
         "company": "EXPE",
         "title_original": "Expedia Group Inc. stock outperforms competitors despite losses on the day",
         "summary_original": "Expedia Group Inc. stock outperforms competitors despite losses on the day&nbsp;&nbsp;MarketWatch",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-26",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -3205,118 +2922,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-14",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "title": "Expedia 集团 2025 年第一季度财报电话会议",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbjdrUVZ5SWJ0dVROQmhVX3BCaWc2Y2pZZGpGM1EwSl9NOU1iVG9oVEdjVldoX3FRWXhtWUxOZXUzTjQ1YVNiZWN3X0M0cUV0YV9Pd2lkbHRjd0xWWnpHVEh1ODI2M3dKQ1VhX1luZk5LdlFMd3Y4UkRBdE5DWWxxN19uVXNIN1lqZ1h0ZlM2bVk1RWczVUM0RVFOenJNWFBmZUhINFppSXNWdjhsMk85TERDS21kTDhzNHFYSURaYUpDdW8tMlE?oc=5",
-        "summary": "Expedia 集团 2025 年第一季度财报电话会议 Expedia Group",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "paywall": false,
-        "ai_category": "company_news",
-        "ai_category_label": "公司新闻",
-        "featured": false,
-        "title_original": "Expedia Group Q1 2025 Earnings Call",
-        "summary_original": "Expedia Group Q1 2025 Earnings Call&nbsp;&nbsp;Expedia Group",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-05-14",
-        "date_status": "known",
-        "event_id": "ev_2ca1cd3d28",
-        "related_sources": [
-          "Expedia Group IR"
-        ],
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 71,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-08-04",
-        "source": "Booking Holdings IR",
-        "category": "industry_news",
-        "title": "Booking Holdings 将于 8 月 4 日在公司投资者关系网站上发布 2026 年第二季度收益新闻稿",
-        "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPWTdUQlJ1bWZfZ0NBaHZRY3k4aC13QnBvZmlSeDlnYmdocFF0Z3QyN2FFZzZoSjZLN2lxdHRjOVpsTS05bTlVVFhHV0VfOWtXazVsZXVGVEFhUzY0dVhPUzdXT0p6Y3MzeHpIaXRzSGludnAtZXB4Y3dtVVNlVE9zRkJoaHdEQkFHYXRYQ2xPNXVUdlpXV1d3ZFlKaERlNDQ2emtrNjlZSXloNU1tTlRTS1BmSXpLVnI4NnlNMUpfNUU1SmdwU2pTMVQwMGVvVmRrLW9rdVM5d3NsUjdzbnFyajFqVzE1c0hzLU5iRFU1U3ozNlduYWpqR1NIeDVSUUd2WXVJeEF6N2h0LU5ONERseTRORWc4M21vMmZ2b1FzN3g?oc=5",
-        "summary": "",
-        "entity_id": "BKNG",
-        "company": "BKNG",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Booking Holdings to Make Second Quarter 2026 Earnings Press Release Available on Company's Investor Relations Website on August 4",
-        "summary_original": "Booking Holdings to Make Second Quarter 2026 Earnings Press Release Available on Company's Investor Relations Website on August 4&nbsp;&nbsp;Booking Holdings",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-04",
-        "date_status": "known",
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要25/基本面0/证据14/来源5)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-05-07",
-        "source": "Airbnb IR",
-        "category": "industry_news",
-        "title": "Airbnb 公布 2026 年第一季度业绩",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOLVhHZzNneGhUWVJtdzJ0NnBlWnotbjBza1FmaGFBcFF0S1ZCMFFHLTFMUkdVZXkxbXlLMVB1VFU2WE54MDBwaTV1Q2x6YnkwZVQzXzdoblppWjVmNzVnX1lXdnpjMnc3bXU2bnV5czFsTm5DQWpyZWdHc3NHSl9WX05aUDBSZmtIN1RnTEdnQUZyMUItTUtDekltT3NFZkVZS0d5RzdwbzVYMVNwRm9renctZGNFZDNyTGc?oc=5",
-        "summary": "",
-        "entity_id": "ABNB",
-        "company": "ABNB",
-        "is_core_company": true,
-        "source_channel": "ir_official",
-        "is_ir_source": true,
-        "title_original": "Airbnb Announces First Quarter 2026 Results",
-        "summary_original": "Airbnb Announces First Quarter 2026 Results&nbsp;&nbsp;Airbnb",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-05-07",
-        "date_status": "known",
-        "content_type": "earnings",
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据14/来源5)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       }
     ],
     "dom_industry": [
@@ -3416,7 +3022,7 @@
         "url": "https://www.traveldaily.cn/article/190579/",
         "summary": "一套把物业、产品、运营和品牌放在一起考量的经营模型。",
         "source_channel": "home",
-        "fetched_at": "2026-08-27 09:30:43",
+        "fetched_at": "2026-08-27 10:00:18",
         "published_at": "2026-08-25",
         "date_status": "known",
         "entity_id": null,
@@ -3436,37 +3042,7 @@
           "competition"
         ],
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
-      },
-      {
-        "date": "2026-08-10",
-        "source": "环球旅讯",
-        "category": "china_industry",
-        "title": "复星锐正领投近亿元融资，玩点旅行要补上旅游AI的“最后一公里”",
-        "url": "https://www.traveldaily.cn/article/190513/",
-        "summary": "从真实业务中长出的AI能力",
-        "source_channel": "ai",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-10",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "substantive_company_change": true,
-        "selection_score": 68,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面15/证据10/来源4)",
-          "重要并购/融资保底60",
-          "旅游垂直媒体加分(+8)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:31:20"
+        "summary_generated_at": "2026-08-27 10:00:46"
       },
       {
         "date": "2026-08-15",
@@ -3566,260 +3142,164 @@
         "impact_dimensions": [],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-20 12:03:03"
-      },
-      {
-        "date": "2026-08-10",
-        "title": "东航有序恢复沪浙等地航班运力",
-        "url": "http://www.caacnews.com.cn/1/6/202608/t20260810_1396653.html",
-        "source": "中国民航网",
-        "category": "company_news",
-        "company": "中国东航",
-        "transport_security": "http",
-        "fetched_at": "2026-08-26 13:42:23",
-        "published_at": "2026-08-10",
-        "date_status": "known",
-        "summary": "与此同时，浙江宁波、杭州、台州等地也已开始恢复航班运行。东航正根据各地天气实时变化和机场适航条件，分批次、分区域推进航班恢复工作。针对此前受台风影响取消的航班，东航正统筹安排补班与增班计划，加快疏运滞留旅客。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-26 13:42:23",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "operating_data",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关11/重要12/基本面14/证据10/来源5)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "operating_data",
-          "supply"
-        ]
-      },
-      {
-        "date": "2026-08-07",
-        "source": "中国科技网",
-        "category": "company_news",
-        "title": "东航：国内客票提前14天免费退改",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTmV2MWl2enhRclBTTG01WVU1T1dKWXRtNXVhbEJvUmpQNElVUzk3RFNvRHJEM0JNV24zMTFRZ0xxbFRnNHdaejAtMTV1d0MwQ2ZMa0pSUFlpaE4za0xydE5WX1NQSTIzTDFULVdPMVA?oc=5",
-        "summary": "东航：国内客票提前14天免费退改&nbsp;&nbsp;中国科技网",
-        "company": "中国东航",
-        "fetched_at": "2026-08-20 12:01:47",
-        "published_at": "2026-08-07",
-        "date_status": "known",
-        "event_id": "ev_ba3a9d9b9a",
-        "related_sources": [
-          "观察者",
-          "新京报",
-          "东方财富"
-        ],
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航14天免费退改(固定保留样本)",
-          "评分(相关5/重要4/基本面0/证据16/来源2)",
-          "东航14天退改样本加分(+30)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-20 12:03:03"
       }
     ],
-    "dom_disclosures": [
-      {
-        "date": "2026-08-05",
-        "source": "文旅部",
-        "category": "regulatory",
-        "title": "旅游市场强制消费问题典型案例（2026年第五批）",
-        "url": "https://www.mct.gov.cn/whzx/whyw/202608/t20260805_966784.htm",
-        "summary": "张某杰在未取得旅行社业务经营许可证的情况下，在自媒体平台发布出境海岛游、香港直飞游等旅游招徕信息，通过账号私信功能与游客建立联系，为游客提供机票、酒店、导游等旅游服务。张某杰的行为违反了《中华人民共和国旅游法》第二十八条的规定。2025年12月，大连市文化和旅游局对张某杰作出没收违法所得、罚款10000元的行政处罚。",
-        "fetched_at": "2026-08-27 09:30:43",
-        "published_at": "2026-08-05",
-        "date_status": "known",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-27 09:30:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "product",
-        "substantive_company_change": true,
-        "selection_score": 65,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "官方来源保留清单(文旅部)",
-          "评分(相关15/重要25/基本面0/证据20/来源5)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product",
-          "demand"
-        ]
-      }
-    ]
+    "dom_disclosures": []
   },
-  "last_updated": "2026-08-27 09:31:20",
+  "last_updated": "2026-08-27 10:00:46",
   "selection_report": {
-    "run_at": "2026-08-27 09:31:20",
-    "raw_count": 136,
-    "kept_count": 62,
-    "rejected_count": 74,
+    "run_at": "2026-08-27 10:00:46",
+    "raw_count": 124,
+    "kept_count": 52,
+    "rejected_count": 72,
     "by_reason": {
-      "评分低于60且无保底资格": 42,
-      "体育赞助/庆典/获奖/公益": 2,
+      "评分低于60且无保底资格": 45,
+      "体育赞助/庆典/获奖/公益": 3,
       "箱包皮具类并购(非旅行核心业务)": 1,
       "无新事实短评": 6,
-      "东航非业务影响词": 21,
-      "新闻合集": 1,
+      "东航非业务影响词": 16,
       "东航宣传稿(CiftonEXCLUDE_RE)": 1
     },
     "quality": {
-      "empty_categories": [],
-      "total_items": 62,
+      "empty_categories": [
+        "domestic/regulatory"
+      ],
+      "total_items": 52,
       "unknown_date_count": 0,
-      "no_summary_count": 7
+      "no_summary_count": 5
     }
   },
   "update_status": "success",
   "fetch_status": {
-    "attempted_at": "2026-08-27 09:20:24",
-    "last_success_at": "2026-08-27 09:31:20",
+    "attempted_at": "2026-08-27 09:53:03",
+    "last_success_at": "2026-08-27 10:00:46",
     "status": "success",
     "sources": {
       "SEC EDGAR BKNG": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:25",
+        "last_success_at": "2026-08-27 09:53:04",
         "item_count": 100,
-        "attempted_at": "2026-08-27 09:20:25"
+        "attempted_at": "2026-08-27 09:53:04"
       },
       "SEC EDGAR EXPE": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:26",
+        "last_success_at": "2026-08-27 09:53:05",
         "item_count": 100,
-        "attempted_at": "2026-08-27 09:20:26"
+        "attempted_at": "2026-08-27 09:53:05"
       },
       "SEC EDGAR ABNB": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:27",
+        "last_success_at": "2026-08-27 09:53:07",
         "item_count": 100,
-        "attempted_at": "2026-08-27 09:20:27"
+        "attempted_at": "2026-08-27 09:53:07"
       },
       "Skift": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:29",
+        "last_success_at": "2026-08-27 09:53:08",
         "item_count": 10,
-        "attempted_at": "2026-08-27 09:20:29"
+        "attempted_at": "2026-08-27 09:53:08"
       },
       "Bloomberg Markets": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:29",
+        "last_success_at": "2026-08-27 09:53:09",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:29"
+        "attempted_at": "2026-08-27 09:53:09"
       },
       "Bloomberg Technology": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:30",
+        "last_success_at": "2026-08-27 09:53:10",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:30"
+        "attempted_at": "2026-08-27 09:53:10"
       },
       "PhocusWire": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:31",
+        "last_success_at": "2026-08-27 09:53:11",
         "item_count": 44,
-        "attempted_at": "2026-08-27 09:20:31"
+        "attempted_at": "2026-08-27 09:53:11"
       },
       "Travel Weekly": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:32",
+        "last_success_at": "2026-08-27 09:53:12",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:32"
+        "attempted_at": "2026-08-27 09:53:12"
       },
       "Skyscanner": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:33",
+        "last_success_at": "2026-08-27 09:53:13",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:33"
+        "attempted_at": "2026-08-27 09:53:13"
       },
       "Klook": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:34",
+        "last_success_at": "2026-08-27 09:53:13",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:34"
+        "attempted_at": "2026-08-27 09:53:13"
       },
       "MakeMyTrip": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:35",
+        "last_success_at": "2026-08-27 09:53:14",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:35"
+        "attempted_at": "2026-08-27 09:53:14"
       },
       "Traveloka": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:36",
+        "last_success_at": "2026-08-27 09:53:15",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:36"
+        "attempted_at": "2026-08-27 09:53:15"
       },
       "Agoda": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:37",
+        "last_success_at": "2026-08-27 09:53:16",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:37"
+        "attempted_at": "2026-08-27 09:53:16"
       },
       "Trip.com": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:38",
+        "last_success_at": "2026-08-27 09:53:17",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:38"
+        "attempted_at": "2026-08-27 09:53:17"
       },
       "Booking.com": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:39",
+        "last_success_at": "2026-08-27 09:53:18",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:39"
+        "attempted_at": "2026-08-27 09:53:18"
       },
       "Expedia": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:41",
+        "last_success_at": "2026-08-27 09:53:19",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:41"
+        "attempted_at": "2026-08-27 09:53:19"
       },
       "Airbnb": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:42",
+        "last_success_at": "2026-08-27 09:53:20",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:42"
+        "attempted_at": "2026-08-27 09:53:20"
       },
       "Tripadvisor": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:43",
+        "last_success_at": "2026-08-27 09:53:21",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:43"
+        "attempted_at": "2026-08-27 09:53:21"
       },
       "Bloomberg Travel (GN)": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:44",
+        "last_success_at": "2026-08-27 09:53:21",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:44"
+        "attempted_at": "2026-08-27 09:53:21"
       },
       "Bloomberg Mobility (GN)": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:45",
+        "last_success_at": "2026-08-27 09:53:22",
         "item_count": 12,
-        "attempted_at": "2026-08-27 09:20:45"
+        "attempted_at": "2026-08-27 09:53:22"
       },
       "环球旅讯": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:30:23",
+        "last_success_at": "2026-08-27 10:00:04",
         "item_count": 63,
-        "attempted_at": "2026-08-27 09:30:23",
+        "attempted_at": "2026-08-27 10:00:04",
         "filter": {
           "raw": 63,
           "kept": 63,
@@ -3829,9 +3309,9 @@
       },
       "文旅部": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:30:28",
+        "last_success_at": "2026-08-27 10:00:06",
         "item_count": 10,
-        "attempted_at": "2026-08-27 09:30:28",
+        "attempted_at": "2026-08-27 10:00:06",
         "filter": {
           "raw": 10,
           "kept": 6,
@@ -3844,9 +3324,9 @@
       },
       "交通运输部": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:30:33",
+        "last_success_at": "2026-08-27 10:00:10",
         "item_count": 10,
-        "attempted_at": "2026-08-27 09:30:33",
+        "attempted_at": "2026-08-27 10:00:10",
         "filter": {
           "raw": 10,
           "kept": 1,
@@ -3860,9 +3340,9 @@
       },
       "中国民航网": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:30:36",
+        "last_success_at": "2026-08-27 10:00:12",
         "item_count": 2,
-        "attempted_at": "2026-08-27 09:30:36",
+        "attempted_at": "2026-08-27 10:00:12",
         "filter": {
           "raw": 2,
           "kept": 2,
@@ -3872,9 +3352,9 @@
       },
       "披露易 (港交所)": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:30:40",
+        "last_success_at": "2026-08-27 10:00:16",
         "item_count": 16,
-        "attempted_at": "2026-08-27 09:30:40",
+        "attempted_at": "2026-08-27 10:00:16",
         "filter": {
           "raw": 16,
           "kept": 16,
@@ -3884,9 +3364,9 @@
       },
       "中国东航": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:30:41",
+        "last_success_at": "2026-08-27 10:00:17",
         "item_count": 15,
-        "attempted_at": "2026-08-27 09:30:41",
+        "attempted_at": "2026-08-27 10:00:17",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -3896,27 +3376,27 @@
       },
       "Booking Holdings IR": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:47",
+        "last_success_at": "2026-08-27 09:53:24",
         "item_count": 10,
-        "attempted_at": "2026-08-27 09:20:47"
+        "attempted_at": "2026-08-27 09:53:24"
       },
       "Expedia Group IR": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:48",
+        "last_success_at": "2026-08-27 09:53:25",
         "item_count": 10,
-        "attempted_at": "2026-08-27 09:20:48"
+        "attempted_at": "2026-08-27 09:53:25"
       },
       "Airbnb IR": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:20:48",
+        "last_success_at": "2026-08-27 09:53:26",
         "item_count": 10,
-        "attempted_at": "2026-08-27 09:20:48"
+        "attempted_at": "2026-08-27 09:53:26"
       },
       "36氪": {
         "status": "success",
-        "last_success_at": "2026-08-27 09:30:42",
+        "last_success_at": "2026-08-27 10:00:18",
         "item_count": 0,
-        "attempted_at": "2026-08-27 09:30:42",
+        "attempted_at": "2026-08-27 10:00:18",
         "filter": {
           "raw": 15,
           "kept": 0,
