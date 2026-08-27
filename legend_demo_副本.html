@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史大事图例 - 重设计方案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%);
+  min-height: 100vh;
+  padding: 40px 24px;
+  color: #1a1a2e;
+}
+
+.demo-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.demo-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== 方案一：金融编辑风格 ===== */
+.legend-editorial {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.04),
+    0 8px 24px rgba(0,0,0,0.06);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.legend-editorial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #E57373 0%, #E57373 20%,
+    #FFB74D 20%, #FFB74D 40%,
+    #BA68C8 40%, #BA68C8 60%,
+    #64B5F6 60%, #64B5F6 80%,
+    #81C784 80%, #81C784 100%
+  );
+}
+
+.legend-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.legend-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-title::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #4a4a6a 100%);
+  border-radius: 2px;
+}
+
+.legend-subtitle {
+  font-size: 12px;
+  color: #8b8fa3;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.legend-item {
+  position: relative;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #fafbfc;
+  border: 1px solid #eef0f4;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.legend-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.legend-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 8px 8px 0 0;
+}
+
+.legend-item:nth-child(1)::before { background: #E57373; }
+.legend-item:nth-child(2)::before { background: #FFB74D; }
+.legend-item:nth-child(3)::before { background: #BA68C8; }
+.legend-item:nth-child(4)::before { background: #64B5F6; }
+.legend-item:nth-child(5)::before { background: #81C784; }
+
+.legend-item:nth-child(1) .event-dot { background: #E57373; }
+.legend-item:nth-child(2) .event-dot { background: #FFB74D; }
+.legend-item:nth-child(3) .event-dot { background: #BA68C8; }
+.legend-item:nth-child(4) .event-dot { background: #64B5F6; }
+.legend-item:nth-child(5) .event-dot { background: #81C784; }
+
+.event-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.event-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: #8b8fa3;
+  letter-spacing: 0.3px;
+}
+
+.event-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ===== 方案二：极简时间轴风格 ===== */
+.legend-timeline {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.04),
+    0 8px 24px rgba(0,0,0,0.06);
+  margin-bottom: 40px;
+}
+
+.timeline-bar {
+  position: relative;
+  height: 48px;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.timeline-segment {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.timeline-segment:hover {
+  filter: brightness(1.08);
+}
+
+.timeline-segment:nth-child(1) { background: linear-gradient(135deg, #E57373 0%, #EF9A9A 100%); }
+.timeline-segment:nth-child(2) { background: linear-gradient(135deg, #FFB74D 0%, #FFCC80 100%); }
+.timeline-segment:nth-child(3) { background: linear-gradient(135deg, #BA68C8 0%, #CE93D8 100%); }
+.timeline-segment:nth-child(4) { background: linear-gradient(135deg, #64B5F6 0%, #90CAF9 100%); }
+.timeline-segment:nth-child(5) { background: linear-gradient(135deg, #81C784 0%, #A5D6A7 100%); }
+
+.timeline-segment:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 24px;
+  background: rgba(255,255,255,0.6);
+}
+
+.timeline-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+
+.timeline-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: #8b8fa3;
+}
+
+/* ===== 方案三：卡片悬浮风格 ===== */
+.legend-cards {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.04),
+    0 8px 24px rgba(0,0,0,0.06);
+}
+
+.cards-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.event-card {
+  flex: 1;
+  position: relative;
+  padding: 12px 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  transition: opacity 0.3s ease;
+}
+
+.event-card:hover::before {
+  opacity: 0.18;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.event-card:nth-child(1) { background: #FDF2F2; border: 1px solid #F5D5D5; }
+.event-card:nth-child(1)::before { background: #E57373; }
+.event-card:nth-child(2) { background: #FEF8EE; border: 1px solid #F8E5C5; }
+.event-card:nth-child(2)::before { background: #FFB74D; }
+.event-card:nth-child(3) { background: #F8F2FA; border: 1px solid #E8D5EE; }
+.event-card:nth-child(3)::before { background: #BA68C8; }
+.event-card:nth-child(4) { background: #F0F7FE; border: 1px solid #D5E8F8; }
+.event-card:nth-child(4)::before { background: #64B5F6; }
+.event-card:nth-child(5) { background: #F2FAF3; border: 1px solid #D5EED8; }
+.event-card:nth-child(5)::before { background: #81C784; }
+
+.card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+}
+
+.event-card:nth-child(1) .card-accent { background: #E57373; }
+.event-card:nth-child(2) .card-accent { background: #FFB74D; }
+.event-card:nth-child(3) .card-accent { background: #BA68C8; }
+.event-card:nth-child(4) .card-accent { background: #64B5F6; }
+.event-card:nth-child(5) .card-accent { background: #81C784; }
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.card-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.card-period {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: #6b7280;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .legend-grid { grid-template-columns: repeat(2, 1fr); }
+  .cards-row { flex-direction: column; }
+  .timeline-label { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+<div class="demo-container">
+  <div class="demo-title">历史大事图例 — 三种设计方案</div>
+
+  <!-- 方案一：金融编辑风格 -->
+  <div class="legend-editorial">
+    <div class="legend-header">
+      <div class="legend-title">历史大事</div>
+      <div class="legend-subtitle">MARKET EVENTS TIMELINE</div>
+    </div>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="event-name"><span class="event-dot"></span>Covid 疫情</div>
+        <div class="event-date">2020.01 — 2022.12</div>
+      </div>
+      <div class="legend-item">
+        <div class="event-name"><span class="event-dot"></span>俄乌战争</div>
+        <div class="event-date">2022.02 — 2022.06</div>
+      </div>
+      <div class="legend-item">
+        <div class="event-name"><span class="event-dot"></span>以哈战争</div>
+        <div class="event-date">2023.10 — 2024.03</div>
+      </div>
+      <div class="legend-item">
+        <div class="event-name"><span class="event-dot"></span>以伊十二日战争</div>
+        <div class="event-date">2025.06 — 2025.08</div>
+      </div>
+      <div class="legend-item">
+        <div class="event-name"><span class="event-dot"></span>美以伊战争</div>
+        <div class="event-date">2026.03 — 2026.06</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 方案二：极简时间轴风格 -->
+  <div class="legend-timeline">
+    <div class="legend-header">
+      <div class="legend-title">历史大事</div>
+    </div>
+    <div class="timeline-bar">
+      <div class="timeline-segment"><span class="timeline-label">Covid</span></div>
+      <div class="timeline-segment"><span class="timeline-label">俄乌战争</span></div>
+      <div class="timeline-segment"><span class="timeline-label">以哈战争</span></div>
+      <div class="timeline-segment"><span class="timeline-label">以伊战争</span></div>
+      <div class="timeline-segment"><span class="timeline-label">美以伊战争</span></div>
+    </div>
+    <div class="timeline-dates">
+      <span>2020.01</span>
+      <span>2022.06</span>
+      <span>2024.03</span>
+      <span>2025.08</span>
+      <span>2026.06</span>
+    </div>
+  </div>
+
+  <!-- 方案三：卡片悬浮风格 -->
+  <div class="legend-cards">
+    <div class="legend-header">
+      <div class="legend-title">历史大事</div>
+    </div>
+    <div class="cards-row">
+      <div class="event-card">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-name">Covid 疫情</div>
+          <div class="card-period">2020.01 - 2022.12</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-name">俄乌战争</div>
+          <div class="card-period">2022.02 - 2022.06</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-name">以哈战争</div>
+          <div class="card-period">2023.10 - 2024.03</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-name">以伊十二日</div>
+          <div class="card-period">2025.06 - 2025.08</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-name">美以伊战争</div>
+          <div class="card-period">2026.03 - 2026.06</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

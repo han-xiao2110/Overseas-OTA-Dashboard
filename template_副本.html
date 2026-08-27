@@ -1,0 +1,3010 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[CICC Internet] Overseas OTA Financial Performance Dashboard</title>
+<!--__ECHARTS_PRELOAD__-->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:clip}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f5f5f5;color:#333;padding:16px;max-width:100vw}
+.header{text-align:center;margin-bottom:8px;position:sticky;top:0;z-index:100;background:#f5f5f5;padding:6px 0}
+.dash-title{font-size:22px;font-weight:700;color:#1a1a1a;letter-spacing:.5px}
+.dash-authors{font-size:12px;color:#888;margin-top:4px;line-height:1.6}
+.tab-bar{display:flex;gap:0;margin:0 auto 12px;max-width:1600px;border-bottom:2px solid #ddd;position:sticky;top:52px;z-index:99;background:#f5f5f5}
+.tab-bar button{padding:6px 20px;border:none;background:none;color:#666;font-size:14px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap}
+.tab-bar button.active{color:#1a1a1a;border-bottom-color:#1a1a1a;font-weight:600}
+.tab-bar button:hover:not(.active){color:#333;background:#f0f0f0}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.dashboard{display:grid;grid-template-columns:1fr;gap:16px;max-width:1600px;margin:0 auto;width:100%}
+.chart-section{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:16px 20px;overflow:hidden}
+.ev-card{flex:1;position:relative;padding:10px 12px 10px 16px;border-radius:9px;border:1px solid;cursor:default;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s;overflow:hidden;min-width:0}
+.ev-card:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(20,20,31,.12)}
+.ev-card .acc{position:absolute;left:0;top:0;bottom:0;width:4px}
+.ev-card .nm{font-size:12px;font-weight:700;color:#1a1a2e;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative}
+.ev-card .dt{font-size:10px;color:#8b8fa3;margin-top:3px;font-variant-numeric:tabular-nums;position:relative}
+@media(max-width:768px){
+  #periodLabelBar{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  #periodLabelBar::-webkit-scrollbar{display:none}
+  .ev-card{flex:0 0 auto;min-width:130px}
+}
+.chart-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+.chart-title{font-size:15px;font-weight:600;color:#333}
+.chart-unit{font-size:11px;color:#999;font-weight:400;margin-left:4px}
+.btn-group{display:flex;gap:0;flex-shrink:0}
+.btn-group button{padding:4px 14px;border:1px solid #d0d0d0;background:#fff;color:#666;cursor:pointer;font-size:12px;transition:all .2s;outline:none}
+.btn-group button:first-child{border-radius:4px 0 0 4px}
+.btn-group button:last-child{border-radius:0 4px 4px 0}
+.btn-group button+button{border-left:none}
+.btn-group button.active{background:#333;color:#fff;border-color:#333}
+.btn-group button:hover:not(.active){background:#f0f0f0}
+.chart-box{width:100%;height:360px;max-width:100%}
+.err-msg{padding:40px;text-align:center;color:#666;font-size:14px}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.data-table th{background:#f8f8f8;padding:8px 12px;text-align:left;font-weight:600;border-bottom:2px solid #e0e0e0;white-space:nowrap}
+.data-table td{padding:8px 12px;border-bottom:1px solid #eee;white-space:nowrap}
+.data-table tr:hover{background:#fafafa}
+.info-card{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:20px 24px;margin-bottom:16px}
+.info-card h3{font-size:16px;font-weight:600;margin-bottom:12px;color:#1a1a1a}
+.info-card p{font-size:13px;line-height:1.8;color:#555}
+.info-card ul{font-size:13px;line-height:2;color:#555;padding-left:20px}
+.news-tab{background:none;border:none;padding:10px 20px;font-size:14px;font-weight:500;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.news-tab:hover{color:#1677ff}
+.news-tab.active{color:#1677ff;border-bottom-color:#1677ff}
+.news-filter{background:#f5f5f5;border:1px solid #e0e0e0;padding:4px 12px;border-radius:14px;font-size:12px;color:#666;cursor:pointer;transition:all .15s}
+.news-filter:hover{background:#e8f0fe;color:#1677ff}
+.news-filter.active{background:#1677ff;color:#fff;border-color:#1677ff}
+.news-list{max-height:500px;overflow-y:auto}
+.news-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f5;transition:background .15s}
+.news-item:last-child{border-bottom:none}
+.news-item:hover{background:#fafafa}
+.news-date{font-size:11px;color:#999;white-space:nowrap;min-width:70px;padding-top:2px}
+.news-content{flex:1;min-width:0}
+.news-title{font-size:13px;color:#1a1a1a;font-weight:500;line-height:1.5;display:block;margin-bottom:3px}
+.news-title a{color:inherit;text-decoration:none}
+.news-title a:hover{color:#1677ff;text-decoration:underline}
+.news-summary{font-size:12px;color:#666;line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.news-summary-none{color:#aaa;font-style:italic}
+.news-meta{font-size:11px;color:#999;display:flex;gap:8px;align-items:center}
+.news-tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:10px;font-weight:500}
+.news-tag-sec{background:#e6f7ff;color:#1890ff}
+.news-tag-form{background:#fff7e6;color:#fa8c16}
+.news-tag-src{background:#f6ffed;color:#52c41a}
+.news-tag-company{background:#f9f0ff;color:#722ed1}
+.news-tag-category{background:#e6f7ff;color:#1890ff}
+.news-empty{color:#999;font-size:13px;padding:20px;text-align:center}
+@media(min-width:1024px){
+  body{padding:24px}
+  .dashboard{grid-template-columns:1fr 1fr;gap:20px}
+  .chart-section.has-btn{grid-column:1/-1}
+  .chart-box{height:380px}
+  .dash-title{margin-bottom:4px;font-size:24px}
+  .tab-bar button{padding:8px 28px;font-size:15px}
+  .news-panel{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+  .news-panel>.info-card{margin-bottom:0}
+}
+@media(min-width:1600px){
+  body{padding:24px 36px}
+  .dashboard,.tab-bar{max-width:2200px}
+}
+@media(min-width:1920px){
+  .dashboard{grid-template-columns:repeat(3,1fr);gap:24px}
+  .chart-box{height:400px}
+  .chart-pair .chart-box{height:340px}
+  .news-panel{grid-template-columns:repeat(3,1fr);gap:24px}
+}
+@media(max-width:768px){
+  body{padding:12px}
+  .header{position:static}
+  .tab-bar{top:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tab-bar::-webkit-scrollbar{display:none}
+  #marketDashboard>.chart-section:first-child{top:42px !important}
+  .chart-section{padding:12px 14px}
+  .chart-box{height:300px}
+  .dash-title{font-size:18px}
+  .chart-title{font-size:13px}
+  .btn-group button{padding:3px 10px;font-size:11px}
+  .tab-bar button{padding:8px 16px;font-size:13px}
+  .data-table{font-size:11px}
+  .data-table th,.data-table td{padding:6px 8px}
+}
+.tr-legend{display:flex;gap:16px;overflow-x:auto;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tr-legend::-webkit-scrollbar{display:none}
+.tr-chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#333;cursor:pointer;flex:0 0 auto;white-space:nowrap;-webkit-user-select:none;user-select:none}
+.tr-chip .dot{width:10px;height:10px;border-radius:2px;display:inline-block}
+.tr-chip.off{opacity:.3}
+.section-header{grid-column:1/-1;font-size:16px;font-weight:700;color:#1a1a1a;padding:12px 0 0;border-bottom:2px solid #800000;margin-bottom:-4px}
+.chart-pair{display:grid;grid-template-columns:1fr;gap:16px;grid-column:1/-1}
+@media(min-width:1024px){.chart-pair{grid-template-columns:1fr 1fr;gap:20px}}
+.chart-pair .chart-box{height:300px}
+.chart-pair .chart-section{grid-column:auto}
+@media(max-width:768px){.chart-pair .chart-box{height:260px}}
+
+/* ====== MARKET TAB ====== */
+#marketDashboard>*{grid-column:1/-1}
+.ev-bar-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.ev-hint{font-size:10px;color:#aab0bc;font-weight:400}
+.ev-card{cursor:pointer}
+.ev-card.active{transform:translateY(-3px)}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="dash-title">[CICC Internet] Overseas OTA Financial Performance Dashboard</div>
+  <div class="dash-authors">王秋婷 qiuting.wang@cicc.com.cn &nbsp;&nbsp; 白洋 yang3.bai@cicc.com.cn</div>
+</div>
+
+<div class="tab-bar" id="tabBar">
+  <button class="active" data-tab="quarterly">Quarterly</button>
+  <button data-tab="annual">Annual</button>
+  <button data-tab="market">市场行情</button>
+  <button data-tab="shareholder">股东回报</button>
+  <button data-tab="st">用户数据(ST)</button>
+  <button data-tab="latest">最新信息</button>
+</div>
+
+<!-- Inline tab binding: runs immediately when parsed, independent of echarts loading -->
+<script>
+(function(){
+  function bindTabs(){
+    var btns = document.querySelectorAll('.tab-bar button');
+    for(var i=0;i<btns.length;i++){
+      btns[i].addEventListener('click', function(){
+        var tab = this.getAttribute('data-tab');
+        // Basic tab switching (show/hide) - always works regardless of echarts
+        var contents = document.querySelectorAll('.tab-content');
+        for(var j=0;j<contents.length;j++){ contents[j].classList.remove('active'); }
+        var target = document.getElementById('tab-'+tab);
+        if(target) target.classList.add('active');
+        // Update button states
+        for(var j=0;j<btns.length;j++){ btns[j].classList.remove('active'); }
+        this.classList.add('active');
+        // If echarts is available, let it handle lazy init & resize
+        if(typeof window.switchTab === 'function'){
+          try { window.switchTab(tab); } catch(e){}
+        }
+      });
+    }
+  }
+  if(document.querySelector('.tab-bar')){
+    bindTabs();
+  } else {
+    document.addEventListener('DOMContentLoaded', bindTabs);
+  }
+})();
+</script>
+
+<!-- ==================== TAB 1: QUARTERLY ==================== -->
+<div class="tab-content active" id="tab-quarterly">
+<div class="dashboard">
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Gross Bookings<span class="chart-unit">(US$ bn)</span></div>
+    <div class="btn-group" data-group="gb">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+    </div>
+  </div>
+  <div id="c_gb" class="chart-box"></div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Room Nights<span class="chart-unit">(mn)</span></div>
+    <div class="btn-group" data-group="rn">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+    </div>
+  </div>
+  <div id="c_rn" class="chart-box"></div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">ADR<span class="chart-unit">(US$)</span></div>
+    <div class="btn-group" data-group="adr">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+    </div>
+  </div>
+  <div id="c_adr" class="chart-box"></div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Revenue<span class="chart-unit">(US$ bn)</span></div>
+    <div class="btn-group" data-group="rev">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+    </div>
+  </div>
+  <div id="c_rev" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">Take Rate<span class="chart-unit">(%)</span></div></div>
+  <div id="c_tr" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">BKNG Take Rate by Quarter<span class="chart-unit">(%)</span></div></div>
+  <div id="lg_bkng_tr" class="tr-legend"></div>
+  <div id="c_bkng_tr" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">EXPE Take Rate by Quarter<span class="chart-unit">(%)</span></div></div>
+  <div id="lg_expe_tr" class="tr-legend"></div>
+  <div id="c_expe_tr" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">ABNB Take Rate by Quarter<span class="chart-unit">(%)</span></div></div>
+  <div id="lg_abnb_tr" class="tr-legend"></div>
+  <div id="c_abnb_tr" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">GPM</div></div>
+  <div id="c_gpm" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">Sales and Marketing<span class="chart-unit">(% Sales)</span></div></div>
+  <div id="c_sales_marketing" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">General &amp; Administration<span class="chart-unit">(% Sales)</span></div></div>
+  <div id="c_ga" class="chart-box"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header"><div class="chart-title">Technology &amp; Content<span class="chart-unit">(% Sales)</span></div></div>
+  <div id="c_tech_content" class="chart-box"></div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Adjusted EBITDA<span class="chart-unit">(US$ mn)</span></div>
+    <div class="btn-group" data-group="ebitda">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="margin">margin</button>
+    </div>
+  </div>
+  <div id="c_ebitda" class="chart-box"></div>
+</div>
+
+</div><!-- /dashboard quarterly -->
+</div>
+
+<!-- ==================== TAB 2: ANNUAL ==================== -->
+<div class="tab-content" id="tab-annual">
+<div class="dashboard" id="annualDashboard">
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Gross Bookings<span class="chart-unit">(US$ mn)</span></div>
+    <div class="btn-group" data-group="ann_gb">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+      <button data-mode="share">share</button>
+    </div>
+  </div>
+  <div id="c_ann_gb" class="chart-box"></div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Room Nights<span class="chart-unit">(mn)</span></div>
+    <div class="btn-group" data-group="ann_rn">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+      <button data-mode="share">share</button>
+    </div>
+  </div>
+  <div id="c_ann_rn" class="chart-box"></div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">ADR<span class="chart-unit">(US$)</span></div>
+    <div class="btn-group" data-group="ann_adr">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+    </div>
+  </div>
+  <div id="c_ann_adr" class="chart-box"></div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Revenue<span class="chart-unit">(US$ mn)</span></div>
+    <div class="btn-group" data-group="ann_rev">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="vs2019">vs 2019</button>
+      <button data-mode="share">share</button>
+    </div>
+  </div>
+  <div id="c_ann_rev" class="chart-box"></div>
+</div>
+
+<div class="section-header">By Products</div>
+<div class="chart-pair">
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">BKNG Gross Bookings Contribution<span class="chart-unit">(by products)</span></div>
+  </div>
+  <div id="c_ann_bkng_prod" class="chart-box"></div>
+</div>
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">EXPE Gross Bookings Contribution<span class="chart-unit">(by products)</span></div>
+  </div>
+  <div id="c_ann_expe_prod" class="chart-box"></div>
+</div>
+</div>
+
+<div class="section-header">By Region</div>
+<div class="chart-pair">
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">BKNG Room Nights Contribution<span class="chart-unit">(by region)</span></div>
+  </div>
+  <div id="c_ann_bkng_region" class="chart-box"></div>
+</div>
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">ABNB Room Nights Contribution<span class="chart-unit">(by region)</span></div>
+  </div>
+  <div id="c_ann_abnb_region" class="chart-box"></div>
+</div>
+</div>
+
+<div class="section-header">Domestic vs International</div>
+<div class="chart-pair">
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">BKNG Room Nights Contribution<span class="chart-unit">(Domestic vs International)</span></div>
+  </div>
+  <div id="c_ann_bkng_di" class="chart-box"></div>
+</div>
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">EXPE Revenue Contribution<span class="chart-unit">(Domestic vs International)</span></div>
+  </div>
+  <div id="c_ann_expe_di" class="chart-box"></div>
+</div>
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">ABNB Room Nights Contribution<span class="chart-unit">(Domestic vs International)</span></div>
+  </div>
+  <div id="c_ann_abnb_di" class="chart-box"></div>
+</div>
+</div>
+
+<div class="chart-section has-btn">
+  <div class="chart-header">
+    <div class="chart-title">Adjusted EBITDA<span class="chart-unit">(US$ mn)</span></div>
+    <div class="btn-group" data-group="ann_ebitda">
+      <button class="active" data-mode="abs">abs</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="margin">margin</button>
+    </div>
+  </div>
+  <div id="c_ann_ebitda" class="chart-box"></div>
+</div>
+
+</div><!-- /dashboard annual -->
+</div>
+
+<!-- ==================== TAB 3: 市场行情 ==================== -->
+<div class="tab-content" id="tab-market">
+<div class="dashboard" id="marketDashboard">
+
+<!-- Period label bar - event cards, sticky -->
+<div class="chart-section" style="padding:12px 20px 14px;position:sticky;top:84px;z-index:98;background:#fff">
+  <div class="ev-bar-head">
+    <span style="font-size:13px;font-weight:600;color:#333">历史大事</span>
+    <span class="ev-hint">悬停卡片：三图同步高亮该区间 &middot; 点击卡片：缩放至该时段，再次点击复位</span>
+  </div>
+  <div id="periodLabelBar" style="display:flex;gap:10px"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">Booking Holdings (BKNG)<span class="chart-unit">股价 (USD)</span></div>
+  </div>
+  <div id="c_stock_bkng" class="chart-box" style="height:330px"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">Expedia Group (EXPE)<span class="chart-unit">股价 (USD)</span></div>
+  </div>
+  <div id="c_stock_expe" class="chart-box" style="height:330px"></div>
+</div>
+
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">Airbnb (ABNB)<span class="chart-unit">股价 (USD)</span></div>
+  </div>
+  <div id="c_stock_abnb" class="chart-box" style="height:330px"></div>
+</div>
+
+</div><!-- /dashboard market -->
+</div>
+
+<!-- ==================== TAB 4: 股东回报 ==================== -->
+<div class="tab-content" id="tab-shareholder">
+<div class="dashboard" id="shDashboard">
+
+<div class="chart-section" style="grid-column:1/-1">
+  <div class="chart-header"><div class="chart-title">回购计划统计</div></div>
+  <div id="buybackProgramTable" style="overflow-x:auto"></div>
+</div>
+
+<div class="chart-section" style="grid-column:1/-1">
+  <div class="chart-header"><div class="chart-title">季度明细<span class="chart-unit">(all in million unless otherwise noted)</span></div></div>
+  <div id="quarterlyDetailTable" style="overflow-x:auto"></div>
+</div>
+
+</div><!-- /dashboard shareholder -->
+</div>
+
+<!-- ==================== TAB 5: 最新信息 ==================== -->
+<div class="tab-content" id="tab-latest">
+<div class="dashboard" id="latestDashboard">
+
+<div class="info-card" style="grid-column:1/-1">
+  <h3 style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#52c41a"></span>实时资讯 <span id="newsUpdateTime" style="font-size:12px;color:#999;font-weight:normal;margin-left:auto"></span></h3>
+  <div style="display:flex;gap:0;border-bottom:1px solid #f0f0f0;margin-bottom:16px;margin-top:4px">
+    <button class="news-tab active" data-newstab="intl">🌍 国际 · 每日更新</button>
+    <button class="news-tab" data-newstab="domestic">🇨🇳 国内 · 每周更新</button>
+  </div>
+</div>
+
+<div id="newsIntlPanel" class="news-panel">
+  <div class="info-card">
+    <h3>🏢 核心公司动态（BKNG / EXPE / ABNB · 官方 IR）</h3>
+    <div id="coreCompanyList" class="news-list"></div>
+  </div>
+
+  <div class="info-card">
+    <h3>📰 国际行业新闻</h3>
+    <div id="intlIndustryList" class="news-list"></div>
+  </div>
+
+  <div class="info-card">
+    <h3>📋 披露与文件（SEC / IR 财报 / 股东信 / 业绩演示）</h3>
+    <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+      <button class="news-filter active" data-secfilter="all">全部</button>
+      <button class="news-filter" data-secfilter="BKNG">BKNG</button>
+      <button class="news-filter" data-secfilter="EXPE">EXPE</button>
+      <button class="news-filter" data-secfilter="ABNB">ABNB</button>
+    </div>
+    <div id="intlDisclosureList" class="news-list"></div>
+  </div>
+</div>
+
+<div id="newsDomesticPanel" class="news-panel" style="display:none">
+  <div class="info-card">
+    <h3>🏨 国内行业新闻（携程 / 同程 / 飞猪 / 美团 / 华住 / 东航 等）</h3>
+    <div id="domIndustryList" class="news-list"></div>
+  </div>
+
+  <div class="info-card">
+    <h3>📋 国内披露与文件（披露易 / 民航局 / 文旅部 / 交通运输部）</h3>
+    <div id="domDisclosureList" class="news-list"></div>
+  </div>
+</div>
+
+</div><!-- /dashboard latest -->
+</div>
+
+<!-- ==================== TAB 6: USER DATA (ST) ==================== -->
+<div class="tab-content" id="tab-st">
+<div class="dashboard st-dashboard">
+
+<!-- Level 2: 按国家 / 按App -->
+<div class="info-card" style="grid-column:1/-1">
+  <h3>用户数据 (Sensor Tower) <span style="font-size:12px;color:#999;font-weight:normal;margin-left:8px">数据来源：Sensor Tower Intelligence</span></h3>
+  <div style="display:flex;gap:0;margin-top:8px">
+    <button class="st-tab active" data-sttab="country">🌍 按市场划分</button>
+    <button class="st-tab" data-sttab="app">📱 按App划分</button>
+  </div>
+</div>
+
+<!-- ======= 按国家 Panel ======= -->
+<div id="stCountryPanel">
+
+<!-- Metric tabs: MAU / DAU / 下载量 -->
+<div class="info-card">
+  <div style="display:flex;gap:0">
+    <button class="st-metric active" data-metric="MAU">MAU</button>
+    <button class="st-metric" data-metric="DAU">DAU</button>
+    <button class="st-metric" data-metric="下载量">下载量</button>
+  </div>
+</div>
+
+<!-- 全球图表 -->
+<div class="chart-section">
+  <div class="chart-header">
+    <div class="chart-title">全球 <span class="chart-unit" id="stGlobalUnit">(Mn)</span></div>
+    <div class="btn-group" data-group="st_global">
+      <button class="active" data-mode="abs">绝对值(Mn)</button>
+      <button data-mode="yoy">YoY</button>
+      <button data-mode="share">Share</button>
+    </div>
+  </div>
+  <div class="chart-box" id="stGlobalChart"></div>
+</div>
+
+<!-- 大洲图表 - 全宽一列 -->
+<div style="grid-column:1/-1;margin-top:8px">
+  <div style="display:grid;grid-template-columns:1fr;gap:20px" id="stContinentsGrid"></div>
+</div>
+
+<!-- 国家/地区 折叠区域 -->
+<div class="info-card" style="grid-column:1/-1;padding:12px 20px">
+  <div style="display:flex;align-items:center;cursor:pointer;user-select:none" id="stCountryToggle">
+    <span id="stCountryArrow" style="display:inline-block;transition:transform 0.2s;font-size:12px;margin-right:8px">▶</span>
+    <h3 style="margin:0">国家/地区明细</h3>
+    <span style="font-size:12px;color:#999;margin-left:8px">点击展开 9 个重点市场</span>
+  </div>
+  <div id="stCountriesGrid" style="display:none;margin-top:12px;grid-template-columns:1fr;gap:20px"></div>
+</div>
+
+</div><!-- /stCountryPanel -->
+
+<!-- ======= 按App Panel ======= -->
+<div id="stAppPanel" style="display:none">
+
+<div class="info-card" style="grid-column:1/-1">
+  <h3>OTA App 用户数据对比</h3>
+  <p style="color:#888;font-size:12px;margin-top:4px">点击 App 切换，对比其在全球与 6 大洲的 MAU / DAU / 下载量 趋势</p>
+</div>
+
+<!-- App selector + chart area -->
+<div id="stAppChartArea"></div>
+
+</div><!-- /stAppPanel -->
+
+</div><!-- /dashboard st -->
+</div>
+
+<!-- ST Styles -->
+<style>
+/* ST Dashboard - full width, single column */
+.st-dashboard{grid-template-columns:1fr !important;max-width:none !important;width:100% !important;margin:0 !important}
+.st-dashboard .chart-section{grid-column:1/-1}
+.st-dashboard .info-card{grid-column:1/-1}
+.st-dashboard #stCountryPanel{grid-column:1/-1}
+.st-dashboard #stAppPanel{grid-column:1/-1}
+.st-dashboard .chart-box{height:360px}
+.st-dashboard #stGlobalChart{height:400px !important}
+.st-dashboard .st-country-chart-box{height:320px}
+@media(min-width:1400px){
+  .st-dashboard .chart-box{height:380px}
+  .st-dashboard #stGlobalChart{height:440px !important}
+  .st-dashboard .st-country-chart-box{height:340px}
+}
+@media(max-width:1024px){
+  .st-dashboard .chart-box{height:340px}
+  .st-dashboard #stGlobalChart{height:360px !important}
+  .st-dashboard .st-country-chart-box{height:300px}
+}
+@media(max-width:768px){
+  .st-dashboard .chart-box{height:280px}
+  .st-dashboard #stGlobalChart{height:300px !important}
+  .st-dashboard .st-country-chart-box{height:260px}
+}
+
+.st-tab{background:none;border:none;padding:10px 24px;font-size:14px;font-weight:500;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.st-tab:hover{color:#1677ff}
+.st-tab.active{color:#1677ff;border-bottom-color:#1677ff}
+.st-metric{background:#f8f8f8;border:1px solid #e0e0e0;padding:6px 20px;font-size:13px;font-weight:500;color:#666;cursor:pointer;transition:all .2s}
+.st-metric:first-child{border-radius:6px 0 0 6px}
+.st-metric:last-child{border-radius:0 6px 6px 0}
+.st-metric+button{border-left:none}
+.st-metric.active{background:#1677ff;color:#fff;border-color:#1677ff}
+.st-country-chart{background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:12px 14px}
+.st-country-chart-title{font-size:13px;font-weight:600;color:#333;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+.st-country-chart-title .mini-btn-group{display:flex;gap:0}
+.st-country-chart-title .mini-btn-group button{padding:2px 8px;font-size:11px;border:1px solid #ddd;background:#fff;cursor:pointer;border-radius:3px}
+.st-country-chart-title .mini-btn-group button.active{background:#333;color:#fff;border-color:#333}
+.st-country-chart-box{width:100%;height:240px}
+@media(max-width:1200px){#stContinentsGrid,#stCountriesGrid{grid-template-columns:1fr}}
+@media(max-width:768px){#stContinentsGrid,#stCountriesGrid{grid-template-columns:1fr}}
+
+/* ===== ST 按App划分: 横排 App 选择 chips + 工具栏 ===== */
+.st-app-wrap{display:flex;flex-direction:column;gap:12px;grid-column:1/-1}
+.st-app-rail{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.st-app-chip{display:inline-flex;align-items:center;gap:7px;padding:0 16px;height:34px;border-radius:999px;border:1px solid #e8e8ee;background:#f7f8fa;color:#3a3f4a;font-size:13px;font-weight:600;cursor:pointer;transition:all .18s ease;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.st-app-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:#c3c8d4;transition:all .18s ease}
+.st-app-chip:hover{border-color:#9dbbff;background:#f0f6ff;color:#1677ff}
+.st-app-chip:hover::before{background:#9dbbff}
+.st-app-chip.active{background:#1677ff;border-color:#1677ff;color:#fff;box-shadow:0 2px 10px rgba(22,119,255,.30)}
+.st-app-chip.active::before{background:#fff}
+.st-app-chip:focus-visible{outline:2px solid #1677ff;outline-offset:2px}
+.st-app-rail .st-app-rail-cap{font-size:12px;font-weight:600;color:#98a0ad;margin:0 4px 0 6px;letter-spacing:.5px}
+.st-app-panel{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:14px 16px 10px}
+.st-app-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.st-app-title{font-size:15px;font-weight:700;color:#23262e;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.st-app-title .st-app-sub{font-size:12px;font-weight:500;color:#98a0ad}
+.st-app-ctrls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.st-seg{display:flex;background:#f2f3f6;border-radius:8px;padding:3px;gap:2px}
+.st-seg button{border:none;background:transparent;color:#6b7280;font-size:12px;font-weight:600;padding:4px 12px;border-radius:6px;cursor:pointer;transition:all .16s ease;white-space:nowrap}
+.st-seg button:hover{color:#1677ff}
+.st-seg button.active{background:#fff;color:#1677ff;box-shadow:0 1px 4px rgba(20,24,40,.12)}
+.st-seg button:focus-visible{outline:2px solid #1677ff;outline-offset:1px}
+#stAppChart{width:100%}
+@media(max-width:768px){
+  .st-app-rail{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .st-app-rail::-webkit-scrollbar{display:none}
+  .st-app-chip{scroll-snap-align:start;flex:0 0 auto}
+  .st-app-rail .st-app-rail-cap{flex:0 0 auto}
+  .st-app-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .st-app-ctrls{width:100%}
+  .st-seg{flex:1}
+  .st-seg button{flex:1;text-align:center;padding:5px 6px}
+}
+</style>
+
+<!--__ECHARTS__-->
+<!--__ST_DATA_INLINE__-->
+<script>
+var RAW = /*__DATA_PLACEHOLDER__*/{};
+
+/* ── 移动端检测与优化 ── */
+var _isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+var _maxDPR = _isMobile ? 2 : 3;  // 移动端限制 DPR，减少 Canvas 内存
+var _startTime = Date.now();
+
+/* echarts.init 包装器：统一移动端优化 */
+function ecInit(dom, theme, opts){
+  if(!window.echarts) return null;
+  if(!opts) opts = {};
+  if(_isMobile && !opts.devicePixelRatio){
+    opts.devicePixelRatio = Math.min(window.devicePixelRatio || 1, _maxDPR);
+  }
+  try {
+    return echarts.init(dom, theme, opts);
+  } catch(e) {
+    console.warn("echarts.init failed:", e);
+    return null;
+  }
+}
+
+/* 批量初始化辅助：拆分任务避免长时间阻塞主线程 */
+var _initQueue = [];
+var _initRunning = false;
+function en(fn){ _initQueue.push(fn); }
+function runBatch(){
+  if(_initRunning) return;
+  _initRunning = true;
+  var batchSize = _isMobile ? 2 : 4;  // 移动端每批只初始化 2 张图
+  function step(){
+    var count = 0;  // 每批重新计数，否则 count 不重置导致后续批次空转
+    while(count < batchSize && _initQueue.length){
+      var fn = _initQueue.shift();
+      count++;
+      try { fn(); } catch(e){ console.warn("batch init error:", e); }
+    }
+    if(_initQueue.length){
+      // 让出主线程，再处理下一批
+      setTimeout(step, 16);  // 约一帧
+    } else {
+      _initRunning = false;
+      console.log("Chart init completed in", (Date.now()-_startTime)+"ms");
+      // 触发完成事件
+      try { window.dispatchEvent(new CustomEvent('chartsReady')); } catch(e){}
+    }
+  }
+  step();
+}
+/* ── END 移动端优化 ── */
+
+function cleanArr(a){
+  return a.map(function(v){
+    if(v===null||v===undefined) return null;
+    if(typeof v==="string"){
+      if(v==="n.m."||v==="#DIV/0!"||v==="#REF!"||v==="#VALUE!"||v==="#N/A"||v==="#NAME?") return null;
+      var n=parseFloat(v);
+      return isNaN(n)?null:n;
+    }
+    return v;
+  });
+}
+function cleanObj(o){
+  var r={};
+  for(var k in o){if(o.hasOwnProperty(k)) r[k]=cleanArr(o[k]);}
+  return r;
+}
+
+var DATES, gb, rn, adr, rev, tr, bkngTR, expeTR, abnbTR, ebitda;
+var TR_QUARTERS;
+var charts={};
+var modes={gb:"abs",rn:"abs",adr:"abs",rev:"abs",ebitda:"abs",ann_rev:"abs",ann_ebitda:"abs",ann_gb:"abs",ann_rn:"abs",ann_adr:"abs"};
+
+var CC={Booking:"#EA4335",Expedia:"#FBBC04",Airbnb:"#4285F4"};
+var COS=["Booking","Expedia","Airbnb"];
+var YR_COLORS=["#EA4335","#FBBC04","#4285F4","#34A853","#A142F4","#FF6D01","#00ACC1","#D81B60"];
+var YEARS=["2019","2020","2021","2022","2023","2024","2025","2026"];
+
+/* Annual data */
+var ANN_YEARS=["2018","2019","2020","2021","2022","2023","2024","2025"];
+var ANN_DATA=/*__ANN_PLACEHOLDER__*/{};
+
+/* Market / Shareholder / Latest data */
+var MKT_DATA=/*__MKT_PLACEHOLDER__*/{};
+
+function dz(start){
+  var s = start!==undefined?start:57;
+  return [
+    {type:"slider",start:s,end:100,bottom:8,height:22},
+    {type:"inside",start:s,end:100}
+  ];
+}
+function tt(){
+  return {trigger:"axis",backgroundColor:"rgba(255,255,255,.96)",borderColor:"#ddd",borderWidth:1,textStyle:{fontSize:12,color:"#333"}};
+}
+function leg(){
+  return {show:true,top:0,left:"center",textStyle:{fontSize:11}};
+}
+function fmtComma(v,d){
+  if(v===null||v===undefined) return "-";
+  d=d===undefined?0:d;
+  return v.toFixed(d).replace(/\B(?=(\d{3})+(?!\d))/g,",");
+}
+
+function ttFmt(params,unit){
+  if(!params||!params.length) return "";
+  var s="<div style=\"font-weight:600;margin-bottom:4px\">"+params[0].axisValue+"</div>";
+  params.forEach(function(p){
+    var v=p.value,txt;
+    if(v===null||v===undefined) txt="-";
+    else if(unit==="pct") txt=(v*100).toFixed(1)+"%";
+    else if(unit==="dollar") txt="$"+v.toFixed(1);
+    else if(unit==="bn") txt="$"+v.toFixed(1)+"bn";
+    else if(unit==="mn") txt=fmtComma(v,0)+"mn";
+    else if(unit==="mn_d") txt="$"+fmtComma(v,0)+"m";
+    else if(unit==="share") txt=(v*100).toFixed(1)+"%";
+    else if(unit==="pct1") txt=v.toFixed(1)+"%";
+    else txt=v.toFixed(1);
+    s+="<div style=\"display:flex;align-items:center;gap:6px;margin:2px 0\">"+p.marker+"<span>"+p.seriesName+": <b>"+txt+"</b></span></div>";
+  });
+  return s;
+}
+
+function dg(){
+  return {left:60,right:24,top:40,bottom:56};
+}
+
+/* ====== QUARTERLY CHARTS ====== */
+function renderGB(){
+  var m=modes.gb,d=gb[m],isBar=(m==="abs");
+  var ser=COS.map(function(c){return{name:c,type:isBar?"bar":"line",data:d[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:4,connectNulls:true};});
+  var unit=m==="abs"?"bn":"pct";
+  var axF=m==="abs"?function(v){return fmtComma(v,0);}:function(v){return(v*100).toFixed(0)+"%";};
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,unit);}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:DATES,boundaryGap:isBar},yAxis:{type:"value",axisLabel:{formatter:axF},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},dataZoom:dz(),series:ser};
+  if(!charts.gb) charts.gb=ecInit(document.getElementById("c_gb"));
+  charts.gb.setOption(o,true);
+}
+
+function renderRN(){
+  var m=modes.rn,d=rn[m],isBar=(m==="abs");
+  var ser=COS.map(function(c){return{name:c,type:isBar?"bar":"line",data:d[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:4,connectNulls:true};});
+  var unit=m==="abs"?"mn":"pct";
+  var axF=m==="abs"?function(v){return fmtComma(v,0);}:function(v){return(v*100).toFixed(0)+"%";};
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,unit);}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:DATES,boundaryGap:isBar},yAxis:{type:"value",axisLabel:{formatter:axF},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},dataZoom:dz(),series:ser};
+  if(!charts.rn) charts.rn=ecInit(document.getElementById("c_rn"));
+  charts.rn.setOption(o,true);
+}
+
+function renderADR(){
+  var m=modes.adr,d=adr[m];
+  var ser=COS.map(function(c){return{name:c,type:"line",data:d[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:4,connectNulls:true};});
+  var unit=m==="abs"?"dollar":"pct";
+  var axF=m==="abs"?function(v){return"$"+fmtComma(v,0);}:function(v){return(v*100).toFixed(0)+"%";};
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,unit);}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:DATES,boundaryGap:false},yAxis:{type:"value",axisLabel:{formatter:axF},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},dataZoom:dz(),series:ser};
+  if(!charts.adr) charts.adr=ecInit(document.getElementById("c_adr"));
+  charts.adr.setOption(o,true);
+}
+
+function renderRev(){
+  var m=modes.rev,d=rev[m],isBar=(m==="abs");
+  var ser=COS.map(function(c){return{name:c,type:isBar?"bar":"line",data:d[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:4,connectNulls:true};});
+  var unit=m==="abs"?"bn":"pct";
+  var axF=m==="abs"?function(v){return"$"+v.toFixed(1)+"bn";}:function(v){return(v*100).toFixed(0)+"%";};
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,unit);}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:DATES,boundaryGap:isBar},yAxis:{type:"value",axisLabel:{formatter:axF},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},dataZoom:dz(),series:ser};
+  if(!charts.rev) charts.rev=ecInit(document.getElementById("c_rev"));
+  charts.rev.setOption(o,true);
+}
+
+function renderTR(){
+  var keys=Object.keys(tr);
+  var ser=keys.map(function(k,i){return{name:k,type:"line",data:tr[k],itemStyle:{color:CC[COS[i]]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:4,connectNulls:true};});
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:DATES,boundaryGap:false},yAxis:{type:"value",axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},dataZoom:dz(),series:ser};
+  if(!charts.tr) charts.tr=ecInit(document.getElementById("c_tr"));
+  charts.tr.setOption(o,true);
+}
+
+function renderPctChart(containerId, chartKey, data){
+  var ser=COS.map(function(c){return{name:c,type:"line",data:data[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:4,connectNulls:true};});
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:DATES,boundaryGap:false},yAxis:{type:"value",axisLabel:{formatter:function(v){return v.toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},dataZoom:dz(),series:ser};
+  if(!charts[chartKey]) charts[chartKey]=ecInit(document.getElementById(containerId));
+  charts[chartKey].setOption(o,true);
+}
+
+function renderTRQuarterly(containerId,chartKey,data,title){
+  var ser=YEARS.map(function(y,i){
+    return{name:y,type:"bar",data:data[y],itemStyle:{color:YR_COLORS[i]},barMaxWidth:24};
+  });
+  var o={
+    animation:false,
+    tooltip:Object.assign(tt(),{formatter:function(params){
+      if(!params||!params.length) return "";
+      var s="<div style=\"font-weight:600;margin-bottom:4px\">"+params[0].axisValue+"</div>";
+      params.forEach(function(p){var v=p.value;var txt=(v!==null&&v!==undefined)?(v*100).toFixed(1)+"%":"-";s+="<div style=\"display:flex;align-items:center;gap:6px;margin:2px 0\">"+p.marker+"<span>"+p.seriesName+": <b>"+txt+"</b></span></div>";});
+      return s;
+    }}),
+    legend:{show:false},
+    grid:{left:60,right:24,top:16,bottom:24},
+    xAxis:{type:"category",data:TR_QUARTERS,boundaryGap:true},
+    yAxis:{type:"value",axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},
+    series:ser
+  };
+  if(!charts[chartKey]) charts[chartKey]=ecInit(document.getElementById(containerId));
+  charts[chartKey].setOption(o,true);
+}
+
+function buildTRLegend(legendId,chartKey){
+  var wrap=document.getElementById(legendId);
+  if(!wrap) return;
+  wrap.innerHTML="";
+  var sel={};
+  YEARS.forEach(function(y){sel[y]=true;});
+  function sync(){
+    Array.prototype.forEach.call(wrap.children,function(ch){
+      var y=ch.getAttribute("data-year");
+      ch.className="tr-chip"+(sel[y]?"":" off");
+    });
+  }
+  YEARS.forEach(function(y,i){
+    var chip=document.createElement("span");
+    chip.className="tr-chip";
+    chip.setAttribute("data-year",y);
+    chip.innerHTML='<span class="dot" style="background:'+YR_COLORS[i]+'"></span>'+y;
+    chip.addEventListener("click",function(){
+      sel[y]=!sel[y];
+      var c=charts[chartKey];
+      if(c) c.dispatchAction({type:"legendToggleSelect",name:y});
+      sync();
+    });
+    wrap.appendChild(chip);
+  });
+  var c=charts[chartKey];
+  if(c){
+    c.on("legendselectchanged",function(ev){
+      if(ev&&ev.selected){for(var k in ev.selected){if(sel.hasOwnProperty(k)) sel[k]=!!ev.selected[k];} sync();}
+    });
+  }
+}
+
+function renderEBITDA(){
+  var m=modes.ebitda,d=ebitda[m],isBar=(m==="abs");
+  var ser=COS.map(function(c){return{name:c,type:isBar?"bar":"line",data:d[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:4,connectNulls:true};});
+  var unit=m==="abs"?"mn_d":"pct";
+  var axF;
+  if(m==="abs") axF=function(v){return fmtComma(v,0)+"m";};
+  else axF=function(v){return(v*100).toFixed(0)+"%";};
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,unit);}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:DATES,boundaryGap:isBar},yAxis:{type:"value",axisLabel:{formatter:axF},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},dataZoom:dz(),series:ser};
+  if(!charts.ebitda) charts.ebitda=ecInit(document.getElementById("c_ebitda"));
+  charts.ebitda.setOption(o,true);
+}
+
+/* ====== ANNUAL CHARTS ====== */
+function renderAnnChart(containerId,chartKey,metric,mode){
+  var d=ANN_DATA[metric];
+  if(!d) return;
+  var isBar=(mode==="abs");
+  // Extract flat arrays for current mode from nested structure
+  var flat={};
+  COS.forEach(function(c){flat[c]=d[c]?d[c][mode]:[];});
+  var f=filterYears(flat,COS);
+  var ser=COS.map(function(c){
+    var vals=f.data[c]||[];
+    return{name:c,type:isBar?"bar":"line",data:vals,itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:6,connectNulls:true};
+  });
+  var unit=(mode==="yoy"||mode==="margin")?"pct":"mn";
+  var axF;
+  if(mode==="abs") axF=function(v){return fmtComma(v,0);};
+  else if(mode==="yoy") axF=function(v){return(v*100).toFixed(0)+"%";};
+  else axF=function(v){return(v*100).toFixed(0)+"%";};
+  var ttU=(mode==="yoy"||mode==="margin")?"pct":"mn_d";
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,ttU);}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:isBar},yAxis:{type:"value",axisLabel:{formatter:axF},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+  if(!charts[chartKey]) charts[chartKey]=ecInit(document.getElementById(containerId));
+  charts[chartKey].setOption(o,true);
+}
+
+function renderAnnRev(){
+  var m=modes.ann_rev;
+  if(m==="share"){
+    var d=ANN_DATA.revenue;
+    var shareData={};
+    COS.forEach(function(c){shareData[c]=d[c].share;});
+    var f=filterYears(shareData,COS);
+    var ser=COS.map(function(c){return{name:c,type:"bar",stack:"share",data:f.data[c],itemStyle:{color:CC[c]},barMaxWidth:40};});
+    var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"share");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:true},yAxis:{type:"value",max:1,axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+    if(!charts.ann_rev) charts.ann_rev=ecInit(document.getElementById("c_ann_rev"));
+    charts.ann_rev.setOption(o,true);
+  } else if(m==="vs2019"){
+    var d=ANN_DATA.revenue;
+    var vsData={};
+    COS.forEach(function(c){vsData[c]=d[c].vs2019;});
+    var f=filterYears(vsData,COS);
+    var ser=COS.map(function(c){return{name:c,type:"line",data:f.data[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:6,connectNulls:true};});
+    var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:false},yAxis:{type:"value",axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+    if(!charts.ann_rev) charts.ann_rev=ecInit(document.getElementById("c_ann_rev"));
+    charts.ann_rev.setOption(o,true);
+  } else {
+    renderAnnChart("c_ann_rev","ann_rev","revenue",m);
+  }
+}
+function renderAnnEBITDA(){
+  var m=modes.ann_ebitda;
+  if(m==="margin"){
+    var d=ANN_DATA.ebitda_margin;
+    var f=filterYears(d,COS);
+    var ser=COS.map(function(c){return{name:c,type:"line",data:f.data[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:6,connectNulls:true};});
+    var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:false},yAxis:{type:"value",axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+    if(!charts.ann_ebitda) charts.ann_ebitda=ecInit(document.getElementById("c_ann_ebitda"));
+    charts.ann_ebitda.setOption(o,true);
+  } else if(m==="yoy"){
+    var d=ANN_DATA.ebitda;
+    var yoyData={};
+    COS.forEach(function(c){yoyData[c]=d[c]?d[c].yoy:[];});
+    var f=filterYears(yoyData,COS);
+    var ser=COS.map(function(c){return{name:c,type:"line",data:f.data[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:6,connectNulls:true};});
+    var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:false},yAxis:{type:"value",axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+    if(!charts.ann_ebitda) charts.ann_ebitda=ecInit(document.getElementById("c_ann_ebitda"));
+    charts.ann_ebitda.setOption(o,true);
+  } else {
+    renderAnnChart("c_ann_ebitda","ann_ebitda","ebitda","abs");
+  }
+}
+
+function renderAnnGB(){
+  var m=modes.ann_gb;
+  if(m==="share"){
+    var d=ANN_DATA.gb;
+    var shareData={};
+    COS.forEach(function(c){shareData[c]=d[c].share;});
+    var f=filterYears(shareData,COS);
+    var ser=COS.map(function(c){return{name:c,type:"bar",stack:"share",data:f.data[c],itemStyle:{color:CC[c]},barMaxWidth:40};});
+    var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"share");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:true},yAxis:{type:"value",max:1,axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+    if(!charts.ann_gb) charts.ann_gb=ecInit(document.getElementById("c_ann_gb"));
+    charts.ann_gb.setOption(o,true);
+  } else {
+    renderAnnChart("c_ann_gb","ann_gb","gb",m);
+  }
+}
+
+function renderAnnRN(){
+  var m=modes.ann_rn;
+  if(m==="share"){
+    var d=ANN_DATA.rn;
+    var shareData={};
+    COS.forEach(function(c){shareData[c]=d[c].share;});
+    var f=filterYears(shareData,COS);
+    var ser=COS.map(function(c){return{name:c,type:"bar",stack:"share",data:f.data[c],itemStyle:{color:CC[c]},barMaxWidth:40};});
+    var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"share");}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:true},yAxis:{type:"value",max:1,axisLabel:{formatter:function(v){return(v*100).toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+    if(!charts.ann_rn) charts.ann_rn=ecInit(document.getElementById("c_ann_rn"));
+    charts.ann_rn.setOption(o,true);
+  } else {
+    renderAnnChart("c_ann_rn","ann_rn","rn",m);
+  }
+}
+
+function renderAnnADR(){
+  var m=modes.ann_adr,d=ANN_DATA.adr;
+  var adrData={};
+  COS.forEach(function(c){adrData[c]=d[c][m];});
+  var f=filterYears(adrData,COS);
+  var ser=COS.map(function(c){return{name:c,type:"line",data:f.data[c],itemStyle:{color:CC[c]},lineStyle:{width:2},smooth:true,symbol:"circle",symbolSize:6,connectNulls:true};});
+  var axF,ttU;
+  if(m==="abs"){axF=function(v){return"$"+fmtComma(v,0);};ttU="dollar";}
+  else{axF=function(v){return(v*100).toFixed(0)+"%";};ttU="pct";}
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,ttU);}}),legend:leg(),grid:dg(),xAxis:{type:"category",data:f.years,boundaryGap:false},yAxis:{type:"value",axisLabel:{formatter:axF},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+  if(!charts.ann_adr) charts.ann_adr=ecInit(document.getElementById("c_ann_adr"));
+  charts.ann_adr.setOption(o,true);
+}
+
+var PROD_COLORS=["#EA4335","#FBBC04","#4285F4"];
+var REGION_COLORS=["#EA4335","#FBBC04","#4285F4","#34A853"];
+var DI_COLORS=["#EA4335","#4285F4"];
+
+/**
+ * Filter out years where ALL categories have null data.
+ * Returns {years, data} where data is an object with filtered arrays per category.
+ */
+function filterYears(src,catNames){
+  var filteredYears=[];
+  var filteredData={};
+  catNames.forEach(function(name){filteredData[name]=[];});
+  ANN_YEARS.forEach(function(year,i){
+    var hasData=false;
+    catNames.forEach(function(name){
+      if(src[name]&&src[name][i]!==null&&src[name][i]!==undefined) hasData=true;
+    });
+    if(hasData){
+      filteredYears.push(year);
+      catNames.forEach(function(name){filteredData[name].push(src[name]?src[name][i]:null);});
+    }
+  });
+  return{years:filteredYears,data:filteredData};
+}
+
+function renderAnnStacked(containerId,chartKey,dataObj,catNames,colors){
+  var src=dataObj.pct;
+  var f=filterYears(src,catNames);
+  var ser=catNames.map(function(name,i){
+    return{name:name,type:"bar",stack:"s",data:f.data[name],itemStyle:{color:colors[i]},barMaxWidth:40};
+  });
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct1");}}),legend:leg(),grid:{left:50,right:12,top:36,bottom:40},xAxis:{type:"category",data:f.years,boundaryGap:true},yAxis:{type:"value",axisLabel:{formatter:function(v){return v.toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+  if(!charts[chartKey]) charts[chartKey]=ecInit(document.getElementById(containerId));
+  charts[chartKey].setOption(o,true);
+}
+
+function renderAnnBkngProd(){
+  var bp=ANN_DATA.by_products;
+  if(!bp||!bp.bkng) return;
+  var names=Object.keys(bp.bkng);
+  var f=filterYears(bp.bkng,names);
+  var ser=names.map(function(name,i){
+    return{name:name,type:"bar",stack:"s",data:f.data[name],itemStyle:{color:PROD_COLORS[i]},barMaxWidth:40};
+  });
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct1");}}),legend:leg(),grid:{left:50,right:12,top:36,bottom:40},xAxis:{type:"category",data:f.years,boundaryGap:true},yAxis:{type:"value",axisLabel:{formatter:function(v){return v.toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+  if(!charts.ann_bkng_prod) charts.ann_bkng_prod=ecInit(document.getElementById("c_ann_bkng_prod"));
+  charts.ann_bkng_prod.setOption(o,true);
+}
+
+function renderAnnExpeProd(){
+  var bp=ANN_DATA.by_products;
+  if(!bp||!bp.expe) return;
+  var names=Object.keys(bp.expe);
+  var f=filterYears(bp.expe,names);
+  var ser=names.map(function(name,i){
+    return{name:name,type:"bar",stack:"s",data:f.data[name],itemStyle:{color:PROD_COLORS[i]},barMaxWidth:40};
+  });
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct1");}}),legend:leg(),grid:{left:50,right:12,top:36,bottom:40},xAxis:{type:"category",data:f.years,boundaryGap:true},yAxis:{type:"value",axisLabel:{formatter:function(v){return v.toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+  if(!charts.ann_expe_prod) charts.ann_expe_prod=ecInit(document.getElementById("c_ann_expe_prod"));
+  charts.ann_expe_prod.setOption(o,true);
+}
+
+function renderAnnBkngRegion(){
+  var r=ANN_DATA.by_region.bkng;
+  if(!r) return;
+  var names=Object.keys(r.pct);
+  renderAnnStacked("c_ann_bkng_region","ann_bkng_region",r,names,REGION_COLORS);
+}
+
+function renderAnnAbnbRegion(){
+  var r=ANN_DATA.by_region.abnb;
+  if(!r) return;
+  var names=Object.keys(r.pct);
+  renderAnnStacked("c_ann_abnb_region","ann_abnb_region",r,names,REGION_COLORS);
+}
+
+function renderAnnBkngDI(){
+  var d=ANN_DATA.domestic_intl.bkng;
+  if(!d) return;
+  var names=Object.keys(d.pct);
+  renderAnnStacked("c_ann_bkng_di","ann_bkng_di",d,names,DI_COLORS);
+}
+
+function renderAnnExpeDI(){
+  var d=ANN_DATA.domestic_intl.expe;
+  if(!d) return;
+  var names=Object.keys(d.pct);
+  renderAnnStacked("c_ann_expe_di","ann_expe_di",d,names,DI_COLORS);
+}
+
+function renderAnnAbnbDI(){
+  var d=ANN_DATA.domestic_intl.abnb;
+  if(!d){
+    var el=document.getElementById("c_ann_abnb_di");
+    if(el) el.innerHTML='<div class="err-msg">ABNB does not disclose Domestic vs International breakdown</div>';
+    return;
+  }
+  var names=Object.keys(d.pct);
+  var f=filterYears(d.pct,names);
+  var ser=names.map(function(name,i){
+    return{name:name,type:"bar",stack:"s",data:f.data[name],itemStyle:{color:DI_COLORS[i]},barMaxWidth:40};
+  });
+  var o={animation:false,tooltip:Object.assign(tt(),{formatter:function(p){return ttFmt(p,"pct1");}}),legend:leg(),grid:{left:50,right:12,top:36,bottom:40},xAxis:{type:"category",data:f.years,boundaryGap:true},yAxis:{type:"value",axisLabel:{formatter:function(v){return v.toFixed(0)+"%";}},splitLine:{lineStyle:{type:"dashed",color:"#eee"}}},series:ser};
+  if(!charts.ann_abnb_di) charts.ann_abnb_di=ecInit(document.getElementById("c_ann_abnb_di"));
+  charts.ann_abnb_di.setOption(o,true);
+}
+
+/* ====== MARKET TAB ====== */
+var stockCharts = {};
+var stockConnected = false;
+var stockLinkGroup = null;   // echarts.connect 返回的三图共享组名; 旗标/图钉悬浮期间临时断开
+var stockEventRanges = [];
+var stockFocused = -1;
+var stockHoverKey = null;     // 指针当前所在图(容器mouseenter跟踪); 联动广播的接收方不出财报卡片
+
+/* 旗标/图钉悬浮期间临时独占: 三图各自改为未注册组名(联动广播要求 connectedGroups[group] 存在,
+   未注册即断开), 并隐藏其他图表已打开的悬浮框; 离开时恢复共享组名 */
+function unlinkStockCharts(activeKey) {
+  if (!stockLinkGroup) return;
+  Object.keys(stockCharts).forEach(function(k) {
+    var c = stockCharts[k];
+    if (!c) return;
+    c.group = 'solo_' + k;
+    if (k !== activeKey) c.dispatchAction({ type: 'hideTip' });
+  });
+}
+function relinkStockCharts() {
+  if (!stockLinkGroup) return;
+  Object.keys(stockCharts).forEach(function(k) {
+    if (stockCharts[k]) stockCharts[k].group = stockLinkGroup;
+  });
+}
+/* axis tooltip 是按指针x实时广播的: 指针在旗标"周围"(未压中符号)时没有 series mouseover,
+   断链不会触发, 其他图的 axis tooltip 仍会把自己最近的旗标点带进 params 出卡。
+   因此卡片渲染加第二道闸: 只有指针所在图(market本图)才出财报卡, 广播接收方一律只显示价格行。 */
+function isStockHoverLocal(chartKey) {
+  return !stockHoverKey || stockHoverKey === chartKey;
+}
+
+var STOCK_COLORS = { BKNG: '#800000', EXPE: '#CC7722', ABNB: '#2E6DA4' };
+
+function hexToRgb(hex) {
+  var h = hex.replace('#', '');
+  return [parseInt(h.substr(0, 2), 16), parseInt(h.substr(2, 2), 16), parseInt(h.substr(4, 2), 16)];
+}
+function rgbaStr(rgb, a) { return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + a + ')'; }
+
+/* Event ranges (time axis accepts raw date strings directly) */
+function mapEventRanges(events) {
+  return events.map(function(ev) {
+    return { label: ev.label, start: ev.start, end: ev.end, rgb: hexToRgb(ev.color) };
+  });
+}
+
+function markAreaData(alphaFn) {
+  return stockEventRanges.map(function(ev, i) {
+    var c = rgbaStr(ev.rgb, alphaFn(i, ev));
+    return [{ xAxis: ev.start, itemStyle: { color: c } }, { xAxis: ev.end, itemStyle: { color: c } }];
+  });
+}
+
+/* LINKAGE 1: hover an event card -> highlight that period across all 3 charts */
+function setEventEmphasis(idx) {
+  ['bkng', 'expe', 'abnb'].forEach(function(k) {
+    var c = stockCharts[k];
+    if (!c) return;
+    c.setOption({ series: [{ markArea: { silent: true, data: markAreaData(function(i) {
+      if (idx === null) return 0.15;
+      return i === idx ? 0.42 : 0.05;
+    }) } }] });
+  });
+}
+
+function dispatchStockZoom(startValue, endValue) {
+  ['bkng', 'expe', 'abnb'].forEach(function(k) {
+    var c = stockCharts[k];
+    if (!c) return;
+    if (startValue === null) c.dispatchAction({ type: 'dataZoom', start: 0, end: 100 });
+    else c.dispatchAction({ type: 'dataZoom', startValue: startValue, endValue: endValue });
+  });
+}
+
+/* LINKAGE 2: click an event card -> zoom all charts to that period; click again to reset */
+function toggleEventFocus(i, card) {
+  var bars = document.querySelectorAll('#periodLabelBar .ev-card');
+  var ev = stockEventRanges[i];
+  if (stockFocused === i) {
+    stockFocused = -1;
+    dispatchStockZoom(null, null);
+    card.classList.remove('active');
+    card.style.boxShadow = '';
+    return;
+  }
+  stockFocused = i;
+  var t0 = new Date(ev.start).getTime();
+  var t1 = new Date(ev.end).getTime();
+  var pad = (t1 - t0) * 0.15;
+  dispatchStockZoom(t0 - pad, t1 + pad);
+  Array.prototype.forEach.call(bars, function(b) { b.classList.remove('active'); b.style.boxShadow = ''; });
+  card.classList.add('active');
+  card.style.boxShadow = '0 0 0 2px rgb(' + ev.rgb.join(',') + '),0 10px 20px rgba(20,20,31,.16)';
+}
+
+function resizeStockCharts() {
+  Object.keys(stockCharts).forEach(function(k) { if (stockCharts[k]) stockCharts[k].resize(); });
+}
+
+function buildPeriodLabelBar() {
+  var bar = document.getElementById('periodLabelBar');
+  if (!bar) return;
+  bar.innerHTML = '';
+
+  // Mix an event rgb color with white by ratio t (0=color, 1=white)
+  function tint(rgb, t) {
+    var r = Math.round(rgb[0] + (255 - rgb[0]) * t);
+    var g = Math.round(rgb[1] + (255 - rgb[1]) * t);
+    var b = Math.round(rgb[2] + (255 - rgb[2]) * t);
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  }
+  // Format "2020-01-01" -> "2020.01"
+  function fmt(d) { return d ? d.slice(0, 7).replace('-', '.') : ''; }
+
+  stockEventRanges.forEach(function(ev, i) {
+    var card = document.createElement('div');
+    card.className = 'ev-card';
+    card.style.background = tint(ev.rgb, 0.92);
+    card.style.borderColor = tint(ev.rgb, 0.65);
+    card.innerHTML =
+      '<div class="acc" style="background:rgb(' + ev.rgb.join(',') + ')"></div>' +
+      '<div class="nm">' + ev.label + '</div>' +
+      '<div class="dt">' + fmt(ev.start) + ' — ' + fmt(ev.end) + '</div>';
+    card.addEventListener('mouseenter', function() { setEventEmphasis(i); });
+    card.addEventListener('mouseleave', function() { setEventEmphasis(null); });
+    card.addEventListener('click', function() { toggleEventFocus(i, card); });
+    bar.appendChild(card);
+  });
+}
+
+var GUID_COLORS = { up: '#4CAF50', down: '#F44336', neutral: '#9E9E9E' };
+var GUID_VERDICT = { up: '超预期', down: '不及预期', neutral: '中性' };
+var GUID_ARROW = { up: '▲', down: '▼', neutral: '◆' };
+
+/* Structured earnings card shown in the stock chart tooltip */
+function earningsCard(g, date) {
+  var c = GUID_COLORS[g.type] || GUID_COLORS.neutral;
+  var rgb = hexToRgb(c).join(',');
+  var h = '<div style="margin-top:8px;border-radius:9px;overflow:hidden;border:1px solid rgba(' + rgb + ',.35);min-width:236px;box-shadow:0 8px 20px rgba(20,20,31,.10)">';
+  h += '<div style="background:' + c + ';color:#fff;padding:6px 10px;display:flex;justify-content:space-between;align-items:baseline">';
+  h += '<span style="font-size:11px;font-weight:800;letter-spacing:1px">' + g.quarter + ' 财报日</span>';
+  h += '<span style="font-size:10px;opacity:.82;font-variant-numeric:tabular-nums">' + date + '</span></div>';
+  h += '<div style="padding:8px 10px;background:#fff">';
+  h += '<div style="display:flex;align-items:center;gap:8px">';
+  h += '<span style="font-size:13px;font-weight:800;color:' + c + '">' + GUID_ARROW[g.type] + ' ' + GUID_VERDICT[g.type] + '</span>';
+  if (g.pct) h += '<span style="font-size:10px;font-weight:700;color:' + c + ';background:rgba(' + rgb + ',.10);border:1px solid rgba(' + rgb + ',.30);padding:1px 8px;border-radius:20px;font-variant-numeric:tabular-nums">' + g.pct + '</span>';
+  h += '</div>';
+  h += '<div style="font-size:11px;color:#5a5f6b;line-height:1.65;margin-top:5px">' + g.text + '</div>';
+  h += '</div></div>';
+  return h;
+}
+
+function renderStockChart() {
+  try {
+  var prices = MKT_DATA.stock_prices;
+  var events = MKT_DATA.events || [];
+
+  if (!prices) {
+    ['c_stock_bkng','c_stock_expe','c_stock_abnb'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.innerHTML = '<div style="text-align:center;padding:40px;color:#888">股价数据暂不可用</div>';
+    });
+    return;
+  }
+
+  // Map event ranges + build event legend cards at top
+  stockEventRanges = mapEventRanges(events);
+  buildPeriodLabelBar();
+
+  var colors = STOCK_COLORS;
+  var names = { BKNG: 'Booking', EXPE: 'Expedia', ABNB: 'Airbnb' };
+
+  var configs = [
+    { ticker: 'BKNG', containerId: 'c_stock_bkng', chartKey: 'bkng' },
+    { ticker: 'EXPE', containerId: 'c_stock_expe', chartKey: 'expe' },
+    { ticker: 'ABNB', containerId: 'c_stock_abnb', chartKey: 'abnb' }
+  ];
+
+  var chartInstances = [];
+
+  configs.forEach(function(cfg) {
+    var el = document.getElementById(cfg.containerId);
+    if (!el) return;
+
+    // Actual stock prices as [date, close] pairs for the time axis
+    var coPrices = prices[cfg.ticker];
+    var coData = [];
+    if (coPrices && coPrices.close.length > 0) {
+      coPrices.dates.forEach(function(d, i) {
+        var v = coPrices.close[i];
+        if (v !== null && v !== undefined) coData.push([d, +v.toFixed(2)]);
+      });
+    }
+
+    var series = [
+      {
+        name: names[cfg.ticker],
+        type: 'line',
+        data: coData,
+        lineStyle: { width: 2.5 },
+        smooth: true,
+        symbol: 'none',
+        itemStyle: { color: colors[cfg.ticker] },
+        connectNulls: true,
+        z: 2
+      }
+    ];
+
+    // Event background areas (time ranges, default 15% opacity; hover linkage adjusts)
+    if (stockEventRanges.length > 0) {
+      series[0].markArea = { silent: true, data: markAreaData(function() { return 0.15; }) };
+    }
+
+    // Earnings-day annotations:
+    //  - faint reference lines on the price grid
+    //  - direction studs pinned on the price line (▲ close up, ▼ close down, ◆ flat)
+    //  - quarter flags in the bottom event lane
+    var earnings = MKT_DATA.earnings_dates || [];
+    var guidance = MKT_DATA.earnings_guidance || [];
+    var coEarnings = earnings.filter(function(e) { return e.company === cfg.ticker; });
+    var coGuidance = guidance.filter(function(g) { return g.company === cfg.ticker; });
+    function guidanceOf(q) {
+      for (var i = 0; i < coGuidance.length; i++) if (coGuidance[i].quarter === q) return coGuidance[i];
+      return null;
+    }
+    // Close on the first trading day on/after dateStr, plus previous close for direction
+    function priceAt(dateStr) {
+      for (var i = 0; i < coData.length; i++) {
+        if (coData[i][0] >= dateStr) {
+          return { date: coData[i][0], price: coData[i][1], prev: i > 0 ? coData[i - 1][1] : null };
+        }
+      }
+      return null;
+    }
+
+    var studMeta = [];
+    if (coEarnings.length > 0) {
+      studMeta = coEarnings.map(function(e) {
+        var g = guidanceOf(e.quarter);
+        var px = priceAt(e.date);
+        var dir = 'flat';
+        if (px && px.prev !== null) dir = px.price > px.prev ? 'up' : (px.price < px.prev ? 'down' : 'flat');
+        return {
+          date: e.date, tsE: new Date(e.date).getTime(), quarter: e.quarter,
+          gtype: g ? g.type : 'neutral', gcolor: GUID_COLORS[g ? g.type : 'neutral'],
+          price: px ? px.price : null, priceDate: px ? px.date : e.date,
+          tsP: px ? new Date(px.date).getTime() : new Date(e.date).getTime(),
+          dir: dir
+        };
+      });
+
+      series[0].markLine = { symbol: 'none', silent: true, animation: false,
+        data: coEarnings.map(function(e) {
+          var g = guidanceOf(e.quarter);
+          return { xAxis: e.date, label: { show: false },
+            lineStyle: { type: 'solid', color: GUID_COLORS[g ? g.type : 'neutral'], width: 1, opacity: 0.14 } };
+        }) };
+
+      // Direction studs on the price line
+      series.push({
+        type: 'scatter', xAxisIndex: 0, yAxisIndex: 0, silent: false, cursor: 'pointer', z: 4,
+        symbolSize: 10,
+        data: studMeta.map(function(m) {
+          var c = m.dir === 'up' ? '#4CAF50' : (m.dir === 'down' ? '#F44336' : '#9E9E9E');
+          return {
+            value: [m.priceDate, m.price],
+            symbol: m.dir === 'flat' ? 'diamond' : 'triangle',
+            symbolRotate: m.dir === 'down' ? 180 : 0,
+            itemStyle: { color: c, borderColor: '#fff', borderWidth: 1.5 }
+          };
+        }),
+        emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.35)' } }
+      });
+
+      // Quarter flags in the bottom event lane
+      series.push({
+        type: 'scatter', xAxisIndex: 1, yAxisIndex: 1, silent: false, cursor: 'pointer', z: 2,
+        symbol: 'roundRect', symbolSize: [42, 16],
+        data: studMeta.map(function(m) {
+          return { value: [m.date, 0.5], itemStyle: { color: m.gcolor } };
+        }),
+        label: { show: true, fontSize: 9, color: '#fff', fontWeight: 700,
+          formatter: function(p) { return coEarnings[p.dataIndex].quarter; } },
+        emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.30)', borderColor: '#444', borderWidth: 1 } }
+      });
+    }
+
+    var option = {
+      animation: false,
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: 'rgba(255,255,255,0.98)',
+        borderColor: '#e2e2e8',
+        textStyle: { color: '#333', fontSize: 12 },
+        formatter: function(params) {
+          if (!params || !params.length) return '';
+          // 悬浮命中图钉(series1)/旗标(series2)时按 studMeta[dataIndex] 精确定位季度:
+          // 图钉挂在首交易日坐标、旗标挂在财报日坐标, 两者由此显示同一张财报卡片
+          var sc = null;
+          for (var i = 0; i < params.length; i++) {
+            if (params[i].seriesType === 'scatter') { sc = params[i]; break; }
+          }
+          var meta = (sc && studMeta[sc.dataIndex]) || null;
+          // 第二道闸: 指针不在本图(联动广播接收方)时不出财报卡, 只保留价格行 —
+          // 防止指针落在旗标周围(未压中符号, mouseover断链不触发)时两图同时出卡
+          if (meta && !isStockHoverLocal(cfg.chartKey)) meta = null;
+          var localHit = isStockHoverLocal(cfg.chartKey);
+          var first = null;
+          for (var k = 0; k < params.length; k++) {
+            if (params[k].seriesType !== 'scatter') { first = params[k]; break; }
+          }
+          var date;
+          if (meta) {
+            date = meta.date;
+          } else if (first || params[0]) {
+            var raw = (first || params[0]).value[0];
+            if (typeof raw === 'number') {
+              var dt = new Date(raw);
+              var mm = dt.getUTCMonth() + 1, dd = dt.getUTCDate();
+              date = dt.getUTCFullYear() + '-' + (mm < 10 ? '0' : '') + mm + '-' + (dd < 10 ? '0' : '') + dd;
+            } else {
+              date = String(raw).slice(0, 10);
+            }
+          } else {
+            return '';
+          }
+          var s = '<div style="font-weight:600;margin-bottom:4px">' + date + '</div>';
+          // 价格行: 仅当价格点日期与悬浮日期一致时显示(避免把周五收盘挂在周六财报日名下)
+          var sawPrice = false;
+          params.forEach(function(p) {
+            if (p.seriesType === 'scatter') return;
+            var v = p.value && p.value[1];
+            if (v === null || v === undefined) return;
+            var pd = (typeof p.value[0] === 'number') ? null : String(p.value[0]).slice(0, 10);
+            if (pd !== date) return;
+            sawPrice = true;
+            s += '<div style="display:flex;align-items:center;gap:6px;margin:2px 0">' +
+                 p.marker + '<span>' + p.seriesName + ': <b>$' + v.toFixed(2) + '</b></span></div>';
+          });
+          // 旗标/图钉悬浮且当日无价格点(财报日为非交易日): 用首交易日收盘补价格行
+          if (!sawPrice && meta && meta.price !== null) {
+            s += '<div style="display:flex;align-items:center;gap:6px;margin:2px 0">' +
+                 '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + colors[cfg.ticker] + '"></span>' +
+                 '<span>' + names[cfg.ticker] + ' (' + meta.priceDate + ' 收盘): <b>$' + meta.price.toFixed(2) + '</b></span></div>';
+          }
+          // 财报卡片: 图钉/旗标悬浮走 meta(季度精确); 普通日期悬浮按 earnings_dates 匹配;
+          // 两者的前提都是指针在本图(接收方只显示价格行)
+          if (meta) {
+            var g = guidanceOf(meta.quarter);
+            if (g) s += earningsCard(g, meta.date);
+            else s += '<div style="margin-top:6px;font-size:11px;color:#8a8f98">' + meta.quarter + ' 财报日</div>';
+          } else if (localHit) {
+            var eHit = (MKT_DATA.earnings_dates || []).find(function(e) { return e.date === date && e.company === cfg.ticker; });
+            if (eHit) {
+              var g2 = (MKT_DATA.earnings_guidance || []).find(function(x) { return x.company === cfg.ticker && x.quarter === eHit.quarter; });
+              if (g2) s += earningsCard(g2, date);
+              else s += '<div style="margin-top:6px;font-size:11px;color:#8a8f98">' + eHit.quarter + ' 财报日</div>';
+            }
+          }
+          return s;
+        }
+      },
+      legend: { show: false },
+      graphic: [{
+        id: 'erLaneTitle', type: 'text', silent: true, z: 5,
+        left: 0, top: el.clientHeight - 71,
+        style: { text: '财报日', fill: '#5a5f6b', fontSize: 11, fontWeight: 700 }
+      }],
+      grid: [
+        { left: 60, right: 24, top: 18, bottom: 100 },
+        { left: 60, right: 24, height: 32, bottom: 48 }
+      ],
+      xAxis: [
+        { type: 'time', gridIndex: 0, axisLabel: { color: '#666', hideOverlap: true }, axisTick: { show: false } },
+        { type: 'time', gridIndex: 1,
+          // Same domain as the price axis so flags align with studs and the time axis
+          min: coData.length > 1 ? coData[0][0] : undefined,
+          max: coData.length > 1 ? coData[coData.length - 1][0] : undefined,
+          axisLabel: { show: false }, axisTick: { show: false },
+          axisLine: { lineStyle: { color: '#e2e2e8' } }, splitLine: { show: false } }
+      ],
+      yAxis: [
+        { type: 'value', gridIndex: 0,
+          axisLabel: { formatter: function(v) { return '$' + v.toFixed(0); }, color: '#666' },
+          splitLine: { lineStyle: { type: 'dashed', color: '#e0e0e0' } } },
+        { type: 'value', gridIndex: 1, show: false, min: 0, max: 1 }
+      ],
+      dataZoom: [
+        { type: 'slider', xAxisIndex: [0, 1], start: 0, end: 100, bottom: 4, height: 18 },
+        { type: 'inside', xAxisIndex: [0, 1] }
+      ],
+      series: series
+    };
+
+    if (!stockCharts[cfg.chartKey]) {
+      stockCharts[cfg.chartKey] = ecInit(el);
+      // 跟踪指针所在图: mouseenter 先于图内任何 tooltip 处理触发, 时序确定
+      if (el.addEventListener) {
+        (function(k, elDom) {
+          elDom.addEventListener('mouseenter', function() { stockHoverKey = k; });
+          elDom.addEventListener('mouseleave', function() { if (stockHoverKey === k) stockHoverKey = null; });
+        })(cfg.chartKey, el);
+      }
+    }
+    var ch = stockCharts[cfg.chartKey];
+    ch.setOption(option, true);
+    chartInstances.push(ch);
+
+    // Hover linkage: direction stud <-> quarter flag (dashed connector + mutual emphasis)
+    // 悬浮期间临时断开三图 connect: 财报卡片只出现在悬浮的这张图上, 不联动出同时期卡片
+    if (coEarnings.length > 0) {
+      (function(chart, meta, key) {
+        var studBase = series[1].data, flagBase = series[2].data;
+        function drawLink(i) {
+          var m = meta[i];
+          if (!m || m.price === null) return;
+          var p1 = chart.convertToPixel({ gridIndex: 0 }, [m.tsP, m.price]);
+          var p2 = chart.convertToPixel({ gridIndex: 1 }, [m.tsE, 0.5]);
+          if (!p1 || !p2) return;
+          chart.setOption({ graphic: [{
+            id: 'erConn', type: 'line', silent: true, z: 60,
+            shape: { x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1] },
+            style: { stroke: m.gcolor, lineWidth: 1.2, lineDash: [4, 3], opacity: 0.85 }
+          }] });
+        }
+        function clearLink() {
+          chart.setOption({ graphic: [{ id: 'erConn', $action: 'remove' }] });
+        }
+        function emphasize(i) {
+          chart.setOption({ series: [
+            {},
+            { data: studBase.map(function(d, j) {
+                if (j !== i) return d;
+                var c = { value: d.value, symbol: d.symbol, symbolRotate: d.symbolRotate, symbolSize: 13,
+                  itemStyle: { color: d.itemStyle.color, borderColor: '#fff', borderWidth: 1.5,
+                    shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.35)' } };
+                return c;
+              }) },
+            { data: flagBase.map(function(d, j) {
+                if (j !== i) return d;
+                return { value: d.value, symbolSize: [46, 18],
+                  itemStyle: { color: d.itemStyle.color, borderColor: '#444', borderWidth: 1,
+                    shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.30)' } };
+              }) }
+          ] });
+        }
+        function restore() {
+          chart.setOption({ series: [{}, { data: studBase }, { data: flagBase }] });
+        }
+        function endLink() { clearLink(); restore(); relinkStockCharts(); }
+        chart.off('mouseover'); chart.off('mouseout'); chart.off('globalout'); chart.off('dataZoom');
+        chart.on('mouseover', function(p) {
+          if (p.componentType === 'series' && (p.seriesIndex === 1 || p.seriesIndex === 2)) {
+            stockHoverKey = key;   // 兜底: 容器监听缺失/异常时也保证本图可出卡
+            unlinkStockCharts(key);
+            drawLink(p.dataIndex);
+            emphasize(p.dataIndex);
+          }
+        });
+        chart.on('mouseout', function(p) {
+          if (p.seriesIndex === 1 || p.seriesIndex === 2) endLink();
+        });
+        chart.on('globalout', endLink);
+        chart.on('dataZoom', clearLink);
+      })(ch, studMeta, cfg.chartKey);
+    }
+  });
+
+  // Connect all charts for synchronized zoom/pan (返回共享组名, 供旗标悬浮期间临时断开)
+  if (!stockConnected && chartInstances.length > 1) {
+    stockLinkGroup = echarts.connect(chartInstances);
+    stockConnected = true;
+  }
+  } catch(e) {
+    console.error("renderStockChart error:", e);
+    ['c_stock_bkng','c_stock_expe','c_stock_abnb'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && !el.querySelector('canvas')) {
+        el.innerHTML = '<div style="text-align:center;padding:40px;color:#c00">股价图表渲染失败: '+e.message+'</div>';
+      }
+    });
+  }
+}
+
+/* ====== SHAREHOLDER TAB ====== */
+function renderBuybackProgramTable(){
+  var el=document.getElementById("buybackProgramTable");
+  if(!el||!MKT_DATA.buyback_headers) return;
+  var hdr=MKT_DATA.buyback_headers;
+  var data=MKT_DATA.buyback_data;
+  var h='<table class="data-table"><thead><tr>';
+  hdr.forEach(function(hd){h+='<th>'+hd+'</th>';});
+  h+='</tr></thead><tbody>';
+  data.forEach(function(r){
+    h+='<tr>';
+    r.forEach(function(cell){h+='<td>'+cell+'</td>';});
+    h+='</tr>';
+  });
+  h+='</tbody></table>';
+  el.innerHTML=h;
+}
+
+function renderQuarterlyDetailTable(){
+  var el=document.getElementById("quarterlyDetailTable");
+  if(!el||!MKT_DATA.quarterly_data) return;
+  var data=MKT_DATA.quarterly_data;
+  if(!data.length) return;
+  /* first row = headers */
+  var hdr=data[0];
+  var h='<table class="data-table"><thead><tr>';
+  hdr.forEach(function(hd){h+='<th>'+hd+'</th>';});
+  h+='</tr></thead><tbody>';
+  for(var i=1;i<data.length;i++){
+    h+='<tr>';
+    data[i].forEach(function(cell){h+='<td>'+cell+'</td>';});
+    h+='</tr>';
+  }
+  h+='</tbody></table>';
+  el.innerHTML=h;
+}
+
+/* ====== LATEST TAB (NEWS) ====== */
+var _secFilter="all";
+
+// ticker 配色（SEC文件徽章 / 公司新闻徽章）
+var TICKER_CC={BKNG:"#800000",EXPE:"#b34040",ABNB:"#d48c8c","中国东航":"#2E6DA4"};
+
+// 前端兜底：根据品牌关键词识别公司新闻（兼容未打标的旧缓存）
+var _BRAND_RE=[
+  ["BKNG",/booking\.com|booking holdings|\bbkng\b|priceline|\bkayak\b|opentable|\bagoda\b/i],
+  ["EXPE",/expedia|\bvrbo\b|hotels\.com|orbitz|travelocity|hotwire|\bexpe\b/i],
+  ["ABNB",/\bairbnb\b|\babnb\b/i]
+];
+function detectIntlCompany(n){
+  var text=[n.title||"",n.title_original||"",n.summary||"",n.summary_original||""].join(" ").toLowerCase();
+  for(var i=0;i<_BRAND_RE.length;i++){
+    if(_BRAND_RE[i][1].test(text)) return _BRAND_RE[i][0];
+  }
+  return null;
+}
+
+/* ====== 安全渲染辅助（SEC卡片与新闻卡片共用）====== */
+function escapeHtml(s){
+  return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function safeExternalUrl(u){
+  var s=String(u==null?'':u).trim();
+  if(!s) return '';
+  if(/^https:\/\//i.test(s)) return s;
+  if(/^http:\/\//i.test(s)) return s;
+  return '';  // 拒绝 javascript: / data: / 相对路径等
+}
+// 来源状态文本
+function statusLine(news){
+  var lu=news.last_updated?('数据截至 '+news.last_updated):'';
+  var st=news.update_status||'success';
+  var fs=news.fetch_status||{};
+  if(st==='failed'){
+    return '全部来源更新失败，'+(lu?lu+' ':'')+'（以下为缓存数据）';
+  }
+  if(st==='partial'){
+    var fails=0;
+    if(fs.sources){Object.keys(fs.sources).forEach(function(k){if(fs.sources[k].status!=='success')fails++;});}
+    return '部分来源更新失败（'+fails+'个），'+lu;
+  }
+  return lu?('更新于 '+news.last_updated):'';
+}
+
+function renderNewsTab(){
+  var news=MKT_DATA.news_data;
+  // 5 个展示模块的容器 ID（与 fetch_news route_to_modules 输出的 modules key 一一对应）
+  var moduleContainers = {
+    intl_core_company: "coreCompanyList",
+    intl_industry:     "intlIndustryList",
+    intl_disclosures:  "intlDisclosureList",
+    dom_industry:      "domIndustryList",
+    dom_disclosures:   "domDisclosureList",
+  };
+  // 空数据兜底
+  if(!news){
+    Object.keys(moduleContainers).forEach(function(mk){
+      var el=document.getElementById(moduleContainers[mk]);
+      if(el) el.innerHTML='<div class="news-empty">暂无新闻数据</div>';
+    });
+    return;
+  }
+
+  // Update timestamp (来源状态感知)
+  var line=statusLine(news);
+  if(line){
+    document.getElementById("newsUpdateTime").textContent=line;
+  }
+
+  // 优先使用 modules（新结构）；旧缓存回退到原 partition（向后兼容）
+  var modules = news.modules || null;
+  if(modules){
+    // 国际披露: 应用 SEC filter（BKNG/EXPE/ABNB）
+    var intlDisc = modules.intl_disclosures || [];
+    if(_secFilter!=="all"){
+      intlDisc = intlDisc.filter(function(f){
+        return f.company===_secFilter || f.entity_id===_secFilter;
+      });
+    }
+    renderDisclosures("intlDisclosureList", intlDisc);
+    renderNewsList("coreCompanyList", modules.intl_core_company || [], true);
+    renderNewsList("intlIndustryList", modules.intl_industry || [], true);
+    renderNewsList("domIndustryList", modules.dom_industry || [], false);
+    renderNewsList("domDisclosureList", modules.dom_disclosures || [], false);
+  } else {
+    // 向后兼容：旧缓存无 modules 字段时, 用原 partition 渲染
+    var secFilings=(news.international||{}).sec_filings||[];
+    if(_secFilter!=="all"){
+      secFilings=secFilings.filter(function(f){return f.company===_secFilter;});
+    }
+    renderDisclosures("intlDisclosureList", secFilings);
+    var intlNews=(news.international||{}).industry_news||[];
+    var intlCompany=[], intlIndustry=[];
+    intlNews.forEach(function(n){
+      var co=n.company||detectIntlCompany(n);
+      if(co){ n.company=co; intlCompany.push(n); } else { intlIndustry.push(n); }
+    });
+    renderNewsList("coreCompanyList",intlCompany,true);
+    renderNewsList("intlIndustryList",intlIndustry,true);
+    var dom=news.domestic||{};
+    // 旧缓存: china_industry + company_news(东航) 合并到 domIndustry
+    var domAll=(dom.china_industry||[]).concat(dom.company_news||[]);
+    renderNewsList("domIndustryList",domAll,false);
+    renderDisclosures("domDisclosureList",dom.regulatory||[]);
+  }
+}
+
+// 披露与文件渲染（SEC 备案 + IR 财报新闻稿 + 媒体财报新闻统一卡片）
+// 与通用新闻卡片的差异: 显示 filing 类型徽章（10-K/10-Q/8-K/Form 4/IR 财报等）
+function renderDisclosures(elId, items){
+  var el=document.getElementById(elId);
+  if(!el) return;
+  var visible=items.filter(function(n){return !n.folded_into;});
+  if(!visible.length){el.innerHTML='<div class="news-empty">暂无披露与文件</div>';return;}
+  var h='';
+  visible.forEach(function(n){
+    var titleAttr='';
+    if(n.title_original){titleAttr=' title="原文: '+escapeHtml(n.title_original)+'"';}
+    var url=safeExternalUrl(n.url);
+    var dateStr=(n.date_status==='unknown'||!n.date)?'待确认':String(n.date||'');
+    var ticker = n.company || n.entity_id || '';
+    var color = TICKER_CC[ticker] || '#666';
+    h+='<div class="news-item">';
+    h+='<div class="news-date">'+escapeHtml(dateStr)+'</div>';
+    h+='<div class="news-content">';
+    if(url){
+      h+='<div class="news-title"><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer"'+titleAttr+'>'+escapeHtml(n.title)+'</a></div>';
+    }else{
+      h+='<div class="news-title"'+titleAttr+'>'+escapeHtml(n.title)+'</div>';
+    }
+    if(n.summary&&!(n.paywall&&n.summary.indexOf('付费')>=0)){
+      h+='<div class="news-summary">'+escapeHtml(n.summary)+'</div>';
+    }
+    h+='<div class="news-meta">';
+    // 公司徽章（ticker 配色）
+    if(ticker){
+      h+='<span class="news-tag news-tag-sec" style="background:'+escapeHtml(color)+'22;color:'+escapeHtml(color)+'">'+escapeHtml(ticker)+'</span>';
+    }
+    // 披露类型徽章（10-K / 10-Q / 8-K / Form 4 / 144 / IR 财报 / 股东信 / 业绩演示）
+    var formType = n.type || n.disclosure_type || '';
+    if(formType){
+      h+='<span class="news-tag news-tag-form">'+escapeHtml(formType)+'</span>';
+    }
+    if(n.source) h+='<span class="news-tag news-tag-src">'+escapeHtml(n.source)+'</span>';
+    // 同事件相关来源
+    var rel=(n.related_sources||[]).concat(n.same_event_sources||[]);
+    if(rel.length){
+      var uniq=[];rel.forEach(function(s){if(s&&uniq.indexOf(s)<0)uniq.push(s);});
+      h+='<span class="news-tag" style="background:#f0f0f0;color:#888">同事件: '+escapeHtml(uniq.slice(0,2).join(', '))+'</span>';
+    }
+    h+='</div>';
+    h+='</div></div>';
+  });
+  el.innerHTML=h;
+}
+
+function renderNewsList(elId,items,isIntl){
+  var el=document.getElementById(elId);
+  var visible=items.filter(function(n){return !n.folded_into;});
+  if(!visible.length){el.innerHTML='<div class="news-empty">暂无相关新闻</div>';return;}
+  var h='';
+  visible.forEach(function(n){
+    var titleAttr='';
+    if(n.title_original){titleAttr=' title="原文: '+escapeHtml(n.title_original)+'"';}
+    var url=safeExternalUrl(n.url);
+    var dateStr=(n.date_status==='unknown'||!n.date)?'发布时间待确认':String(n.date||'');
+    var itemClass='news-item';
+    if(n.featured)itemClass+=' featured';
+    if(n.paywall)itemClass+=' paywall';
+    h+='<div class="'+itemClass+'">';
+    h+='<div class="news-date">'+escapeHtml(dateStr)+'</div>';
+    h+='<div class="news-content">';
+    if(url){
+      h+='<div class="news-title"><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer"'+titleAttr+'>'+escapeHtml(n.title)+'</a></div>';
+    }else{
+      h+='<div class="news-title"'+titleAttr+'>'+escapeHtml(n.title)+'</div>';
+    }
+    if(n.summary&&!(n.paywall&&n.summary.indexOf('付费')>=0)){
+      h+='<div class="news-summary">'+escapeHtml(n.summary)+'</div>';
+    }
+    h+='<div class="news-meta">';
+    if(n.ai_category_label){
+      h+='<span class="news-tag news-tag-category">'+escapeHtml(n.ai_category_label)+'</span>';
+    }
+    if(n.source) h+='<span class="news-tag news-tag-src">'+escapeHtml(n.source)+'</span>';
+    if(n.company){
+      var cc=TICKER_CC[n.company];
+      if(cc){
+        h+='<span class="news-tag" style="background:'+escapeHtml(cc)+'22;color:'+escapeHtml(cc)+'">'+escapeHtml(n.company)+'</span>';
+      }else{
+        h+='<span class="news-tag news-tag-company">'+escapeHtml(n.company)+'</span>';
+      }
+    }
+    var rel=(n.related_sources||[]).concat(n.same_event_sources||[]);
+    if(rel.length){
+      var uniq=[];rel.forEach(function(s){if(s&&uniq.indexOf(s)<0)uniq.push(s);});
+      h+='<span class="news-tag" style="background:#f0f0f0;color:#888">同事件: '+escapeHtml(uniq.slice(0,2).join(', '))+'</span>';
+    }
+    h+='</div>';
+    h+='</div></div>';
+  });
+  el.innerHTML=h;
+}
+
+function bindNewsTabs(){
+  // Main tab switching (intl vs domestic)
+  document.querySelectorAll(".news-tab").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      document.querySelectorAll(".news-tab").forEach(function(b){b.classList.remove("active");});
+      btn.classList.add("active");
+      var target=btn.getAttribute("data-newstab");
+      document.getElementById("newsIntlPanel").style.display=target==="intl"?"":"none";
+      document.getElementById("newsDomesticPanel").style.display=target==="domestic"?"":"none";
+    });
+  });
+  // 披露与文件的公司筛选（BKNG/EXPE/ABNB）
+  document.querySelectorAll(".news-filter").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      document.querySelectorAll(".news-filter").forEach(function(b){b.classList.remove("active");});
+      btn.classList.add("active");
+      _secFilter=btn.getAttribute("data-secfilter");
+      var news=MKT_DATA.news_data;
+      if(news){
+        var modules=news.modules||{};
+        var intlDisc=modules.intl_disclosures||[];
+        if(_secFilter!=="all"){
+          intlDisc=intlDisc.filter(function(f){
+            return f.company===_secFilter || f.entity_id===_secFilter;
+          });
+        }
+        renderDisclosures("intlDisclosureList", intlDisc);
+      }
+    });
+  });
+}
+
+/* ====== TAB SWITCHING ====== */
+var tabInited={quarterly:true,annual:false,market:false,shareholder:false,latest:false,st:false};
+var _echartsOk = (typeof echarts !== "undefined");
+
+function switchTab(tab){
+  // Basic tab switching (always works, even without echarts)
+  var contents = document.querySelectorAll(".tab-content");
+  for(var c=0;c<contents.length;c++){ contents[c].classList.remove("active"); }
+  var target = document.getElementById("tab-"+tab);
+  if(target) target.classList.add("active");
+  var btns = document.querySelectorAll(".tab-bar button");
+  for(var b=0;b<btns.length;b++){
+    if(btns[b].getAttribute("data-tab")===tab){ btns[b].classList.add("active"); }
+    else { btns[b].classList.remove("active"); }
+  }
+
+  // Chart-dependent lazy init (only if echarts available)
+  if(_echartsOk){
+    try {
+      if(tab==="annual"&&!tabInited.annual){
+        tabInited.annual=true;
+        renderAnnGB();renderAnnRN();renderAnnADR();renderAnnRev();renderAnnEBITDA();
+        renderAnnBkngProd();renderAnnExpeProd();renderAnnBkngRegion();renderAnnAbnbRegion();
+        renderAnnBkngDI();renderAnnExpeDI();renderAnnAbnbDI();
+      }
+      if(tab==="market"&&!tabInited.market){
+        tabInited.market=true;
+        renderStockChart();
+      }
+      if(tab==="st"&&!tabInited.st){
+        var ok = initSTTab();
+        if(ok) tabInited.st=true;
+      }
+    } catch(e){ console.warn("Tab render error:", tab, e); }
+  }
+
+  // Non-chart tab init (works without echarts)
+  if(tab==="shareholder"&&!tabInited.shareholder){
+    tabInited.shareholder=true;
+    try { renderBuybackProgramTable();renderQuarterlyDetailTable(); } catch(e){}
+  }
+  if(tab==="latest"&&!tabInited.latest){
+    tabInited.latest=true;
+    try { renderNewsTab();bindNewsTabs(); } catch(e){}
+  }
+
+  // Resize charts if echarts available
+  setTimeout(function(){
+    if(_echartsOk){
+      try {
+        Object.keys(charts).forEach(function(k){if(charts[k]) charts[k].resize();});
+        resizeStockCharts();
+      } catch(e){}
+    }
+  },50);
+}
+
+/* ====== INIT ====== */
+function debounce(fn, delay){
+  var timer = null;
+  return function(){
+    var context = this, args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function(){ fn.apply(context, args); }, delay);
+  };
+}
+
+/* ST 图表防抖 resize：创建一次，避免每次 resize 重建闭包 */
+var _stResizeDebounced = debounce(function(){
+  if(document.querySelector('#tab-st.active') && tabInited.st && ST_DATA && ST_DATA.by_country){
+    if(stState.level2 === 'country'){
+      if(typeof stRenderGlobalChart==='function') stRenderGlobalChart();
+      if(typeof stRenderContinents==='function') stRenderContinents();
+      if(stState.countryOpen && typeof stRenderCountries==='function') stRenderCountries();
+    } else if(stState.level2 === 'app'){
+      if(typeof stRenderAppCharts==='function') stRenderAppCharts();
+    }
+  }
+}, 200);
+
+function init(){
+  DATES=RAW.dates;
+  gb={abs:cleanObj(RAW.gb_abs),yoy:cleanObj(RAW.gb_yoy),vs2019:cleanObj(RAW.gb_vs2019)};
+  rn={abs:cleanObj(RAW.rn_abs),yoy:cleanObj(RAW.rn_yoy),vs2019:cleanObj(RAW.rn_vs2019)};
+  adr={abs:cleanObj(RAW.adr_abs),yoy:cleanObj(RAW.adr_yoy),vs2019:cleanObj(RAW.adr_vs2019)};
+  rev={abs:cleanObj(RAW.rev_abs),yoy:cleanObj(RAW.rev_yoy),vs2019:cleanObj(RAW.rev_vs2019)};
+  tr=cleanObj(RAW.take_rate);
+  bkngTR=RAW.bkng_tr_quarterly;
+  expeTR=RAW.expe_tr_quarterly;
+  abnbTR=RAW.abnb_tr_quarterly;
+  TR_QUARTERS=RAW.tr_quarters;
+  ebitda={abs:cleanObj(RAW.ebitda_abs),yoy:cleanObj(RAW.ebitda_yoy),margin:cleanObj(RAW.ebitda_margin)};
+
+  if(_echartsOk){
+    // 批量初始化：拆分 13 张图到多个批次，避免长时间阻塞主线程
+    // 第一批：核心 5 张图（用户首屏最先看到的）
+    en(renderGB);
+    en(renderRN);
+    en(renderADR);
+    en(renderRev);
+    en(renderTR);
+    // 第二批：Pct 图表
+    en(function(){ renderPctChart("c_gpm","gpm",RAW.gpm); });
+    en(function(){ renderPctChart("c_sales_marketing","sales_marketing",RAW.sales_marketing); });
+    en(function(){ renderPctChart("c_ga","ga",RAW.ga); });
+    en(function(){ renderPctChart("c_tech_content","tech_content",RAW.tech_content); });
+    // 第三批：TR Quarterly
+    en(function(){ renderTRQuarterly("c_bkng_tr","bkngTR",bkngTR); });
+    en(function(){ renderTRQuarterly("c_expe_tr","expeTR",expeTR); });
+    en(function(){ renderTRQuarterly("c_abnb_tr","abnbTR",abnbTR); });
+    // 第四批：EBITDA
+    en(renderEBITDA);
+    // 图例构建（DOM 操作，不需要 echarts）
+    en(function(){ buildTRLegend("lg_bkng_tr","bkngTR"); });
+    en(function(){ buildTRLegend("lg_expe_tr","expeTR"); });
+    en(function(){ buildTRLegend("lg_abnb_tr","abnbTR"); });
+    // 启动批量初始化
+    runBatch();
+  }
+
+  /* button handlers for quarterly */
+  var fnMap={gb:renderGB,rn:renderRN,adr:renderADR,rev:renderRev,ebitda:renderEBITDA,
+    ann_rev:renderAnnRev,ann_ebitda:renderAnnEBITDA,ann_gb:renderAnnGB,ann_rn:renderAnnRN,
+    ann_adr:renderAnnADR};
+  document.querySelectorAll(".btn-group").forEach(function(bg){
+    var group=bg.getAttribute("data-group");
+    bg.querySelectorAll("button").forEach(function(btn){
+      btn.addEventListener("click",function(){
+        bg.querySelectorAll("button").forEach(function(b){b.classList.remove("active");});
+        btn.classList.add("active");
+        modes[group]=btn.getAttribute("data-mode");
+        var fn=fnMap[group];
+        if(fn && _echartsOk){ try { fn(); } catch(e){} }
+      });
+    });
+  });
+
+  // Note: tab binding is done inline (before this script) to ensure tabs work
+  // even if echarts fails to load. switchTab() handles chart init lazily.
+
+  window.addEventListener("resize",function(){
+    if(_echartsOk){
+      try {
+        Object.keys(charts).forEach(function(k){if(charts[k]) charts[k].resize();});
+        resizeStockCharts();
+      } catch(e){}
+    }
+    // ST charts debounced resize (created once below)
+    _stResizeDebounced();
+  });
+  setTimeout(function(){
+    if(_echartsOk){
+      try {
+        Object.keys(charts).forEach(function(k){if(charts[k]) charts[k].resize();});
+        resizeStockCharts();
+      } catch(e){}
+    }
+  },100);
+}
+
+/* ====== ST (User Data) TAB ====== */
+/* ST_DATA 通过静态 st_data.js 同步加载，window.ST_DATA 已就绪 */
+var ST_DATA = window.ST_DATA || null;
+var stState = {
+  level2: "country",
+  metric: "MAU",
+  mode: "abs",
+  continentMode: {},
+  countryMode: {},
+  appMode: {},
+  appMetric: "MAU",
+  appActive: null,
+  countryOpen: false,
+};
+
+var ST_COLORS = ["#1677ff","#52c41a","#faad14","#eb2f96","#722ed1","#13c2c2","#fa541c","#c0392b","#6b7280","#8B5A2B","#0891b2","#2f54eb"];
+
+function stModeLabel(mode){
+  if(mode==="abs") return "绝对值(Mn)";
+  if(mode==="yoy") return "YoY (%)";
+  if(mode==="share") return "Share (%)";
+  return mode;
+}
+
+function stGetChartData(metric, mode, absData, yoyData, shareData){
+  if(mode==="yoy") return yoyData;
+  if(mode==="share") return shareData;
+  return absData;
+}
+
+function stRenderChart(containerId, title, data, quarters, mode, unit, height){
+  if(!_echartsOk) return;
+  var el = document.getElementById(containerId);
+  if(!el) return;
+  if(!height) height = 360;
+  
+  if(charts[containerId]){
+    try { charts[containerId].dispose(); } catch(e) {}
+    delete charts[containerId];
+  }
+  
+  var rect = el.getBoundingClientRect();
+  var elWidth = rect.width;
+  if(elWidth === 0 || !elWidth){
+    el.style.width = (el.parentElement ? el.parentElement.clientWidth - 32 : 600) + "px";
+  }
+  el.style.height = height + "px";
+  
+  var chart = ecInit(el);
+  charts[containerId] = chart;
+  
+  var isYoY = mode === "yoy";
+  var isShare = mode === "share";
+  
+  var seriesData = [];
+  for(var i=0;i<quarters.length;i++){
+    var v = data[i];
+    if(v===null||v===undefined||v==="-"){
+      seriesData.push(null);
+    } else {
+      seriesData.push(Number(v));
+    }
+  }
+  
+  var series = [{
+    name: title,
+    type: "line",
+    data: seriesData,
+    smooth: true,
+    symbol: "none",
+    lineStyle: {width: 2.5, color: ST_COLORS[0]},
+    itemStyle: {color: ST_COLORS[0]},
+    areaStyle: isYoY ? null : {opacity: 0.08},
+    connectNulls: true,
+  }];
+  
+  var yAxisConfig = {};
+  if(isYoY){
+    yAxisConfig = {axisLabel:{formatter:"{value}%"}, splitLine:{lineStyle:{type:"dashed"}}};
+  } else if(isShare){
+    yAxisConfig = {axisLabel:{formatter:"{value}%"}, max: 100};
+  } else {
+    yAxisConfig = {axisLabel:{formatter:function(v){
+      if(v>=1000) return (v/1000).toFixed(2)+"B";
+      return v.toFixed(2)+"M";
+    }}};
+  }
+  
+  chart.setOption({
+    title: {show:false},
+    grid: {left:50, right:20, top:20, bottom:40},
+    tooltip: {
+      trigger: "axis",
+      backgroundColor: "rgba(255,255,255,.96)",
+      borderColor: "#ddd",
+      borderWidth: 1,
+      textStyle: {fontSize: 12, color: "#333"},
+      formatter: function(params){
+        if(!params||!params.length) return "";
+        var p = params[0];
+        var v = p.value;
+        if(v===null||v===undefined) return p.axisValue+"<br/>-";
+        var unitStr = isYoY||isShare ? "%" : (unit||"");
+        var valStr = isYoY||isShare ? Number(v).toFixed(1) : Number(v).toFixed(2);
+        return p.axisValue+"<br/><b>"+title+": </b>"+valStr+unitStr;
+      }
+    },
+    xAxis: {
+      type: "category",
+      data: quarters,
+      axisLabel: {fontSize: 10, rotate: 45, interval: 0},
+      axisLine: {lineStyle: {color: "#ddd"}},
+      axisTick: {show: false},
+    },
+    yAxis: Object.assign({type: "value", name: isYoY?"%":(isShare?"%":""), nameTextStyle:{fontSize:10,color:"#999"}}, yAxisConfig),
+    series: series,
+    legend: {show: false},
+    dataZoom: [{type: "slider", start: 0, end: 100, bottom: 5, height: 18}, {type: "inside"}],
+    animation: true,
+  }, true);
+  
+  el.style.height = height + "px";
+  chart.resize();
+}
+
+function stGetAppSeriesList(metricData, mode){
+  if(!metricData || !metricData.by_app) return [];
+  var seriesList = [];
+  for(var i=0;i<metricData.by_app.length;i++){
+    var appData = metricData.by_app[i];
+    if(!appData) continue;
+    var rawData;
+    if(mode==="yoy") rawData = appData.yoy;
+    else if(mode==="share") rawData = appData.share;
+    else rawData = appData.abs;
+    seriesList.push({name: appData.name, data: rawData});
+  }
+  return seriesList;
+}
+
+// 100% stacked bar chart: used for App "地区构成" view
+// seriesList: [{name, color, data:[pct0..pctN]}] in stacking order (bottom→top)
+function stRenderStackedBarChart(containerId, title, seriesList, months, height){
+  if(!_echartsOk) return;
+  var el = document.getElementById(containerId);
+  if(!el) return;
+  if(!height) height = 400;
+
+  if(charts[containerId]){
+    try { charts[containerId].dispose(); } catch(e) {}
+    delete charts[containerId];
+  }
+
+  // Width fallback for hidden/zero containers (mobile tab switches)
+  var rect = el.getBoundingClientRect();
+  if(rect.width === 0 || !rect.width){
+    el.style.width = (el.parentElement ? el.parentElement.clientWidth - 32 : 600) + "px";
+  }
+
+  el.style.height = height + "px";
+  var chart = ecInit(el);
+  charts[containerId] = chart;
+
+  // Build series: type=bar, stack=compose, use per-series color (ST_COLORS fallback for share-mode lists without color)
+  var series = seriesList.map(function(s, idx){
+    return {
+      name: s.name,
+      type: "bar",
+      stack: "compose",
+      data: s.data.map(function(v){ return v===null||v===""||isNaN(v)?null:Number(v); }),
+      itemStyle: {color: s.color || ST_COLORS[idx % ST_COLORS.length], borderWidth: 0},
+      barMaxWidth: 18,
+      emphasis: {focus: "series"}
+    };
+  });
+
+  chart.setOption({
+    title: {show: false},
+    grid: {left: 50, right: 20, top: 30, bottom: 70},
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {type: "shadow"},
+      backgroundColor: "rgba(255,255,255,.96)",
+      borderColor: "#ddd",
+      borderWidth: 1,
+      textStyle: {fontSize: 11, color: "#333"},
+      formatter: function(params){
+        if(!params||!params.length) return "";
+        var result = params[0].axisValue + "<br/>";
+        var total = 0;
+        params.forEach(function(p){
+          var v = p.value;
+          if(v===null||v===undefined){
+            result += "<span style='color:"+p.color+"'>■</span> "+p.seriesName+": -<br/>";
+          } else {
+            total += Number(v);
+            result += "<span style='color:"+p.color+"'>■</span> "+p.seriesName+": <b>"+Number(v).toFixed(1)+"%</b><br/>";
+          }
+        });
+        if(total > 0){
+          result += "<span style='color:#999;font-size:10px'>合计: "+total.toFixed(1)+"%</span>";
+        }
+        return result;
+      }
+    },
+    xAxis: {
+      type: "category",
+      data: months,
+      axisLabel: {fontSize: 9, rotate: 45, interval: 0, color: "#555"},
+      axisLine: {lineStyle: {color: "#ccc"}},
+      axisTick: {show: false},
+    },
+    yAxis: {
+      type: "value",
+      name: "%",
+      nameTextStyle: {fontSize: 10, color: "#999"},
+      min: 0,
+      max: 100,
+      interval: 10,
+      axisLabel: {
+        formatter: function(v){ return v + "%"; },
+        fontSize: 10,
+        color: "#555"
+      },
+      splitLine: {lineStyle: {type: "dashed", color: "#e0e0e0"}}
+    },
+    series: series,
+    legend: {
+      type: "scroll",
+      bottom: 24,
+      left: "center",
+      textStyle: {fontSize: 11, color: "#333"},
+      itemWidth: 12,
+      itemHeight: 10,
+      itemGap: 14,
+      icon: "rect",
+      pageIconSize: 10,
+      pageTextStyle: {fontSize: 9, color: "#999"},
+      orient: "horizontal",
+      data: seriesList.map(function(s){ return s.name; })
+    },
+    dataZoom: [
+      {type: "slider", start: 0, end: 100, bottom: 2, height: 16, showDetail: false},
+      {type: "inside"}
+    ],
+    animation: true,
+  }, true);
+
+  chart.resize();
+}
+
+function stRenderMultiLineChart(containerId, title, seriesList, months, mode, unit, height){
+  if(!_echartsOk) return;
+  var el = document.getElementById(containerId);
+  if(!el) return;
+  
+  if(charts[containerId]){
+    try { charts[containerId].dispose(); } catch(e) {}
+    delete charts[containerId];
+  }
+  
+  var rect = el.getBoundingClientRect();
+  if(rect.width === 0 || !rect.width){
+    el.style.width = (el.parentElement ? el.parentElement.clientWidth - 32 : 600) + "px";
+  }
+  
+  // Use CSS height if already set, otherwise use provided height
+  var cssHeight = window.getComputedStyle(el).height;
+  if(cssHeight && cssHeight !== 'auto' && parseFloat(cssHeight) > 0){
+    // Container has CSS height set, use it
+  } else if(height){
+    el.style.height = height + "px";
+  }
+  
+  var chart = ecInit(el);
+  charts[containerId] = chart;
+  
+  var isYoY = mode === "yoy";
+  var isShare = mode === "share";
+  
+  var series = seriesList.map(function(s, idx){
+    return {
+      name: s.name,
+      type: "line",
+      data: s.data.map(function(v){return v===null||v==="-"?null:Number(v)}),
+      smooth: true,
+      symbol: "none",
+      lineStyle: {width: 2, color: ST_COLORS[idx % ST_COLORS.length]},
+      itemStyle: {color: ST_COLORS[idx % ST_COLORS.length]},
+      connectNulls: true,
+    };
+  });
+  
+  var yAxisConfig = {};
+  if(isYoY){
+    yAxisConfig = {axisLabel:{formatter:"{value}%"}, splitLine:{lineStyle:{type:"dashed"}}};
+  } else if(isShare){
+    yAxisConfig = {axisLabel:{formatter:"{value}%"}, max: 100};
+  } else {
+    yAxisConfig = {axisLabel:{formatter:function(v){
+      if(v>=1000) return (v/1000).toFixed(2)+"B";
+      return v.toFixed(2)+"M";
+    }}};
+  }
+  
+  chart.setOption({
+    title: {show: false},
+    grid: {left:50, right:20, top:50, bottom:40},
+    tooltip: {
+      trigger: "axis",
+      backgroundColor: "rgba(255,255,255,.96)",
+      borderColor: "#ddd",
+      borderWidth: 1,
+      textStyle: {fontSize: 11, color: "#333"},
+      formatter: function(params){
+        if(!params||!params.length) return "";
+        var result = params[0].axisValue + "<br/>";
+        params.forEach(function(p){
+          var v = p.value;
+          if(v===null||v===undefined) result += "<span style='color:"+p.color+"'>●</span> "+p.seriesName+": -<br/>";
+          else {
+            var unitStr = isYoY||isShare ? "%" : (unit||"");
+            var valStr = isYoY||isShare ? Number(v).toFixed(1) : Number(v).toFixed(2);
+            result += "<span style='color:"+p.color+"'>●</span> "+p.seriesName+": <b>"+valStr+unitStr+"</b><br/>";
+          }
+        });
+        return result;
+      }
+    },
+    xAxis: {
+      type: "category",
+      data: months,
+      axisLabel: {fontSize: 9, rotate: 45, interval: 0},
+      axisLine: {lineStyle: {color: "#ddd"}},
+      axisTick: {show: false},
+    },
+    yAxis: Object.assign({type: "value", name: isYoY?"%":(isShare?"%":""), nameTextStyle:{fontSize:10,color:"#999"}}, yAxisConfig),
+    series: series,
+    legend: {
+      type: 'scroll',
+      top: 5,
+      left: 'center',
+      textStyle: {fontSize: 10, color: '#666'},
+      itemWidth: 10,
+      itemHeight: 6,
+      itemGap: 8,
+      pageIconSize: 10,
+      pageTextStyle: {fontSize: 9, color: '#999'},
+      orient: 'horizontal'
+    },
+    dataZoom: [{type: "slider", start: 0, end: 100, bottom: 5, height: 18}, {type: "inside"}],
+    animation: true,
+  }, true);
+  
+  chart.resize();
+}
+
+var _stInited = false;
+
+function initSTTab(){
+  if(_stInited) return true;  // 已初始化过
+  
+  // ST_DATA 已通过静态 <script> 加载，检查 window.ST_DATA
+  if(!(window.ST_DATA && window.ST_DATA.by_country)){
+    // 静态脚本加载失败或数据异常
+    var panel = document.getElementById("stCountryPanel");
+    if(panel){
+      var errDiv = document.createElement("div");
+      errDiv.style.cssText = "padding:24px;text-align:center;color:#e74c3c;font-weight:500";
+      errDiv.innerHTML = "用户数据加载失败（st_data.js 未成功加载）<br><span style='font-size:12px;color:#999;font-weight:normal'>请刷新页面重试，或检查网络连接</span>";
+      panel.insertBefore(errDiv, panel.firstChild);
+    }
+    console.error("ST_DATA not available: window.ST_DATA is null or missing by_country");
+    return false;
+  }
+  
+  // 复制到本地变量供渲染函数使用
+  ST_DATA = window.ST_DATA;
+  
+  // try/catch 完整渲染流程，失败时显示异常阶段
+  try {
+    _renderSTTab();
+  } catch(e){
+    console.error("ST tab render failed:", e);
+    var panel2 = document.getElementById("stCountryPanel");
+    if(panel2){
+      var errBox = document.createElement("div");
+      errBox.style.cssText = "padding:24px;text-align:center;color:#e74c3c";
+      errBox.innerHTML = "图表渲染异常: " + (e.message || "未知错误") + "<br><span style='font-size:12px;color:#999'>请截图反馈给开发</span>";
+      panel2.insertBefore(errBox, panel2.firstChild);
+    }
+    return false;
+  }
+  
+  // 只有渲染完整成功才标记
+  _stInited = true;
+  return true;
+}
+
+function _renderSTTab(){
+  stBindEvents();
+  stRenderAll();
+  // 触发 ST 图表 ready 事件
+  try { window.dispatchEvent(new CustomEvent('stChartsReady')); } catch(e){}
+}
+
+function stBindEvents(){
+  // Level 2 tabs
+  document.querySelectorAll(".st-tab").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".st-tab").forEach(function(b){b.classList.remove("active");});
+      btn.classList.add("active");
+      stState.level2 = btn.getAttribute("data-sttab");
+      if(stState.level2 === "country"){
+        document.getElementById("stCountryPanel").style.display = "";
+        document.getElementById("stAppPanel").style.display = "none";
+        stRenderCountryCharts();
+      } else {
+        document.getElementById("stCountryPanel").style.display = "none";
+        document.getElementById("stAppPanel").style.display = "";
+        stRenderAppCharts();
+      }
+    });
+  });
+  
+  // Metric tabs
+  document.querySelectorAll(".st-metric").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".st-metric").forEach(function(b){b.classList.remove("active");});
+      btn.classList.add("active");
+      stState.metric = btn.getAttribute("data-metric");
+      stRenderCountryCharts();
+    });
+  });
+  
+  // Global chart mode buttons
+  var globalGroup = document.querySelector('[data-group="st_global"]');
+  if(globalGroup){
+    globalGroup.querySelectorAll("button").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        globalGroup.querySelectorAll("button").forEach(function(b){b.classList.remove("active");});
+        btn.classList.add("active");
+        stState.mode = btn.getAttribute("data-mode");
+        stRenderGlobalChart();
+      });
+    });
+  }
+  
+  // Country toggle
+  var toggle = document.getElementById("stCountryToggle");
+  if(toggle){
+    toggle.addEventListener("click", function(){
+      stState.countryOpen = !stState.countryOpen;
+      var grid = document.getElementById("stCountriesGrid");
+      var arrow = document.getElementById("stCountryArrow");
+      if(stState.countryOpen){
+        grid.style.display = "grid";
+        arrow.style.transform = "rotate(90deg)";
+        stRenderCountryCharts();
+      } else {
+        grid.style.display = "none";
+        arrow.style.transform = "rotate(0deg)";
+      }
+    });
+  }
+}
+
+function stRenderAll(){
+  if(stState.level2 === "country"){
+    stRenderCountryCharts();
+  } else {
+    stRenderAppCharts();
+  }
+}
+
+function stGetChartHeight(type){
+  var w = window.innerWidth;
+  if(type === 'global'){
+    if(w >= 1920) return 480;
+    if(w >= 1400) return 440;
+    if(w >= 1024) return 400;
+    if(w >= 768) return 360;
+    return 300;
+  } else {
+    // continent and country charts - now full width, can be taller
+    if(w >= 1920) return 380;
+    if(w >= 1400) return 340;
+    if(w >= 1024) return 320;
+    if(w >= 768) return 300;
+    return 260;
+  }
+}
+
+function stRenderCountryCharts(){
+  stRenderGlobalChart();
+  stRenderContinents();
+  stRenderCountries();
+}
+
+function stRenderGlobalChart(){
+  var metric = stState.metric;
+  var mode = stState.mode;
+  var gData = ST_DATA.by_country.global[metric];
+  if(!gData) return;
+  
+  var label = stModeLabel(mode);
+  var titleEl = document.querySelector('#tab-st .chart-section .chart-title');
+  if(titleEl) titleEl.innerHTML = 
+    "全球 <span class='chart-unit'>(" + label + ")</span>";
+  
+  var seriesList = stGetAppSeriesList(gData, mode);
+  requestAnimationFrame(function(){
+    if(mode === "share"){
+      stRenderStackedBarChart("stGlobalChart", "全球 " + metric, seriesList, ST_DATA.months, stGetChartHeight('global'));
+    } else {
+      stRenderMultiLineChart("stGlobalChart", "全球 " + metric, seriesList, ST_DATA.months, mode, gData.unit, stGetChartHeight('global'));
+    }
+  });
+}
+
+function stRenderContinents(){
+  var metric = stState.metric;
+  var mode = stState.mode;
+  var grid = document.getElementById("stContinentsGrid");
+  if(!grid) return;
+  
+  var continents = [
+    {key:"se_asia", name:"东南亚"},
+    {key:"e_asia", name:"东亚"},
+    {key:"oceania", name:"大洋洲"},
+    {key:"europe", name:"欧洲"},
+    {key:"north_america", name:"北美"},
+    {key:"middle_east", name:"中东"},
+  ];
+  
+  grid.innerHTML = "";
+  continents.forEach(function(c){
+    var contData = ST_DATA.by_country.continents[c.key];
+    if(!contData) return;
+    var mData = contData.metrics[metric];
+    if(!mData) return;
+    
+    var contMode = stState.continentMode[c.key] || "abs";
+    var seriesList = stGetAppSeriesList(mData, contMode);
+    
+    var chartId = "st_cont_" + c.key;
+    var html = '<div class="st-country-chart" style="margin-bottom:0">';
+    html += '<div class="st-country-chart-title">';
+    html += '<span>' + c.name + ' ' + metric + ' <small style="color:#999;font-weight:normal">(' + stModeLabel(contMode) + ')</small></span>';
+    html += '<div class="mini-btn-group">';
+    html += '<button data-contmode="abs" data-contkey="' + c.key + '"' + (contMode==="abs"?" class='active'":"") + '>绝对值</button>';
+    html += '<button data-contmode="yoy" data-contkey="' + c.key + '"' + (contMode==="yoy"?" class='active'":"") + '>YoY</button>';
+    html += '<button data-contmode="share" data-contkey="' + c.key + '"' + (contMode==="share"?" class='active'":"") + '>Share</button>';
+    html += '</div></div>';
+    html += '<div class="st-country-chart-box" id="' + chartId + '"></div>';
+    html += '</div>';
+    
+    grid.innerHTML += html;
+    
+    requestAnimationFrame(function(){
+      if(contMode === "share"){
+        stRenderStackedBarChart(chartId, c.name + " " + metric, seriesList, ST_DATA.months, stGetChartHeight('other'));
+      } else {
+        stRenderMultiLineChart(chartId, c.name, seriesList, ST_DATA.months, contMode, mData.unit, stGetChartHeight('other'));
+      }
+    });
+  });
+  
+  // Bind continent mode buttons
+  grid.querySelectorAll(".mini-btn-group button").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var contKey = btn.getAttribute("data-contkey");
+      var newMode = btn.getAttribute("data-contmode");
+      stState.continentMode[contKey] = newMode;
+      stRenderContinents();
+    });
+  });
+}
+
+function stRenderCountries(){
+  var metric = stState.metric;
+  var grid = document.getElementById("stCountriesGrid");
+  if(!grid || !stState.countryOpen) return;
+  
+  var countries = [
+    {key:"hk", name:"中国香港"},
+    {key:"sg", name:"新加坡"},
+    {key:"jp", name:"日本"},
+    {key:"kr", name:"韩国"},
+    {key:"th", name:"泰国"},
+    {key:"my", name:"马来西亚"},
+    {key:"in", name:"印度"},
+    {key:"ph", name:"菲律宾"},
+    {key:"vn", name:"越南"},
+  ];
+  
+  grid.innerHTML = "";
+  countries.forEach(function(c){
+    var cData = ST_DATA.by_country.countries[c.key];
+    if(!cData) return;
+    var mData = cData.metrics[metric];
+    if(!mData) return;
+    
+    var cMode = stState.countryMode[c.key] || "abs";
+    var seriesList = stGetAppSeriesList(mData, cMode);
+    
+    var chartId = "st_country_" + c.key;
+    var html = '<div class="st-country-chart">';
+    html += '<div class="st-country-chart-title">';
+    html += '<span>' + c.name + ' ' + metric + ' <small style="color:#999;font-weight:normal">(' + stModeLabel(cMode) + ')</small></span>';
+    html += '<div class="mini-btn-group">';
+    html += '<button data-cmode="abs" data-ckey="' + c.key + '"' + (cMode==="abs"?" class='active'":"") + '>绝对值</button>';
+    html += '<button data-cmode="yoy" data-ckey="' + c.key + '"' + (cMode==="yoy"?" class='active'":"") + '>YoY</button>';
+    html += '<button data-cmode="share" data-ckey="' + c.key + '"' + (cMode==="share"?" class='active'":"") + '>Share</button>';
+    html += '</div></div>';
+    html += '<div class="st-country-chart-box" id="' + chartId + '"></div>';
+    html += '</div>';
+    
+    grid.innerHTML += html;
+    
+    requestAnimationFrame(function(){
+      if(cMode === "share"){
+        stRenderStackedBarChart(chartId, c.name + " " + metric, seriesList, ST_DATA.months, stGetChartHeight('other'));
+      } else {
+        stRenderMultiLineChart(chartId, c.name, seriesList, ST_DATA.months, cMode, mData.unit, stGetChartHeight('other'));
+      }
+    });
+  });
+  
+  // Bind country mode buttons
+  grid.querySelectorAll(".mini-btn-group button").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var cKey = btn.getAttribute("data-ckey");
+      var newMode = btn.getAttribute("data-cmode");
+      stState.countryMode[cKey] = newMode;
+      stRenderCountries();
+    });
+  });
+}
+
+function stRenderAppCharts(){
+  var area = document.getElementById("stAppChartArea");
+  if(!area) return;
+
+  var apps = [
+    {key:"trip_com", name:"Trip.com"},
+    {key:"airbnb", name:"Airbnb"},
+    {key:"agoda", name:"Agoda"},
+    {key:"booking_com", name:"Booking.com"},
+    {key:"expedia", name:"Expedia"},
+    {key:"skyscanner", name:"Skyscanner"},
+  ];
+
+  // 直接逻辑: 默认选中第一个 App, 进入视图即出图(无空态等待点击)
+  if(!stState.appActive || !ST_DATA.by_app[stState.appActive]){
+    stState.appActive = apps[0].key;
+  }
+  stState.appMode[stState.appActive] = stState.appMode[stState.appActive] || "abs";
+
+  var metric = stState.appMetric || "MAU";
+  var mode = stState.appMode[stState.appActive] || "abs";
+  var appData = ST_DATA.by_app[stState.appActive];
+  var appName = appData ? appData.name : apps[0].name;
+  // 地区构成模式使用独立数据(各地区占该App全球总量的百分比) + 堆积柱状图; 其他模式沿用多线对比
+  var isCompose = mode === "share";
+  var seriesList;
+  if(isCompose){
+    seriesList = stGetAppCompositionSeries(stState.appActive, metric);
+  } else {
+    seriesList = stGetAppRegionSeries(stState.appActive, metric, mode);
+  }
+  var subCount = isCompose ? (seriesList.length + " 个地区") : (seriesList.length + " 条曲线");
+  var subLabel = isCompose ? "全球大洲和地区 · " + subCount : "全球 + 6 大洲 · " + subCount;
+
+  // 横排 App 选择 chips + 图表面板(标题/指标/模式/图表 同屏直达)
+  var html = '<div class="st-app-wrap">';
+  html += '<div class="st-app-rail" role="group" aria-label="选择App">';
+  html += '<span class="st-app-rail-cap">选择 App</span>';
+  apps.forEach(function(a){
+    var act = stState.appActive === a.key;
+    html += '<button type="button" class="st-app-chip' + (act?' active':'') + '" data-appkey="' + a.key + '" aria-pressed="' + (act?'true':'false') + '">' + a.name + '</button>';
+  });
+  html += '</div>';
+
+  html += '<div class="st-app-panel">';
+  html += '<div class="st-app-head">';
+  html += '<div class="st-app-title">' + appName + ' <span class="st-app-sub">' + subLabel + '</span></div>';
+  html += '<div class="st-app-ctrls">';
+  html += '<div class="st-seg">';
+  ["MAU","DAU","下载量"].forEach(function(m){
+    html += '<button type="button" data-appmetric="' + m + '"' + (metric===m?' class="active"':'') + '>' + m + '</button>';
+  });
+  html += '</div>';
+  html += '<div class="st-seg">';
+  [["abs","绝对值(Mn)"],["yoy","YoY"],["share","地区构成"]].forEach(function(m){
+    html += '<button type="button" data-appmode="' + m[0] + '"' + (mode===m[0]?' class="active"':'') + '>' + m[1] + '</button>';
+  });
+  html += '</div>';
+  html += '</div></div>';
+
+  // 图表高度随屏宽响应(与市场tab档位一致)
+  var w = window.innerWidth || 1280;
+  var h = w>=1400?430:(w>=1024?400:(w>768?360:300));
+  html += '<div id="stAppChart" style="height:' + h + 'px"></div>';
+  html += '</div></div>';
+  area.innerHTML = html;
+
+  // Bind app chips(重复点击同一App不重绘)
+  area.querySelectorAll(".st-app-chip").forEach(function(chip){
+    chip.addEventListener("click", function(){
+      var k = chip.getAttribute("data-appkey");
+      if(k === stState.appActive) return;
+      stState.appActive = k;
+      stRenderAppCharts();
+    });
+  });
+
+  // Bind metric segmented control(所选指标跨App保留)
+  area.querySelectorAll("[data-appmetric]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      stState.appMetric = btn.getAttribute("data-appmetric");
+      stRenderAppCharts();
+    });
+  });
+
+  // Bind mode segmented control(模式按App记忆; 修复旧版 idx===0 恒亮的bug)
+  area.querySelectorAll("[data-appmode]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      stState.appMode[stState.appActive] = btn.getAttribute("data-appmode");
+      stRenderAppCharts();
+    });
+  });
+
+  // Render chart: 地区构成 → 100%堆积柱状图; 其他 → 多线对比
+  if(seriesList.length > 0){
+    var chartTitle;
+    if(isCompose){
+      chartTitle = appName + " App " + metric + "构成（全球大洲和地区）";
+    } else {
+      chartTitle = appName + " 地区对比 - " + metric + " (" + stModeLabel(mode) + ")";
+    }
+    requestAnimationFrame(function(){
+      if(isCompose){
+        stRenderStackedBarChart("stAppChart", chartTitle, seriesList, ST_DATA.months, h);
+      } else {
+        stRenderMultiLineChart("stAppChart", chartTitle, seriesList, ST_DATA.months, mode, "Mn", h);
+      }
+    });
+  } else {
+    var appChart = document.getElementById("stAppChart");
+    if(appChart) appChart.innerHTML = '<div style="text-align:center;padding:60px;color:#999">暂无该App的跨地区数据</div>';
+  }
+}
+
+// Compute regional composition for an App: each region's ABS share of the App's global total
+// Returns 7 series in stacking order (bottom→top): 东南亚,东亚,大洋洲,欧洲,北美,中东,其它
+// Each value is percentage (0-100, 1 decimal); "其它" = 100 minus sum of 6 continents
+function stGetAppCompositionSeries(appKey, metric){
+  var appName = ST_DATA.by_app[appKey] ? ST_DATA.by_app[appKey].name : null;
+  if(!appName) return [];
+  var monthCount = ST_DATA.months.length;
+
+  // Stacking order (bottom→top in chart, same as legend)
+  var regionOrder = [
+    {key: "se_asia",       name: "东南亚", color: "#8B3A3A"},
+    {key: "e_asia",        name: "东亚",   color: "#C8C0A8"},
+    {key: "oceania",       name: "大洋洲", color: "#3FA8A8"},
+    {key: "europe",        name: "欧洲",   color: "#C2A65A"},
+    {key: "north_america", name: "北美",   color: "#F2994A"},
+    {key: "middle_east",   name: "中东",   color: "#5C6B8A"}
+  ];
+  var otherColor = "#A8C4E0";
+
+  // 1. Get the App's global ABS as the denominator
+  var gMetric = ST_DATA.by_country.global[metric];
+  if(!gMetric) return [];
+  var globalAbs = null;
+  for(var gi=0; gi<gMetric.by_app.length; gi++){
+    if(gMetric.by_app[gi].name === appName){
+      globalAbs = gMetric.by_app[gi].abs.map(function(v){
+        return (v===null||v===""||v==="-") ? null : Number(v);
+      });
+      break;
+    }
+  }
+  if(!globalAbs) return [];
+
+  // 2. Get each continent's App ABS
+  var regionAbsList = [];
+  regionOrder.forEach(function(ro){
+    var vals = new Array(monthCount).fill(null);
+    var cont = ST_DATA.by_country.continents[ro.key];
+    if(cont && cont.metrics && cont.metrics[metric]){
+      var md = cont.metrics[metric];
+      for(var j=0; j<md.by_app.length; j++){
+        if(md.by_app[j].name === appName){
+          vals = md.by_app[j].abs.map(function(v){
+            return (v===null||v===""||v==="-") ? null : Number(v);
+          });
+          break;
+        }
+      }
+    }
+    regionAbsList.push(vals);
+  });
+
+  // 3. Per-month composition: region% = regionAbs / globalAbs * 100
+  var seriesList = [];
+  var otherPct = new Array(monthCount).fill(null);
+  regionOrder.forEach(function(ro, rIdx){
+    var pctArr = new Array(monthCount).fill(null);
+    var absArr = regionAbsList[rIdx];
+    for(var m=0; m<monthCount; m++){
+      var gAbs = globalAbs[m];
+      var rAbs = absArr[m];
+      if(gAbs!=null && !isNaN(gAbs) && gAbs>0 && rAbs!=null && !isNaN(rAbs)){
+        var p = (rAbs / gAbs) * 100;
+        pctArr[m] = Math.round(p * 10) / 10;
+        if(otherPct[m]===null) otherPct[m] = 100;
+        otherPct[m] = Math.round((otherPct[m] - pctArr[m]) * 10) / 10;
+      }
+    }
+    seriesList.push({name: ro.name, color: ro.color, data: pctArr});
+  });
+
+  // 4. Clamp rounding errors in "其它"
+  for(var m2=0; m2<monthCount; m2++){
+    if(otherPct[m2] !== null){
+      if(otherPct[m2] < 0 && otherPct[m2] > -0.5) otherPct[m2] = 0;
+      if(otherPct[m2] > 100 && otherPct[m2] < 100.5) otherPct[m2] = 100;
+      otherPct[m2] = Math.round(otherPct[m2] * 10) / 10;
+    }
+  }
+  seriesList.push({name: "其它", color: otherColor, data: otherPct});
+
+  return seriesList;
+}
+
+// Helper function: get app's data across all regions
+function stGetAppRegionSeries(appKey, metric, mode){
+  var appName = ST_DATA.by_app[appKey] ? ST_DATA.by_app[appKey].name : null;
+  if(!appName) return [];
+  
+  var seriesList = [];
+  
+  // Global data
+  if(ST_DATA.by_country.global[metric]){
+    var gData = ST_DATA.by_country.global[metric];
+    var gAppData = null;
+    for(var i=0; i<gData.by_app.length; i++){
+      if(gData.by_app[i].name === appName){
+        gAppData = gData.by_app[i];
+        break;
+      }
+    }
+    if(gAppData){
+      seriesList.push({
+        name: "全球",
+        data: stGetChartData(metric, mode, gAppData.abs, gAppData.yoy, gAppData.share)
+      });
+    }
+  }
+  
+  // Continent data
+  var continentNames = {
+    "se_asia": "东南亚",
+    "e_asia": "东亚",
+    "oceania": "大洋洲",
+    "europe": "欧洲",
+    "north_america": "北美",
+    "middle_east": "中东"
+  };
+  
+  for(var contKey in ST_DATA.by_country.continents){
+    if(!ST_DATA.by_country.continents.hasOwnProperty(contKey)) continue;
+    var contData = ST_DATA.by_country.continents[contKey];
+    if(!contData.metrics[metric]) continue;
+    
+    var contMetricData = contData.metrics[metric];
+    var contAppData = null;
+    for(var j=0; j<contMetricData.by_app.length; j++){
+      if(contMetricData.by_app[j].name === appName){
+        contAppData = contMetricData.by_app[j];
+        break;
+      }
+    }
+    
+    if(contAppData){
+      seriesList.push({
+        name: continentNames[contKey] || contKey,
+        data: stGetChartData(metric, mode, contAppData.abs, contAppData.yoy, contAppData.share)
+      });
+    }
+  }
+  
+  return seriesList;
+}
+
+/* ── 初始化 ── */
+/* echarts.min.js 已通过 <script> 标签在上方加载，直接检查并初始化 */
+_echartsOk = (typeof echarts !== "undefined");
+
+if(!_echartsOk){
+  // echarts 未加载 - 尝试动态加载作为回退
+  console.warn("echarts not found after static load, trying dynamic fallback...");
+  var _ecScript = document.createElement("script");
+  _ecScript.src = "echarts.min.js";
+  _ecScript.onload = function(){
+    _echartsOk = (typeof echarts !== "undefined");
+    if(_echartsOk){
+      console.log("echarts loaded via fallback, initializing...");
+      try { init(); } catch(e){ console.error("init error:", e); }
+    } else {
+      console.error("echarts failed even after fallback");
+      _showChartError();
+    }
+  };
+  _ecScript.onerror = function(){
+    console.error("echarts.min.js load failed");
+    _showChartError();
+  };
+  document.head.appendChild(_ecScript);
+} else {
+  // 直接调用 init() — echarts 已就绪
+  console.log("echarts ready (" + echarts.version + "), initializing charts in batches...");
+  try { init(); } catch(e){ console.error("init error:", e); }
+}
+
+function _showChartError(){
+  var boxes=document.querySelectorAll(".chart-box");
+  boxes.forEach(function(b){
+    b.innerHTML="<div class='err-msg'>图表库加载失败，请检查网络后刷新页面重试</div>";
+  });
+}
+
+/* ST_DATA 已通过静态 <script> 在上方同步加载（st_data.js），window.ST_DATA 此时已就绪 */
+/* 无需动态加载，initSTTab() 直接读取 window.ST_DATA */
+
+/* 性能监控 */
+window.addEventListener('chartsReady', function(){
+  console.log('All charts initialized. Total time:', (Date.now()-_startTime)+'ms');
+});
+</script>
+</body>
+</html>

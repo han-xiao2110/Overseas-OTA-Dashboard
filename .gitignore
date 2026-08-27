@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.trae/
+deploy/
+*.log
+.DS_Store
+
+# ═══ 私有仓库：财务数据 Excel 和中间 JSON 全部纳入版本控制 ═══
+# 如需切换回"不提交财务数据"模式，取消下面三行注释即可：
+# *.xlsx
+# *.xls
+# dashboard_data_副本.json
+
+# 临时/备份文件
+*.sh~
+news_cache_backups/
+*.json.bak

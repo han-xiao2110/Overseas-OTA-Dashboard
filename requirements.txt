@@ -1,0 +1,7 @@
+yfinance
+feedparser
+deep-translator
+openpyxl
+requests
+beautifulsoup4
+certifi

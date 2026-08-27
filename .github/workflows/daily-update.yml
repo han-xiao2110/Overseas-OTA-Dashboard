@@ -1,0 +1,71 @@
+name: Daily Auto-Update & Deploy
+
+on:
+  schedule:
+    # UTC 06:00 = 北京时间 14:00（美股收盘后）
+    - cron: '0 6 * * 1-6'  # 周一到周六（周六补抓周五美股）
+  workflow_dispatch:  # 手动触发按钮
+
+# 私有仓库：Actions 默认有 contents:write 权限，显式声明更稳
+permissions:
+  contents: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Install Surge
+        run: npm install -g surge
+
+      # ── 1. 股价（增量抓取，已有缓存自动跳过）──
+      - name: Fetch stock prices
+        run: python fetch_stock_prices_副本.py
+        continue-on-error: true
+
+      # ── 2. 新闻（全量重抓）──
+      - name: Fetch news
+        run: python fetch_news_副本.py --force
+        continue-on-error: true
+
+      # ── 3. 生成 dashboard（用仓库里的 Excel 财务数据）──
+      - name: Generate dashboard
+        run: python generate_副本.py
+
+      # ── 4. 部署到 Surge ──
+      - name: Deploy to Surge
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: surge ./deploy bkng-expe-abnb-1q26.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+      # ── 5. 把更新后的数据 commit 回仓库 ──
+      - name: Commit & push data updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stock_prices_副本.json news_data_副本.json dashboard_data_副本.json || true
+          git add news_cache_backups/ 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "auto: daily update $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No data changes to commit."
+          fi

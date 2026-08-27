@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财报日展示方案示例</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; background: #f5f5f5; color: #333; padding: 20px; }
+h1 { text-align: center; font-size: 22px; margin-bottom: 30px; }
+h2 { font-size: 18px; margin: 30px 0 10px; padding: 10px; background: #fff; border-radius: 8px; border-left: 4px solid #333; }
+.desc { font-size: 13px; color: #666; margin-bottom: 15px; padding: 0 10px; }
+.chart-box { width: 100%; height: 300px; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); margin-bottom: 20px; }
+.earnings-bar { display: flex; height: 40px; background: #fff; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); position: relative; }
+.earnings-item { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #fff; border-right: 2px solid #fff; cursor: pointer; transition: opacity 0.2s; }
+.earnings-item:hover { opacity: 0.8; }
+.earnings-item.up { background: #4CAF50; }
+.earnings-item.down { background: #F44336; }
+.earnings-item.neutral { background: #9E9E9E; }
+.tooltip-box { position: absolute; background: rgba(0,0,0,0.85); color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 12px; max-width: 250px; z-index: 100; pointer-events: none; display: none; }
+</style>
+</head>
+<body>
+<h1>财报日展示方案示例</h1>
+
+<!-- 方案A -->
+<h2>方案 A：股价图内标记线 + 悬浮提示</h2>
+<div class="desc">在股价走势图中，财报日用垂直虚线标记。绿色=上涨，红色=下跌，灰色=持平。鼠标悬停显示详细信息。</div>
+<div id="chartA" class="chart-box"></div>
+
+<!-- 方案B -->
+<h2>方案 B：事件条下方添加财报日行</h2>
+<div class="desc">在"历史大事"下方添加一行财报日标记，色块表示涨跌。点击/悬停查看详情。</div>
+<div class="earnings-bar" id="earningsBarB">
+  <div class="earnings-item down" style="width:12%" data-info="2Q24: 3Q guidance不达预期，下跌7%">2Q24<br>-7%</div>
+  <div class="earnings-item up" style="width:12%" data-info="3Q24: 4Q guidance超预期，上涨7%">3Q24<br>+7%</div>
+  <div class="earnings-item up" style="width:12%" data-info="4Q24: 4Q 业绩超预期，上涨2%">4Q24<br>+2%</div>
+  <div class="earnings-item down" style="width:12%" data-info="1Q25: 业绩超预期，但扩大指引范围，下跌4%">1Q25<br>-4%</div>
+  <div class="earnings-item neutral" style="width:12%" data-info="2Q25: 略跌">2Q25<br>~0%</div>
+  <div class="earnings-item up" style="width:12%" data-info="3Q25: 3Q超预期，4Q指引inline，盘后+3.99%">3Q25<br>+4%</div>
+  <div class="earnings-item up" style="width:12%" data-info="4Q25: 业绩和指引不错，+1%">4Q25<br>+1%</div>
+  <div class="earnings-item down" style="width:12%" data-info="1Q26: 中东负面影响，下调26年预期，盘后-4%">1Q26<br>-4%</div>
+</div>
+<div class="tooltip-box" id="tooltipB"></div>
+
+<!-- 方案C -->
+<h2>方案 C：结合方案（推荐）</h2>
+<div class="desc">事件条显示历史大事，股价图内用彩色标记线显示财报日涨跌，悬停显示详细信息。顶部图例说明颜色含义。</div>
+<div style="display:flex;gap:16px;margin-bottom:10px;padding:0 10px;font-size:12px;">
+  <span><span style="display:inline-block;width:12px;height:12px;background:#4CAF50;border-radius:2px;vertical-align:middle;"></span> 上涨/超预期</span>
+  <span><span style="display:inline-block;width:12px;height:12px;background:#F44336;border-radius:2px;vertical-align:middle;"></span> 下跌/不及预期</span>
+  <span><span style="display:inline-block;width:12px;height:12px;background:#9E9E9E;border-radius:2px;vertical-align:middle;"></span> 持平/中性</span>
+</div>
+<div id="chartC" class="chart-box"></div>
+
+<script>
+// 示例数据：BKNG 股价（简化版）
+var dates = [];
+var prices = [];
+var basePrice = 1800;
+for (var i = 0; i < 365; i++) {
+  var d = new Date(2024, 0, 1);
+  d.setDate(d.getDate() + i);
+  dates.push(d.toISOString().slice(0, 10));
+  basePrice += (Math.random() - 0.45) * 30;
+  if (basePrice < 1400) basePrice = 1400;
+  if (basePrice > 2600) basePrice = 2600;
+  prices.push(Math.round(basePrice));
+}
+
+// 财报日数据
+var earningsDates = [
+  { date: '2024-02-27', label: '4Q23', change: '+2%', type: 'up', info: '4Q23: 业绩超预期，上涨2%' },
+  { date: '2024-05-07', label: '1Q24', change: '-7%', type: 'down', info: '1Q24: 3Q guidance不达预期，下跌7%' },
+  { date: '2024-08-06', label: '2Q24', change: '+7%', type: 'up', info: '2Q24: 4Q guidance超预期，上涨7%' },
+  { date: '2024-11-05', label: '3Q24', change: '+2%', type: 'up', info: '3Q24: 4Q业绩超预期，上涨2%' },
+  { date: '2025-02-25', label: '4Q24', change: '-4%', type: 'down', info: '4Q24: 扩大指引范围，下跌4%' },
+  { date: '2025-05-06', label: '1Q25', change: '~0%', type: 'neutral', info: '1Q25: 略跌' },
+  { date: '2025-08-05', label: '2Q25', change: '+4%', type: 'up', info: '2Q25: 3Q超预期，盘后+3.99%' },
+  { date: '2025-11-04', label: '3Q25', change: '+1%', type: 'up', info: '3Q25: 业绩和指引不错，+1%' }
+];
+
+var colorMap = { up: '#4CAF50', down: '#F44336', neutral: '#9E9E9E' };
+
+// 方案A：标记线
+function renderChartA() {
+  var chart = echarts.init(document.getElementById('chartA'));
+  var markLines = earningsDates.map(function(e) {
+    return {
+      xAxis: e.date,
+      lineStyle: { type: 'dashed', color: colorMap[e.type], width: 2 },
+      label: { formatter: e.label + '\n' + e.change, position: 'end', fontSize: 10, color: colorMap[e.type] }
+    };
+  });
+  
+  chart.setOption({
+    tooltip: {
+      trigger: 'axis',
+      formatter: function(params) {
+        var date = params[0].axisValue;
+        var earnings = earningsDates.filter(function(e) { return e.date === date; });
+        var s = '<div style="font-weight:600">' + date + '</div>';
+        s += '<div>BKNG: $' + params[0].value + '</div>';
+        if (earnings.length > 0) {
+          s += '<div style="margin-top:6px;padding-top:6px;border-top:1px solid #eee;color:' + colorMap[earnings[0].type] + '">' + earnings[0].info + '</div>';
+        }
+        return s;
+      }
+    },
+    grid: { left: 60, right: 30, top: 30, bottom: 50 },
+    xAxis: { type: 'category', data: dates, boundaryGap: false },
+    yAxis: { type: 'value', axisLabel: { formatter: '${value}' } },
+    series: [{
+      name: 'BKNG',
+      type: 'line',
+      data: prices,
+      lineStyle: { width: 2, color: '#800000' },
+      itemStyle: { color: '#800000' },
+      symbol: 'none',
+      markLine: { silent: true, data: markLines, animation: false }
+    }]
+  });
+}
+
+// 方案C：结合方案（带图例和更丰富的标记）
+function renderChartC() {
+  var chart = echarts.init(document.getElementById('chartC'));
+  var markLines = earningsDates.map(function(e) {
+    return {
+      xAxis: e.date,
+      lineStyle: { type: 'dashed', color: colorMap[e.type], width: 2, opacity: 0.8 },
+      label: { 
+        formatter: e.change, 
+        position: 'end', 
+        fontSize: 11, 
+        fontWeight: 'bold',
+        color: colorMap[e.type],
+        backgroundColor: 'rgba(255,255,255,0.9)',
+        padding: [2, 4],
+        borderRadius: 3
+      }
+    };
+  });
+  
+  chart.setOption({
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: 'rgba(255,255,255,0.98)',
+      borderColor: '#ddd',
+      textStyle: { color: '#333' },
+      formatter: function(params) {
+        var date = params[0].axisValue;
+        var earnings = earningsDates.filter(function(e) { return e.date === date; });
+        var s = '<div style="font-weight:600;margin-bottom:4px">' + date + '</div>';
+        s += '<div style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;background:#800000;border-radius:50%;display:inline-block"></span>BKNG: <b>$' + params[0].value + '</b></div>';
+        if (earnings.length > 0) {
+          var e = earnings[0];
+          s += '<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee">';
+          s += '<div style="font-weight:600;color:' + colorMap[e.type] + '">' + e.label + ' 财报日</div>';
+          s += '<div style="font-size:12px;color:#666;margin-top:2px">' + e.info + '</div>';
+          s += '</div>';
+        }
+        return s;
+      }
+    },
+    grid: { left: 60, right: 30, top: 30, bottom: 50 },
+    xAxis: { type: 'category', data: dates, boundaryGap: false },
+    yAxis: { type: 'value', axisLabel: { formatter: '${value}' } },
+    dataZoom: [{ type: 'inside' }],
+    series: [{
+      name: 'BKNG',
+      type: 'line',
+      data: prices,
+      lineStyle: { width: 2, color: '#800000' },
+      itemStyle: { color: '#800000' },
+      symbol: 'none',
+      markLine: { silent: true, data: markLines, animation: false }
+    }]
+  });
+}
+
+// 方案B：财报日条交互
+document.querySelectorAll('.earnings-item').forEach(function(item) {
+  item.addEventListener('mouseenter', function(e) {
+    var tooltip = document.getElementById('tooltipB');
+    tooltip.textContent = item.dataset.info;
+    tooltip.style.display = 'block';
+    var rect = item.getBoundingClientRect();
+    tooltip.style.left = rect.left + 'px';
+    tooltip.style.top = (rect.bottom + 8) + 'px';
+  });
+  item.addEventListener('mouseleave', function() {
+    document.getElementById('tooltipB').style.display = 'none';
+  });
+});
+
+renderChartA();
+renderChartC();
+</script>
+</body>
+</html>
