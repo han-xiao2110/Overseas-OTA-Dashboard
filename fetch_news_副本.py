@@ -1246,12 +1246,11 @@ MODULE_MAX_ITEMS = {
     "dom_disclosures": 40,
 }
 MODULE_RETENTION_DAYS = {
-    # 2026-08-20: intl_core_company 从 14 放宽到 28 天
-    # Expedia收购Layla等重大公司动态需要保留更久（Google News RSS 返回的 IR 文章可能有数周历史）
-    "intl_core_company": 28,
-    "intl_industry": 7,
-    "intl_disclosures": 120,   # SEC/IR 财报类保留更久 (120天, 覆盖约半年)
-    "dom_industry": 28,
+    # 统一 14 天保留（用户要求），SEC/IR 披露除外
+    "intl_core_company": 14,
+    "intl_industry": 14,
+    "intl_disclosures": 28,   # SEC/IR 财报类保留 28 天（季度才出一次）
+    "dom_industry": 14,
     "dom_disclosures": 28,
 }
 
@@ -1399,27 +1398,12 @@ def route_to_modules(news_data):
     # 保留期修剪 + 排序 + 限量
     for mk in MODULE_KEYS:
         items = modules[mk]
-        retention = MODULE_RETENTION_DAYS.get(mk, 28)
+        retention = MODULE_RETENTION_DAYS.get(mk, 14)
         cap = MODULE_MAX_ITEMS.get(mk, 50)
         kept = []
         for it in items:
             if it.get("folded_into"):
                 continue  # 渲染层过滤：被折叠条目不进入模块列表
-            # 2026-08-20: 模块保留期豁免——
-            # ① IR 官方新闻稿：120 天（覆盖财报季度周期）
-            # ② 核心公司(BKNG/EXPE/ABNB)的并购/投资(ma_investment)重大事件: 60 天
-            # ③ 环球旅讯源: 28 天(该源条目少而精)
-            ir_src = bool(it.get("is_ir_source")) or any(k in str(it.get("source") or "") for k in
-                ("Booking Holdings IR", "Expedia Group IR", "Airbnb IR", "SEC EDGAR"))
-            eid = str(it.get("entity_id") or "")
-            ct = str(it.get("content_type") or "")
-            core_ma = (eid in ("BKNG", "EXPE", "ABNB")) and ct == "ma_investment"
-            if ir_src:
-                retention = max(retention, 120)
-            elif core_ma:
-                retention = max(retention, 60)
-            elif str(it.get("source") or "") == "环球旅讯":
-                retention = max(retention, 28)
             d = it.get("date") or ""
             if not d and it.get("fetched_at"):
                 d = str(it.get("fetched_at"))[:10]
@@ -1430,12 +1414,9 @@ def route_to_modules(news_data):
             except Exception:
                 pass
             kept.append(it)
-        # 排序：重要性分数倒序 → 发布时间倒序（最新在上）
-        # reverse=True: 分数值大的在前（100>60），日期值大的在前（08-06>08-04）
-        kept.sort(key=lambda x: (
-            int(x.get("selection_score") or 0),
-            x.get("date") or "9999",
-        ), reverse=True)
+        # 排序：纯按日期降序（最新在上），不再按 selection_score 优先
+        # 用户要求: 最新新闻永远在最上面，越往下越旧
+        kept.sort(key=lambda x: x.get("date") or "9999", reverse=True)
         # 2026-08-20: 模块内再跑一次同事件折叠（prune_and_dedupe 跑在 selection 之前,
         # 选择后不同分区路由过来的条目可能再次重复, 如"东航14天免费退改"被5家媒体报道）
         if mk in ("dom_industry", "dom_disclosures", "intl_industry", "intl_core_company"):

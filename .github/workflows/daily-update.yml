@@ -2,8 +2,9 @@ name: Daily Auto-Update & Deploy
 
 on:
   schedule:
-    # UTC 06:00 = 北京时间 14:00（美股收盘后）
-    - cron: '0 6 * * 1-6'  # 周一到周六（周六补抓周五美股）
+    # UTC 13:00 = 北京时间 21:00（美股收盘后5小时，盘后新闻已出）
+    # 周二至周六：每天抓取上一个美股交易日的收盘价（周六补抓周五）
+    - cron: '0 13 * * 2-6'
   workflow_dispatch:  # 手动触发按钮
 
 # 私有仓库：Actions 默认有 contents:write 权限，显式声明更稳
