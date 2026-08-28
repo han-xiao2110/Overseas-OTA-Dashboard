@@ -42,6 +42,25 @@ jobs:
         run: python fetch_stock_prices_副本.py
         continue-on-error: true
 
+      - name: Verify stock data updated
+        run: |
+          python3 -c "
+          import json, os, sys
+          with open('stock_prices_副本.json') as f:
+              data = json.load(f)
+          today = __import__('datetime').date.today().isoformat()
+          yesterday = (__import__('datetime').date.today() - __import__('datetime').timedelta(days=1)).isoformat()
+          for t in ['BKNG', 'EXPE', 'ABNB']:
+              if t not in data:
+                  print(f'ERROR: {t} missing from stock data')
+                  sys.exit(1)
+              dates = data[t].get('dates', [])
+              last = dates[-1] if dates else 'NONE'
+              print(f'{t}: last date = {last}')
+          print('Stock data OK')
+          "
+        continue-on-error: true
+
       # ── 2. 新闻（全量重抓）──
       - name: Fetch news
         run: python fetch_news_副本.py --force

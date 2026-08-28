@@ -440,84 +440,26 @@ for name, cfg in ft_rows.items():
     }
     print(f"{name}: rev={rev_2q26}, ebitda={ebitda_2q26}, margin={margin_2q26}, gmv={gmv_2q26}")
 
-# ── 3b. Fetch stock price data (local cache, auto-refresh when stale) ──
+# ── 3b. Load stock price data from cache only ──
 STOCK_CACHE = f'{WORK}/stock_prices_副本.json'
-CACHE_MAX_AGE_HOURS = 6  # re-fetch from Yahoo Finance if cache is older than this
 
 def load_cached_prices():
-    """Load stock prices from local cache."""
+    """Load stock prices from cache file (never re-fetch here)."""
     try:
         with open(STOCK_CACHE) as f:
-            return json.load(f)
-    except:
-        return None
-
-def cache_age_hours():
-    try:
-        import os, time as _t
-        return (_t.time() - os.path.getmtime(STOCK_CACHE)) / 3600.0
-    except:
-        return None
-
-def save_cached_prices(data):
-    """Save stock prices to local cache."""
-    try:
-        with open(STOCK_CACHE, 'w') as f:
-            json.dump(data, f)
-        print(f"  Saved to cache: {STOCK_CACHE}")
+            data = json.load(f)
+            # Filter out non-ticker keys like 'last_updated'
+            ticker_keys = {k: v for k, v in data.items() if k in ('BKNG', 'EXPE', 'ABNB', '^GSPC')}
+            if ticker_keys:
+                print(f"  Loaded stock cache: {list(ticker_keys.keys())}")
+                return ticker_keys
+            return None
     except Exception as e:
-        print(f"  Cache save failed: {e}")
-
-def fetch_stock_prices():
-    """Fetch daily closing prices for BKNG, EXPE, ABNB from Yahoo Finance."""
-    # Use cache only when it is fresh enough
-    cached = load_cached_prices()
-    age = cache_age_hours()
-    if cached and age is not None and age < CACHE_MAX_AGE_HOURS:
-        print(f"  Loaded from cache (age {age:.1f}h): {list(cached.keys())}")
-        return cached
-    if cached:
-        print(f"  Cache is stale (age {age:.1f}h > {CACHE_MAX_AGE_HOURS}h), re-fetching...")
-
-    try:
-        import yfinance as yf
-        import time
-
-        tickers = ['BKNG', 'EXPE', 'ABNB', '^GSPC']
-        result = {}
-
-        for t in tickers:
-            try:
-                stock = yf.Ticker(t)
-                hist = stock.history(start='2018-01-01')
-                if len(hist) > 0:
-                    dates = [d.strftime('%Y-%m-%d') for d in hist.index]
-                    closes = [round(float(v), 2) for v in hist['Close'].tolist()]
-                    result[t] = {'dates': dates, 'close': closes}
-                    print(f"  {t}: {len(dates)} days, {dates[0]} to {dates[-1]}")
-                time.sleep(0.5)  # Small delay to avoid rate limiting
-            except Exception as e:
-                print(f"  {t}: failed - {e}")
-
-        if result:
-            save_cached_prices(result)
-            return result
-        if cached:
-            print("  Fetch returned no data; falling back to stale cache")
-            return cached
-        return None
-    except ImportError:
-        print("  yfinance not installed, skipping stock data")
-        return cached
-    except Exception as e:
-        print(f"  Stock fetch failed: {e}")
-        if cached:
-            print("  Using stale cache as fallback")
-            return cached
+        print(f"  Stock cache load failed: {e}")
         return None
 
-print("Fetching stock prices...")
-stock_prices = fetch_stock_prices()
+print("Loading stock prices from cache...")
+stock_prices = load_cached_prices()
 
 # Historical events with time ranges for timeline annotation
 HISTORICAL_EVENTS = [

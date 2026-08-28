@@ -53,6 +53,8 @@ def _check_proxy() -> dict | None:
 # Auto-detect proxy at startup
 _PROXY = _check_proxy()
 if _PROXY:
+    # yfinance >=1.4 dropped the `proxies=` kwarg; apply proxies on the session instead
+    _YF_SESSION.proxies.update(_PROXY)
     print(f"[stock] Using system proxy: {_PROXY['http']}")
 else:
     print("[stock] No system proxy detected, using direct connection")
@@ -108,9 +110,8 @@ def fetch_incremental(ticker: str, start_after: str | None) -> dict | None:
             fetch_label = f"{cutoff} → today" if cutoff else "full history"
             print(f"  {ticker}: attempt {attempt}/{MAX_RETRIES} (period={period}, {fetch_label}) ...", end=" ", flush=True)
             
-            # Use proxy if available
-            proxies = _PROXY if attempt <= 1 else None
-            tk = yf.Ticker(ticker, session=_YF_SESSION, proxies=proxies)
+            # Proxy (if any) is already configured on _YF_SESSION above
+            tk = yf.Ticker(ticker, session=_YF_SESSION)
             
             # Primary: period-based fetch (more reliable than start=)
             hist = tk.history(period=period)
@@ -162,7 +163,7 @@ def fetch_incremental(ticker: str, start_after: str | None) -> dict | None:
     if _PROXY:
         print(f"  {ticker}: trying with proxy ...", end=" ", flush=True)
         try:
-            tk = yf.Ticker(ticker, session=_YF_SESSION, proxies=_PROXY)
+            tk = yf.Ticker(ticker, session=_YF_SESSION)
             hist2 = tk.history(period=period)
             if not hist2.empty:
                 dates = [d.strftime("%Y-%m-%d") for d in hist2.index]
@@ -179,16 +180,66 @@ def fetch_incremental(ticker: str, start_after: str | None) -> dict | None:
         except Exception as e2:
             print(f"proxy failed — {e2}")
 
-    # ── Fallback 2: fast_info for latest price snapshot ──
+    # ── Fallback 2: Direct Yahoo Finance chart API (bypass yfinance rate limiting) ──
+    print(f"  {ticker}: trying direct Yahoo API fallback ...", end=" ", flush=True)
+    try:
+        import urllib.request as _urlreq
+        
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?range=3mo&interval=1d"
+        req = _urlreq.Request(url, headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+            'Accept': 'application/json',
+        })
+        with _urlreq.urlopen(req, timeout=20) as resp:
+            import json as _json
+            raw = _json.loads(resp.read().decode('utf-8'))
+        
+        result = raw.get('chart', {}).get('result', [{}])[0]
+        timestamps = result.get('timestamp', [])
+        quote = result.get('indicators', {}).get('quote', [{}])[0]
+        closes_raw = quote.get('close', [])
+        
+        if timestamps and closes_raw:
+            from datetime import datetime as _dt
+            dates = [_dt.fromtimestamp(t).strftime('%Y-%m-%d') for t in timestamps]
+            closes = [round(float(c), 2) if c else None for c in closes_raw]
+            
+            # Filter out None values
+            valid = [(d, c) for d, c in zip(dates, closes) if c is not None]
+            dates = [v[0] for v in valid]
+            closes = [v[1] for v in valid]
+            
+            if cutoff:
+                filtered = [(d, c) for d, c in zip(dates, closes) if d > cutoff]
+                if filtered:
+                    dates = [f[0] for f in filtered]
+                    closes = [f[1] for f in filtered]
+                    print(f"OK  directAPI  {len(dates)} new days ({dates[0]} → {dates[-1]})")
+                    return {"dates": dates, "close": closes}
+                print("directAPI: no new data after cutoff")
+                return {"dates": [], "close": []}
+            if dates:
+                print(f"OK  directAPI  {len(dates)} days ({dates[0]} → {dates[-1]})")
+                return {"dates": dates, "close": closes}
+        print("directAPI: no data returned")
+    except Exception as e_api:
+        print(f"directAPI failed — {str(e_api)[:60]}")
+
+    # ── Fallback 3: fast_info for latest price snapshot ──
     print(f"  {ticker}: trying final fallback (fast_info) ...", end=" ", flush=True)
     try:
         tk = yf.Ticker(ticker, session=_YF_SESSION)
         fi = tk.fast_info
         last_price = float(fi.last_price)
-        today = datetime.date.today()
-        if today.weekday() >= 5:  # Saturday or Sunday
-            today -= datetime.timedelta(days=today.weekday() - 4)
-        price_date = today.isoformat()
+        # Stamp the last *completed* US trading day, not "today".
+        # US market closes ~20:00-21:00 UTC; before that, the last close was the previous weekday.
+        now_utc = datetime.datetime.now(datetime.timezone.utc)
+        td = now_utc.date()
+        if now_utc.hour < 21:
+            td = td - datetime.timedelta(days=1)
+        while td.weekday() >= 5:  # skip Sat/Sun
+            td = td - datetime.timedelta(days=1)
+        price_date = td.isoformat()
         print(f"OK  snapshot ${last_price:.2f} ({price_date})")
         return {"dates": [price_date], "close": [round(last_price, 2)]}
     except Exception as e3:
