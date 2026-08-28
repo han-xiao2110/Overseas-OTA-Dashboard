@@ -67,6 +67,7 @@ jobs:
           git add news_cache_backups/ 2>/dev/null || true
           if ! git diff --staged --quiet; then
             git commit -m "auto: daily update $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main || true
             git push
           else
             echo "No data changes to commit."
