@@ -1215,11 +1215,36 @@ def test_module_routing():
           fn.classify_ir_release("Expedia Group acquires Layla, accelerating its AI strategy") == "core_action")
     ir_earnings = {"source": "Airbnb IR", "entity_id": "ABNB",
                    "ir_release_kind": "earnings_disclosure", "content_type": "earnings"}
+    ir_event = {"source": "Expedia Group IR", "entity_id": "EXPE",
+                "ir_release_kind": "investor_event", "content_type": "general"}
     ir_strategy = {"source": "Expedia Group IR", "entity_id": "EXPE",
                    "ir_release_kind": "core_action", "content_type": "ma_investment"}
-    check("I11c IR业绩进披露、战略运营进核心动态",
+    check("I11c IR业绩进披露，参会及战略运营进核心动态",
           fn._route_single_item(ir_earnings, "international", "industry_news") == "intl_disclosures" and
+          fn._route_single_item(ir_event, "international", "industry_news") == "intl_core_company" and
           fn._route_single_item(ir_strategy, "international", "industry_news") == "intl_core_company")
+
+    authority_items = [
+        {"date": "2026-08-26", "title": "Expedia Group将参加高盛Communacopia大会",
+         "summary": "", "url": "https://ir.expediagroup.com/event", "source": "Expedia Group IR",
+         "entity_id": "EXPE", "ir_release_kind": "investor_event", "selection_score": 60},
+        {"date": "2026-08-27", "title": "Expedia Group参加高盛Communacopia大会",
+         "summary": "Bloomberg detailed report", "url": "https://bloomberg.example/event", "source": "Bloomberg",
+         "entity_id": "EXPE", "selection_score": 80},
+        {"date": "2026-08-27", "title": "Expedia出席高盛Communacopia大会",
+         "summary": "Skift report", "url": "https://skift.example/event", "source": "Skift",
+         "entity_id": "EXPE", "selection_score": 80},
+        {"date": "2026-08-27", "title": "Expedia出席高盛Communacopia大会",
+         "summary": "环球旅讯转载", "url": "https://traveldaily.example/event", "source": "环球旅讯",
+         "entity_id": "EXPE", "selection_score": 80},
+    ]
+    fn.group_core_company_events(authority_items)
+    authority_primary = [x for x in authority_items if not x.get("folded_into")]
+    check("I11c2 同事件优先官方IR而非较新或摘要更长的媒体稿",
+          len(authority_primary) == 1 and authority_primary[0].get("source") == "Expedia Group IR")
+    check("I11c3 来源权威度顺序为IR > Bloomberg > Skift > 环球旅讯",
+          fn._source_rank(authority_items[0]) > fn._source_rank(authority_items[1]) >
+          fn._source_rank(authority_items[2]) > fn._source_rank(authority_items[3]))
 
     old_date = (datetime.date.today() - datetime.timedelta(days=15)).isoformat()
     recent_date = (datetime.date.today() - datetime.timedelta(days=14)).isoformat()
@@ -1263,7 +1288,7 @@ def test_module_routing():
                  "domestic": {}}
     fn.route_to_modules(routed_ir)
     check("I11f2 旧缓存共享event_id也不会折叠不同公司IR",
-          len(routed_ir["modules"]["intl_disclosures"]) == 2)
+          len(routed_ir["modules"]["intl_core_company"]) == 2)
 
     ir_display_fixture = {"international": {"industry_news": [{
         "title": "Booking Holdings Inc. to Present at the Citi 2026 Global TMT Conference",

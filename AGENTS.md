@@ -93,7 +93,8 @@ RSS/官网抓取(safe_request, TLS 只验证)
 - RSS 源: Skift, PhocusWire, Travel Weekly, 环球旅讯, 36氪, Google News
 - 官网: SEC EDGAR, 披露易(港交所), 民航网, 交通运输部, 文旅部
 - 公司 IR: Booking Holdings IR, Expedia Group IR, Airbnb IR（直读三家官网 Q4 PressRelease feed，不经 Google News）
-- IR 路由: 业绩/财报/投资者活动进“披露与文件”；产品、并购、合作、战略和管理层动作进“核心公司动态”
+- IR 路由: 业绩/财报/股东信/业绩材料进“披露与文件”；投资者大会、路演、产品、并购、合作、战略和管理层动作进“核心公司动态”
+- 同事件主来源优先级: 一手监管/公司官方源 > 通讯社/主流财经媒体 > 国际垂直行业媒体 > 国内转载/聚合源；具体评分见 `SOURCE_RANK_MAP`
 
 ---
 
@@ -170,10 +171,10 @@ RSS/官网抓取(safe_request, TLS 只验证)
 # 语法检查
 python3 -c "import ast; [ast.parse(open(f).read()) for f in ['fetch_news_副本.py','fetch_stock_prices_副本.py','generate_副本.py']]; print('AST OK')"
 
-# 离线质量测试（147 项）
+# 离线质量测试（149 项）
 python3 news_quality_tests_副本.py
 
-# 前端烟雾测试（43 项）
+# 前端烟雾测试（44 项）
 node news_smoke_副本.js dashboard.html
 
 # 市场行情测试（32 项）

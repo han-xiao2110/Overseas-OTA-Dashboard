@@ -39,7 +39,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -205,7 +206,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -288,7 +290,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -329,7 +332,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -536,7 +540,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -703,7 +708,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -991,7 +997,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -1074,7 +1081,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       }
     ],
@@ -1093,22 +1101,22 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "partnership",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 68,
+        "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要24/基本面0/证据4/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "正式制度/组织变化",
-          "只有标题无公开证据(-15)"
+          "只有标题无公开证据(-15)",
+          "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "cooperation",
           "core_company"
         ],
         "title_original": "Agoda被评选为首届亚洲欧洲歌唱大赛的旅行合作伙伴",
@@ -1158,47 +1166,6 @@
         "translation_status": "ready",
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 09:28:04"
-      },
-      {
-        "date": "2026-08-30",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "爱彼迎让我们重新思考「直接预订」的真正含义",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWJ0a1UxVkxaT09xd0RTMEJzbEhtYVRFblppdTdfMFJKeDJXQWJLbUwxSXZZVnNfRmplX0FOWFNZSXRVTjlrRWRya25FWjJwN0ZtSVh2aWN4V05MM1FaSkY4RU9fRHVJMUpBNXkzRlpJY1BCeTBOalBTUEY3QzVhUHNfcV9QUjZ2LW14MnJnWVVyUQ?oc=5",
-        "summary": "",
-        "company": "ABNB",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源4)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Airbnb is making us rethink what a “direct booking” really means",
-        "summary_original": "Airbnb is making us rethink what a “direct booking” really means&nbsp;&nbsp;PhocusWire",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-31 09:28:04",
-        "suppress_core_badge": true
       },
       {
         "date": "2026-08-30",
@@ -1259,10 +1226,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -1299,11 +1266,11 @@
           "vertical.allowed_theme"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 88,
+        "substantive_company_change": true,
+        "selection_score": 100,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关19/重要4/基本面22/证据14/来源4)",
+          "评分(相关25/重要14/基本面22/证据14/来源4)",
           "重点公司(BKNG)"
         ],
         "rejection_reason": null,
@@ -1317,8 +1284,7 @@
         "translation_status": "ready",
         "summary_translated": true,
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:28:04",
-        "suppress_core_badge": true
+        "summary_generated_at": "2026-08-31 09:28:04"
       },
       {
         "date": "2026-08-28",
@@ -1333,7 +1299,7 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "topic.hotel",
@@ -1341,15 +1307,17 @@
           "vertical.allowed_theme"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
+        "substantive_company_change": true,
+        "selection_score": 70,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
+          "评分(相关16/重要22/基本面18/证据10/来源4)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
+        "impact_dimensions": [
+          "financials",
+          "distribution"
+        ],
         "title_original": "What Hotelbeds’ Shrinking Margins Mean for Hotel Distribution",
         "summary_original": "Hotelbeds became the dominant independent bed bank through scale. Its results now show that scale alone no longer protects the economics.",
         "display_ready": true,
@@ -1423,7 +1391,8 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要14/基本面0/证据10/来源4)",
+          "评分(相关11/重要14/基本面0/证据10/来源4)",
+          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -1437,82 +1406,6 @@
         "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 09:28:04"
-      },
-      {
-        "date": "2026-08-27",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "差旅管理公司eTravel收购罗马尼亚同行 Accent旅行和活动多数股权",
-        "url": "https://www.traveldaily.cn/expressPage/190607/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-27",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:26:07",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "title_original": "差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权",
-        "display_ready": true,
-        "translation_status": "ready"
-      },
-      {
-        "date": "2026-08-27",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "斯波差旅平台特纳纳收购会议管理平台部队",
-        "url": "https://www.traveldaily.cn/expressPage/190605/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-27",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:26:07",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "title_original": "差旅平台Spotnana收购会议管理平台Troop",
-        "display_ready": true,
-        "translation_status": "ready"
       },
       {
         "date": "2026-08-26",
@@ -1568,7 +1461,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "market.insider_sale_fact",
@@ -1585,6 +1478,8 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "capital",
+          "competition",
           "core_company"
         ],
         "title_original": "Expedia Executive Sells 3,133 Shares for $1 Million",
@@ -1938,7 +1833,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
+          "评分(相关6/重要4/基本面18/证据10/来源4)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -1976,9 +1871,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据20/来源2)",
+          "评分(相关5/重要4/基本面0/证据14/来源2)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "媒体高管售股事实保留（非核心公司动态）"
         ],
         "rejection_reason": null,
@@ -2172,9 +2067,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -2208,10 +2103,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -2294,13 +2189,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 67,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要14/基本面0/证据10/来源2)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关5/重要25/基本面0/证据10/来源2)",
+          "重点公司(ABNB)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2314,6 +2207,10 @@
         "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 09:28:04",
+        "event_id": "ev_adbac05cec",
+        "related_sources": [
+          "Yahoo"
+        ],
         "suppress_core_badge": true
       },
       {
@@ -2376,6 +2273,7 @@
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关0/重要4/基本面0/证据10/来源4)",
+          "摘要重复标题(-20)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
@@ -2388,44 +2286,6 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_translated": true
-      },
-      {
-        "date": "2026-08-21",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "万豪CEO ： AI能绕过 OTA ，却绕不过酒店",
-        "url": "https://www.traveldaily.cn/article/190570/",
-        "summary": "掌控住宿体验，才是酒店的护城河",
-        "source_channel": "home",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-21",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "topic.hotel",
-          "topic.hotel.ota_direct_exception",
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关21/重要14/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "organization"
-        ],
-        "title_original": "万豪CEO：AI能绕过OTA，却绕不过酒店",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:28:04"
       },
       {
         "date": "2026-08-20",
@@ -2446,14 +2306,12 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
-          "正式制度/组织变化",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "正式制度/组织变化"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2570,13 +2428,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 66,
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关5/重要24/基本面0/证据10/来源2)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "重点公司(BKNG)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2591,7 +2447,8 @@
         "summary_generated_at": "2026-08-31 09:28:04",
         "event_id": "ev_core_1a5a693f5d",
         "related_sources": [
-          "TTG Asia"
+          "TTG Asia",
+          "PR Newswire"
         ]
       },
       {
@@ -2610,16 +2467,17 @@
         "source_channel": "",
         "content_type": "product",
         "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 72,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要24/基本面0/证据10/来源2)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关11/重要24/基本面0/证据10/来源2)",
+          "重点公司(BKNG)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2673,6 +2531,120 @@
         "summary_generated_at": "2026-08-31 06:21:52",
         "event_id": "ev_core_1a5a693f5d",
         "folded_into": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQbEFjRnQ4VFZVSkk4TWxEQVFiY3BaaGpzWGR4VU5XREZoSkFlNmRtempjNkdsMEkzRkxHbWVyby1HeWM3TXNvVHZCeHB5US01NUp4aDN1YllQUTZ3MC1rSmVvbU1mb0pjbVowbGc2b0U0U0VfR3ZRNE8zOWFmOUsydzItdXgydlVIdTdUUlU0dXJWSEdmdDJ0blljRXVINFlvN0o4RUxLdG56M012bnpBWGN0ZDBubUtuQ2IySE1MRWJLQ196aWVDVDJhTTk0eDN10gHWAUFVX3lxTE5HS3ZwQ3pRWjE4UkFneE9XNzFnc1RPblk4OF9hODZlNnR1b1ZQX2lxU2dlS2p2MDIwSF9HTnV0WEt3b1NrYU5WbWE2ZFBoaDZrekRXYzZZaDE4S0NoRjk1ck1TaVV5c05kOVBKVWI3cjNmX0ZYWTVRYzdDbC1DZHFaNmktVDNJdHBhRnYzYmxPREsxWVF3WXQyVXNRUklfTHFmR3ZMY2FZR2VtcEZ2SFlRTTg5emNMM2ZuVDFMTnR2V0o1N0dMR0pncy1ZNlp3UFJGQUV2OFE?oc=5"
+      },
+      {
+        "date": "2026-08-27",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "差旅管理公司eTravel收购罗马尼亚同行 Accent旅行和活动多数股权",
+        "url": "https://www.traveldaily.cn/expressPage/190607/",
+        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+        "source_channel": "express",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-27",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:26:07",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "ma_investment",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "重要并购/融资保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "title_original": "差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权",
+        "display_ready": true,
+        "translation_status": "ready"
+      },
+      {
+        "date": "2026-08-27",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "斯波差旅平台特纳纳收购会议管理平台部队",
+        "url": "https://www.traveldaily.cn/expressPage/190605/",
+        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+        "source_channel": "express",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-27",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:26:07",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "ma_investment",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "重要并购/融资保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "title_original": "差旅平台Spotnana收购会议管理平台Troop",
+        "display_ready": true,
+        "translation_status": "ready"
+      },
+      {
+        "date": "2026-08-21",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "万豪CEO ： AI能绕过 OTA ，却绕不过酒店",
+        "url": "https://www.traveldaily.cn/article/190570/",
+        "summary": "掌控住宿体验，才是酒店的护城河",
+        "source_channel": "home",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-21",
+        "date_status": "known",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "management_org",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception",
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关21/重要14/基本面0/证据10/来源4)",
+          "垂直媒体允许主题保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "title_original": "万豪CEO：AI能绕过OTA，却绕不过酒店",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:28:04"
       }
     ]
   },
@@ -2888,22 +2860,22 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "partnership",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 68,
+        "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要24/基本面0/证据4/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "正式制度/组织变化",
-          "只有标题无公开证据(-15)"
+          "只有标题无公开证据(-15)",
+          "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "cooperation",
           "core_company"
         ],
         "title_original": "Agoda被评选为首届亚洲欧洲歌唱大赛的旅行合作伙伴",
@@ -2973,10 +2945,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -2987,6 +2959,204 @@
         ],
         "title_original": "Expedia Group Appoints New Chief Financial Officer",
         "summary_original": "Expedia Group Appoints New Chief Financial Officer&nbsp;&nbsp;safariindia.com",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:28:04"
+      },
+      {
+        "date": "2026-08-28",
+        "source": "Skift",
+        "category": "industry_news",
+        "title": "Booking Holdings与Expedia的B2B业务对比：估算显示Booking间夜量领先",
+        "url": "https://skift.com/2026/08/28/booking-holdings-vs-expedia-in-b2b-bombshell-estimate-says-booking-leads-in-room-nights/",
+        "summary": "无论如何解读这些数据，Booking Holdings的B2B业务规模似乎都远超旅游业此前的认知，其正在推进的重组也可能产生显著影响。",
+        "company": "BKNG",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-28",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "operating_data",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关25/重要14/基本面22/证据14/来源4)",
+          "重点公司(BKNG)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "operating_data",
+          "core_company"
+        ],
+        "title_original": "Booking Holdings vs. Expedia in B2B: Bombshell Estimate Says Booking Leads in Room Nights",
+        "summary_original": "No matter how you parse the numbers, Booking Holdings&apos; B2B business appears to be a lot larger than the travel industry previously understood. Its in-process reorganization could have significant",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_translated": true,
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:28:04"
+      },
+      {
+        "date": "2026-08-26",
+        "title": "Expedia Group将参加2026年高盛Communacopia +技术大会",
+        "url": "https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-to-Participate-in-Goldman-Sachs-Communacopia--Technology-Conference-2026/default.aspx",
+        "summary": "Expedia Group （纳斯达克股票代码： EXPE ）将参加2026年高盛Communacopia +技术大会。 首席执行官阿丽亚娜·戈林（ Ariane Gorin ）将于周三参加炉边谈话，",
+        "source": "Expedia Group IR",
+        "category": "industry_news",
+        "entity_id": "EXPE",
+        "company": "EXPE",
+        "is_core_company": true,
+        "source_channel": "ir_official_q4",
+        "is_ir_source": true,
+        "ir_release_kind": "investor_event",
+        "content_type": "general",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-26",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据14/来源5)",
+          "重点公司(EXPE)",
+          "IR/ Bloomberg垂直源保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "title_original": "Expedia Group to Participate in Goldman Sachs Communacopia + Technology Conference 2026",
+        "summary_original": "Expedia Group (NASDAQ: EXPE) will participate in the Goldman Sachs Communacopia + Technology Conference 2026. Ariane Gorin, Chief Executive Officer, will participate in a fireside chat on Wednesday, S",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:28:04"
+      },
+      {
+        "date": "2026-08-26",
+        "title": "Booking Holdings将参加高盛Communacopia + Technology大会",
+        "url": "https://ir.bookingholdings.com/news/news-details/2026/Booking-Holdings-Inc--to-Present-at-the-Goldman-Sachs-Communacopia--Technology-Conference/default.aspx",
+        "summary": "Booking Holdings （纳斯达克股票代码： BKNG ）今天宣布，首席财务官Ewout Steenbergen将参加在",
+        "source": "Booking Holdings IR",
+        "category": "industry_news",
+        "entity_id": "BKNG",
+        "company": "BKNG",
+        "is_core_company": true,
+        "source_channel": "ir_official_q4",
+        "is_ir_source": true,
+        "ir_release_kind": "investor_event",
+        "content_type": "general",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-26",
+        "date_status": "known",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关10/重要4/基本面0/证据14/来源5)",
+          "重点公司(BKNG)",
+          "IR/ Bloomberg垂直源保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "title_original": "Booking Holdings Inc. to Present at the Goldman Sachs Communacopia + Technology Conference",
+        "summary_original": "Booking Holdings (NASDAQ: BKNG) today announced that Chief Financial Officer Ewout Steenbergen will participate in a fireside chat at the Goldman Sachs Communacopia + Technology Conference, held in Sa",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:28:04"
+      },
+      {
+        "date": "2026-08-25",
+        "title": "预订控股公司 将在花旗2026全球TMT大会上发表演讲",
+        "url": "https://ir.bookingholdings.com/news/news-details/2026/Booking-Holdings-Inc--to-Present-at-the-Citi-2026-Global-TMT-Conference/default.aspx",
+        "summary": "Booking Holdings （纳斯达克股票代码： BKNG ）今天宣布，首席执行官格伦·福格尔（ Glenn Fogel ）将参加9月份在纽约市举行的花旗2026全球TMT大会的主题演讲",
+        "source": "Booking Holdings IR",
+        "category": "industry_news",
+        "entity_id": "BKNG",
+        "company": "BKNG",
+        "is_core_company": true,
+        "source_channel": "ir_official_q4",
+        "is_ir_source": true,
+        "ir_release_kind": "investor_event",
+        "content_type": "general",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-25",
+        "date_status": "known",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关10/重要4/基本面0/证据14/来源5)",
+          "重点公司(BKNG)",
+          "IR/ Bloomberg垂直源保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "title_original": "Booking Holdings Inc. to Present at the Citi 2026 Global TMT Conference",
+        "summary_original": "Booking Holdings (NASDAQ: BKNG) today announced that Chief Executive Officer Glenn Fogel will participate in a keynote session at the Citi 2026 Global TMT Conference, held in New York City, on Septemb",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 09:28:04"
+      },
+      {
+        "date": "2026-08-25",
+        "title": "爱彼迎将参加2026年高盛Communacopia +技术大会",
+        "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Participate-in-the-Goldman-Sachs-Communacopia--Technology-Conference-2026/default.aspx",
+        "summary": "爱彼迎公司 （纳斯达克股票代码： ABNB ）今天宣布，联合创始人兼首席执行官Brian Chesky将于9月8日星期二在高盛Communacopia + Technology Conference 2026上发表演讲",
+        "source": "Airbnb IR",
+        "category": "industry_news",
+        "entity_id": "ABNB",
+        "company": "ABNB",
+        "is_core_company": true,
+        "source_channel": "ir_official_q4",
+        "is_ir_source": true,
+        "ir_release_kind": "investor_event",
+        "content_type": "general",
+        "fetched_at": "2026-08-31 09:25:54",
+        "published_at": "2026-08-25",
+        "date_status": "known",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据14/来源5)",
+          "重点公司(ABNB)",
+          "IR/ Bloomberg垂直源保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "title_original": "Airbnb to Participate in the Goldman Sachs Communacopia + Technology Conference 2026",
+        "summary_original": "Airbnb, Inc. (NASDAQ: ABNB) announced today that Co-founder and Chief Executive Officer, Brian Chesky, will speak at the Goldman Sachs Communacopia + Technology Conference 2026 on Tuesday, September 8",
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
@@ -3014,9 +3184,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -3050,10 +3220,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -3173,13 +3343,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 66,
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关5/重要24/基本面0/证据10/来源2)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "重点公司(BKNG)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -3194,94 +3362,12 @@
         "summary_generated_at": "2026-08-31 09:28:04",
         "event_id": "ev_core_1a5a693f5d",
         "related_sources": [
-          "TTG Asia"
+          "TTG Asia",
+          "PR Newswire"
         ]
       }
     ],
     "intl_industry": [
-      {
-        "date": "2026-08-30",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "爱彼迎让我们重新思考「直接预订」的真正含义",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWJ0a1UxVkxaT09xd0RTMEJzbEhtYVRFblppdTdfMFJKeDJXQWJLbUwxSXZZVnNfRmplX0FOWFNZSXRVTjlrRWRya25FWjJwN0ZtSVh2aWN4V05MM1FaSkY4RU9fRHVJMUpBNXkzRlpJY1BCeTBOalBTUEY3QzVhUHNfcV9QUjZ2LW14MnJnWVVyUQ?oc=5",
-        "summary": "",
-        "company": "ABNB",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源4)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Airbnb is making us rethink what a “direct booking” really means",
-        "summary_original": "Airbnb is making us rethink what a “direct booking” really means&nbsp;&nbsp;PhocusWire",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-31 09:28:04",
-        "suppress_core_badge": true
-      },
-      {
-        "date": "2026-08-28",
-        "source": "Skift",
-        "category": "industry_news",
-        "title": "Booking Holdings与Expedia的B2B业务对比：估算显示Booking间夜量领先",
-        "url": "https://skift.com/2026/08/28/booking-holdings-vs-expedia-in-b2b-bombshell-estimate-says-booking-leads-in-room-nights/",
-        "summary": "无论如何解读这些数据，Booking Holdings的B2B业务规模似乎都远超旅游业此前的认知，其正在推进的重组也可能产生显著影响。",
-        "company": "BKNG",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-28",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "entity_id": "BKNG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "operating_data",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 88,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关19/重要4/基本面22/证据14/来源4)",
-          "重点公司(BKNG)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "operating_data",
-          "core_company"
-        ],
-        "title_original": "Booking Holdings vs. Expedia in B2B: Bombshell Estimate Says Booking Leads in Room Nights",
-        "summary_original": "No matter how you parse the numbers, Booking Holdings&apos; B2B business appears to be a lot larger than the travel industry previously understood. Its in-process reorganization could have significant",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_translated": true,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:28:04",
-        "suppress_core_badge": true
-      },
       {
         "date": "2026-08-28",
         "source": "Skift",
@@ -3295,7 +3381,7 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "topic.hotel",
@@ -3303,15 +3389,17 @@
           "vertical.allowed_theme"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
+        "substantive_company_change": true,
+        "selection_score": 70,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
+          "评分(相关16/重要22/基本面18/证据10/来源4)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
+        "impact_dimensions": [
+          "financials",
+          "distribution"
+        ],
         "title_original": "What Hotelbeds’ Shrinking Margins Mean for Hotel Distribution",
         "summary_original": "Hotelbeds became the dominant independent bed bank through scale. Its results now show that scale alone no longer protects the economics.",
         "display_ready": true,
@@ -3385,7 +3473,8 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要14/基本面0/证据10/来源4)",
+          "评分(相关11/重要14/基本面0/证据10/来源4)",
+          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -3490,7 +3579,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "market.insider_sale_fact",
@@ -3507,6 +3596,8 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "capital",
+          "competition",
           "core_company"
         ],
         "title_original": "Expedia Executive Sells 3,133 Shares for $1 Million",
@@ -3821,7 +3912,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
+          "评分(相关6/重要4/基本面18/证据10/来源4)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -3859,9 +3950,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据20/来源2)",
+          "评分(相关5/重要4/基本面0/证据14/来源2)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "媒体高管售股事实保留（非核心公司动态）"
         ],
         "rejection_reason": null,
@@ -3974,13 +4065,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 67,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要14/基本面0/证据10/来源2)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关5/重要25/基本面0/证据10/来源2)",
+          "重点公司(ABNB)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -3994,6 +4083,10 @@
         "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 09:28:04",
+        "event_id": "ev_adbac05cec",
+        "related_sources": [
+          "Yahoo"
+        ],
         "suppress_core_badge": true
       },
       {
@@ -4017,6 +4110,7 @@
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关0/重要4/基本面0/证据10/来源4)",
+          "摘要重复标题(-20)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
@@ -4108,7 +4202,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -4274,87 +4369,9 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
-      },
-      {
-        "date": "2026-08-26",
-        "title": "Expedia Group将参加2026年高盛Communacopia +技术大会",
-        "url": "https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-to-Participate-in-Goldman-Sachs-Communacopia--Technology-Conference-2026/default.aspx",
-        "summary": "Expedia Group （纳斯达克股票代码： EXPE ）将参加2026年高盛Communacopia +技术大会。 首席执行官阿丽亚娜·戈林（ Ariane Gorin ）将于周三参加炉边谈话，",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official_q4",
-        "is_ir_source": true,
-        "ir_release_kind": "investor_event",
-        "content_type": "general",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-26",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据14/来源5)",
-          "重点公司(EXPE)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Expedia Group to Participate in Goldman Sachs Communacopia + Technology Conference 2026",
-        "summary_original": "Expedia Group (NASDAQ: EXPE) will participate in the Goldman Sachs Communacopia + Technology Conference 2026. Ariane Gorin, Chief Executive Officer, will participate in a fireside chat on Wednesday, S",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:28:04"
-      },
-      {
-        "date": "2026-08-26",
-        "title": "Booking Holdings将参加高盛Communacopia + Technology大会",
-        "url": "https://ir.bookingholdings.com/news/news-details/2026/Booking-Holdings-Inc--to-Present-at-the-Goldman-Sachs-Communacopia--Technology-Conference/default.aspx",
-        "summary": "Booking Holdings （纳斯达克股票代码： BKNG ）今天宣布，首席财务官Ewout Steenbergen将参加在",
-        "source": "Booking Holdings IR",
-        "category": "industry_news",
-        "entity_id": "BKNG",
-        "company": "BKNG",
-        "is_core_company": true,
-        "source_channel": "ir_official_q4",
-        "is_ir_source": true,
-        "ir_release_kind": "investor_event",
-        "content_type": "general",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-26",
-        "date_status": "known",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源5)",
-          "重点公司(BKNG)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Booking Holdings Inc. to Present at the Goldman Sachs Communacopia + Technology Conference",
-        "summary_original": "Booking Holdings (NASDAQ: BKNG) today announced that Chief Financial Officer Ewout Steenbergen will participate in a fireside chat at the Goldman Sachs Communacopia + Technology Conference, held in Sa",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:28:04"
       },
       {
         "date": "2026-08-25",
@@ -4436,86 +4453,9 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
-      },
-      {
-        "date": "2026-08-25",
-        "title": "预订控股公司 将在花旗2026全球TMT大会上发表演讲",
-        "url": "https://ir.bookingholdings.com/news/news-details/2026/Booking-Holdings-Inc--to-Present-at-the-Citi-2026-Global-TMT-Conference/default.aspx",
-        "summary": "Booking Holdings （纳斯达克股票代码： BKNG ）今天宣布，首席执行官格伦·福格尔（ Glenn Fogel ）将参加9月份在纽约市举行的花旗2026全球TMT大会的主题演讲",
-        "source": "Booking Holdings IR",
-        "category": "industry_news",
-        "entity_id": "BKNG",
-        "company": "BKNG",
-        "is_core_company": true,
-        "source_channel": "ir_official_q4",
-        "is_ir_source": true,
-        "ir_release_kind": "investor_event",
-        "content_type": "general",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-25",
-        "date_status": "known",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源5)",
-          "重点公司(BKNG)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Booking Holdings Inc. to Present at the Citi 2026 Global TMT Conference",
-        "summary_original": "Booking Holdings (NASDAQ: BKNG) today announced that Chief Executive Officer Glenn Fogel will participate in a keynote session at the Citi 2026 Global TMT Conference, held in New York City, on Septemb",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:28:04"
-      },
-      {
-        "date": "2026-08-25",
-        "title": "爱彼迎将参加2026年高盛Communacopia +技术大会",
-        "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Participate-in-the-Goldman-Sachs-Communacopia--Technology-Conference-2026/default.aspx",
-        "summary": "爱彼迎公司 （纳斯达克股票代码： ABNB ）今天宣布，联合创始人兼首席执行官Brian Chesky将于9月8日星期二在高盛Communacopia + Technology Conference 2026上发表演讲",
-        "source": "Airbnb IR",
-        "category": "industry_news",
-        "entity_id": "ABNB",
-        "company": "ABNB",
-        "is_core_company": true,
-        "source_channel": "ir_official_q4",
-        "is_ir_source": true,
-        "ir_release_kind": "investor_event",
-        "content_type": "general",
-        "fetched_at": "2026-08-31 09:25:54",
-        "published_at": "2026-08-25",
-        "date_status": "known",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据14/来源5)",
-          "重点公司(ABNB)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Airbnb to Participate in the Goldman Sachs Communacopia + Technology Conference 2026",
-        "summary_original": "Airbnb, Inc. (NASDAQ: ABNB) announced today that Co-founder and Chief Executive Officer, Brian Chesky, will speak at the Goldman Sachs Communacopia + Technology Conference 2026 on Tuesday, September 8",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 09:28:04"
       },
       {
         "date": "2026-08-24",
@@ -4555,7 +4495,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -4762,7 +4703,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -4929,7 +4871,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -5217,7 +5160,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -5300,7 +5244,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       }
     ],
@@ -5461,35 +5406,34 @@
   },
   "last_updated": "2026-08-31 09:28:04",
   "selection_report": {
-    "run_at": "2026-08-31 09:26:31",
+    "run_at": "2026-08-31 17:41:31",
     "policy_version": "2026-08-30-v4",
-    "raw_count": 205,
-    "kept_count": 71,
-    "rejected_count": 134,
+    "raw_count": 184,
+    "kept_count": 70,
+    "rejected_count": 114,
     "by_reason": {
-      "评分低于60且无保底资格": 67,
+      "评分低于60且无保底资格": 65,
       "Hotel非OTA相关": 20,
+      "观点评论/泛分析": 2,
       "观点评论/趋势展望": 3,
       "新闻合集/无具体事件页": 2,
       "品牌营销代理宣传": 1,
-      "股价/估值评论": 2,
+      "股价/估值评论": 1,
       "前高管在第三方公司履新": 1,
       "人工标注排除": 4,
       "公益/救灾宣传": 2,
       "软广/优惠促销/榜单": 3,
       "被动机构持仓变动": 1,
-      "无新事实短评": 6,
-      "观点评论/泛分析": 2,
+      "无新事实短评": 4,
       "体育赞助/庆典/获奖/公益": 1,
-      "东航非业务影响词": 16,
-      "活动报名/会议预告": 1,
-      "东航宣传稿(CiftonEXCLUDE_RE)": 2
+      "东航非业务影响词": 3,
+      "活动报名/会议预告": 1
     },
     "quality": {
       "empty_categories": [],
-      "total_items": 71,
+      "total_items": 70,
       "unknown_date_count": 0,
-      "no_summary_count": 7
+      "no_summary_count": 6
     }
   },
   "update_status": "success",
@@ -5747,5 +5691,7 @@
       }
     }
   },
-  "update_mode": "full"
+  "update_mode": "full",
+  "policy_version": "2026-08-30-v4",
+  "policy_reprocessed_at": "2026-08-31 17:41:31"
 }

@@ -1844,9 +1844,9 @@ def _route_single_item(item, section, category):
     # 实质动态仍进入核心公司。媒体财报和普通行业稿一律不进入披露。
     if any(k in src for k in IR_SOURCE_KEYWORDS):
         release_kind = str(item.get("ir_release_kind", "") or "")
-        if release_kind in ("earnings_disclosure", "investor_event"):
+        if release_kind == "earnings_disclosure":
             return "intl_disclosures"
-        if release_kind == "core_action":
+        if release_kind in ("investor_event", "core_action"):
             return "intl_core_company"
         if ctype in DISCLOSURE_CONTENT_TYPES or re.search(
                 r"财报|季报|年报|业绩|营收|盈利|股东信|8-K|10-K|10-Q|earnings|revenue|results|"
@@ -4599,18 +4599,21 @@ def _is_google_news_url(u):
 
 # 来源权威度（同文/同事件裁决用; 数值越高越优先保留）
 SOURCE_RANK_MAP = {
-    "SEC EDGAR": 100,
-    "Booking Holdings IR": 95, "Expedia Group IR": 95, "Airbnb IR": 95,
-    "Bloomberg": 90, "Bloomberg Markets": 90, "Bloomberg Technology": 90,
-    "Bloomberg Travel (GN)": 88, "Bloomberg Mobility (GN)": 88,
-    "Wall Street Journal": 85, "WSJ": 85,
-    "Financial Times": 80, "FT": 80,
-    "Reuters": 78,
-    "CNBC": 75,
-    "Skift": 70, "PhocusWire": 70, "环球旅讯": 70,
-    "Expedia": 72, "Booking.com": 72, "Airbnb": 72,
-    "文旅部": 65, "交通运输部": 65, "民航网": 60, "披露易": 60,
-    "Travel Weekly": 58,
+    # 一手文件/官方公告
+    "SEC EDGAR": 110,
+    "披露易": 108, "文旅部": 105, "交通运输部": 105,
+    "Booking Holdings IR": 100, "Expedia Group IR": 100, "Airbnb IR": 100,
+    # 通讯社/主流财经媒体
+    "Reuters": 96,
+    "Bloomberg": 94, "Bloomberg Markets": 94, "Bloomberg Technology": 94,
+    "Bloomberg Travel (GN)": 94, "Bloomberg Mobility (GN)": 94,
+    "Wall Street Journal": 91, "WSJ": 91,
+    "Financial Times": 90, "FT": 90,
+    "CNBC": 86,
+    # 公司 newsroom 和垂直行业媒体
+    "Expedia": 85, "Booking.com": 85, "Airbnb": 85,
+    "Skift": 76, "PhocusWire": 73, "Travel Weekly": 70,
+    "环球旅讯": 65, "民航网": 64,
 }
 # 官方公告/公司官方来源（同事件优先当主条目）
 OFFICIAL_SOURCE_RE = re.compile(r'SEC|EDGAR|披露易|文旅部|交通运输部|民航网|官方网站|Newsroom|IR|Investor Relations|investors\.', re.IGNORECASE)
@@ -4627,9 +4630,10 @@ def _source_rank(item):
                 rank = max(rank, v)
         if OFFICIAL_SOURCE_RE.search(src):
             rank = max(rank, 80)
-    # Google News 中转 URL 降权（原始出处链接优先）
+    # Google News 中转 URL 轻度降权；不应让 Bloomberg 等高权威源
+    # 仅因链接经过聚合器就跌到垂直媒体之后。
     if _is_google_news_url(item.get("url")):
-        rank -= 25
+        rank -= 5
     return rank
 
 
@@ -4857,6 +4861,18 @@ def _core_event_key(item):
     if ctype == "product" and entity == "BKNG" and \
             re.search(r"agoda.{0,35}partner portal|partner portal.{0,35}agoda", text, re.I):
         return "BKNG|product|agoda_partner_portal"
+    # 官方 IR 与媒体对同一投资者大会的报道只展示一条，
+    # 主条目由来源权威度决定。
+    if str(item.get("ir_release_kind", "") or "") == "investor_event" or re.search(
+            r"communacopia|global tmt conference|investor conference|investor day|"
+            r"投资者大会|投资者日|路演", text, re.I):
+        if re.search(r"communacopia", text, re.I):
+            event = "goldman_communacopia"
+        elif re.search(r"global tmt|\btmt\b", text, re.I):
+            event = "global_tmt"
+        else:
+            event = _norm_title(item.get("title", ""))[:48]
+        return f"{entity}|investor_event|{event}"
     return None
 
 
@@ -4885,9 +4901,9 @@ def group_core_company_events(items, window_days=7):
             if len(cluster) < 2:
                 continue
             primary = max(cluster, key=lambda x: (
+                _source_rank(x),
                 1 if str(x.get("summary", "") or "").strip() else 0,
                 x.get("date") or "",
-                _source_rank(x),
                 int(x.get("selection_score", 0) or 0),
             ))
             event_id = "ev_core_" + hashlib.md5(key.encode()).hexdigest()[:10]

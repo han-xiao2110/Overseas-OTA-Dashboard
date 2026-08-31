@@ -76,8 +76,7 @@ const renderedText = (id, className) => {
 // ══════════ 5 模块结构验收（2026-08-18 重构） ══════════
 console.log('— 国际·披露与文件 (intlDisclosureList) —');
 check('intlDisclosureList 有条目', count('intlDisclosureList') > 0);
-check('披露模块含Rule 144与官方IR公告',
-      h('intlDisclosureList').includes('Rule 144') && /Booking Holdings IR|Expedia Group IR|Airbnb IR/.test(h('intlDisclosureList')));
+check('披露模块含Rule 144', h('intlDisclosureList').includes('Rule 144'));
 check('三家公司徽章都有颜色(无#666灰)', !h('intlDisclosureList').includes('#666'));
 const disclosureSummaries = renderedText('intlDisclosureList', 'news-summary');
 const disclosureTitles = renderedText('intlDisclosureList', 'news-title');
@@ -91,6 +90,9 @@ check('SEC Form 4/Rule 144展示具体交易摘要而非表单占位',
 console.log('— 国际·核心公司动态 (coreCompanyList) —');
 check('coreCompanyList 有条目', count('coreCompanyList') > 0);
 check('核心公司含 ticker 徽章(BKNG/EXPE/ABNB)', /BKNG|EXPE|ABNB/.test(h('coreCompanyList')));
+check('官方IR投资者大会公告进核心公司动态',
+      /Communacopia|TMT大会/.test(h('coreCompanyList')) &&
+      /Booking Holdings IR|Expedia Group IR|Airbnb IR/.test(h('coreCompanyList')));
 const newsContainers = ['coreCompanyList','intlIndustryList','domIndustryList'];
 const renderedTitles = newsContainers.flatMap(id =>
   renderedText(id, 'news-title'));
