@@ -119,8 +119,15 @@ console.log('— 国际·行业新闻 (intlIndustryList) —');
 check('intlIndustryList 有条目', count('intlIndustryList') > 0);
 check('环球旅讯海外交易进入国际行业',
       h('intlIndustryList').includes('eTravel') && h('intlIndustryList').includes('Spotnana'));
-check('国际行业文章识别到关注公司时仍显示公司标签',
-      h('intlIndustryList').includes('company-bkng') && h('intlIndustryList').includes('company-expe'));
+elements['__multiCompanyRender'] = makeEl('__multiCompanyRender');
+renderNewsList('__multiCompanyRender', [{
+  date:'2026-09-01', title:'Booking Holdings与Expedia对比', summary:'两家公司的旅游业务对比。',
+  source:'Skift', selection_status:'kept'
+}], true);
+check('行业文章识别到多家关注公司时完整显示公司标签',
+      h('__multiCompanyRender').includes('company-bkng') &&
+      h('__multiCompanyRender').includes('company-expe') &&
+      h('__multiCompanyRender').indexOf('news-tag-src') < h('__multiCompanyRender').indexOf('news-tag-company'));
 
 console.log('— 国内·行业新闻 (domIndustryList) —');
 check('domIndustryList 有条目', count('domIndustryList') > 0);
