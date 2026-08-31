@@ -76,9 +76,14 @@ const renderedText = (id, className) => {
 // ══════════ 5 模块结构验收（2026-08-18 重构） ══════════
 console.log('— 国际·披露与文件 (intlDisclosureList) —');
 check('intlDisclosureList 有条目', count('intlDisclosureList') > 0);
-check('披露模块含 10-Q 文件', h('intlDisclosureList').includes('10-Q'));
+check('披露模块含Rule 144与官方IR公告',
+      h('intlDisclosureList').includes('Rule 144') && /Booking Holdings IR|Expedia Group IR|Airbnb IR/.test(h('intlDisclosureList')));
 check('三家公司徽章都有颜色(无#666灰)', !h('intlDisclosureList').includes('#666'));
 const disclosureSummaries = renderedText('intlDisclosureList', 'news-summary');
+const disclosureTitles = renderedText('intlDisclosureList', 'news-title');
+check('披露标题与已展示摘要均含中文',
+      disclosureTitles.every(t => /[\u4e00-\u9fff]/.test(t)) &&
+      disclosureSummaries.every(t => /[\u4e00-\u9fff]/.test(t)));
 check('SEC Form 4/Rule 144展示具体交易摘要而非表单占位',
       disclosureSummaries.some(t => /股|美元|经纪商|10b5-1/.test(t)) &&
       !disclosureSummaries.some(t => /向SEC提交(?:董事\/高管交易|证券出售登记)/.test(t)));

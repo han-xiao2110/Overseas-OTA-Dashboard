@@ -71,8 +71,7 @@ bash deploy_local.sh
 
 ### 保留期
 - **统一 14 天**（用户要求只保留最近 2 周新闻）
-- SEC 长报告（10-K/10-Q/8-K/S-1 等）保留 28 天（季度才出一次）
-- `intl_disclosures` / `dom_disclosures` 保留 28 天
+- SEC、官方 IR 及国内披露模块也统一保留 14 天，不再对长报告做 28 天例外
 
 ### 处理管线（`fetch_news_副本.py`）
 ```
@@ -93,7 +92,8 @@ RSS/官网抓取(safe_request, TLS 只验证)
 ### 数据源（纯程序化，无 AI）
 - RSS 源: Skift, PhocusWire, Travel Weekly, 环球旅讯, 36氪, Google News
 - 官网: SEC EDGAR, 披露易(港交所), 民航网, 交通运输部, 文旅部
-- 公司 IR: Booking Holdings IR, Expedia Group IR, Airbnb IR
+- 公司 IR: Booking Holdings IR, Expedia Group IR, Airbnb IR（直读三家官网 Q4 PressRelease feed，不经 Google News）
+- IR 路由: 业绩/财报/投资者活动进“披露与文件”；产品、并购、合作、战略和管理层动作进“核心公司动态”
 
 ---
 
@@ -159,7 +159,8 @@ RSS/官网抓取(safe_request, TLS 只验证)
 5. **Surge 部署**: 用环境变量 `SURGE_TOKEN` 传 token，不用 `--token` 命令行参数
 6. **排序**: 必须在去重/折叠之后排序，否则去重操作会打乱日期顺序
 7. **缓存备份**: `news_cache_backups/` 保留最近 3 个版本，自动轮转
-8. **SEC 保留期**: 定期报告（10-K/10-Q/8-K/S-1）保留 28 天，其他 SEC 条目 14 天
+8. **SEC/IR 保留期**: 全部披露与新闻统一 14 天；SEC 同一 accession 的目录链接与正文链接只保留证据更完整的一条
+9. **IR 跨公司去重**: 不同公司参加同一投资者大会时必须分别展示，不得因标题相似折叠
 
 ---
 
@@ -169,10 +170,10 @@ RSS/官网抓取(safe_request, TLS 只验证)
 # 语法检查
 python3 -c "import ast; [ast.parse(open(f).read()) for f in ['fetch_news_副本.py','fetch_stock_prices_副本.py','generate_副本.py']]; print('AST OK')"
 
-# 离线质量测试（138 项）
+# 离线质量测试（147 项）
 python3 news_quality_tests_副本.py
 
-# 前端烟雾测试（42 项）
+# 前端烟雾测试（43 项）
 node news_smoke_副本.js dashboard.html
 
 # 市场行情测试（32 项）

@@ -112,19 +112,18 @@ INTL_RSS_FEEDS = [
     {"name": "Bloomberg Mobility (GN)", "url": "https://news.google.com/rss/search?q=bloomberg+mobility+autonomous+robotaxi&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True},
 ]
 
-# ── 官方 IR 新闻稿源（2026-08-20 改造: 用 Google News RSS 替代 JS 渲染页面）──
-# Q4 Inc. IR 页面通过 JavaScript 动态渲染, 简单 HTTP 请求拿不到新闻列表。
-# 改用 Google News RSS 抓取公司官方新闻稿。
+# ── 官方 IR 新闻稿源：直接读取 Q4 页面自身使用的公开 feed ──
+# 不再依赖 Google News 是否及时收录官网。
 IR_SOURCES = [
     {"entity_id": "BKNG", "name": "Booking Holdings IR",
-     "url": "https://news.google.com/rss/search?q=site:bookingholdings.com+press+release+OR+news&hl=en-US&gl=US&ceid=US:en",
-     "news_selector": "google_news"},
+     "url": "https://ir.bookingholdings.com/news/default.aspx",
+     "api_url": "https://ir.bookingholdings.com/feed/PressRelease.svc/GetPressReleaseList"},
     {"entity_id": "EXPE", "name": "Expedia Group IR",
-     "url": "https://news.google.com/rss/search?q=site:expediagroup.com+press+release+OR+news&hl=en-US&gl=US&ceid=US:en",
-     "news_selector": "google_news"},
+     "url": "https://ir.expediagroup.com/news-and-events/news/default.aspx",
+     "api_url": "https://ir.expediagroup.com/feed/PressRelease.svc/GetPressReleaseList"},
     {"entity_id": "ABNB", "name": "Airbnb IR",
-     "url": "https://news.google.com/rss/search?q=site:investors.airbnb.com+press+release&hl=en-US&gl=US&ceid=US:en",
-     "news_selector": "google_news"},
+     "url": "https://investors.airbnb.com/press-releases/default.aspx",
+     "api_url": "https://investors.airbnb.com/feed/PressRelease.svc/GetPressReleaseList"},
 ]
 
 # Google News RSS items should have source overridden to original source
@@ -744,7 +743,7 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
         f"startdt={one_year_ago.isoformat()}&enddt={today.isoformat()}&"
         f"forms={forms_filter}&"
         f"entity=CIK%3A{cik}&"
-        f"category=custom&start=0&rows=30"
+        f"category=custom&start=0&rows=100"
     )
     
     data = safe_request(search_url, source=f"SEC EDGAR {ticker}")
@@ -811,7 +810,7 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
             f"q=%22{encoded_name}%22&dateRange=custom&"
             f"startdt={one_year_ago.isoformat()}&enddt={today.isoformat()}&"
             f"forms={forms_filter}&"
-            f"category=custom&start=0&rows=30"
+            f"category=custom&start=0&rows=100"
         )
         data2 = safe_request(search_url2, source=f"SEC EDGAR {ticker}")
         
@@ -856,8 +855,9 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
                         "file_description": file_desc,
                     })
     
-    # Fallback: use the submissions API (works for some companies)
-    if not filings:
+    # 始终合并 submissions API：全文搜索偶尔少返回某些表单，
+    # submissions 可补齐公司本身的定期/重大披露；后面按URL去重。
+    if True:
         sub_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
         sub_data = safe_request(sub_url, source=f"SEC EDGAR {ticker}")
         
@@ -872,7 +872,7 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
             
             important_forms = set(SEC_FILING_TYPES.keys())
             
-            count = min(len(forms), 20)
+            count = min(len(forms), 100)
             for i in range(count):
                 form_type = forms[i] if i < len(forms) else ""
                 filing_date = dates[i] if i < len(dates) else ""
@@ -930,7 +930,9 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
         if f['url'] not in seen_urls:
             seen_urls.add(f['url'])
             unique.append(f)
-    filings = unique[:15]
+    # 不在抓取层按每家公司截断。保留期由后续 14 天规则统一处理，
+    # 否则 Form 4 较多时会把同期 Rule 144 挤掉。
+    filings = unique[:100]
     
     print(f"    Found {len(filings)} filings for {ticker}")
     return filings
@@ -1766,12 +1768,12 @@ MODULE_MAX_ITEMS = {
     "dom_disclosures": 40,
 }
 MODULE_RETENTION_DAYS = {
-    # 统一 14 天保留（用户要求），SEC/IR 披露除外
+    # 全部新闻与披露统一保留 14 天。
     "intl_core_company": 14,
     "intl_industry": 14,
-    "intl_disclosures": 28,   # SEC/IR 财报类保留 28 天（季度才出一次）
+    "intl_disclosures": 14,
     "dom_industry": 14,
-    "dom_disclosures": 28,
+    "dom_disclosures": 14,
 }
 
 # 披露类 content_type（财报/股东信/业绩演示/监管文件统一进入披露模块）
@@ -1798,6 +1800,12 @@ def _route_single_item(item, section, category):
     # modules 每次都从原始分区重建，先清掉上一轮路由留下的展示标记，
     # 避免条目由行业转入核心后仍错误隐藏公司徽章。
     item.pop("suppress_core_badge", None)
+
+    # SEC 官方备案必须先于“媒体高管售股”规则路由。
+    # 历史错误：Rule 144 摘要含“出售”后被送进国际行业新闻，
+    # 又被行业模块的同事件折叠，导致披露区缺失。
+    if section == "international" and category == "sec_filings":
+        return "intl_disclosures"
 
     # 媒体高管售股属于市场事实，不作为公司经营动作或官方披露。
     if MEDIA_INSIDER_SALE_RE.search(text) or STOCK_MARKET_FACT_RE.search(text):
@@ -1832,19 +1840,23 @@ def _route_single_item(item, section, category):
         return "dom_industry"
 
     # 国际分区
-    # SEC 备案 → 国际披露
-    if category == "sec_filings":
-        return "intl_disclosures"
     # 官方 IR：只有财报/运营披露/治理文件进入披露；官方产品、并购、高管等
     # 实质动态仍进入核心公司。媒体财报和普通行业稿一律不进入披露。
     if any(k in src for k in IR_SOURCE_KEYWORDS):
+        release_kind = str(item.get("ir_release_kind", "") or "")
+        if release_kind in ("earnings_disclosure", "investor_event"):
+            return "intl_disclosures"
+        if release_kind == "core_action":
+            return "intl_core_company"
         if ctype in DISCLOSURE_CONTENT_TYPES or re.search(
                 r"财报|季报|年报|业绩|营收|盈利|股东信|8-K|10-K|10-Q|earnings|revenue|results|"
                 r"shareholder letter|investor|guidance", text, re.I):
             return "intl_disclosures"
         if is_core and item.get("substantive_company_change"):
             return "intl_core_company"
-        return "intl_industry"
+        # 能通过硬排除和评分的官方 IR 其他事实，作为公司动态展示，
+        # 不再丢到普通行业新闻。
+        return "intl_core_company"
     # 外部监管机构对公司/短租市场采取的行动是行业环境事件，
     # 不是公司自身动作。
     if ctype == "regulation" or re.search(
@@ -1895,8 +1907,12 @@ def route_to_modules(news_data):
             continue
         # 跨模块同事件去重
         eid = item.get("event_id")
-        if eid:
-            owner = event_owner.get(eid)
+        # 同一大会的多家公司可能从旧缓存沿用相同 event_id；
+        # 核心公司事件必须加公司维度，只折叠同一公司的多来源报道。
+        event_entity = str(item.get("entity_id", "") or "")
+        event_key = (eid, event_entity) if eid and event_entity in ("BKNG", "EXPE", "ABNB") else eid
+        if event_key:
+            owner = event_owner.get(event_key)
             if owner:
                 owner_mk, owner_item = owner
                 if MODULE_PRIORITY.get(mk, 0) > MODULE_PRIORITY.get(owner_mk, 0):
@@ -1906,7 +1922,7 @@ def route_to_modules(news_data):
                         related.append(owner_item["source"])
                     item.setdefault("related_sources", [])
                     item["related_sources"] = list(item.get("related_sources") or []) + related
-                    event_owner[eid] = (mk, item)
+                    event_owner[event_key] = (mk, item)
                     modules[mk].append(item)
                     # 标记原主条目为已合并（不加入新模块，但仍计入原分区缓存）
                     owner_item["folded_into"] = owner_item.get("url") or "moved_to_higher_module"
@@ -1920,7 +1936,7 @@ def route_to_modules(news_data):
                     owner_item["related_sources"] = related
                     continue
             else:
-                event_owner[eid] = (mk, item)
+                event_owner[event_key] = (mk, item)
         modules[mk].append(item)
 
     # 保留期修剪 + 排序 + 限量
@@ -2525,6 +2541,60 @@ DISPLAY_ZH_SUMMARIES = {
 }
 
 
+IR_ENTITY_NAMES_ZH = {
+    "BKNG": "Booking Holdings",
+    "EXPE": "Expedia Group",
+    "ABNB": "Airbnb",
+}
+
+
+def _prepare_ir_chinese_display(item):
+    """为官方 IR 公告提供不依赖免费翻译端点的中文回退。"""
+    if not item.get("is_ir_source"):
+        return
+    title = str(item.get("title", "") or "").strip()
+    original = str(item.get("title_original", "") or title).strip()
+    entity = str(item.get("entity_id", "") or "")
+    company = IR_ENTITY_NAMES_ZH.get(entity, entity or "公司")
+    kind = str(item.get("ir_release_kind", "") or "")
+
+    if not re.search(r"[\u4e00-\u9fff]", title):
+        translated = ""
+        if kind == "investor_event":
+            conference = "投资者大会"
+            if re.search(r"Goldman Sachs.*Communacopia", original, re.I):
+                conference = "高盛Communacopia + Technology大会"
+            elif re.search(r"Citi.*Global TMT", original, re.I):
+                year = re.search(r"\b(20\d{2})\b", original)
+                conference = f"花旗{year.group(1) if year else ''}全球TMT大会"
+            translated = f"{company}将参加{conference}"
+        elif kind == "earnings_disclosure":
+            quarter_map = {
+                "first": "第一季度", "second": "第二季度",
+                "third": "第三季度", "fourth": "第四季度",
+            }
+            quarter = next((zh for en, zh in quarter_map.items()
+                            if re.search(rf"\b{en}\b", original, re.I)), "")
+            year = re.search(r"\b(20\d{2})\b", original)
+            translated = f"{company}发布{year.group(1) if year else ''}年{quarter}业绩"
+        if translated:
+            item.setdefault("title_original", original)
+            item["title"] = translated
+
+    summary = str(item.get("summary", "") or "").strip()
+    if not summary or not re.search(r"[\u4e00-\u9fff]", summary):
+        if summary:
+            item.setdefault("summary_original", summary[:400])
+        if kind == "investor_event":
+            item["summary"] = f"{company}公告将参加相关投资者大会，并披露了参会安排。"
+            item["summary_translated"] = True
+            item["summary_status"] = "deterministic_ir_summary"
+        elif kind == "earnings_disclosure":
+            item["summary"] = f"{company}官方 IR 发布了该期业绩及相关披露材料。"
+            item["summary_translated"] = True
+            item["summary_status"] = "deterministic_ir_summary"
+
+
 def prepare_chinese_news_display(news_data):
     """Guarantee Chinese-facing news modules without discarding raw cache items.
 
@@ -2540,6 +2610,7 @@ def prepare_chinese_news_display(news_data):
             if not isinstance(items, list) or category == "sec_filings":
                 continue
             for item in items:
+                _prepare_ir_chinese_display(item)
                 title = str(item.get("title", "") or "").strip()
                 original = str(item.get("title_original", "") or "").strip()
                 translated = DISPLAY_ZH_TRANSLATIONS.get(original) or DISPLAY_ZH_TRANSLATIONS.get(title)
@@ -3570,62 +3641,102 @@ def extract_ir_q4(page_text, base_url):
     return items
 
 
+def classify_ir_release(title, url=""):
+    """将官方 IR 消息分为业绩披露、投资者活动或经营/战略动作。"""
+    text = f"{title} {url}"
+    if re.search(
+            r"financial results?|quarterly results?|quarter.{0,20}results?|"
+            r"full[- ]year results?|earnings|"
+            r"annual reports?|quarterly reports?|shareholder letters?|guidance|"
+            r"webcast.{0,30}(?:results?|earnings)|results?.{0,30}webcast",
+            text, re.I):
+        return "earnings_disclosure"
+    if re.search(
+            r"participate in|present at|investor day|investor conference|"
+            r"technology conference|TMT conference|fireside chat|communacopia",
+            text, re.I):
+        return "investor_event"
+    if re.search(
+            r"acquir|merger|partner|agreement|launch|unveil|introduc|appoint|"
+            r"leadership|reorgani[sz]|strategy|expand|authorization|platform|"
+            r"product|service|operations?|research finds?",
+            text, re.I):
+        return "core_action"
+    return "other"
+
+
+def parse_q4_ir_feed(data, src):
+    """解析 Q4 官方 PressRelease feed，只保留 IR 新闻/披露页。"""
+    if not isinstance(data, dict):
+        return []
+    rows = data.get("GetPressReleaseListResult") or []
+    items, seen = [], set()
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        title = html_lib.unescape(str(row.get("Headline", "") or "")).strip()
+        link = str(row.get("LinkToDetailPage", "") or row.get("LinkToUrl", "") or "").strip()
+        # Expedia IR feed 也混入第三方 media 稿，不属于公司经营/战略披露。
+        if not title or not link or "/media/media-details/" in link.lower():
+            continue
+        url = urljoin(src["url"], link)
+        key = _norm_url(url)
+        if key in seen:
+            continue
+        seen.add(key)
+        date_raw = str(row.get("PressReleaseDate", "") or "").strip()
+        date_str = ""
+        for fmt in ("%m/%d/%Y %H:%M:%S", "%m/%d/%Y"):
+            try:
+                date_str = datetime.datetime.strptime(date_raw, fmt).strftime("%Y-%m-%d")
+                break
+            except ValueError:
+                continue
+        summary = str(row.get("ShortDescription", "") or row.get("ShortBody", "") or "")
+        summary = html_lib.unescape(re.sub(r"<[^>]+>", " ", summary))
+        summary = re.sub(r"\s+", " ", summary).strip()[:400]
+        kind = classify_ir_release(title, url)
+        items.append({
+            "date": date_str,
+            "title": title,
+            "url": url,
+            "summary": summary,
+            "source": src["name"],
+            "category": "industry_news",
+            "entity_id": src["entity_id"],
+            "company": src["entity_id"],
+            "is_core_company": True,
+            "source_channel": "ir_official_q4",
+            "is_ir_source": True,
+            "ir_release_kind": kind,
+            "content_type": "earnings" if kind == "earnings_disclosure" else "general",
+        })
+    items.sort(key=lambda x: x.get("date") or "", reverse=True)
+    return items
+
+
 def fetch_ir_press_releases():
-    """抓取 BKNG/EXPE/ABNB 3 家官方 IR 新闻稿, 返回带 entity_id/company 标签的条目列表。
-    
-    2026-08-20: 改为 Google News RSS 源 (替代原 Q4 Inc. JS 渲染页面)。
-    Q4 Inc. IR 页面内容通过 JS 动态加载, 简单 HTTP 请求拿不到新闻列表。
-    """
+    """直接抓取 BKNG/EXPE/ABNB 官方 IR 页面使用的 Q4 公开 feed。"""
     all_items = []
     for src in IR_SOURCES:
         try:
-            print(f"    IR {src['name']}: fetching {src['url']}")
-            
-            if src.get("news_selector") == "google_news":
-                # Google News RSS 模式
-                content = safe_request(src["url"], timeout=12, retries=1)
-                if not content:
-                    mark_source(src["name"], "failed", item_count=0)
-                    continue
-                
-                items = parse_rss(content, src["name"], "industry_news", max_items=10)
-                
-                # 清理 Google News 标题 (去掉 " - Source" 后缀)
-                for it in items:
-                    en = extract_google_news_source(it.get("title", ""), src["name"])
-                    if en:
-                        it["title"] = en["title"]
-                        # 保持 src["name"] 作为来源 (IR 专用源名)
-                    it["source"] = src["name"]
-                    it["category"] = "industry_news"
-                    it["entity_id"] = src["entity_id"]
-                    it["company"] = src["entity_id"]
-                    it["is_core_company"] = True
-                    it["source_channel"] = "ir_official"
-                    # 标记为 IR 来源, 避免被相关性过滤误杀
-                    it["is_ir_source"] = True
-                
-                all_items.extend(items)
-                mark_source(src["name"], "success", item_count=len(items))
-                print(f"    IR {src['name']}: {len(items)} items (via Google News RSS)")
-            else:
-                # 兜底: 旧的 Q4 解析模式
-                page = safe_request(src["url"], timeout=12, retries=1)
-                if not page:
-                    mark_source(src["name"], "failed", item_count=0)
-                    continue
-                items = extract_ir_q4(page, src["url"])
-                for it in items:
-                    it["source"] = src["name"]
-                    it["category"] = "industry_news"
-                    it["entity_id"] = src["entity_id"]
-                    it["company"] = src["entity_id"]
-                    it["is_core_company"] = True
-                    it["source_channel"] = "ir_official"
-                all_items.extend(items)
-                mark_source(src["name"], "success", item_count=len(items))
-                print(f"    IR {src['name']}: {len(items)} cards (via Q4)")
-            
+            query = urllib.parse.urlencode({
+                "LanguageId": 1, "pageSize": 50, "pageNumber": 0,
+                "tagList": "", "includeTags": "true",
+                "year": datetime.date.today().year, "excludeSelection": 1,
+                "bodyType": 3, "pressReleaseDateFilter": 1,
+                "categoryId": "00000000-0000-0000-0000-000000000000",
+            })
+            api_url = f"{src['api_url']}?{query}"
+            print(f"    IR {src['name']}: fetching official Q4 feed")
+            data = safe_request(api_url, timeout=20, retries=2)
+            items = parse_q4_ir_feed(data, src)
+            if not items:
+                mark_source(src["name"], "failed", item_count=0, error_code="empty_q4_feed")
+                continue
+            all_items.extend(items)
+            mark_source(src["name"], "success", item_count=len(items))
+            print(f"    IR {src['name']}: {len(items)} items (official Q4 feed)")
             time.sleep(0.5)
         except Exception as e:
             print(f"    IR {src['name']} error: {e}")
@@ -4665,6 +4776,12 @@ def group_same_events(items, window_hours=72, sim_threshold=0.72, ceair_aggressi
         for j in range(i + 1, len(known)):
             if used[j]:
                 continue
+            # 同一大会上不同核心公司的官方 IR 公告是独立记录，不跨公司折叠。
+            entity_i = str(known[i].get("entity_id", "") or "")
+            entity_j = str(known[j].get("entity_id", "") or "")
+            if entity_i in ("BKNG", "EXPE", "ABNB") and \
+                    entity_j in ("BKNG", "EXPE", "ABNB") and entity_i != entity_j:
+                continue
             hours = abs((_d(known[i]) - _d(known[j])).days) * 24
             if hours > window_hours:
                 continue
@@ -4814,13 +4931,10 @@ def merge_with_cache(new_data, old_data):
     return new_data
 
 
-# 保留期（天）：统一 14 天（用户要求只保留最近 2 周新闻）
-# 注意: SEC 定期/重大报告 (10-K/10-Q/8-K/S-1 等) 仍保留 28 天（季度才出一次）
+# 保留期（天）：新闻、SEC 和 IR 披露全部统一 14 天。
 NEWS_RETENTION_DAYS = 14
-# SEC 定期/重大报告保留更久（10-K/10-Q 等季度才出一次）
-SEC_LONG_RETENTION_TYPES = {"10-K", "10-Q", "8-K", "S-1", "DEFA14A",
-                            "SC 13D", "SC 13G", "20-F", "6-K", "DEF 14A"}
-SEC_LONG_RETENTION_DAYS = 28
+SEC_LONG_RETENTION_TYPES = set()
+SEC_LONG_RETENTION_DAYS = NEWS_RETENTION_DAYS
 # 明显与旅游行业无关的来源（评分漏网的垃圾项）
 SOURCE_BLOCKLIST = {
     "Miami Dolphins", "Chase Bank", "RSU by PriceLabs", "Refresh Miami",
@@ -4838,6 +4952,40 @@ MAX_ITEMS = {
     ("domestic", "regulatory"): 40,
     ("domestic", "company_news"): 60,
 }
+
+
+def _sec_accession_key(item):
+    """从 SEC 记录或 EDGAR URL 中提取稳定 accession。"""
+    accession = re.sub(r"[^0-9]", "", str(item.get("accession", "") or ""))
+    if len(accession) >= 18:
+        return accession
+    url = str(item.get("url", "") or "")
+    match = re.search(r"/Archives/edgar/data/\d+/(\d{18,20})(?:/|$)", url, re.I)
+    return match.group(1) if match else ""
+
+
+def dedupe_sec_accessions(items):
+    """同一 accession 只保留证据最完整的 SEC 记录。"""
+    groups, order = {}, []
+    for item in items:
+        key = _sec_accession_key(item) or ("url:" + _norm_url(item.get("url", "")))
+        if key not in groups:
+            groups[key] = []
+            order.append(key)
+        groups[key].append(item)
+    result = []
+    for key in order:
+        members = groups[key]
+        best = max(members, key=lambda x: (
+            x.get("sec_summary_kind") == "document_detail",
+            len(str(x.get("summary", "") or "")),
+            not str(x.get("url", "") or "").endswith("/"),
+            str(x.get("fetched_at", "") or ""),
+        ))
+        if not best.get("accession") and key.isdigit():
+            best["accession"] = key
+        result.append(best)
+    return result
 
 
 def prune_and_dedupe(news_data):
@@ -4858,6 +5006,8 @@ def prune_and_dedupe(news_data):
             items = sec_data.get(cat, [])
             if not isinstance(items, list):
                 continue
+            if (section, cat) == ("international", "sec_filings"):
+                items = dedupe_sec_accessions(items)
             retention = NEWS_RETENTION_DAYS
             cap = MAX_ITEMS.get((section, cat), 50)
 
@@ -4881,11 +5031,8 @@ def prune_and_dedupe(news_data):
                         and str(item.get("type", "")) == "INFO":
                     continue
 
-                # SEC：定期/重大报告(10-K/10-Q/8-K)保留 28 天, 常规 Form 4/144 等保留 14 天
+                # 全部 SEC/IR 与新闻统一保留 14 天。
                 item_retention = retention
-                if (section, cat) == ("international", "sec_filings"):
-                    if str(item.get("type", "")).strip() in SEC_LONG_RETENTION_TYPES:
-                        item_retention = SEC_LONG_RETENTION_DAYS
 
                 # 东航动态栏目：只保留东航相关条目（清理旧缓存的错误标签数据）
                 if (section, cat) == ("domestic", "company_news"):
@@ -5345,6 +5492,7 @@ def reprocess_cached_news(retry_translation=False):
         news_data.setdefault(section, {}).setdefault(category, []).append(dict(item))
         existing.add(key)
 
+    news_data = prune_and_dedupe(news_data)
     news_data = refilter_cached_domestic(news_data)
     news_data = reclassify_cached_traveldaily(news_data)
     intl = news_data.get("international", {}).get("industry_news", [])
@@ -5373,7 +5521,7 @@ def refresh_traveldaily_only(cached_data):
     """[--td-only] 只重抓环球旅讯并整体替换 china_industry（该分类唯一来源）。
 
     用于解析器/质量规则调优后的定向刷新：整源替换而不是与旧缓存合并，
-    避免低质量旧条目靠 28 天保留期继续滞留。抓取条数过少(<5)时放弃，
+    避免低质量旧条目靠 14 天保留期继续滞留。抓取条数过少(<5)时放弃，
     防止站点临时不可用把现有列表误清空。save_cache 会先自动备份旧缓存。
     """
     src = next((s for s in DOMESTIC_WEB_SOURCES if s.get("news_selector") == "traveldaily"), None)

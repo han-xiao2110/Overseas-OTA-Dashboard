@@ -22,6 +22,7 @@ news_quality_tests_副本.py — 新闻管道离线质量测试（改造项⑨, 
 """
 
 import copy
+import datetime
 import io
 import json
 import os
@@ -530,6 +531,16 @@ class FixtureNet:
             return self.ok_hosts.get('feeds.bloomberg.com')
         if host == 'news.google.com':
             return self.ok_hosts.get('news.google.com')
+        if host in ('ir.bookingholdings.com', 'ir.expediagroup.com',
+                    'investors.airbnb.com') and '/feed/PressRelease' in url:
+            if 'ir_q4' not in self.ok_hosts:
+                return None
+            return {"GetPressReleaseListResult": [{
+                "PressReleaseDate": "08/26/2026 09:00:00",
+                "Headline": "Company to Present at Investor Conference",
+                "LinkToDetailPage": "/news/news-details/2026/conference/default.aspx",
+                "ShortDescription": "Official investor event",
+            }]}
         if host == 'efts.sec.gov':
             if 'efts.sec.gov' not in self.ok_hosts:
                 return None
@@ -631,6 +642,7 @@ def test_source_status():
         'feeds.bloomberg.com': BLOOMBERG_RSS,
         'news.google.com': GOOGLE_RSS,
         'efts.sec.gov': EDGAR_JSON,
+        'ir_q4': True,
     })
     rc, data = run_main(net, make_cache(), domestic_disabled=True)
     check("C4 全部成功退出码=0", rc == 0)
@@ -1157,6 +1169,11 @@ def test_module_routing():
                   "substantive_company_change": True, "selection_score": 60}
     check("I9d 人工保留的股价事实只进国际行业",
           fn._route_single_item(stock_fact, "international", "industry_news") == "intl_industry")
+    sec_144 = {"date": "2026-08-29", "title": "证券出售登记 (Rule 144)",
+               "summary": "某董事拟出售10,000股。", "source": "SEC EDGAR",
+               "type": "144", "company": "ABNB"}
+    check("I9e SEC Rule 144优先进披露而非国际行业",
+          fn._route_single_item(sec_144, "international", "sec_filings") == "intl_disclosures")
 
     # I10 核心公司同一AI重组事件7天内折叠
     core_dupes = []
@@ -1176,15 +1193,90 @@ def test_module_routing():
 
     # I11: official IR acquisition must return its accumulated records to the
     # caller.  A historical `return 0` made all three successful fetches vanish.
-    ir_fixture = [{"date": "2026-08-26", "title": "Company launches product",
-                   "url": "https://example.com/release", "summary": ""}]
-    with mock.patch.object(fn, "safe_request", return_value="<rss/>"), \
-         mock.patch.object(fn, "parse_rss", side_effect=lambda *a, **k: copy.deepcopy(ir_fixture)), \
+    ir_feed = {"GetPressReleaseListResult": [{
+        "PressReleaseDate": "08/26/2026 09:00:00",
+        "Headline": "Company launches product",
+        "LinkToDetailPage": "/news/news-details/2026/product/default.aspx",
+        "ShortDescription": "Official product release",
+    }]}
+    with mock.patch.object(fn, "safe_request", return_value=copy.deepcopy(ir_feed)), \
          mock.patch.object(fn.time, "sleep", return_value=None):
         ir_items = fn.fetch_ir_press_releases()
     check("I11 IR抓取结果返回主管线而非丢弃",
           isinstance(ir_items, list) and len(ir_items) == len(fn.IR_SOURCES) and
           {x.get("entity_id") for x in ir_items} == {"BKNG", "EXPE", "ABNB"})
+    check("I11a IR直读Q4官方feed并保留官网URL",
+          all(x.get("source_channel") == "ir_official_q4" and
+              x.get("url", "").startswith(("https://ir.", "https://investors."))
+              for x in ir_items))
+    check("I11b IR业绩/投资者活动/战略动作分类",
+          fn.classify_ir_release("Airbnb Announces Second Quarter 2026 Results") == "earnings_disclosure" and
+          fn.classify_ir_release("Booking Holdings to Present at the Citi TMT Conference") == "investor_event" and
+          fn.classify_ir_release("Expedia Group acquires Layla, accelerating its AI strategy") == "core_action")
+    ir_earnings = {"source": "Airbnb IR", "entity_id": "ABNB",
+                   "ir_release_kind": "earnings_disclosure", "content_type": "earnings"}
+    ir_strategy = {"source": "Expedia Group IR", "entity_id": "EXPE",
+                   "ir_release_kind": "core_action", "content_type": "ma_investment"}
+    check("I11c IR业绩进披露、战略运营进核心动态",
+          fn._route_single_item(ir_earnings, "international", "industry_news") == "intl_disclosures" and
+          fn._route_single_item(ir_strategy, "international", "industry_news") == "intl_core_company")
+
+    old_date = (datetime.date.today() - datetime.timedelta(days=15)).isoformat()
+    recent_date = (datetime.date.today() - datetime.timedelta(days=14)).isoformat()
+    retention_fixture = {"international": {"sec_filings": [
+        {"date": old_date, "type": "10-Q", "company": "BKNG", "source": "SEC EDGAR",
+         "title": "季度报告", "url": "https://sec.example/old"},
+        {"date": recent_date, "type": "144", "company": "ABNB", "source": "SEC EDGAR",
+         "title": "Rule 144", "url": "https://sec.example/recent"},
+    ], "industry_news": []}, "domestic": {}}
+    fn.route_to_modules(retention_fixture)
+    retained_disclosures = retention_fixture["modules"]["intl_disclosures"]
+    check("I11d 披露统一14天保留期",
+          len(retained_disclosures) == 1 and retained_disclosures[0].get("type") == "144")
+
+    same_accession = "000196430626000389"
+    sec_duplicates = [
+        {"accession": "0001964306-26-000389", "url":
+         f"https://www.sec.gov/Archives/edgar/data/1075531/{same_accession}/",
+         "summary": "目录摘要"},
+        {"url": f"https://www.sec.gov/Archives/edgar/data/1075531/{same_accession}/xsl144X01/primary_doc.xml",
+         "summary": "具体申报人、数量与计划出售日期摘要", "sec_summary_kind": "document_detail"},
+    ]
+    sec_deduped = fn.dedupe_sec_accessions(sec_duplicates)
+    check("I11e SEC同一accession的目录与正文只留详细版",
+          len(sec_deduped) == 1 and sec_deduped[0].get("sec_summary_kind") == "document_detail")
+
+    multi_company_ir = [
+        {"date": "2026-08-26", "title": "Expedia Group to Participate in Goldman Sachs Communacopia Conference",
+         "url": "https://ir.expedia/a", "source": "Expedia Group IR", "entity_id": "EXPE"},
+        {"date": "2026-08-25", "title": "Airbnb to Participate in Goldman Sachs Communacopia Conference",
+         "url": "https://investors.airbnb/b", "source": "Airbnb IR", "entity_id": "ABNB"},
+    ]
+    fn.group_same_events(multi_company_ir)
+    check("I11f 同一大会的不同公司IR公告不跨公司折叠",
+          all(not x.get("folded_into") for x in multi_company_ir))
+    for item in multi_company_ir:
+        item.update({"event_id": "legacy_shared_event", "is_ir_source": True,
+                     "ir_release_kind": "investor_event", "display_ready": True,
+                     "selection_status": "kept"})
+    routed_ir = {"international": {"sec_filings": [], "industry_news": multi_company_ir},
+                 "domestic": {}}
+    fn.route_to_modules(routed_ir)
+    check("I11f2 旧缓存共享event_id也不会折叠不同公司IR",
+          len(routed_ir["modules"]["intl_disclosures"]) == 2)
+
+    ir_display_fixture = {"international": {"industry_news": [{
+        "title": "Booking Holdings Inc. to Present at the Citi 2026 Global TMT Conference",
+        "summary": "Booking Holdings announced that its CEO will participate in the conference.",
+        "source": "Booking Holdings IR", "entity_id": "BKNG", "is_ir_source": True,
+        "ir_release_kind": "investor_event",
+    }]}, "domestic": {}}
+    fn.prepare_chinese_news_display(ir_display_fixture)
+    ir_display = ir_display_fixture["international"]["industry_news"][0]
+    check("I11g IR翻译端点失败时仍有中文标题与摘要",
+          ir_display.get("display_ready") is True and
+          re.search(r"[\u4e00-\u9fff]", ir_display.get("title", "")) and
+          re.search(r"[\u4e00-\u9fff]", ir_display.get("summary", "")))
 
     noise_cases = [
         ("How Expedia's fifth straight beat will impact Expedia investors", "股价/估值评论"),
