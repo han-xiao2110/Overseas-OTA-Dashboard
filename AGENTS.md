@@ -119,7 +119,7 @@ RSS/官网抓取(safe_request, TLS 只验证)
 | `agent_translate_副本.py` | AI 翻译桥接 | ⚠️ 已禁用（改用 deep-translator） |
 | `news_quality_tests_副本.py` | 离线质量测试（152 项） | 不含 AI 依赖 |
 | `news_smoke_副本.js` | 前端烟雾测试（52 项） | |
-| `market_smoke_副本.js` | 市场行情测试（32 项） | |
+| `market_smoke_副本.js` | 市场行情与股东回报测试（36 项） | |
 | `translation_cache_副本.json` | 成功译文持久缓存 | GitHub Actions 每次更新后回仓库 |
 | `requirements.txt` | Python 依赖 | yfinance, feedparser, deep-translator, openpyxl, requests, beautifulsoup4, certifi |
 | `.github/workflows/daily-update.yml` | GitHub Actions 工作流 | |
@@ -183,7 +183,7 @@ python3 news_quality_tests_副本.py
 # 前端烟雾测试（52 项）
 node news_smoke_副本.js dashboard.html
 
-# 市场行情测试（32 项）
+# 市场行情与股东回报测试（36 项）
 node market_smoke_副本.js dashboard.html
 
 # 查看新闻数据统计

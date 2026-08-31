@@ -46,6 +46,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 .data-table th{background:#f8f8f8;padding:8px 12px;text-align:left;font-weight:600;border-bottom:2px solid #e0e0e0;white-space:nowrap}
 .data-table td{padding:8px 12px;border-bottom:1px solid #eee;white-space:nowrap}
 .data-table tr:hover{background:#fafafa}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
+.buyback-mobile-list{display:none}
+.buyback-company{font-size:12px;font-weight:700;color:#1a1a1a;letter-spacing:.02em}
+.buyback-date{font-size:11px;color:#777;font-variant-numeric:tabular-nums}
+.buyback-plan{padding:12px 0;border-bottom:1px solid #ececec}
+.buyback-plan:last-child{border-bottom:0}
+.buyback-plan-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:9px}
+.buyback-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:9px}
+.buyback-metric{min-width:0;padding:8px 9px;background:#f7f8fa;border-radius:7px}
+.buyback-metric-label{display:block;color:#777;font-size:11px;line-height:1.3;margin-bottom:3px}
+.buyback-metric-value{display:block;color:#222;font-size:13px;font-weight:650;line-height:1.3;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.buyback-copy{font-size:12px;line-height:1.55;color:#555;margin-top:5px}
+.buyback-copy-label{color:#777;font-weight:600}
 .info-card{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:20px 24px;margin-bottom:16px}
 .info-card h3{font-size:16px;font-weight:600;margin-bottom:12px;color:#1a1a1a}
 .info-card p{font-size:13px;line-height:1.8;color:#555}
@@ -114,6 +127,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
   .tab-bar button{padding:8px 16px;font-size:13px}
   .data-table{font-size:11px}
   .data-table th,.data-table td{padding:6px 8px}
+  #shDashboard{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  #shDashboard .chart-section{padding:13px 14px}
+  #shDashboard .chart-title{font-size:14px;line-height:1.4}
+  #shDashboard .chart-unit{font-size:11px;line-height:1.4}
+  #shDashboard .data-table{font-size:12px;line-height:1.4}
+  #shDashboard .data-table th,#shDashboard .data-table td{font-size:inherit;padding:7px 8px}
+  #buybackProgramTable .buyback-table-desktop{display:none}
+  #buybackProgramTable .buyback-mobile-list{display:block}
+  #quarterlyDetailTable .data-table{min-width:max-content;margin-top:4px}
+  #quarterlyDetailTable .data-table th:nth-child(1),
+  #quarterlyDetailTable .data-table td:nth-child(1){position:sticky;left:0;min-width:104px;max-width:104px;background:#fff;z-index:2}
+  #quarterlyDetailTable .data-table th:nth-child(2),
+  #quarterlyDetailTable .data-table td:nth-child(2){position:sticky;left:104px;min-width:72px;background:#fff;z-index:2;box-shadow:1px 0 0 #e6e6e6}
+  #quarterlyDetailTable .data-table thead th:nth-child(1),
+  #quarterlyDetailTable .data-table thead th:nth-child(2){background:#f8f8f8;z-index:3}
+  #quarterlyDetailTable .data-table td:nth-child(n+4),
+  #quarterlyDetailTable .data-table th:nth-child(n+4){min-width:58px;text-align:right;font-variant-numeric:tabular-nums}
 }
 .tr-legend{display:flex;gap:16px;overflow-x:auto;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tr-legend::-webkit-scrollbar{display:none}
@@ -458,12 +488,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 
 <div class="chart-section" style="grid-column:1/-1">
   <div class="chart-header"><div class="chart-title">回购计划统计</div></div>
-  <div id="buybackProgramTable" style="overflow-x:auto"></div>
+  <div id="buybackProgramTable" class="table-scroll"></div>
 </div>
 
 <div class="chart-section" style="grid-column:1/-1">
   <div class="chart-header"><div class="chart-title">季度明细<span class="chart-unit">(all in million unless otherwise noted)</span></div></div>
-  <div id="quarterlyDetailTable" style="overflow-x:auto"></div>
+  <div id="quarterlyDetailTable" class="table-scroll"></div>
 </div>
 
 </div><!-- /dashboard shareholder -->
@@ -1638,15 +1668,38 @@ function renderBuybackProgramTable(){
   if(!el||!MKT_DATA.buyback_headers) return;
   var hdr=MKT_DATA.buyback_headers;
   var data=MKT_DATA.buyback_data;
-  var h='<table class="data-table"><thead><tr>';
-  hdr.forEach(function(hd){h+='<th>'+hd+'</th>';});
+  // 表头已标注币种与量级，不再单独展示经常为空的“单位”列。
+  var visibleColumns=[0,1,2,3,4,5,6,7,8,10];
+  var displayHeaders=hdr.slice();
+  displayHeaders[8]='市值（亿美元）';
+  var h='<div class="buyback-table-desktop"><table class="data-table"><thead><tr>';
+  visibleColumns.forEach(function(i){h+='<th>'+escapeHtml(displayHeaders[i]||'')+'</th>';});
   h+='</tr></thead><tbody>';
   data.forEach(function(r){
     h+='<tr>';
-    r.forEach(function(cell){h+='<td>'+cell+'</td>';});
+    visibleColumns.forEach(function(i){h+='<td>'+escapeHtml(r[i]||'')+'</td>';});
     h+='</tr>';
   });
-  h+='</tbody></table>';
+  h+='</tbody></table></div>';
+  h+='<div class="buyback-mobile-list">';
+  var currentCompany='';
+  data.forEach(function(r){
+    if(r[0]) currentCompany=r[0];
+    h+='<article class="buyback-plan">';
+    h+='<div class="buyback-plan-head"><span class="buyback-company">'+escapeHtml(currentCompany)+'</span>';
+    h+='<span class="buyback-date">'+escapeHtml(r[4]||'日期待确认')+'</span></div>';
+    h+='<div class="buyback-metrics">';
+    [['宣布回购',r[1]],['已回购',r[2]],['未回购',r[7]],['未回购/市值',r[10]]].forEach(function(metric){
+      h+='<div class="buyback-metric"><span class="buyback-metric-label">'+metric[0]+'</span>';
+      h+='<span class="buyback-metric-value">'+escapeHtml(metric[1]||'-')+'</span></div>';
+    });
+    h+='</div>';
+    h+='<div class="buyback-copy"><span class="buyback-copy-label">完成情况：</span>'+escapeHtml(r[3]||'-')+'</div>';
+    if(r[5]) h+='<div class="buyback-copy"><span class="buyback-copy-label">计划：</span>'+escapeHtml(r[5])+'</div>';
+    if(r[6]) h+='<div class="buyback-copy"><span class="buyback-copy-label">进度：</span>'+escapeHtml(r[6])+'</div>';
+    h+='</article>';
+  });
+  h+='</div>';
   el.innerHTML=h;
 }
 
@@ -1655,14 +1708,22 @@ function renderQuarterlyDetailTable(){
   if(!el||!MKT_DATA.quarterly_data) return;
   var data=MKT_DATA.quarterly_data;
   if(!data.length) return;
-  /* first row = headers */
-  var hdr=data[0];
+  // 源表尾部存在全空占位列，移除后再渲染，避免手机端出现无意义的横向空白。
+  var keep=[];
+  for(var c=0;c<data[0].length;c++){
+    if(data.some(function(r){return String(r[c]==null?'':r[c]).trim()!=='';})) keep.push(c);
+  }
+  var hdr=keep.map(function(c){return data[0][c];});
   var h='<table class="data-table"><thead><tr>';
-  hdr.forEach(function(hd){h+='<th>'+hd+'</th>';});
+  hdr.forEach(function(hd){h+='<th>'+escapeHtml(hd||'')+'</th>';});
   h+='</tr></thead><tbody>';
   for(var i=1;i<data.length;i++){
     h+='<tr>';
-    data[i].forEach(function(cell){h+='<td>'+cell+'</td>';});
+    keep.forEach(function(c){
+      var cell=data[i][c];
+      if(cell==='#DIV/0!') cell='N/A';
+      h+='<td>'+escapeHtml(cell==null?'':cell)+'</td>';
+    });
     h+='</tr>';
   }
   h+='</tbody></table>';
