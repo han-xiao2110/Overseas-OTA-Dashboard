@@ -1,150 +1,962 @@
 {
- "run_at": "2026-08-27 11:45:10",
- "total_rejected": 80,
+ "run_at": "2026-08-31 13:43:45",
+ "total_rejected": 136,
  "by_reason": {
-  "评分低于60且无保底资格": 49,
-  "体育赞助/庆典/获奖/公益": 2,
-  "箱包皮具类并购(非旅行核心业务)": 1,
-  "无新事实短评": 3,
-  "东航非业务影响词": 22,
-  "新闻合集": 1,
+  "评分低于60且无保底资格": 64,
+  "Hotel非OTA相关": 18,
+  "无新事实短评": 8,
+  "观点评论/趋势展望": 4,
+  "新闻合集/无具体事件页": 3,
+  "品牌营销代理宣传": 1,
+  "股价/估值评论": 3,
+  "前高管在第三方公司履新": 1,
+  "人工标注排除": 4,
+  "软广/优惠促销/榜单": 4,
+  "公益/救灾宣传": 2,
+  "被动机构持仓变动": 2,
+  "观点评论/泛分析": 2,
+  "体育赞助/庆典/获奖/公益": 1,
+  "东航非业务影响词": 16,
+  "活动报名/会议预告": 1,
   "东航宣传稿(CiftonEXCLUDE_RE)": 2
  },
  "items": [
   {
-   "title": "Jin Jiang Hotels and Trip.com deepen ASEAN ties",
+   "title": "Growing Sportcation Travel Trend: Trip.com Group Reports 40% Increase in Active Travel Booking GMV",
+   "title_original": "",
+   "summary": "Growing Sportcation Travel Trend: Trip.com Group Reports 40% Increase in Active Travel Booking GMV&nbsp;&nbsp;PR Newswire",
    "source": "Trip.com",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPelU1WldHRkhoLVRiS002VkNTcjNfYWFkRjhYVjJfSzg3ZWFfZnJWYTZTSWNPMnBMU3ZTNHpxQ3paaFFLT3p3TUxiWUNKRmxmMXp6OHJmenhNdDdyRjdlUndIM0czMXNjYXZ6dmpldGVpeWY2YVRORTR4V2lSaE9UZmdleHNzVFNj?oc=5",
+   "date": "2026-08-31",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOdDd5Y01TZmptTU92X081SnpDazVFZEdiZUxRUEVEYTdacVgwOVVONTF1YkQyY3h2WGkwVVFnSDJWWGJMTFJwZnFNOUVLblNjRVptWUtnNmtDSmVMYnAyb1dyUlg2M2RTN0h1WERxU3BwMXg0bWNvTGVOTkkwbGFMXzQ0VnBlY0oxX0VGdUhNVUVzYWR0cm5MYXd0MjZJdVJYdXFEYU5PN1R4RDR1ZmtQWVdsMmFoZmVBbTQ4Q3FHQVN2MXJVNTk4V0RBTVVFNnR4RnVCbkpER3Z6eGw1a0xLbWhaZEprUQ?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": "TCOM",
    "content_type": "general",
-   "selection_score": 50,
+   "selection_score": 56,
+   "selection_reasons": [
+    "评分(相关13/重要4/基本面12/证据20/来源2)",
+    "重点公司(TCOM)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "5 best hotels in Las Vegas, according to reviews from Tripadvisor",
-   "source": "Tripadvisor",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcVU5NXQtN3ctc0taY0tkbk5yRXlMTG4zWnZqV2pVMUxjYjhOeG1RVkVBcVVuSmtzNTVoNHJoanhCNWFiMTY0V3YtMFlsTWhvWDVvX1ZaT3hQN0x6Q3kxaklBYmpQc2xpaGYxeHEtSzNEN01JeFN0VHZTVFB1Y3NiQ2VnVERsM2FxelVISjYxUENkdElsTy1SQXVoZFlSbjdGQmFJY2x30gG6AUFVX3lxTE4xUlQ2T3VJQ3VmUlZISDNpZ21FZks1M3oxNUdNNTItNG41UlpBSXZwY3liQkp4S3FoSG04MWc0dVRMZkZQLVF5S3BXdkd1U01ibHBYd296SUV6c2ZZRVNWM1dHMDlWVnFlYmp6Y2oxcEtLdHRiWjgzeVpRZEpVV0YzRHdGd2VkbUpMRW1sajBsLTREVU5mU05ncjR4RkdpWFV5M1NzTnQzamxmN1FQY1dXeFRNdkxBQ0szQQ?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 3,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "GMH Hotels: Harry Styles Is Moving Hotel Markets.",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/gmh-hotels-harry-styles-is-moving-hotel-markets/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement",
+   "title": "Sydney Marathon drives 49% surge in hotel bookings",
+   "title_original": "",
+   "summary": "Sydney Marathon drives 49% surge in hotel bookings&nbsp;&nbsp;travelweekly.com.au",
    "source": "Trip.com",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQa0lBV083X1FvQ0dVVXc3VG5iVU5VNDQ3YnF2eUo0SWZOTUZjcEZNYk9zM0xDTkxfYU9KZ0dMbUJyZ25rMVJ4Q21YVVZ0U3AxUlk3WjJET0J5T3ZKZ3R4NVYzQks0TFhvY0RRbi1ud1hDZEhzZHNhTEVWU2xzMFV1SjVsTnpkUVZYRXNwNXNlVEU1S0hwN1hiNmk5MWVFbGVzTTBFQTV6TU5qX3VzdlFpaTVkRldhSnFGdzRB?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": "TCOM",
-   "content_type": "general",
-   "selection_score": 47,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Wego and MakeMyTrip Lead 2026 Festive Season Digital Travel Booking Surge",
-   "source": "MakeMyTrip",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPbWlvbGNzSDFRelN4cWswVU9sbDZRTENSZzZYNzR4U05EeFRTOF8wSlM2VG8wQzczWndKaVZxUk5qR2h6d0VqOHllcVlDaVkwTnlQWGY3MkdhcldWNzIybDBNb0piYlpETjcteXctSkE2WDFtajAtZV9ZSUd0UGRLX0tsQlo1Unpu?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 5,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Traveloka SEA Index Q2 2026: Southeast Asians Are Booking Longer Stays and the Region's Own Beaches Are Winning",
-   "source": "Traveloka",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQd3hXV2x0N201NkoyNGFHM2ZldWVtdnZ4QzlwcE5LOUhUR0VkcGY5Qi1WaURyWDd0Ty0tQWRFQS1zaEFuYWJHZVM5cExmSmloMHN4VTAwODg1clVzdUE2QWh3ZlJpaVJ1MGNvb18wbG1aYkJLaG5zVjBoZjJjcUlQN0UtR3FQNXVpakxOamJqWFNkUVZwZ3lfTi1QTmcwQ1pRMWhNQ3pocnBPMi0xc3ROcWdka1AySHBzV1NaOFBmVEZ2M0wxMDZNYkdMOA?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 5,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Expedia Group to Participate in Goldman Sachs Communacopia + Technology Conference 2026",
-   "source": "Expedia",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcUlYWG4tdzRVYTZ5MG0teXdEN3gzV1BDZFBhSVAyWTVuNWFnOVFoWWh5TjVySjRiYVRjTWw4SS13QldNWjZTR2toQU5qUmlienVrR29BNzduMXVjdGd3M2VrLUNpTzVlYWtfQUltY3BDcHVSSXlzVERXWVEzOVc5WDNtbjdTRnpWb2ctWThaN1h4dzJubWI0VXRlNklBeU1aSWRCUmMxaWJjSnc?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": "EXPE",
-   "content_type": "general",
-   "selection_score": 26,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Expedia Group Inc. stock outperforms competitors despite losses on the day",
-   "source": "Expedia",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOd29Pd2piSm5BbUh1djNtZGVOaHROYXZmTGpDd2ZjMnNrYnN0bmVYVEM4c2hIVVEzZTYxNGdnRHUtSGxEWFotQ3NZU29ZNXc0TUdLa01xdHhxdTNhektNVGJRR2MtOEtKQVI2bU81T1VPc3p4S3p6ME4tWGhLU0NuV0l0bWpZRHV0ejVFWVZfRkZZa0FBLWMtc3dza2RRMXBJNjVMOW1XdlpCT0lvQ2RUYVNESm9KWkhHUFpWTmI3QXFvV0dvWDh4TW1rOFlydw?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": "EXPE",
-   "content_type": "general",
-   "selection_score": 26,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Confirmed: Brand USA CEO Fred Dixon to Lead NYC Tourism Again",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/brand-usa-ceo-fred-dixon-nyc-tourism/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "management_org",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Why Taj-Parent IHCL Wants Full Control of Oriental Hotels",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/why-taj-parent-ihcl-wants-full-control-of-oriental-hotels/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Here Are the Winners of the 2026 IDEA Awards",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/here-are-the-winners-of-the-2026-idea-awards/",
+   "date": "2026-08-31",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQczF5ZTZhOTJuT3NMeldQWi1mck5OUlVJSXdUMjVXekZqX2NBdUtvTzNSZnZnSU9YUU8tNjMxY0pRaVhjZ0J1TDNEcUtGQ2JiSEF0MmJHNXFsRWQ5TEtWUTk1ajlCeEJTcTl1WG1BZHY2SXcwQUtaVUQzYjVtd2lweEQxeVE?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
-   "rejection_reason": "体育赞助/庆典/获奖/公益"
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Goa Tops Accommodation Searches for the Rakshabandhan and Janmashtami Long Weekend, Reveals Agoda",
+   "title_original": "",
+   "summary": "Goa Tops Accommodation Searches for the Rakshabandhan and Janmashtami Long Weekend, Reveals Agoda&nbsp;&nbsp;PR Newswire Asia",
+   "source": "PR Newswire Asia",
+   "date": "2026-08-31",
+   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbXVvRDFVM1JMazA1QUdtRTVyQTlGRXREaWtjVFh4YlpGSjljUFdLMVdmd080aVdUVlRBbjVwNFMxVDRDc0VoM0ZSNWpZRVpsZUtKUGh5bXY0UFgtbUwwclZfYUl4cWpBNk1mOHkxX0hlUEZYMUN0WmJiT29sZU8yODM4eEhLTkE3WUhTODdMeGl2SDA2c1BQZ2NOSlNaWGpIeTlwTUJBZ0NfQ1lmTXVKNjNxWVRSYmJtV0RyTVlSQVJtNlpSZWJ0MG51NXBrb1M3c1lJeWVYNE1JUEM0TFV3?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "BKNG",
+   "content_type": "general",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(BKNG)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Agoda and NTT DATA advance renewable energy and data centre efficiency in Singapore",
+   "title_original": "",
+   "summary": "Agoda and NTT DATA advance renewable energy and data centre efficiency in Singapore&nbsp;&nbsp;FutureCIO",
+   "source": "FutureCIO",
+   "date": "2026-08-31",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObGVjMlgyaVJSeHEwTTdZamNOWDg3SjdOTTBud2R5U012WV83UVB5S1ZiRGpmZGlkTldjSXlWOG9GdE55YlhpOU5ZQV9PSjhuOHplSXljYW9zMmhXc3ZFQmM5WGJZQ1pKeDZ0djhCdnV4eHRLMEE2Vmc4c0hhRUg4M3llVE84YUJsRmo1aVRCYTdXWmRkV293aDc1d2x2LVRIRHM0Vmh5azZpZk0?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "BKNG",
+   "content_type": "general",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(BKNG)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Monthly Chinese Tourism Tracker | Air Travel Growth Rebounded in July | Why? And Is It Sustainable?",
+   "title_original": "",
+   "summary": "Monthly Chinese Tourism Tracker | Air Travel Growth Rebounded in July | Why? And Is It Sustainable?&nbsp;&nbsp;Smartkarma",
+   "source": "Trip.com",
+   "date": "2026-08-30",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSTM5eG45ZVZGNUtlVmN0emFBbmVwc3U4SUhUcHJpc1NwdmdpUTd0c21RVU5BOUNpOGZwWHZBX0RzXzdZVGpFdjktNjN6UmQxTEVNc0I5MjJDUUIybkdzVHkwMk1aMzFNSTc5dVZkWWhqNFFOYldRTzNnTXZRR3dyVnRmTVBhek1RRkZYZkltNDZTRWlsS0JVdW1sLUY3OUFzTHhzLVNfa2pIYkFnaFQycEx3SkVYMDF0Qy0zNFgwTEdLWXVEQzVSUw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "无新事实短评"
+  },
+  {
+   "title": "Expedia Faces Off With Cuban Families Over Land Seized Decades Ago",
+   "title_original": "",
+   "summary": "Expedia Faces Off With Cuban Families Over Land Seized Decades Ago&nbsp;&nbsp;The New York Times",
+   "source": "Expedia",
+   "date": "2026-08-30",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOX1d3cmdLWWhQcHNXanZfblNkckhjb2RlNHoyX29VVDA3NUtFeDVRdTd6OC1mVVQxZ1Z6RVZVeUNmZ0VvT2RkRHh3WWhRalp0MnA0SFRvU1J0d19vNEVmT1F4Z1Y1ZFByRTBEamcxeDc2U1doS293RWYwSnFQcmctSw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 46,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(EXPE)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Hsbc Holdings PLC Purchases New Holdings in TripAdvisor, Inc. $TRIP",
+   "title_original": "",
+   "summary": "Hsbc Holdings PLC Purchases New Holdings in TripAdvisor, Inc. $TRIP&nbsp;&nbsp;MarketBeat",
+   "source": "Tripadvisor",
+   "date": "2026-08-30",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQjJQb2R5a0tlMVFzOU5aaHRvLU05eG9Jc01ITVJRbk1oSVRlSC11YlVzRGctRFhxZFF1b0czYkEwX1RBMlpkb3dIUUJjMFhObmkwLTlURU45akYyRXJoY1ltcWh5Wm5lWndKUEJpb3FkbTBOYUFwellyblZpNzdDajhzWGJ3ZFZJaHR1cXBQQU03dnN5WXV3amRuVG0tSkpOWF9hWUpWVDlmWEV4S3NpOXBiSHE4Q2JkSUpXVS1mMGxpR0U?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据6/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Sea Turtles | :15 | Expedia",
+   "title_original": "",
+   "summary": "Sea Turtles | :15 | Expedia&nbsp;&nbsp;Waterloo-Cedar Falls Courier",
+   "source": "Waterloo-Cedar Falls Courier",
+   "date": "2026-08-30",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOWGZXUTdabURYRjhYSTlZcGl5RDBCc0hpd05tSmxjT1ZDOFA5YlFQYklNaUxrU1RKcWtQUi02a0l1UnBBakVMbkktZm5JZWo4UmZnNmtoSFBhY2VDNHlyRHpaVWtYdF9OWkxaX2NpMkVMYmJxQ2ROdXpoUVZtdms3aEVnVTFyUQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 46,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(EXPE)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "How SingleThread Is Growing Without Copying Itself",
+   "title_original": "",
+   "summary": "SingleThread is expanding thoughtfully, leaning on translating its service culture through people and giving them bigger challenges to tackle.",
+   "source": "Skift",
+   "date": "2026-08-29",
+   "url": "https://skift.com/2026/08/29/how-singlethread-is-growing-without-copying-itself/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 18,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "The official red day, when you can put several days together to rest, is another name for the holida..",
+   "title_original": "",
+   "summary": "The official red day, when you can put several days together to rest, is another name for the holida..&nbsp;&nbsp;매일경제",
+   "source": "Skyscanner",
+   "date": "2026-08-29",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4zWEJjSnpqSFhwVU4wanVRVW5ITW15azdzbnEzbHBkYUNBUDhxWVQtdHI1cDEyOWdPNHd4THVLU3ZqWG1EZmhwLUx1RGR5SzMwTGc?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据6/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Google expands AI Mode in Search to flight tracking, rewards and hotel bookings",
+   "title_original": "",
+   "summary": "Google expands AI Mode in Search to flight tracking, rewards and hotel bookings&nbsp;&nbsp;Adgully.com",
+   "source": "Adgully.com",
+   "date": "2026-08-29",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbFU0UUZPUHg1VmNPdVpmXzdOLVBtSldBYjA4cmJzdTRjQUVQaUtEVjU0djZIeHMwVURYRW0zMW9COHF4eDZ1UWJSRXAwQ1dOWjY5NTl0WXhPdmNYVnNLV3NGVGNwSFlVMEQyekt0bnRLNEVuQWJoMXE1Z3JuWnlNajl4Mmk4ZWVoalZGTjkwQ0FNTEw2V3E3eWdpbm5JV3Bwa28wejFjMnhnMllObVE2bWlWcw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Canadians Were Just Starting to Come Around to U.S. Travel. Then Came the Trade War.",
+   "title_original": "",
+   "summary": "Canadian travel to the U.S. had just hit its fourth straight month of year-over-year gains when tariff disputes between the two countries escalated — a worrisome development for hotel operators and de...",
+   "source": "Skift",
+   "date": "2026-08-28",
+   "url": "https://skift.com/2026/08/28/canada-us-trade-war-tourism/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Cheval Is Riding Out Dubai’s Demand Slump On Long-Stay Guests",
+   "title_original": "",
+   "summary": "Cheval is betting Dubai’s domestic demand can carry it to recovery. S&amp;P doesn’t see that recovery until 2027.",
+   "source": "Skift",
+   "date": "2026-08-28",
+   "url": "https://skift.com/2026/08/28/cheval-is-riding-out-dubais-demand-slump-on-long-stay-guests/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 18,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Motel 6’s Power: What Prism’s Annual Report Reveals Ahead of Its IPO",
+   "title_original": "",
+   "summary": "Prism has arguably built a much more sophisticated company than the Oyo of its first IPO attempt. An American-heavy, India-operated hospitality platform that wants to use technology to take more contr...",
+   "source": "Skift",
+   "date": "2026-08-28",
+   "url": "https://skift.com/2026/08/27/motel-6s-power-what-prisms-annual-report-reveals-ahead-of-its-ipo/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ma_investment",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Destinations rethink marketing amid AI disruption and hallucinations",
+   "title_original": "",
+   "summary": "Destinations rethink marketing amid AI disruption and hallucinations&nbsp;&nbsp;PhocusWire",
+   "source": "PhocusWire",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZW0wYUstX1NGU0d6M0pUemw4eXJBUHlxOW9EQ0dyTV8zY2N5bjBmQmFjbG0zTUtKVEswYzNqSUtUZlFzZUhld04wc29OclU2eWxIenVjZDVrUGtEV3ZrTHNiTUVtakQwa2FGTFhwRnhlU2ZXbFBhVjFuVFRIMlJacVFGNDVrZVF0WkF2aU1ySmU1X3JFTDkweDJab3JEVWs?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 观点评论/趋势展望"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.观点评论_趋势展望"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "观点评论/趋势展望"
+  },
+  {
+   "title": "PhocusWire's travel tech news briefs: BCD Travel, Klook, Dida and more...",
+   "title_original": "",
+   "summary": "PhocusWire's travel tech news briefs: BCD Travel, Klook, Dida and more...&nbsp;&nbsp;PhocusWire",
+   "source": "PhocusWire",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE80QmExRFViMHpzZDI4T1QwMDc1cG41OG1UNXA3RWF4bERYdm9TWm9RbmFoNURMLWNDbVdqakpaZTB5VVBxaHN3OVM4QW95UnhINnh2UV9Ob09YOUVLNTRJeVVHZ0o5WTMxNlNLQmpDNl9LaDg?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 新闻合集/无具体事件页"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.新闻合集_无具体事件页"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "新闻合集/无具体事件页"
+  },
+  {
+   "title": "Klook 入选 PhocusWire 旅游科技快讯",
+   "title_original": "",
+   "summary": "Klook 入选 PhocusWire 旅游科技快讯。详情见原文。",
+   "source": "PhocusWire Briefs",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE80QmExRFViMHpzZDI4T1QwMDc1cG41OG1UNXA3RWF4bERYdm9TWm9RbmFoNURMLWNDbVdqakpaZTB5VVBxaHN3OVM4QW95UnhINnh2UV9Ob09YOUVLNTRJeVVHZ0o5WTMxNlNLQmpDNl9LaDg?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 1,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Zacks Industry Outlook GoDaddy, Vipshop, MakeMyTrip and QuinStreet",
+   "title_original": "",
+   "summary": "Zacks Industry Outlook GoDaddy, Vipshop, MakeMyTrip and QuinStreet&nbsp;&nbsp;TradingView",
+   "source": "MakeMyTrip",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdVExblZwbU9BTy1uYnM2UG83cGZVNEdmakN4YTZGeXdwTWxvYXV6WjZVTXdnSkNIbmEyNU1kaFBzeGs5SFVjaVhEYVFRRlZtMkhlQTlGaWxTQW1ZZ3duNFNYTWxKaF81TjNkd2VPa1pXZ1cwTUFna3lkSERXVHhyWVRSS0NlREk3V3lJVGlGclg3ejRVLUdyWEM3VDFqM1JzcVZjb3B4blNmcF9YSXVyeUFHY3ZNTHlNMGJueg?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据6/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Is Expedia Group Inc (EXPE) Overvalued After 3.3% Rally? GF Valu",
+   "title_original": "",
+   "summary": "Is Expedia Group Inc (EXPE) Overvalued After 3.3% Rally? GF Valu&nbsp;&nbsp;GuruFocus",
+   "source": "Expedia",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORGlTNG1pZW9rMDJVUDM1anQzZ0tLM1kwYnZGNmQ1UVd0dklsX0VLNlUtZG8ybzdhVmJ3NV9BdVdPejN2LUJrZVU4MldpNm1sMEo4REczeDJXeHZrU1VyT1dhQjRpWG9jV1hsR3R1U002TVhsc3VsRmZiei1MWUFmMkhfVDFhbkxRWDlJMG1hR0RSaDh5UVRtNzZORHJicERIQ3o4UFFpTUNSaW5FeklYM1cybzBEUQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 36,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据20/来源2)",
+    "重点公司(EXPE)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "TripAdvisor, Inc. (NASDAQ:TRIP) Receives Average Rating of \"Reduce\" from Brokerages",
+   "title_original": "",
+   "summary": "TripAdvisor, Inc. (NASDAQ:TRIP) Receives Average Rating of \"Reduce\" from Brokerages&nbsp;&nbsp;MarketBeat",
+   "source": "Tripadvisor",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNRFVhVGJtNUtCZkNFcjBNLU5WNldPV3Y3M2MzcTJoWmdIYWZNczRENHYwZUhSY0pmRmxJSW56MkFXOS1Na3A4NHlpZk91MS1PRDJMVjAtc3M3d1FacVFiakN5YlhRWlJWZGlWUHVwQnVIUEU4dDZzVUdVQjJYYTQzSS1GVGswU2RaOVoyS1MwODlwYXpsUEJZTnF2eTlFT1k4eDRObU5ZemFVLVd1RDMwOVRyLWRHb2ZheUsxenNYaXNoRHpxLTdZQ3RWZHNNUm1YWFlCTzFKTms?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据6/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "72andSunny Amsterdam Appointed Global Creative Agency of Record for Booking.com",
+   "title_original": "",
+   "summary": "72andSunny Amsterdam Appointed Global Creative Agency of Record for Booking.com&nbsp;&nbsp;Little Black Book | LBBOnline",
+   "source": "Little Black Book | LBBOnline",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB4bWdyTmNRcmxtSmIwbGFmSGRXSXl3QkYwODZ4dTJnZU1IZFV6VmtSMTd4WERBOUUzVlF1OVNKa0drUXFyZHY3RDZUN2dSY0JEckdER2t3Uk1xYnJ6cUNhUlFyMDR4dUdNbHNrQTRnWQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "BKNG",
+   "content_type": "management_org",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 品牌营销代理宣传"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.品牌营销代理宣传"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "品牌营销代理宣传"
+  },
+  {
+   "title": "Google officially integrates hotel booking into AI Mode",
+   "title_original": "",
+   "summary": "Google officially integrates hotel booking into AI Mode&nbsp;&nbsp;Travolution",
+   "source": "Travolution",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZkZEQm0zd2VIWEZqbXk0YzBhczlOdFJkZWY3b0dYOHNoYzQtYzU0OEY2RXFVNVhObERCNDltd01NR0k4WFM4V0QwMWtTT29PREZmZmU1bkFZbGl2UFNwX0c0S0xTa05ZUHFaWFplNWh3SDBDS1JXSmplUUZRN0o2MG0wUE9DMFZPNEVReXlGVS1reGpCNk5Pa2ZEQ09yWkxqeU5QYkFxQ0g1VUlXb3BhU05JWk9GbTR2emc?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 28,
+   "selection_reasons": [
+    "评分(相关16/重要4/基本面0/证据6/来源2)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel",
+    "topic.hotel.ota_direct_exception"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Corporate travel platform adds GST and management tools for Indian SMEs",
+   "title_original": "",
+   "summary": "Corporate travel platform adds GST and management tools for Indian SMEs&nbsp;&nbsp;The Times of India",
+   "source": "The Times of India",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOZ1U0bzNzWEFlM3hpdUt6dzVWOFJPM2Y5UURXZjJZUzkwS1B1RnU5R08tUXYxQk4yNlpGQmtlRHM3azU4VWxRUVF6LWZBR20ySF9kOFp6RS1aM3BieDRLVks3VTE2LXBpOFJ3WERpLUNIblpHZzhWRlRSTE5PeVBuaTNGa3VRV2Q3THl5Ym04V1hVSXNBdmotUWc5WG90UHFWU084ZWpZcFhkdXhyNG5kU1hNU3ZQNk82TW0xVjVlak00YUVESUdkT0pnaXBXS0pXdmRVdEJnZDMxY3FMRGFkOWgyZjcyZ29rUHfSAe8BQVVfeXFMUDZvRmRSOTBlSzk4YVctQ1JHSVBOUkJ3MXgyUW5QbmI1ZHZubWtLWjRUVXpMNkRSbWMzUUNjdmVWUTJ3OGNQNTJ3cFdfMVNHVFZfYk9nU1JJZVNJMGg2Tk9NdGU4UWc0N2FsZWc5WEZaUWxSZjV2S0JyeDdCLVQwNUJqQ3JRTHFMSDBtV0hyQ1V2S182bnljZjZtc25wTjRsNk9FZHdoZ3plZjVGYk1iaHFTSTJaQTh4NkgxcjNNUmRfU0lYSFM5aXNveU5DTm9nUlMwblZCbjVYeDFMbWxEcXJLekVMa0VZVUxjdFNDbE0?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 25,
+   "selection_reasons": [
+    "评分(相关13/重要4/基本面0/证据6/来源2)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "How Investors Are Reacting To Expedia Group (EXPE) Upgraded 2026 Revenue Outlook And B2B Momentum",
+   "title_original": "",
+   "summary": "How Investors Are Reacting To Expedia Group (EXPE) Upgraded 2026 Revenue Outlook And B2B Momentum&nbsp;&nbsp;simplywall.st",
+   "source": "Simply Wall St",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNaFRMWVpHWHl0RnRGTmJLeGhBQjNHUlIzT19NWVZnN1NkOVY0Zl9sb0k2b1ZGZGplUXczcjUzZi1qXzBzQXlsSUdTTDVJTmZHVVY4RzdRR2RXQlAySTB4WmdsLUUyTFV1Z05JOExPNXV6Y2RaTzY0VGxhRWtDc2QzMm9jTGRSNFU0RjktNzg2WjBoVGVWLTR3ZEVRY3JuYWh2bm9LT3BZVENWcWRycXNTc0VyTVJINzVkMnJrX2RVWlJ5bDlXVFpPSVY5UjdYMVk3X2VzRFgtWkYyY0U?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "earnings",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 股价/估值评论"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.股价_估值评论"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "股价/估值评论"
+  },
+  {
+   "title": "Top Hotels.com Coupon Codes for September 2026",
+   "title_original": "",
+   "summary": "Top Hotels.com Coupon Codes for September 2026&nbsp;&nbsp;WIRED",
+   "source": "WIRED",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uYTFJdVRUUlJoWVpla1RkQkt2dHZJOEo3R3pka0ZJYnprbFVqX2kzWGhMOU43Z3ZJT0JSR0RBNW54VTZKam0zTFIwV0JGYjlsN1VoTUozUUdPZw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "My favourite Airbnb: an earthy-toned lodge on the hilltops in Milos with steps into the sea",
+   "title_original": "",
+   "summary": "My favourite Airbnb: an earthy-toned lodge on the hilltops in Milos with steps into the sea&nbsp;&nbsp;CN Traveller",
+   "source": "CN Traveller",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeUpBZzM5YWdKSXBhU2FVZ1NIdVFIclpqY0VrLTJodkRWRTlFUDJHN2hrS2UycU5zTjZRekpZSUJ5dkdSdndMQmFqTUVNZUhnSXRvcGJXSmowbG4zYThON3lYcHBLdVJvU1VORDF1U0ZjYkx5VXAyNXdrRXdJd3ZWOVVESzlkVC0xc1RpQTRybnAwWmg3bktOU2lPbHVSMnZVRnpXdXZXeEdrazJxLWlSQ3F5QzRMbnVYOWh0NHZrektwa21L?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 29,
+   "selection_reasons": [
+    "评分(相关8/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "TAP Adds Airbnb Mileage Rewards",
+   "title_original": "",
+   "summary": "TAP Adds Airbnb Mileage Rewards&nbsp;&nbsp;portugal decoded",
+   "source": "portugal decoded",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9yZ1ZpdzZoNnZpcEZVZ0VqY0FkLXJJVHlYOGs1NjdZTGJDeGlGWV90LUNhRUJJWndrdjdVRG9JZkxRZTZmQjdOenYzZnFXSEtYZWlObnpuc2RQelVMV19KN290N2JrQUlpWWo1RExOd0JkSnRlWXRmTVNB?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 46,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Carl Icahn’s JetBlue Bet Didn’t Pay Off: Board Members Resign as Stake Shrinks",
+   "title_original": "",
+   "summary": "Icahn hasn’t had the same success as activist campaigns at Southwest. JetBlue’s stock has continued to decline since he first disclosed his stake.",
+   "source": "Skift",
+   "date": "2026-08-27",
+   "url": "https://skift.com/2026/08/27/carl-icahn-two-jetblue-board-picks-resign/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 18,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Why Flight Attendants Are Fighting Google’s Purchase of Spirit Airlines Data",
+   "title_original": "",
+   "summary": "Spirit says it is working with a third-party to scrub any personal information from the data before the transaction is approved.",
+   "source": "Skift",
+   "date": "2026-08-27",
+   "url": "https://skift.com/2026/08/27/why-flight-attendants-are-fighting-googles-purchase-of-spirits-data/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 24,
+   "selection_reasons": [
+    "评分(相关6/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Hotel booking goes live in Google's AI Mode, flights still waiting",
+   "title_original": "",
+   "summary": "Hotel booking goes live in Google's AI Mode, flights still waiting&nbsp;&nbsp;PhocusWire",
+   "source": "PhocusWire",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORlYxSEUwUkszeVB1bzVlalpSYXQwV0tRTWp5TGo0TXNXZHl0alVZYmRGeGZPU2dQSXRJZHZROTBMaDI1NmNlRHp5NVRHXzY4alZoRHhzbE0xX2pNN2VsSkVqUmlzOXJfc041N3JjeUdBcTR2bzE3NXRONl8wSm1qS0M0enZLWlg1VGNrZjdJSDNTUUpzOVM4Z3JPYw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Trip.com Still Dominates China Travel. But Its Moat Is Changing.",
+   "title_original": "",
+   "summary": "Trip.com Still Dominates China Travel. But Its Moat Is Changing.&nbsp;&nbsp;Growth Dragons",
+   "source": "Skyscanner",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1TSEQ5cW5PVFA3QW9YN3Zqc1NuZ3Zxb1hzU3ZjTDVDbjFiQlNkaVE1VDBtZ0FESTVEM1RRMlJXUzlUeHBqSnN3VUpuclY4WEI5LW9PenlqYm9QYTktTFl4Q19EZzdMN0E4RWl0U0VzZ3RMcm1vLXJqeWVlMXhqZw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "TCOM",
+   "content_type": "general",
+   "selection_score": 44,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源2)",
+    "重点公司(TCOM)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Jin Jiang Hotels, Trip.com form strategic alliance to drive South-east Asian growth",
+   "title_original": "",
+   "summary": "Jin Jiang Hotels, Trip.com form strategic alliance to drive South-east Asian growth&nbsp;&nbsp;TTG Asia",
+   "source": "Trip.com",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxONnFTQ0d1Y3RrcWN0NHRuR2wzVnNlUWRkSHR1TEh0bldEQ0VfRHdTcnIxR3lldVNveGJFQ243R3p1d2NUanBXcHlBMVV4YmczVTAwcXN0czJ0Yk1TUkhZTVZCWTVKajJmMUk2Z01pRjBhSWgxNnVtNERiT0Jza0EwZGtGU25QRHVwYTdUVjJXd19ZRTlZdFE3dEtuQVJocHB4WUxPX1pYLTVLdm9oOXhwd05lWEN3VGtZZmc?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "TCOM",
+   "content_type": "general",
+   "selection_score": 27,
+   "selection_reasons": [
+    "评分(相关6/重要4/基本面0/证据10/来源2)",
+    "重点公司(TCOM)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel",
+    "topic.hotel.ota_direct_exception"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Tripadvisor 2026 Mid-Year Experiences Trends Report",
+   "title_original": "",
+   "summary": "Tripadvisor 2026 Mid-Year Experiences Trends Report&nbsp;&nbsp;Hospitality Net",
+   "source": "Tripadvisor",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQakFRYjBmcTBjWjRzVnpTVG1EOWR0T3pJejh3cENRRDZXa3YtSVc3UExSTnNzOVFPZGI2ak5NcU54UHNzNWw1cDUybzZhR3o0QXJZV01RLWdpZ2ZBMnNKYXRSYlpzZUdXNXJkUHNmZl9XSEhsbUZoX21OdjZ4ZGgzTzNMSDRCYlp3R05yc0NHalBmNEFDczF1UGRGUQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Google's AI Mode Adds Flight Price Tracking, Hotel Booking and Points Search",
+   "title_original": "",
+   "summary": "Google's AI Mode Adds Flight Price Tracking, Hotel Booking and Points Search&nbsp;&nbsp;finance.biggo.com",
+   "source": "finance.biggo.com",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBwZ0ZoZUkyNkFZaDRoWDZQREE5SHhvazM5YXphX1R4RC1fUHdIeU52TldMOUNOQThvQ0VfSl9NVDdrd1ZqWHJNaGtadnNDWXpxR3o4TUYxdU1vTms1ZXdSSThkcHVJRmlub3FteFBBU01kNkZ5anc?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Google AI Mode Adds Flight Price Tracking, Mile Rates & Hotel Booking",
+   "title_original": "",
+   "summary": "Google AI Mode Adds Flight Price Tracking, Mile Rates & Hotel Booking&nbsp;&nbsp;Search Engine Roundtable",
+   "source": "Search Engine Roundtable",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1lTTA1N05QUC0tRTR4RG1ManZ4enlVM2IxN1JPR2ZtLVkzX1JiYzRtTUljOU84OWh3aGlYX1NON21vTmFCMU0zNU5mQkljSkd5Smp0aDJwRjQ3N0tsbklGR3NnMkpheHJGNnBxRnRkaEZublRZMUJYZA?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 28,
+   "selection_reasons": [
+    "评分(相关16/重要4/基本面0/证据6/来源2)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel",
+    "topic.hotel.ota_direct_exception"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Google Starts Rolling Out Hotel Booking In AI Mode",
+   "title_original": "",
+   "summary": "Google Starts Rolling Out Hotel Booking In AI Mode&nbsp;&nbsp;Search Engine Journal",
+   "source": "Search Engine Journal",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcEE2U3RPTFNvY1RYYWRJTC1zVWFuRktkOVFIbUNxYWJvY01wZnByeUZHbGlaZ0w0Ynppb2FNS05HakFyeHUxMlZhS2dmMnVMRzlfZzBoOElxTUgtRXJCV1JQSi1GN21iTGNicU4xcWQ0NmtEQWRWWGYyY2U5OVlwaWNVTndUNVV1REFyVFo2dlZoYkYxdUx1Q25R?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 28,
+   "selection_reasons": [
+    "评分(相关16/重要4/基本面0/证据6/来源2)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel",
+    "topic.hotel.ota_direct_exception"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Beyond Border appoints former Airbnb, Zenyum executives as advisors amid US, Latin America expansion",
+   "title_original": "",
+   "summary": "Beyond Border appoints former Airbnb, Zenyum executives as advisors amid US, Latin America expansion&nbsp;&nbsp;People Matters Global",
+   "source": "People Matters Global",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOZ21YcHFlVUMyUmhxaml2bG5WVXdJeXh6Ty1icEFUS2l0QWw0UTBUUlJGUTZyQkVpOWkyaWlkNEZwVEZVN1pSeTg5QlhrYi1Rano5SUcyQUZ1SWQ3VmFLWnlLQ3ZGMVIzQ2R3NDY4M1Z0djBnX2tFVVlxRFVWaDVIZ3Q0X0o5WEZWaHF3akNwUWdBc1BTcGJvRll1VHRHSXIyU1lSdWl6aFcwZnNhekNxQWpUdlFZNmJ5UDkxZTZpbDVyZnJtMTJmaWJ5OXg1Y051REVzRW1uVWhQMENDazJHMThMa3RJV1Bzd2c?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "management_org",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 前高管在第三方公司履新"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.前高管在第三方公司履新"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "前高管在第三方公司履新"
+  },
+  {
+   "title": "More Americans Could Soon Be Eligible for Online Passport Renewals",
+   "title_original": "",
+   "summary": "拟议的规则将允许海外美国人在线续签护照，无需亲自前往领事馆两次。",
+   "source": "Skift",
+   "date": "2026-08-27",
+   "url": "https://skift.com/2026/08/27/passport-renewal-expand-americans-overseas/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 18,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "The UK’s Airport Record Hides a Huge Traffic Shift",
+   "title_original": "",
+   "summary": "新的民航局数据显示，尽管希思罗机场和盖特威克机场萎缩，海湾地区的客运量下降超过40% ，但英国机场的客运量仍创下季度纪录。",
+   "source": "Skift",
+   "date": "2026-08-27",
+   "url": "https://skift.com/2026/08/27/the-uks-airport-record-hides-a-huge-traffic-shift/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "人工标注排除"
+   ],
+   "matched_rule_ids": [
+    "manual.reject"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "人工标注排除"
+  },
+  {
+   "title": "Marriott Heading for 100 Cities in India, but Country ‘Has to Tell Its Story Better’",
+   "title_original": "",
+   "summary": "万豪国际首席执行官Anthony Capuano表示，印度更大的机会是让世界其他地区发现这个国家。",
+   "source": "Skift",
+   "date": "2026-08-27",
+   "url": "https://skift.com/2026/08/27/marriott-heading-for-100-cities-in-india-but-country-has-to-tell-its-story-better/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "American Joins the Race to Add New European Routes and Premium Upgrades",
+   "title_original": "",
+   "summary": "美国航空正在扩大其2027年夏季跨大西洋时间表，因为它改造了其机上产品，以吸引更多的高消费旅行者。",
+   "source": "Skift",
+   "date": "2026-08-27",
+   "url": "https://skift.com/2026/08/27/american-joins-the-race-to-add-new-european-routes-and-premium-upgrades/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 29,
+   "selection_reasons": [
+    "评分(相关11/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "不确定",
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "度假租赁宾客服务平台VayKLife收购Xplorie，整合度假租赁服务与本地体验",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+   "source": "环球旅讯",
+   "date": "2026-08-27",
+   "url": "https://www.traveldaily.cn/expressPage/190606/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ma_investment",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
   },
   {
    "title": "Investors raise the bar for AI-powered travel startups",
+   "title_original": "",
+   "summary": "Investors raise the bar for AI-powered travel startups&nbsp;&nbsp;PhocusWire",
    "source": "PhocusWire",
    "date": "2026-08-26",
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQS1NzOVNQcFpzX2YzLXY5WVRFcmdrZlJSZEw1MFU1OXkzM1BwUnVRdWZhZWFfcmRKeWNyWkUzZF94RllvUUNvbm1pZ3NRUVFoMEFTR2JoVlIxX2VVSmprMmRmbWd0aDA1SjN0QUQxLXNDelZlUC1EQzY0QUZFUlZsRkMtOGtDS0FxQ1dCT19jVHc?oc=5",
@@ -152,47 +964,94 @@
    "category": "industry_news",
    "entity_id": null,
    "content_type": "ma_investment",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 观点评论/趋势展望"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.观点评论_趋势展望"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "观点评论/趋势展望"
   },
   {
-   "title": "Top 30 Funded Travel Tech Startups In India 2026",
-   "source": "MakeMyTrip",
+   "title": "Jin Jiang Hotels and Trip.com deepen ASEAN ties",
+   "title_original": "",
+   "summary": "Jin Jiang Hotels and Trip.com deepen ASEAN ties&nbsp;&nbsp;Travel Daily Media",
+   "source": "Trip.com",
    "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1TYnUxWW5kX0QzMjlHNWUzSXZZTFBJOUpnYUhPa2lkWDJkYm1VUkx2WFBPN3dMQnFYb0Zqd3BnbUExZF9CdkhBUFJOd040ZXFFWkR1c0pQa0JLT1R1NlVlRTdUSVdsc0V1UDd0WWprRXBTcl9zaVBYYWdrMDJTUQ?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPelU1WldHRkhoLVRiS002VkNTcjNfYWFkRjhYVjJfSzg3ZWFfZnJWYTZTSWNPMnBMU3ZTNHpxQ3paaFFLT3p3TUxiWUNKRmxmMXp6OHJmenhNdDdyRjdlUndIM0czMXNjYXZ6dmpldGVpeWY2YVRORTR4V2lSaE9UZmdleHNzVFNj?oc=5",
    "section": "international",
    "category": "industry_news",
-   "entity_id": null,
+   "entity_id": "TCOM",
    "content_type": "general",
-   "selection_score": 25,
+   "selection_score": 0,
+   "selection_reasons": [
+    "人工标注排除"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel",
+    "topic.hotel.ota_direct_exception",
+    "manual.reject"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "人工标注排除"
+  },
+  {
+   "title": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement",
+   "title_original": "",
+   "summary": "Jin Jiang Hotels and Trip.com Sign Strategic MOU to Deepen ASEAN Engagement&nbsp;&nbsp;Yahoo Finance",
+   "source": "Trip.com",
+   "date": "2026-08-26",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOa3RZWW1FVTRleEx3NkpreHQzNmZBRkZWY0lUcWgzSGhvYnhGNFpTREU0NG9tVXhONlQxWDlWQ21SYmoxeVJNckVoUWtxV1Z2NmhzZnBMX0pHSU5MdEh4eVd6RjcwUVQ3cE1SN01SbmJBSEhsUkpsRlhZZHNhWXJEaTlWdUl3Z1Q2YTBodHFyV3ZMLXFu?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "TCOM",
+   "content_type": "general",
+   "selection_score": 27,
+   "selection_reasons": [
+    "评分(相关6/重要4/基本面0/证据10/来源2)",
+    "重点公司(TCOM)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel",
+    "topic.hotel.ota_direct_exception"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "Expedia Executive Sells 3,133 Shares for $1 Million",
+   "title": "Expedia Group to Participate in Goldman Sachs Communacopia + Technology Conference 2026",
+   "title_original": "",
+   "summary": "Expedia Group to Participate in Goldman Sachs Communacopia + Technology Conference 2026&nbsp;&nbsp;Yahoo Finance",
    "source": "Expedia",
    "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQcWR6bVJfeUluSl8teVpFMEY4UXo4S1pXX0pzbkRSSHJMUnk3bTVvSWhIVDBtQk1GRm03Ykx5QWExX3BEcnBheUh1STBkOE1PQkZBTkhtcUdCMXR4VS1WZUpzS01CMXJTZjk2UFRMd0l2Q2JjV1luakQyN1pmNDNLR0dFS2NSUHNpNjBTbFctYWVlOWhiVjNjVWdLQ3FIQmRKSEZ5bzlR?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPR0JRTUs0aG5kNXNzOEJYSXVCZ0NuSHY4N0s2bEQxcjZWckhlVzNSZFY4NkVzRUtRZkdyVl9IcldiMUhXUHNrY0psLVk4c1l1c29BX0pKYWg0Y0ZEc24tdHh5aVh1VUNwcmdHajdVOWtIYk05R050aDFJNmVCMGVqeUJIRXc1TjFJb2M5MzYtZnIwTEpJMlkzR3E0aHdjaFhZeHc?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": "EXPE",
    "content_type": "general",
-   "selection_score": 56,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Expedia Insiders Cash Out Nearly $2.5 Million as Shares Rally",
-   "source": "Expedia",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE50dmkwRzBsT0ZXX2sydGpkSkZRb3dwVzBTclZONWJIMGJKMjBZNFNuUDc0TnUxMHRyTUtYUDVoU0JILUhWdmtnR0VYQkpaZHB0T2x1bmlpbjdWaDhPYXJXOWlxSGlJQ1RpMExrN2lVZ1ZLNkJUQ0E?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": "EXPE",
-   "content_type": "general",
-   "selection_score": 56,
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(EXPE)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "Tripadvisor (TRIP) Faces A 12% Fair Value Gap As Valuation Debate Builds",
+   "title_original": "",
+   "summary": "Tripadvisor (TRIP) Faces A 12% Fair Value Gap As Valuation Debate Builds&nbsp;&nbsp;simplywall.st",
    "source": "Tripadvisor",
    "date": "2026-08-26",
    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPd29lWHYwOEVVS1Z6REs3TFNEejA1UFQwRGJIZHJDV2FjeExOT2dEVEFMUFZIYXVhUlRPSWxIM01EZWphWDNOdElWNFpuSFF4Nlp5ZHd5b0s1WXVTYXJodTFHV2VMUnBvZXNVdXd3cy1rQ3M0aGF3XzM0WFVwajQ4MDcxel94VVhqMnF3LXFFdTZyTkZQZnFNZkVRM1JIMnl4c0FGcGQ0OVhiYnlyVVFWLUhJRjlhYU1nS2R1WVQ2bXpzZUxIcEHSAcsBQVVfeXFMUGxnaEFxT21xWW9BOTJoZU9MZzdiNU5wblNJU2IzOUQ5MTNYVGpybEhobUJ3WjZQaENrd3ZTVkY3SlV1dTNGS0UtdjVnaHlrTzJXVDgwYnNTUkx3V1M2a1dlV0FPbk9kNHRBSmlJcFNZbHVLLVVMLTlGOERuUTFkdk9LUm55M0Qzc0Exd01sOGJ6UjI2ZFZnSkNiOU9acndzTHdWdTY3b2trcDdrNk9JN04zMllOZDRCdmk2WEpMemd5MXZLdFFzRHpUNzQ?oc=5",
@@ -201,130 +1060,152 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 7,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据16/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "Why Every Boutique Hotel Founder Eventually Sells",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/why-every-boutique-hotel-founder-eventually-sells/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "strategy_marketing",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Skift 全球论坛前瞻：维珍航空首席执行官谈人工智能的归属和人们的胜利",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/skift-global-forum-preview-virgin-atlantic-ceo-ai-people/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "management_org",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "主题公园不断关闭。 为什么多莉·帕顿的《多莱坞》逆潮流而动。",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/dolly-parton-dollywood-theme-park-success/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "ma_investment",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Rascal Voyages Bets on ‘Marine Safaris’ — and Freedom Over Formality",
-   "source": "Skift",
-   "date": "2026-08-26",
-   "url": "https://skift.com/2026/08/26/rascal-voyages-bets-on-marine-safaris-and-freedom-over-formality/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Airlines look to agentic AI for help with efficiency",
-   "source": "PhocusWire",
-   "date": "2026-08-25",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbklRWUJoYzFfSndMS2xpa0t5RzRLbG5YZzIxUGhHRzE5WjgyQUp0akRjVVo0ZWV3MTNtMzNqNUlGWThkb2gxMUpKajRWRFJLdE9pUlZYTGJodEI4QU5xZWd5VkREY0RrMWdOZ0NFbDhGVkFxNEQweWg3Z2xjMXBsdjdMSkxTWFpLNkhZ?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "ai_application",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Live Tourism Economy: Where Event-Driven Travel Spending Lands",
-   "source": "Skift",
-   "date": "2026-08-25",
-   "url": "https://skift.com/2026/08/25/live-tourism-economy-where-event-driven-travel-spending-lands/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]",
-   "source": "Expedia",
-   "date": "2026-08-25",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9PYjl4MWh2eTZrZjJSWGlrR0p6TUhyS0xPUlgyUEFtU2VHOGFBVGt1Z0pLMWRwT1ZvRVRhODViNU43Qm5UWFpPeldwdXkzVGgtRXZUaHBxemVTYjhqSXBkT1NEdklIbk9UdFpSVkpEWFB0VGI5Ync?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": "EXPE",
-   "content_type": "general",
-   "selection_score": 36,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "TRIP Stock Gains Premarket As Analysts Raise Tripadvisor Targets – See Value Creation From TheFork Deal",
+   "title": "5 best hotels in Las Vegas, according to reviews from Tripadvisor",
+   "title_original": "",
+   "summary": "5 best hotels in Las Vegas, according to reviews from Tripadvisor&nbsp;&nbsp;NJ.com",
    "source": "Tripadvisor",
-   "date": "2026-08-25",
-   "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNQTYyX0dPUjFhYThDUldWTGU3QTY1cFVaZ0c4eG9IMkJEZEY0QkxsR0tCRThYbE1PeGFXbm0xMXZrVHRYcXRXYkc4b1FYSkVacnFyejQzVmdPSFFlazIwVTNHRDlwZUZYM2g1STlrRllDdEN1dTF6YVNiQlExUGkxNTg5YjUxSzhENDBJcklkWEVRVEpSX3A3LW9ETTJMWUlLUC1WOXRBblBWQUc1U19TYmdJeWd3ajhTNUxNYzk5SzdFWWlCLUZPYzJodE95c0otSjF1OWdJV1d6WGo0eDZDSG9NcVBpRWhSZWRyVlhLd184bXVUWHc?oc=5",
+   "date": "2026-08-26",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcVU5NXQtN3ctc0taY0tkbk5yRXlMTG4zWnZqV2pVMUxjYjhOeG1RVkVBcVVuSmtzNTVoNHJoanhCNWFiMTY0V3YtMFlsTWhvWDVvX1ZaT3hQN0x6Q3kxaklBYmpQc2xpaGYxeHEtSzNEN01JeFN0VHZTVFB1Y3NiQ2VnVERsM2FxelVISjYxUENkdElsTy1SQXVoZFlSbjdGQmFJY2x30gG6AUFVX3lxTE4xUlQ2T3VJQ3VmUlZISDNpZ21FZks1M3oxNUdNNTItNG41UlpBSXZwY3liQkp4S3FoSG04MWc0dVRMZkZQLVF5S3BXdkd1U01ibHBYd296SUV6c2ZZRVNWM1dHMDlWVnFlYmp6Y2oxcEtLdHRiWjgzeVpRZEpVV0YzRHdGd2VkbUpMRW1sajBsLTREVU5mU05ncjR4RkdpWFV5M1NzTnQzamxmN1FQY1dXeFRNdkxBQ0szQQ?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
-   "rejection_reason": "评分低于60且无保底资格"
+   "selection_reasons": [
+    "硬排除: 软广/优惠促销/榜单"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.软广_优惠促销_榜单"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "软广/优惠促销/榜单"
   },
   {
-   "title": "Bank of America Corp DE Raises Stake in TripAdvisor, Inc. $TRIP",
-   "source": "Tripadvisor",
-   "date": "2026-08-25",
-   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQeGZBOTZ2cUpFTUtLNnd2VWV3eUNTSEVhaWd0WlhJcDFHLWxiMm55M1B3NjdCNG8yZ3dLWklwVE1LTmI0WC1tclZncWZvQTF0V3dUMGNjVlFLbGpZdzN3NllJeV9hcmpvSUQzQTI1Rk1GZnJJdFFEOTNoaHlvZlVSbDVZWDh0VllnTEpCbmlTWEhwdnJ5WmhTQkNQMTZWRVYxajVsTUxlYlR4aXo2VjhGVGZWeTlMZDlxN05BOW5B?oc=5",
+   "title": "Could Expedia (EXPE) Stock Keep Rising as B2B Growth Fuels its Next Phase?",
+   "title_original": "",
+   "summary": "Could Expedia (EXPE) Stock Keep Rising as B2B Growth Fuels its Next Phase?&nbsp;&nbsp;Yahoo Finance",
+   "source": "Yahoo Finance",
+   "date": "2026-08-26",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQV0c2N0JKeW1kQ1FiVTh5RVZOazNQbm5vU1pLS2t1eTZUZWpUaU0xUkF5NGRtN255QVFaekVYa2VyZG1vdU4tUjVsVTZCUlk4YTJSMDFFbnM0TDZFejhRWF9mVThUbkQ5WXlpb1FBWUM5cWpuamJ2cHpISmtkTVlTM3J3ZmtWeG02QUFmX2RWOW9lbmFjTWJvR1R3?oc=5",
    "section": "international",
    "category": "industry_news",
-   "entity_id": null,
-   "content_type": "ma_investment",
-   "selection_score": 15,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "It’s No Taylor Swift Effect, but Harry Styles’ Residency Offers NYC Operators a Boost",
-   "source": "Skift",
-   "date": "2026-08-25",
-   "url": "https://skift.com/2026/08/25/harry-styles-residency-nyc-demand/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
+   "entity_id": "EXPE",
    "content_type": "general",
-   "selection_score": 55,
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "无新事实短评"
+  },
+  {
+   "title": "CarTrawler profits surge by 68% ahead of Expedia purchase",
+   "title_original": "",
+   "summary": "CarTrawler profits surge by 68% ahead of Expedia purchase&nbsp;&nbsp;RTE.ie",
+   "source": "RTE.ie",
+   "date": "2026-08-26",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeDY4M0FZR2tCNUVmaWUyZUlYekFQZnFPMEdtWWg3N0wwNllQNmo2dUhHZjBYaHhuSk1MVS1vQXE4UnZBd0tObFdmaXpVSG8ybVpwSHNiSlJEbWJ1Y1Y2dkJHbXNqajRIa3huLTUxbGQ4eUo2T1ZRWVJxS3pHa2dXemR5NmxVYnVsSjVERllmRmJqYXhOaXZacWQzS19wcmN4aGlrWDhTUzYzaTNX?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "earnings",
+   "selection_score": 36,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据20/来源2)",
+    "重点公司(EXPE)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "United Way partners with Airbnb.org to provide emergency housing after Hawk Fire",
+   "title_original": "",
+   "summary": "United Way partners with Airbnb.org to provide emergency housing after Hawk Fire&nbsp;&nbsp;KTVN",
+   "source": "KTVN",
+   "date": "2026-08-26",
+   "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQOVFFdUpubWZNUzh3MTNtVWVyc191VGVKLS1KdGpJSUhmbGRJMjhEallwbkdDYWNINjI2VWIzSTZIM2R3R1kta1lvN1puQnZkT3VsVXFlWlRocUJNSFdMSzc5eTh0LTZIaTF5eWZFdWJHTWt0SjJQRmZPdDI3bXhCcGRyMkY0UHFDY2xUVVM5ejdxZUs3X1ZNVUZuLV9BcFFRTjBYQzN4RmYxc3VHeXlFSE5WY1FLcW1YTU1rcWFHNWVCY1JVckgzR1g3RGdDaHlrVWNOU1hsQllla01WSFI5OElOUEtvNEFkZHM2NFpSQ2ZmVW5pNlE?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "partnership",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 公益/救灾宣传"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.公益_救灾宣传"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "公益/救灾宣传"
+  },
+  {
+   "title": "Confirmed: Brand USA CEO Fred Dixon to Lead NYC Tourism Again",
+   "title_original": "",
+   "summary": "Fred Dixon将离开美国的目的地营销组织，重新加入NYC Tourism + Conventions ，担任首席执行官兼总裁。 美国品牌和纽约市旅游业",
+   "source": "Skift",
+   "date": "2026-08-26",
+   "url": "https://skift.com/2026/08/26/brand-usa-ceo-fred-dixon-nyc-tourism/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "management_org",
+   "selection_score": 31,
+   "selection_reasons": [
+    "评分(相关3/重要14/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "AI trip planning is outpacing DMO adoption",
+   "title_original": "",
+   "summary": "AI trip planning is outpacing DMO adoption&nbsp;&nbsp;PhocusWire",
+   "source": "PhocusWire",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZUhEZGhtWTU0ajlIc3VDZ1JadWV5N0lETTA0QTYyMnNZTFJnSW9ZemZELXBVQUdMX3p1UWpJSXJJRUVWODU3N3lnTFlEdFBlMDZzVF9UNnNPV01CT1IyMVpwbFZ3N2FDSFlpWEE1REQ4am9zVlEtb0FheXVTcnlVTXJnakRUSjBEMVZkNk9LUG5SRnV0eDBSUmVJLVFyM19GdTlFS0xR?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 观点评论/趋势展望"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.观点评论_趋势展望"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "观点评论/趋势展望"
   },
   {
    "title": "Australians Are Cutting Back Everywhere Else to Keep Travelling – And They Don’t Feel Guilty About It",
+   "title_original": "",
+   "summary": "Australians Are Cutting Back Everywhere Else to Keep Travelling – And They Don’t Feel Guilty About It&nbsp;&nbsp;Starts at 60",
    "source": "Skyscanner",
    "date": "2026-08-25",
    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQOHM1dFNBSVJCeUJST3lLbWp2VDVhQ1o2dEhHQ3ZuOGVUYWl0SFF6MjBqTXlnMnROQm11YnZQdGhFSUpVcDlIbEhWaVZ0NGFnX09ONnRGMDRxVlpVRFJLNnh6UXBmRy0yb3hVNnhnRy01RXRGM2ItTmtiS2FUa3B4cjljYVJkeWJRX2tfN0RUTXNCQ3JtQjFOazh1bFM1di1ORUJkMllhenV5dWFUTFV6MHB0aHdLVm1MZjNBTHlvcHpaeldhb0E?oc=5",
@@ -333,10 +1214,131 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据6/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
+   "title": "Airbnb And Expedia Stocks Are Riding High. Here's Why.",
+   "title_original": "",
+   "summary": "Airbnb And Expedia Stocks Are Riding High. Here's Why.&nbsp;&nbsp;Investor's Business Daily",
+   "source": "Expedia",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTjlQQnd6bjdiTTZFNDFWQ3dLVVk5WU15TTZzbXd2OFE2R2h5LTE3YTBBS1ltZWlfUFNyVGt0cXVXb0ZVdmRVZHB6ZzRRUnp5RDg1Mm9WVGgtRTR4dURQQThmN3dsMFA4UTJCNWZoWlg0Z2stVXppUTZfdGVJSjU3blhTZlNRTGVhNVc3YTV2eDVqa2x3?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "ma_investment",
+   "selection_score": 0,
+   "selection_reasons": [
+    "人工标注排除"
+   ],
+   "matched_rule_ids": [
+    "manual.reject"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "人工标注排除"
+  },
+  {
+   "title": "Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]",
+   "title_original": "",
+   "summary": "Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]&nbsp;&nbsp;Upgraded Points",
+   "source": "Expedia",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9PYjl4MWh2eTZrZjJSWGlrR0p6TUhyS0xPUlgyUEFtU2VHOGFBVGt1Z0pLMWRwT1ZvRVRhODViNU43Qm5UWFpPeldwdXkzVGgtRXZUaHBxemVTYjhqSXBkT1NEdklIbk9UdFpSVkpEWFB0VGI5Ync?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 软广/优惠促销/榜单"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.软广_优惠促销_榜单"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "软广/优惠促销/榜单"
+  },
+  {
+   "title": "HeyGuest Partners with OpenTable to Help Operators Capture More Bookings",
+   "title_original": "",
+   "summary": "HeyGuest Partners with OpenTable to Help Operators Capture More Bookings&nbsp;&nbsp;Hospitality & Catering News",
+   "source": "Hospitality & Catering News",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPUEZPZlo4aXZub2lyd21acmgtOGpXWG9aTmJ3OXV5T19VSmQ5NE5rd2FYVTdqUjNYYS1tQW5LWUdZb3IyMXZoSlRCSzRQMUM5WFVFam1sZnhyRlJpdnU3RTUtMWpzWjBMN1psYld0LUZZMHA5NF9OZ3BfaW9kcjJtX1BjRjdHaDNDcFVNTm1TSmo5QWxGVXdBYW1rdnJSaVh2MXl6YmtwclpQMGhvTnZVUWhnZW1sMi1IdWY2TUpaTEY0UQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "BKNG",
+   "content_type": "partnership",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "BTIG Research Boosts Expedia Group (NASDAQ:EXPE) Price Target to $400.00",
+   "title_original": "",
+   "summary": "BTIG Research Boosts Expedia Group (NASDAQ:EXPE) Price Target to $400.00&nbsp;&nbsp;MarketBeat",
+   "source": "MarketBeat",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZnJPaHNpNkx0R3pZMDg4VV8ydkw4MTZqQ1Y0eU5QWTZNdzNjbFJSbW5KX0l2UEc1eHJiVTg5QjN0NVJGbG96QjctUGxpZ1RXOU5pSjhXUFFzQVVLZTlHZ2R2S2JaTWhYdlpYVDNqU240NVk1STdDYXY0TU82VXI4T1EydFpNaFVuMllkZjR0MVZZdzJ3VGd3dlJhWFdYcm4zandIRHRXUTRQUC1yS2JZZElvRk90amxTejRmWHl1Z0dNanVvcko3eDdR?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 36,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据20/来源2)",
+    "重点公司(EXPE)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Newsroom - Booking Holdings",
+   "title_original": "",
+   "summary": "Newsroom&nbsp;&nbsp;Booking Holdings",
+   "source": "Booking Holdings IR",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5SVnhBSWJpald3ZWNDOVRfRTU3Ry1mN09uUmJkUmZqVHY1c1hrbEt1TXRzMnNFR0dPSzI3Y283QTVSMlF5S29pay1IR2MydTdScDhV?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "BKNG",
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 新闻合集/无具体事件页"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.新闻合集_无具体事件页"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "新闻合集/无具体事件页"
+  },
+  {
    "title": "旅连连海外供应商名录 | 韩国-地接社篇",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
    "source": "环球旅讯",
    "date": "2026-08-25",
    "url": "https://www.traveldaily.cn/article/190586/",
@@ -344,11 +1346,20 @@
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 55,
+   "selection_score": 21,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "一瓶马爹利输给一辆奔驰，新加坡赌场两极分化",
+   "title_original": "",
+   "summary": "中国高净值游客是重要增量",
    "source": "环球旅讯",
    "date": "2026-08-25",
    "url": "https://www.traveldaily.cn/article/190578/",
@@ -356,47 +1367,42 @@
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 55,
+   "selection_score": 21,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "MakeMyTrip, Axis Bank Launch New Travel Benefits Through March 2027",
-   "source": "MakeMyTrip",
+   "title": "AI transformation in travel: Ante Dagelić of Travelier",
+   "title_original": "",
+   "summary": "AI transformation in travel: Ante Dagelić of Travelier&nbsp;&nbsp;PhocusWire",
+   "source": "PhocusWire",
    "date": "2026-08-24",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1haEhSbmt6dFNBQ3R1S0dUTWlydUNSRjNuY2lHUnNiV2dYTmhHR3FDR0RjOVQ2UE05enJORnFfTjdqMjFQaHJSUzRoRU1COWlCeDF1a3ZNV01NMm03NkhtdmJEdGNmVFpLZVkwX3dlMGNhS0k?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "product",
-   "selection_score": 25,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "AI ambitions: MakeMyTrip, ixigo, Yatra race to build the travel agent of the future",
-   "source": "MakeMyTrip",
-   "date": "2026-08-24",
-   "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPcXhfdmw1cS0yZVNuZGtnWWt2dVlQVURkSDFUUGF5YWFhSkdlOGpzMGpad01FcVBPQXlOY3F2NmVXdmZod0FYUFhDQjhQYXlGMUN6dHA0U1pZbFJKYUt4SlltNVhZeTJhWGJEdFdtQmQ0WG84UjNxSERoeDh1ek9rNVd2TjNvdzNXOTByYTI3ZHNOWHJFTmk3Q3NGcEkydF9mU0c1bnVrdGM4M3ZlLUd1enRXN3c2YkZoOThDXzMzZWdxU0VxcWJXdGhENHdmVGpOd1B4V2RHdm5KYjgxQ3lpRjlpdUxzRFByZy1j0gHwAUFVX3lxTE1KdGFzTUlhRnBjNUxac0FOMkdER2ZMbGJrTVcwUXVyOWY0LVFsSnpNUHpPbXY1Wk1JMmU4b2tUSFJWbjVlYXdrdDNiUlp4b1F5bTFoTVdQRm02M2xRWkF1OU5oU1VCTV9YVEFOLUpOUVlmbl9HdlRqRlFsWTMybl84LWFmMWVYZU4ya0VKY0lYLTN0dDYxMVBxbnVPbTREbWw3cWdjdExtM2VfbnJwSWpEb1dpUHdsV0FFZzJHOWdrNjhScUJPY1dTQnY4YVhweVp2VUNjLXN1QzRFR1N5VjUtSVBKTER0cHZpMm9EOEFLSQ?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNngtNGlpSDF0UkNpUmNaWE91dnUtVGpJUjgyZFUzcE1FTGM0SE4tS0VmQmlVY0ZnTnJSdDlxU2RqS002V1RpRTc5YjljUk0tR2o0MmpGZGZSMVBHNmdqOXlwbldWdndUQlNRdzVzamFKcm1TY3IwcFBfZkNkNEdQRmYxN3Rzc24tTFFBNUJxQmVFcnFlTFUwRWVEc21tY29qWmJiVDlB?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": null,
    "content_type": "ai_application",
    "selection_score": 0,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "MakeMyTrip, Axis Bank tie up to offer travel discounts across long weekends till March 2027",
-   "source": "MakeMyTrip",
-   "date": "2026-08-24",
-   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQbnNMckQ5cExEbDdiVldDVWtEbFRBTWZFejJFWk5uNktKQ19BWGE1V1BmSFF1SkpEMGtBdlc4RkpQaTU4aDJqRU91aG9iS1RJTlQxb3M4Z3YzSU9aSERWcXM5MUJ1aURZY3J1OVoyb2hyRHpfNDQzQkota1M1WVMySG53dHFWQVpWbmxFRV9hY21JTlJablFDYTNPeVpFM3NjdHlhU3JVQ0FYQXlTcTRBbVFYbE1IOC1lV1ExU3l6c3RQcXlFdFJhNmRsUVZhamRiZTFzNThfSDFpUDQxcjRveGFKWVR3UWlZT0VEM2FR0gH0AUFVX3lxTE13UVVDbnUtMlhqZWhyRkpCTkx3bERzeEt2M25CTlg2c3FhVkw0RnQ2XzEwSEdKcWJOSzNrdFdlSmRKOXRRQk5sMEJsU1FpalRCVlZZRU9ncExzcWw0MVV4SnBMelJ3QlRjamdoUU1EcTEwTk5OQ1dqM2daY2xaWVlFeEJFeHR4NEJCZThZS1dPdWNoZzQ4NElLNVVId09aNXJXWnUtNXdvY1BpQnNtSWJpQUR5cXFONklGQlhkcjBXa0xMaFYwMkpZYzBwaTIzZ2p3aDE0Tzc0MG1OY0lDcnlKeEpmdjkzSzZFZV9WVVhrcGFKcTg?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "评分低于60且无保底资格"
+   "selection_reasons": [
+    "硬排除: 观点评论/趋势展望"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.观点评论_趋势展望"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "观点评论/趋势展望"
   },
   {
    "title": "Trip.com (TCOM): China’s Largest Travel Platform Set for Long Term Gains",
+   "title_original": "",
+   "summary": "Trip.com (TCOM): China’s Largest Travel Platform Set for Long Term Gains&nbsp;&nbsp;Yahoo Finance",
    "source": "Trip.com",
    "date": "2026-08-24",
    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQ3ZKbFljZEpQVk5WYnpJSkF0SHd3UExScG15M0NEbGtBRzZ0Wmx2N1ppemdjbEJHbThoQjJaWmNLODlOM0Z0Q0xBSGJqWTZMZG53c1ZfTUxkb0N6aTBQckI4X192QmNwRGU2V0pNVmc5Q2ZtcXZZcGhMZHNBejUtWGI4RWxEZXdQdUJJRW1HWnlla2liMTlN?oc=5",
@@ -405,22 +1411,21 @@
    "entity_id": "TCOM",
    "content_type": "general",
    "selection_score": 34,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "Expedia Group Jumps 5.0% After Evercore ISI Group Maintains Outperform",
-   "source": "Expedia",
-   "date": "2026-08-24",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNeDdWdnRpWk1tZURVVy1vcE5mMEpEQ3ZERV9XeXN3MjNydkhoSzNjUEJ6YmN0ODlQbGJ2c05KSWowTmt3bEpDOFlZdjNDUEFCcDZPUjYxMl9zcTNPN1VxMGtvcVFqT3RMZ2VTR2JvdjdhNFF3anQyYS1VMWE4UDg5NHdTS2ZmcjBiUElYWnlMam9WajhTM005Vl82X1Y0Vmo30gGgAUFVX3lxTE14N1Z2dGlaTW1lRFVXLW9wTmYwSkRDdkRFX1d5c3cyM3J2SGhLM2NQQnpiY3Q4OVBsYnZzTkpJajBOa3dsSkM4WVl2M0NQQUJwNk9SNjEyX3NxM083VXEwa29xUWpPdExnZVNHYm92N2E0UXdqdDJhLVUxYThQODk0d1NLZmZyMGJQSVhaeUxqb1ZqOFMzTTlWXzZfVjRWajc?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": "EXPE",
-   "content_type": "general",
-   "selection_score": 36,
+   "selection_reasons": [
+    "评分(相关13/重要4/基本面0/证据10/来源2)",
+    "重点公司(TCOM)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "Wall Street Is Starting to Believe Airbnb’s Growth Story",
+   "title_original": "",
+   "summary": "Wall Street Is Starting to Believe Airbnb’s Growth Story&nbsp;&nbsp;Skift",
    "source": "Airbnb",
    "date": "2026-08-24",
    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdjUtcU9hRG85LXI0SkJ6eTZOUVQ5cWpndUY3b2RsdEdrN0twTEo3SVRVa19NU2VVRGZjWjVyM2FBUlZwaDhvUVowVVlsZmhiMkJzYWhMMDllejZ3TS1vTWU4VS1oQTNWNzNmUHUwUGRndWkzNFQwQmMzcEFzUU53cDVQZWZFaWpRbS1EQXZ3?oc=5",
@@ -428,59 +1433,244 @@
    "category": "industry_news",
    "entity_id": "ABNB",
    "content_type": "general",
-   "selection_score": 26,
-   "rejection_reason": "评分低于60且无保底资格"
+   "selection_score": 0,
+   "selection_reasons": [
+    "人工标注排除"
+   ],
+   "matched_rule_ids": [
+    "manual.reject"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "人工标注排除"
   },
   {
-   "title": "Best AI Tools for Finding Cheap Flights: Top 5 Compared",
-   "source": "Skyscanner",
+   "title": "World of Hyatt: What You Need to Know",
+   "title_original": "",
+   "summary": "World of Hyatt: What You Need to Know&nbsp;&nbsp;NerdWallet",
+   "source": "NerdWallet",
    "date": "2026-08-24",
-   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWS0waGNkenF0RFBZLUJlVXhZY2Rwa3kwcVFKelY4YXNLZW9vQ1dOejlRS0pCSi1SdjIyQUFmakZHVjhyczNkbGtoblF3NGVWLWo2SVZ2ZDhyc2p5amkzbDhWREFMQzZOcEttR1JxOFd2ZW1WRDByWDdHVEZZR3hNRzYxOERfc2ZMWHNkYXhIZXMxcmNHN2pNLW16b1FQOUU?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "ai_application",
-   "selection_score": 12,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "[Expired] Today Only: Spend $150, Get $90 Back at Tripadvisor Through Capital One Shopping",
-   "source": "Tripadvisor",
-   "date": "2026-08-23",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE16ODdoVkpwaEVVYlRZZFpvM3FTOTJza3ZEN3FSeUJfNU43TEs0cVRHMnVkVlV6OE13Y3ZXeUV0a0M4OHNsN0k1Y1N0NmlZS3lzcDN0RkhoemFaNURjbC1ueW9ZOHY0U0wyT0RPVEJqNA?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1yTTYwNlN2NHpIX19iNG1Nc1dQelRhbzhMNlNZaER1LTFmMmdVOUFtQmpfNkM4OUpZWGlpSU1nNkpJUW9CNWRCanJRa0lETEZvOTY5dGFqVXo2T1o3ZUdGaS1zRER4bktYSVVnWUZVaWh6cEJU?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 7,
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Airbnb commits $1 million to environmental protection in Washington",
+   "title_original": "",
+   "summary": "Airbnb commits $1 million to environmental protection in Washington&nbsp;&nbsp;Airbnb Newsroom",
+   "source": "Airbnb Newsroom",
+   "date": "2026-08-24",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSmFEdlZ4ZVI0US1KM3JvMVRPSFk3UTJfY21oU3BsV3ZsQU1nSG81MzBPMmV0MjFRUmJJeHVBTGJHRHd5WXRqWlA3NUU5TUp2WUNYVjctN0JvQ05xS202TFFQNndvTU5GYVZKRkhobmt1Z3RTeGFxMjFOLTJnVGJ5ajNRaGVITXN1X2tvWXNFblFobXY3?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 56,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据20/来源2)",
+    "重点公司(ABNB)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Airbnb.org Donates Emergency Housing for Disaster Relief",
+   "title_original": "",
+   "summary": "Airbnb.org Donates Emergency Housing for Disaster Relief&nbsp;&nbsp;Stanford Social Innovation Review",
+   "source": "Stanford Social Innovation Review",
+   "date": "2026-08-24",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE10MUVIS0g0RU5FakRUZFBzM25xZ0c2WEQ4aXlIaGtIQ2lZTDgzOUxodnN2SVl4d0gyZG5MTUtKT2hWMG9FREh2bmNfMUhoaHJiQ25zRDRSWnYyZjVFSl9TZTlGQTd1TTRKNlI1SGV3NjFXVWx2?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 公益/救灾宣传"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.公益_救灾宣传"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "公益/救灾宣传"
+  },
+  {
+   "title": "My favourite Airbnb: inside a cool Højby escape for the ultimate Scandi summer",
+   "title_original": "",
+   "summary": "My favourite Airbnb: inside a cool Højby escape for the ultimate Scandi summer&nbsp;&nbsp;CN Traveller",
+   "source": "CN Traveller",
+   "date": "2026-08-24",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPQkFVZWVPZHZ5UHRTdUhHVnMxck1JbkRpaTBvRmZkQjNFWVgxV05PR1BXN0ZCZWdhZWVHS0J5M2lpNm1ZSGZrbTRHN3RSREd3d2N5REdrWU5SZ1F6NzJwTTBfTzVYSUlleS16VGxERUtWRFNzeTgwQXdoRFV0WjJoSF9VOWh0SE1JUGxUVGNwcUE2VF9YNko4My1rSlVHVEd3Tm9oWkZiVllTY1F5Ymtwck9TdjZEQjNZVV9IVlByQzk2VVZXYUs0MTJTYw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 29,
+   "selection_reasons": [
+    "评分(相关8/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "You Can Rent a Moroccan Riad on Airbnb—Here Are 7 on Our List",
+   "title_original": "",
+   "summary": "You Can Rent a Moroccan Riad on Airbnb—Here Are 7 on Our List&nbsp;&nbsp;Vogue",
+   "source": "Vogue",
+   "date": "2026-08-23",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE13OTJ0WEJlSTktaC0tWEtabVQwTVdqZnVoTmFoWjA3cHlmRnppZFpFMnhnbUZ0dkxHSzYzeWhHVngzd2NOUWdsdXFxbTBHU3l5RWlIRVlZUWNYQU01?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "Which day is best for flight booking? Travel expert shares tips for finding cheaper airfares",
+   "title_original": "",
+   "summary": "Which day is best for flight booking? Travel expert shares tips for finding cheaper airfares&nbsp;&nbsp;The Korea Times",
    "source": "Skyscanner",
    "date": "2026-08-22",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORUFQV1hBNWNaZVg3MDJ3NGtiTGNnSENpN2FKc2ZyM3NZZGw0WElSMG9mQUF0X3l4TFRCd3RaZVM0RFJLRWRSbHdBV0poSWFNOTRCc1lhcGM1QURZVHlxUUpQOWFuMmhqazJkSE5QUWNGemh6NEp4aF90ZVkteG4yRndkVnRjMHpaUkR3dW5FYkU2T2xMeldXSkx5di1waldmNjFIX0c3bTkwMEowSUhkdGU1QW1CTnBYT3VoLTQxbTZ0R2tEMVNfNW9nN1dXS1V3WldEWmdPTlhyd1Rp0gHcAUFVX3lxTE5FQVBXWEE1Y1plWDcwMnc0a2JMY2dIQ2k3YUpzZnIzc1lkbDRYSVIwb2ZBQXRfeXhMVEJ3dFplUzREUktFZFJsd0FXSmhJYU05NEJzWWFwYzVBRFlUeXFRSlA5YW4yaGprMmRITlBRY0Z6aHo0SnhoX3RlWS14bjJGd2RWdGMwelpSRHd1bkViRTZPbEx6V1dKTHl2LXBqV2Y2MUhfRzdtOTAwSjBJSGR0ZTVBbUJOcFhPdWgtNDFtNnRHa0QxU181b2c3V1dLVXdaV0RaZ09OWHJ3VGk?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMkNfbDlYa0pBRzZCeWJ2UGVWLUxTMm12ZTB5bV9YZGs4c24zUEdYLWllek1HdF9GU2ZKZGtPblhETFhienEwSVpuT3BrT1luSXk4RnM0WUt4b2tZb05INkh2Sy02YXZxQXUwdHRMeFpQUkh6dU8yakM1eFpjRTdKMGFtbTBpUzA1U0hCMmsxbEc4WHFxRXBtZW9BaGJ3WEptMC1jWi1rWnlXaTBQX1RkaGtIakV3Z0dON2lYLTNoeEx1dlFxNGN2aWVvcEx4QVBEVkp5UVhuONIB3AFBVV95cUxORUFQV1hBNWNaZVg3MDJ3NGtiTGNnSENpN2FKc2ZyM3NZZGw0WElSMG9mQUF0X3l4TFRCd3RaZVM0RFJLRWRSbHdBV0poSWFNOTRCc1lhcGM1QURZVHlxUUpQOWFuMmhqazJkSE5QUWNGemh6NEp4aF90ZVkteG4yRndkVnRjMHpaUkR3dW5FYkU2T2xMeldXSkx5di1waldmNjFIX0c3bTkwMEowSUhkdGU1QW1CTnBYT3VoLTQxbTZ0R2tEMVNfNW9nN1dXS1V3WldEWmdPTlhyd1Rp?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 5,
+   "selection_reasons": [
+    "评分(相关13/重要4/基本面0/证据6/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "谷歌购买 Spirit Airlines 数据对旅行意味着什么",
+   "title": "Heartland Bank & Trust Co Acquires Shares of 3,991 Expedia Group, Inc. $EXPE",
+   "title_original": "",
+   "summary": "Heartland Bank & Trust Co Acquires Shares of 3,991 Expedia Group, Inc. $EXPE&nbsp;&nbsp;MarketBeat",
+   "source": "MarketBeat",
+   "date": "2026-08-22",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQaHpaSWtzV3VQTklIOVlDNzBfMXE3UkxJMG1PRDBPLUpSRF9NUFVxdUZRc0RCSFNtaV9LWmRtR3JGM1ZQVmJ1aU9vMkdDQjZGd3E4OUxtcWFFYUcxcnVsTTBMRV9uaTdMQ3Y0WnloazJuTDVRbW5Ea3h4NGZlcXF3anEyU2F2VEJkXzhxd25Uc212MDRqUkN0Z2paYjJpTHhTRnlyOHJWSVlIQjQ1czlUZGF4TGdBc2puVmpHb21mZlV6WUxwV3AwYWd6RQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "ma_investment",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 被动机构持仓变动"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.被动机构持仓变动"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "被动机构持仓变动"
+  },
+  {
+   "title": "My Favorite Airbnb: A Beautifully Restored Watchtower on a Secret Slice of Sicily",
+   "title_original": "",
+   "summary": "My Favorite Airbnb: A Beautifully Restored Watchtower on a Secret Slice of Sicily&nbsp;&nbsp;Condé Nast Traveler",
+   "source": "Condé Nast Traveler",
+   "date": "2026-08-22",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaG5ZS2c4S1BJVDRvV3k5Q1VUN1VoYVlyV0F6RFZEem1aeHFNQlNHNkE3TGtObUhXOWI0YWZuZERNVzc0UmE3OUlQZG1VSG1TczZFX0g4Mms3UDkyWl8tOGxqSEJhbk90bHdBM0Y0MHNrNE5PY3V4dGNpckpsakF0M2Rtd1lKYlRZd3Q4Z1VibHhTS2Nxd3kzTnFxT0F2UmVkZUtQOXJacENLcGRMYTdBV3Vwcw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 49,
+   "selection_reasons": [
+    "评分(相关8/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Airbnb Just Hit a Four-Year High. The Downgrade Says That’s the Problem.",
+   "title_original": "",
+   "summary": "Airbnb Just Hit a Four-Year High. The Downgrade Says That’s the Problem.&nbsp;&nbsp;Yahoo Finance",
+   "source": "Yahoo Finance",
+   "date": "2026-08-22",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQS0RnSnF2SkZoS0xhYWZwdTM0RlctZGJEVHNKeE5Wb2stekVrOFRHNDJPS2c3UFpGdE01blNoM3dpZDNBWWJOdkJfWW5OQlB1MzlVSUdveXQwOTB4a2szZGhzSmQ2MjZKTUtocFZUaXk4S0JsMl9DTjk4U1ZMSnlIWVF4OXBacmNXYzQ5RFpHQm1CTkpB?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "PhocusWire's travel tech news briefs: Sabre, Eurostar, Civitatis and more...",
+   "title_original": "",
+   "summary": "PhocusWire's travel tech news briefs: Sabre, Eurostar, Civitatis and more...&nbsp;&nbsp;PhocusWire",
    "source": "PhocusWire",
    "date": "2026-08-21",
-   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNaGlleUhjTGJyMERuNW5vRm81X01TSGxFLVVlSGptMTlwb2t6MFd0aHhtdjc4QzB6QzZCckpVbWlqcTBVUjAwcS1IR0FXMzBzb0lwQzQ2dFlRNnZ5emV1V2l5RWNnN0VBMl9naFVkeVZ4S2tRdTczRmxkRlRmNUlaNlE0dXAzNDVEQTMtTXhMd2M1WnJKZUF3X1d4T3hZS285UXc?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1GckczSUhDazVpcDROM05OWHdaTnNhZVEzNG52TFY3dHpTNjhKQlZFT19MTlVmN0UzbVBPT2FraFRIdUQwX1p1ZGlDZFV6R1BhZ0xRVFk5VE1mdWxUcWQ3bkJpNE1sZTN0Z2VBeGJhNEpBT2M?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 新闻合集/无具体事件页"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.新闻合集_无具体事件页"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "新闻合集/无具体事件页"
   },
   {
    "title": "Sabre 入选 PhocusWire 旅游科技快讯",
+   "title_original": "",
+   "summary": "Sabre 入选 PhocusWire 旅游科技快讯。详情见原文。",
    "source": "PhocusWire Briefs",
    "date": "2026-08-21",
    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1GckczSUhDazVpcDROM05OWHdaTnNhZVEzNG52TFY3dHpTNjhKQlZFT19MTlVmN0UzbVBPT2FraFRIdUQwX1p1ZGlDZFV6R1BhZ0xRVFk5VE1mdWxUcWQ3bkJpNE1sZTN0Z2VBeGJhNEpBT2M?oc=5",
@@ -488,47 +1678,707 @@
    "category": "industry_news",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 55,
+   "selection_score": 1,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "Expedia Cuts Eight Executives as It Reorganizes Around AI",
-   "source": "Expedia",
-   "date": "2026-08-20",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQU0dxQ1pNZGotZWtPdlVIdEZfOElRc3RjY2F4UGZmN3ZXOXU1T3owbE9HS2xMZTZoaEd2R1R6Q05haDVnTjV4NGQ2ZndXUzRoYTd3bjZDN3ZsM1lYNHpGU1RTaHR0SW5YdkZhbGJFcHJkeHpXWEMtUUhKVGx1Mm1MRUV3NjN5NXM4eXVYRVk3NFU?oc=5",
+   "title": "What Google's purchase of Spirit Airlines' data signals for travel",
+   "title_original": "",
+   "summary": "What Google's purchase of Spirit Airlines' data signals for travel&nbsp;&nbsp;PhocusWire",
+   "source": "PhocusWire",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNaGlleUhjTGJyMERuNW5vRm81X01TSGxFLVVlSGptMTlwb2t6MFd0aHhtdjc4QzB6QzZCckpVbWlqcTBVUjAwcS1IR0FXMzBzb0lwQzQ2dFlRNnZ5emV1V2l5RWNnN0VBMl9naFVkeVZ4S2tRdTczRmxkRlRmNUlaNlE0dXAzNDVEQTMtTXhMd2M1WnJKZUF3X1d4T3hZS285UXc?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 7,
+   "selection_reasons": [
+    "评分(相关9/重要4/基本面0/证据10/来源4)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Google buys Spirit Airlines' data. KLIA amps security. Spotnana x Singapore Airlines. Atlas' open-source flight booking.",
+   "title_original": "",
+   "summary": "Google buys Spirit Airlines' data. KLIA amps security. Spotnana x Singapore Airlines. Atlas' open-source flight booking.&nbsp;&nbsp;webintravel.com",
+   "source": "WebInTravel",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQY1c5NW9KQTNnSFQxSzlfMk5jdlhJeTJHb282LXdtaWc2NXUyRlhub19ueWpwbUMzWURvdzdxLTFmZWVTakFLSGJKMFdPeTJRMGpXX0VaOUM2RzNrWWx3TFhxcEVUaVpsZWtPWlgxTU9QWWpRakN2Y2lXRzByUy05dDVyODU2UTBPbmJaODhhOHgwdUF4bUFFUVlrMlA5aGpOZkNwRGRZenBiNVg4cXo0N2szOTZRMGUxRDl4NnhnNmVqUXZuYnNiLTU0cVhtMVVSRi1yZTdYWUFZSTQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 17,
+   "selection_reasons": [
+    "评分(相关19/重要4/基本面0/证据10/来源4)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "How Expedia’s Fifth Straight Beat And Guidance Hike Will Impact Expedia Group (EXPE) Investors",
+   "title_original": "",
+   "summary": "How Expedia’s Fifth Straight Beat And Guidance Hike Will Impact Expedia Group (EXPE) Investors&nbsp;&nbsp;simplywall.st",
+   "source": "Simply Wall St",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOclFGNlpnbHNmd3dmRHo2QWh4YmVocDR4NDdWUVozQlVfUm1oUTJDYlFTNUhIMU5XWmtJMWs4d0RtZEYwZVBsWUhzdlE2U3hBMjh0TE9KSUxVOEktbEJLQkpnME1vdHRYQldwbWIxWnRabDNTakZYX0t2clNkd2ZoY2o0Q2RjNElZMEIxOTl5SFdxcV84MVV3SzBTN1NMYzIxRnhlZ0xfenhlLW10MmQ5T0FFS1hlZXFXeUJfWlYtMU9EYllTeW1VUS1vRVhaWTAyOC1pZVhhUW7SAd4BQVVfeXFMTi00TEdBUkJCUlF1R1JOUEJoamQtQnlJSnNwVWZ2UWJvazVkbG14S3pRVzM0UW82YU9HY0ZsaHY4cGhuUjB0LXFsLXVOeGh5LXhQbl9uRXU3VlAxQzlGUnVDYkcxNUNib1ZHNjNaZmM4V2NWTHhQYl9IaXlWcktNaTg3UTVKdDhTQm9qTVBuRmYxekljeFh1UktxSnN5WFJ2QnIxYjRtOVJ6YnVqUnljdkc3YkVqNGpIQURRcW9hZ2QzRkJSZEhPMVNKek9IVkRfWkJ4OEw0MnJTMmdxSXdn?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "earnings",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 股价/估值评论"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.股价_估值评论"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "股价/估值评论"
+  },
+  {
+   "title": "AI Footprint: Expedia AI squads, London campus carbon, and teen ChatGPT",
+   "title_original": "",
+   "summary": "AI Footprint: Expedia AI squads, London campus carbon, and teen ChatGPT&nbsp;&nbsp;Buttondown",
+   "source": "Buttondown",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPckxRWmhqakIxQzFpRktVR0NGbnl5QVJZd1EwclFHT29pMVQ5U0o3ZGFzdTc3RWtISktRS0RWRVJEX2FhczlFSHhiLXpFcjlvd2oxeUJJN2NrbEhvZTNpb2h6MFJNUGpiZ18yTEhkS3EyVkNYRzNjamlWMS1Gbng0RndOTDNOQ2M1VXBvU1RseERXQQ?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": "EXPE",
    "content_type": "ai_application",
    "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(EXPE)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "新秀丽1.785亿美元收购生活方式箱包品牌Béis 85%股权",
-   "source": "环球旅讯",
-   "date": "2026-08-14",
-   "url": "https://www.traveldaily.cn/expressPage/190536/",
+   "title": "Jennie Takes You Into ‘Less Than A Lover’ Video Villa, Open Via Airbnb",
+   "title_original": "",
+   "summary": "Jennie Takes You Into ‘Less Than A Lover’ Video Villa, Open Via Airbnb&nbsp;&nbsp;Forbes",
+   "source": "Forbes",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNZGptVnJzWmhaOFBpcldYTVRuWEhTWHUwMjVkU3lmQ0NaZkRmOURZUDBXR1dobkVNZXFTRUFNT2RfdjJsUE4zVkdVQ0hnOXNSZnlsVDlJLWNaTjZQX2g2bUJpVjVFdTJwY2tLZjBxLWowVkhPbEhXS0dtY3RVekhyb3pvcTRtLUJJWGR0WHVXVHNtVXNjMzVVZ1BWek4tR0E4X3g1LUs0MUw0QUlhZmdXckZuOHJBZlBxSVFzQUhMcFk5OGI5LWtHdzVhYzdkWmwxY213?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Airbnb (ABNB) Hits a 4-Year High While Booking Holdings (BKNG) Trims its Outlook",
+   "title_original": "",
+   "summary": "Airbnb (ABNB) Hits a 4-Year High While Booking Holdings (BKNG) Trims its Outlook&nbsp;&nbsp;Yahoo Finance",
+   "source": "Yahoo Finance",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUjBYYThWcEYzWDQwT2tmYkptampXX0tMaGVqenpLR3B2cmdXMkcxSmlmMUszSkliREZ0M0oxYUdFWGdGNGZtVUF1VWJreFF6VWp1azdTTWFNb0djOG8wQjlZN1hUWnVQaDg2TS1BWXRmaEd2YkxkZ1ZpVGFxVFZFZ0JJM2plRU5VdXBZLXJyUVNlQQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "BKNG",
+   "content_type": "general",
+   "selection_score": 31,
+   "selection_reasons": [
+    "评分(相关10/重要4/基本面0/证据10/来源2)",
+    "重点公司(BKNG)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Viator's Updated Operator Agreement Formalizes a Power Shift in Experiences Pricing: Scoop",
+   "title_original": "",
+   "summary": "Viator's Updated Operator Agreement Formalizes a Power Shift in Experiences Pricing: Scoop&nbsp;&nbsp;Skift",
+   "source": "Skift",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOYkhYckpMU05BQkhFem94MXRrYlJLTnQyUzk5Z25HYmpfbUVfRGN3S0xTa1N4ZGVqXzVlQkl4bm9MTzRSeGwxVGRLN2FtVXpVM3MzTnAwaVNld1laQ295SjdOY1c0Ny1vWWFfc2tpWHhoN0szUEdlRHBpUVd4WGVNcUFSLVFmTUZIeGNzME1WRWhWa3dRNnpqN19IdmJlQTBiZzc4ZWN2aUVNY3ozc1I4SFVscTJLOE02LUE?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据10/来源4)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Airbnb Shares Surge Toward Record as AI Cuts Costs and Travel Demand Stays Hot",
+   "title_original": "",
+   "summary": "Airbnb Shares Surge Toward Record as AI Cuts Costs and Travel Demand Stays Hot&nbsp;&nbsp;finance.biggo.com",
+   "source": "finance.biggo.com",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0tenJJU19aOXBYWnRMSkpWcFYzdTlYRmpyR0RHRDBKMmlaeHlySmJ6T1FLZU03SWNYS3NfMkU4aE5uREllUUNnOF9BQ3lPT0RUYnYydzVkdjUwek8zNWtSODVBLTFvdmdCRkd5cTZvUGVEX1J4QVE?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "ai_application",
+   "selection_score": 49,
+   "selection_reasons": [
+    "评分(相关8/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "How AI is quietly rewriting hospitality job descriptions",
+   "title_original": "",
+   "summary": "How AI is quietly rewriting hospitality job descriptions&nbsp;&nbsp;PhocusWire",
+   "source": "PhocusWire",
+   "date": "2026-08-20",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRF84ckRTaDJhUmhSLXpENndMekplZzhpMWJaaUZDRC1qa0MtN05ZdWVyTXpDT0huRFRkVEM5eFp3Y0NQVW41Q1VLMWxnY3N0VXo3cUNJdTRSZDVET3M1REVnLWZRbk5GcldGTWhNaGdSZjEyOWMyenZ1OU1YazZldHNxQnJQQkl2VkFNWVNWenFGMFd3YWVJ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Banks see travel as a path to high-value loyalty, but trust is tricky.",
+   "title_original": "",
+   "summary": "Banks see travel as a path to high-value loyalty, but trust is tricky.&nbsp;&nbsp;webintravel.com",
+   "source": "WebInTravel",
+   "date": "2026-08-20",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNXJPWFhqQ0p4Q2YyX3dhYk9DX29CcXZlWmliMGJXb0E1ZzQ4VHNoZkdnZjN0Wi1zOTk4VmVUcUwtN05YYWxZWkYyYS0zbUZuX1ZWTGxMbjU2RDMySDJETkFJRUJpbmV5aEQ1QmlrSVQ4eU9CWUtsN19uZ1ZmS2FVbUhfQUs2TTI3TWhzbTNLaW5EbHRQdVRoUy1XSEt2UQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 21,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "The 13 Best Credit Cards for Booking Airbnb or Vrbo Stays [2026]",
+   "title_original": "",
+   "summary": "The 13 Best Credit Cards for Booking Airbnb or Vrbo Stays [2026]&nbsp;&nbsp;Upgraded Points",
+   "source": "Upgraded Points",
+   "date": "2026-08-20",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORmhBX0ttMmQ4WDN1X2pzZFhFWnhtbDBINTEtVTduWmttSUktVFdTZVptcDdvbVlteUxjcktscGVGaFUwbFllZktUVXFxaVJQWG9ZZGZUMGlqMU9EWGdhSGFma1dCR2VCdzZJUGFicU1EdTRJRjA5UGpfSlFWNzVXQnRvd1N4U0F6Q2RN?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 51,
+   "selection_reasons": [
+    "评分(相关10/重要4/基本面0/证据10/来源2)",
+    "重点公司(EXPE)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "My Favorite Airbnb: A Gorgeous Family Villa on a Special Stretch of the Algarve",
+   "title_original": "",
+   "summary": "My Favorite Airbnb: A Gorgeous Family Villa on a Special Stretch of the Algarve&nbsp;&nbsp;Condé Nast Traveler",
+   "source": "Condé Nast Traveler",
+   "date": "2026-08-20",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNUdINzJBR3lMc2otMUtwV1VBOWJUMEhiaHR3eFh1N3U4bDhFVk03Rk9WUnY2anROV0tYcThkTENLakZNcnlkS2dTVDVwXzMzWnNuZXJtUWNJendBODFQaENNOW50N0tQaGdNNE1LbFV5bU5SSDFCUm9hMFFHNGUwdnQxWXFWMzNEUXY3VW16Y2pyZTRaQlQ1NlpzeUJhMU51cVNxVUpLbkRjOWZybS1TYQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 49,
+   "selection_reasons": [
+    "评分(相关8/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "An agency grows from a vegan travel blog",
+   "title_original": "",
+   "summary": "An agency grows from a vegan travel blog&nbsp;&nbsp;travelweekly.com",
+   "source": "Travel Weekly",
+   "date": "2026-08-19",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQd3RCSDFQMVREcmpFR0w5dHhFbno0LU1QdURNTWxTREFoTHFNRkFnQWtTUHpDZ3pSUjBEekJVTk1abkxfTlZCVmVITldIT2pOSDlYUTAyUl9fMzUzQnJrcUx2dzk2LVVObjBNUUl1MWVwYjBkZ1NWamVBRUNxN3QtUXdseXBYSW9aY2lId3FmaExSbFhXTUVUdEtpNnJpYkFmaFh3?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 21,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Airbnb: What to Know Before You Book",
+   "title_original": "",
+   "summary": "Airbnb: What to Know Before You Book&nbsp;&nbsp;NerdWallet",
+   "source": "Airbnb",
+   "date": "2026-08-19",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5HT1RhYUFPY3IxbkkyNEg2UkotbFRRN3NRVlJ6dzNWZERxYmtTaW1TME5EQ0Z3RXU0MzItbEwzVHI3YUFLUVhFVDYwSDVEd09xYUxsWmZDN3A4a1lRUFR1RHVn?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 46,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Internal memo: Eight execs out at Expedia Group in AI-driven shakeup",
+   "title_original": "",
+   "summary": "Internal memo: Eight execs out at Expedia Group in AI-driven shakeup&nbsp;&nbsp;GeekWire",
+   "source": "GeekWire",
+   "date": "2026-08-19",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV0tXRUZlcXNTMzBCX0Vlbno3UE9NTUd6SFdvMEF1clNzRWJvLTZjZF8xM3pzMGlMTkpGekZ3ZjV3YVRqcC1mZXNtdlpBX2JwYU9WS2lTWFlxTm9XeDhESVFMQVQxX194ZTFXQXhyUkswQ3NOM0NoQWI2QWNOcTRncmVmTHNGLTRrem9wZTRNSjJGRVBQREhPdTZtNjY0S28?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "ai_application",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(EXPE)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "This Quirky Colorado Earthship Airbnb Is Pure Magic",
+   "title_original": "",
+   "summary": "This Quirky Colorado Earthship Airbnb Is Pure Magic&nbsp;&nbsp;Condé Nast Traveler",
+   "source": "Condé Nast Traveler",
+   "date": "2026-08-19",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRVRXaGhYLThNd19IMXMxQ05CNDBJRjd4aTlfXzdIakltTW5Ca0RCQUM1bmVCdWZIX0VjTG92ajk3Wnh4WGZkQ3hSZ2lHb2ItM3ZLNVFPQUVxdmwzYVpzUWdHcGc3LUxlX3pLczRRaEo0eGw5al9HXzhVQmlWNGlteHdwNWs3b3VrWkpvMA?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 49,
+   "selection_reasons": [
+    "评分(相关8/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Traveloka SEA Index Q2 2026: Southeast Asians Are Booking Longer Stays and the Region's Own Beaches Are Winning",
+   "title_original": "",
+   "summary": "Traveloka SEA Index Q2 2026: Southeast Asians Are Booking Longer Stays and the Region's Own Beaches Are Winning&nbsp;&nbsp;PR Newswire",
+   "source": "Traveloka",
+   "date": "2026-08-18",
+   "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNRXNiYmpubEk2YVJTR2pvSVktY28zOUw1bnUyZjViSE5HSEJwa2xETTA2MlpDWEQ3UmFZSk5YdjgzYi1udi1YYlI0YVo5UjVDZ01QTFVPQ0FaQUM3VEV6Ym5uTFBwd0llbW1XVUJuaHdyU2trLXBqMjRPS3RvanN1UjEzM2d6VzdVNi01SW9UWGowMEhRRjZTeFBlLXhleWlNV19rNXZzaDJPMjdoaTlBamE3NkR6MlpJV0RWRzZUbHhnODh1d1ZwaGswMGRNc1lhY2dOZFVYMnpOSTA0WktoeG9lZlpyY0tyUnN6UjR3V1NVMzktSGt1bTZDSjJpRzg?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 5,
+   "selection_reasons": [
+    "评分(相关13/重要4/基本面0/证据6/来源2)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Expedia: Fall lodging prices are 20% higher and flight prices are 2% higher on average in the top 10 U.S. destinations compared to summer",
+   "title_original": "",
+   "summary": "Expedia: Fall lodging prices are 20% higher and flight prices are 2% higher on average in the top 10 U.S. destinations compared to summer&nbsp;&nbsp;Hospitality Net",
+   "source": "Expedia",
+   "date": "2026-08-18",
+   "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPWGZYbWtab3hZUlZIYUVCbnVoWVlPMnNiZTZyVEF3LW51UmpPRWNsWlJuWlpTMG5HdlBzUFBwR1A2b3ZVcGc2SDlxVVlmcnhQSzM5ZmEtYm50MXpfbjNBLURNZVZWMm4tR0N5NXN5T0lzS2ZWQlNfWXRhQmctS0o2SWhYcHlDYmlXVE9sa0V5M2llY3M5ZWNLUmFCRk5UV3JmMXRvLXN4OWFiR3NrM1ItLUx5ejlmdVlYZjVNbnhyaUFjUGNtRXpFSUNGNWdYSEcxMko1c0dkbXVVNWx4YW5YMFlQTi15amlRYWl2SGVLQk4yWkE1UGpVNU1Nc0VzX19KcXZjdE10Zw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 软广/优惠促销/榜单"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.软广_优惠促销_榜单"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "软广/优惠促销/榜单"
+  },
+  {
+   "title": "Arsenal Extends Hotels.com Partnership Ahead of 2026-27 Premier League Season",
+   "title_original": "",
+   "summary": "Arsenal Extends Hotels.com Partnership Ahead of 2026-27 Premier League Season&nbsp;&nbsp;Sportscape Magazine",
+   "source": "Sportscape Magazine",
+   "date": "2026-08-18",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOblQwamxOUlJFd0tFXzBiUENqcWNSNHZ4T2FrQ2tGUFM4OE5NODdKQUd0SG1EMGNRS3JqXzdteDV5eG1aRGNkMDJtc3JRZkdGUXVnR1BUX0xoT3pDYXdrU0RjZXExTklwR19YNTFTalpFZ0xvckdZQkJqM0JhZEJOUVZBVE5XOHVWcEZoRXZvOHN3R1pZb3owbHZUR1JuMWJBa3lpeHF0XzhWM0FUYlpjem5jSGFwQzQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "partnership",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "Expedia Group (EXPE) insider plans sale of thousands of shares",
+   "title_original": "",
+   "summary": "Expedia Group (EXPE) insider plans sale of thousands of shares&nbsp;&nbsp;Stock Titan",
+   "source": "Stock Titan",
+   "date": "2026-08-18",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNdlN1X1hVVjZIbVZjLWtWTTdoN2dDLVJ2OFdkOC1FUnNCVkNhOWZhV19CRnNxVl8wNi13OC1kd21EaXRETHF3cVRHQ2lJc2x6dzY2TGl2MENIZFFmOVBtaEdrMG5hQXE1eG1sYWlyRENxSnpVMFhhem9YV29VUklCVUttcWtLTnhhRnpuOWRBemlkR0FoTGlYRENB?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "general",
+   "selection_score": 46,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(EXPE)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "One of Airbnb’s most sought-after destinations this fall is in Alabama",
+   "title_original": "",
+   "summary": "One of Airbnb’s most sought-after destinations this fall is in Alabama&nbsp;&nbsp;AL.com",
+   "source": "AL.com",
+   "date": "2026-08-18",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPYUN6THI2Vmdrc1pNOUpETnJVN1RXd0N4VFpkdXBRX1ZOY0dVV1lvaWduS0dUa1VwbE1HdFdWMExudmFUaFhBTERCUFZGVGJvcGNlOGh5cmU0TVVRc0Iwendlc1VzZDEwZS1rdVI4d2hZQjZadGhCdmVvOG81djRQMVBmY2k2cEtDMXJzVDl5cDRWYUcyT1UydGFrOG1qWW1hZENOX2d0ZnVWQdIBvgFBVV95cUxPU25iT0Q2UUU0TGdoVS1BYkRxLUwzN2F3REFqRmlhdTluSXFqOGJNWS1BUTZIRDRPWDJ4bVVKS3JTWTNLdHdhQTh2d1N6ZzVmNXJiT2QzbmJDMzlRVTZGOEJZTmltVnBCZzJWVmpJRHlRM1ZBM0dhYUlMRExhZHR1S2hjZm1qQlVKYkktTWVQY0F6cWlhT1dmRVMyTDlaS3p5NW9fX2RsXzVwZVFkYUlZU0c2S2h0XzFYSEQ2ZDdn?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "Tripadvisor Promo Codes & Travel Deals for August 2026",
+   "title_original": "",
+   "summary": "Tripadvisor Promo Codes & Travel Deals for August 2026&nbsp;&nbsp;Condé Nast Traveler",
+   "source": "Tripadvisor",
+   "date": "2026-08-17",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5MR003enNpUDlLVWRMN3pIWHl4Yk5WU3hjdFpua1EzZnVXNmprQTZDdTdUemE3UXc2dHpwTDlTamlnQ3VsemJpZHJTN0ktUTcyekc4Z0FXTmJBVF8xeXBNREpHa0l6dw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 软广/优惠促销/榜单"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.软广_优惠促销_榜单"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "软广/优惠促销/榜单"
+  },
+  {
+   "title": "How Investors Are Reacting To Tripadvisor (TRIP) Softer Q2 2026 Results And Investment Payoff Questions",
+   "title_original": "",
+   "summary": "How Investors Are Reacting To Tripadvisor (TRIP) Softer Q2 2026 Results And Investment Payoff Questions&nbsp;&nbsp;simplywall.st",
+   "source": "Tripadvisor",
+   "date": "2026-08-17",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTDBzX2lGRnMwQjVyeDZURWFyVFhOU29jM1VNOHV1Vi1Dby1CeVlJTzVISHpfN0NOMGZ6cTVBbXZyVDEtOE5UZ2hFLTFXMGJET3M4cWRJOGZrckFtNFRyRGpHUVRDd0Q2STZWQWxNX2YxZXp4TzY0UTlIQ1k0TWt1UnBBZGRLc1BmWkQtRGhIZWF3aDU2TnlhdGt4V3hDMFJZOVkxX0l0Yjd0YlFFOTJHMGgyUWZUXzBfdlpQSTRJVUxkSHJwR2fSAcsBQVVfeXFMTWo4V2Y0QWxCRnFfWTE3bGE3QldZZFlrb2Z0Q2lraVdJNGFLZldZNFhQTFROdlo1UjIweU1tb2tPZHN3eHVQaU1vMmV0RnhGSFMzQWFiWlFKUkJWZDA4ZDJvM0pldFBOMkdhRXMycTUxYTJlNUJ6Q1pjRktkOXZFZzdERDV0YWxzNU9WV1JNZUhuTHkzbVhKU0VhNl8zRHR3QnM1REcybXpfdW5Bczk1c0M4VTVjbTdvTWtSbXYtVHg2MzZ1bU5JX21paTA?oc=5",
    "section": "international",
    "category": "industry_news",
    "entity_id": null,
    "content_type": "ma_investment",
    "selection_score": 0,
-   "rejection_reason": "箱包皮具类并购(非旅行核心业务)"
+   "selection_reasons": [
+    "硬排除: 股价/估值评论"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.股价_估值评论"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "股价/估值评论"
   },
   {
-   "title": "艺龙酒店科技与浩瀚能源达成战略合作 跨界打造“住行一体”会员生态",
-   "source": "环球旅讯",
-   "date": "2026-08-27",
-   "url": "https://www.traveldaily.cn/article/190590/",
-   "section": "domestic",
-   "category": "china_industry",
-   "entity_id": null,
-   "content_type": "partnership",
-   "selection_score": 55,
+   "title": "Lesser-known Festivals Highlights New Opportunities for Local Stays, Agoda Says",
+   "title_original": "",
+   "summary": "Lesser-known Festivals Highlights New Opportunities for Local Stays, Agoda Says&nbsp;&nbsp;Yahoo Finance",
+   "source": "Yahoo Finance",
+   "date": "2026-08-17",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQS2hEb3VZUmlMMmJxME1zYzhjYzFGRktVaHdTcjhaa3ZZSjlMenpVNXBERE10SkZnSzBHVFNhSjAwZU4wdkx4cUtheUdVLXF4NlE3cnNlbGxBaHZJa0ZZbnRIcnRBTVFNem84VFNlcWpnVFdJVmZXMjlQeGstYk8taDh0OGhJd2VXOE9TcUluNmJES0hacE5yRmhGLWoyakdQandRdldudFNLU19BUndBT1VB?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "BKNG",
+   "content_type": "general",
+   "selection_score": 26,
+   "selection_reasons": [
+    "评分(相关5/重要4/基本面0/证据10/来源2)",
+    "重点公司(BKNG)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
+   "title": "Plato Investment Management Ltd Buys New Stake in Expedia Group, Inc. $EXPE",
+   "title_original": "",
+   "summary": "Plato Investment Management Ltd Buys New Stake in Expedia Group, Inc. $EXPE&nbsp;&nbsp;MarketBeat",
+   "source": "MarketBeat",
+   "date": "2026-08-17",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNZ2FLY1VXNGMwbUNjeVNJd2t3UUZNUWJmYmMzZGhsX2p1ekdzdVVmM0pPVy1neWVzMmY1aXJrWWdZYnlPWDhtdEgwTlE4QzhoN21OM3YtaW10b1g1V1l4azZxV3JfWkwyNjhIcW1hZjdFU1lkZ3FuWW9mZDM2cWc0RGtvMERHTm5vUUFEVl80QlVEV041X1JMY3dBbTdhM3luSzFRSTRIS2s3N2k1eGVsNlVfU3hnbTZ2ZHloX2xlSG1BaTVmM2N3NWNYbU0zZw?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "EXPE",
+   "content_type": "ma_investment",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 被动机构持仓变动"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.被动机构持仓变动"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "被动机构持仓变动"
+  },
+  {
+   "title": "My favourite Airbnb: a beachy one-bedroom haven on the Greek island of Milos with direct access to the Aegean Sea",
+   "title_original": "",
+   "summary": "My favourite Airbnb: a beachy one-bedroom haven on the Greek island of Milos with direct access to the Aegean Sea&nbsp;&nbsp;CN Traveller",
+   "source": "CN Traveller",
+   "date": "2026-08-17",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQkpvY2hlalIyZ3R3WGQ1eURuSkNvSDFIZEppYTgxVEd0MG84aFpuUnJaUjhxZXlPNzJ5N3pIUkZFYzJJczBsZW9Da280SWtqQzFhaFBPRW1KdHc0TlRjX1R0UWVrOWR5SmZaRnNDX1lVdHlYYmZXV1NGMk5FajdhLWhkRzlmX0ppWjJwZldtMGx4OHU3TDNOX2tXLUxOSGNMcXpMT2RtajY3R29CZE1SSjNYZmphanN0WGZla1BQa0FLT2NzdGxv?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "general",
+   "selection_score": 29,
+   "selection_reasons": [
+    "评分(相关8/重要4/基本面0/证据10/来源2)",
+    "重点公司(ABNB)",
+    "摘要重复标题(-20)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "智能原生酒店：物理AI催生酒店业的新物种",
+   "title_original": "",
+   "summary": "酒店业的竞争，终将演变为智能终端与智能体数量与质量的较量。",
+   "source": "环球旅讯",
+   "date": "2026-08-31",
+   "url": "https://www.traveldaily.cn/article/190613/",
+   "section": "domestic",
+   "category": "china_industry",
+   "entity_id": null,
+   "content_type": "ai_application",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "全屋智能客房亮相成都，柏曼酒店开启便捷入住新时代",
+   "title_original": "",
+   "summary": "轻松探访鱼凫古城埂、温江文庙等历史遗存，感受四千年的古蜀文明。",
+   "source": "环球旅讯",
+   "date": "2026-08-31",
+   "url": "https://www.traveldaily.cn/article/190616/",
+   "section": "domestic",
+   "category": "china_industry",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "中国景区的“造丑运动”，游客已经忍无可忍",
+   "title_original": "",
+   "summary": "中国景区的“造丑运动”，游客已经忍无可忍&nbsp;&nbsp;36 Kr",
+   "source": "36 Kr",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1jNHB2N2ZfS0dteUMyVUFOVFhwYnlwY3owOWJaRzNfOHpYQl9FRFFwRDZzbjdldzZMSWVPdW9FNG1WV0VqbndsZ3h2OUFPQQ?oc=5",
+   "section": "domestic",
+   "category": "china_industry",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 15,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据6/来源2)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "产品越“本土化”，国际酒店品牌的不可替代性还剩多少？",
+   "title_original": "",
+   "summary": "9月22-23日，诚邀您一起来到峰会现场学习交流。",
+   "source": "环球旅讯",
+   "date": "2026-08-27",
+   "url": "https://www.traveldaily.cn/article/190598/",
+   "section": "domestic",
+   "category": "china_industry",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "无新事实短评"
+  },
+  {
+   "title": "酒店投资的“伪中档幻觉”，该醒了",
+   "title_original": "",
+   "summary": "一套把物业、产品、运营和品牌放在一起考量的经营模型。",
+   "source": "环球旅讯",
+   "date": "2026-08-25",
+   "url": "https://www.traveldaily.cn/article/190579/",
+   "section": "domestic",
+   "category": "china_industry",
+   "entity_id": null,
+   "content_type": "ma_investment",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
    "title": "2026年8月航空创新观察：航空科技，告别重复询问",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
    "source": "环球旅讯",
    "date": "2026-08-24",
    "url": "https://www.traveldaily.cn/article/190575/",
@@ -536,11 +2386,43 @@
    "category": "china_industry",
    "entity_id": null,
    "content_type": "opinion",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 观点评论/泛分析"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.观点评论_泛分析"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "观点评论/泛分析"
+  },
+  {
+   "title": "1000万美元，可以买走破产航司最值钱的东西？",
+   "title_original": "",
+   "summary": "垂类AI数据的价值可见一斑",
+   "source": "环球旅讯",
+   "date": "2026-08-24",
+   "url": "https://www.traveldaily.cn/article/190574/",
+   "section": "domestic",
+   "category": "china_industry",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "无新事实短评"
   },
   {
    "title": "同心飞跃八十年 国泰集团在上海举行八十周年庆典",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
    "source": "环球旅讯",
    "date": "2026-08-23",
    "url": "https://www.traveldaily.cn/expressPage/190572/",
@@ -549,10 +2431,20 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 体育赞助/庆典/获奖/公益"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.体育赞助_庆典_获奖_公益"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "体育赞助/庆典/获奖/公益"
   },
   {
    "title": "变化越快，越需要和站在行业最前沿的人在一起！",
+   "title_original": "",
+   "summary": "演讲嘉宾阵容官宣，9月22-23日，上海见。",
    "source": "环球旅讯",
    "date": "2026-08-21",
    "url": "https://www.traveldaily.cn/article/190569/",
@@ -560,11 +2452,20 @@
    "category": "china_industry",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 55,
+   "selection_score": 18,
+   "selection_reasons": [
+    "评分(相关0/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "民宿风向变了：一间房之外，还能卖什么？",
+   "title_original": "",
+   "summary": "“体验式”旅行时代来袭，素人房东站上台前",
    "source": "环球旅讯",
    "date": "2026-08-21",
    "url": "https://www.traveldaily.cn/article/190568/",
@@ -573,10 +2474,20 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "排除",
    "rejection_reason": "无新事实短评"
   },
   {
    "title": "全球化差旅管理专题｜模块1圆满收官！9月上海站《跨国集中系统化管理》重磅接棒",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
    "source": "环球旅讯",
    "date": "2026-08-20",
    "url": "https://www.traveldaily.cn/article/190567/",
@@ -584,35 +2495,20 @@
    "category": "china_industry",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "云南低价旅游团，为何十年灭不掉？",
-   "source": "环球旅讯",
-   "date": "2026-08-20",
-   "url": "https://www.traveldaily.cn/article/190566/",
-   "section": "domestic",
-   "category": "china_industry",
-   "entity_id": null,
-   "content_type": "opinion",
-   "selection_score": 0,
-   "rejection_reason": "无新事实短评"
-  },
-  {
-   "title": "（万字长文）1 Hotels 三亚撤牌：可持续奢华品牌的\"溢价兑现\"困局",
-   "source": "环球旅讯",
-   "date": "2026-08-20",
-   "url": "https://www.traveldaily.cn/article/190561/",
-   "section": "domestic",
-   "category": "china_industry",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 55,
+   "selection_score": 21,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "从72亿盈利到43亿亏损，中东航空业被伊朗冲突重创",
+   "title_original": "",
+   "summary": "其全球中转模式，面临长期挑战。",
    "source": "环球旅讯",
    "date": "2026-08-19",
    "url": "https://www.traveldaily.cn/article/190559/",
@@ -621,10 +2517,18 @@
    "entity_id": null,
    "content_type": "earnings",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
    "title": "案例与合作伙伴征集｜《2026下半年AI旅游应用洞察报告》",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
    "source": "环球旅讯",
    "date": "2026-08-18",
    "url": "https://www.traveldaily.cn/article/190558/",
@@ -632,71 +2536,147 @@
    "category": "china_industry",
    "entity_id": null,
    "content_type": "partnership",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 活动报名/会议预告"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.活动报名_会议预告"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "活动报名/会议预告"
   },
   {
-   "title": "投融资动态 | 7月下半月，旅游业这10笔交易值得关注",
+   "title": "酒店投资的黄金时代，回不去了丨TD内参",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
    "source": "环球旅讯",
-   "date": "2026-08-07",
-   "url": "https://www.traveldaily.cn/article/190506/",
+   "date": "",
+   "url": "https://www.traveldaily.cn/article/190609/",
    "section": "domestic",
    "category": "china_industry",
    "entity_id": null,
    "content_type": "ma_investment",
    "selection_score": 0,
-   "rejection_reason": "新闻合集"
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
   },
   {
-   "title": "为什么我庆幸Token额度用完了 - AI工具的高效运用",
-   "source": "环球旅讯",
-   "date": "2026-07-31",
-   "url": "https://www.traveldaily.cn/article/190474/",
-   "section": "domestic",
-   "category": "china_industry",
-   "entity_id": null,
-   "content_type": "opinion",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "1000万美元，可以买走破产航司最值钱的东西？",
+   "title": "AI时代最大的赢家是酒店，还是OTA？| 超哥短评",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
    "source": "环球旅讯",
    "date": "",
-   "url": "https://www.traveldaily.cn/article/190574/",
+   "url": "https://www.traveldaily.cn/article/190602/",
    "section": "domestic",
    "category": "china_industry",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "无新事实短评"
   },
   {
-   "title": "开店数量不再是胜负手，华住Q2拷问酒店增长的真命题",
-   "source": "环球旅讯",
-   "date": "",
-   "url": "https://www.traveldaily.cn/article/190545/",
-   "section": "domestic",
-   "category": "china_industry",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 55,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "网约车监管信息交互系统7月收到订单信息超10亿单",
-   "source": "交通运输部",
-   "date": "2026-08-27",
-   "url": "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202608/t20260827_4223274.html",
+   "title": "2026年中期業績公告",
+   "title_original": "",
+   "summary": "中期業績",
+   "source": "披露易·中国东航",
+   "date": "2026-08-30",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000478_c.pdf",
    "section": "domestic",
    "category": "regulatory",
    "entity_id": null,
-   "content_type": "regulation",
-   "selection_score": 46,
-   "rejection_reason": "评分低于60且无保底资格"
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "官方来源保留清单(披露易)",
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "东航非业务影响词"
+  },
+  {
+   "title": "海外監管公告 中國東方航空股份有限公司關於對東航集團財務有限責任公司2026年上半年風險持續評估報告",
+   "title_original": "",
+   "summary": "海外監管公告-其他",
+   "source": "披露易·中国东航",
+   "date": "2026-08-30",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000401_c.pdf",
+   "section": "domestic",
+   "category": "regulatory",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "官方来源保留清单(披露易)",
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "东航非业务影响词"
+  },
+  {
+   "title": "關於提名董事的公告",
+   "title_original": "",
+   "summary": "更換董事或重要行政職能或職責的變更",
+   "source": "披露易·中国东航",
+   "date": "2026-08-30",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000396_c.pdf",
+   "section": "domestic",
+   "category": "regulatory",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "东航非业务影响词"
+  },
+  {
+   "title": "海外監管公告 中國東方航空股份有限公司董事會2026年第6次會議決議公告",
+   "title_original": "",
+   "summary": "海外監管公告-董事會&#x2f;監事會決議",
+   "source": "披露易·中国东航",
+   "date": "2026-08-30",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000393_c.pdf",
+   "section": "domestic",
+   "category": "regulatory",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "东航非业务影响词"
   },
   {
    "title": "海外監管公告 中國東方航空股份有限公司關於與東航物流聯合召開2026年中期業績說明會的公告",
+   "title_original": "",
+   "summary": "海外監管公告-其他",
    "source": "披露易·中国东航",
    "date": "2026-08-25",
    "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501299_c.pdf",
@@ -705,130 +2685,185 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "官方来源保留清单(披露易)",
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": "保留",
    "rejection_reason": "东航非业务影响词"
   },
   {
-   "title": "內幕消息 海外監管公告 2026年7月運營數據公告",
-   "source": "披露易·中国东航",
-   "date": "2026-08-14",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0814/2026081401494_c.pdf",
+   "title": "中国东方航空中期收入742.34亿元 亏损扩至21.79亿元",
+   "title_original": "",
+   "summary": "中国东方航空中期收入742.34亿元 亏损扩至21.79亿元&nbsp;&nbsp;观点网",
+   "source": "观点网",
+   "date": "2026-08-31",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9fTGU0SlVlNnkyWGNaQmc0YzJiZkM0SzNQTExLTzQwYndqdWY2b2VVVHQtM053SU9vYS1ocU44YWhXWnNoazgwdzRtTUUwb1BHNGMwUXBCbElBZmNncmhzbDd3?oc=5",
    "section": "domestic",
-   "category": "regulatory",
+   "category": "company_news",
    "entity_id": null,
-   "content_type": "general",
+   "content_type": "earnings",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
-   "title": "董事會會議通知",
-   "source": "披露易·中国东航",
-   "date": "2026-08-12",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081201106_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "海外監管公告 中國東方航空股份有限公司關於股份回購進展公告",
-   "source": "披露易·中国东航",
-   "date": "2026-08-04",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0804/2026080402167_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "截至2026年7月31日止月份之股份發行人的證券變動月報表",
-   "source": "披露易·中国东航",
-   "date": "2026-08-03",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0803/2026080301313_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "董事名單與其角色和職能",
-   "source": "披露易·中国东航",
-   "date": "2026-07-30",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001784_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "關於董事辭任的公告",
-   "source": "披露易·中国东航",
-   "date": "2026-07-30",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001780_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "保障暑运返程高峰 东航毛毯洗涤车间日均清洗毛毯1.2万条",
-   "source": "中国民航网",
-   "date": "2026-08-26",
-   "url": "http://www.caacnews.com.cn/2/6/202608/t20260826_1396906.html",
+   "title": "全球最长航线加密，东航上海—奥克兰—布宜诺斯艾利斯增至每周4班",
+   "title_original": "",
+   "summary": "全球最长航线加密，东航上海—奥克兰—布宜诺斯艾利斯增至每周4班&nbsp;&nbsp;东方财富",
+   "source": "东方财富",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fWXo0V0xMUlR4MzRBejhkU2RxZS1Dd0tadVZQY0xuVVJSZURjdGZIQ3NLcXVCRXJKR0tDdjBiRHFRWW9Ud242cXhySk1aODdPMjh3SThFMk5iSXNiakZZ?oc=5",
    "section": "domestic",
    "category": "company_news",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
-   "title": "东航开通“津沪快线” 日均8班打造“城际空中通勤走廊”",
-   "source": "中国民航网",
-   "date": "2026-08-26",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4tZmt0VWpNbFJwZmNwdm5ZVGh6VkhGbk1GZlA0MW5sTXJKYjY0S2NFdFZLN2RiUzRubk5LeUJLUzNRWk5tVzlvTWhaV2tHWURWRU5VN2Jobm5hVnpuWjZoYm9RcDM0NUlVMXB3cg?oc=5",
+   "title": "东航全球最长航线12月5日起加密至每周四班",
+   "title_original": "",
+   "summary": "东航全球最长航线12月5日起加密至每周四班&nbsp;&nbsp;观点网",
+   "source": "观点网",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE90cG84akxFb1ZnanJTeEJEby1aUDVfeUsyWk1mU2tTOFZuMUV4WG4tSHF1dnI0cjIwVzZKQWRLMHZ6eDVjcE5MSm9YOVh2UQ?oc=5",
+   "section": "domestic",
+   "category": "company_news",
+   "entity_id": null,
+   "content_type": "opinion",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 观点评论/泛分析"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.观点评论_泛分析"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "观点评论/泛分析"
+  },
+  {
+   "title": "提前“招安”自愿者！东航“超售让座”这步棋走得险？",
+   "title_original": "",
+   "summary": "提前“招安”自愿者！东航“超售让座”这步棋走得险？&nbsp;&nbsp;观察者",
+   "source": "观察者",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE13MEM1VExBelJxY3pDQWFiNEltS1JrYlZyVmFxQ2hPVC1qR3Nxd21KZVFEd3hNSWFxcXlUV05wSE9xLThVbjZHMWM2RTdUa1hMQjlUdVdyNHRtai00dmdoVkpR?oc=5",
+   "section": "domestic",
+   "category": "company_news",
+   "entity_id": null,
+   "content_type": "opinion",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "无新事实短评"
+  },
+  {
+   "title": "东航“津沪快线”正式开通启航 赋能双城协同发展",
+   "title_original": "",
+   "summary": "东航“津沪快线”正式开通启航 赋能双城协同发展&nbsp;&nbsp;中国金融信息网",
+   "source": "中国金融信息网",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9NekZfU0pfdVgtYWNmN3VvbElfQVhZbGN4WjlKOHZFYnhRcVBYY1pCNmFHekxzM2FlWFZVWEItd1FQS1h2LUZUZkp2MHU5RHlhRGlIN3ZQZjNkSm1KNDhIeER1ZGpobGFPbUhTTkU4LU9ZYjRGeENR?oc=5",
    "section": "domestic",
    "category": "company_news",
    "entity_id": null,
    "content_type": "expansion",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
-   "title": "东航APP购票新增“超售让座，立减50”选项，勾选后遇超售需优先让座",
-   "source": "川观新闻",
+   "title": "东航上线“超售让座，立减50/100”购票选项",
+   "title_original": "",
+   "summary": "东航上线“超售让座，立减50/100”购票选项&nbsp;&nbsp;finance.sina.com.cn",
+   "source": "Sina",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWmNWc3N4b0pONEwydFNrak42YzY2VFN1WnE3NllnNWNOTVVuOTNmS3J1N0N3VTBoSUdETTVMZ05tZTdERzRPalNjYVEwd0ZxUjloTWhXQ2pZT0NzV01IQXR4VjEyc1c3Uk80Vk5hbGg2SkE2d3ItWHhrblhCWVpkbFpLX01DVnVOSjloSFNLRWt2RHRrWGwxYg?oc=5",
+   "section": "domestic",
+   "category": "company_news",
+   "entity_id": null,
+   "content_type": "product",
+   "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "东航非业务影响词"
+  },
+  {
+   "title": "东航上线“超售让座”：新解法还是噱头？",
+   "title_original": "",
+   "summary": "东航上线“超售让座”：新解法还是噱头？&nbsp;&nbsp;finance.sina.com.cn",
+   "source": "Sina",
+   "date": "2026-08-26",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPN3hndkZDdWcwTmlyVUhNejJBOVpCbHNCUU9wdzhnY3E4WUxfMHRfMUVlVnlscDF2V3pXQ2R4amRob3lPaXNISktJWFp4YXJnaHZwR1JfN3hwYzN0RzFIMzlmLWVHNWpSVFl4eU1qU2o4LUNlb1J5WUpOS1YxSlFuRVU3MnVWZW8tRlJFWHdZejZ1Ynpva3RXZA?oc=5",
+   "section": "domestic",
+   "category": "company_news",
+   "entity_id": null,
+   "content_type": "product",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 无新事实短评"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.无新事实短评"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "无新事实短评"
+  },
+  {
+   "title": "东航北京分公司市场销售部总经理蔡颖竹：以航网升级与服务创新重塑出境游供应链",
+   "title_original": "",
+   "summary": "东航北京分公司市场销售部总经理蔡颖竹：以航网升级与服务创新重塑出境游供应链&nbsp;&nbsp;京报网",
+   "source": "京报网",
    "date": "2026-08-25",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1OaXRRdlVBVDd0OFZIeXRUdko5T3NPNmNxM205cFk2ZGxuMmpiWlJ5VHA0ak5zMjBDakMtc2VORWhKSkdiODNEOTdKWTF6UQ?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE13VXdTVW0xS0U2dER1LTlVMXpqdGdkWVp1QlE1cmpkMWY1U2JDclExMGIxbGhTUkktRHhCLXRIWHd6bFh3SGE0UG5FMGJHM1R0ZWNieDlmS005ZFBFclJCZUJJNU5MbzRIOHkxRDJHdld1UQ?oc=5",
    "section": "domestic",
    "category": "company_news",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
+   "selection_reasons": [
+    "东航宣传稿排除(机器人/救援/庆典/服务升级等)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "东航宣传稿(CiftonEXCLUDE_RE)"
   },
   {
-   "title": "东航物流完成大批量温控医药进港保障",
-   "source": "中国民航网",
-   "date": "2026-08-25",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9hbU1qV3p5enRUTzZzbk1BVkF3Mk9VY3lJQzNKUzhzcnVKSVNmVHZibEhyMTBHcjZVbWZZTGZVT0dxeFpwZlR1WlRiMHBkT080NFF2dUdTVTBkYmc2cWV0dWxyck9DUkYyTUhFdw?oc=5",
-   "section": "domestic",
-   "category": "company_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "“浦东—里昂”等航线将新开 东航推出航班...",
+   "title": "“浦东—里昂”等航线将新开 东航推出航班预约提醒服务",
+   "title_original": "",
+   "summary": "",
    "source": "中国民航网",
    "date": "2026-08-24",
    "url": "http://www.caacnews.com.cn/1/6/202608/t20260824_1396862.html",
@@ -837,22 +2872,18 @@
    "entity_id": null,
    "content_type": "product",
    "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "想飞新航线？东航开放航班预约，开售即提醒，还有优惠券",
-   "source": "上观新闻",
-   "date": "2026-08-24",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE42Rlk0MmM2RDJjeFh1a2ZrUmNmYThCM1cxVXBYZjhBelRzaXowS3FlUFdXb1hOTTEzMDktUk9QTWRla1pEOHFNQUZhRXZIQ1hFUjZJU3VHdmVZdw?oc=5",
-   "section": "domestic",
-   "category": "company_news",
-   "entity_id": null,
-   "content_type": "product",
-   "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
    "title": "东方航空拟恢复武汉至台南航线",
+   "title_original": "",
+   "summary": "东方航空拟恢复武汉至台南航线&nbsp;&nbsp;chinanews.com.cn",
    "source": "chinanews.com.cn",
    "date": "2026-08-24",
    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9PNE9zSGhmWTJOTW9CRDdJUHZ0TW9jZE1PWE1aRmRqZTJ5eHZWU0tadkZPNW1zVnR1Z2ppRUZ4TXVoZUNRMThNM080cGJHYXU5VWxzRjNDc3JkMThsbmZzYldoRXVWQjFW?oc=5",
@@ -861,70 +2892,78 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
-   "title": "东航甘肃分公司护航暑运无陪儿童",
-   "source": "中国民航网",
-   "date": "2026-08-23",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5jVXMxNmQ0eHJVenlsZlFMaWV3TTlZWFNwdFFhQ2IyVWFHLUVBTWlQT1FORUpGLVlkVHhoMVRzaXdvamZmYUdaN0xkd1E3QUxiYlZmZFlhUFNqaE84eUg1d3BGQUVGWHpwVXdaWg?oc=5",
+   "title": "东航机上咖啡体验迎来全新升级",
+   "title_original": "",
+   "summary": "东航机上咖啡体验迎来全新升级&nbsp;&nbsp;上观新闻",
+   "source": "上观新闻",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1CeEMxaUZNeEZqb2d6Y04xcE4yT3ctMnlFTGZ6QWpjcm9MU0tmdlU5WTNiWEpjRG9DMFFpUTVzTE0yTUhBRV85dTVnTDgwT2xzdnJIR0xGcU9nQQ?oc=5",
    "section": "domestic",
    "category": "company_news",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
-   "rejection_reason": "东航宣传稿(CiftonEXCLUDE_RE)"
-  },
-  {
-   "title": "东航《“城”意十足》温暖上线，“航空+”的跨界新体验",
-   "source": "Sina",
-   "date": "2026-08-22",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWmt4VDRzZXFnd2d3M21VaUkyaGlGQ2FCX1dVbHhkWnpfcDV0Q3M3VnYxOHZkbG14OTdCdE4wYzF3dkhOdUJISUtSXzRueUEweU1nZU5oZXdKc0FCeFN2bVZmdmt5eDJJZmR1WWFWNmx6Q2lHRmRTakk2bVpLN1pPSi0yd0ZJZVpqQkpoMlBvMmVHaHpqcllGR0pIMWN2cnlX?oc=5",
-   "section": "domestic",
-   "category": "company_news",
-   "entity_id": null,
-   "content_type": "product",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "织密航线迭代服务，东航上线短片《“城”意十足》",
-   "source": "东方财富",
-   "date": "2026-08-21",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8tTEZuaXJRMmZpVWVrRFgzM2hrNlpiU0oyMlUzVjE1MEY0QkpxVEdsaUhNb2xBVHdhd1pvUk9KMXo4NU9SOHFRaUdnanYwZEFVMkZHMEpLbmFMM3RxZGQ5ZQ?oc=5",
-   "section": "domestic",
-   "category": "company_news",
-   "entity_id": null,
-   "content_type": "product",
-   "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
    "title": "中国东航联手雀巢、星巴克宣布升级机上咖啡体验",
+   "title_original": "",
+   "summary": "中国东航联手雀巢、星巴克宣布升级机上咖啡体验&nbsp;&nbsp;新京报",
    "source": "新京报",
    "date": "2026-08-21",
-   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1CLS1HWjF5MHZnTjRBRXY3VER2ZHBSZTQydFZiNHNiRG9EeDNpbVdiM2MzcHM4VlI5eFBZM1ZiSVJ6VnVFMnRidklubHNMNE4wTlU4R3R2OW1OTEF0aVozMnJrdEk?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE54MVhJVnY2b2pqMHVHRGhrWU00a3BxZVNvT2dkNk41YnJ2ZWhHRWEzNnIwQ2JPZnA2aS1TbkZpVmxrYjRnSEZOblZGNGhHV1hqQUJCNmFHMWxCd3NXNk1aZHJ3?oc=5",
    "section": "domestic",
    "category": "company_news",
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
    "title": "中国东航携手雀巢、星巴克升级云端咖啡体验",
-   "source": "中国日报网",
+   "title_original": "",
+   "summary": "中国东航携手雀巢、星巴克升级云端咖啡体验&nbsp;&nbsp;紫牛新闻",
+   "source": "紫牛新闻",
    "date": "2026-08-21",
-   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1SUFc2UEZwb2xIUEFQQ0dvMG5nV1JHMHoyeklPb2s0eG1oMkZsLXRHRlE2di1rTUdSNk1KeEJFZFh1dUQyejRkcUtlbHFBdTlrVjBqSk5IcmljQU92Q2cxN0R6dDZYR3Vyb2NIMXNOT19tTWFGdkw2M0lwTXg?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAtQzBkRkNMRVlta0JhYjZJbVhCei1GWWhKMUVOQVNIYlUyUnJsTjk3UlpVRWhKenZ0MGhmNG1WVVQ3b0RuMnBUUUYtb1J6VmpTbHdRd1RfcE84TC02TjNxdWNOYl81YXJn?oc=5",
    "section": "domestic",
    "category": "company_news",
    "entity_id": null,
    "content_type": "partnership",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
    "title": "东航“七夕”主题航班传递中式浪漫",
+   "title_original": "",
+   "summary": "航程中，乘务组精心准备了手工玫瑰花束、特调饮品、手写心意卡等，旅客纷纷拍照留念。而本次航班也选用了波音777机型执飞，与七夕节令互相呼应。",
    "source": "中国民航网",
    "date": "2026-08-19",
    "url": "http://www.caacnews.com.cn/1/6/202608/t20260819_1396795.html",
@@ -933,34 +2972,18 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "云端赴星河 东航西北 “七夕”主题航班启航",
-   "source": "中国民航网",
-   "date": "2026-08-19",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1zcWZMNkRqT0lFaUcwZDdjTDJWNm1SNy1Kckg0aXluOGdHcERFZmtIbG5ia1UwZ2tSTVNLS2tQZHNJbjhva2FpWXFrZmdvMTFJeXlJelRjUEk5WE1MYlhPSU5hdkMtSzIzX0xkcg?oc=5",
-   "section": "domestic",
-   "category": "company_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "东航“七夕”主题航班启航- 中国日报网",
-   "source": "China Daily",
-   "date": "2026-08-19",
-   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5uZ05ZekhTLVdnZVU5bk91bUhDS1Jmc2FhY291aXVpLU12QkJiVFpJVW4zejRnVDZlUk5GNHVKdE1kcDAtSnRMMHNkRXBGMXowOFowbGNvY1llNWtyY0RWZEdRQUFPekNBWVRLQUNUZ3FWdk5yZXA2TU5NbmY?oc=5",
-   "section": "domestic",
-   "category": "company_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
+   "selection_reasons": [
+    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航非业务影响词"
   },
   {
    "title": "东航甘肃分公司开展七夕主题活动",
+   "title_original": "",
+   "summary": "东航甘肃分公司开展七夕主题活动&nbsp;&nbsp;中国民航网",
    "source": "中国民航网",
    "date": "2026-08-19",
    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE94OFZDZi00VHJHdDJ5ZTVrUTAyanlYZFBZT21zSmVKaDlNNTdJRG5qaFY0OHFucGJVYUlRNEpyZzBhaXB5T3lwZHNBYkNWZVd4M3BuWkltM2VkRTJYcXJDdzJGcUhvQzR4UG1IaQ?oc=5",
@@ -969,6 +2992,12 @@
    "entity_id": null,
    "content_type": "general",
    "selection_score": 0,
+   "selection_reasons": [
+    "东航宣传稿排除(机器人/救援/庆典/服务升级等)"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
    "rejection_reason": "东航宣传稿(CiftonEXCLUDE_RE)"
   }
  ]

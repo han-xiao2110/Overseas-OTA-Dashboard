@@ -1331,7 +1331,8 @@ function renderStockChart() {
     if (coPrices && coPrices.close.length > 0) {
       coPrices.dates.forEach(function(d, i) {
         var v = coPrices.close[i];
-        if (v !== null && v !== undefined) coData.push([d, +v.toFixed(2)]);
+        v = Number(v);
+        if (Number.isFinite(v)) coData.push([d, +v.toFixed(2)]);
       });
     }
 
@@ -1473,7 +1474,8 @@ function renderStockChart() {
           params.forEach(function(p) {
             if (p.seriesType === 'scatter') return;
             var v = p.value && p.value[1];
-            if (v === null || v === undefined) return;
+            v = Number(v);
+            if (!Number.isFinite(v)) return;
             var pd = (typeof p.value[0] === 'number') ? null : String(p.value[0]).slice(0, 10);
             if (pd !== date) return;
             sawPrice = true;
@@ -1852,7 +1854,7 @@ function renderNewsList(elId,items,isIntl){
       h+='<span class="news-tag news-tag-category">'+escapeHtml(n.ai_category_label)+'</span>';
     }
     if(n.source) h+='<span class="news-tag news-tag-src">'+escapeHtml(n.source)+'</span>';
-    if(n.company){
+    if(n.company && !n.suppress_core_badge){
       var cc=TICKER_CC[n.company];
       if(cc){
         h+='<span class="news-tag" style="background:'+escapeHtml(cc)+'22;color:'+escapeHtml(cc)+'">'+escapeHtml(n.company)+'</span>';

@@ -63,6 +63,7 @@ global.echarts = {
   },
   use() {}, registerTheme() {},
 };
+global.window.echarts = global.echarts;
 
 const html = fs.readFileSync(process.argv[2] || 'dashboard.html', 'utf8');
 const scriptBlocks = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((x) => x[1]);
@@ -86,6 +87,13 @@ const bkngOpt = stockCharts.bkng && stockCharts.bkng._opt;
 check('BKNG 图含旗标/图钉系列(3 series)', bkngOpt && bkngOpt.series.length === 3);
 const fmt = bkngOpt && bkngOpt.tooltip.formatter;
 check('tooltip formatter 可调用', typeof fmt === 'function');
+if (bkngOpt) {
+  const bkngSeries = MKT_DATA.stock_prices.BKNG;
+  check('BKNG 日线从 2018 年开始', bkngSeries.dates[0] <= '2018-01-05');
+  check('BKNG 已补齐 2026-08-28 收盘价', bkngSeries.dates[bkngSeries.dates.length - 1] === '2026-08-28' && bkngSeries.close[bkngSeries.close.length - 1] === 205.63);
+  check('BKNG 日线无非法收盘价', bkngSeries.close.every((v) => Number.isFinite(Number(v)) && Number(v) > 0));
+  check('财报旗标轴与完整价格区间对齐', bkngOpt.xAxis[1].min <= '2018-01-05' && bkngOpt.xAxis[1].max === bkngSeries.dates[bkngSeries.dates.length - 1]);
+}
 
 console.log('— 财报卡片: 旗标 vs 图钉 —');
 const e0 = MKT_DATA.earnings_dates.filter((e) => e.company === 'BKNG')[0];
@@ -112,6 +120,8 @@ if (e0 && fmt) {
   const outLine = fmt([{ seriesType: 'line', seriesIndex: 0, seriesName: 'Booking', marker: '<span></span>', value: [normalDate, 1234.5] }]);
   check('普通悬浮: 日期+价格行', outLine.includes(normalDate) && outLine.includes('$1234.50'));
   check('普通悬浮(非财报日): 无财报卡片', !outLine.includes('财报日'));
+  const outNaN = fmt([{ seriesType: 'line', seriesIndex: 0, seriesName: 'Booking', marker: '<span></span>', value: ['2026-08-28', NaN] }]);
+  check('轴指针超出最后价格点时不显示 $NaN', !outNaN.includes('$NaN'));
 }
 
 console.log('— 悬浮期间断开三图联动 —');

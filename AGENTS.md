@@ -24,7 +24,7 @@
 - **数据源**: Excel（.xlsx）+ JSON 缓存
 - **部署**: Surge.sh（静态托管，自动 gzip）
 - **自动化**: GitHub Actions（每日定时抓取+生成+部署）
-- **翻译**: deep-translator（Google Translate 免费端点，无 API key）
+- **翻译**: MyMemory → Google公开端点 → deep-translator 三路回退（均无 API key）+ 持久译文缓存
 - **新闻处理**: 纯程序化（无 AI 调用）——关键词过滤+规则分类+URL哈希/标题相似度去重
 
 ---
@@ -33,15 +33,15 @@
 
 ### GitHub Actions 每日自动更新
 
-- **触发**: 北京时间 08:00（UTC 00:00），周二至周六（周六补抓周五数据）
+- **股价触发**: 北京时间 06:00，周二至周六（UTC 周一至周五 22:00；周六补抓周五数据）
+- **新闻触发**: 北京时间每天 08:00（UTC 00:00；周日、周一也更新）
 - **工作流**: `.github/workflows/daily-update.yml`
 - **步骤**:
   1. Checkout 代码（含 Excel 财务数据）
   2. Setup Python 3.12 + Node 20
   3. `pip install -r requirements.txt`
   4. `npm install -g surge`
-  5. **Fetch stock prices**（增量，yfinance 抓上一交易日收盘价）
-  6. **Fetch news**（全量重抓，RSS+官网+Google News）
+  5. **按触发时段执行**：06:00 仅 Fetch stock prices；08:00 仅 Fetch news；手动触发两者都执行
   7. **Generate dashboard**（读 Excel→注入模板→生成 `deploy/`）
   8. **Deploy to Surge**（环境变量传 SURGE_TOKEN）
   9. **Commit & push**（股价+新闻数据回仓库）
@@ -80,7 +80,7 @@ RSS/官网抓取(safe_request, TLS 只验证)
 → 相关性过滤（三层：白名单→强排除→关键词）
 → 实体识别（BKNG/EXPE/ABNB/CEAIR）
 → 确定性筛选管道（五维评分≥60 保留）
-→ 翻译（deep-translator，限流时英文 fallback）
+→ 最终保留新闻翻译（三路回退+持久缓存；标题未译不展示，摘要未译留空待重试）
 → 合并缓存
 → 保留期修剪（14 天）
 → 三级去重（URL→同文→同事件折叠）
@@ -101,7 +101,7 @@ RSS/官网抓取(safe_request, TLS 只验证)
 
 | 文件 | 角色 | 备注 |
 |------|------|------|
-| `fetch_news_副本.py` | 新闻抓取+筛选+翻译+排序+去重 | 核心脚本，约 4000 行 |
+| `fetch_news_副本.py` | 新闻抓取+筛选+翻译+排序+去重 | 核心脚本 |
 | `fetch_stock_prices_副本.py` | 股价抓取（yfinance） | 含代理自动检测 |
 | `generate_副本.py` | 读 Excel+JSON→注入模板→生成 `deploy/` | 自动查找目录下的 Excel |
 | `template_副本.html` | 前端模板（所有 JS 逻辑） | 数据注入点: `/*__DATA_PLACEHOLDER__*/{}` 等 |
@@ -110,9 +110,10 @@ RSS/官网抓取(safe_request, TLS 只验证)
 | `deploy_local.sh` | 本地一键部署 | 紧急手动上线用 |
 | `news_ai_helpers_副本.py` | AI 辅助模块 | ⚠️ 已禁用（AI_MODULE_AVAILABLE=False） |
 | `agent_translate_副本.py` | AI 翻译桥接 | ⚠️ 已禁用（改用 deep-translator） |
-| `news_quality_tests_副本.py` | 离线质量测试（70 项） | 不含 AI 依赖 |
-| `news_smoke_副本.js` | 前端烟雾测试（43 项） | |
-| `market_smoke_副本.js` | 市场行情测试（27 项） | |
+| `news_quality_tests_副本.py` | 离线质量测试（130 项） | 不含 AI 依赖 |
+| `news_smoke_副本.js` | 前端烟雾测试（41 项） | |
+| `market_smoke_副本.js` | 市场行情测试（32 项） | |
+| `translation_cache_副本.json` | 成功译文持久缓存 | GitHub Actions 每次更新后回仓库 |
 | `requirements.txt` | Python 依赖 | yfinance, feedparser, deep-translator, openpyxl, requests, beautifulsoup4, certifi |
 | `.github/workflows/daily-update.yml` | GitHub Actions 工作流 | |
 
@@ -153,7 +154,7 @@ RSS/官网抓取(safe_request, TLS 只验证)
 
 1. **macOS 代理**: 本机 Clash 代理 `127.0.0.1:7892`，shell 脚本需 `export http_proxy=https://127.0.0.1:7892 https_proxy=https://127.0.0.1:7892` 才能访问 Google 系服务（翻译/Google News RSS）
 2. **Python global 声明**: `fetch_stock_prices_副本.py` 的 `global _PROXY` 必须在函数开头声明，不能在 `if` 块内（Python 3.12 严格模式）
-3. **deep-translator 限流**: Google Translate 免费端点可能 429，失败时保留英文原文（带 `title_original` 可查）
+3. **公共翻译端点限流**: 三路端点均可能临时失败；成功译文写入持久缓存。标题未译不进入展示模块，摘要未译则留空并保留 `summary_original` 供后续重试，禁止生成标题占位摘要
 4. **Excel 路径**: `generate_副本.py` 已改为自动查找，兼容本地 macOS 和 GitHub Actions Ubuntu
 5. **Surge 部署**: 用环境变量 `SURGE_TOKEN` 传 token，不用 `--token` 命令行参数
 6. **排序**: 必须在去重/折叠之后排序，否则去重操作会打乱日期顺序
@@ -168,13 +169,13 @@ RSS/官网抓取(safe_request, TLS 只验证)
 # 语法检查
 python3 -c "import ast; [ast.parse(open(f).read()) for f in ['fetch_news_副本.py','fetch_stock_prices_副本.py','generate_副本.py']]; print('AST OK')"
 
-# 离线质量测试（70 项）
+# 离线质量测试（130 项）
 python3 news_quality_tests_副本.py
 
-# 前端烟雾测试（43 项）
+# 前端烟雾测试（41 项）
 node news_smoke_副本.js dashboard.html
 
-# 市场行情测试（27 项）
+# 市场行情测试（32 项）
 node market_smoke_副本.js dashboard.html
 
 # 查看新闻数据统计

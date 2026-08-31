@@ -68,6 +68,10 @@ function check(name, cond) {
 }
 const h = (id) => (elements[id] ? elements[id].innerHTML : '');
 const count = (id) => (h(id).match(/class="[^"]*\bnews-item\b[^"]*"/g) || []).length;
+const renderedText = (id, className) => {
+  const re = new RegExp('<div class="' + className + '"[^>]*>([\\s\\S]*?)<\\/div>', 'g');
+  return [...h(id).matchAll(re)].map(m => m[1].replace(/<[^>]+>/g, '').trim());
+};
 
 // ══════════ 5 模块结构验收（2026-08-18 重构） ══════════
 console.log('— 国际·披露与文件 (intlDisclosureList) —');
@@ -78,13 +82,34 @@ check('三家公司徽章都有颜色(无#666灰)', !h('intlDisclosureList').inc
 console.log('— 国际·核心公司动态 (coreCompanyList) —');
 check('coreCompanyList 有条目', count('coreCompanyList') > 0);
 check('核心公司含 ticker 徽章(BKNG/EXPE/ABNB)', /BKNG|EXPE|ABNB/.test(h('coreCompanyList')));
+const newsContainers = ['coreCompanyList','intlIndustryList','domIndustryList'];
+const renderedTitles = newsContainers.flatMap(id =>
+  renderedText(id, 'news-title'));
+const renderedSummaries = newsContainers.flatMap(id =>
+  renderedText(id, 'news-summary'));
+check('所有展示中的新闻标题均含中文',
+      renderedTitles.length > 0 && renderedTitles.every(t => /[\u4e00-\u9fff]/.test(t)));
+check('所有实际展示的新闻摘要均含中文（允许无摘要）',
+      renderedSummaries.length > 0 &&
+      renderedSummaries.every(t => /[\u4e00-\u9fff]/.test(t)));
+check('不生成“公开信息显示+标题”占位摘要',
+      !renderedSummaries.some(t => /^公开信息显示，/.test(t)));
 
 console.log('— 国际·行业新闻 (intlIndustryList) —');
 check('intlIndustryList 有条目', count('intlIndustryList') > 0);
+check('环球旅讯海外交易进入国际行业',
+      h('intlIndustryList').includes('eTravel') && h('intlIndustryList').includes('Spotnana'));
+const intlIndustryBadges = [...h('intlIndustryList').matchAll(/<span class="news-tag"[^>]*>([^<]+)<\/span>/g)]
+  .map(x => x[1].trim());
+check('国际行业中不再显示BKNG/EXPE/ABNB核心公司徽章',
+      !intlIndustryBadges.some(x => ['BKNG','EXPE','ABNB'].includes(x)));
 
 console.log('— 国内·行业新闻 (domIndustryList) —');
 check('domIndustryList 有条目', count('domIndustryList') > 0);
-check('国内行业含环球旅讯来源', h('domIndustryList').includes('环球旅讯'));
+check('环球旅讯三条海外交易不再进入国内',
+      !h('domIndustryList').includes('eTravel') &&
+      !h('domIndustryList').includes('VayKLife') &&
+      !h('domIndustryList').includes('Spotnana'));
 
 console.log('— 国内·披露与文件 (domDisclosureList) —');
 check('domDisclosureList 有条目', count('domDisclosureList') > 0);

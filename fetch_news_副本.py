@@ -6,7 +6,7 @@ fetch_news_副本.py - 自动抓取新闻和 SEC 文件
 输出: news_data_副本.json
 """
 
-import json, os, sys, time, datetime, re, shutil
+import json, os, sys, time, datetime, re, shutil, subprocess, tempfile, glob
 import html as html_lib
 import html
 import unicodedata
@@ -24,6 +24,11 @@ AI_MODULE_AVAILABLE = False
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT = os.path.join(SCRIPT_DIR, "news_data_副本.json")
+REJECTED_OUTPUT = os.path.join(SCRIPT_DIR, "news_rejected_副本.json")
+MANUAL_LABELS_PATH = os.path.join(SCRIPT_DIR, "news_screening_labels_副本.json")
+TRANSLATION_CACHE_PATH = os.path.join(SCRIPT_DIR, "translation_cache_副本.json")
+REVIEW_WORKBOOK_HELPER = os.path.join(SCRIPT_DIR, "news_review_workbook_副本.mjs")
+POLICY_VERSION = "2026-08-30-v4"
 CACHE_MAX_AGE_HOURS = 12
 CACHE_MAX_AGE_FAST_HOURS = 2
 
@@ -93,6 +98,15 @@ INTL_RSS_FEEDS = [
     {"name": "Expedia", "url": "https://news.google.com/rss/search?q=expedia+travel&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True},
     {"name": "Airbnb", "url": "https://news.google.com/rss/search?q=airbnb+travel+vacation+rental&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True},
     {"name": "Tripadvisor", "url": "https://news.google.com/rss/search?q=tripadvisor+travel&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True},
+    # Core-company action watches.  The broad company feeds above are often
+    # dominated by price commentary, promotions and destination listicles;
+    # limiting those feeds to their first 12 results therefore missed actual
+    # product/partnership/management events.  These 14-day queries widen only
+    # acquisition coverage; the common screening rules still reject ads,
+    # opinions and non-substantive mentions.
+    {"name": "Core BKNG Watch", "url": "https://news.google.com/rss/search?q=(%22Booking.com%22+OR+Agoda+OR+%22KAYAK+travel%22+OR+OpenTable+OR+Priceline)+(launches+OR+partnership+OR+partners+OR+acquires+OR+acquisition+OR+expands+OR+appoints+OR+introduces)+when:14d&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True, "max_items": 40},
+    {"name": "Core EXPE Watch", "url": "https://news.google.com/rss/search?q=(%22Expedia+Group%22+OR+Expedia+OR+Vrbo+OR+%22Hotels.com%22)+(launches+OR+partnership+OR+partners+OR+acquires+OR+acquisition+OR+expands+OR+appoints+OR+reorganization)+when:14d&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True, "max_items": 40},
+    {"name": "Core ABNB Watch", "url": "https://news.google.com/rss/search?q=Airbnb+(launches+OR+partnership+OR+partners+OR+acquires+OR+acquisition+OR+expands+OR+appoints+OR+introduces)+when:14d&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True, "max_items": 40},
     # Google News RSS - Bloomberg (travel/mobility sections)
     {"name": "Bloomberg Travel (GN)", "url": "https://news.google.com/rss/search?q=bloomberg+travel+hotel+airline&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True},
     {"name": "Bloomberg Mobility (GN)", "url": "https://news.google.com/rss/search?q=bloomberg+mobility+autonomous+robotaxi&hl=en-US&gl=US&ceid=US:en", "category": "industry_news", "translate": True},
@@ -116,6 +130,7 @@ IR_SOURCES = [
 # Google News RSS items should have source overridden to original source
 GOOGLE_NEWS_SOURCES = {"PhocusWire", "Travel Weekly", "Skyscanner", "Klook", "MakeMyTrip",
                         "Traveloka", "Agoda", "Trip.com", "Booking.com", "Expedia", "Airbnb", "Tripadvisor",
+                        "Core BKNG Watch", "Core EXPE Watch", "Core ABNB Watch",
                         "Bloomberg Travel (GN)", "Bloomberg Mobility (GN)"}
 
 # ── 翻译配置 ──
@@ -124,7 +139,44 @@ TRANSLATE_SOURCES = {"Skift", "PhocusWire", "Bloomberg Markets", "Bloomberg Tech
                      "Traveloka", "Agoda", "Trip.com", "Booking.com", "Expedia", "Airbnb", "Tripadvisor",
                      "WebInTravel", "Travel Pulse", "Hospitality Net", "Breaking Travel News",
                      "TTG Asia", "Simply Wall St", "Seeking Alpha", "Yahoo Finance", "CNBC"}
-TRANSLATE_CACHE = {}  # 内存缓存，避免重复翻译
+def _load_translation_cache():
+    try:
+        with open(TRANSLATION_CACHE_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except (OSError, ValueError, TypeError):
+        return {}
+
+
+TRANSLATE_CACHE = _load_translation_cache()
+_TRANSLATE_CACHE_DIRTY = False
+
+
+def save_translation_cache():
+    """持久化成功译文，避免14天缓存内的同一内容每日重复请求公共翻译端点。"""
+    global _TRANSLATE_CACHE_DIRTY
+    if not _TRANSLATE_CACHE_DIRTY:
+        return
+    tmp = TRANSLATION_CACHE_PATH + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(TRANSLATE_CACHE, f, ensure_ascii=False, sort_keys=True, indent=2)
+    os.replace(tmp, TRANSLATION_CACHE_PATH)
+    _TRANSLATE_CACHE_DIRTY = False
+
+
+def remember_translation(original, translated):
+    """把已确认的中文译文写入持久缓存候选。"""
+    global _TRANSLATE_CACHE_DIRTY
+    original = str(original or "").strip()
+    translated = str(translated or "").strip()
+    if not original or not translated or original == translated:
+        return
+    if not re.search(r"[A-Za-z]{2}", original) or not re.search(r"[\u4e00-\u9fff]", translated):
+        return
+    key = hashlib.md5(original.encode()).hexdigest()
+    if TRANSLATE_CACHE.get(key) != translated:
+        TRANSLATE_CACHE[key] = translated
+        _TRANSLATE_CACHE_DIRTY = True
 
 _TRANSLATE_FAILS = 0  # 连续失败计数，超过阈值临时熔断避免限流
 
@@ -136,29 +188,57 @@ def _translate_chunk(text):
     global _TRANSLATE_FAILS
     if not text or not text.strip():
         return None
-    # Circuit breaker: 连续失败超过 8 次后跳过剩余翻译（限流期间）
-    if _TRANSLATE_FAILS >= 8:
-        return None
+    # Use the public no-key endpoint first with an explicit timeout.  The
+    # deep-translator Google client does not pass a timeout to requests and can
+    # hang indefinitely behind the local proxy; that previously blocked the
+    # whole daily refresh after screening had already succeeded.
     try:
-        from deep_translator import GoogleTranslator
-    except ImportError:
-        return None
-    # GoogleTranslator free endpoint fails on long multi-clause text.
-    # Strategy: try 'en' source first; on TranslationNotFound, retry 'auto'.
-    # 每种 source 最多重试 1 次，合计最多 4 次 HTTP 请求，防卡住。
-    sources = ('en', 'auto')
-    for src in sources:
-        for attempt in range(2):
-            try:
-                r = GoogleTranslator(source=src, target='zh-CN').translate(text)
-                if r and r != text and 'Server Error' not in r and "That's an error" not in r:
-                    _TRANSLATE_FAILS = 0
-                    return r
-                # Server error：尝试下一个 source
-                break
-            except Exception:
-                time.sleep(0.3)
-                continue
+        query = urllib.parse.urlencode({"q": text, "langpair": "en|zh-CN"})
+        req = urllib.request.Request(
+            "https://api.mymemory.translated.net/get?" + query,
+            headers={"User-Agent": "OTA-Dashboard/1.0"})
+        with urlopen_safe(req, timeout=8) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+        r = str((payload.get("responseData") or {}).get("translatedText") or "").strip()
+        if payload.get("responseStatus") == 200 and r and r != text \
+                and not re.search(r"MYMEMORY WARNING|PLEASE SELECT", r, re.I):
+            _TRANSLATE_FAILS = 0
+            return html_lib.unescape(r)
+    except Exception:
+        pass
+
+    # Short-timeout Google fallback.  HTTP 429 and network failures fall
+    # through to the circuit breaker instead of stalling the workflow.
+    if _TRANSLATE_FAILS < 8:
+        try:
+            query = urllib.parse.urlencode({
+                "client": "gtx", "sl": "en", "tl": "zh-CN", "dt": "t", "q": text})
+            req = urllib.request.Request(
+                "https://translate.googleapis.com/translate_a/single?" + query,
+                headers={"User-Agent": "Mozilla/5.0"})
+            with urlopen_safe(req, timeout=5) as resp:
+                payload = json.loads(resp.read().decode("utf-8"))
+            r = "".join(str(part[0]) for part in (payload[0] or []) if part and part[0]).strip()
+            if r and r != text:
+                _TRANSLATE_FAILS = 0
+                return r
+        except Exception:
+            pass
+
+    # 第三路：使用 requirements.txt 中安装的 deep-translator。它与上面
+    # 两个直连端点的请求形式不同，可以覆盖部分临时限流/解析失败。
+    try:
+        proc = subprocess.run(
+            [sys.executable, "-c",
+             "from deep_translator import GoogleTranslator; import sys; "
+             "print(GoogleTranslator(source='en', target='zh-CN').translate(sys.argv[1]) or '')",
+             text], capture_output=True, text=True, timeout=8)
+        r = proc.stdout.strip() if proc.returncode == 0 else ""
+        if r and r != text and re.search(r"[\u4e00-\u9fff]", r):
+            _TRANSLATE_FAILS = 0
+            return r
+    except Exception:
+        pass
     _TRANSLATE_FAILS += 1
     return None
 
@@ -184,19 +264,23 @@ def translate_text(text, max_chars=500):
         parts = [snippet]
 
     out_chunks = []
-    any_success = False
+    all_success = True
     for chunk in parts:
         r = _translate_chunk(chunk)
         if r is not None:
             out_chunks.append(r)
-            any_success = True
             time.sleep(0.25)  # gentle pacing to avoid 500 errors
         else:
             out_chunks.append(chunk)  # keep original on per-chunk failure
+            all_success = False
             time.sleep(0.15)
 
-    translated = ' '.join(out_chunks) if any_success else text
-    TRANSLATE_CACHE[cache_key] = translated
+    # 摘要必须整体翻译，不缓存「中英混合」或失败原文。
+    translated = ' '.join(out_chunks) if all_success else text
+    if translated != text and re.search(r"[\u4e00-\u9fff]", translated):
+        global _TRANSLATE_CACHE_DIRTY
+        TRANSLATE_CACHE[cache_key] = translated
+        _TRANSLATE_CACHE_DIRTY = True
     return translated
 
 # ── 筛选配置 ──
@@ -245,7 +329,7 @@ BLOCK_KEYWORDS = [
 ]
 
 NEWS_KEEP_MIN_SCORE = 0.3  # 基础筛选分
-NEWS_MAX_PER_SOURCE = 10  # 每个来源最多保留条数
+NEWS_MAX_PER_SOURCE = None  # v2: 不在统一筛选前按来源截断
 
 # Domestic China - web sources (no reliable RSS, use HTML scraping)
 DOMESTIC_WEB_SOURCES = [
@@ -415,6 +499,30 @@ def refilter_cached_domestic(news_data):
     news_data["international"]["industry_news"] = clean_intl
     if removed:
         print(f"  [Domestic legacy cleanup] Removed {removed} cached low-relevance items")
+    return news_data
+
+
+def reclassify_cached_traveldaily(news_data):
+    """按当前规则重分环球旅讯缓存，避免旧 category 永久锁定错误国内外归属。"""
+    intl = (news_data.get("international") or {}).setdefault("industry_news", [])
+    dom = (news_data.get("domestic") or {}).setdefault("china_industry", [])
+    others_intl = [x for x in intl if not str(x.get("source", "") or "").startswith("环球旅讯")]
+    others_dom = [x for x in dom if not str(x.get("source", "") or "").startswith("环球旅讯")]
+    td_items = [x for x in intl + dom if str(x.get("source", "") or "").startswith("环球旅讯")]
+    seen = set()
+    td_intl, td_dom = [], []
+    for item in td_items:
+        key = _norm_url(item.get("url", "")) or _norm_title(item.get("title", ""))
+        if key and key in seen:
+            continue
+        if key:
+            seen.add(key)
+        domestic = _td_is_domestic(item.get("title", ""), item.get("summary", ""),
+                                   item.get("source_channel", ""))
+        item["category"] = "china_industry" if domestic else "industry_news"
+        (td_dom if domestic else td_intl).append(item)
+    news_data["international"]["industry_news"] = others_intl + td_intl
+    news_data["domestic"]["china_industry"] = others_dom + td_dom
     return news_data
 
 # 国内公司新闻 RSS（Google News 中文源）
@@ -1198,7 +1306,8 @@ def backfill_summary_fields(news_data, fetched_at=None):
         if s:
             # §12 守卫: 摘要≈标题(相似度≥0.85)视为无摘要, 降级为仅标题
             t = str(item.get("title", "") or "").strip()
-            if t and difflib.SequenceMatcher(None, s, t).ratio() >= 0.85:
+            if (t and not item.get("summary_translated")
+                    and difflib.SequenceMatcher(None, s, t).ratio() >= 0.85):
                 item["summary"] = ""
                 s = ""
         if s:
@@ -1262,6 +1371,7 @@ DISCLOSURE_SOURCE_KEYWORDS = (
     "SEC EDGAR", "披露易", "民航局", "文旅部", "交通运输部",
     "Booking Holdings IR", "Expedia Group IR", "Airbnb IR",
 )
+IR_SOURCE_KEYWORDS = ("Booking Holdings IR", "Expedia Group IR", "Airbnb IR")
 
 
 def _route_single_item(item, section, category):
@@ -1274,6 +1384,14 @@ def _route_single_item(item, section, category):
     ctype = str(item.get("content_type", "") or "")
     entity_id = str(item.get("entity_id", "") or "")
     is_core = entity_id in ("BKNG", "EXPE", "ABNB")
+    # modules 每次都从原始分区重建，先清掉上一轮路由留下的展示标记，
+    # 避免条目由行业转入核心后仍错误隐藏公司徽章。
+    item.pop("suppress_core_badge", None)
+
+    # 媒体高管售股属于市场事实，不作为公司经营动作或官方披露。
+    if MEDIA_INSIDER_SALE_RE.search(text) or STOCK_MARKET_FACT_RE.search(text):
+        item["suppress_core_badge"] = True
+        return "intl_industry"
 
     # 国内分区
     if section == "domestic":
@@ -1289,17 +1407,13 @@ def _route_single_item(item, section, category):
         # → 路由到 intl_core_company。例："Expedia收购AI旅行规划平台Layla（环球旅讯转载）"
         # 应该进入国际核心公司动态, 而不是被当成"国内行业"
         if is_core:
-            # 财报/业绩类 → 国际披露 (非官方媒体写的 BKNG/EXPE/ABNB 财报也算披露类)
-            if ctype in DISCLOSURE_CONTENT_TYPES or re.search(
-                    r"财报|季报|年报|业绩|营收|盈利|股东信|earnings|revenue|results", text, re.I):
-                return "intl_disclosures"
-            # 实质公司动态 → intl_core_company
+            # 媒体财报报道不属于官方披露；有明确新经营事实时作为核心公司动态，
+            # 否则进入国际行业。SEC/官方 IR 已在各自分支处理。
             if ctype in ("ma_investment", "management_org", "product", "partnership",
-                         "employee_policy", "strategy_marketing") or \
+                         "employee_policy", "strategy_marketing", "earnings", "operating_data") or \
                     item.get("substantive_company_change"):
                 return "intl_core_company"
-            # 其他 BKNG/EXPE/ABNB 核心公司标题相关 → 核心公司动态(默认)
-            return "intl_core_company"
+            return "intl_industry"
         # 非官方源但标题明确是政府数据/公告转发（如"民航局X月旅客量统计"被中国民航网转载）→ 进披露
         if re.search(r"^民航局|^文旅部|^交通运输部|运营数据公告|月度统计|旅客量统计|客座率统计|航班量统计", text):
             return "dom_disclosures"
@@ -1310,29 +1424,29 @@ def _route_single_item(item, section, category):
     # SEC 备案 → 国际披露
     if category == "sec_filings":
         return "intl_disclosures"
-    # 来源命中 IR / SEC → 披露类
-    if any(k in src for k in DISCLOSURE_SOURCE_KEYWORDS):
-        # IR 来源: 若 content_type 命中 earnings/governance → 披露;
-        # 但收购/投资 (ma_investment) / 高管人事 (management_org) / 产品 (product) 等
-        # 实质公司动态 → 核心公司动态 (2026-08-20: Expedia收购Layla应该进核心公司, 而不是披露)
+    # 官方 IR：只有财报/运营披露/治理文件进入披露；官方产品、并购、高管等
+    # 实质动态仍进入核心公司。媒体财报和普通行业稿一律不进入披露。
+    if any(k in src for k in IR_SOURCE_KEYWORDS):
         if ctype in DISCLOSURE_CONTENT_TYPES or re.search(
                 r"财报|季报|年报|业绩|营收|盈利|股东信|8-K|10-K|10-Q|earnings|revenue|results|"
                 r"shareholder letter|investor|guidance", text, re.I):
             return "intl_disclosures"
-        # 非披露类 IR 新闻稿（收购/投资/产品/高管/合作等）→ 核心公司动态
-        if is_core:
+        if is_core and item.get("substantive_company_change"):
             return "intl_core_company"
         return "intl_industry"
-    # content_type 命中披露类
-    if ctype in DISCLOSURE_CONTENT_TYPES:
-        # BKNG/EXPE/ABNB 的财报类新闻 → 披露模块（即便来源是媒体）
-        if is_core or re.search(r"财报|季报|年报|业绩|营收|盈利|股东信|earnings|revenue", text, re.I):
-            return "intl_disclosures"
+    # 外部监管机构对公司/短租市场采取的行动是行业环境事件，
+    # 不是公司自身动作。
+    if ctype == "regulation" or re.search(
+            r"crackdown|licensing laws?|regulator|government.{0,18}(?:rules?|orders?|bans?)|"
+            r"监管|新规|许可法|政府.{0,8}(?:要求|禁止|出台)", text, re.I):
+        item["suppress_core_badge"] = True
         return "intl_industry"
     # BKNG/EXPE/ABNB 实质动态 → 核心公司动态
     if is_core and item.get("substantive_company_change"):
         return "intl_core_company"
     # 其余国际条目 → 国际行业
+    if is_core:
+        item["suppress_core_badge"] = True
     return "intl_industry"
 
 
@@ -1364,6 +1478,9 @@ def route_to_modules(news_data):
     for item, section, cat in sources:
         mk = _route_single_item(item, section, cat)
         if not mk:
+            continue
+        if mk in ("intl_core_company", "intl_industry", "dom_industry") \
+                and item.get("display_ready") is False:
             continue
         # 跨模块同事件去重
         eid = item.get("event_id")
@@ -1422,6 +1539,8 @@ def route_to_modules(news_data):
         if mk in ("dom_industry", "dom_disclosures", "intl_industry", "intl_core_company"):
             kept = dedupe_same_article(kept)
             kept = group_same_events(kept)
+            if mk == "intl_core_company":
+                kept = group_core_company_events(kept, window_days=7)
             # folded_into 的条目不展示
             kept = [it for it in kept if not it.get("folded_into")]
         modules[mk] = kept[:cap]
@@ -1795,7 +1914,10 @@ TRAVEL_DEDICATED_SOURCES = {
 
 # 词边界正则（防子串陷阱）: 'expe'曾误命中"Rate-Hike Expectations"放过黄金行情新闻;
 # 同类隐患 'ota'→rotation/notable, 'adr'→madrid/ADReSS, 'war'→award/software, 'vote'→devoted 等
-TRAVEL_KEYWORD_PATTERNS = [re.compile(r'\b' + re.escape(kw) + r'\b') for kw in TRAVEL_STRICT_KEYWORDS]
+TRAVEL_KEYWORD_PATTERNS = [
+    re.compile(r'(?<![A-Za-z0-9])' + re.escape(kw) + r'(?![A-Za-z0-9])', re.IGNORECASE)
+    for kw in TRAVEL_STRICT_KEYWORDS
+]
 TRAVEL_BLOCK_PATTERNS = [re.compile(r'\b' + re.escape(kw) + r'\b') for kw in TRAVEL_BLOCK_STRONG]
 
 
@@ -1879,7 +2001,7 @@ def filter_and_rank_news(items, min_score=None, max_per_source=None):
     for item in filtered:
         src = item.get('source', 'unknown')
         src_count = source_counts.get(src, 0)
-        if src_count < max_per:
+        if max_per is None or src_count < max_per:
             limited.append(item)
             source_counts[src] = src_count + 1
     
@@ -1904,11 +2026,23 @@ def translate_news_items(items):
     total = len(items)
     breaker_triggered = False
     for idx, item in enumerate(items, 1):
-        if _TRANSLATE_FAILS >= 10 and not breaker_triggered:
-            breaker_triggered = True
-            print(f"    [translate] Circuit breaker tripped at item {idx}/{total}. "
-                  f"Keeping original English for remaining {total - idx + 1} items.")
-            # Keep looping but skip actual API calls (cache + breaker will block)
+        if _TRANSLATE_FAILS >= 10:
+            if not breaker_triggered:
+                breaker_triggered = True
+                print(f"    [translate] Circuit breaker tripped at item {idx}/{total}. "
+                      f"Keeping original English for remaining {total - idx + 1} items.")
+            # Preserve originals for a later daily retry, but do not call either
+            # translation endpoint again in this run.  Previously the loop still
+            # translated both title and summary after announcing the breaker,
+            # which could turn a 300-item refresh into a multi-hour timeout.
+            title = item.get('title', '')
+            summary = item.get('summary', '')
+            if title and re.search(r'[a-zA-Z]{2}', title):
+                item['title_original'] = title
+                skipped += 1
+            if summary and re.search(r'[a-zA-Z]{4}', summary):
+                item['summary_original'] = summary[:200]
+            continue
         title = item.get('title', '')
         if title and re.search(r'[a-zA-Z]{2}', title):
             original = title
@@ -1927,6 +2061,136 @@ def translate_news_items(items):
               f"(breaker tripped — Google 429 throttle)")
     else:
         print(f"    Translated {translated} items from English to Chinese ({skipped} unchanged)")
+    return items
+
+
+# Deterministic display translations for current high-value regression items.
+# They also protect the dashboard when public translation endpoints are throttled.
+DISPLAY_ZH_TRANSLATIONS = {
+    "Booking Holdings vs. Expedia in B2B: Bombshell Estimate Says Booking Leads in Room Nights":
+        "Booking Holdings与Expedia的B2B业务对比：估算显示Booking间夜量领先",
+    "Booking Holdings vs Expedia in B2B: Bombshell Estimate Says Booking Leads in Room Nights":
+        "Booking Holdings与Expedia的B2B业务对比：估算显示Booking间夜量领先",
+    "What Hotelbeds’ Shrinking Margins Mean for Hotel Distribution":
+        "Hotelbeds利润率收窄对酒店分销意味着什么",
+    "Google’s Agentic Hotel Booking Tool Comes to AI Mode":
+        "谷歌智能体酒店预订工具上线AI Mode",
+    "Delta plans NDC solution launch by year-end":
+        "达美航空计划年底前推出NDC解决方案",
+    "Expedia Executive Sells 3,133 Shares for $1 Million":
+        "Expedia高管出售3,133股，套现100万美元",
+    "Expedia Group makes AI-motivated leadership cuts":
+        "Expedia集团因AI转型调整领导层",
+    "Airbnb crackdown: Penang introduces new licensing laws for short-term rentals":
+        "槟城出台短租许可新规，收紧Airbnb监管",
+}
+
+# 翻译端点限流时的确定性回退：只翻译已抓取到的公开摘要。
+DISPLAY_ZH_SUMMARIES = {
+    "Booking Holdings与Expedia的B2B业务对比：估算显示Booking间夜量领先":
+        "无论如何解读这些数据，Booking Holdings的B2B业务规模似乎都远超旅游业此前的认知，其正在推进的重组也可能产生显著影响。",
+    "Agoda与菲律宾旅游部合作，推动2026年旅游业增长":
+        "Agoda与菲律宾旅游部建立合作，以推动2026年旅游业增长。",
+    "Expedia集团因AI转型调整领导层":
+        "Expedia集团因AI转型需要对领导层进行了调整。",
+    "Agoda与新加坡旅游局扩大合作，推动旅游需求和技术转型":
+        "Agoda与新加坡旅游局扩大合作，以提升旅游需求并推动行业技术转型。",
+    "Agoda为住宿合作伙伴推出新版Partner Portal":
+        "Agoda为住宿合作伙伴推出了改版后的Partner Portal。",
+    "Hotelbeds利润率收窄对酒店分销意味着什么":
+        "Hotelbeds曾凭借规模成为主要的独立床位库，但其最新业绩显示，规模已不再能单独保护该业务的经济性。",
+    "谷歌智能体酒店预订工具上线AI Mode":
+        "谷歌首次预告该功能九个月后，智能体酒店预订功能正式上线AI Mode。",
+    "达美航空计划年底前推出NDC解决方案":
+        "达美航空计划在年底前推出NDC解决方案。",
+    "Expedia高管出售3,133股，套现100万美元":
+        "Expedia一名高管出售3,133股公司股票，交易金额约100万美元。",
+    "锦江酒店与携程签署战略谅解备忘录，深化东盟合作":
+        "锦江酒店与携程签署战略谅解备忘录，将进一步深化东盟市场合作。",
+    "特斯拉、Uber 和 Waymo 均获准在内华达州运营数千辆机器人出租车":
+        "特斯拉、Uber和Waymo均已获准在内华达州运营数千辆机器人出租车。",
+    "槟城出台短租许可新规，收紧Airbnb监管":
+        "槟城针对Airbnb等短期租赁业务推出新的许可制度。",
+}
+
+
+def prepare_chinese_news_display(news_data):
+    """Guarantee Chinese-facing news modules without discarding raw cache items.
+
+    Titles that still lack meaningful Chinese after translation are marked as
+    pending and omitted only from display modules; they remain in the raw cache
+    so a later daily run can retry translation. A source summary must also be
+    Chinese before display. If the source summary is absent or its translation
+    fails, leave the display summary empty and retain the original for retry;
+    never synthesize a title-based placeholder summary.
+    """
+    for section in ("international", "domestic"):
+        for category, items in (news_data.get(section) or {}).items():
+            if not isinstance(items, list) or category == "sec_filings":
+                continue
+            for item in items:
+                title = str(item.get("title", "") or "").strip()
+                original = str(item.get("title_original", "") or "").strip()
+                translated = DISPLAY_ZH_TRANSLATIONS.get(original) or DISPLAY_ZH_TRANSLATIONS.get(title)
+                if translated:
+                    if not original and title != translated:
+                        item["title_original"] = title
+                    item["title"] = translated
+                    title = translated
+                    remember_translation(original, translated)
+                zh_count = len(re.findall(r"[\u4e00-\u9fff]", title))
+                en_count = len(re.findall(r"[A-Za-z]", title))
+                item["display_ready"] = bool(zh_count >= 4 or (zh_count >= 1 and en_count <= 12))
+                item["translation_status"] = "ready" if item["display_ready"] else "pending"
+                summary = str(item.get("summary", "") or "").strip()
+                legacy_placeholder = f"公开信息显示，{title.rstrip('。！？!?')}。"
+                if item.pop("summary_from_title", False) or summary == legacy_placeholder:
+                    item["summary"] = ""
+                    item.pop("summary_status", None)
+                    item.pop("summary_generated_at", None)
+                    summary = ""
+                mapped_summary = DISPLAY_ZH_SUMMARIES.get(title)
+                if mapped_summary:
+                    item["summary"] = mapped_summary
+                    item["summary_translated"] = True
+                    item["summary_status"] = "generated"
+                    summary = mapped_summary
+                    remember_translation(item.get("summary_original"), mapped_summary)
+                if summary and not re.search(r"[\u4e00-\u9fff]", summary):
+                    item.setdefault("summary_original", summary[:200])
+                    item["summary"] = ""
+                    item["translation_status"] = "pending_summary"
+    return news_data
+
+
+def retry_cached_translations(items):
+    """Retry all-English fields that previously fell back after a translation failure."""
+    if _TRANSLATE_FAILS >= 10:
+        print("  [Translation retry] skipped because the translation circuit breaker is open")
+        return items
+    retried = translated = 0
+    for item in items:
+        source = str(item.get("source", "") or "")
+        if source not in TRANSLATE_SOURCES:
+            continue
+        item_retried = False
+        for field, original_field, max_chars in (
+                ("title", "title_original", 500), ("summary", "summary_original", 200)):
+            value = str(item.get(field, "") or "").strip()
+            if not value or re.search(r"[\u4e00-\u9fff]", value) or not re.search(r"[A-Za-z]{3}", value):
+                continue
+            retried += 1
+            item_retried = True
+            item.setdefault(original_field, value[:max_chars])
+            result = translate_text(value[:max_chars], max_chars=max_chars)
+            if result and result != value:
+                item[field] = result
+                translated += 1
+        if item_retried:
+            item["translation_status"] = "translated" if re.search(
+                r"[\u4e00-\u9fff]", str(item.get("title", ""))) else "pending_retry"
+    if retried:
+        print(f"  [Translation retry] {translated}/{retried} cached English fields translated")
     return items
 
 
@@ -1979,6 +2243,52 @@ CORE_COMPANY_TABLE = [
 CORE_COMPANY_IDS = {e[0] for e in CORE_COMPANY_TABLE}
 CORE_KEEP_THRESHOLD = 60   # 准入线（重点公司实质动态保底同样取此值）
 
+# 人工标注仅做精确 URL / 归一化标题覆盖，不自动泛化为新正则。
+_MANUAL_LABEL_CACHE = None
+_MANUAL_LABEL_CACHE_MTIME = None
+
+
+def _manual_label_key(item):
+    url = _norm_url(item.get("url", "")) if "_norm_url" in globals() else str(item.get("url", "") or "").rstrip("/")
+    if url:
+        return "url:" + url
+    title = _norm_title(item.get("title", "")) if "_norm_title" in globals() else re.sub(
+        r"\W+", "", str(item.get("title", "") or "").lower())
+    return "title:" + title if title else ""
+
+
+def load_manual_labels(path=None):
+    """读取版本化人工标注；文件缺失/损坏时安全回退为空，不影响日更。"""
+    global _MANUAL_LABEL_CACHE, _MANUAL_LABEL_CACHE_MTIME
+    path = path or MANUAL_LABELS_PATH
+    try:
+        mtime = os.path.getmtime(path)
+    except OSError:
+        mtime = None
+    if path == MANUAL_LABELS_PATH and _MANUAL_LABEL_CACHE is not None \
+            and mtime == _MANUAL_LABEL_CACHE_MTIME:
+        return _MANUAL_LABEL_CACHE
+    labels = {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+        for row in payload.get("labels", []) if isinstance(payload, dict) else []:
+            if not isinstance(row, dict) or row.get("label") not in ("保留", "排除", "不确定"):
+                continue
+            key = row.get("key") or _manual_label_key(row)
+            if key:
+                labels[key] = row
+    except (OSError, ValueError, TypeError):
+        labels = {}
+    if path == MANUAL_LABELS_PATH:
+        _MANUAL_LABEL_CACHE = labels
+        _MANUAL_LABEL_CACHE_MTIME = mtime
+    return labels
+
+
+def _manual_label_for(item):
+    return load_manual_labels().get(_manual_label_key(item))
+
 
 def identify_entity(item):
     """实体识别: 返回 entity_id 或 None（同时检查译文与英文原文）。"""
@@ -1994,7 +2304,8 @@ def identify_entity(item):
 
 # ── 硬排除（§6）: 无论重点/非重点命中即拒绝 ──
 HARD_EXCLUDE_PATTERNS = [
-    (r"活动报名|参会报名|观众登记|专业观众|报名通道|参会指南|会议预告|峰会预告|论坛预告|展会预告", "活动报名/会议预告"),
+    (r"活动报名|参会报名|观众登记|专业观众|报名通道|参会指南|会议预告|峰会预告|论坛预告|论坛前瞻|展会预告|"
+     r"(?:案例|合作伙伴|嘉宾|讲者|参展商).{0,8}征集|征集.{0,8}(?:案例|合作伙伴|嘉宾|讲者|参展商)", "活动报名/会议预告"),
     (r"采购需求|旅业采购|寻找供应商|供应商对接|采购对接|寻.*地接社|地接社.*合作", "采购对接"),
     (r"入群|扫码加入|加入社群|广告招商|招商合作|投稿信箱|广告报价", "社群广告"),
     (r"实测|亲测|打卡|攻略|怎么玩|保级升卡|会员升级指南|自驾.*(实测|流程|多方便)|路线推荐|避坑指南|省钱秘籍", "消费者攻略/实测"),
@@ -2003,18 +2314,38 @@ HARD_EXCLUDE_PATTERNS = [
     (r"短评|随笔|行业鸡汤|流向何方|趋势漫谈|超哥|闲话|漫谈", "无新事实短评"),
     (r"如何避开|差旅大坑|踩坑指南|如何避坑|有哪些坑", "泛观点/攻略型长文"),
     (r"新玩法|满分口碑|深度好眠|种草|安利|宝藏|天花板|绝绝子|焕新出发|重磅升级|荣耀启程|网红", "品牌软文"),
-    (r"一周要闻|新闻合集|本周速览|行业动态合集|周报盘点|每日速览|投融资动态|这\d+笔交易|\d+笔交易值得关注", "新闻合集"),
+    (r"一周要闻|新闻合集|本周速览|行业动态合集|周报盘点|每日速览|投融资动态|这\d+笔交易|\d+笔交易值得关注|"
+     r"travel tech news briefs|^newsroom\s*[-–—]", "新闻合集/无具体事件页"),
+    (r"investors? raise the bar|ai trip planning is outpacing|ai transformation in travel\s*:|"
+     r"destinations? rethink marketing amid", "观点评论/趋势展望"),
     (r"股票股价|股价行情|_股价_|行情_讨论|股吧", "社群广告"),
+    (r"返现|返还\s*\d+|消费满.{0,12}(?:返|减)|满\s*\d+.{0,8}(?:返|减)|优惠券|折扣码|"
+     r"限时优惠|会员促销|targeted|cash\s*back|get\s*\$?\d+\s*back|promo\s*code|"
+     r"best\s+hotels?|top\s+\d+|according\s+to\s+reviews", "软广/优惠促销/榜单"),
+    (r"股价.{0,12}(?:走高|上涨|下跌|跑赢|表现)|(?:该股|股票).{0,12}(?:走高|上涨|下跌|跑赢|表现)|(?:stock|shares?).{0,20}(?:rise|rally|gain|fall|"
+     r"outperform)|估值讨论|投资建议|分析师.{0,8}(?:上调|下调|评级|目标价)|"
+     r"wall street.{0,12}(?:believe|bullish|bearish)|how investors? (?:are )?reacting|"
+     r"how .{0,90} will impact .{0,24}investors?", "股价/估值评论"),
+    (r"(?:bank|trust|management|capital|fund|holdings?).{0,45}(?:acquires?|buys?|purchases?|adds?)"
+     r".{0,30}(?:shares?|stake|position).{0,45}(?:BKNG|EXPE|ABNB|Booking Holdings|Expedia Group|Airbnb)|"
+     r"(?:acquires?|buys?|purchases?|adds?).{0,20}(?:shares?|stake|position).{0,45}"
+     r"(?:BKNG|EXPE|ABNB|Booking Holdings|Expedia Group|Airbnb)", "被动机构持仓变动"),
+    (r"Airbnb\.org.{0,50}(?:emergency housing|disaster|donat|relief|wildfire|fire)|"
+     r"(?:emergency housing|disaster relief).{0,50}Airbnb\.org", "公益/救灾宣传"),
+    (r"(?:creative|advertising|media) agency of record|创意代理商|广告代理商", "品牌营销代理宣传"),
+    (r"appoints?.{0,45}former (?:Airbnb|Expedia|Booking(?: Holdings|\.com)?).{0,30}"
+     r"(?:executives?|advisors?|officers?)|former (?:Airbnb|Expedia|Booking(?: Holdings|\.com)?)"
+     r".{0,35}(?:executives?|officers?).{0,35}(?:joins?|appointed|advisor)", "前高管在第三方公司履新"),
     # 名人/运动员投资非核心项目(2026-08-20 新增: 用户指定 Derek Jeter 投资大学城酒店品牌不重要)
     (r"德里克·杰特|Derek Jeter|运动员|体育明星|球星|明星.{0,4}(?:投资|入股|收购)|(?:投资|入股|收购).{0,4}(?:运动员|体育明星|球星)", "名人/运动员投资非核心项目"),
     # 箱包皮具类收购(2026-08-20 新增: 新秀丽收购Béis属于箱包行业, 非OTA/旅游业核心)
     # 仅排除箱包行业内部并购, 不影响航司行李政策等合法旅游新闻
     (r"(?:箱包皮具|行李箱|duffel|backpack|新秀丽|Samsonite).{0,8}(?:收购|并购|投资|入股|融资|acquir|merger|invest|raises)", "箱包皮具类并购(非旅行核心业务)"),
 ]
-HARD_EXCLUDE_COMPILED = [(re.compile(p), label) for p, label in HARD_EXCLUDE_PATTERNS]
+HARD_EXCLUDE_COMPILED = [(re.compile(p, re.IGNORECASE), label) for p, label in HARD_EXCLUDE_PATTERNS]
 
 
-def hard_exclude_reason(item):
+def hard_exclude_reason(item, content_type=None):
     """硬排除判定: 返回拒绝原因标签或 None。"""
     title_only = str(item.get("title", "") or "")
     if re.search(r"[?？]\s*$", title_only):
@@ -2023,6 +2354,10 @@ def hard_exclude_reason(item):
     for pat, label in HARD_EXCLUDE_COMPILED:
         if pat.search(text):
             return label
+    # 内容类型优先级保证“新产品/交易/政策事实 + 为什么”先归事实类型；只有最终仍为
+    # opinion 的条目才按用户规则整体排除。
+    if content_type == "opinion":
+        return "观点评论/泛分析"
     return None
 
 
@@ -2032,9 +2367,9 @@ CONTENT_TYPE_RULES = [
     ("operating_data", r"运营数据|经营数据|旅客量|客座率|运力|间夜|room ?nights?|revpar|\badr\b|出租率|入住率|净增|净开店|新开店|门店数|吞吐量|航班量|游客量|旅游收入|接待游客"),
     ("ma_investment", r"收购|并购|投资|融资|入股|合资|合并|出售|剥离|分拆|上市|ipo|acquisition|acquire|to acquire|invest|raises|funding"),
     ("employee_policy", r"陪产假|产假|育儿假|员工福利|员工.{0,6}制度|福利政策|薪酬|股权激励|人才战略|员工关怀|人才争夺|争夺.{0,6}人才|AI\s*人才|人才战"),
-    ("product", r"上线|推出|发布|开放|新功能|新产品|直订|服务升级|帮帮|launch|unveil|introduce|roll ?out|debuts?"),
-    ("policy_commission", r"佣金|退改签|退票|改签|价格政策|商家政策|履约|手续费|commission|refund|cancel"),
-    ("management_org", r"任命|履新|离任|辞任|辞职|ceo|cfo|总裁|高管|管理层|组织架构|重组|裁员|appointment|steps down"),
+    ("product", r"上线|推出|发布|开放|新功能|新产品|直订|服务升级|帮帮|launch|unveil|introduce|roll ?out|debuts?|brings?\s+ai"),
+    ("policy_commission", r"佣金|退改签|退票|改签|价格政策|商家政策|履约|手续费|commission|refund|cancel|service fees?|lower fees?"),
+    ("management_org", r"任命|履新|离任|辞任|辞职|ceo|cfo|总裁|高管|管理层|组织架构|重组|裁员|appoint(?:s|ed|ment)?|steps down|leadership cuts?|cuts?.{0,18}(?:executives?|leaders?)"),
     ("ai_application", r"\bai\b|人工智能|大模型|智能体|生成式|agent|artificial intelligence"),
     ("expansion", r"扩张|进军|进入.{0,6}市场|开业|拓展|出海|国际化|新增.{0,6}航线|开通|expansion|enters?"),
     ("regulation", r"监管|处罚|约谈|整改|立法|法规|政策|办法|规定|统计|通报"),
@@ -2045,6 +2380,43 @@ CONTENT_TYPE_RULES = [
 ]
 
 FORMAL_POLICY_TYPES = {"employee_policy", "management_org", "policy_commission", "governance_legal"}
+
+# v2 主题边界：Hotel 默认排除；只有直接改变 OTA 预订、分销、佣金、直订竞争、
+# 平台合作或相关监管时例外保留。
+HOTEL_TOPIC_RE = re.compile(
+    r"酒店|hotel|hotels|hospitality|lodging|resort|住宿|民宿|度假租赁|vacation rental|"
+    r"marriott|hilton|hyatt|ihg|accor|wyndham|万豪|希尔顿|凯悦|洲际|雅高|温德姆|锦江|华住|首旅|亚朵",
+    re.IGNORECASE)
+OTA_DIRECT_IMPACT_RE = re.compile(
+    r"ota|在线旅游|online travel|booking platform|travel platform|预订平台|"
+    r"booking\.com|booking holdings|expedia|airbnb|trip\.com|携程|同程|飞猪|美团酒旅|agoda|kayak|"
+    r"分销|distribution|渠道|佣金|commission|直订|direct booking|直连|api|"
+    r"预订入口|booking tool|agentic.{0,8}(?:booking|预订)|ai.{0,8}(?:booking|预订)|"
+    r"(?:booking|预订).{0,8}(?:ai|人工智能|智能体)|平台合作|平台监管",
+    re.IGNORECASE)
+MEDIA_INSIDER_SALE_RE = re.compile(
+    r"(?:高管|executive|insider).{0,24}(?:出售|售出|减持|sells?|sold|cash out).{0,24}(?:股|share|stock)|"
+    r"(?:出售|售出|减持|sells?|sold|cash out).{0,24}(?:股|share|stock).{0,24}(?:高管|executive|insider)",
+    re.IGNORECASE)
+STOCK_MARKET_FACT_RE = re.compile(
+    r"股价|该股|股票表现|shares?.{0,18}(?:rise|rally|gain|fall|outperform)|"
+    r"stock.{0,18}(?:rise|rally|gain|fall|outperform)|wall street|分析师.{0,8}(?:评级|目标价)",
+    re.IGNORECASE)
+ALLOWED_VERTICAL_THEME_RE = re.compile(
+    r"ota|在线旅游|online travel|travel tech|travel technology|booking platform|travel platform|"
+    r"预订平台|分销|distribution|佣金|commission|直订|direct booking|直连|api|"
+    r"预订入口|booking tool|agentic|人工智能|\bai\b|智能体|"
+    r"收购|并购|融资|合并|ipo|acquisition|acquir|merger|funding|raises|"
+    r"监管|法规|政策|regulation|policy|"
+    r"上线|推出|发布|launch|unveil|introduce|合作|partner|partnership|"
+    r"gross bookings|room nights|take rate|gbv|gmv|交易额|订单|获客成本|取消率",
+    re.IGNORECASE)
+VERTICAL_SOURCE_RE = re.compile(r"Skift|PhocusWire|Travel Weekly|环球旅讯", re.IGNORECASE)
+CORE_ACTION_CTYPES = {
+    "earnings", "operating_data", "ma_investment", "employee_policy", "product",
+    "policy_commission", "management_org", "ai_application", "expansion",
+    "regulation", "governance_legal", "partnership", "strategy_marketing",
+}
 
 DIMENSION_BY_CTYPE = {
     "earnings": ["financials"],
@@ -2083,7 +2455,8 @@ ACTION_MARKER_RE = re.compile(
     r"佣金|退改签|退票|改签|政策|制度|福利|陪产假|产假|薪酬|"
     r"回购|分红|诉讼|和解|调查|处罚|起诉|判决|"
     r"进军|扩张|进入|开业|拓展|出海|国际化|人才争夺|争夺.{0,6}人才|"
-    r"acquir|launch|unveil|introduc|report|announce|expand|partner|invest|rais",
+    r"acquir|launch|unveil|introduc|report|announce|expand|partner|appoint|invest|rais|"
+    r"brings?\s+ai|\btest(?:s|ing)?\b|lower fees?|leadership cuts?|cuts?.{0,18}(?:executives?|leaders?)",
     re.IGNORECASE)
 
 # ── 官方/披露来源保留清单（§8）: 命中即保底准入 ──
@@ -2112,7 +2485,7 @@ CEAIR_IMPACT_RE = re.compile(
     r"票价|燃油附加费|燃油费|行李费|退改|退票|改签|手续费|免费退改|提前\d+天|"
     r"运力|客座率|旅客量|航班量|吞吐量|运营数据|经营数据|"
     r"渠道|代理|佣金|直销|OTA|客票|票务|"
-    r"航班取消|大范围取消|特殊退改|复航|新增航线|航线.{0,4}调整|调整.{0,4}航线|机队|宽体机|"
+    r"航班取消|大范围取消|特殊退改|复航|新增.{0,8}航线|航线.{0,4}调整|调整.{0,4}航线|机队|宽体机|"
     r"盈利预警|业绩|财报")
 # 排除词：无量化商业影响的宣传稿（即使命中 IMPACT_RE 也排除）
 CEAIR_EXCLUDE_RE = re.compile(
@@ -2224,6 +2597,7 @@ def select_news_item(item, section, category):
     source = str(item.get("source", "") or "")
     text = _sel_text(item)
     reasons = []
+    matched_rule_ids = []
 
     entity_id = identify_entity(item) or item.get("entity_id")
     is_core = entity_id in CORE_COMPANY_IDS
@@ -2232,11 +2606,16 @@ def select_news_item(item, section, category):
     item["is_core_company"] = is_core
     item.setdefault("source_channel", item.get("source_channel") or "")
     item["content_type"] = ctype
+    item["policy_version"] = POLICY_VERSION
+    item["matched_rule_ids"] = matched_rule_ids
+    manual = _manual_label_for(item)
+    item["manual_label"] = manual.get("label") if manual else None
 
     def _finalize(kept, score, rejection_reason):
         item["selection_score"] = int(max(0, min(100, score)))
         item["selection_status"] = "kept" if kept else "rejected"
         item["selection_reasons"] = reasons
+        item["matched_rule_ids"] = matched_rule_ids
         item["rejection_reason"] = rejection_reason
         dims = list(DIMENSION_BY_CTYPE.get(ctype, []))
         if is_core:
@@ -2256,14 +2635,40 @@ def select_news_item(item, section, category):
         item["entity_id"] = entity_id or item.get("company")
         item["is_core_company"] = (item["entity_id"] in CORE_COMPANY_IDS) or bool(item.get("company"))
         reasons.append("SEC备案(重点公司强制披露)")
+        matched_rule_ids.append("official.sec.filing")
         return _finalize(True, 100, None)
 
     # 1. 硬排除（§6）: 活动/采购/攻略/赞助/人物稿/软文/合集/短评
-    hr = hard_exclude_reason(item)
+    hr = hard_exclude_reason(item, ctype)
     if hr:
         item["substantive_company_change"] = False
         reasons.append(f"硬排除: {hr}")
-        return _finalize(False, 0, hr)
+        matched_rule_ids.append("exclude.hard." + re.sub(r"\W+", "_", hr).strip("_"))
+        if manual and manual.get("label") == "保留":
+            reasons.append("人工标注保留覆盖硬排除")
+            matched_rule_ids.append("manual.keep")
+        else:
+            return _finalize(False, 0, hr)
+
+    # 1b. Hotel 默认排除，仅 OTA 直接影响例外。
+    is_hotel_topic = bool(HOTEL_TOPIC_RE.search(text))
+    hotel_ota_exception = bool(OTA_DIRECT_IMPACT_RE.search(text))
+    if is_hotel_topic:
+        matched_rule_ids.append("topic.hotel")
+        if hotel_ota_exception:
+            matched_rule_ids.append("topic.hotel.ota_direct_exception")
+        elif not (manual and manual.get("label") == "保留"):
+            item["substantive_company_change"] = False
+            reasons.append("Hotel默认排除：未直接影响OTA")
+            return _finalize(False, 0, "Hotel非OTA相关")
+        else:
+            reasons.append("人工标注保留覆盖Hotel默认排除")
+            matched_rule_ids.append("manual.keep")
+
+    if manual and manual.get("label") == "排除":
+        reasons.append("人工标注排除")
+        matched_rule_ids.append("manual.reject")
+        return _finalize(False, 0, "人工标注排除")
 
     # 2. 官方/披露来源保留清单（§8）
     official_floor = False
@@ -2301,10 +2706,9 @@ def select_news_item(item, section, category):
             return _finalize(False, 0, "东航非业务影响词")
 
     # 4. 重点公司实质动态判定
-    substantive = bool(ACTION_MARKER_RE.search(text)) and ctype not in ("opinion", "general")
-    if is_core and ctype == "general":
-        # 有行动动词但类型未归类: 仍视为实质（如"重建营销引擎"归入 strategy_marketing 前的兜底）
-        substantive = bool(ACTION_MARKER_RE.search(text))
+    media_insider_sale = bool(MEDIA_INSIDER_SALE_RE.search(text))
+    substantive = (bool(ACTION_MARKER_RE.search(text)) and ctype in CORE_ACTION_CTYPES
+                   and not media_insider_sale)
     item["substantive_company_change"] = substantive
 
     # 5. 五维评分
@@ -2348,18 +2752,21 @@ def select_news_item(item, section, category):
             reasons.append("重要并购/融资保底60")
         score = max(score, CORE_KEEP_THRESHOLD)
 
-    # 2026-08-20: 旅游垂直媒体(Skift/PhocusWire)保底 55 分准入
-    # Skift 的深度分析/观点类文章 (ctype=opinion): 内容可能没有具体数字,
-    # 但涉及 BKNG/EXPE/ABNB/OTA 生态的战略分析很有价值, 之前被 opinion -30 扣分后全部被拒
-    # 同时豁免: Skift/PhocusWire 的 opinion 不做 "opinion无新事实 -30" 扣分
-    TRAVEL_DEDICATED_SRC = any(k in source for k in ("Skift", "PhocusWire", "环球旅讯", "Travel Weekly"))
-    if TRAVEL_DEDICATED_SRC:
-        # +8 基础加分 (旅游垂直媒体自带行业相关性)
-        score += 8
-        reasons.append("旅游垂直媒体加分(+8)")
-        if score < 55:
-            score = 55
-            reasons.append("旅游垂直媒体保底55")
+    # v2: 垂直媒体不再仅凭来源保底。只有命中允许主题才保底到60；未命中则按
+    # 原始五维分数正常淘汰。Hotel 默认排除和观点/软广硬排除已在上游执行。
+    vertical_allowed = bool(VERTICAL_SOURCE_RE.search(source) and ALLOWED_VERTICAL_THEME_RE.search(text))
+    if vertical_allowed:
+        matched_rule_ids.append("vertical.allowed_theme")
+        if score < CORE_KEEP_THRESHOLD:
+            reasons.append("垂直媒体允许主题保底60")
+        score = max(score, CORE_KEEP_THRESHOLD)
+
+    # 两条人工样本均确认媒体高管售股事实可保留，但它不是公司经营动作：
+    # 只按国际行业事实展示，不进入核心公司动态。
+    if media_insider_sale:
+        matched_rule_ids.append("market.insider_sale_fact")
+        reasons.append("媒体高管售股事实保留（非核心公司动态）")
+        score = max(score, CORE_KEEP_THRESHOLD)
 
     # 保底: 重点公司实质动态 / 官方保留清单 / 东航实质动态 → 最低准入分 60
     # 注：东航 14 天免费退改样本额外加 score_boost（仅 ceair_refund 路径设置过 score_boost）
@@ -2381,13 +2788,16 @@ def select_news_item(item, section, category):
             reasons.append("实质动态/官方清单保底60")
         score = max(score, CORE_KEEP_THRESHOLD)
 
+    if manual and manual.get("label") == "保留":
+        if score < CORE_KEEP_THRESHOLD:
+            reasons.append("人工标注保留覆盖评分")
+        matched_rule_ids.append("manual.keep")
+        score = max(score, CORE_KEEP_THRESHOLD)
+
     kept = score >= CORE_KEEP_THRESHOLD
     if not kept:
         reasons.append("低于准入分60")
     return _finalize(kept, score, None if kept else "评分低于60且无保底资格")
-
-
-REJECTED_OUTPUT = os.path.join(SCRIPT_DIR, "news_rejected_副本.json")
 
 
 def run_selection_pipeline(news_data):
@@ -2419,6 +2829,8 @@ def run_selection_pipeline(news_data):
                     by_reason[key] = by_reason.get(key, 0) + 1
                     rejected_records.append({
                         "title": item.get("title", ""),
+                        "title_original": item.get("title_original", ""),
+                        "summary": item.get("summary", ""),
                         "source": item.get("source", ""),
                         "date": item.get("date", ""),
                         "url": item.get("url", ""),
@@ -2427,6 +2839,10 @@ def run_selection_pipeline(news_data):
                         "entity_id": item.get("entity_id"),
                         "content_type": item.get("content_type"),
                         "selection_score": item.get("selection_score", 0),
+                        "selection_reasons": item.get("selection_reasons", []),
+                        "matched_rule_ids": item.get("matched_rule_ids", []),
+                        "policy_version": item.get("policy_version", POLICY_VERSION),
+                        "manual_label": item.get("manual_label"),
                         "rejection_reason": reason,
                     })
             sec_data[cat] = kept
@@ -2448,6 +2864,7 @@ def run_selection_pipeline(news_data):
 
     news_data["selection_report"] = {
         "run_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "policy_version": POLICY_VERSION,
         "raw_count": raw_count,
         "kept_count": kept_count,
         "rejected_count": rejected_count,
@@ -2840,14 +3257,22 @@ TD_INTL_MARKERS = [
 ]
 
 
-def _td_is_domestic(title, summary=""):
-    """环球旅讯条目是否算国内行业新闻: 先查国内标记, 再查国际标记, 默认国内。"""
+def _td_is_domestic(title, summary="", source_channel=""):
+    """环球旅讯国内外分流：显式国内优先，海外/跨境科技交易进入国际。"""
     text = f"{title} {summary}"
     for kw in TD_DOMESTIC_MARKERS:
         if kw in text:
             return True
     for kw in TD_INTL_MARKERS:
         if kw in text:
+            return False
+    # traveltech/distribute 频道常见海外初创公司并购，标题可能只有英文公司名而无国家词。
+    # 至少两个英文专名 + 交易动作时按国际处理；避免再次把 eTravel/Accent、
+    # VayKLife/Xplorie、Spotnana/Troop 默认归为国内。
+    if re.search(r"收购|并购|融资|合并|投资|acquir|merger|funding", text, re.I):
+        names = [n for n in re.findall(r"(?<![A-Za-z])[A-Za-z][A-Za-z0-9.&-]{2,}", title)
+                 if n.lower() not in {"ota", "ai", "travel", "events", "group"}]
+        if len(set(n.lower() for n in names)) >= 2:
             return False
     return True
 
@@ -2890,7 +3315,7 @@ def fetch_traveldaily(source):
     # 国内外分流: 国际条目改标 industry_news, 由 main() 路由到国际分区
     intl_n = 0
     for it in all_items:
-        if not _td_is_domestic(it.get("title", ""), it.get("summary", "")):
+        if not _td_is_domestic(it.get("title", ""), it.get("summary", ""), it.get("source_channel", "")):
             it["category"] = "industry_news"
             intl_n += 1
     if all_items:
@@ -3887,6 +4312,70 @@ def group_same_events(items, window_hours=72, sim_threshold=0.72, ceair_aggressi
     return out
 
 
+def _core_event_key(item):
+    """只为高置信核心公司事件生成跨标题指纹，避免把同周不同事件误折叠。"""
+    entity = str(item.get("entity_id", "") or "")
+    if entity not in ("BKNG", "EXPE", "ABNB"):
+        return None
+    text = _sel_text(item).lower()
+    ctype = str(item.get("content_type", "") or "")
+    if ctype == "management_org":
+        if re.search(r"裁员|裁减|领导层削减|高管.{0,8}(?:离职|出局)|重组|"
+                     r"cuts?.{0,12}(?:executive|leader)|leadership cuts|executives? out|reorganiz", text, re.I):
+            ai = "ai" if re.search(r"人工智能|\bai\b|artificial intelligence", text, re.I) else "general"
+            return f"{entity}|management_org|restructure_cuts|{ai}"
+        if re.search(r"任命|履新|appointment|named.{0,8}(?:ceo|cfo|president)", text, re.I):
+            return f"{entity}|management_org|appointment|{_norm_title(item.get('title', ''))[:36]}"
+    if ctype == "product" and entity == "BKNG" and \
+            re.search(r"agoda.{0,35}partner portal|partner portal.{0,35}agoda", text, re.I):
+        return "BKNG|product|agoda_partner_portal"
+    return None
+
+
+def group_core_company_events(items, window_days=7):
+    """核心公司高置信同事件折叠；用于跨越72小时的连续报道。"""
+    groups = {}
+    for item in items:
+        if item.get("folded_into"):
+            continue
+        key = _core_event_key(item)
+        if key:
+            groups.setdefault(key, []).append(item)
+    for key, members in groups.items():
+        members.sort(key=lambda x: x.get("date") or "")
+        clusters = []
+        for item in members:
+            placed = False
+            for cluster in clusters:
+                if _dates_within(item.get("date") or "", cluster[-1].get("date") or "", window_days) is not False:
+                    cluster.append(item)
+                    placed = True
+                    break
+            if not placed:
+                clusters.append([item])
+        for cluster in clusters:
+            if len(cluster) < 2:
+                continue
+            primary = max(cluster, key=lambda x: (
+                1 if str(x.get("summary", "") or "").strip() else 0,
+                x.get("date") or "",
+                _source_rank(x),
+                int(x.get("selection_score", 0) or 0),
+            ))
+            event_id = "ev_core_" + hashlib.md5(key.encode()).hexdigest()[:10]
+            related = list(primary.get("related_sources") or [])
+            for item in cluster:
+                item["event_id"] = event_id
+                if item is primary:
+                    continue
+                item["folded_into"] = primary.get("url") or "core_event"
+                src = str(item.get("source", "") or "未知来源")
+                if src not in related:
+                    related.append(src)
+            primary["related_sources"] = related
+    return items
+
+
 def merge_with_cache(new_data, old_data):
     if not old_data:
         return new_data
@@ -4020,6 +4509,447 @@ def prune_and_dedupe(news_data):
             # 关键修复: 确保最新的新闻永远在最上面
             kept.sort(key=lambda x: x.get("date") or "", reverse=True)
             sec_data[cat] = kept[:cap]
+    return news_data
+
+
+# ── 按需人工标注清单（不接入每日任务）────────────────────────────────────
+
+def _load_json_file(path, default):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError, TypeError):
+        return default
+
+
+def _review_module_map(news_data):
+    result = {}
+    for module, items in (news_data.get("modules") or {}).items():
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            key = _manual_label_key(item)
+            if key:
+                result[key] = module
+    return result
+
+
+def build_review_candidates(news_data=None, rejected_data=None, size=30):
+    """从已保留与已拒绝新闻中分层抽取边界样本，返回稳定、可审计的行数据。"""
+    news_data = news_data or _load_json_file(OUTPUT, {})
+    rejected_data = rejected_data or _load_json_file(REJECTED_OUTPUT, {})
+    module_map = _review_module_map(news_data)
+    pool = []
+    seen = set()
+
+    for section in ("international", "domestic"):
+        for category, items in (news_data.get(section) or {}).items():
+            if not isinstance(items, list):
+                continue
+            for item in items:
+                row = dict(item)
+                row["section"] = section
+                row["category"] = category
+                row["current_decision"] = "保留"
+                pool.append(row)
+    for item in rejected_data.get("items", []) if isinstance(rejected_data, dict) else []:
+        if isinstance(item, dict):
+            row = dict(item)
+            row["current_decision"] = "排除"
+            pool.append(row)
+
+    scored = []
+    for original in pool:
+        key = _manual_label_key(original)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        proposal = json.loads(json.dumps(original, ensure_ascii=False))
+        ok, reason = select_news_item(
+            proposal, proposal.get("section", "international"),
+            proposal.get("category", "industry_news"))
+        text = _sel_text(proposal)
+        current_score = int(original.get("selection_score", 0) or 0)
+        tags = []
+        priority = 0
+        if HOTEL_TOPIC_RE.search(text):
+            tags.append("Hotel")
+            priority += 30
+            if OTA_DIRECT_IMPACT_RE.search(text):
+                tags.append("OTA直接影响")
+                priority += 8
+        hard_reason = hard_exclude_reason(proposal, proposal.get("content_type"))
+        if hard_reason:
+            tags.append(hard_reason)
+            priority += 28
+        if proposal.get("entity_id") in ("BKNG", "EXPE", "ABNB"):
+            tags.append("核心公司")
+            priority += 20
+        if 45 <= current_score <= 75:
+            tags.append("临界分数")
+            priority += 16
+        current_module = module_map.get(key, "未展示")
+        td_should_domestic = None
+        if str(proposal.get("source", "") or "").startswith("环球旅讯"):
+            td_should_domestic = _td_is_domestic(
+                proposal.get("title", ""), proposal.get("summary", ""),
+                proposal.get("source_channel", ""))
+            if (current_module == "dom_industry" and not td_should_domestic) or \
+                    (current_module == "intl_industry" and td_should_domestic):
+                tags.append("国内外分类冲突")
+                priority += 35
+        if current_module == "intl_disclosures" and not (
+                proposal.get("category") == "sec_filings" or
+                any(k in str(proposal.get("source", "") or "") for k in IR_SOURCE_KEYWORDS)):
+            tags.append("媒体误入披露")
+            priority += 35
+        if (original.get("current_decision") == "保留") != ok:
+            tags.append("新旧规则冲突")
+            priority += 40
+        row = {
+            "date": proposal.get("date", ""),
+            "title": proposal.get("title", ""),
+            "summary": proposal.get("summary", ""),
+            "source": proposal.get("source", ""),
+            "current_module": current_module,
+            "current_decision": original.get("current_decision", ""),
+            "proposed_decision": "保留" if ok else "排除",
+            "current_score": current_score,
+            "proposed_score": int(proposal.get("selection_score", 0) or 0),
+            "matched_rules": "；".join(proposal.get("matched_rule_ids", []) or []),
+            "selection_reasons": "；".join(proposal.get("selection_reasons", []) or []),
+            "review_tags": "；".join(dict.fromkeys(tags)),
+            "url": proposal.get("url", ""),
+            "section": proposal.get("section", ""),
+            "category": proposal.get("category", ""),
+            "rejection_reason": reason or "",
+            "priority": priority,
+        }
+        scored.append(row)
+
+    scored.sort(key=lambda x: (x["priority"], x.get("date") or "", x.get("proposed_score", 0)),
+                reverse=True)
+    selected, source_counts = [], {}
+    for row in scored:
+        source = row.get("source") or "未知来源"
+        if source_counts.get(source, 0) >= 5:
+            continue
+        selected.append(row)
+        source_counts[source] = source_counts.get(source, 0) + 1
+        if len(selected) >= max(1, int(size)):
+            break
+    return selected
+
+
+def export_policy_diff(path, news_data=None, rejected_data=None):
+    """用当前缓存重放新规则，输出新增、删除、换模块和折叠差异。"""
+    news_data = news_data or _load_json_file(OUTPUT, {})
+    rejected_data = rejected_data or _load_json_file(REJECTED_OUTPUT, {})
+    current_modules = _review_module_map(news_data)
+    pool, seen = [], set()
+    for section in ("international", "domestic"):
+        for category, items in (news_data.get(section) or {}).items():
+            if not isinstance(items, list):
+                continue
+            for item in items:
+                row = json.loads(json.dumps(item, ensure_ascii=False))
+                row.update(section=section, category=category, current_decision="保留")
+                pool.append(row)
+    for item in rejected_data.get("items", []) if isinstance(rejected_data, dict) else []:
+        if isinstance(item, dict):
+            row = json.loads(json.dumps(item, ensure_ascii=False))
+            row.setdefault("section", "international")
+            row.setdefault("category", "industry_news")
+            row["current_decision"] = "排除"
+            pool.append(row)
+
+    replay = {"international": {"sec_filings": [], "industry_news": []}, "domestic": {}}
+    additions, removals, provisional_moves = [], [], []
+    for original in pool:
+        key = _manual_label_key(original)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        item = json.loads(json.dumps(original, ensure_ascii=False))
+        item.pop("folded_into", None)
+        section = item.get("section", "international")
+        category = item.get("category", "industry_news")
+        if str(item.get("source", "") or "").startswith("环球旅讯"):
+            is_domestic = _td_is_domestic(item.get("title", ""), item.get("summary", ""),
+                                          item.get("source_channel", ""))
+            section, category = (("domestic", "china_industry") if is_domestic
+                                 else ("international", "industry_news"))
+        kept, reason = select_news_item(item, section, category)
+        base = {"date": item.get("date", ""), "title": item.get("title", ""),
+                "source": item.get("source", ""), "url": item.get("url", "")}
+        if original.get("current_decision") == "排除" and kept:
+            additions.append({**base, "new_module": _route_single_item(item, section, category)})
+        if original.get("current_decision") == "保留" and not kept:
+            removals.append({**base, "old_module": current_modules.get(key, "未展示"),
+                             "reason": reason or item.get("rejection_reason", "")})
+        if not kept:
+            continue
+        replay.setdefault(section, {}).setdefault(category, []).append(item)
+        old_module = current_modules.get(key, "未展示")
+        new_module = _route_single_item(item, section, category)
+        if original.get("current_decision") == "保留" and old_module != new_module:
+            provisional_moves.append({**base, "old_module": old_module, "new_module": new_module})
+
+    route_to_modules(replay)
+    proposed_modules = _review_module_map(replay)
+    moves = []
+    for row in provisional_moves:
+        key = _manual_label_key(row)
+        final_module = proposed_modules.get(key, row.get("new_module", "未展示"))
+        if row.get("old_module") != final_module:
+            moves.append({**row, "new_module": final_module})
+    folds, folded_keys = [], set()
+    for section in ("international", "domestic"):
+        for items in (replay.get(section) or {}).values():
+            if not isinstance(items, list):
+                continue
+            for item in items:
+                if item.get("folded_into"):
+                    folded_keys.add(_manual_label_key(item))
+                    folds.append({"date": item.get("date", ""), "title": item.get("title", ""),
+                                  "source": item.get("source", ""), "url": item.get("url", ""),
+                                  "folded_into": item.get("folded_into", "")})
+    moves = [row for row in moves if _manual_label_key(row) not in folded_keys]
+    before_counts = {k: len(v) for k, v in (news_data.get("modules") or {}).items()
+                     if isinstance(v, list)}
+    after_counts = {k: len(v) for k, v in (replay.get("modules") or {}).items()
+                    if isinstance(v, list)}
+    report = {
+        "generated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "policy_version": POLICY_VERSION,
+        "scope": "当前新闻缓存与拒绝诊断的离线重放；未联网抓取，不代表部署后最终数量",
+        "summary": {"新增": len(additions), "删除": len(removals),
+                    "换模块": len(moves), "折叠": len(folds)},
+        "module_counts_before": before_counts,
+        "module_counts_after_replay": after_counts,
+        "新增": additions, "删除": removals, "换模块": moves, "折叠": folds,
+    }
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+    print(f"Policy diff exported: {path} {report['summary']}")
+    # The caller merges these official items into the international candidate
+    # pool before screening/routing.  Returning ``0`` here silently discarded
+    # every BKNG/EXPE/ABNB IR item and left core-company coverage dependent on
+    # incidental media hits only.
+    return all_items
+
+
+def _find_artifact_runtime():
+    node_modules_candidates = [
+        os.environ.get("CODEX_WORKSPACE_NODE_MODULES", ""),
+        os.path.expanduser("~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules"),
+    ]
+    node_modules_candidates.extend(glob.glob(os.path.expanduser(
+        "~/.cache/codex-runtimes/*/dependencies/node/node_modules")))
+    node_modules = next((p for p in node_modules_candidates
+                         if p and os.path.isdir(os.path.join(p, "@oai", "artifact-tool"))), None)
+    if not node_modules:
+        raise RuntimeError("未找到 Codex workspace artifact-tool 运行时；请在 Codex 桌面环境中执行标注命令")
+    node_candidates = [
+        os.environ.get("CODEX_WORKSPACE_NODE", ""),
+        os.path.join(os.path.dirname(node_modules), "bin", "node"),
+        shutil.which("node") or "",
+    ]
+    node = next((p for p in node_candidates if p and os.path.isfile(p) and os.access(p, os.X_OK)), None)
+    if not node:
+        raise RuntimeError("未找到可用 Node.js 运行时")
+    return node, node_modules
+
+
+def _run_review_workbook_helper(mode, input_path, output_path):
+    node, node_modules = _find_artifact_runtime()
+    if not os.path.exists(REVIEW_WORKBOOK_HELPER):
+        raise RuntimeError(f"缺少工作簿助手: {REVIEW_WORKBOOK_HELPER}")
+    with tempfile.TemporaryDirectory(prefix="ota_review_") as tmpdir:
+        os.symlink(node_modules, os.path.join(tmpdir, "node_modules"), target_is_directory=True)
+        helper = os.path.join(tmpdir, "news_review_workbook.mjs")
+        shutil.copy2(REVIEW_WORKBOOK_HELPER, helper)
+        proc = subprocess.run(
+            [node, helper, mode, os.path.abspath(input_path), os.path.abspath(output_path)],
+            cwd=tmpdir, text=True, capture_output=True)
+        if proc.returncode != 0:
+            raise RuntimeError((proc.stderr or proc.stdout or "工作簿处理失败").strip())
+        return proc.stdout.strip()
+
+
+def export_review_xlsx(path, size=30):
+    rows = build_review_candidates(size=size)
+    if len(rows) < int(size):
+        raise RuntimeError(f"候选新闻不足：需要 {size} 条，实际 {len(rows)} 条")
+    payload = {
+        "generated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "policy_version": POLICY_VERSION,
+        "review_size": int(size),
+        "rows": rows,
+    }
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    with tempfile.NamedTemporaryFile("w", suffix=".json", encoding="utf-8", delete=False) as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+        payload_path = f.name
+    try:
+        _run_review_workbook_helper("export", payload_path, path)
+    finally:
+        try:
+            os.unlink(payload_path)
+        except OSError:
+            pass
+    print(f"Review workbook exported: {path} ({len(rows)} rows, policy={POLICY_VERSION})")
+    return 0
+
+
+def _validate_and_merge_labels(rows, labels_path=None):
+    labels_path = labels_path or MANUAL_LABELS_PATH
+    allowed_labels = {"保留", "排除", "不确定", ""}
+    allowed_reasons = {"Hotel非OTA相关", "软广", "评论观点", "低价值", "分类错误", "其他", ""}
+    imported = {}
+    for idx, row in enumerate(rows, 2):
+        label = str(row.get("用户标注", "") or "").strip()
+        reason = str(row.get("排除原因", "") or "").strip()
+        notes = str(row.get("备注", "") or "").strip()
+        if label not in allowed_labels:
+            raise ValueError(f"第 {idx} 行用户标注无效: {label}")
+        # 用户可能在“排除原因”列补充自然语言。明确写明“同一新闻只要一个”时，
+        # 即使未点下拉，也按重复事件排除；其他自由文本保存在备注并映射到标准原因。
+        if not label and reason and re.search(r"同一(?:新闻|事件)|重复", reason) \
+                and re.search(r"只要一个|重复", reason):
+            label = "排除"
+        if reason and reason not in allowed_reasons:
+            notes = "；".join(x for x in (notes, f"用户说明：{reason}") if x)
+            if re.search(r"软广|优惠|促销", reason, re.I):
+                reason = "软广"
+            elif re.search(r"评论|观点", reason, re.I):
+                reason = "评论观点"
+            elif re.search(r"hotel|酒店", reason, re.I):
+                reason = "Hotel非OTA相关"
+            elif re.search(r"分类", reason):
+                reason = "分类错误"
+            elif re.search(r"低价值|单个机场|航司.*表现", reason):
+                reason = "低价值"
+            else:
+                reason = "其他"
+        if not label:
+            continue
+        if label != "排除" and reason:
+            notes = "；".join(x for x in (notes, f"用户所填原因：{reason}") if x)
+            reason = ""
+        for field in ("标题", "来源", "URL"):
+            if not str(row.get(field, "") or "").strip():
+                raise ValueError(f"第 {idx} 行缺少关键字段: {field}")
+        item = {"url": row.get("URL", ""), "title": row.get("标题", "")}
+        key = _manual_label_key(item)
+        if not key:
+            raise ValueError(f"第 {idx} 行缺少 URL 和标题")
+        if key in imported and imported[key]["label"] != label:
+            raise ValueError(f"第 {idx} 行与前述记录标签冲突: {key}")
+        imported[key] = {
+            "key": key,
+            "url": str(row.get("URL", "") or ""),
+            "title": str(row.get("标题", "") or ""),
+            "source": str(row.get("来源", "") or ""),
+            "date": str(row.get("日期", "") or ""),
+            "label": label,
+            "reason": reason,
+            "notes": notes,
+            "policy_version": POLICY_VERSION,
+            "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        }
+    existing_payload = _load_json_file(labels_path, {"version": 1, "labels": []})
+    existing = {}
+    for row in existing_payload.get("labels", []) if isinstance(existing_payload, dict) else []:
+        if isinstance(row, dict):
+            key = row.get("key") or _manual_label_key(row)
+            if key:
+                existing[key] = row
+    existing.update(imported)
+    payload = {
+        "version": 1,
+        "policy_version": POLICY_VERSION,
+        "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "labels": sorted(existing.values(), key=lambda x: (x.get("date", ""), x.get("title", "")), reverse=True),
+    }
+    return payload, len(imported)
+
+
+def import_review_xlsx(path, labels_path=None):
+    with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as f:
+        rows_path = f.name
+    try:
+        _run_review_workbook_helper("import", path, rows_path)
+        rows = _load_json_file(rows_path, [])
+    finally:
+        try:
+            os.unlink(rows_path)
+        except OSError:
+            pass
+    payload, count = _validate_and_merge_labels(rows, labels_path)
+    target = labels_path or MANUAL_LABELS_PATH
+    tmp = target + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, target)
+    global _MANUAL_LABEL_CACHE
+    _MANUAL_LABEL_CACHE = None
+    print(f"Imported {count} labeled rows into {target}")
+    # Default project annotations should affect the live cache immediately.
+    # Previously the labels were saved while modules remained stale until a
+    # later successful network fetch.
+    if labels_path is None and os.path.exists(OUTPUT):
+        reprocess_cached_news()
+    return 0
+
+
+def reprocess_cached_news(retry_translation=False):
+    """Apply current deterministic rules to cached + previously rejected items."""
+    news_data = _load_json_file(OUTPUT, {})
+    if not news_data:
+        raise RuntimeError(f"新闻缓存不存在或已损坏: {OUTPUT}")
+
+    # Re-introduce the rejection pool so a later manual KEEP can restore an item.
+    rejected = _load_json_file(REJECTED_OUTPUT, {})
+    existing = set()
+    for section in ("international", "domestic"):
+        for items in (news_data.get(section) or {}).values():
+            if isinstance(items, list):
+                for item in items:
+                    item.pop("folded_into", None)
+                    key = _manual_label_key(item)
+                    if key:
+                        existing.add(key)
+    for item in rejected.get("items", []) if isinstance(rejected, dict) else []:
+        if not isinstance(item, dict):
+            continue
+        key = _manual_label_key(item)
+        if not key or key in existing:
+            continue
+        section = item.get("section") if item.get("section") in ("international", "domestic") else "international"
+        category = item.get("category") or ("industry_news" if section == "international" else "china_industry")
+        news_data.setdefault(section, {}).setdefault(category, []).append(dict(item))
+        existing.add(key)
+
+    news_data = refilter_cached_domestic(news_data)
+    news_data = reclassify_cached_traveldaily(news_data)
+    intl = news_data.get("international", {}).get("industry_news", [])
+    news_data["international"]["industry_news"] = filter_travel_relevance(intl)
+    if retry_translation:
+        news_data["international"]["industry_news"] = retry_cached_translations(
+            news_data["international"]["industry_news"])
+    news_data = run_selection_pipeline(news_data)
+    news_data = prepare_chinese_news_display(news_data)
+    save_translation_cache()
+    news_data = backfill_summary_fields(news_data)
+    news_data = route_to_modules(news_data)
+    news_data["selection_report"]["quality"] = data_quality_check(news_data)
+    news_data["policy_version"] = POLICY_VERSION
+    news_data["policy_reprocessed_at"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    save_cache(news_data)
+    print("  [Cache reprocess] " + " | ".join(
+        f"{k}={len(v)}" for k, v in news_data.get("modules", {}).items()))
     return news_data
 
 
@@ -4181,16 +5111,16 @@ def main(fast_mode=False):
             intl_news = translate_news_items(intl_news)
         else:
             # 传统处理路径 (快速模式或无 AI)
-            intl_news = translate_news_items(intl_news)
-            intl_news = filter_and_rank_news(intl_news)
-            print(f"  After traditional filtering: {len(intl_news)} items")
+            # Translation is deferred until after cache merge, retention,
+            # selection and dedupe.  Screening rules are bilingual, so there is
+            # no reason to translate hundreds of candidates that will be rejected.
+            print(f"  Translation deferred until after final screening: {len(intl_news)} candidates")
 
         # 2d. 快速模式: 轻量处理
         if fast_mode and AI_MODULE_AVAILABLE:
             intl_news = process_news_fast(intl_news)
         elif fast_mode and not AI_MODULE_AVAILABLE:
-            intl_news = filter_and_rank_news(intl_news)
-            print(f"  After fast filtering: {len(intl_news)} items")
+            print(f"  Fast mode keeps full candidate pool for unified selection: {len(intl_news)} items")
 
         news_data["international"]["industry_news"] = intl_news
     except Exception as e:
@@ -4233,6 +5163,7 @@ def main(fast_mode=False):
 
     # 缓存中的旧条目也必须经过当前国内分源规则，不能因缓存合并绕过过滤。
     news_data = refilter_cached_domestic(news_data)
+    news_data = reclassify_cached_traveldaily(news_data)
 
     # ── 合并后重过滤：清理旧缓存中相关性过滤上线前的遗留噪音 ──
     intl_list = news_data.get("international", {}).get("industry_news", [])
@@ -4257,6 +5188,14 @@ def main(fast_mode=False):
     # ── 统一筛选管道（§9, 2026-08-18）: 实体识别→硬排除→重点公司→基本面评分 ──
     # 新抓取 + 保留期内旧缓存合并后全量执行同一套规则; 被拒条目移出列表并写诊断JSON。
     news_data = run_selection_pipeline(news_data)
+
+    # Translate only final retained international news.  This also retries
+    # English cache fallbacks on later daily runs without spending calls on
+    # rejected ads/opinions/noise.
+    retained_intl = news_data.get("international", {}).get("industry_news", [])
+    translate_news_items(retained_intl)
+    news_data = prepare_chinese_news_display(news_data)
+    save_translation_cache()
 
     # ── 摘要证据字段补齐（§12: 标题重复守卫在 backfill 内）──
     news_data = backfill_summary_fields(news_data)
@@ -4340,5 +5279,34 @@ def main(fast_mode=False):
 
 
 if __name__ == "__main__":
-    fast = "--fast" in sys.argv
-    sys.exit(main(fast_mode=fast))
+    def _cli_value(flag, default=None):
+        try:
+            return sys.argv[sys.argv.index(flag) + 1]
+        except (ValueError, IndexError):
+            return default
+
+    try:
+        if "--export-review-xlsx" in sys.argv:
+            out_path = _cli_value("--export-review-xlsx")
+            if not out_path:
+                raise ValueError("--export-review-xlsx 需要输出路径")
+            review_size = int(_cli_value("--review-size", "30"))
+            sys.exit(export_review_xlsx(out_path, review_size))
+        if "--import-review-xlsx" in sys.argv:
+            in_path = _cli_value("--import-review-xlsx")
+            if not in_path:
+                raise ValueError("--import-review-xlsx 需要输入路径")
+            sys.exit(import_review_xlsx(in_path))
+        if "--export-policy-diff" in sys.argv:
+            out_path = _cli_value("--export-policy-diff")
+            if not out_path:
+                raise ValueError("--export-policy-diff 需要输出路径")
+            sys.exit(export_policy_diff(out_path))
+        if "--reprocess-cache" in sys.argv:
+            reprocess_cached_news(retry_translation="--retry-translation" in sys.argv)
+            sys.exit(0)
+        fast = "--fast" in sys.argv
+        sys.exit(main(fast_mode=fast))
+    except (ValueError, RuntimeError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)

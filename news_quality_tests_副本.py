@@ -40,6 +40,13 @@ sys.path.insert(0, HERE)
 import fetch_news_副本 as fn            # noqa: E402
 import news_ai_helpers_副本 as hai      # noqa: E402
 
+# 离线 fixture 不得读写生产翻译缓存，否则同一标题在不同机器上会得到
+# 「已翻译/未翻译」两种测试结果。
+TEST_TRANSLATION_CACHE_PATH = os.path.join(HERE, "_translation_cache_test_tmp.json")
+fn.TRANSLATION_CACHE_PATH = TEST_TRANSLATION_CACHE_PATH
+fn.TRANSLATE_CACHE.clear()
+fn._TRANSLATE_CACHE_DIRTY = False
+
 PASS = 0
 FAIL = 0
 FAILURES = []
@@ -381,30 +388,31 @@ EDGAR_JSON = {
 
 def make_cache():
     """构造带历史 fetch_status 的有效缓存。"""
+    recent = (fn.datetime.date.today() - fn.datetime.timedelta(days=1)).isoformat()
     return {
         "international": {
             "sec_filings": [
-                {"date": "2026-08-15", "company": "BKNG", "type": "10-Q",
+                {"date": recent, "company": "BKNG", "type": "10-Q",
                  "title": "季度报告 (10-Q)", "url": "https://www.sec.gov/x1", "source": "SEC EDGAR"},
             ],
             "industry_news": [
-                {"date": "2026-08-16", "title": "Airbnb上线新营销引擎",
+                {"date": recent, "title": "Airbnb上线新营销引擎",
                  "url": "https://www.traveldaily.cn/article/190600", "source": "环球旅讯",
                  "summary": "Airbnb面向房东推出营销工具。"},
             ],
         },
         "domestic": {
             "china_industry": [
-                {"date": "2026-08-17", "title": "飞猪帮帮正式上线",
+                {"date": recent, "title": "飞猪帮帮正式上线",
                  "url": "https://www.traveldaily.cn/article/190601", "source": "环球旅讯",
                  "summary": "飞猪上线旅行助手功能。"},
             ],
             "regulatory": [
-                {"date": "2026-08-17", "title": "文旅部发布暑期市场数据",
+                {"date": recent, "title": "文旅部发布暑期市场数据",
                  "url": "https://www.mct.gov.cn/t1", "source": "文旅部", "summary": ""},
             ],
             "company_news": [
-                {"date": "2026-08-17", "title": "中国东航新增上海伦敦航线",
+                {"date": recent, "title": "中国东航新增上海伦敦航线",
                  "url": "https://news.google.com/x9", "source": "百度新闻",
                  "company": "中国东航", "summary": ""},
             ],
@@ -550,7 +558,8 @@ def test_source_status():
     bbg = [i for i in data["international"]["industry_news"]
            if "Bloomberg" in str(i.get("source", ""))]
     check("C4d Bloomberg条目公开片段保留",
-          bbg and any(len(i.get("summary") or "") > 10 for i in bbg))
+          bbg and any(len(i.get("summary_original") or i.get("summary") or "") > 10
+                      for i in bbg))
 
     # C5 mark_source 失败不覆盖 last_success_at
     reset_module_state()
@@ -575,7 +584,7 @@ G_ACCEPT = [
     ("Expedia收购AI旅行规划平台Layla", "Skift", "international", "industry_news", True, {}),
     ("Airbnb重建营销引擎", "Bloomberg Markets", "international", "industry_news", True, {}),
     ("豆包直订酒店上线", "环球旅讯", "domestic", "china_industry", True, {}),
-    ("某酒店集团公布季度RevPAR增长8%，净开店120家", "Skift", "international", "industry_news", True, {}),
+    ("某酒店集团公布季度RevPAR增长8%，净开店120家", "Skift", "international", "industry_news", False, {}),
     ("中国东航公布7月运营数据，旅客运输量同比增长12%，并推出提前14天免费退改",
      "披露易·中国东航", "domestic", "company_news", True, {"company": "中国东航"}),
     ("文化和旅游部发布暑期旅游市场数据", "文旅部", "domestic", "regulatory", True, {}),
@@ -635,6 +644,11 @@ def test_selection():
                    "international", "industry_news")
     check("G3 booking/trip 词边界防误判",
           fn.identify_entity(t1) != "BKNG" and fn.identify_entity(t2) != "TCOM")
+    check("G3b 英文公司名紧邻中文仍命中相关性",
+          any(p.search("Expedia集团任命新任首席财务官")
+              for p in fn.TRAVEL_KEYWORD_PATTERNS)
+          and any(p.search("Agoda推出AI客房选择工具")
+                  for p in fn.TRAVEL_KEYWORD_PATTERNS))
 
     # G4 被拒诊断 JSON 结构（不展示, 仅留档）
     data = {"international": {"industry_news": [
@@ -686,6 +700,125 @@ def test_selection():
           "我们实测完整流程" not in joined and "超哥短评" not in joined
           and "焕新升级再出发" not in joined)
     check("G6b 旧缓存合法条目(飞猪帮帮)经筛选保留", "飞猪帮帮正式上线" in joined)
+
+    # G7 v2主题规则固定案例
+    cases = [
+        ("Google’s Agentic Hotel Booking Tool Comes to AI Mode", "Skift", True),
+        ("Ixigo Tests Packaged Tours for Trains, Uber Becomes a New Distribution Engine", "Skift", True),
+        ("Marriott Heading for 100 Cities in India", "Skift", False),
+        ("Expedia Executive Sells 3,133 Shares for $1 Million", "Expedia", True),
+        ("Airbnb And Expedia Stocks Are Riding High. Here's Why.", "Expedia", False),
+        ("Get $180 Back After Spending $300 at Expedia With Capital One Shopping [Targeted]", "Expedia", False),
+        ("Why boutique hotel founders eventually sell", "Skift", False),
+        ("Skift 全球论坛前瞻：维珍航空首席执行官谈人工智能", "Skift", False),
+        ("案例与合作伙伴征集｜2026下半年AI旅游应用洞察报告", "环球旅讯", False),
+        ("Expedia 集团公司 尽管当天亏损，但该股的表现仍优于竞争对手", "Expedia", False),
+    ]
+    case_results = []
+    for title, source, expected in cases:
+        item = _sel_item(title, source, "international", "industry_news")
+        if "Google" in title:
+            item["summary"] = "Google launched an agentic AI hotel booking tool for travelers."
+        if "Ixigo" in title:
+            item["summary"] = "The travel platform launched packaged tours and a new Uber distribution channel."
+        kept, _ = fn.select_news_item(item, "international", "industry_news")
+        case_results.append(kept == expected)
+    check("G7 v3保留Google/Ixigo/售股事实并排除Hotel扩张、股价评论、返现和观点", all(case_results))
+
+    # G8 取消统一筛选前的每来源10条上限
+    many = [_sel_item(f"Travel platform launches booking product {i}", "Skift",
+                      "international", "industry_news") for i in range(12)]
+    check("G8 filter_and_rank_news 默认不再按来源截断10条",
+          len(fn.filter_and_rank_news(many)) == 12)
+
+    # G9 环球旅讯跨境科技交易分流
+    td_cases = [
+        ("差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权", "distribute"),
+        ("度假租赁宾客服务平台VayKLife收购Xplorie", "traveltech"),
+        ("差旅平台Spotnana收购会议管理平台Troop", "traveltech"),
+    ]
+    check("G9 环球旅讯三条海外交易识别为国际",
+          all(fn._td_is_domestic(t, "", ch) is False for t, ch in td_cases))
+    check("G9a 海外交易即使来自express入口也进国际",
+          fn._td_is_domestic(td_cases[0][0], "", "express") is False and
+          fn._td_is_domestic(td_cases[2][0], "", "express") is False)
+    vayk = _sel_item(td_cases[1][0], "环球旅讯", "international", "industry_news")
+    vayk["summary"] = "度假租赁宾客服务平台VayKLife完成对旅游科技平台Xplorie的收购。"
+    vayk_kept, _ = fn.select_news_item(vayk, "international", "industry_news")
+    check("G9b 两条人工样本确认后排除度假租赁宾客服务并购", not vayk_kept)
+
+    # G10 人工标注校验与精确覆盖结构
+    sample_rows = [{"标题": "Test", "来源": "Skift", "日期": "2026-08-28",
+                    "URL": "https://example.com/a", "用户标注": "保留",
+                    "排除原因": "", "备注": "边界样本"}]
+    payload, imported = fn._validate_and_merge_labels(sample_rows,
+        labels_path=os.path.join(HERE, "_labels_missing.json"))
+    check("G10 人工标注生成精确URL覆盖记录",
+          imported == 1 and payload["labels"][0]["label"] == "保留"
+          and payload["labels"][0]["key"].startswith("url:"))
+    bad_label_ok = conflict_ok = missing_ok = False
+    try:
+        fn._validate_and_merge_labels([{**sample_rows[0], "用户标注": "通过"}],
+                                      labels_path=os.path.join(HERE, "_labels_missing.json"))
+    except ValueError:
+        bad_label_ok = True
+    try:
+        fn._validate_and_merge_labels([sample_rows[0], {**sample_rows[0], "用户标注": "排除"}],
+                                      labels_path=os.path.join(HERE, "_labels_missing.json"))
+    except ValueError:
+        conflict_ok = True
+    try:
+        fn._validate_and_merge_labels([{**sample_rows[0], "URL": ""}],
+                                      labels_path=os.path.join(HERE, "_labels_missing.json"))
+    except ValueError:
+        missing_ok = True
+    check("G10b 导入拒绝非法标签、重复冲突和关键字段缺失",
+          bad_label_ok and conflict_ok and missing_ok)
+    normalized, normalized_count = fn._validate_and_merge_labels([
+        {**sample_rows[0], "用户标注": "排除", "排除原因": "这里是评论性内容"},
+        {**sample_rows[0], "URL": "https://example.com/b", "用户标注": "",
+         "排除原因": "其实和上一条是同一新闻，所以只要一个"},
+    ], labels_path=os.path.join(HERE, "_labels_missing.json"))
+    normalized_rows = {x["url"]: x for x in normalized["labels"]}
+    check("G10c 自由文本原因标准化且重复事件备注可隐式排除",
+          normalized_count == 2
+          and normalized_rows["https://example.com/a"]["reason"] == "评论观点"
+          and normalized_rows["https://example.com/b"]["label"] == "排除")
+
+    # G11 30条边界清单稳定且单一来源不超过5条
+    rows = fn.build_review_candidates(size=30)
+    source_counts = {}
+    for row in rows:
+        source_counts[row["source"]] = source_counts.get(row["source"], 0) + 1
+    check("G11 标注候选为30条且每来源最多5条",
+          len(rows) == 30 and max(source_counts.values()) <= 5)
+
+    # G12 所有已确认人工标签必须成为精确回归样本；不确定只留档。
+    confirmed = [x for x in fn.load_manual_labels().values()
+                 if x.get("label") in ("保留", "排除")]
+    label_results = []
+    for labeled in confirmed:
+        item = {"date": labeled.get("date", "2026-08-28"),
+                "title": labeled.get("title", ""), "summary": "",
+                "source": labeled.get("source", ""), "url": labeled.get("url", "")}
+        category = "sec_filings" if "SEC EDGAR" in item["source"] else "industry_news"
+        kept, _ = fn.select_news_item(item, "international", category)
+        label_results.append(kept == (labeled.get("label") == "保留"))
+    check("G12 全部确认标注维持精确回归一致", bool(confirmed) and all(label_results))
+
+    # G13 旧缓存翻译失败后，下次日更必须重试，不能永久留英文。
+    old_translate = fn.translate_text
+    old_translate_fails = fn._TRANSLATE_FAILS
+    try:
+        fn._TRANSLATE_FAILS = 0
+        fn.translate_text = lambda text, max_chars=500: "VayKLife收购Xplorie，整合度假租赁配套与活动"
+        retry_item = {"title": "VayKLife acquires Xplorie to combine vacation rental amenities and activities",
+                      "summary": "", "source": "PhocusWire"}
+        fn.retry_cached_translations([retry_item])
+    finally:
+        fn.translate_text = old_translate
+        fn._TRANSLATE_FAILS = old_translate_fails
+    check("G13 缓存中未翻译英文标题会在后续日更重试", "收购" in retry_item["title"])
 
     # 清理临时诊断文件
     for tmpf in ("_rejected_runmain_tmp.json", "_rejected_test_tmp.json"):
@@ -763,17 +896,18 @@ def test_ceair_narrowing():
 def test_module_routing():
     """5模块结构 + IR 路由 + 同事件去重 + 国内公司标签"""
     print("\n— I. 模块路由验收 —")
+    recent = (fn.datetime.date.today() - fn.datetime.timedelta(days=1)).isoformat()
 
     # 构造 fixture: 覆盖5个模块的所有路径
     fixture = {
         "international": {
             "sec_filings": [
-                {"date": "2026-08-15", "title": "Booking Holdings 10-Q 季度报告",
+                {"date": recent, "title": "Booking Holdings 10-Q 季度报告",
                  "company": "BKNG", "type": "10-Q", "url": "https://sec.gov/1",
                  "source": "SEC EDGAR", "entity_id": "BKNG", "selection_score": 100,
                  "selection_status": "kept", "summary": "Booking Holdings于2026-08-15向SEC提交10-Q",
                  "event_id": "ev_earnings_bkng_q2"},
-                {"date": "2026-08-15", "title": "Booking Holdings Q2 财报新闻稿",
+                {"date": recent, "title": "Booking Holdings Q2 财报新闻稿",
                  "url": "https://ir.bookingholdings.com/q2", "source": "Booking Holdings IR",
                  "entity_id": "BKNG", "selection_score": 95, "selection_status": "kept",
                  "summary": "Q2 营收 55 亿美元", "event_id": "ev_earnings_bkng_q2",
@@ -781,24 +915,24 @@ def test_module_routing():
             ],
             "industry_news": [
                 # BKNG 实质动态 → intl_core_company
-                {"date": "2026-08-17", "title": "Booking Holdings 收购 AI 初创公司",
+                {"date": recent, "title": "Booking Holdings 收购 AI 初创公司",
                  "url": "https://skift.com/1", "source": "Skift",
                  "entity_id": "BKNG", "is_core_company": True,
                  "substantive_company_change": True,
                  "selection_score": 78, "selection_status": "kept",
                  "content_type": "ma_funding"},
                 # 媒体财报新闻（BKNG）→ intl_disclosures（不应进核心公司）
-                {"date": "2026-08-15", "title": "Booking Q2 财报超预期",
+                {"date": recent, "title": "Booking Q2 财报超预期",
                  "url": "https://skift.com/2", "source": "Skift",
                  "entity_id": "BKNG", "selection_score": 85, "selection_status": "kept",
                  "content_type": "earnings", "event_id": "ev_earnings_bkng_q2"},
                 # 国际行业（酒店）
-                {"date": "2026-08-17", "title": "Marriott announces new luxury hotel brand",
+                {"date": recent, "title": "Marriott announces new luxury hotel brand",
                  "url": "https://skift.com/3", "source": "Skift",
                  "selection_score": 65, "selection_status": "kept",
                  "content_type": "hotel"},
                 # 国际行业（航空）
-                {"date": "2026-08-16", "title": "Delta reports monthly traffic data",
+                {"date": recent, "title": "Delta reports monthly traffic data",
                  "url": "https://phocuswire.com/1", "source": "PhocusWire",
                  "selection_score": 60, "selection_status": "kept",
                  "content_type": "airline"},
@@ -807,37 +941,37 @@ def test_module_routing():
         "domestic": {
             "china_industry": [
                 # 携程动态 → dom_industry（公司标签）
-                {"date": "2026-08-17", "title": "携程发布 2026 Q2 财报",
+                {"date": recent, "title": "携程发布 2026 Q2 财报",
                  "url": "https://traveldaily.cn/1", "source": "环球旅讯",
                  "entity_id": "TCOM", "company": "携程",
                  "selection_score": 80, "selection_status": "kept",
                  "content_type": "earnings"},
                 # 飞猪动态 → dom_industry
-                {"date": "2026-08-17", "title": "飞猪帮帮正式上线",
+                {"date": recent, "title": "飞猪帮帮正式上线",
                  "url": "https://traveldaily.cn/2", "source": "环球旅讯",
                  "entity_id": "FLIGGY", "company": "飞猪",
                  "selection_score": 70, "selection_status": "kept"},
                 # 东航（命中业务影响词）→ dom_industry（不进核心公司，因国内无此模块）
-                {"date": "2026-08-17", "title": "东航调整国内航线燃油附加费",
+                {"date": recent, "title": "东航调整国内航线燃油附加费",
                  "url": "https://caacnews.com.cn/1", "source": "中国民航网",
                  "entity_id": "CEAIR", "company": "中国东航",
                  "selection_score": 60, "selection_status": "kept"},
             ],
             "regulatory": [
                 # 披露易公告 → dom_disclosures
-                {"date": "2026-08-15", "title": "中国东航 2026 年 7 月运营数据公告",
+                {"date": recent, "title": "中国东航 2026 年 7 月运营数据公告",
                  "url": "https://hkex.com/1", "source": "披露易",
                  "entity_id": "CEAIR", "company": "中国东航",
                  "selection_score": 90, "selection_status": "kept",
                  "content_type": "operating_data"},
                 # 民航局旅客量数据 → dom_disclosures
-                {"date": "2026-08-15", "title": "民航局 7 月旅客量统计",
+                {"date": recent, "title": "民航局 7 月旅客量统计",
                  "url": "https://caac.gov.cn/1", "source": "民航局",
                  "selection_score": 85, "selection_status": "kept",
                  "content_type": "operating_data"},
             ],
             "company_news": [
-                {"date": "2026-08-17", "title": "东航国内客票提前14天免费退改",
+                {"date": recent, "title": "东航国内客票提前14天免费退改",
                  "url": "https://caacnews.com.cn/2", "source": "中国民航网",
                  "entity_id": "CEAIR", "company": "中国东航",
                  "selection_score": 60, "selection_status": "kept"},
@@ -876,7 +1010,7 @@ def test_module_routing():
     check("I4a Marriott 酒店 新闻进入 intl_industry",
           any("Marriott" in i.get("title", "") for i in intl_ind))
     check("I4b Delta 航空 新闻进入 intl_industry",
-          any("Delta" in i.get("title", "") for i in intl_ind))
+          any("Delta" in i.get("title", "") or "达美" in i.get("title", "") for i in intl_ind))
     check("I4c intl_industry 不含 BKNG 实质动态",
           not any(i.get("entity_id") == "BKNG" and i.get("substantive_company_change") for i in intl_ind))
 
@@ -908,8 +1042,156 @@ def test_module_routing():
         main_card = bkng_earnings[0]
         # 主卡片应有 related_sources 合并其他来源
         rel = main_card.get("related_sources", []) or []
-        check("I8b 主卡片 related_sources 含其他来源",
+    check("I8b 主卡片 related_sources 含其他来源",
               len(rel) >= 1)
+
+    # I9 媒体财报/普通媒体经营稿不能成为披露卡片
+    media = {"date": "2026-08-18", "title": "Airline revenue rises after new routes",
+             "source": "Skift", "content_type": "earnings", "selection_score": 70}
+    routed_media = fn._route_single_item(media, "international", "industry_news")
+    check("I9 普通媒体财务报道不进入官方披露", routed_media == "intl_industry")
+    check("I9a 国际披露卡片仅来自SEC或官方IR",
+          all(i.get("source") == "SEC EDGAR" or
+              any(k in str(i.get("source", "")) for k in fn.IR_SOURCE_KEYWORDS)
+              for i in intl_disc))
+    media_cn = {"date": "2026-08-18", "title": "Expedia公布季度营收增长8%",
+                "summary": "媒体报道Expedia最新季度经营结果。", "source": "环球旅讯",
+                "content_type": "earnings", "entity_id": "EXPE",
+                "substantive_company_change": True, "selection_score": 70}
+    routed_media_cn = fn._route_single_item(media_cn, "domestic", "china_industry")
+    check("I9b 国内媒体财报报道不进入官方披露", routed_media_cn == "intl_core_company")
+    sale = {"date": "2026-08-29", "title": "Expedia insider sells 2,000 shares",
+            "summary": "A disclosed insider transaction.", "source": "Travel Weekly",
+            "content_type": "management_org", "entity_id": "EXPE",
+            "substantive_company_change": False, "selection_score": 60}
+    check("I9c 媒体高管售股事实进入国际行业而非核心动态",
+          fn._route_single_item(sale, "international", "industry_news") == "intl_industry")
+    stock_fact = {"date": "2026-08-29", "title": "Expedia该股表现优于竞争对手",
+                  "summary": "报道当日股价表现。", "source": "MarketWatch",
+                  "content_type": "earnings", "entity_id": "EXPE",
+                  "substantive_company_change": True, "selection_score": 60}
+    check("I9d 人工保留的股价事实只进国际行业",
+          fn._route_single_item(stock_fact, "international", "industry_news") == "intl_industry")
+
+    # I10 核心公司同一AI重组事件7天内折叠
+    core_dupes = []
+    for date, title, source in [
+        ("2026-08-26", "Expedia Cuts Eight Executives as AI Reshapes Its Travel Business", "Expedia"),
+        ("2026-08-23", "Expedia Cuts Eight Tech Leaders in AI-Driven Reorganization", "Expedia"),
+        ("2026-08-21", "Expedia Group makes AI-motivated leadership cuts", "PhocusWire"),
+        ("2026-08-20", "Expedia reorganizes around AI and cuts eight executives", "Skift"),
+    ]:
+        item = {"date": date, "title": title, "summary": title, "source": source,
+                "entity_id": "EXPE", "content_type": "management_org",
+                "selection_score": 75, "substantive_company_change": True}
+        core_dupes.append(item)
+    folded = fn.group_core_company_events(core_dupes)
+    check("I10 EXPE同一AI重组事件7天内只留一张卡片",
+          len([x for x in folded if not x.get("folded_into")]) == 1)
+
+    # I11: official IR acquisition must return its accumulated records to the
+    # caller.  A historical `return 0` made all three successful fetches vanish.
+    ir_fixture = [{"date": "2026-08-26", "title": "Company launches product",
+                   "url": "https://example.com/release", "summary": ""}]
+    with mock.patch.object(fn, "safe_request", return_value="<rss/>"), \
+         mock.patch.object(fn, "parse_rss", side_effect=lambda *a, **k: copy.deepcopy(ir_fixture)), \
+         mock.patch.object(fn.time, "sleep", return_value=None):
+        ir_items = fn.fetch_ir_press_releases()
+    check("I11 IR抓取结果返回主管线而非丢弃",
+          isinstance(ir_items, list) and len(ir_items) == len(fn.IR_SOURCES) and
+          {x.get("entity_id") for x in ir_items} == {"BKNG", "EXPE", "ABNB"})
+
+    noise_cases = [
+        ("How Expedia's fifth straight beat will impact Expedia investors", "股价/估值评论"),
+        ("Heartland Bank & Trust Co Acquires Shares of Expedia Group EXPE", "被动机构持仓变动"),
+        ("Beyond Border appoints former Airbnb executives as advisors", "前高管在第三方公司履新"),
+        ("Agency Appointed Global Creative Agency of Record for Booking.com", "品牌营销代理宣传"),
+    ]
+    for idx, (title, expected_reason) in enumerate(noise_cases, 1):
+        candidate = {"date": "2026-08-28", "title": title, "summary": title,
+                     "source": "Google News", "category": "industry_news"}
+        ok, reason = fn.select_news_item(candidate, "international", "industry_news")
+        check(f"I12.{idx} 核心定向源噪音不进核心动态", not ok and reason == expected_reason)
+
+    regulation = {"date": "2026-08-20",
+                  "title": "Airbnb crackdown: Penang introduces new licensing laws for short-term rentals",
+                  "summary": "Government licensing rules affect short-term rentals.",
+                  "source": "Yahoo", "entity_id": "ABNB", "content_type": "product",
+                  "substantive_company_change": True, "selection_score": 60}
+    check("I13 外部监管行动进国际行业而非核心公司",
+          fn._route_single_item(regulation, "international", "industry_news") == "intl_industry")
+
+    portal_dupes = [
+        {"date": "2026-08-18", "title": "Agoda launches refreshed Partner Portal for accommodation partners",
+         "summary": "Agoda launches a refreshed partner portal.", "source": "TTG Asia",
+         "entity_id": "BKNG", "content_type": "product", "selection_score": 70},
+        {"date": "2026-08-16", "title": "Agoda Unveils Agoda Partner Portal as Platform Role Expands",
+         "summary": "Agoda unveils the partner portal.", "source": "Yahoo Finance",
+         "entity_id": "BKNG", "content_type": "product", "selection_score": 65},
+    ]
+    portal_folded = fn.group_core_company_events(portal_dupes)
+    check("I14 Agoda Partner Portal同事件7天内折叠",
+          len([x for x in portal_folded if not x.get("folded_into")]) == 1)
+
+    abnb_fee = {"date": "2026-08-30",
+                "title": "Airbnb is testing lower service fees for hosts who bring their own guests",
+                "summary": "Airbnb is testing a lower fee policy.", "source": "Skift"}
+    fee_kept, _ = fn.select_news_item(abnb_fee, "international", "industry_news")
+    check("I15a ABNB测试降低服务费识别为核心公司动作",
+          fee_kept and abnb_fee.get("substantive_company_change") and
+          fn._route_single_item(abnb_fee, "international", "industry_news") == "intl_core_company")
+
+    expe_cuts = {"date": "2026-08-21",
+                 "title": "Expedia Group makes AI-motivated leadership cuts",
+                 "summary": "Expedia Group cuts leaders during an AI reorganization.", "source": "PhocusWire"}
+    cuts_kept, _ = fn.select_news_item(expe_cuts, "international", "industry_news")
+    check("I15b EXPE leadership cuts识别为管理层动作并进核心动态",
+          cuts_kept and expe_cuts.get("content_type") == "management_org" and
+          fn._route_single_item(expe_cuts, "international", "industry_news") == "intl_core_company")
+
+    display_fixture = {"international": {"industry_news": [
+        {"title": "Google’s Agentic Hotel Booking Tool Comes to AI Mode",
+         "summary": "English-only summary", "source": "Skift"},
+        {"title": "Untranslated future news title", "summary": "English summary", "source": "Skift"},
+    ]}, "domestic": {}}
+    fn.prepare_chinese_news_display(display_fixture)
+    ready, pending = display_fixture["international"]["industry_news"]
+    check("I16a 已知重要英文标题有确定性中文展示",
+          ready.get("display_ready") is True and "谷歌" in ready.get("title", "") and
+          re.search(r"[\u4e00-\u9fff]", ready.get("summary", "")))
+    check("I16b 翻译失败标题标记pending且不泄漏英文摘要",
+          pending.get("display_ready") is False and pending.get("translation_status") == "pending_summary" and
+          pending.get("summary") == "")
+    no_summary_fixture = {"international": {"industry_news": [
+        {"title": "Expedia集团任命新任首席财务官", "summary": "", "source": "Example"},
+    ]}, "domestic": {}}
+    fn.prepare_chinese_news_display(no_summary_fixture)
+    title_only = no_summary_fixture["international"]["industry_news"][0]
+    check("I16c 无公开摘要时留空且不生成标题占位摘要",
+          title_only.get("display_ready") is True and title_only.get("summary") == "" and
+          not title_only.get("summary_from_title"))
+    fallback_fixture = {"international": {"industry_news": [
+        {"title": "Expedia集团推出新预订工具", "summary": "English summary failed to translate.",
+         "source": "Example"},
+    ]}, "domestic": {}}
+    fn.prepare_chinese_news_display(fallback_fixture)
+    fallback = fallback_fixture["international"]["industry_news"][0]
+    check("I16d 摘要翻译失败保留原文待重试且不生成占位摘要",
+          fallback.get("display_ready") is True and
+          fallback.get("translation_status") == "pending_summary" and
+          fallback.get("summary") == "" and
+          not fallback.get("summary_from_title") and
+          fallback.get("summary_original") == "English summary failed to translate.")
+
+    legacy_fixture = {"international": {"industry_news": [
+        {"title": "Expedia集团任命新任首席财务官",
+         "summary": "公开信息显示，Expedia集团任命新任首席财务官。",
+         "summary_from_title": True, "source": "Example"},
+    ]}, "domestic": {}}
+    fn.prepare_chinese_news_display(legacy_fixture)
+    legacy = legacy_fixture["international"]["industry_news"][0]
+    check("I16e 清理缓存中已有的标题占位摘要",
+          legacy.get("summary") == "" and not legacy.get("summary_from_title"))
 
 
 def main():
@@ -930,6 +1212,10 @@ def main():
     if FAILURES:
         print("Failed:", "; ".join(FAILURES))
     print("=" * 60)
+    try:
+        os.unlink(TEST_TRANSLATION_CACHE_PATH)
+    except OSError:
+        pass
     return 1 if FAIL else 0
 
 
