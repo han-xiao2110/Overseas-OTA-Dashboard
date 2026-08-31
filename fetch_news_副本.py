@@ -150,6 +150,54 @@ def _load_translation_cache():
 TRANSLATE_CACHE = _load_translation_cache()
 _TRANSLATE_CACHE_DIRTY = False
 
+# 公司名是品牌专名，不属于需要翻译的普通词。翻译前用稳定 token 保护，
+# 翻译后再恢复；同时纠正旧缓存中已经产生的中文化公司名。
+_COMPANY_NAME_TOKENS = (
+    (re.compile(r"Booking\s+Holdings", re.I), "ZXQBKNGQXZ", "Booking Holdings"),
+    (re.compile(r"Expedia\s+Group", re.I), "ZXQEXPEQXZ", "Expedia Group"),
+    (re.compile(r"Airbnb", re.I), "ZXQABNBQXZ", "Airbnb"),
+)
+
+
+def _protect_company_names(text):
+    protected = str(text or "")
+    for pattern, token, _canonical in _COMPANY_NAME_TOKENS:
+        protected = pattern.sub(token, protected)
+    return protected
+
+
+def normalize_company_names(text):
+    """恢复并统一核心公司的英文原名，包括历史机翻产物。"""
+    normalized = str(text or "")
+    for _pattern, token, canonical in _COMPANY_NAME_TOKENS:
+        normalized = re.sub(r"\s*".join(map(re.escape, token)), canonical,
+                            normalized, flags=re.I)
+    replacements = (
+        (r"预订控股(?:公司|集团)?|缤客控股(?:公司|集团)?|Booking控股(?:公司|集团)?", "Booking Holdings"),
+        (r"Expedia\s*(?:集团|公司)", "Expedia Group"),
+        (r"爱彼迎", "Airbnb"),
+    )
+    for pattern, canonical in replacements:
+        normalized = re.sub(pattern, canonical, normalized, flags=re.I)
+    return normalized
+
+
+_EMOJI_RE = re.compile(
+    "["
+    "\U0001F1E6-\U0001F1FF"
+    "\U0001F300-\U0001FAFF"
+    "\u2300-\u23FF\u2600-\u27BF"
+    "\u2B00-\u2BFF"
+    "]"
+)
+
+
+def strip_title_emoji(text):
+    """清理新闻标题中的 emoji，同时保留普通中英文标点。"""
+    cleaned = _EMOJI_RE.sub("", str(text or ""))
+    cleaned = re.sub(r"[\u200d\ufe0e\ufe0f\U0001F3FB-\U0001F3FF]", "", cleaned)
+    return re.sub(r"\s{2,}", " ", cleaned).strip()
+
 
 def save_translation_cache():
     """持久化成功译文，避免14天缓存内的同一内容每日重复请求公共翻译端点。"""
@@ -253,9 +301,9 @@ def translate_text(text, max_chars=500):
         return text
     cache_key = hashlib.md5(text.encode()).hexdigest()
     if cache_key in TRANSLATE_CACHE:
-        return TRANSLATE_CACHE[cache_key]
+        return normalize_company_names(TRANSLATE_CACHE[cache_key])
 
-    snippet = text[:max_chars]
+    snippet = _protect_company_names(text[:max_chars])
     # Split by sentence, preserve trailing punctuation; translate each chunk.
     parts = re.split(r'(?<=[.!?])\s+', snippet)
     parts = [p.strip() for p in parts if p.strip()]
@@ -275,7 +323,7 @@ def translate_text(text, max_chars=500):
             time.sleep(0.15)
 
     # 摘要必须整体翻译，不缓存「中英混合」或失败原文。
-    translated = ' '.join(out_chunks) if all_success else text
+    translated = normalize_company_names(' '.join(out_chunks)) if all_success else text
     if translated != text and re.search(r"[\u4e00-\u9fff]", translated):
         global _TRANSLATE_CACHE_DIRTY
         TRANSLATE_CACHE[cache_key] = translated
@@ -2607,9 +2655,16 @@ def prepare_chinese_news_display(news_data):
     """
     for section in ("international", "domestic"):
         for category, items in (news_data.get(section) or {}).items():
-            if not isinstance(items, list) or category == "sec_filings":
+            if not isinstance(items, list):
                 continue
             for item in items:
+                item["title"] = strip_title_emoji(normalize_company_names(item.get("title", "")))
+                if item.get("title_original"):
+                    item["title_original"] = strip_title_emoji(item["title_original"])
+                if item.get("summary"):
+                    item["summary"] = normalize_company_names(item["summary"])
+                if category == "sec_filings":
+                    continue
                 _prepare_ir_chinese_display(item)
                 title = str(item.get("title", "") or "").strip()
                 original = str(item.get("title_original", "") or "").strip()
@@ -2617,9 +2672,9 @@ def prepare_chinese_news_display(news_data):
                 if translated:
                     if not original and title != translated:
                         item["title_original"] = title
-                    item["title"] = translated
-                    title = translated
-                    remember_translation(original, translated)
+                    item["title"] = strip_title_emoji(normalize_company_names(translated))
+                    title = item["title"]
+                    remember_translation(original, title)
                 zh_count = len(re.findall(r"[\u4e00-\u9fff]", title))
                 en_count = len(re.findall(r"[A-Za-z]", title))
                 item["display_ready"] = bool(zh_count >= 4 or (zh_count >= 1 and en_count <= 12))
@@ -2631,13 +2686,14 @@ def prepare_chinese_news_display(news_data):
                     item.pop("summary_status", None)
                     item.pop("summary_generated_at", None)
                     summary = ""
-                mapped_summary = DISPLAY_ZH_SUMMARIES.get(title)
+                mapped_summary = (DISPLAY_ZH_SUMMARIES.get(title) or
+                                  DISPLAY_ZH_SUMMARIES.get(str(translated or "")))
                 if mapped_summary:
-                    item["summary"] = mapped_summary
+                    item["summary"] = normalize_company_names(mapped_summary)
                     item["summary_translated"] = True
                     item["summary_status"] = "generated"
-                    summary = mapped_summary
-                    remember_translation(item.get("summary_original"), mapped_summary)
+                    summary = item["summary"]
+                    remember_translation(item.get("summary_original"), summary)
                 if summary and not re.search(r"[\u4e00-\u9fff]", summary):
                     item.setdefault("summary_original", summary[:200])
                     item["summary"] = ""

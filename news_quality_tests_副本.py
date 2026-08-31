@@ -1401,6 +1401,30 @@ def test_module_routing():
     check("I16e 清理缓存中已有的标题占位摘要",
           legacy.get("summary") == "" and not legacy.get("summary_from_title"))
 
+    naming_fixture = {"international": {"industry_news": [
+        {"title": "🏨 预订控股公司与Expedia集团扩大合作 🚀",
+         "summary": "爱彼迎也参与了此次合作。", "source": "Example"},
+    ]}, "domestic": {}}
+    fn.prepare_chinese_news_display(naming_fixture)
+    named = naming_fixture["international"]["industry_news"][0]
+    check("I16f 核心公司名保留英文原名",
+          named.get("title") == "Booking Holdings与Expedia Group扩大合作" and
+          named.get("summary") == "Airbnb也参与了此次合作。")
+    check("I16g 新闻标题清除emoji",
+          not fn._EMOJI_RE.search(named.get("title", "")))
+
+    protected_calls = []
+    old_chunk = fn._translate_chunk
+    try:
+        fn._translate_chunk = lambda text: protected_calls.append(text) or "ZXQBKNGQXZ宣布与ZXQABNBQXZ合作"
+        protected_translation = fn.translate_text(
+            "Booking Holdings announces a partnership with Airbnb.")
+    finally:
+        fn._translate_chunk = old_chunk
+    check("I16h 翻译请求保护公司专名并恢复原名",
+          protected_calls and "Booking Holdings" not in protected_calls[0] and
+          protected_translation == "Booking Holdings宣布与Airbnb合作")
+
 
 def main():
     print("=" * 60)

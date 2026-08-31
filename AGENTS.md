@@ -73,6 +73,11 @@ bash deploy_local.sh
 - **统一 14 天**（用户要求只保留最近 2 周新闻）
 - SEC、官方 IR 及国内披露模块也统一保留 14 天，不再对长报告做 28 天例外
 
+### 标题与公司专名
+- `Booking Holdings`、`Expedia Group`、`Airbnb` 必须始终保留英文原名，标题和摘要都不得翻译成中文公司名。
+- 翻译前用专用 token 保护上述名称，翻译后恢复；历史缓存中的“预订控股公司 / Expedia集团 / 爱彼迎”也统一纠正。
+- 新闻标题不展示 emoji；抓取端落盘前清理，前端渲染时再做一层兜底。
+
 ### 处理管线（`fetch_news_副本.py`）
 ```
 RSS/官网抓取(safe_request, TLS 只验证)
@@ -111,8 +116,8 @@ RSS/官网抓取(safe_request, TLS 只验证)
 | `deploy_local.sh` | 本地一键部署 | 紧急手动上线用 |
 | `news_ai_helpers_副本.py` | AI 辅助模块 | ⚠️ 已禁用（AI_MODULE_AVAILABLE=False） |
 | `agent_translate_副本.py` | AI 翻译桥接 | ⚠️ 已禁用（改用 deep-translator） |
-| `news_quality_tests_副本.py` | 离线质量测试（138 项） | 不含 AI 依赖 |
-| `news_smoke_副本.js` | 前端烟雾测试（42 项） | |
+| `news_quality_tests_副本.py` | 离线质量测试（152 项） | 不含 AI 依赖 |
+| `news_smoke_副本.js` | 前端烟雾测试（51 项） | |
 | `market_smoke_副本.js` | 市场行情测试（32 项） | |
 | `translation_cache_副本.json` | 成功译文持久缓存 | GitHub Actions 每次更新后回仓库 |
 | `requirements.txt` | Python 依赖 | yfinance, feedparser, deep-translator, openpyxl, requests, beautifulsoup4, certifi |
@@ -171,10 +176,10 @@ RSS/官网抓取(safe_request, TLS 只验证)
 # 语法检查
 python3 -c "import ast; [ast.parse(open(f).read()) for f in ['fetch_news_副本.py','fetch_stock_prices_副本.py','generate_副本.py']]; print('AST OK')"
 
-# 离线质量测试（149 项）
+# 离线质量测试（152 项）
 python3 news_quality_tests_副本.py
 
-# 前端烟雾测试（49 项）
+# 前端烟雾测试（51 项）
 node news_smoke_副本.js dashboard.html
 
 # 市场行情测试（32 项）

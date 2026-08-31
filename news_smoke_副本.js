@@ -128,6 +128,16 @@ check('行业文章识别到多家关注公司时完整显示公司标签',
       h('__multiCompanyRender').includes('company-bkng') &&
       h('__multiCompanyRender').includes('company-expe') &&
       h('__multiCompanyRender').indexOf('news-tag-src') < h('__multiCompanyRender').indexOf('news-tag-company'));
+elements['__cleanTitleRender'] = makeEl('__cleanTitleRender');
+renderNewsList('__cleanTitleRender', [{
+  date:'2026-09-01', title:'🏨 预订控股公司与Expedia集团扩大合作 🚀',
+  summary:'爱彼迎参与合作。', source:'Skift', selection_status:'kept'
+}], true);
+check('前端展示层清除标题emoji',
+      !/[🏨🚀]/u.test(h('__cleanTitleRender')));
+check('前端展示层统一公司英文原名',
+      h('__cleanTitleRender').includes('Booking Holdings与Expedia Group') &&
+      h('__cleanTitleRender').includes('Airbnb参与合作'));
 
 console.log('— 国内·行业新闻 (domIndustryList) —');
 check('domIndustryList 有条目', count('domIndustryList') > 0);

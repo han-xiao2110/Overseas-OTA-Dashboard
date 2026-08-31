@@ -1704,6 +1704,18 @@ function escapeHtml(s){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
   });
 }
+function normalizeCompanyNames(s){
+  return String(s==null?'':s)
+    .replace(/预订控股(?:公司|集团)?|缤客控股(?:公司|集团)?|Booking控股(?:公司|集团)?/gi,'Booking Holdings')
+    .replace(/Expedia\s*(?:集团|公司)/gi,'Expedia Group')
+    .replace(/爱彼迎/g,'Airbnb');
+}
+function cleanNewsTitle(s){
+  return normalizeCompanyNames(s)
+    .replace(/[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1FAFF}\u2300-\u23FF\u2600-\u27BF\u2B00-\u2BFF]/gu,'')
+    .replace(/[\u200D\uFE0E\uFE0F\u{1F3FB}-\u{1F3FF}]/gu,'')
+    .replace(/\s{2,}/g,' ').trim();
+}
 function safeExternalUrl(u){
   var s=String(u==null?'':u).trim();
   if(!s) return '';
@@ -1799,20 +1811,21 @@ function renderDisclosures(elId, items){
   if(!visible.length){el.innerHTML='<div class="news-empty">暂无披露与文件</div>';return;}
   var h='';
   visible.forEach(function(n){
+    var displayTitle=cleanNewsTitle(n.title);
     var titleAttr='';
-    if(n.title_original){titleAttr=' title="原文: '+escapeHtml(n.title_original)+'"';}
+    if(n.title_original){titleAttr=' title="原文: '+escapeHtml(cleanNewsTitle(n.title_original))+'"';}
     var url=safeExternalUrl(n.url);
     var dateStr=(n.date_status==='unknown'||!n.date)?'待确认':String(n.date||'');
     h+='<div class="news-item">';
     h+='<div class="news-date">'+escapeHtml(dateStr)+'</div>';
     h+='<div class="news-content">';
     if(url){
-      h+='<div class="news-title"><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer"'+titleAttr+'>'+escapeHtml(n.title)+'</a></div>';
+      h+='<div class="news-title"><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer"'+titleAttr+'>'+escapeHtml(displayTitle)+'</a></div>';
     }else{
-      h+='<div class="news-title"'+titleAttr+'>'+escapeHtml(n.title)+'</div>';
+      h+='<div class="news-title"'+titleAttr+'>'+escapeHtml(displayTitle)+'</div>';
     }
     if(n.summary&&!(n.paywall&&n.summary.indexOf('付费')>=0)){
-      h+='<div class="news-summary">'+escapeHtml(n.summary)+'</div>';
+      h+='<div class="news-summary">'+escapeHtml(normalizeCompanyNames(n.summary))+'</div>';
     }
     h+='<div class="news-meta">';
     // 统一顺序：来源 → 关注公司 → 其他披露类型。
@@ -1835,8 +1848,9 @@ function renderNewsList(elId,items,isIntl){
   if(!visible.length){el.innerHTML='<div class="news-empty">暂无相关新闻</div>';return;}
   var h='';
   visible.forEach(function(n){
+    var displayTitle=cleanNewsTitle(n.title);
     var titleAttr='';
-    if(n.title_original){titleAttr=' title="原文: '+escapeHtml(n.title_original)+'"';}
+    if(n.title_original){titleAttr=' title="原文: '+escapeHtml(cleanNewsTitle(n.title_original))+'"';}
     var url=safeExternalUrl(n.url);
     var dateStr=(n.date_status==='unknown'||!n.date)?'发布时间待确认':String(n.date||'');
     var itemClass='news-item';
@@ -1846,12 +1860,12 @@ function renderNewsList(elId,items,isIntl){
     h+='<div class="news-date">'+escapeHtml(dateStr)+'</div>';
     h+='<div class="news-content">';
     if(url){
-      h+='<div class="news-title"><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer"'+titleAttr+'>'+escapeHtml(n.title)+'</a></div>';
+      h+='<div class="news-title"><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer"'+titleAttr+'>'+escapeHtml(displayTitle)+'</a></div>';
     }else{
-      h+='<div class="news-title"'+titleAttr+'>'+escapeHtml(n.title)+'</div>';
+      h+='<div class="news-title"'+titleAttr+'>'+escapeHtml(displayTitle)+'</div>';
     }
     if(n.summary&&!(n.paywall&&n.summary.indexOf('付费')>=0)){
-      h+='<div class="news-summary">'+escapeHtml(n.summary)+'</div>';
+      h+='<div class="news-summary">'+escapeHtml(normalizeCompanyNames(n.summary))+'</div>';
     }
     h+='<div class="news-meta">';
     // 统一顺序：来源 → 关注公司 → 其他分类。

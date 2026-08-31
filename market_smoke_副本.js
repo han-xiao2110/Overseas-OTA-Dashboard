@@ -90,7 +90,9 @@ check('tooltip formatter 可调用', typeof fmt === 'function');
 if (bkngOpt) {
   const bkngSeries = MKT_DATA.stock_prices.BKNG;
   check('BKNG 日线从 2018 年开始', bkngSeries.dates[0] <= '2018-01-05');
-  check('BKNG 已补齐 2026-08-28 收盘价', bkngSeries.dates[bkngSeries.dates.length - 1] === '2026-08-28' && bkngSeries.close[bkngSeries.close.length - 1] === 205.63);
+  const aug28Index = bkngSeries.dates.indexOf('2026-08-28');
+  check('BKNG 已补齐 2026-08-28 收盘价',
+        aug28Index >= 0 && bkngSeries.close[aug28Index] === 205.63);
   check('BKNG 日线无非法收盘价', bkngSeries.close.every((v) => Number.isFinite(Number(v)) && Number(v) > 0));
   check('财报旗标轴与完整价格区间对齐', bkngOpt.xAxis[1].min <= '2018-01-05' && bkngOpt.xAxis[1].max === bkngSeries.dates[bkngSeries.dates.length - 1]);
 }
