@@ -517,7 +517,9 @@ def reclassify_cached_traveldaily(news_data):
             continue
         if key:
             seen.add(key)
-        domestic = _td_is_domestic(item.get("title", ""), item.get("summary", ""),
+        route_title = " ".join(x for x in (
+            item.get("title", ""), item.get("title_original", "")) if x)
+        domestic = _td_is_domestic(route_title, item.get("summary", ""),
                                    item.get("source_channel", ""))
         item["category"] = "china_industry" if domestic else "industry_news"
         (td_dom if domestic else td_intl).append(item)
@@ -660,6 +662,10 @@ def safe_request(url, timeout=15, retries=2, source=None):
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8",
     }
+    if host and host.endswith("sec.gov"):
+        # SEC要求自动访问明确标识应用和联系邮箱；浏览器伪装UA会被Archives端点403。
+        headers["User-Agent"] = "OTA-Dashboard/1.0 byhanxiaoo@gmail.com"
+        headers["Accept-Encoding"] = "identity"
 
     last_err_code = None
     for attempt in range(retries):
@@ -687,6 +693,9 @@ def safe_request(url, timeout=15, retries=2, source=None):
                 if source:
                     mark_source(source, "failed", error_code=last_err_code)
                 return None
+            elif e.code == 403 and host and host.endswith("sec.gov") and attempt < retries - 1:
+                time.sleep(1.0 + attempt)
+                continue
             else:
                 print(f"  HTTP error {e.code}: {url}")
                 if source:
@@ -790,6 +799,9 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
                     "title": title,
                     "url": doc_url,
                     "source": "SEC EDGAR",
+                    "accession": adsh,
+                    "sec_items": items if isinstance(items, list) else [],
+                    "file_description": file_desc,
                 })
     
     # If search returned nothing, try without entity filter
@@ -814,6 +826,8 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
                     adsh = src.get('adsh', '')
                     display_name = src.get('display_names', [''])[0] if src.get('display_names') else ''
                     file_type = src.get('file_type', '')
+                    file_desc = src.get('file_description', '')
+                    items = src.get('items', [])
                     
                     if not filing_date:
                         continue
@@ -837,6 +851,9 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
                         "title": title,
                         "url": doc_url,
                         "source": "SEC EDGAR",
+                        "accession": adsh,
+                        "sec_items": items if isinstance(items, list) else [],
+                        "file_description": file_desc,
                     })
     
     # Fallback: use the submissions API (works for some companies)
@@ -850,6 +867,8 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
             dates = recent.get('filingDate', [])
             accession = recent.get('accessionNumber', [])
             primary = recent.get('primaryDocument', [])
+            report_dates = recent.get('reportDate', [])
+            descriptions = recent.get('primaryDocDescription', [])
             
             important_forms = set(SEC_FILING_TYPES.keys())
             
@@ -859,6 +878,8 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
                 filing_date = dates[i] if i < len(dates) else ""
                 acc = accession[i] if i < len(accession) else ""
                 doc = primary[i] if i < len(primary) else ""
+                report_date = report_dates[i] if i < len(report_dates) else ""
+                description = descriptions[i] if i < len(descriptions) else ""
                 
                 if not form_type or not filing_date:
                     continue
@@ -879,6 +900,10 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
                     "title": SEC_FILING_TYPES.get(form_type, form_type),
                     "url": base_url,
                     "source": "SEC EDGAR",
+                    "accession": acc,
+                    "primary_document": doc,
+                    "report_date": report_date,
+                    "file_description": description,
                 })
     
     mark_source(f"SEC EDGAR {ticker}",
@@ -1258,6 +1283,392 @@ def enrich_public_summaries(news_data, max_fetches=36):
         enriched = sum(1 for items in groups for item in items if item.get("summary"))
         print(f"  Public detail summaries: attempted {fetched}, summaries present {enriched}")
     return news_data
+
+
+SEC_DETAIL_SUMMARY_VERSION = 3
+
+SEC_8K_ITEM_LABELS = {
+    "1.01": "签订重大协议",
+    "1.02": "终止重大协议",
+    "2.01": "完成资产收购或处置",
+    "2.02": "公布经营业绩或财务状况",
+    "2.03": "新增重大直接财务义务",
+    "2.05": "计提退出或处置相关成本",
+    "2.06": "确认重大资产减值",
+    "3.02": "未注册证券销售",
+    "5.02": "董事或高管变动及薪酬安排",
+    "5.03": "修订公司章程",
+    "5.07": "披露股东表决结果",
+    "7.01": "按Regulation FD披露信息",
+    "8.01": "披露其他重大事项",
+    "9.01": "提交财务报表或附件",
+}
+
+SEC_8K_HEADER_LABELS = {
+    "results of operations and financial condition": "2.02",
+    "regulation fd disclosure": "7.01",
+    "other events": "8.01",
+    "financial statements and exhibits": "9.01",
+}
+
+
+def _sec_local_name(tag):
+    return str(tag or "").rsplit("}", 1)[-1]
+
+
+def _sec_nodes(node, name):
+    return [x for x in node.iter() if _sec_local_name(x.tag) == name]
+
+
+def _sec_text(node, name, default=""):
+    for elem in node.iter():
+        if _sec_local_name(elem.tag) != name:
+            continue
+        raw = "".join(elem.itertext()).strip()
+        if raw:
+            return html_lib.unescape(re.sub(r"\s+", " ", raw))
+    return default
+
+
+def _sec_number(raw):
+    try:
+        return float(str(raw or "").replace(",", "").strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def _sec_count(value):
+    if value is None:
+        return ""
+    if abs(value - round(value)) < 1e-6:
+        return f"{int(round(value)):,}"
+    return f"{value:,.2f}".rstrip("0").rstrip(".")
+
+
+def _sec_money_cn(value):
+    if value is None:
+        return ""
+    if value >= 100_000_000:
+        return f"约{value / 100_000_000:.2f}亿美元".replace(".00", "")
+    if value >= 10_000:
+        return f"约{value / 10_000:.1f}万美元".replace(".0万", "万")
+    return f"约{value:,.0f}美元"
+
+
+def _sec_security_cn(raw):
+    text = str(raw or "").strip()
+    replacements = (
+        (r"Class\s+A\s+Common\s+Stock", "A类普通股"),
+        (r"Class\s+B\s+Common\s+Stock", "B类普通股"),
+        (r"Class\s+A", "A类股"),
+        (r"Class\s+B", "B类股"),
+        (r"Common\s+Stock", "普通股"),
+    )
+    for pattern, repl in replacements:
+        text = re.sub(pattern, repl, text, flags=re.I)
+    return text or "股票"
+
+
+def _sec_officer_title_cn(raw):
+    title = str(raw or "").strip()
+    mappings = (
+        (r"Chief Executive Officer|\bCEO\b", "首席执行官"),
+        (r"Chief Financial Officer|\bCFO\b", "首席财务官"),
+        (r"Chief Legal Officer", "首席法务官"),
+        (r"Chief Strategy Officer", "首席战略官"),
+        (r"Chief Technology Officer|\bCTO\b", "首席技术官"),
+        (r"Chief Accounting Officer", "首席会计官"),
+        (r"President", "总裁"),
+        (r"Secretary|Sec'y", "公司秘书"),
+    )
+    found = [zh for pattern, zh in mappings if re.search(pattern, title, re.I)]
+    return "兼".join(dict.fromkeys(found)) or (title if title else "高管")
+
+
+def _sec_owner_description(root):
+    owner = _sec_text(root, "rptOwnerName") or _sec_text(
+        root, "nameOfPersonForWhoseAccountTheSecuritiesAreToBeSold")
+    roles = []
+    officer_title = _sec_text(root, "officerTitle")
+    if officer_title or _sec_text(root, "isOfficer").lower() in ("1", "true", "yes"):
+        roles.append(_sec_officer_title_cn(officer_title))
+    if _sec_text(root, "isDirector").lower() in ("1", "true", "yes"):
+        roles.append("董事")
+    if _sec_text(root, "isTenPercentOwner").lower() in ("1", "true", "yes"):
+        roles.append("10%以上股东")
+    for rel in _sec_nodes(root, "relationshipToIssuer"):
+        rel_text = "".join(rel.itertext()).strip().lower()
+        if rel_text == "officer":
+            roles.append("高管")
+        elif rel_text == "director":
+            roles.append("董事")
+        elif rel_text:
+            roles.append(rel_text)
+    roles = list(dict.fromkeys(roles))
+    return owner or "申报人", "、".join(roles)
+
+
+def summarize_sec_form4(xml_text, filing=None):
+    """从SEC Form 4原始XML提取申报人、角色和实际交易明细。"""
+    try:
+        root = ET.fromstring(xml_text)
+    except (ET.ParseError, TypeError):
+        return ""
+    if _sec_text(root, "documentType") not in ("4", "4/A"):
+        return ""
+    owner, roles = _sec_owner_description(root)
+    symbol = _sec_text(root, "issuerTradingSymbol") or str((filing or {}).get("company", ""))
+    txns = _sec_nodes(root, "nonDerivativeTransaction")
+    if not txns:
+        txns = _sec_nodes(root, "derivativeTransaction")
+    grouped = {}
+    for txn in txns:
+        code = _sec_text(txn, "transactionCode").upper()
+        shares = _sec_number(_sec_text(txn, "transactionShares"))
+        price = _sec_number(_sec_text(txn, "transactionPricePerShare"))
+        security = _sec_security_cn(_sec_text(txn, "securityTitle"))
+        after = _sec_number(_sec_text(txn, "sharesOwnedFollowingTransaction"))
+        nature = _sec_text(txn, "directOrIndirectOwnership").upper()
+        if not code or shares is None:
+            continue
+        rec = grouped.setdefault(code, {"shares": 0.0, "prices": [], "security": security,
+                                        "after": None, "nature": nature})
+        rec["shares"] += shares
+        if price is not None:
+            rec["prices"].append(price)
+        if after is not None:
+            rec["after"] = after
+        if nature:
+            rec["nature"] = nature
+    if not grouped:
+        return ""
+    action_names = {
+        "S": "出售", "P": "买入", "A": "获得", "M": "行权取得",
+        "F": "为履行税务义务处置", "G": "赠与", "C": "转换取得",
+        "D": "处置", "J": "其他方式变动",
+    }
+    preferred = [c for c in ("C", "M", "A", "P", "S", "F", "G", "D", "J") if c in grouped]
+    details = []
+    for code in preferred[:3]:
+        rec = grouped[code]
+        phrase = f"{action_names.get(code, '变动')}{_sec_count(rec['shares'])}股{rec['security']}"
+        if rec["prices"] and max(rec["prices"]) > 0:
+            low, high = min(rec["prices"]), max(rec["prices"])
+            price_text = f"{low:,.2f}" if abs(high - low) < 0.005 else f"{low:,.2f}–{high:,.2f}"
+            phrase += f"（申报价{price_text}美元/股）"
+        if rec["after"] is not None and code in ("S", "P", "A", "M", "F"):
+            ownership = "间接" if rec["nature"] == "I" else "直接"
+            phrase += f"，交易后{ownership}持有{_sec_count(rec['after'])}股"
+        details.append(phrase)
+    role_text = f"（{roles}）" if roles else ""
+    report_date = _sec_text(root, "periodOfReport")
+    prefix = f"{owner}{role_text}于{report_date}" if report_date else f"{owner}{role_text}"
+    subject = f"{symbol}股票变动：" if symbol else ""
+    summary = prefix + "申报" + subject + "；".join(details) + "。"
+    if _sec_text(root, "aff10b5One").lower() in ("1", "true", "yes"):
+        summary += "文件标注交易依据10b5-1计划执行。"
+    return summary[:360]
+
+
+def summarize_sec_form144(xml_text, filing=None):
+    """从SEC Rule 144原始XML提取拟出售人、股数、估值、日期和经纪商。"""
+    try:
+        root = ET.fromstring(xml_text)
+    except (ET.ParseError, TypeError):
+        return ""
+    if _sec_text(root, "submissionType") != "144":
+        return ""
+    owner, roles = _sec_owner_description(root)
+    infos = _sec_nodes(root, "securitiesInformation")
+    total_units = 0.0
+    total_value = 0.0
+    sale_dates = []
+    securities = []
+    brokers = []
+    for info in infos:
+        units = _sec_number(_sec_text(info, "noOfUnitsSold"))
+        value = _sec_number(_sec_text(info, "aggregateMarketValue"))
+        if units is not None:
+            total_units += units
+        if value is not None:
+            total_value += value
+        date = _sec_text(info, "approxSaleDate")
+        if date:
+            try:
+                date = datetime.datetime.strptime(date, "%m/%d/%Y").strftime("%Y-%m-%d")
+            except ValueError:
+                pass
+            sale_dates.append(date)
+        security = _sec_security_cn(_sec_text(info, "securitiesClassTitle"))
+        if security:
+            securities.append(security)
+        broker = _sec_text(info, "name")
+        if broker:
+            brokers.append(broker)
+    if not infos or total_units <= 0:
+        return ""
+    role_text = f"（{roles}）" if roles else ""
+    date_text = min(sale_dates) if sale_dates else str((filing or {}).get("date", ""))
+    security_text = "、".join(dict.fromkeys(securities)) or "股票"
+    summary = f"{owner}{role_text}拟于{date_text}出售{_sec_count(total_units)}股{security_text}"
+    if total_value:
+        summary += f"，申报总市值{_sec_money_cn(total_value)}"
+    if brokers:
+        summary += f"，经纪商为{'、'.join(dict.fromkeys(brokers))}"
+    summary += "。"
+    return summary[:360]
+
+
+def summarize_sec_report_document(document_text, filing):
+    """从8-K/10-Q/10-K官方正文提取条款或报告期，再生成简短事实摘要。"""
+    raw = str(document_text or "")
+    form = str(filing.get("type", "") or "")
+    if not raw:
+        return ""
+    if form == "8-K":
+        plain = html_lib.unescape(re.sub(r"<[^>]+>", " ", raw))
+        items = re.findall(r"\bITEM\s+(\d+\.\d+)\b", plain, re.I)
+        if not items:
+            items = re.findall(r"\bItem\s+(\d+\.\d+)\b", raw, re.I)
+        if not items:
+            header_items = re.findall(r"ITEM\s+INFORMATION\s*:\s*([^\r\n<]+)", plain, re.I)
+            items = [SEC_8K_HEADER_LABELS.get(x.strip().lower(), "") for x in header_items]
+            items = [x for x in items if x]
+        if items:
+            filing["sec_items"] = list(dict.fromkeys(items))
+            return sec_metadata_summary(filing)
+        return ""
+    if form not in ("10-Q", "10-K"):
+        return ""
+    period = ""
+    for pattern in (
+        r"DocumentPeriodEndDate[^>]*>\s*(\d{4}-\d{2}-\d{2})",
+        r"name=[\"']dei:DocumentPeriodEndDate[\"'][^>]*>\s*(?:<[^>]+>)*\s*(\d{4}-\d{2}-\d{2})",
+        r"CONFORMED\s+PERIOD\s+OF\s+REPORT\s*:\s*(\d{8})",
+    ):
+        match = re.search(pattern, raw, re.I)
+        if not match:
+            continue
+        period = match.group(1)
+        if re.fullmatch(r"\d{8}", period):
+            period = f"{period[:4]}-{period[4:6]}-{period[6:]}"
+        break
+    if not period:
+        human_period = re.search(
+            r"DocumentPeriodEndDate[^>]*>\s*([^<]{4,40})<", raw, re.I)
+        if human_period:
+            try:
+                period = datetime.datetime.strptime(
+                    html_lib.unescape(human_period.group(1)).strip(), "%B %d, %Y"
+                ).strftime("%Y-%m-%d")
+            except ValueError:
+                period = ""
+    if period:
+        filing["report_date"] = period
+        return sec_metadata_summary(filing)
+    return ""
+
+
+def _sec_items_from_filing(filing):
+    items = filing.get("sec_items") or []
+    if isinstance(items, str):
+        items = re.findall(r"\d+\.\d+", items)
+    if not items:
+        items = re.findall(r"\b(?:Item\s*)?(\d+\.\d+)\b", str(filing.get("title", "")), re.I)
+    return list(dict.fromkeys(str(x).replace("Item", "").strip() for x in items if x))
+
+
+def sec_metadata_summary(f):
+    """结构化正文不可用时，按表单元数据生成有业务含义的摘要。"""
+    ticker = str(f.get("company", "") or "")
+    comp = COMPANIES.get(ticker, {}).get("name") or ticker or "该公司"
+    form = str(f.get("type", "") or "")
+    date = str(f.get("date", "") or "")
+    report_date = str(f.get("report_date", "") or "")
+    if form == "8-K":
+        items = _sec_items_from_filing(f)
+        meanings = [SEC_8K_ITEM_LABELS[x] for x in items if x in SEC_8K_ITEM_LABELS]
+        if meanings:
+            return f"{comp}于{date}提交8-K，涉及{'、'.join(meanings)}（Item {', '.join(items)}）。"
+    if form == "10-Q":
+        period = f"截至{report_date}的" if report_date else ""
+        return f"{comp}于{date}提交{period}季度报告，包含当季财务报表、经营情况及风险披露。"
+    if form == "10-K":
+        period = f"截至{report_date}的" if report_date else ""
+        return f"{comp}于{date}提交{period}年度报告，包含全年财务报表、业务回顾及风险披露。"
+    if form in ("SC 13D", "SC 13G"):
+        return f"{comp}于{date}提交大股东持仓申报，披露申报方的持股及受益所有权情况。"
+    if form == "DEFA14A":
+        return f"{comp}于{date}提交补充代理征集材料，内容与股东大会或股东表决事项有关。"
+    if form == "S-1":
+        return f"{comp}于{date}提交证券注册声明，披露拟发行证券及相关业务、财务与风险信息。"
+    return ""
+
+
+def _sec_raw_document_url(filing):
+    url = str(filing.get("url", "") or "")
+    if not url.startswith("https://www.sec.gov/Archives/edgar/data/"):
+        return ""
+    url = re.sub(r"/xsl[^/]+/", "/", url, flags=re.I)
+    if not url.endswith("/"):
+        return url
+    index = safe_request(url + "index.json", timeout=10, retries=2)
+    if not isinstance(index, dict):
+        return ""
+    entries = (index.get("directory") or {}).get("item") or []
+    names = [str(x.get("name", "")) for x in entries if isinstance(x, dict)]
+    form = str(filing.get("type", "") or "")
+    preferred = []
+    if form in ("4", "4/A"):
+        preferred = [n for n in names if re.search(r"(?:ownership|doc4).*\.xml$", n, re.I)]
+    elif form == "144":
+        preferred = [n for n in names if re.search(r"primary_doc\.xml$", n, re.I)]
+    if not preferred:
+        candidates = [x for x in entries if isinstance(x, dict) and re.search(r"\.(?:xml|html?|txt)$", str(x.get("name", "")), re.I)
+                      and not re.search(r"index|headers", str(x.get("name", "")), re.I)]
+        candidates.sort(key=lambda x: int(x.get("size") or 0), reverse=True)
+        preferred = [str(x.get("name", "")) for x in candidates]
+    return url + preferred[0] if preferred else ""
+
+
+def enrich_sec_filing_summaries(filings, max_fetches=50):
+    """读取SEC官方原始文件，为每张披露卡片生成具体、可回归的事实摘要。"""
+    fetched = detailed = 0
+    for filing in filings or []:
+        if not isinstance(filing, dict) or filing.get("type") == "INFO":
+            continue
+        if filing.get("sec_summary_version") == SEC_DETAIL_SUMMARY_VERSION and filing.get("summary"):
+            continue
+        summary = ""
+        form = str(filing.get("type", "") or "")
+        document_forms = ("4", "4/A", "144", "8-K", "10-Q", "10-K")
+        if form in document_forms and fetched < max_fetches:
+            raw_url = _sec_raw_document_url(filing)
+            if raw_url:
+                raw = safe_request(raw_url, timeout=10, retries=2)
+                fetched += 1
+                if isinstance(raw, str):
+                    if form in ("4", "4/A"):
+                        summary = summarize_sec_form4(raw, filing)
+                    elif form == "144":
+                        summary = summarize_sec_form144(raw, filing)
+                    else:
+                        summary = summarize_sec_report_document(raw, filing)
+                    if summary:
+                        filing["sec_detail_url"] = raw_url
+        if not summary:
+            summary = sec_metadata_summary(filing)
+        if summary:
+            filing["summary"] = summary
+            filing["summary_status"] = "generated"
+            filing["summary_generated_at"] = _now_iso()
+            filing["sec_summary_version"] = SEC_DETAIL_SUMMARY_VERSION
+            filing["sec_summary_kind"] = "document_detail" if filing.get("sec_detail_url") \
+                else "metadata_detail"
+            detailed += 1
+        time.sleep(0.11)
+    print(f"  SEC detail summaries: {detailed}/{len(filings or [])} ready, {fetched} documents fetched")
+    return filings
 
 
 def sec_deterministic_summary(f):
@@ -4675,7 +5086,9 @@ def export_policy_diff(path, news_data=None, rejected_data=None):
         section = item.get("section", "international")
         category = item.get("category", "industry_news")
         if str(item.get("source", "") or "").startswith("环球旅讯"):
-            is_domestic = _td_is_domestic(item.get("title", ""), item.get("summary", ""),
+            route_title = " ".join(x for x in (
+                item.get("title", ""), item.get("title_original", "")) if x)
+            is_domestic = _td_is_domestic(route_title, item.get("summary", ""),
                                           item.get("source_channel", ""))
             section, category = (("domestic", "china_industry") if is_domestic
                                  else ("international", "industry_news"))
@@ -4939,6 +5352,7 @@ def reprocess_cached_news(retry_translation=False):
     if retry_translation:
         news_data["international"]["industry_news"] = retry_cached_translations(
             news_data["international"]["industry_news"])
+    enrich_sec_filing_summaries(news_data.get("international", {}).get("sec_filings", []))
     news_data = run_selection_pipeline(news_data)
     news_data = prepare_chinese_news_display(news_data)
     save_translation_cache()
@@ -5178,6 +5592,10 @@ def main(fast_mode=False):
     for cat, lst in news_data.get("domestic", {}).items():
         if isinstance(lst, list):
             apply_date_fields(lst)
+
+    # SEC披露卡片读取官方原始文件：Form 4/Rule 144提取交易人、股数、价格等，
+    # 其他表单按8-K条款或报告期生成有业务含义的确定性摘要。
+    enrich_sec_filing_summaries(news_data.get("international", {}).get("sec_filings", []))
 
     # ── 保留期修剪 + 三级去重（改造项⑦）──
     news_data = prune_and_dedupe(news_data)

@@ -29,11 +29,17 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-28向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-28出售57,160股A类股，申报总市值约1090.1万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:16",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006532/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "merged_same_article": 3,
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-28",
@@ -48,7 +54,7 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -62,11 +68,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-28向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-26申报ABNB股票变动：转换取得19,659股A类普通股；出售19,659股A类普通股（申报价190.24–192.16美元/股），交易后间接持有20,567股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:16",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526374780/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-26",
@@ -95,11 +106,15 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "organization",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-26向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Gebbia Joseph（董事、10%以上股东）于2026-08-24申报ABNB股票变动：转换取得960,000股A类普通股；赠与960,000股A类普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:16",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526369145/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-26",
@@ -114,7 +129,7 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -128,11 +143,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-26向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-24申报ABNB股票变动：转换取得512,292股A类普通股；出售353,292股A类普通股（申报价190.27–193.14美元/股），交易后间接持有179,567股；赠与159,000股A类普通股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:17",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526369139/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-26",
@@ -162,11 +182,16 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-26向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-26出售19,659股A类股，申报总市值约375万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:17",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006475/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-25",
@@ -196,11 +221,16 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-25向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-25出售202,652股A类股，申报总市值约3856万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:18",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006451/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-25",
@@ -215,7 +245,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -229,12 +259,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "capital",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-25向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Dzielak Robert J（首席法务官兼公司秘书）于2026-08-24申报EXPE股票变动：出售1,004股普通股（申报价335.00美元/股），交易后直接持有104,331股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:18",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007317/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-24",
@@ -264,11 +298,16 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-24向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-24出售150,640股A类股，申报总市值约2876.4万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:19",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006405/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-21",
@@ -297,11 +336,15 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "organization",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Bernstein David C（首席会计官）于2026-08-19申报ABNB股票变动：为履行税务义务处置1,070.04股A类普通股（申报价183.25美元/股），交易后直接持有48,513.05股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:19",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361412/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -316,7 +359,7 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -330,11 +373,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-19申报ABNB股票变动：转换取得450股A类普通股；出售2,738股A类普通股（申报价184.42美元/股），交易后直接持有74,808.45股；为履行税务义务处置4,084.65股A类普通股（申报价183.25美元/股），交易后直接持有77,546.45股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:19",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361410/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -363,11 +411,15 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "organization",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Mertz Elinor（首席财务官）于2026-08-19申报ABNB股票变动：为履行税务义务处置6,941.7股A类普通股（申报价183.25美元/股），交易后直接持有434,600.78股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:20",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361408/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -399,9 +451,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Bernstein David C（首席会计官）于2026-08-19申报ABNB股票变动：为履行税务义务处置1,070.04股A类普通股（申报价183.25美元/股），交易后直接持有48,513.05股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:20",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361412/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -433,9 +488,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Mertz Elinor（首席财务官）于2026-08-19申报ABNB股票变动：为履行税务义务处置6,941.7股A类普通股（申报价183.25美元/股），交易后直接持有434,600.78股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:21",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361408/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-20",
@@ -465,11 +523,20 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-20向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-20出售2,738股A类股，申报总市值约50.5万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:21",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006255/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "event_id": "ev_7519717efe",
+        "related_sources": [
+          "SEC EDGAR"
+        ],
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-20",
@@ -484,7 +551,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -498,12 +565,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "capital",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-20向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Soliday Lance A（首席会计官）于2026-08-18申报EXPE股票变动：出售2,810股普通股（申报价323.65美元/股），交易后直接持有12,006股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:22",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007235/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-19",
@@ -518,7 +589,7 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -532,11 +603,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-19向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-17申报ABNB股票变动：转换取得17,692股A类普通股；出售13,615股A类普通股（申报价182.54–183.51美元/股），交易后间接持有24,194股；赠与4,077股A类普通股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:22",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526357265/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -551,7 +627,7 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -565,11 +641,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "WITTMAN VANESSA AMES（董事）于2026-08-17申报BKNG股票变动：出售375股普通股（申报价211.00美元/股），交易后直接持有16,133股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:23",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000122926526000022/form4-08182026_080845.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -584,7 +665,7 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -598,11 +679,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "MILLONES PETER J（EXECUTIVE VP, GENERAL COUNSEL）于2026-08-17申报BKNG股票变动：出售50,050股普通股（申报价204.91–212.88美元/股），交易后直接持有375,025股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:24",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000121461226000007/form4-08182026_080826.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -634,9 +720,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Andersen Derek（首席财务官）于2026-08-15申报EXPE股票变动：行权取得7,223股普通股，交易后直接持有12,202股；为履行税务义务处置3,624股普通股（申报价332.69美元/股），交易后直接持有8,578股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:25",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007166/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -651,7 +740,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -665,12 +754,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "capital",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Dzielak Robert J（首席法务官兼公司秘书）于2026-08-15申报EXPE股票变动：行权取得5,840股普通股，交易后直接持有109,669股；出售2,000股普通股（申报价330.50美元/股），交易后直接持有105,335股；为履行税务义务处置2,334股普通股（申报价332.69美元/股），交易后直接持有107,335股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:25",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007164/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -702,9 +795,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Soliday Lance A（首席会计官）于2026-08-15申报EXPE股票变动：行权取得1,214股普通股，交易后直接持有15,297股；为履行税务义务处置481股普通股（申报价332.69美元/股），交易后直接持有14,816股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:26",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007168/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -736,9 +832,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Gorin Ariane（首席执行官、董事）于2026-08-15申报EXPE股票变动：行权取得16,555股普通股，交易后直接持有162,018股；为履行税务义务处置6,660股普通股（申报价332.69美元/股），交易后直接持有155,358股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:27",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007169/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -770,9 +869,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "KHOSROWSHAHI DARA（董事）于2026-08-14申报EXPE股票变动：赠与15,000股普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:27",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007165/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -804,9 +906,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Diller Barry（Chairman & Sr. Executive、董事）于2026-08-15申报EXPE股票变动：行权取得8,184股普通股，交易后直接持有166,580股；为履行税务义务处置4,528股普通股（申报价332.69美元/股），交易后直接持有162,052股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:28",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007167/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-17",
@@ -836,11 +941,16 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Booking Holdings Inc.于2026-08-17向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "WITTMAN VANESSA AMES（高管）拟于2026-08-17出售375股普通股，申报总市值约7.9万美元，经纪商为Merrill Lynch。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:29",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000196430626000389/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-17",
@@ -870,11 +980,18 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-17向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-17出售13,615股A类股，申报总市值约250.6万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:29",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006052/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "event_id": "ev_7519717efe",
+        "suppress_core_badge": true,
+        "folded_into": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006255/xsl144X01/primary_doc.xml"
       },
       {
         "date": "2026-08-17",
@@ -889,7 +1006,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -903,12 +1020,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "capital",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-17向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Jacobson Craig A（董事）于2026-08-13申报EXPE股票变动：出售3,133股普通股（申报价328.52美元/股），交易后直接持有29,832.5股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:30",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007141/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-06",
@@ -936,10 +1057,14 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Expedia Group, Inc.于2026-08-06向SEC提交季度报告 (10-Q)。",
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-06提交季度报告，包含当季财务报表、经营情况及风险披露。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-06",
@@ -970,9 +1095,11 @@
         "impact_dimensions": [
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-06向SEC提交EX-32.1。",
+        "summary": "Airbnb, Inc.于2026-08-06提交季度报告，包含当季财务报表、经营情况及风险披露。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-06",
@@ -987,7 +1114,7 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -1001,11 +1128,14 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "financials",
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-06向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
+        "summary": "Airbnb, Inc.于2026-08-06提交8-K，涉及公布经营业绩或财务状况、提交财务报表或附件（Item 2.02, 9.01）。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-05",
@@ -1020,7 +1150,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -1033,10 +1163,22 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Expedia Group, Inc.于2026-08-05向SEC提交重大事件 (8-K)。",
+        "impact_dimensions": [
+          "financials",
+          "core_company"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-05提交8-K，涉及公布经营业绩或财务状况、按Regulation FD披露信息、披露其他重大事项、提交财务报表或附件（Item 2.02, 7.01, 8.01, 9.01）。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_items": [
+          "2.02",
+          "7.01",
+          "8.01",
+          "9.01"
+        ],
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442426000051/0001324424-26-000051.txt",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-04",
@@ -1064,10 +1206,14 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Booking Holdings Inc.于2026-08-04向SEC提交EX-3.1。",
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-04提交季度报告，包含当季财务报表、经营情况及风险披露。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-04",
@@ -1082,7 +1228,7 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -1095,10 +1241,15 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Booking Holdings Inc.于2026-08-04向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
+        "impact_dimensions": [
+          "financials",
+          "core_company"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-04提交8-K，涉及公布经营业绩或财务状况、提交财务报表或附件（Item 2.02, 9.01）。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:08",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       }
     ],
     "industry_news": [
@@ -1116,22 +1267,22 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "partnership",
+        "content_type": "management_org",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 68,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要24/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "正式制度/组织变化",
+          "只有标题无公开证据(-15)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "cooperation",
+          "organization",
           "core_company"
         ],
         "title_original": "Agoda named travel partner for inaugural Eurovision Song Contest Asia",
@@ -1181,47 +1332,6 @@
         "translation_status": "ready",
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 13:44:54"
-      },
-      {
-        "date": "2026-08-30",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "爱彼迎让我们重新思考「直接预订」的真正含义",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWJ0a1UxVkxaT09xd0RTMEJzbEhtYVRFblppdTdfMFJKeDJXQWJLbUwxSXZZVnNfRmplX0FOWFNZSXRVTjlrRWRya25FWjJwN0ZtSVh2aWN4V05MM1FaSkY4RU9fRHVJMUpBNXkzRlpJY1BCeTBOalBTUEY3QzVhUHNfcV9QUjZ2LW14MnJnWVVyUQ?oc=5",
-        "summary": "",
-        "company": "ABNB",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源4)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Airbnb is making us rethink what a “direct booking” really means",
-        "summary_original": "Airbnb is making us rethink what a “direct booking” really means&nbsp;&nbsp;PhocusWire",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-31 13:44:54",
-        "suppress_core_badge": true
       },
       {
         "date": "2026-08-30",
@@ -1282,10 +1392,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -1322,11 +1432,11 @@
           "vertical.allowed_theme"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 88,
+        "substantive_company_change": true,
+        "selection_score": 100,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关19/重要4/基本面22/证据14/来源4)",
+          "评分(相关25/重要14/基本面22/证据14/来源4)",
           "重点公司(BKNG)"
         ],
         "rejection_reason": null,
@@ -1340,8 +1450,7 @@
         "translation_status": "ready",
         "summary_translated": true,
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54",
-        "suppress_core_badge": true
+        "summary_generated_at": "2026-08-31 13:44:54"
       },
       {
         "date": "2026-08-28",
@@ -1356,7 +1465,7 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "topic.hotel",
@@ -1364,15 +1473,17 @@
           "vertical.allowed_theme"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
+        "substantive_company_change": true,
+        "selection_score": 70,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
+          "评分(相关16/重要22/基本面18/证据10/来源4)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
+        "impact_dimensions": [
+          "financials",
+          "distribution"
+        ],
         "title_original": "What Hotelbeds’ Shrinking Margins Mean for Hotel Distribution",
         "summary_original": "Hotelbeds became the dominant independent bed bank through scale. Its results now show that scale alone no longer protects the economics.",
         "display_ready": true,
@@ -1446,7 +1557,8 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要14/基本面0/证据10/来源4)",
+          "评分(相关11/重要14/基本面0/证据10/来源4)",
+          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -1462,82 +1574,6 @@
         "summary_generated_at": "2026-08-31 13:44:54"
       },
       {
-        "date": "2026-08-27",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "差旅管理公司eTravel收购罗马尼亚同行 Accent旅行和活动多数股权",
-        "url": "https://www.traveldaily.cn/expressPage/190607/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-27",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:43:21",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "title_original": "差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权",
-        "display_ready": true,
-        "translation_status": "ready"
-      },
-      {
-        "date": "2026-08-27",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "斯波差旅平台特纳纳收购会议管理平台部队",
-        "url": "https://www.traveldaily.cn/expressPage/190605/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-27",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:43:21",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "title_original": "差旅平台Spotnana收购会议管理平台Troop",
-        "display_ready": true,
-        "translation_status": "ready"
-      },
-      {
         "date": "2026-08-26",
         "source": "Expedia",
         "category": "industry_news",
@@ -1551,7 +1587,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "market.insider_sale_fact",
@@ -1568,6 +1604,8 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "capital",
+          "competition",
           "core_company"
         ],
         "title_original": "Expedia Executive Sells 3,133 Shares for $1 Million",
@@ -1637,8 +1675,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关3/重要4/基本面0/证据10/来源2)",
+          "评分(相关3/重要4/基本面0/证据4/来源2)",
           "重点公司(TCOM)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -1881,7 +1920,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
+          "评分(相关6/重要4/基本面18/证据10/来源4)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -1919,9 +1958,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据20/来源2)",
+          "评分(相关5/重要4/基本面0/证据14/来源2)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "媒体高管售股事实保留（非核心公司动态）"
         ],
         "rejection_reason": null,
@@ -1958,9 +1997,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据20/来源2)",
+          "评分(相关5/重要22/基本面0/证据14/来源2)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -2037,9 +2076,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -2073,10 +2112,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -2159,13 +2198,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 67,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要14/基本面0/证据10/来源2)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关5/重要25/基本面0/证据10/来源2)",
+          "重点公司(ABNB)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2179,8 +2216,8 @@
         "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 13:44:54",
-        "suppress_core_badge": true,
-        "merged_same_article": 1
+        "merged_same_article": 1,
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-21",
@@ -2242,7 +2279,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据10/来源4)",
+          "评分(相关0/重要4/基本面0/证据10/来源4)",
           "摘要重复标题(-20)",
           "IR/ Bloomberg垂直源保底60"
         ],
@@ -2256,44 +2293,6 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_translated": true
-      },
-      {
-        "date": "2026-08-21",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "万豪CEO ： AI能绕过 OTA ，却绕不过酒店",
-        "url": "https://www.traveldaily.cn/article/190570/",
-        "summary": "掌控住宿体验，才是酒店的护城河",
-        "source_channel": "home",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-21",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "topic.hotel",
-          "topic.hotel.ota_direct_exception",
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关21/重要14/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "organization"
-        ],
-        "title_original": "万豪CEO：AI能绕过OTA，却绕不过酒店",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
       },
       {
         "date": "2026-08-20",
@@ -2314,14 +2313,12 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
-          "正式制度/组织变化",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "正式制度/组织变化"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2433,16 +2430,17 @@
         "source_channel": "",
         "content_type": "product",
         "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 72,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要24/基本面0/证据10/来源2)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关11/重要24/基本面0/证据10/来源2)",
+          "重点公司(BKNG)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2479,13 +2477,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 66,
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关5/重要24/基本面0/证据10/来源2)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "重点公司(BKNG)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -2500,6 +2496,120 @@
         "summary_generated_at": "2026-08-31 13:44:54",
         "event_id": "ev_core_1a5a693f5d",
         "folded_into": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObWw0MlNpQnFDLVNIZkpKaW5FUU1ZNkhJM09ja2dNS3BmNkROSE5yY09jMFJvd014OHRTeFpTQ2NyNksxc0N1VEFpY0tvMzgwM1VkNEtoTk1aT0VXOTFCYkxXR1M5bzktRDB1d1FJUmhnMWpIS214UmpKNzVMckZ5cmpTY2JWSnEwakQ3ZHdrcmE0cGxMTkZaM2JBWkt4SWs1N29IeA?oc=5"
+      },
+      {
+        "date": "2026-08-27",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "差旅管理公司eTravel收购罗马尼亚同行 Accent旅行和活动多数股权",
+        "url": "https://www.traveldaily.cn/expressPage/190607/",
+        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+        "source_channel": "express",
+        "fetched_at": "2026-08-31 13:43:21",
+        "published_at": "2026-08-27",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 13:43:21",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "ma_investment",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "重要并购/融资保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "title_original": "差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权",
+        "display_ready": true,
+        "translation_status": "ready"
+      },
+      {
+        "date": "2026-08-21",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "万豪CEO ： AI能绕过 OTA ，却绕不过酒店",
+        "url": "https://www.traveldaily.cn/article/190570/",
+        "summary": "掌控住宿体验，才是酒店的护城河",
+        "source_channel": "home",
+        "fetched_at": "2026-08-31 13:43:21",
+        "published_at": "2026-08-21",
+        "date_status": "known",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "management_org",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception",
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关21/重要14/基本面0/证据10/来源4)",
+          "垂直媒体允许主题保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization"
+        ],
+        "title_original": "万豪CEO：AI能绕过OTA，却绕不过酒店",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 13:44:54"
+      },
+      {
+        "date": "2026-08-27",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "斯波差旅平台特纳纳收购会议管理平台部队",
+        "url": "https://www.traveldaily.cn/expressPage/190605/",
+        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+        "source_channel": "express",
+        "fetched_at": "2026-08-31 13:43:21",
+        "published_at": "2026-08-27",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 13:43:21",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "ma_investment",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "重要并购/融资保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "title_original": "差旅平台Spotnana收购会议管理平台Troop",
+        "display_ready": true,
+        "translation_status": "ready"
       }
     ]
   },
@@ -2577,6 +2687,101 @@
         ],
         "display_ready": true,
         "translation_status": "ready"
+      },
+      {
+        "title": "2026年中期業績公告",
+        "title_original": "",
+        "summary": "中期業績",
+        "source": "披露易·中国东航",
+        "date": "2026-08-30",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000478_c.pdf",
+        "section": "domestic",
+        "category": "regulatory",
+        "entity_id": null,
+        "content_type": "general",
+        "selection_score": 60,
+        "selection_reasons": [
+          "官方来源保留清单(披露易)",
+          "评分(相关0/重要4/基本面0/证据10/来源5)",
+          "实质动态/官方清单保底60"
+        ],
+        "matched_rule_ids": [],
+        "policy_version": "2026-08-30-v4",
+        "manual_label": null,
+        "rejection_reason": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "substantive_company_change": false,
+        "selection_status": "kept",
+        "impact_dimensions": [],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:03:16"
+      },
+      {
+        "title": "海外監管公告 中國東方航空股份有限公司關於對東航集團財務有限責任公司2026年上半年風險持續評估報告",
+        "title_original": "",
+        "summary": "海外監管公告-其他",
+        "source": "披露易·中国东航",
+        "date": "2026-08-30",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000401_c.pdf",
+        "section": "domestic",
+        "category": "regulatory",
+        "entity_id": null,
+        "content_type": "general",
+        "selection_score": 60,
+        "selection_reasons": [
+          "官方来源保留清单(披露易)",
+          "评分(相关6/重要4/基本面0/证据10/来源5)",
+          "实质动态/官方清单保底60"
+        ],
+        "matched_rule_ids": [],
+        "policy_version": "2026-08-30-v4",
+        "manual_label": null,
+        "rejection_reason": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "substantive_company_change": false,
+        "selection_status": "kept",
+        "impact_dimensions": [],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:03:16"
+      },
+      {
+        "title": "海外監管公告 中國東方航空股份有限公司關於與東航物流聯合召開2026年中期業績說明會的公告",
+        "title_original": "",
+        "summary": "海外監管公告-其他",
+        "source": "披露易·中国东航",
+        "date": "2026-08-25",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501299_c.pdf",
+        "section": "domestic",
+        "category": "regulatory",
+        "entity_id": null,
+        "content_type": "general",
+        "selection_score": 60,
+        "selection_reasons": [
+          "官方来源保留清单(披露易)",
+          "评分(相关6/重要4/基本面0/证据10/来源5)",
+          "实质动态/官方清单保底60"
+        ],
+        "matched_rule_ids": [
+          "manual.keep"
+        ],
+        "policy_version": "2026-08-30-v4",
+        "manual_label": "保留",
+        "rejection_reason": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "substantive_company_change": false,
+        "selection_status": "kept",
+        "impact_dimensions": [],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:03:16"
       }
     ],
     "company_news": [
@@ -2715,22 +2920,22 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "partnership",
+        "content_type": "management_org",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 68,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要24/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "正式制度/组织变化",
+          "只有标题无公开证据(-15)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "cooperation",
+          "organization",
           "core_company"
         ],
         "title_original": "Agoda named travel partner for inaugural Eurovision Song Contest Asia",
@@ -2800,10 +3005,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -2816,6 +3021,47 @@
         "summary_original": "Expedia Group Appoints New Chief Financial Officer&nbsp;&nbsp;safariindia.com",
         "display_ready": true,
         "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 13:44:54"
+      },
+      {
+        "date": "2026-08-28",
+        "source": "Skift",
+        "category": "industry_news",
+        "title": "Booking Holdings与Expedia的B2B业务对比：估算显示Booking间夜量领先",
+        "url": "https://skift.com/2026/08/28/booking-holdings-vs-expedia-in-b2b-bombshell-estimate-says-booking-leads-in-room-nights/",
+        "summary": "无论如何解读这些数据，Booking Holdings的B2B业务规模似乎都远超旅游业此前的认知，其正在推进的重组也可能产生显著影响。",
+        "company": "BKNG",
+        "fetched_at": "2026-08-31 13:43:21",
+        "published_at": "2026-08-28",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "operating_data",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关25/重要14/基本面22/证据14/来源4)",
+          "重点公司(BKNG)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "operating_data",
+          "core_company"
+        ],
+        "title_original": "Booking Holdings vs. Expedia in B2B: Bombshell Estimate Says Booking Leads in Room Nights",
+        "summary_original": "No matter how you parse the numbers, Booking Holdings&apos; B2B business appears to be a lot larger than the travel industry previously understood. Its in-process reorganization could have significant",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 13:44:54"
       },
@@ -2841,9 +3087,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -2877,10 +3123,10 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -2998,16 +3244,17 @@
         "source_channel": "",
         "content_type": "product",
         "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 72,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要24/基本面0/证据10/来源2)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关11/重要24/基本面0/证据10/来源2)",
+          "重点公司(BKNG)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -3028,86 +3275,43 @@
     ],
     "intl_industry": [
       {
-        "date": "2026-08-30",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "爱彼迎让我们重新思考「直接预订」的真正含义",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWJ0a1UxVkxaT09xd0RTMEJzbEhtYVRFblppdTdfMFJKeDJXQWJLbUwxSXZZVnNfRmplX0FOWFNZSXRVTjlrRWRya25FWjJwN0ZtSVh2aWN4V05MM1FaSkY4RU9fRHVJMUpBNXkzRlpJY1BCeTBOalBTUEY3QzVhUHNfcV9QUjZ2LW14MnJnWVVyUQ?oc=5",
-        "summary": "",
+        "date": "2026-08-28",
         "company": "ABNB",
+        "type": "144",
+        "title": "证券出售登记 (Rule 144)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006532/xsl144X01/primary_doc.xml",
+        "source": "SEC EDGAR",
         "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-30",
+        "published_at": "2026-08-28",
         "date_status": "known",
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
-          "vertical.allowed_theme"
+          "official.sec.filing"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
+        "substantive_company_change": true,
+        "selection_score": 100,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源4)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "垂直媒体允许主题保底60"
+          "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "capital",
+          "competition",
           "core_company"
         ],
-        "title_original": "Airbnb is making us rethink what a “direct booking” really means",
-        "summary_original": "Airbnb is making us rethink what a “direct booking” really means&nbsp;&nbsp;PhocusWire",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-08-31 13:44:54",
-        "suppress_core_badge": true
-      },
-      {
-        "date": "2026-08-28",
-        "source": "Skift",
-        "category": "industry_news",
-        "title": "Booking Holdings与Expedia的B2B业务对比：估算显示Booking间夜量领先",
-        "url": "https://skift.com/2026/08/28/booking-holdings-vs-expedia-in-b2b-bombshell-estimate-says-booking-leads-in-room-nights/",
-        "summary": "无论如何解读这些数据，Booking Holdings的B2B业务规模似乎都远超旅游业此前的认知，其正在推进的重组也可能产生显著影响。",
-        "company": "BKNG",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-28",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "entity_id": "BKNG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "operating_data",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 88,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关19/重要4/基本面22/证据14/来源4)",
-          "重点公司(BKNG)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "operating_data",
-          "core_company"
-        ],
-        "title_original": "Booking Holdings vs. Expedia in B2B: Bombshell Estimate Says Booking Leads in Room Nights",
-        "summary_original": "No matter how you parse the numbers, Booking Holdings&apos; B2B business appears to be a lot larger than the travel industry previously understood. Its in-process reorganization could have significant",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_translated": true,
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-28出售57,160股A类股，申报总市值约1090.1万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54",
+        "summary_generated_at": "2026-08-31 14:08:16",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006532/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "merged_same_article": 3,
         "suppress_core_badge": true
       },
       {
@@ -3123,7 +3327,7 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "topic.hotel",
@@ -3131,15 +3335,17 @@
           "vertical.allowed_theme"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
+        "substantive_company_change": true,
+        "selection_score": 70,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
+          "评分(相关16/重要22/基本面18/证据10/来源4)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
+        "impact_dimensions": [
+          "financials",
+          "distribution"
+        ],
         "title_original": "What Hotelbeds’ Shrinking Margins Mean for Hotel Distribution",
         "summary_original": "Hotelbeds became the dominant independent bed bank through scale. Its results now show that scale alone no longer protects the economics.",
         "display_ready": true,
@@ -3213,7 +3419,8 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要14/基本面0/证据10/来源4)",
+          "评分(相关11/重要14/基本面0/证据10/来源4)",
+          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -3318,7 +3525,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "market.insider_sale_fact",
@@ -3335,6 +3542,8 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "capital",
+          "competition",
           "core_company"
         ],
         "title_original": "Expedia Executive Sells 3,133 Shares for $1 Million",
@@ -3404,8 +3613,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关3/重要4/基本面0/证据10/来源2)",
+          "评分(相关3/重要4/基本面0/证据4/来源2)",
           "重点公司(TCOM)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -3648,7 +3858,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
+          "评分(相关6/重要4/基本面18/证据10/来源4)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -3686,9 +3896,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据20/来源2)",
+          "评分(相关5/重要4/基本面0/证据14/来源2)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "媒体高管售股事实保留（非核心公司动态）"
         ],
         "rejection_reason": null,
@@ -3725,9 +3935,9 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要22/基本面0/证据20/来源2)",
+          "评分(相关5/重要22/基本面0/证据14/来源2)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -3783,6 +3993,45 @@
         "translation_status": "ready"
       },
       {
+        "date": "2026-08-24",
+        "company": "ABNB",
+        "type": "144",
+        "title": "证券出售登记 (Rule 144)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006405/xsl144X01/primary_doc.xml",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-31 13:43:21",
+        "published_at": "2026-08-24",
+        "date_status": "known",
+        "entity_id": "ABNB",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "official.sec.filing"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-24出售150,640股A类股，申报总市值约2876.4万美元，经纪商为Fidelity Brokerage Services LLC。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:08:19",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006405/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "suppress_core_badge": true
+      },
+      {
         "date": "2026-08-21",
         "source": "Malay Mail",
         "category": "industry_news",
@@ -3801,13 +4050,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 67,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要14/基本面0/证据10/来源2)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关5/重要25/基本面0/证据10/来源2)",
+          "重点公司(ABNB)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -3821,8 +4068,8 @@
         "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 13:44:54",
-        "suppress_core_badge": true,
-        "merged_same_article": 1
+        "merged_same_article": 1,
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-21",
@@ -3844,7 +4091,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据10/来源4)",
+          "评分(相关0/重要4/基本面0/证据10/来源4)",
           "摘要重复标题(-20)",
           "IR/ Bloomberg垂直源保底60"
         ],
@@ -3896,15 +4143,58 @@
         "translation_status": "ready",
         "summary_status": "generated",
         "summary_generated_at": "2026-08-31 13:44:54"
+      },
+      {
+        "date": "2026-08-20",
+        "company": "ABNB",
+        "type": "144",
+        "title": "证券出售登记 (Rule 144)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006255/xsl144X01/primary_doc.xml",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-31 13:43:21",
+        "published_at": "2026-08-20",
+        "date_status": "known",
+        "entity_id": "ABNB",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "official.sec.filing"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-20出售2,738股A类股，申报总市值约50.5万美元，经纪商为Fidelity Brokerage Services LLC。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:08:21",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006255/primary_doc.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail",
+        "event_id": "ev_7519717efe",
+        "related_sources": [
+          "SEC EDGAR"
+        ],
+        "suppress_core_badge": true
       }
     ],
     "intl_disclosures": [
       {
         "date": "2026-08-28",
         "company": "ABNB",
-        "type": "144",
-        "title": "证券出售登记 (Rule 144)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006532/xsl144X01/primary_doc.xml",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526374780/xslF345X06/ownership.xml",
         "source": "SEC EDGAR",
         "fetched_at": "2026-08-31 13:43:21",
         "published_at": "2026-08-28",
@@ -3927,44 +4217,15 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-28向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-26申报ABNB股票变动：转换取得19,659股A类普通股；出售19,659股A类普通股（申报价190.24–192.16美元/股），交易后间接持有20,567股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
-      },
-      {
-        "date": "2026-08-28",
-        "company": "ABNB",
-        "type": "4",
-        "title": "董事/高管交易 (Form 4)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526374780/xslF345X06/ownership.xml",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-28",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "organization"
-        ],
-        "summary": "Airbnb, Inc.于2026-08-28向SEC提交董事/高管交易 (Form 4)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:16",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526374780/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-26",
@@ -3993,11 +4254,15 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "organization",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-26向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Gebbia Joseph（董事、10%以上股东）于2026-08-24申报ABNB股票变动：转换取得960,000股A类普通股；赠与960,000股A类普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:16",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526369145/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-26",
@@ -4012,39 +4277,6 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "organization"
-        ],
-        "summary": "Airbnb, Inc.于2026-08-26向SEC提交董事/高管交易 (Form 4)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
-      },
-      {
-        "date": "2026-08-26",
-        "company": "ABNB",
-        "type": "144",
-        "title": "证券出售登记 (Rule 144)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006475/xsl144X01/primary_doc.xml",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-26",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
         "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
@@ -4060,45 +4292,15 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-26向SEC提交证券出售登记 (Rule 144)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-24申报ABNB股票变动：转换取得512,292股A类普通股；出售353,292股A类普通股（申报价190.27–193.14美元/股），交易后间接持有179,567股；赠与159,000股A类普通股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
-      },
-      {
-        "date": "2026-08-25",
-        "company": "ABNB",
-        "type": "144",
-        "title": "证券出售登记 (Rule 144)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006451/xsl144X01/primary_doc.xml",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-25",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "summary": "Airbnb, Inc.于2026-08-25向SEC提交证券出售登记 (Rule 144)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:17",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526369139/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-25",
@@ -4113,7 +4315,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4127,46 +4329,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "capital",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-25向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Dzielak Robert J（首席法务官兼公司秘书）于2026-08-24申报EXPE股票变动：出售1,004股普通股（申报价335.00美元/股），交易后直接持有104,331股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
-      },
-      {
-        "date": "2026-08-24",
-        "company": "ABNB",
-        "type": "144",
-        "title": "证券出售登记 (Rule 144)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006405/xsl144X01/primary_doc.xml",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-24",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "summary": "Airbnb, Inc.于2026-08-24向SEC提交证券出售登记 (Rule 144)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:18",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007317/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -4195,11 +4367,15 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "organization",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Bernstein David C（首席会计官）于2026-08-19申报ABNB股票变动：为履行税务义务处置1,070.04股A类普通股（申报价183.25美元/股），交易后直接持有48,513.05股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:19",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361412/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -4214,7 +4390,7 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4228,11 +4404,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-19申报ABNB股票变动：转换取得450股A类普通股；出售2,738股A类普通股（申报价184.42美元/股），交易后直接持有74,808.45股；为履行税务义务处置4,084.65股A类普通股（申报价183.25美元/股），交易后直接持有77,546.45股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:19",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361410/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -4261,11 +4442,15 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "organization",
+          "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Mertz Elinor（首席财务官）于2026-08-19申报ABNB股票变动：为履行税务义务处置6,941.7股A类普通股（申报价183.25美元/股），交易后直接持有434,600.78股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:20",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361408/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -4297,9 +4482,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Bernstein David C（首席会计官）于2026-08-19申报ABNB股票变动：为履行税务义务处置1,070.04股A类普通股（申报价183.25美元/股），交易后直接持有48,513.05股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:20",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361412/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-21",
@@ -4331,19 +4519,60 @@
           "organization",
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-21向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Mertz Elinor（首席财务官）于2026-08-19申报ABNB股票变动：为履行税务义务处置6,941.7股A类普通股（申报价183.25美元/股），交易后直接持有434,600.78股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:21",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526361408/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-20",
+        "company": "EXPE",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007235/",
+        "source": "SEC EDGAR",
+        "fetched_at": "2026-08-30 17:26:52",
+        "published_at": "2026-08-20",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-08-30-v4",
+        "matched_rule_ids": [
+          "official.sec.filing"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 100,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "SEC备案(重点公司强制披露)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "summary": "Soliday Lance A（首席会计官）于2026-08-18申报EXPE股票变动：出售2,810股普通股（申报价323.65美元/股），交易后直接持有12,006股。",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:08:22",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007235/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
+      },
+      {
+        "date": "2026-08-19",
         "company": "ABNB",
-        "type": "144",
-        "title": "证券出售登记 (Rule 144)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006255/xsl144X01/primary_doc.xml",
+        "type": "4",
+        "title": "董事/高管交易 (Form 4)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526357265/xslF345X06/ownership.xml",
         "source": "SEC EDGAR",
         "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-20",
+        "published_at": "2026-08-19",
         "date_status": "known",
         "entity_id": "ABNB",
         "is_core_company": true,
@@ -4363,78 +4592,15 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
-        ],
-        "summary": "Airbnb, Inc.于2026-08-20向SEC提交证券出售登记 (Rule 144)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
-      },
-      {
-        "date": "2026-08-20",
-        "company": "EXPE",
-        "type": "4",
-        "title": "董事/高管交易 (Form 4)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007235/",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-30 17:26:52",
-        "published_at": "2026-08-20",
-        "date_status": "known",
-        "entity_id": "EXPE",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "organization",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-20向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-17申报ABNB股票变动：转换取得17,692股A类普通股；出售13,615股A类普通股（申报价182.54–183.51美元/股），交易后间接持有24,194股；赠与4,077股A类普通股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
-      },
-      {
-        "date": "2026-08-19",
-        "company": "ABNB",
-        "type": "4",
-        "title": "董事/高管交易 (Form 4)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526357265/xslF345X06/ownership.xml",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-19",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "organization"
-        ],
-        "summary": "Airbnb, Inc.于2026-08-19向SEC提交董事/高管交易 (Form 4)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:22",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526357265/ownership.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4449,7 +4615,7 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4463,11 +4629,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "WITTMAN VANESSA AMES（董事）于2026-08-17申报BKNG股票变动：出售375股普通股（申报价211.00美元/股），交易后直接持有16,133股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:23",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000122926526000022/form4-08182026_080845.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4482,7 +4653,7 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4496,11 +4667,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization"
+          "capital",
+          "competition",
+          "core_company"
         ],
-        "summary": "Booking Holdings Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "MILLONES PETER J（EXECUTIVE VP, GENERAL COUNSEL）于2026-08-17申报BKNG股票变动：出售50,050股普通股（申报价204.91–212.88美元/股），交易后直接持有375,025股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:24",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000121461226000007/form4-08182026_080826.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4532,9 +4708,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Andersen Derek（首席财务官）于2026-08-15申报EXPE股票变动：行权取得7,223股普通股，交易后直接持有12,202股；为履行税务义务处置3,624股普通股（申报价332.69美元/股），交易后直接持有8,578股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:25",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007166/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4549,7 +4728,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4563,12 +4742,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "capital",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Dzielak Robert J（首席法务官兼公司秘书）于2026-08-15申报EXPE股票变动：行权取得5,840股普通股，交易后直接持有109,669股；出售2,000股普通股（申报价330.50美元/股），交易后直接持有105,335股；为履行税务义务处置2,334股普通股（申报价332.69美元/股），交易后直接持有107,335股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:25",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007164/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4600,9 +4783,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Soliday Lance A（首席会计官）于2026-08-15申报EXPE股票变动：行权取得1,214股普通股，交易后直接持有15,297股；为履行税务义务处置481股普通股（申报价332.69美元/股），交易后直接持有14,816股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:26",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007168/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4634,9 +4820,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Gorin Ariane（首席执行官、董事）于2026-08-15申报EXPE股票变动：行权取得16,555股普通股，交易后直接持有162,018股；为履行税务义务处置6,660股普通股（申报价332.69美元/股），交易后直接持有155,358股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:27",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007169/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4668,9 +4857,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "KHOSROWSHAHI DARA（董事）于2026-08-14申报EXPE股票变动：赠与15,000股普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:27",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007165/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-18",
@@ -4702,77 +4894,12 @@
           "organization",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-18向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Diller Barry（Chairman & Sr. Executive、董事）于2026-08-15申报EXPE股票变动：行权取得8,184股普通股，交易后直接持有166,580股；为履行税务义务处置4,528股普通股（申报价332.69美元/股），交易后直接持有162,052股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
-      },
-      {
-        "date": "2026-08-17",
-        "company": "BKNG",
-        "type": "144",
-        "title": "证券出售登记 (Rule 144)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1075531/000196430626000389/",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-17",
-        "date_status": "known",
-        "entity_id": "BKNG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "summary": "Booking Holdings Inc.于2026-08-17向SEC提交证券出售登记 (Rule 144)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
-      },
-      {
-        "date": "2026-08-17",
-        "company": "ABNB",
-        "type": "144",
-        "title": "证券出售登记 (Rule 144)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006052/xsl144X01/primary_doc.xml",
-        "source": "SEC EDGAR",
-        "fetched_at": "2026-08-31 13:43:21",
-        "published_at": "2026-08-17",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "official.sec.filing"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 100,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "SEC备案(重点公司强制披露)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "summary": "Airbnb, Inc.于2026-08-17向SEC提交证券出售登记 (Rule 144)。",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:08:28",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007167/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-17",
@@ -4787,7 +4914,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "ma_investment",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4801,12 +4928,16 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "capital",
+          "competition",
           "core_company"
         ],
-        "summary": "Expedia Group, Inc.于2026-08-17向SEC提交董事/高管交易 (Form 4)。",
+        "summary": "Jacobson Craig A（董事）于2026-08-13申报EXPE股票变动：出售3,133股普通股（申报价328.52美元/股），交易后直接持有29,832.5股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:08:30",
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000122520826007141/doc4.xml",
+        "sec_summary_version": 2,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-06",
@@ -4834,10 +4965,14 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Expedia Group, Inc.于2026-08-06向SEC提交季度报告 (10-Q)。",
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-06提交季度报告，包含当季财务报表、经营情况及风险披露。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-06",
@@ -4868,9 +5003,11 @@
         "impact_dimensions": [
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-06向SEC提交EX-32.1。",
+        "summary": "Airbnb, Inc.于2026-08-06提交季度报告，包含当季财务报表、经营情况及风险披露。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-06",
@@ -4885,7 +5022,7 @@
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4899,11 +5036,14 @@
         ],
         "rejection_reason": null,
         "impact_dimensions": [
+          "financials",
           "core_company"
         ],
-        "summary": "Airbnb, Inc.于2026-08-06向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
+        "summary": "Airbnb, Inc.于2026-08-06提交8-K，涉及公布经营业绩或财务状况、提交财务报表或附件（Item 2.02, 9.01）。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-30 17:28:55"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-05",
@@ -4918,7 +5058,7 @@
         "entity_id": "EXPE",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4931,10 +5071,22 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Expedia Group, Inc.于2026-08-05向SEC提交重大事件 (8-K)。",
+        "impact_dimensions": [
+          "financials",
+          "core_company"
+        ],
+        "summary": "Expedia Group, Inc.于2026-08-05提交8-K，涉及公布经营业绩或财务状况、按Regulation FD披露信息、披露其他重大事项、提交财务报表或附件（Item 2.02, 7.01, 8.01, 9.01）。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_items": [
+          "2.02",
+          "7.01",
+          "8.01",
+          "9.01"
+        ],
+        "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1324424/000132442426000051/0001324424-26-000051.txt",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "document_detail"
       },
       {
         "date": "2026-08-04",
@@ -4962,10 +5114,14 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Booking Holdings Inc.于2026-08-04向SEC提交EX-3.1。",
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-04提交季度报告，包含当季财务报表、经营情况及风险披露。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:07",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       },
       {
         "date": "2026-08-04",
@@ -4980,7 +5136,7 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "general",
+        "content_type": "earnings",
         "policy_version": "2026-08-30-v4",
         "matched_rule_ids": [
           "official.sec.filing"
@@ -4993,10 +5149,15 @@
           "SEC备案(重点公司强制披露)"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
-        "summary": "Booking Holdings Inc.于2026-08-04向SEC提交重大事件 (8-K) (Item 2.02, 9.01)。（涉及条款 Item 2.02, 9.01）",
+        "impact_dimensions": [
+          "financials",
+          "core_company"
+        ],
+        "summary": "Booking Holdings Inc.于2026-08-04提交8-K，涉及公布经营业绩或财务状况、提交财务报表或附件（Item 2.02, 9.01）。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-08-31 13:44:54"
+        "summary_generated_at": "2026-08-31 14:11:08",
+        "sec_summary_version": 3,
+        "sec_summary_kind": "metadata_detail"
       }
     ],
     "dom_industry": [
@@ -5151,18 +5312,114 @@
         ],
         "display_ready": true,
         "translation_status": "ready"
+      },
+      {
+        "title": "2026年中期業績公告",
+        "title_original": "",
+        "summary": "中期業績",
+        "source": "披露易·中国东航",
+        "date": "2026-08-30",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000478_c.pdf",
+        "section": "domestic",
+        "category": "regulatory",
+        "entity_id": null,
+        "content_type": "general",
+        "selection_score": 60,
+        "selection_reasons": [
+          "官方来源保留清单(披露易)",
+          "评分(相关0/重要4/基本面0/证据10/来源5)",
+          "实质动态/官方清单保底60"
+        ],
+        "matched_rule_ids": [],
+        "policy_version": "2026-08-30-v4",
+        "manual_label": null,
+        "rejection_reason": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "substantive_company_change": false,
+        "selection_status": "kept",
+        "impact_dimensions": [],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:03:16"
+      },
+      {
+        "title": "海外監管公告 中國東方航空股份有限公司關於對東航集團財務有限責任公司2026年上半年風險持續評估報告",
+        "title_original": "",
+        "summary": "海外監管公告-其他",
+        "source": "披露易·中国东航",
+        "date": "2026-08-30",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000401_c.pdf",
+        "section": "domestic",
+        "category": "regulatory",
+        "entity_id": null,
+        "content_type": "general",
+        "selection_score": 60,
+        "selection_reasons": [
+          "官方来源保留清单(披露易)",
+          "评分(相关6/重要4/基本面0/证据10/来源5)",
+          "实质动态/官方清单保底60"
+        ],
+        "matched_rule_ids": [],
+        "policy_version": "2026-08-30-v4",
+        "manual_label": null,
+        "rejection_reason": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "substantive_company_change": false,
+        "selection_status": "kept",
+        "impact_dimensions": [],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:03:16"
+      },
+      {
+        "title": "海外監管公告 中國東方航空股份有限公司關於與東航物流聯合召開2026年中期業績說明會的公告",
+        "title_original": "",
+        "summary": "海外監管公告-其他",
+        "source": "披露易·中国东航",
+        "date": "2026-08-25",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501299_c.pdf",
+        "section": "domestic",
+        "category": "regulatory",
+        "entity_id": null,
+        "content_type": "general",
+        "selection_score": 60,
+        "selection_reasons": [
+          "官方来源保留清单(披露易)",
+          "评分(相关6/重要4/基本面0/证据10/来源5)",
+          "实质动态/官方清单保底60"
+        ],
+        "matched_rule_ids": [
+          "manual.keep"
+        ],
+        "policy_version": "2026-08-30-v4",
+        "manual_label": "保留",
+        "rejection_reason": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "substantive_company_change": false,
+        "selection_status": "kept",
+        "impact_dimensions": [],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-08-31 14:03:16"
       }
     ]
   },
   "last_updated": "2026-08-31 13:44:54",
   "selection_report": {
-    "run_at": "2026-08-31 13:43:45",
+    "run_at": "2026-08-31 14:14:38",
     "policy_version": "2026-08-30-v4",
-    "raw_count": 209,
-    "kept_count": 73,
-    "rejected_count": 136,
+    "raw_count": 207,
+    "kept_count": 75,
+    "rejected_count": 132,
     "by_reason": {
-      "评分低于60且无保底资格": 64,
+      "观点评论/泛分析": 3,
+      "评分低于60且无保底资格": 65,
       "Hotel非OTA相关": 18,
       "无新事实短评": 8,
       "观点评论/趋势展望": 4,
@@ -5174,17 +5431,16 @@
       "软广/优惠促销/榜单": 4,
       "公益/救灾宣传": 2,
       "被动机构持仓变动": 2,
-      "观点评论/泛分析": 2,
       "体育赞助/庆典/获奖/公益": 1,
-      "东航非业务影响词": 16,
+      "东航非业务影响词": 10,
       "活动报名/会议预告": 1,
       "东航宣传稿(CiftonEXCLUDE_RE)": 2
     },
     "quality": {
       "empty_categories": [],
-      "total_items": 73,
+      "total_items": 75,
       "unknown_date_count": 0,
-      "no_summary_count": 7
+      "no_summary_count": 6
     }
   },
   "update_status": "partial",
@@ -5445,5 +5701,7 @@
       }
     }
   },
-  "update_mode": "full"
+  "update_mode": "full",
+  "policy_version": "2026-08-30-v4",
+  "policy_reprocessed_at": "2026-08-31 14:14:38"
 }

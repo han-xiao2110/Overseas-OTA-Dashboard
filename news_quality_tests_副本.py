@@ -307,6 +307,91 @@ def test_summary_evidence():
     check("E12 PAYWALL_SOURCES 已无 Bloomberg",
           not any("Bloomberg" in p for p in hai.PAYWALL_SOURCES))
 
+    form4_xml = """<?xml version="1.0"?><ownershipDocument>
+      <documentType>4</documentType><periodOfReport>2026-08-24</periodOfReport>
+      <issuer><issuerTradingSymbol>EXPE</issuerTradingSymbol></issuer>
+      <reportingOwner><reportingOwnerId><rptOwnerName>Example Officer</rptOwnerName></reportingOwnerId>
+      <reportingOwnerRelationship><isOfficer>1</isOfficer><officerTitle>Chief Financial Officer</officerTitle>
+      </reportingOwnerRelationship></reportingOwner><aff10b5One>true</aff10b5One>
+      <nonDerivativeTable><nonDerivativeTransaction><securityTitle><value>Common Stock</value></securityTitle>
+      <transactionCoding><transactionCode>S</transactionCode></transactionCoding>
+      <transactionAmounts><transactionShares><value>1004</value></transactionShares>
+      <transactionPricePerShare><value>335</value></transactionPricePerShare></transactionAmounts>
+      <postTransactionAmounts><sharesOwnedFollowingTransaction><value>104331</value>
+      </sharesOwnedFollowingTransaction></postTransactionAmounts><ownershipNature>
+      <directOrIndirectOwnership><value>D</value></directOrIndirectOwnership></ownershipNature>
+      </nonDerivativeTransaction></nonDerivativeTable></ownershipDocument>"""
+    form4_summary = fn.summarize_sec_form4(form4_xml, {"company": "EXPE"})
+    check("E13 Form 4摘要含申报人/职位/股数/价格/交易后持股/10b5-1",
+          all(x in form4_summary for x in (
+              "Example Officer", "首席财务官", "1,004股", "335.00美元/股",
+              "104,331股", "10b5-1")))
+
+    form144_xml = """<?xml version="1.0"?><edgarSubmission xmlns="http://www.sec.gov/edgar/ownership">
+      <headerData><submissionType>144</submissionType></headerData><formData><issuerInfo>
+      <nameOfPersonForWhoseAccountTheSecuritiesAreToBeSold>Example Seller</nameOfPersonForWhoseAccountTheSecuritiesAreToBeSold>
+      <relationshipsToIssuer><relationshipToIssuer>Director</relationshipToIssuer></relationshipsToIssuer>
+      </issuerInfo><securitiesInformation><securitiesClassTitle>Class A</securitiesClassTitle>
+      <brokerOrMarketmakerDetails><name>Fidelity Brokerage Services LLC</name></brokerOrMarketmakerDetails>
+      <noOfUnitsSold>57160</noOfUnitsSold><aggregateMarketValue>10901033.25</aggregateMarketValue>
+      <approxSaleDate>08/28/2026</approxSaleDate></securitiesInformation></formData></edgarSubmission>"""
+    form144_summary = fn.summarize_sec_form144(form144_xml, {"company": "ABNB"})
+    check("E14 Rule 144摘要含拟售人/日期/股数/市值/经纪商",
+          all(x in form144_summary for x in (
+              "Example Seller", "2026-08-28", "57,160股", "1090.1万美元", "Fidelity")))
+
+    metadata_summary = fn.sec_metadata_summary({
+        "company": "BKNG", "type": "8-K", "date": "2026-08-05",
+        "sec_items": ["2.02", "9.01"]})
+    check("E15 8-K摘要把Item编号解释为具体事项",
+          "公布经营业绩或财务状况" in metadata_summary and "提交财务报表或附件" in metadata_summary)
+
+    sec_fixture = [{"company": "EXPE", "type": "4", "date": "2026-08-25",
+                    "url": "https://www.sec.gov/Archives/edgar/data/1/2/doc4.xml"}]
+    with mock.patch.object(fn, "safe_request", return_value=form4_xml), \
+         mock.patch.object(fn.time, "sleep", return_value=None):
+        fn.enrich_sec_filing_summaries(sec_fixture)
+    check("E16 SEC详情补抓写入版本/类型/详情URL",
+          sec_fixture[0].get("sec_summary_version") == fn.SEC_DETAIL_SUMMARY_VERSION and
+          sec_fixture[0].get("sec_summary_kind") == "document_detail" and
+          sec_fixture[0].get("sec_detail_url", "").endswith("doc4.xml"))
+
+    report_8k = """<html><body><b>Item 2.02 Results of Operations and Financial Condition</b>
+      <b>Item 9.01 Financial Statements and Exhibits</b></body></html>"""
+    report_8k_filing = {"company": "EXPE", "type": "8-K", "date": "2026-08-05"}
+    report_8k_summary = fn.summarize_sec_report_document(report_8k, report_8k_filing)
+    check("E17 8-K正文提取Item并解释事项",
+          report_8k_filing.get("sec_items") == ["2.02", "9.01"] and
+          "公布经营业绩或财务状况" in report_8k_summary and
+          "提交财务报表或附件" in report_8k_summary)
+
+    report_8k_header = """CONFORMED SUBMISSION TYPE: 8-K
+      ITEM INFORMATION: Results of Operations and Financial Condition
+      ITEM INFORMATION: Regulation FD Disclosure
+      ITEM INFORMATION: Other Events
+      ITEM INFORMATION: Financial Statements and Exhibits"""
+    report_8k_header_filing = {"company": "EXPE", "type": "8-K", "date": "2026-08-05"}
+    report_8k_header_summary = fn.summarize_sec_report_document(
+        report_8k_header, report_8k_header_filing)
+    check("E17b 8-K完整提交文本的ITEM INFORMATION可解析",
+          report_8k_header_filing.get("sec_items") == ["2.02", "7.01", "8.01", "9.01"] and
+          "Regulation FD" in report_8k_header_summary and "其他重大事项" in report_8k_header_summary)
+
+    report_10q = """<html><body><dei:DocumentPeriodEndDate contextRef="d">2026-06-30
+      </dei:DocumentPeriodEndDate></body></html>"""
+    report_10q_filing = {"company": "BKNG", "type": "10-Q", "date": "2026-08-04"}
+    report_10q_summary = fn.summarize_sec_report_document(report_10q, report_10q_filing)
+    check("E18 10-Q正文提取报告期",
+          report_10q_filing.get("report_date") == "2026-06-30" and
+          "截至2026-06-30的季度报告" in report_10q_summary)
+
+    report_10q_human = """<ix:nonNumeric name="dei:DocumentPeriodEndDate"
+      format="ixt:date-monthname-day-year-en">June 30, 2026</ix:nonNumeric>"""
+    report_10q_human_filing = {"company": "EXPE", "type": "10-Q", "date": "2026-08-06"}
+    fn.summarize_sec_report_document(report_10q_human, report_10q_human_filing)
+    check("E18b 10-Q人类可读日期转换为ISO报告期",
+          report_10q_human_filing.get("report_date") == "2026-06-30")
+
 
 # ════════════════ F. 国内分源过滤 ════════════════
 

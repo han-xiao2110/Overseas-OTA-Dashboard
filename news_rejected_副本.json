@@ -1,8 +1,9 @@
 {
- "run_at": "2026-08-31 13:43:45",
- "total_rejected": 136,
+ "run_at": "2026-08-31 14:14:38",
+ "total_rejected": 132,
  "by_reason": {
-  "评分低于60且无保底资格": 64,
+  "观点评论/泛分析": 3,
+  "评分低于60且无保底资格": 65,
   "Hotel非OTA相关": 18,
   "无新事实短评": 8,
   "观点评论/趋势展望": 4,
@@ -14,13 +15,34 @@
   "软广/优惠促销/榜单": 4,
   "公益/救灾宣传": 2,
   "被动机构持仓变动": 2,
-  "观点评论/泛分析": 2,
   "体育赞助/庆典/获奖/公益": 1,
-  "东航非业务影响词": 16,
+  "东航非业务影响词": 10,
   "活动报名/会议预告": 1,
   "东航宣传稿(CiftonEXCLUDE_RE)": 2
  },
  "items": [
+  {
+   "title": "爱彼迎让我们重新思考「直接预订」的真正含义",
+   "title_original": "Airbnb is making us rethink what a “direct booking” really means",
+   "summary": "",
+   "source": "PhocusWire",
+   "date": "2026-08-30",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWJ0a1UxVkxaT09xd0RTMEJzbEhtYVRFblppdTdfMFJKeDJXQWJLbUwxSXZZVnNfRmplX0FOWFNZSXRVTjlrRWRya25FWjJwN0ZtSVh2aWN4V05MM1FaSkY4RU9fRHVJMUpBNXkzRlpJY1BCeTBOalBTUEY3QzVhUHNfcV9QUjZ2LW14MnJnWVVyUQ?oc=5",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": "ABNB",
+   "content_type": "opinion",
+   "selection_score": 0,
+   "selection_reasons": [
+    "硬排除: 观点评论/泛分析"
+   ],
+   "matched_rule_ids": [
+    "exclude.hard.观点评论_泛分析"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "观点评论/泛分析"
+  },
   {
    "title": "Growing Sportcation Travel Trend: Trip.com Group Reports 40% Increase in Active Travel Booking GMV",
    "title_original": "",
@@ -373,28 +395,6 @@
    "policy_version": "2026-08-30-v4",
    "manual_label": null,
    "rejection_reason": "新闻合集/无具体事件页"
-  },
-  {
-   "title": "Klook 入选 PhocusWire 旅游科技快讯",
-   "title_original": "",
-   "summary": "Klook 入选 PhocusWire 旅游科技快讯。详情见原文。",
-   "source": "PhocusWire Briefs",
-   "date": "2026-08-28",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE80QmExRFViMHpzZDI4T1QwMDc1cG41OG1UNXA3RWF4bERYdm9TWm9RbmFoNURMLWNDbVdqakpaZTB5VVBxaHN3OVM4QW95UnhINnh2UV9Ob09YOUVLNTRJeVVHZ0o5WTMxNlNLQmpDNl9LaDg?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 1,
-   "selection_reasons": [
-    "评分(相关3/重要4/基本面0/证据10/来源4)",
-    "摘要重复标题(-20)",
-    "低于准入分60"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "Zacks Industry Outlook GoDaddy, Vipshop, MakeMyTrip and QuinStreet",
@@ -932,28 +932,6 @@
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
-   "title": "度假租赁宾客服务平台VayKLife收购Xplorie，整合度假租赁服务与本地体验",
-   "title_original": "",
-   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-   "source": "环球旅讯",
-   "date": "2026-08-27",
-   "url": "https://www.traveldaily.cn/expressPage/190606/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "ma_investment",
-   "selection_score": 0,
-   "selection_reasons": [
-    "Hotel默认排除：未直接影响OTA"
-   ],
-   "matched_rule_ids": [
-    "topic.hotel"
-   ],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "Hotel非OTA相关"
-  },
-  {
    "title": "Investors raise the bar for AI-powered travel startups",
    "title_original": "",
    "summary": "Investors raise the bar for AI-powered travel startups&nbsp;&nbsp;PhocusWire",
@@ -1336,48 +1314,6 @@
    "rejection_reason": "新闻合集/无具体事件页"
   },
   {
-   "title": "旅连连海外供应商名录 | 韩国-地接社篇",
-   "title_original": "",
-   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-   "source": "环球旅讯",
-   "date": "2026-08-25",
-   "url": "https://www.traveldaily.cn/article/190586/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 21,
-   "selection_reasons": [
-    "评分(相关3/重要4/基本面0/证据10/来源4)",
-    "低于准入分60"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
-   "title": "一瓶马爹利输给一辆奔驰，新加坡赌场两极分化",
-   "title_original": "",
-   "summary": "中国高净值游客是重要增量",
-   "source": "环球旅讯",
-   "date": "2026-08-25",
-   "url": "https://www.traveldaily.cn/article/190578/",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 21,
-   "selection_reasons": [
-    "评分(相关3/重要4/基本面0/证据10/来源4)",
-    "低于准入分60"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "评分低于60且无保底资格"
-  },
-  {
    "title": "AI transformation in travel: Ante Dagelić of Travelier",
    "title_original": "",
    "summary": "AI transformation in travel: Ante Dagelić of Travelier&nbsp;&nbsp;PhocusWire",
@@ -1666,28 +1602,6 @@
    "policy_version": "2026-08-30-v4",
    "manual_label": null,
    "rejection_reason": "新闻合集/无具体事件页"
-  },
-  {
-   "title": "Sabre 入选 PhocusWire 旅游科技快讯",
-   "title_original": "",
-   "summary": "Sabre 入选 PhocusWire 旅游科技快讯。详情见原文。",
-   "source": "PhocusWire Briefs",
-   "date": "2026-08-21",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1GckczSUhDazVpcDROM05OWHdaTnNhZVEzNG52TFY3dHpTNjhKQlZFT19MTlVmN0UzbVBPT2FraFRIdUQwX1p1ZGlDZFV6R1BhZ0xRVFk5VE1mdWxUcWQ3bkJpNE1sZTN0Z2VBeGJhNEpBT2M?oc=5",
-   "section": "international",
-   "category": "industry_news",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 1,
-   "selection_reasons": [
-    "评分(相关3/重要4/基本面0/证据10/来源4)",
-    "摘要重复标题(-20)",
-    "低于准入分60"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "What Google's purchase of Spirit Airlines' data signals for travel",
@@ -2267,6 +2181,91 @@
    "rejection_reason": "评分低于60且无保底资格"
   },
   {
+   "title": "度假租赁宾客服务平台VayKLife收购Xplorie，整合度假租赁服务与本地体验",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+   "source": "环球旅讯",
+   "date": "2026-08-27",
+   "url": "https://www.traveldaily.cn/expressPage/190606/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "ma_investment",
+   "selection_score": 0,
+   "selection_reasons": [
+    "Hotel默认排除：未直接影响OTA"
+   ],
+   "matched_rule_ids": [
+    "topic.hotel"
+   ],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "Hotel非OTA相关"
+  },
+  {
+   "title": "旅连连海外供应商名录 | 韩国-地接社篇",
+   "title_original": "",
+   "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+   "source": "环球旅讯",
+   "date": "2026-08-25",
+   "url": "https://www.traveldaily.cn/article/190586/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 21,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "一瓶马爹利输给一辆奔驰，新加坡赌场两极分化",
+   "title_original": "",
+   "summary": "中国高净值游客是重要增量",
+   "source": "环球旅讯",
+   "date": "2026-08-25",
+   "url": "https://www.traveldaily.cn/article/190578/",
+   "section": "international",
+   "category": "industry_news",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 21,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据10/来源4)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
+   "title": "中国景区的“造丑运动”，游客已经忍无可忍",
+   "title_original": "",
+   "summary": "中国景区的“造丑运动”，游客已经忍无可忍&nbsp;&nbsp;36 Kr",
+   "source": "36 Kr",
+   "date": "2026-08-27",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1jNHB2N2ZfS0dteUMyVUFOVFhwYnlwY3owOWJaRzNfOHpYQl9FRFFwRDZzbjdldzZMSWVPdW9FNG1WV0VqbndsZ3h2OUFPQQ?oc=5",
+   "section": "domestic",
+   "category": "china_industry",
+   "entity_id": null,
+   "content_type": "general",
+   "selection_score": 15,
+   "selection_reasons": [
+    "评分(相关3/重要4/基本面0/证据6/来源2)",
+    "低于准入分60"
+   ],
+   "matched_rule_ids": [],
+   "policy_version": "2026-08-30-v4",
+   "manual_label": null,
+   "rejection_reason": "评分低于60且无保底资格"
+  },
+  {
    "title": "智能原生酒店：物理AI催生酒店业的新物种",
    "title_original": "",
    "summary": "酒店业的竞争，终将演变为智能终端与智能体数量与质量的较量。",
@@ -2309,27 +2308,6 @@
    "policy_version": "2026-08-30-v4",
    "manual_label": null,
    "rejection_reason": "Hotel非OTA相关"
-  },
-  {
-   "title": "中国景区的“造丑运动”，游客已经忍无可忍",
-   "title_original": "",
-   "summary": "中国景区的“造丑运动”，游客已经忍无可忍&nbsp;&nbsp;36 Kr",
-   "source": "36 Kr",
-   "date": "2026-08-27",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1jNHB2N2ZfS0dteUMyVUFOVFhwYnlwY3owOWJaRzNfOHpYQl9FRFFwRDZzbjdldzZMSWVPdW9FNG1WV0VqbndsZ3h2OUFPQQ?oc=5",
-   "section": "domestic",
-   "category": "china_industry",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 15,
-   "selection_reasons": [
-    "评分(相关3/重要4/基本面0/证据6/来源2)",
-    "低于准入分60"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "产品越“本土化”，国际酒店品牌的不可替代性还剩多少？",
@@ -2592,48 +2570,6 @@
    "rejection_reason": "无新事实短评"
   },
   {
-   "title": "2026年中期業績公告",
-   "title_original": "",
-   "summary": "中期業績",
-   "source": "披露易·中国东航",
-   "date": "2026-08-30",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000478_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "selection_reasons": [
-    "官方来源保留清单(披露易)",
-    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "海外監管公告 中國東方航空股份有限公司關於對東航集團財務有限責任公司2026年上半年風險持續評估報告",
-   "title_original": "",
-   "summary": "海外監管公告-其他",
-   "source": "披露易·中国东航",
-   "date": "2026-08-30",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0830/2026083000401_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "selection_reasons": [
-    "官方来源保留清单(披露易)",
-    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": null,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
    "title": "關於提名董事的公告",
    "title_original": "",
    "summary": "更換董事或重要行政職能或職責的變更",
@@ -2644,14 +2580,15 @@
    "category": "regulatory",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 0,
+   "selection_score": 19,
    "selection_reasons": [
-    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+    "评分(相关0/重要4/基本面0/证据10/来源5)",
+    "低于准入分60"
    ],
    "matched_rule_ids": [],
    "policy_version": "2026-08-30-v4",
    "manual_label": null,
-   "rejection_reason": "东航非业务影响词"
+   "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "海外監管公告 中國東方航空股份有限公司董事會2026年第6次會議決議公告",
@@ -2664,35 +2601,15 @@
    "category": "regulatory",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 0,
+   "selection_score": 25,
    "selection_reasons": [
-    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+    "评分(相关6/重要4/基本面0/证据10/来源5)",
+    "低于准入分60"
    ],
    "matched_rule_ids": [],
    "policy_version": "2026-08-30-v4",
    "manual_label": null,
-   "rejection_reason": "东航非业务影响词"
-  },
-  {
-   "title": "海外監管公告 中國東方航空股份有限公司關於與東航物流聯合召開2026年中期業績說明會的公告",
-   "title_original": "",
-   "summary": "海外監管公告-其他",
-   "source": "披露易·中国东航",
-   "date": "2026-08-25",
-   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501299_c.pdf",
-   "section": "domestic",
-   "category": "regulatory",
-   "entity_id": null,
-   "content_type": "general",
-   "selection_score": 0,
-   "selection_reasons": [
-    "官方来源保留清单(披露易)",
-    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
-   ],
-   "matched_rule_ids": [],
-   "policy_version": "2026-08-30-v4",
-   "manual_label": "保留",
-   "rejection_reason": "东航非业务影响词"
+   "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "中国东方航空中期收入742.34亿元 亏损扩至21.79亿元",
@@ -2891,14 +2808,15 @@
    "category": "company_news",
    "entity_id": null,
    "content_type": "general",
-   "selection_score": 0,
+   "selection_score": 37,
    "selection_reasons": [
-    "东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)"
+    "评分(相关11/重要4/基本面14/证据6/来源2)",
+    "低于准入分60"
    ],
    "matched_rule_ids": [],
    "policy_version": "2026-08-30-v4",
    "manual_label": null,
-   "rejection_reason": "东航非业务影响词"
+   "rejection_reason": "评分低于60且无保底资格"
   },
   {
    "title": "东航机上咖啡体验迎来全新升级",

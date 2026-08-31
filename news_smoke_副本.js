@@ -78,6 +78,10 @@ console.log('— 国际·披露与文件 (intlDisclosureList) —');
 check('intlDisclosureList 有条目', count('intlDisclosureList') > 0);
 check('披露模块含 10-Q 文件', h('intlDisclosureList').includes('10-Q'));
 check('三家公司徽章都有颜色(无#666灰)', !h('intlDisclosureList').includes('#666'));
+const disclosureSummaries = renderedText('intlDisclosureList', 'news-summary');
+check('SEC Form 4/Rule 144展示具体交易摘要而非表单占位',
+      disclosureSummaries.some(t => /股|美元|经纪商|10b5-1/.test(t)) &&
+      !disclosureSummaries.some(t => /向SEC提交(?:董事\/高管交易|证券出售登记)/.test(t)));
 
 console.log('— 国际·核心公司动态 (coreCompanyList) —');
 check('coreCompanyList 有条目', count('coreCompanyList') > 0);
