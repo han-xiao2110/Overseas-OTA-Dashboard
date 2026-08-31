@@ -74,6 +74,9 @@ const renderedText = (id, className) => {
 };
 const metaBlocks = (id) => [...h(id).matchAll(/<div class="news-meta">([\s\S]*?)<\/div>/g)].map(m => m[1]);
 
+check('页面层级标题和页签不显示emoji',
+      !/[🌍🇨🇳🏢📰📋🏨📱]/u.test(html));
+
 // ══════════ 5 模块结构验收（2026-08-18 重构） ══════════
 console.log('— 国际·披露与文件 (intlDisclosureList) —');
 check('intlDisclosureList 有条目', count('intlDisclosureList') > 0);

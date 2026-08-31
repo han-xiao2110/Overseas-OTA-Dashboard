@@ -77,6 +77,7 @@ bash deploy_local.sh
 - `Booking Holdings`、`Expedia Group`、`Airbnb` 必须始终保留英文原名，标题和摘要都不得翻译成中文公司名。
 - 翻译前用专用 token 保护上述名称，翻译后恢复；历史缓存中的“预订控股公司 / Expedia集团 / 爱彼迎”也统一纠正。
 - 新闻标题不展示 emoji；抓取端落盘前清理，前端渲染时再做一层兜底。
+- 网页层级标题、模块标题和页签文字不使用 emoji，保持正式研究看板风格。
 
 ### 处理管线（`fetch_news_副本.py`）
 ```
@@ -117,7 +118,7 @@ RSS/官网抓取(safe_request, TLS 只验证)
 | `news_ai_helpers_副本.py` | AI 辅助模块 | ⚠️ 已禁用（AI_MODULE_AVAILABLE=False） |
 | `agent_translate_副本.py` | AI 翻译桥接 | ⚠️ 已禁用（改用 deep-translator） |
 | `news_quality_tests_副本.py` | 离线质量测试（152 项） | 不含 AI 依赖 |
-| `news_smoke_副本.js` | 前端烟雾测试（51 项） | |
+| `news_smoke_副本.js` | 前端烟雾测试（52 项） | |
 | `market_smoke_副本.js` | 市场行情测试（32 项） | |
 | `translation_cache_副本.json` | 成功译文持久缓存 | GitHub Actions 每次更新后回仓库 |
 | `requirements.txt` | Python 依赖 | yfinance, feedparser, deep-translator, openpyxl, requests, beautifulsoup4, certifi |
@@ -179,7 +180,7 @@ python3 -c "import ast; [ast.parse(open(f).read()) for f in ['fetch_news_副本.
 # 离线质量测试（152 项）
 python3 news_quality_tests_副本.py
 
-# 前端烟雾测试（51 项）
+# 前端烟雾测试（52 项）
 node news_smoke_副本.js dashboard.html
 
 # 市场行情测试（32 项）
