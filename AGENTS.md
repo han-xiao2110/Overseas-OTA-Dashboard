@@ -174,7 +174,7 @@ python3 -c "import ast; [ast.parse(open(f).read()) for f in ['fetch_news_副本.
 # 离线质量测试（149 项）
 python3 news_quality_tests_副本.py
 
-# 前端烟雾测试（44 项）
+# 前端烟雾测试（49 项）
 node news_smoke_副本.js dashboard.html
 
 # 市场行情测试（32 项）

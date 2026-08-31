@@ -67,12 +67,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 .news-title a:hover{color:#1677ff;text-decoration:underline}
 .news-summary{font-size:12px;color:#666;line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .news-summary-none{color:#aaa;font-style:italic}
-.news-meta{font-size:11px;color:#999;display:flex;gap:8px;align-items:center}
-.news-tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:10px;font-weight:500}
+.news-meta{font-size:11px;color:#999;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.news-tag{display:inline-block;padding:2px 7px;border:1px solid transparent;border-radius:8px;font-size:10px;font-weight:600;line-height:1.35;white-space:nowrap}
 .news-tag-sec{background:#e6f7ff;color:#1890ff}
 .news-tag-form{background:#fff7e6;color:#fa8c16}
-.news-tag-src{background:#f6ffed;color:#52c41a}
-.news-tag-company{background:#f9f0ff;color:#722ed1}
+.news-tag-src{background:#f2faeb;color:#237804;border-color:#d9f0c8}
+.news-tag-company{font-weight:700;letter-spacing:.01em}
+.news-tag-company.company-bkng{background:#e8f0fe;color:#0b57d0;border-color:#bfd2f7}
+.news-tag-company.company-expe{background:#fff1e5;color:#934600;border-color:#f2c79f}
+.news-tag-company.company-abnb{background:#fde8f0;color:#b51655;border-color:#efb8cb}
+.news-tag-company.company-tcom{background:#e5f7f1;color:#076653;border-color:#acdccc}
+.news-tag-company.company-tongcheng{background:#f1eafa;color:#633695;border-color:#d6c1ed}
 .news-tag-category{background:#e6f7ff;color:#1890ff}
 .news-empty{color:#999;font-size:13px;padding:20px;text-align:center}
 @media(min-width:1024px){
@@ -1667,21 +1672,30 @@ function renderQuarterlyDetailTable(){
 /* ====== LATEST TAB (NEWS) ====== */
 var _secFilter="all";
 
-// ticker 配色（SEC文件徽章 / 公司新闻徽章）
-var TICKER_CC={BKNG:"#800000",EXPE:"#b34040",ABNB:"#d48c8c","中国东航":"#2E6DA4"};
-
-// 前端兜底：根据品牌关键词识别公司新闻（兼容未打标的旧缓存）
-var _BRAND_RE=[
-  ["BKNG",/booking\.com|booking holdings|\bbkng\b|priceline|\bkayak\b|opentable|\bagoda\b/i],
-  ["EXPE",/expedia|\bvrbo\b|hotels\.com|orbitz|travelocity|hotwire|\bexpe\b/i],
-  ["ABNB",/\bairbnb\b|\babnb\b/i]
+// 关注公司标签：只展示海外三家及国内携程/同程。
+// 每篇文章同时检查结构化 entity_id/company 与中英文内容，允许多公司同时打标。
+var COMPANY_TAGS=[
+  {id:"BKNG",label:"BKNG",css:"company-bkng",re:/booking\.com|booking holdings|\bbkng\b|priceline|\bkayak\b|opentable|\bagoda\b/i},
+  {id:"EXPE",label:"EXPE",css:"company-expe",re:/expedia|\bvrbo\b|hotels\.com|orbitz|travelocity|hotwire|\bexpe\b/i},
+  {id:"ABNB",label:"ABNB",css:"company-abnb",re:/\bairbnb\b|\babnb\b|爱彼迎/i},
+  {id:"TCOM",label:"携程",css:"company-tcom",re:/trip\.com|trip\s*group|携程|去哪儿|\bctrip\b/i},
+  {id:"TONGCHENG",label:"同程",css:"company-tongcheng",re:/同程旅行|同程旅游|同程艺龙/i}
 ];
+function detectCompanyTags(n){
+  var ids=[n.entity_id||"",n.company||""];
+  var text=[n.title||"",n.title_original||"",n.summary||"",n.summary_original||""].join(" ");
+  return COMPANY_TAGS.filter(function(tag){
+    return ids.indexOf(tag.id)>=0 || tag.re.test(text);
+  });
+}
+function renderCompanyTags(n){
+  return detectCompanyTags(n).map(function(tag){
+    return '<span class="news-tag news-tag-company '+tag.css+'">'+escapeHtml(tag.label)+'</span>';
+  }).join('');
+}
 function detectIntlCompany(n){
-  var text=[n.title||"",n.title_original||"",n.summary||"",n.summary_original||""].join(" ").toLowerCase();
-  for(var i=0;i<_BRAND_RE.length;i++){
-    if(_BRAND_RE[i][1].test(text)) return _BRAND_RE[i][0];
-  }
-  return null;
+  var tags=detectCompanyTags(n).filter(function(tag){return /^(BKNG|EXPE|ABNB)$/.test(tag.id);});
+  return tags.length?tags[0].id:null;
 }
 
 /* ====== 安全渲染辅助（SEC卡片与新闻卡片共用）====== */
@@ -1789,8 +1803,6 @@ function renderDisclosures(elId, items){
     if(n.title_original){titleAttr=' title="原文: '+escapeHtml(n.title_original)+'"';}
     var url=safeExternalUrl(n.url);
     var dateStr=(n.date_status==='unknown'||!n.date)?'待确认':String(n.date||'');
-    var ticker = n.company || n.entity_id || '';
-    var color = TICKER_CC[ticker] || '#666';
     h+='<div class="news-item">';
     h+='<div class="news-date">'+escapeHtml(dateStr)+'</div>';
     h+='<div class="news-content">';
@@ -1803,21 +1815,13 @@ function renderDisclosures(elId, items){
       h+='<div class="news-summary">'+escapeHtml(n.summary)+'</div>';
     }
     h+='<div class="news-meta">';
-    // 公司徽章（ticker 配色）
-    if(ticker){
-      h+='<span class="news-tag news-tag-sec" style="background:'+escapeHtml(color)+'22;color:'+escapeHtml(color)+'">'+escapeHtml(ticker)+'</span>';
-    }
-    // 披露类型徽章（10-K / 10-Q / 8-K / Form 4 / 144 / IR 财报 / 股东信 / 业绩演示）
-    var formType = n.type || n.disclosure_type || '';
-    if(formType){
-      h+='<span class="news-tag news-tag-form">'+escapeHtml(formType)+'</span>';
-    }
+    // 统一顺序：来源 → 关注公司 → 其他披露类型。
     if(n.source) h+='<span class="news-tag news-tag-src">'+escapeHtml(n.source)+'</span>';
-    // 同事件相关来源
-    var rel=(n.related_sources||[]).concat(n.same_event_sources||[]);
-    if(rel.length){
-      var uniq=[];rel.forEach(function(s){if(s&&uniq.indexOf(s)<0)uniq.push(s);});
-      h+='<span class="news-tag" style="background:#f0f0f0;color:#888">同事件: '+escapeHtml(uniq.slice(0,2).join(', '))+'</span>';
+    h+=renderCompanyTags(n);
+    // Form 4 / Rule 144 的类型已在标题中，不再重复显示标签。
+    var formType = n.type || n.disclosure_type || '';
+    if(formType && ['4','4/A','144'].indexOf(String(formType).toUpperCase())<0){
+      h+='<span class="news-tag news-tag-form">'+escapeHtml(formType)+'</span>';
     }
     h+='</div>';
     h+='</div></div>';
@@ -1850,22 +1854,11 @@ function renderNewsList(elId,items,isIntl){
       h+='<div class="news-summary">'+escapeHtml(n.summary)+'</div>';
     }
     h+='<div class="news-meta">';
+    // 统一顺序：来源 → 关注公司 → 其他分类。
+    if(n.source) h+='<span class="news-tag news-tag-src">'+escapeHtml(n.source)+'</span>';
+    h+=renderCompanyTags(n);
     if(n.ai_category_label){
       h+='<span class="news-tag news-tag-category">'+escapeHtml(n.ai_category_label)+'</span>';
-    }
-    if(n.source) h+='<span class="news-tag news-tag-src">'+escapeHtml(n.source)+'</span>';
-    if(n.company && !n.suppress_core_badge){
-      var cc=TICKER_CC[n.company];
-      if(cc){
-        h+='<span class="news-tag" style="background:'+escapeHtml(cc)+'22;color:'+escapeHtml(cc)+'">'+escapeHtml(n.company)+'</span>';
-      }else{
-        h+='<span class="news-tag news-tag-company">'+escapeHtml(n.company)+'</span>';
-      }
-    }
-    var rel=(n.related_sources||[]).concat(n.same_event_sources||[]);
-    if(rel.length){
-      var uniq=[];rel.forEach(function(s){if(s&&uniq.indexOf(s)<0)uniq.push(s);});
-      h+='<span class="news-tag" style="background:#f0f0f0;color:#888">同事件: '+escapeHtml(uniq.slice(0,2).join(', '))+'</span>';
     }
     h+='</div>';
     h+='</div></div>';

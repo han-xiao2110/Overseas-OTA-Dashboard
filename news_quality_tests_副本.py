@@ -23,6 +23,7 @@ news_quality_tests_副本.py — 新闻管道离线质量测试（改造项⑨, 
 
 import copy
 import datetime
+import email.utils
 import io
 import json
 import os
@@ -199,10 +200,11 @@ def test_dedupe():
     check("B5 相隔>72h不折叠", all(not i.get("folded_into") for i in out) and len(out) == 2)
 
     # URL 变体去重(跟踪参数)在 prune 内生效
+    recent_date = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
     data = {"domestic": {"china_industry": [
-        {"title": "Expedia收购AI助手Layla", "date": "2026-08-17", "url": "https://www.traveldaily.cn/article/190541",
+        {"title": "Expedia收购AI助手Layla", "date": recent_date, "url": "https://www.traveldaily.cn/article/190541",
          "source": "环球旅讯"},
-        {"title": "Expedia收购AI助手Layla", "date": "2026-08-17",
+        {"title": "Expedia收购AI助手Layla", "date": recent_date,
          "url": "https://www.traveldaily.cn/article/190541/?utm_source=feed", "source": "环球旅讯"},
     ]}}
     fn.prune_and_dedupe(data)
@@ -440,31 +442,35 @@ def test_domestic_filters():
 
 # ════════════════ C. 来源状态 / 失败回退（main 集成, fixture 不联网） ════════════════
 
-SKIFT_RSS = """<?xml version="1.0"?><rss version="2.0"><channel>
+RECENT_FIXTURE_DATE = datetime.date.today() - datetime.timedelta(days=1)
+RECENT_FIXTURE_RSS_DATE = email.utils.format_datetime(datetime.datetime.combine(
+    RECENT_FIXTURE_DATE, datetime.time(12, 0), tzinfo=datetime.timezone.utc))
+
+SKIFT_RSS = f"""<?xml version="1.0"?><rss version="2.0"><channel>
 <item><title>Saudi OTA Almosafer IPO Despite Iran War Disruption</title>
 <link>https://skift.com/2026/08/17/almosafer-ipo/</link>
-<pubDate>Mon, 17 Aug 2026 08:00:00 +0000</pubDate>
+<pubDate>{RECENT_FIXTURE_RSS_DATE}</pubDate>
 <description>Riyadh-based Almosafer parent Seera Group is pressing ahead with its IPO.</description>
 </item></channel></rss>"""
 
-BLOOMBERG_RSS = """<?xml version="1.0"?><rss version="2.0"><channel>
+BLOOMBERG_RSS = f"""<?xml version="1.0"?><rss version="2.0"><channel>
 <item><title>Airbnb Beats Estimates as Travel Demand Surges</title>
 <link>https://www.bloomberg.com/news/articles/2026-08-17/airbnb-q2</link>
-<pubDate>Mon, 17 Aug 2026 12:00:00 +0000</pubDate>
+<pubDate>{RECENT_FIXTURE_RSS_DATE}</pubDate>
 <description>Airbnb reported quarterly revenue above analyst estimates on strong travel demand.</description>
 </item></channel></rss>"""
 
-GOOGLE_RSS = """<?xml version="1.0"?><rss version="2.0"><channel>
+GOOGLE_RSS = f"""<?xml version="1.0"?><rss version="2.0"><channel>
 <item><title>Airbnb travel tools update - PhocusWire</title>
 <link>https://news.google.com/rss/articles/abc123</link>
-<pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+<pubDate>{RECENT_FIXTURE_RSS_DATE}</pubDate>
 <description> </description>
 </item></channel></rss>"""
 
 EDGAR_JSON = {
     "hits": {"hits": [{
         "_source": {
-            "form": "10-Q", "file_date": "2026-08-15",
+            "form": "10-Q", "file_date": RECENT_FIXTURE_DATE.isoformat(),
             "adsh": "0001075531-26-000123",
             "display_names": ["Booking Holdings Inc."],
             "ciks": ["0001075531"], "file_type": "10-Q", "file_description": "",

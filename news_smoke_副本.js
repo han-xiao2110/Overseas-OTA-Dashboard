@@ -72,12 +72,18 @@ const renderedText = (id, className) => {
   const re = new RegExp('<div class="' + className + '"[^>]*>([\\s\\S]*?)<\\/div>', 'g');
   return [...h(id).matchAll(re)].map(m => m[1].replace(/<[^>]+>/g, '').trim());
 };
+const metaBlocks = (id) => [...h(id).matchAll(/<div class="news-meta">([\s\S]*?)<\/div>/g)].map(m => m[1]);
 
 // ══════════ 5 模块结构验收（2026-08-18 重构） ══════════
 console.log('— 国际·披露与文件 (intlDisclosureList) —');
 check('intlDisclosureList 有条目', count('intlDisclosureList') > 0);
 check('披露模块含Rule 144', h('intlDisclosureList').includes('Rule 144'));
-check('三家公司徽章都有颜色(无#666灰)', !h('intlDisclosureList').includes('#666'));
+check('披露标签顺序为来源在前、公司在后', metaBlocks('intlDisclosureList').every(m => {
+  const src=m.indexOf('news-tag-src'), co=m.indexOf('news-tag-company');
+  return src>=0 && (co<0 || src<co);
+}));
+check('不展示Form 4/144类型标签',
+      !/news-tag-form[^>]*>(?:4|4\/A|144)<\/span>/.test(h('intlDisclosureList')));
 const disclosureSummaries = renderedText('intlDisclosureList', 'news-summary');
 const disclosureTitles = renderedText('intlDisclosureList', 'news-title');
 check('披露标题与已展示摘要均含中文',
@@ -90,6 +96,9 @@ check('SEC Form 4/Rule 144展示具体交易摘要而非表单占位',
 console.log('— 国际·核心公司动态 (coreCompanyList) —');
 check('coreCompanyList 有条目', count('coreCompanyList') > 0);
 check('核心公司含 ticker 徽章(BKNG/EXPE/ABNB)', /BKNG|EXPE|ABNB/.test(h('coreCompanyList')));
+check('五家关注公司都有独立高对比度样式',
+      ['company-bkng','company-expe','company-abnb','company-tcom','company-tongcheng']
+        .every(c => html.includes('.news-tag-company.'+c)));
 check('官方IR投资者大会公告进核心公司动态',
       /Communacopia|TMT大会/.test(h('coreCompanyList')) &&
       /Booking Holdings IR|Expedia Group IR|Airbnb IR/.test(h('coreCompanyList')));
@@ -110,10 +119,8 @@ console.log('— 国际·行业新闻 (intlIndustryList) —');
 check('intlIndustryList 有条目', count('intlIndustryList') > 0);
 check('环球旅讯海外交易进入国际行业',
       h('intlIndustryList').includes('eTravel') && h('intlIndustryList').includes('Spotnana'));
-const intlIndustryBadges = [...h('intlIndustryList').matchAll(/<span class="news-tag"[^>]*>([^<]+)<\/span>/g)]
-  .map(x => x[1].trim());
-check('国际行业中不再显示BKNG/EXPE/ABNB核心公司徽章',
-      !intlIndustryBadges.some(x => ['BKNG','EXPE','ABNB'].includes(x)));
+check('国际行业文章识别到关注公司时仍显示公司标签',
+      h('intlIndustryList').includes('company-bkng') && h('intlIndustryList').includes('company-expe'));
 
 console.log('— 国内·行业新闻 (domIndustryList) —');
 check('domIndustryList 有条目', count('domIndustryList') > 0);
@@ -130,10 +137,22 @@ check('国内披露含文旅部或交通运输部或披露易',
       h('domDisclosureList').includes('披露易'));
 
 console.log('— 国内无独立核心公司子模块 —');
-check('国内行业含东航标签(entity_id=CEAIR 或 中国东航)',
-      h('domIndustryList').includes('中国东航') || h('domIndustryList').includes('CEAIR'));
+check('国内公司标签只关注携程和同程，不给东航打公司标签',
+      !/news-tag-company[^>]*>中国东航<\/span>/.test(h('domIndustryList')));
 check('无旧缓存脏数据(国际航线/机场徽章)',
       !h('domIndustryList').includes('>国际航线<') && !h('domIndustryList').includes('>机场<') && !h('domIndustryList').includes('>要闻<'));
+const companyFixture = detectCompanyTags({
+  title:'Booking Holdings与Expedia对比；Airbnb、携程和同程旅行参与', summary:''
+}).map(x => x.id);
+check('公司识别支持一篇文章多标签且覆盖指定五家',
+      ['BKNG','EXPE','ABNB','TCOM','TONGCHENG'].every(x => companyFixture.includes(x)));
+check('所有新闻标签均以来源开头',
+      ['coreCompanyList','intlIndustryList','domIndustryList','domDisclosureList']
+        .every(id => metaBlocks(id).every(m => m.indexOf('news-tag-src')>=0 &&
+          (m.indexOf('news-tag-company')<0 || m.indexOf('news-tag-src')<m.indexOf('news-tag-company')))));
+check('页面不再显示“同事件”标签',
+      !['intlDisclosureList','coreCompanyList','intlIndustryList','domIndustryList','domDisclosureList']
+        .some(id => h(id).includes('同事件:')));
 
 console.log('— 其他 —');
 check('更新时间已填充', /更新于|数据截至/.test((elements['newsUpdateTime'] && elements['newsUpdateTime'].textContent || '')));
