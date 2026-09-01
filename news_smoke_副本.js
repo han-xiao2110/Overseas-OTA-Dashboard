@@ -176,6 +176,10 @@ check('页面不再显示“同事件”标签',
 
 console.log('— 其他 —');
 check('更新时间已填充', /更新于|数据截至/.test((elements['newsUpdateTime'] && elements['newsUpdateTime'].textContent || '')));
+check('正常状态在更新时间前标注每日更新',
+      !MKT_DATA.news_data || MKT_DATA.news_data.update_status === 'failed' || MKT_DATA.news_data.update_status === 'partial' ||
+      (elements['newsUpdateTime'] && elements['newsUpdateTime'].textContent || '').includes('每日更新 · 更新于'));
+check('国际国内页签不再重复更新频率', !html.includes('国际 · 每日更新') && !html.includes('国内 · 每周更新'));
 
 console.log('— 筛选管道 —');
 check('raw HTML 无"来源未提供足够公开信息"占位残留', !html.includes('来源未提供足够公开信息'));
