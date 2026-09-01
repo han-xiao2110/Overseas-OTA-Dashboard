@@ -491,16 +491,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 <div class="dashboard" id="latestDashboard">
 
 <div class="info-card" style="grid-column:1/-1">
-  <h3 style="display:flex;align-items:center;gap:8px">实时资讯 <span id="newsUpdateTime" style="font-size:12px;color:#999;font-weight:normal;margin-left:auto"></span></h3>
+  <h3 style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#52c41a"></span>实时资讯 <span id="newsUpdateTime" style="font-size:12px;color:#999;font-weight:normal;margin-left:auto"></span></h3>
   <div style="display:flex;gap:0;border-bottom:1px solid #f0f0f0;margin-bottom:16px;margin-top:4px">
-        <button class="news-tab active" data-newstab="intl">国际</button>
-        <button class="news-tab" data-newstab="domestic">国内</button>
+        <button class="news-tab active" data-newstab="intl">国际 · 每日更新</button>
+        <button class="news-tab" data-newstab="domestic">国内 · 每周更新</button>
   </div>
 </div>
 
 <div id="newsIntlPanel" class="news-panel">
   <div class="info-card">
-          <h3>核心公司动态（BKNG / EXPE / ABNB）</h3>
+          <h3>核心公司动态（BKNG / EXPE / ABNB · 官方 IR）</h3>
     <div id="coreCompanyList" class="news-list"></div>
   </div>
 
@@ -523,7 +523,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 
 <div id="newsDomesticPanel" class="news-panel" style="display:none">
   <div class="info-card">
-          <h3>国内行业新闻</h3>
+          <h3>国内行业新闻（携程 / 同程 / 飞猪 / 美团 / 华住 / 东航 等）</h3>
     <div id="domIndustryList" class="news-list"></div>
   </div>
 
@@ -542,7 +542,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 
 <!-- Level 2: 按国家 / 按App -->
 <div class="info-card" style="grid-column:1/-1">
-  <h3>用户数据(ST) <span style="font-size:12px;color:#999;font-weight:normal;margin-left:8px">数据来源：Sensor Tower</span></h3>
+  <h3>用户数据 (Sensor Tower) <span style="font-size:12px;color:#999;font-weight:normal;margin-left:8px">数据来源：Sensor Tower Intelligence</span></h3>
   <div style="display:flex;gap:0;margin-top:8px">
       <button class="st-tab active" data-sttab="country">按市场划分</button>
       <button class="st-tab" data-sttab="app">按App划分</button>
@@ -579,17 +579,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
   <div style="display:grid;grid-template-columns:1fr;gap:20px" id="stContinentsGrid"></div>
 </div>
 
-<!-- 国家/地区 多选区域 -->
-<div class="info-card st-country-control" style="grid-column:1/-1">
-  <h3>国家/地区明细</h3>
-  <div class="st-country-rail" id="stCountryChoices" role="group" aria-label="选择国家或地区"></div>
+<!-- 国家/地区 折叠区域 -->
+<div class="info-card" style="grid-column:1/-1;padding:12px 20px">
+  <div style="display:flex;align-items:center;cursor:pointer;user-select:none" id="stCountryToggle">
+    <span id="stCountryArrow" style="display:inline-block;transition:transform 0.2s;font-size:12px;margin-right:8px">▶</span>
+    <h3 style="margin:0">国家/地区明细</h3>
+    <span style="font-size:12px;color:#999;margin-left:8px">点击展开 9 个重点市场</span>
+  </div>
+  <div id="stCountriesGrid" style="display:none;margin-top:12px;grid-template-columns:1fr;gap:20px"></div>
 </div>
-<div id="stCountriesGrid"></div>
 
 </div><!-- /stCountryPanel -->
 
 <!-- ======= 按App Panel ======= -->
 <div id="stAppPanel" style="display:none">
+
+<div class="info-card" style="grid-column:1/-1">
+  <h3>OTA App 用户数据对比</h3>
+  <p style="color:#888;font-size:12px;margin-top:4px">点击 App 切换，对比其在全球与 6 大洲的 MAU / DAU / 下载量 趋势</p>
+</div>
+
+<!-- App selector + chart area -->
 <div id="stAppChartArea"></div>
 
 </div><!-- /stAppPanel -->
@@ -605,7 +615,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 .st-dashboard .info-card{grid-column:1/-1}
 .st-dashboard #stCountryPanel{grid-column:1/-1}
 .st-dashboard #stAppPanel{grid-column:1/-1}
-.st-dashboard,#stCountryPanel,#stAppPanel,.st-app-wrap,.st-app-control,.st-app-head,.st-app-ctrls,.st-seg{min-width:0;max-width:100%}
 .st-dashboard .chart-box{height:360px}
 .st-dashboard #stGlobalChart{height:400px !important}
 .st-dashboard .st-country-chart-box{height:320px}
@@ -639,25 +648,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 .st-country-chart-title .mini-btn-group button{padding:2px 8px;font-size:11px;border:1px solid #ddd;background:#fff;cursor:pointer;border-radius:3px}
 .st-country-chart-title .mini-btn-group button.active{background:#333;color:#fff;border-color:#333}
 .st-country-chart-box{width:100%;height:240px}
-.st-country-control{padding:16px 20px}
-.st-country-control h3{margin:0 0 12px}
-.st-country-rail{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.st-country-chip{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 15px;border-radius:8px;border:1px solid #e8e8ee;background:#f7f8fa;color:#3a3f4a;font-size:13px;font-weight:600;cursor:pointer;transition:background-color .18s ease,border-color .18s ease,color .18s ease;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-.st-country-chip:hover{border-color:#9dbbff;background:#f0f6ff;color:#1677ff}
-.st-country-chip.active{background:#1677ff;border-color:#1677ff;color:#fff}
-.st-country-chip:focus-visible{outline:2px solid #1677ff;outline-offset:2px}
-#stCountriesGrid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(max-width:1200px){#stContinentsGrid,#stCountriesGrid{grid-template-columns:1fr}}
 @media(max-width:768px){#stContinentsGrid,#stCountriesGrid{grid-template-columns:1fr}}
-@media(max-width:1024px){.st-country-chip,.st-app-chip{min-height:44px}}
 
-/* ===== ST 按App划分: 视图级控制卡 + 图表卡 ===== */
+/* ===== ST 按App划分: 横排 App 选择 chips + 工具栏 ===== */
 .st-app-wrap{display:flex;flex-direction:column;gap:12px;grid-column:1/-1}
-.st-app-control{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:16px 18px;display:flex;flex-direction:column;gap:12px}
-.st-app-control-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-.st-app-control-copy h3{margin:0}
-.st-app-control-copy p{color:#888;font-size:12px;margin:4px 0 0}
-.st-app-rail{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.st-app-rail{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .st-app-chip{display:inline-flex;align-items:center;gap:7px;padding:0 16px;height:34px;border-radius:999px;border:1px solid #e8e8ee;background:#f7f8fa;color:#3a3f4a;font-size:13px;font-weight:600;cursor:pointer;transition:all .18s ease;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 .st-app-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:#c3c8d4;transition:all .18s ease}
 .st-app-chip:hover{border-color:#9dbbff;background:#f0f6ff;color:#1677ff}
@@ -665,6 +661,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 .st-app-chip.active{background:#1677ff;border-color:#1677ff;color:#fff;box-shadow:none}
 .st-app-chip.active::before{background:#fff}
 .st-app-chip:focus-visible{outline:2px solid #1677ff;outline-offset:2px}
+.st-app-rail .st-app-rail-cap{font-size:12px;font-weight:600;color:#98a0ad;margin:0 4px 0 6px;letter-spacing:.5px}
 .st-app-panel{background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:14px 16px 10px}
 .st-app-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
 .st-app-title{font-size:15px;font-weight:700;color:#23262e;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -677,19 +674,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 .st-seg button:focus-visible{outline:2px solid #1677ff;outline-offset:1px}
 #stAppChart{width:100%}
 @media(max-width:768px){
-  .st-country-control{padding:15px 14px}
-  .st-country-rail,.st-app-rail{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 2px 5px}
-  .st-country-rail::-webkit-scrollbar,.st-app-rail::-webkit-scrollbar{display:none}
-  .st-country-chip,.st-app-chip{scroll-snap-align:start;flex:0 0 auto;min-height:44px}
-  .st-app-control{padding:15px 14px;gap:10px}
-  .st-app-control-top{flex-direction:column;align-items:stretch;gap:10px}
+  .st-app-rail{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .st-app-rail::-webkit-scrollbar{display:none}
+  .st-app-chip{scroll-snap-align:start;flex:0 0 auto}
+  .st-app-rail .st-app-rail-cap{flex:0 0 auto}
   .st-app-head{flex-direction:column;align-items:flex-start;gap:8px}
-  .st-app-ctrls{width:100%;flex-direction:column;align-items:stretch}
-  .st-app-ctrls .st-seg{width:100%}
+  .st-app-ctrls{width:100%}
   .st-seg{flex:1}
-  .st-seg button{flex:1;min-height:40px;text-align:center;padding:5px 6px}
-  .st-country-chart-title{align-items:flex-start;flex-direction:column;gap:8px}
-  .st-country-chart-title .mini-btn-group button{min-height:36px}
+  .st-seg button{flex:1;text-align:center;padding:5px 6px}
 }
 </style>
 
@@ -780,7 +772,7 @@ button:focus-visible,a:focus-visible{
 .tab-bar button:hover:not(.active){color:var(--ui-text);background:var(--ui-hover)}
 
 .dashboard{gap:16px}
-.chart-section,.info-card,.st-country-chart,.st-app-control,.st-app-panel{
+.chart-section,.info-card,.st-country-chart,.st-app-rail,.st-app-panel{
   background:var(--ui-surface);
   border:1px solid var(--ui-border);
   border-radius:var(--ui-radius);
@@ -889,11 +881,7 @@ button:focus-visible,a:focus-visible{
 .st-country-chart-title{color:#303741;font-weight:700}
 .st-country-chart-title .mini-btn-group button{min-height:28px;border-color:var(--ui-border);color:var(--ui-text-muted)}
 .st-country-chart-title .mini-btn-group button.active{background:#303945;border-color:#303945;color:#fff}
-.st-app-control-copy h3{color:#252c35;font-size:15px;font-weight:700;line-height:1.45}
-.st-app-control-copy p{color:var(--ui-text-muted)}
-.st-country-chip,.st-app-chip{border-color:var(--ui-border);background:var(--ui-surface-muted);color:#3a434e}
-.st-country-chip:hover,.st-app-chip:hover{border-color:#9fb7d4;background:var(--ui-accent-soft);color:var(--ui-accent)}
-.st-country-chip.active,.st-app-chip.active{background:var(--ui-accent);border-color:var(--ui-accent);color:#fff;box-shadow:none}
+.st-app-rail{padding:12px}
 .st-app-chip{height:34px;border-radius:8px;border-color:var(--ui-border);background:var(--ui-surface-muted);color:#3a434e}
 .st-app-chip:hover{border-color:#9fb7d4;background:var(--ui-accent-soft);color:var(--ui-accent)}
 .st-app-chip.active{background:var(--ui-accent);border-color:var(--ui-accent);color:#fff;box-shadow:none}
@@ -2045,7 +2033,7 @@ function statusLine(news){
     if(fs.sources){Object.keys(fs.sources).forEach(function(k){if(fs.sources[k].status!=='success')fails++;});}
     return '部分来源更新失败（'+fails+'个），'+lu;
   }
-  return lu?('每日更新 · 更新于 '+news.last_updated):'';
+  return lu?('更新于 '+news.last_updated):'';
 }
 
 function renderNewsTab(){
@@ -2294,7 +2282,7 @@ var _stResizeDebounced = debounce(function(){
     if(stState.level2 === 'country'){
       if(typeof stRenderGlobalChart==='function') stRenderGlobalChart();
       if(typeof stRenderContinents==='function') stRenderContinents();
-      if(stState.selectedCountries.length && typeof stRenderCountries==='function') stRenderCountries();
+      if(stState.countryOpen && typeof stRenderCountries==='function') stRenderCountries();
     } else if(stState.level2 === 'app'){
       if(typeof stRenderAppCharts==='function') stRenderAppCharts();
     }
@@ -2384,25 +2372,6 @@ function init(){
 /* ====== ST (User Data) TAB ====== */
 /* ST_DATA 通过静态 st_data.js 同步加载，window.ST_DATA 已就绪 */
 var ST_DATA = window.ST_DATA || null;
-var ST_COUNTRIES = [
-  {key:"hk", name:"中国香港"},
-  {key:"sg", name:"新加坡"},
-  {key:"jp", name:"日本"},
-  {key:"kr", name:"韩国"},
-  {key:"th", name:"泰国"},
-  {key:"my", name:"马来西亚"},
-  {key:"in", name:"印度"},
-  {key:"ph", name:"菲律宾"},
-  {key:"vn", name:"越南"},
-];
-var ST_APPS = [
-  {key:"trip_com", name:"Trip.com"},
-  {key:"airbnb", name:"Airbnb"},
-  {key:"agoda", name:"Agoda"},
-  {key:"booking_com", name:"Booking.com"},
-  {key:"expedia", name:"Expedia"},
-  {key:"skyscanner", name:"Skyscanner"},
-];
 var stState = {
   level2: "country",
   metric: "MAU",
@@ -2412,7 +2381,7 @@ var stState = {
   appMode: {},
   appMetric: "MAU",
   appActive: null,
-  selectedCountries: [],
+  countryOpen: false,
 };
 
 var ST_COLORS = ["#1677ff","#52c41a","#faad14","#eb2f96","#722ed1","#13c2c2","#fa541c","#c0392b","#6b7280","#8B5A2B","#0891b2","#2f54eb"];
@@ -2441,7 +2410,11 @@ function stRenderChart(containerId, title, data, quarters, mode, unit, height){
     delete charts[containerId];
   }
   
-  el.style.width = "100%";
+  var rect = el.getBoundingClientRect();
+  var elWidth = rect.width;
+  if(elWidth === 0 || !elWidth){
+    el.style.width = (el.parentElement ? el.parentElement.clientWidth - 32 : 600) + "px";
+  }
   el.style.height = height + "px";
   
   var chart = ecInit(el);
@@ -2549,7 +2522,12 @@ function stRenderStackedBarChart(containerId, title, seriesList, months, height)
     delete charts[containerId];
   }
 
-  el.style.width = "100%";
+  // Width fallback for hidden/zero containers (mobile tab switches)
+  var rect = el.getBoundingClientRect();
+  if(rect.width === 0 || !rect.width){
+    el.style.width = (el.parentElement ? el.parentElement.clientWidth - 32 : 600) + "px";
+  }
+
   el.style.height = height + "px";
   var chart = ecInit(el);
   charts[containerId] = chart;
@@ -2652,7 +2630,10 @@ function stRenderMultiLineChart(containerId, title, seriesList, months, mode, un
     delete charts[containerId];
   }
   
-  el.style.width = "100%";
+  var rect = el.getBoundingClientRect();
+  if(rect.width === 0 || !rect.width){
+    el.style.width = (el.parentElement ? el.parentElement.clientWidth - 32 : 600) + "px";
+  }
   
   // Use CSS height if already set, otherwise use provided height
   var cssHeight = window.getComputedStyle(el).height;
@@ -2836,7 +2817,23 @@ function stBindEvents(){
     });
   }
   
-  stRenderCountrySelector();
+  // Country toggle
+  var toggle = document.getElementById("stCountryToggle");
+  if(toggle){
+    toggle.addEventListener("click", function(){
+      stState.countryOpen = !stState.countryOpen;
+      var grid = document.getElementById("stCountriesGrid");
+      var arrow = document.getElementById("stCountryArrow");
+      if(stState.countryOpen){
+        grid.style.display = "grid";
+        arrow.style.transform = "rotate(90deg)";
+        stRenderCountryCharts();
+      } else {
+        grid.style.display = "none";
+        arrow.style.transform = "rotate(0deg)";
+      }
+    });
+  }
 }
 
 function stRenderAll(){
@@ -2869,44 +2866,6 @@ function stRenderCountryCharts(){
   stRenderGlobalChart();
   stRenderContinents();
   stRenderCountries();
-}
-
-function stDisposeChart(chartId){
-  if(charts[chartId]){
-    try { charts[chartId].dispose(); } catch(e) {}
-    delete charts[chartId];
-  }
-}
-
-function stDisposeCountryChart(countryKey){
-  stDisposeChart("st_country_" + countryKey);
-}
-
-function stRenderCountrySelector(focusKey){
-  var rail = document.getElementById("stCountryChoices");
-  if(!rail) return;
-  rail.innerHTML = ST_COUNTRIES.map(function(c){
-    var selected = stState.selectedCountries.indexOf(c.key) !== -1;
-    return '<button type="button" class="st-country-chip' + (selected?' active':'') + '" data-countrykey="' + c.key + '" aria-pressed="' + (selected?'true':'false') + '">' + c.name + '</button>';
-  }).join("");
-  rail.querySelectorAll("[data-countrykey]").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var countryKey = btn.getAttribute("data-countrykey");
-      var idx = stState.selectedCountries.indexOf(countryKey);
-      if(idx === -1){
-        stState.selectedCountries.push(countryKey);
-      } else {
-        stState.selectedCountries.splice(idx, 1);
-        stDisposeCountryChart(countryKey);
-      }
-      stRenderCountrySelector(countryKey);
-      stRenderCountries();
-    });
-  });
-  if(focusKey){
-    var focusBtn = rail.querySelector('[data-countrykey="' + focusKey + '"]');
-    if(focusBtn) focusBtn.focus({preventScroll:true});
-  }
 }
 
 function stRenderGlobalChart(){
@@ -2992,14 +2951,22 @@ function stRenderContinents(){
 function stRenderCountries(){
   var metric = stState.metric;
   var grid = document.getElementById("stCountriesGrid");
-  if(!grid) return;
-  ST_COUNTRIES.forEach(function(c){
-    stDisposeCountryChart(c.key);
-  });
+  if(!grid || !stState.countryOpen) return;
+  
+  var countries = [
+    {key:"hk", name:"中国香港"},
+    {key:"sg", name:"新加坡"},
+    {key:"jp", name:"日本"},
+    {key:"kr", name:"韩国"},
+    {key:"th", name:"泰国"},
+    {key:"my", name:"马来西亚"},
+    {key:"in", name:"印度"},
+    {key:"ph", name:"菲律宾"},
+    {key:"vn", name:"越南"},
+  ];
   
   grid.innerHTML = "";
-  ST_COUNTRIES.forEach(function(c){
-    if(stState.selectedCountries.indexOf(c.key) === -1) return;
+  countries.forEach(function(c){
     var cData = ST_DATA.by_country.countries[c.key];
     if(!cData) return;
     var mData = cData.metrics[metric];
@@ -3042,20 +3009,29 @@ function stRenderCountries(){
   });
 }
 
-function stRenderAppCharts(focusSelector){
+function stRenderAppCharts(){
   var area = document.getElementById("stAppChartArea");
   if(!area) return;
 
+  var apps = [
+    {key:"trip_com", name:"Trip.com"},
+    {key:"airbnb", name:"Airbnb"},
+    {key:"agoda", name:"Agoda"},
+    {key:"booking_com", name:"Booking.com"},
+    {key:"expedia", name:"Expedia"},
+    {key:"skyscanner", name:"Skyscanner"},
+  ];
+
   // 直接逻辑: 默认选中第一个 App, 进入视图即出图(无空态等待点击)
   if(!stState.appActive || !ST_DATA.by_app[stState.appActive]){
-    stState.appActive = ST_APPS[0].key;
+    stState.appActive = apps[0].key;
   }
   stState.appMode[stState.appActive] = stState.appMode[stState.appActive] || "abs";
 
   var metric = stState.appMetric || "MAU";
   var mode = stState.appMode[stState.appActive] || "abs";
   var appData = ST_DATA.by_app[stState.appActive];
-  var appName = appData ? appData.name : ST_APPS[0].name;
+  var appName = appData ? appData.name : apps[0].name;
   // 地区构成模式使用独立数据(各地区占该App全球总量的百分比) + 堆积柱状图; 其他模式沿用多线对比
   var isCompose = mode === "share";
   var seriesList;
@@ -3067,31 +3043,28 @@ function stRenderAppCharts(focusSelector){
   var subCount = isCompose ? (seriesList.length + " 个地区") : (seriesList.length + " 条曲线");
   var subLabel = isCompose ? "全球大洲和地区 · " + subCount : "全球 + 6 大洲 · " + subCount;
 
-  // 视图级控制卡：说明和 App 选择；图表卡保留指标与展示模式
+  // 横排 App 选择 chips + 图表面板(标题/指标/模式/图表 同屏直达)
   var html = '<div class="st-app-wrap">';
-  html += '<div class="st-app-control">';
-  html += '<div class="st-app-control-top">';
-  html += '<div class="st-app-control-copy"><h3>OTA App 用户数据对比</h3><p>点击 App 切换，对比其在全球与 6 大洲的 MAU / DAU / 下载量 趋势</p></div>';
-  html += '</div>';
   html += '<div class="st-app-rail" role="group" aria-label="选择App">';
-  ST_APPS.forEach(function(a){
+  html += '<span class="st-app-rail-cap">选择 App</span>';
+  apps.forEach(function(a){
     var act = stState.appActive === a.key;
     html += '<button type="button" class="st-app-chip' + (act?' active':'') + '" data-appkey="' + a.key + '" aria-pressed="' + (act?'true':'false') + '">' + a.name + '</button>';
   });
-  html += '</div></div>';
+  html += '</div>';
 
   html += '<div class="st-app-panel">';
   html += '<div class="st-app-head">';
   html += '<div class="st-app-title">' + appName + ' <span class="st-app-sub">' + subLabel + '</span></div>';
   html += '<div class="st-app-ctrls">';
-  html += '<div class="st-seg" role="group" aria-label="选择App指标">';
+  html += '<div class="st-seg">';
   ["MAU","DAU","下载量"].forEach(function(m){
-    html += '<button type="button" data-appmetric="' + m + '"' + (metric===m?' class="active"':'') + ' aria-pressed="' + (metric===m?'true':'false') + '">' + m + '</button>';
+    html += '<button type="button" data-appmetric="' + m + '"' + (metric===m?' class="active"':'') + '>' + m + '</button>';
   });
   html += '</div>';
-  html += '<div class="st-seg" role="group" aria-label="选择展示模式">';
+  html += '<div class="st-seg">';
   [["abs","绝对值(Mn)"],["yoy","YoY"],["share","地区构成"]].forEach(function(m){
-    html += '<button type="button" data-appmode="' + m[0] + '"' + (mode===m[0]?' class="active"':'') + ' aria-pressed="' + (mode===m[0]?'true':'false') + '">' + m[1] + '</button>';
+    html += '<button type="button" data-appmode="' + m[0] + '"' + (mode===m[0]?' class="active"':'') + '>' + m[1] + '</button>';
   });
   html += '</div>';
   html += '</div></div>';
@@ -3101,7 +3074,6 @@ function stRenderAppCharts(focusSelector){
   var h = w>=1400?430:(w>=1024?400:(w>768?360:300));
   html += '<div id="stAppChart" style="height:' + h + 'px"></div>';
   html += '</div></div>';
-  stDisposeChart("stAppChart");
   area.innerHTML = html;
 
   // Bind app chips(重复点击同一App不重绘)
@@ -3110,32 +3082,25 @@ function stRenderAppCharts(focusSelector){
       var k = chip.getAttribute("data-appkey");
       if(k === stState.appActive) return;
       stState.appActive = k;
-      stRenderAppCharts('[data-appkey="' + k + '"]');
+      stRenderAppCharts();
     });
   });
 
   // Bind metric segmented control(所选指标跨App保留)
   area.querySelectorAll("[data-appmetric]").forEach(function(btn){
     btn.addEventListener("click", function(){
-      var nextMetric = btn.getAttribute("data-appmetric");
-      stState.appMetric = nextMetric;
-      stRenderAppCharts('[data-appmetric="' + nextMetric + '"]');
+      stState.appMetric = btn.getAttribute("data-appmetric");
+      stRenderAppCharts();
     });
   });
 
   // Bind mode segmented control(模式按App记忆; 修复旧版 idx===0 恒亮的bug)
   area.querySelectorAll("[data-appmode]").forEach(function(btn){
     btn.addEventListener("click", function(){
-      var nextMode = btn.getAttribute("data-appmode");
-      stState.appMode[stState.appActive] = nextMode;
-      stRenderAppCharts('[data-appmode="' + nextMode + '"]');
+      stState.appMode[stState.appActive] = btn.getAttribute("data-appmode");
+      stRenderAppCharts();
     });
   });
-
-  if(focusSelector){
-    var focusControl = area.querySelector(focusSelector);
-    if(focusControl) focusControl.focus({preventScroll:true});
-  }
 
   // Render chart: 地区构成 → 100%堆积柱状图; 其他 → 多线对比
   if(seriesList.length > 0){
