@@ -33,15 +33,15 @@
 
 ### GitHub Actions 每日自动更新
 
-- **股价触发**: 北京时间 06:00，周二至周六（UTC 周一至周五 22:00；周六补抓周五数据）
-- **新闻触发**: 北京时间每天 08:00（UTC 00:00；周日、周一也更新）
+- **股价触发**: 北京时间 06:16，周二至周六（UTC 周一至周五 22:16；周六补抓周五数据）
+- **新闻触发**: 北京时间每天 07:36（UTC 前一日 23:36；周日、周一也更新）
 - **工作流**: `.github/workflows/daily-update.yml`
 - **步骤**:
   1. Checkout 代码（含 Excel 财务数据）
   2. Setup Python 3.12 + Node 20
   3. `pip install -r requirements.txt`
   4. `npm install -g surge`
-  5. **按触发时段执行**：06:00 仅 Fetch stock prices；08:00 仅 Fetch news；手动触发两者都执行
+  5. **按触发时段执行**：06:16 仅 Fetch stock prices；07:36 仅 Fetch news；手动触发两者都执行
   7. **Generate dashboard**（读 Excel→注入模板→生成 `deploy/`）
   8. **Deploy to Surge**（环境变量传 SURGE_TOKEN）
   9. **Commit & push**（股价+新闻数据回仓库）

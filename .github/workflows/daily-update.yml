@@ -2,10 +2,10 @@ name: Daily Auto-Update & Deploy
 
 on:
   schedule:
-    # UTC 周一至周五 22:00 = 北京时间周二至周六 06:00：更新上一美股交易日收盘价
-    - cron: '0 22 * * 1-5'
-    # UTC 每天 00:00 = 北京时间每天 08:00：更新新闻（包括周日和周一）
-    - cron: '0 0 * * *'
+    # UTC 周一至周五 22:16 = 北京时间周二至周六 06:16：更新上一美股交易日收盘价
+    - cron: '16 22 * * 1-5'
+    # UTC 每天 23:36 = 北京时间次日每天 07:36：更新新闻（包括周日和周一）
+    - cron: '36 23 * * *'
   workflow_dispatch:  # 手动触发按钮
 
 # 私有仓库：Actions 默认有 contents:write 权限，显式声明更稳
@@ -40,11 +40,11 @@ jobs:
 
       # ── 1. 股价（增量抓取，已有缓存自动跳过）──
       - name: Fetch stock prices
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 22 * * 1-5'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '16 22 * * 1-5'
         run: python fetch_stock_prices_副本.py
 
       - name: Verify stock data updated
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 22 * * 1-5'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '16 22 * * 1-5'
         run: |
           python3 -c "
           import json, os, sys
@@ -85,7 +85,7 @@ jobs:
 
       # ── 2. 新闻（全量重抓）──
       - name: Fetch news
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 0 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '36 23 * * *'
         run: python fetch_news_副本.py --force
         continue-on-error: true
 
