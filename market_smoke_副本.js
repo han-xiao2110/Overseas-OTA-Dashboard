@@ -182,15 +182,16 @@ bk.fire('mouseover', { componentType: 'series', seriesIndex: 2, dataIndex: 0 });
 check('旗标mouseover兜底设置指针所在图', stockHoverKey === 'bkng');
 bk.fire('globalout', {});
 
-console.log('— 股东回报 tab: 移动端表格结构 —');
+console.log('— 股东回报 tab: 移动端横向表格结构 —');
 switchTab('shareholder');
 const buybackHtml = elements['buybackProgramTable'].innerHTML;
 const quarterlyHtml = elements['quarterlyDetailTable'].innerHTML;
-check('回购计划同时生成桌面表格与移动端卡片',
-      buybackHtml.includes('buyback-table-desktop') && buybackHtml.includes('buyback-mobile-list'));
-check('移动端每条回购计划都有统一指标网格',
-      (buybackHtml.match(/class="buyback-plan"/g) || []).length === MKT_DATA.buyback_data.length &&
-      buybackHtml.includes('未回购/市值'));
+check('桌面端与移动端共用同一张回购表',
+      (buybackHtml.match(/<table class="data-table">/g) || []).length === 1 &&
+      !buybackHtml.includes('buyback-mobile-list'));
+check('回购表逐行保留源数据顺序',
+      (buybackHtml.match(/<tbody><tr>/g) || []).length === 1 &&
+      (buybackHtml.match(/<tr>/g) || []).length === MKT_DATA.buyback_data.length + 1);
 check('回购表删除冗余单位列并更正市值量级',
       !buybackHtml.includes('>单位<') && buybackHtml.includes('市值（亿美元）'));
 check('季度明细清理全空列和公式错误字样',
