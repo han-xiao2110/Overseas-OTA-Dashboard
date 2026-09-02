@@ -151,11 +151,24 @@ TRANSLATE_CACHE = _load_translation_cache()
 _TRANSLATE_CACHE_DIRTY = False
 
 # 公司名是品牌专名，不属于需要翻译的普通词。翻译前用稳定 token 保护，
-# 翻译后再恢复；同时纠正旧缓存中已经产生的中文化公司名。
+# 翻译后再恢复。顺序从长名到短名，避免 Expedia Group 被 Expedia 先匹配。
 _COMPANY_NAME_TOKENS = (
     (re.compile(r"Booking\s+Holdings", re.I), "ZXQBKNGQXZ", "Booking Holdings"),
+    (re.compile(r"Booking\.com", re.I), "ZXQBOOKINGCOMQXZ", "Booking.com"),
     (re.compile(r"Expedia\s+Group", re.I), "ZXQEXPEQXZ", "Expedia Group"),
+    (re.compile(r"Expedia", re.I), "ZXQEXPEDIAQXZ", "Expedia"),
     (re.compile(r"Airbnb", re.I), "ZXQABNBQXZ", "Airbnb"),
+    (re.compile(r"Agoda", re.I), "ZXQAGODAQXZ", "Agoda"),
+    (re.compile(r"Trip\.com", re.I), "ZXQTRIPCOMQXZ", "Trip.com"),
+    (re.compile(r"Klook", re.I), "ZXQKLOOKQXZ", "Klook"),
+    (re.compile(r"Skyscanner", re.I), "ZXQSKYSCANNERQXZ", "Skyscanner"),
+    (re.compile(r"Make\s*My\s*Trip", re.I), "ZXQMAKEMYTRIPQXZ", "MakeMyTrip"),
+    (re.compile(r"Traveloka", re.I), "ZXQTRAVELOKAQXZ", "Traveloka"),
+    (re.compile(r"Tripadvisor", re.I), "ZXQTRIPADVISORQXZ", "Tripadvisor"),
+    (re.compile(r"Vrbo", re.I), "ZXQVRBOQXZ", "Vrbo"),
+    (re.compile(r"KAYAK", re.I), "ZXQKAYAKQXZ", "KAYAK"),
+    (re.compile(r"Priceline", re.I), "ZXQPRICELINEQXZ", "Priceline"),
+    (re.compile(r"OpenTable", re.I), "ZXQOPENTABLEQXZ", "OpenTable"),
 )
 
 
@@ -180,6 +193,32 @@ def normalize_company_names(text):
     for pattern, canonical in replacements:
         normalized = re.sub(pattern, canonical, normalized, flags=re.I)
     return normalized
+
+
+def _brand_names_in_text(text):
+    """返回文本中的受保护品牌集合，用于验证翻译前后专名不丢失。"""
+    value = str(text or "")
+    return {canonical for pattern, _token, canonical in _COMPANY_NAME_TOKENS
+            if pattern.search(value)}
+
+
+def _translation_preserves_brands(original, translated):
+    """翻译不得删除、新增或改写任何受保护品牌。"""
+    return _brand_names_in_text(original) == _brand_names_in_text(translated)
+
+
+def _has_sufficient_chinese(text):
+    """识别已经是中文的标题/摘要，即使其中保留 Agoda 等英文品牌名。"""
+    value = str(text or "")
+    zh_count = len(re.findall(r"[\u4e00-\u9fff]", value))
+    if zh_count < 4:
+        return False
+    # 英文品牌不应被当成「尚未翻译的英文内容」。
+    without_brands = value
+    for pattern, _token, _canonical in _COMPANY_NAME_TOKENS:
+        without_brands = pattern.sub("", without_brands)
+    latin_count = len(re.findall(r"[A-Za-z]", without_brands))
+    return latin_count <= 8 or zh_count >= latin_count
 
 
 _EMOJI_RE = re.compile(
@@ -297,11 +336,20 @@ def translate_text(text, max_chars=500):
     Falls back to original text on total failure."""
     if not text or not text.strip():
         return text
+    if _has_sufficient_chinese(text):
+        return normalize_company_names(text)
     if not re.search(r'[a-zA-Z]{2}', text):
         return text
     cache_key = hashlib.md5(text.encode()).hexdigest()
     if cache_key in TRANSLATE_CACHE:
-        return normalize_company_names(TRANSLATE_CACHE[cache_key])
+        cached = normalize_company_names(TRANSLATE_CACHE[cache_key])
+        if _translation_preserves_brands(text, cached):
+            return cached
+        # 历史机翻曾把 Agoda 改成「安可达」。品牌不一致的缓存必须失效，
+        # 否则错误会在每次日更中被持续复用。
+        global _TRANSLATE_CACHE_DIRTY
+        TRANSLATE_CACHE.pop(cache_key, None)
+        _TRANSLATE_CACHE_DIRTY = True
 
     snippet = _protect_company_names(text[:max_chars])
     # Split by sentence, preserve trailing punctuation; translate each chunk.
@@ -324,8 +372,10 @@ def translate_text(text, max_chars=500):
 
     # 摘要必须整体翻译，不缓存「中英混合」或失败原文。
     translated = normalize_company_names(' '.join(out_chunks)) if all_success else text
+    if translated != text and not _translation_preserves_brands(text, translated):
+        translated = text
+        all_success = False
     if translated != text and re.search(r"[\u4e00-\u9fff]", translated):
-        global _TRANSLATE_CACHE_DIRTY
         TRANSLATE_CACHE[cache_key] = translated
         _TRANSLATE_CACHE_DIRTY = True
     return translated
@@ -2519,17 +2569,17 @@ def translate_news_items(items):
                 item['summary_original'] = summary[:200]
             continue
         title = item.get('title', '')
-        if title and re.search(r'[a-zA-Z]{2}', title):
+        if title and re.search(r'[a-zA-Z]{2}', title) and not _has_sufficient_chinese(title):
             original = title
-            item['title_original'] = title
+            item.setdefault('title_original', title)
             item['title'] = translate_text(title)
             if item['title'] != original:
                 translated += 1
             else:
                 skipped += 1
         summary = item.get('summary', '')
-        if summary and re.search(r'[a-zA-Z]{4}', summary):
-            item['summary_original'] = summary[:200]
+        if summary and re.search(r'[a-zA-Z]{4}', summary) and not _has_sufficient_chinese(summary):
+            item.setdefault('summary_original', summary[:200])
             item['summary'] = translate_text(summary[:200])
     if breaker_triggered:
         print(f"    Translated {translated} items, kept English for {skipped} "

@@ -126,10 +126,13 @@ def test_dates():
     check("A9 unknown 日期排序沉底", mixed[-1]["title"] == "无日期")
 
     # 保留期: unknown 按 fetched_at 日期算, 不再永久保留
+    today = datetime.date.today()
     nd_old = {"title": "很久前抓的未知日期条目", "date": "", "url": "https://x/old",
-              "fetched_at": "2026-07-01 09:00:00", "source": "测试", "date_status": "unknown"}
+              "fetched_at": f"{today - datetime.timedelta(days=48):%Y-%m-%d} 09:00:00",
+              "source": "测试", "date_status": "unknown"}
     nd_new = {"title": "今天抓的未知日期条目", "date": "", "url": "https://x/new",
-              "fetched_at": "2026-08-18 09:00:00", "source": "测试", "date_status": "unknown"}
+              "fetched_at": f"{today:%Y-%m-%d} 09:00:00",
+              "source": "测试", "date_status": "unknown"}
     data = {"domestic": {"regulatory": [nd_old, nd_new]}}
     fn.prune_and_dedupe(data)
     titles = [i["title"] for i in data["domestic"]["regulatory"]]
@@ -1424,6 +1427,36 @@ def test_module_routing():
     check("I16h 翻译请求保护公司专名并恢复原名",
           protected_calls and "Booking Holdings" not in protected_calls[0] and
           protected_translation == "Booking Holdings宣布与Airbnb合作")
+
+    mixed_zh = "Agoda与菲律宾旅游部合作推动2026年旅游业增长"
+    mixed_calls = []
+    old_chunk = fn._translate_chunk
+    try:
+        fn._translate_chunk = lambda text: mixed_calls.append(text) or text
+        mixed_result = fn.translate_text(mixed_zh)
+    finally:
+        fn._translate_chunk = old_chunk
+    check("I16i 已含足够中文的标题不因Agoda被二次翻译",
+          mixed_result == mixed_zh and not mixed_calls)
+
+    protected_brands = "Agoda Booking.com Trip.com Klook Skyscanner MakeMyTrip Traveloka"
+    protected_value = fn._protect_company_names(protected_brands)
+    check("I16j OTA品牌全部纳入专名保护并可恢复",
+          not any(x in protected_value for x in protected_brands.split()) and
+          fn.normalize_company_names(protected_value) == protected_brands)
+
+    bad_original = "Agoda partners with the Philippines Department of Tourism"
+    bad_key = __import__('hashlib').md5(bad_original.encode()).hexdigest()
+    fn.TRANSLATE_CACHE[bad_key] = "安可达与菲律宾旅游部合作"
+    old_chunk = fn._translate_chunk
+    try:
+        fn._translate_chunk = lambda text: None
+        rejected_cache_result = fn.translate_text(bad_original)
+    finally:
+        fn._translate_chunk = old_chunk
+        fn.TRANSLATE_CACHE.pop(bad_key, None)
+    check("I16k 品牌不一致的异常译文不得从缓存返回",
+          rejected_cache_result == bad_original and bad_key not in fn.TRANSLATE_CACHE)
 
 
 def main():
