@@ -175,7 +175,16 @@ check('页面不再显示“同事件”标签',
         .some(id => h(id).includes('同事件:')));
 
 console.log('— 其他 —');
-check('更新时间已填充', /更新于|数据截至/.test((elements['newsUpdateTime'] && elements['newsUpdateTime'].textContent || '')));
+const updateText = elements['newsUpdateTime'] && elements['newsUpdateTime'].textContent || '';
+check('实时资讯标题无绿色状态点', !/background:#52c41a/.test(html));
+check('国际和国内页签不再重复展示更新频率',
+      !html.includes('>国际 · 每日更新<') && !html.includes('>国内 · 每周更新<'));
+check('更新信息显示每日更新、北京时间和日期时间',
+      /^每日更新 · 更新于 北京时间 \d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(updateText));
+check('新缓存中已标记的北京时间不会再加8小时',
+      formatBeijingNewsTime({last_updated:'2026-09-03 09:30:12',last_updated_timezone:'Asia/Shanghai'}) === '2026-09-03 09:30');
+check('旧GitHub Actions UTC缓存在前端转为北京时间',
+      formatBeijingNewsTime({last_updated:'2026-09-02 01:21:54'}) === '2026-09-02 09:21');
 
 console.log('— 筛选管道 —');
 check('raw HTML 无"来源未提供足够公开信息"占位残留', !html.includes('来源未提供足够公开信息'));

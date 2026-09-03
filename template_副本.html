@@ -49,6 +49,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
 .info-card{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:20px 24px;margin-bottom:16px}
 .info-card h3{font-size:16px;font-weight:600;margin-bottom:12px;color:#1a1a1a}
+.news-overview-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.news-update-time{font-size:12px;color:#777;font-weight:400;margin-left:auto;font-variant-numeric:tabular-nums;white-space:nowrap}
 .info-card p{font-size:13px;line-height:1.8;color:#555}
 .info-card ul{font-size:13px;line-height:2;color:#555;padding-left:20px}
 .news-tab{background:none;border:none;padding:10px 20px;font-size:14px;font-weight:500;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
@@ -113,6 +115,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
   .chart-title{font-size:13px}
   .btn-group button{padding:3px 10px;font-size:11px}
   .tab-bar button{padding:8px 16px;font-size:13px}
+  .news-overview-title{gap:4px}
+  .news-update-time{width:100%;margin-left:0}
   .data-table{font-size:11px}
   .data-table th,.data-table td{padding:6px 8px}
   #shDashboard{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -491,10 +495,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 <div class="dashboard" id="latestDashboard">
 
 <div class="info-card" style="grid-column:1/-1">
-  <h3 style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#52c41a"></span>实时资讯 <span id="newsUpdateTime" style="font-size:12px;color:#999;font-weight:normal;margin-left:auto"></span></h3>
+  <h3 class="news-overview-title">实时资讯 <span id="newsUpdateTime" class="news-update-time"></span>
+  </h3>
   <div style="display:flex;gap:0;border-bottom:1px solid #f0f0f0;margin-bottom:16px;margin-top:4px">
-        <button class="news-tab active" data-newstab="intl">国际 · 每日更新</button>
-        <button class="news-tab" data-newstab="domestic">国内 · 每周更新</button>
+        <button class="news-tab active" data-newstab="intl">国际</button>
+        <button class="news-tab" data-newstab="domestic">国内</button>
   </div>
 </div>
 
@@ -542,7 +547,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;ba
 
 <!-- Level 2: 按国家 / 按App -->
 <div class="info-card" style="grid-column:1/-1">
-  <h3>用户数据 (Sensor Tower) <span style="font-size:12px;color:#999;font-weight:normal;margin-left:8px">数据来源：Sensor Tower Intelligence</span></h3>
+  <h3>用户数据(ST) <span style="font-size:12px;color:#999;font-weight:normal;margin-left:8px">数据来源：Sensor Tower</span></h3>
   <div style="display:flex;gap:0;margin-top:8px">
       <button class="st-tab active" data-sttab="country">按市场划分</button>
       <button class="st-tab" data-sttab="app">按App划分</button>
@@ -1752,20 +1757,36 @@ function safeExternalUrl(u){
   if(/^http:\/\//i.test(s)) return s;
   return '';  // 拒绝 javascript: / data: / 相对路径等
 }
+function formatBeijingNewsTime(news){
+  var raw=String(news&&news.last_updated||'').trim();
+  if(!raw) return '';
+  var match=raw.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?/);
+  if(!match) return raw;
+  // 2026-09-03 以前的旧缓存由 GitHub Actions 以 UTC 写入；新缓存明确标记北京时区。
+  if(news.last_updated_timezone==='Asia/Shanghai'){
+    return match[1]+'-'+match[2]+'-'+match[3]+' '+match[4]+':'+match[5];
+  }
+  var utcMs=Date.UTC(+match[1],+match[2]-1,+match[3],+match[4],+match[5],+(match[6]||0));
+  var bj=new Date(utcMs+8*60*60*1000);
+  function pad(n){return String(n).padStart(2,'0');}
+  return bj.getUTCFullYear()+'-'+pad(bj.getUTCMonth()+1)+'-'+pad(bj.getUTCDate())+' '+pad(bj.getUTCHours())+':'+pad(bj.getUTCMinutes());
+}
 // 来源状态文本
 function statusLine(news){
-  var lu=news.last_updated?('数据截至 '+news.last_updated):'';
+  var updatedAt=formatBeijingNewsTime(news);
+  var lu=updatedAt?('更新于 北京时间 '+updatedAt):'';
+  var cadence='每日更新';
   var st=news.update_status||'success';
   var fs=news.fetch_status||{};
   if(st==='failed'){
-    return '全部来源更新失败，'+(lu?lu+' ':'')+'（以下为缓存数据）';
+    return cadence+' · 全部来源更新失败'+(lu?(' · '+lu):'')+'（以下为缓存数据）';
   }
   if(st==='partial'){
     var fails=0;
     if(fs.sources){Object.keys(fs.sources).forEach(function(k){if(fs.sources[k].status!=='success')fails++;});}
-    return '部分来源更新失败（'+fails+'个），'+lu;
+    return cadence+' · 部分来源更新失败（'+fails+'个）'+(lu?(' · '+lu):'');
   }
-  return lu?('更新于 '+news.last_updated):'';
+  return cadence+(lu?(' · '+lu):'');
 }
 
 function renderNewsTab(){

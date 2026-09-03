@@ -31,6 +31,7 @@ REVIEW_WORKBOOK_HELPER = os.path.join(SCRIPT_DIR, "news_review_workbook_副本.m
 POLICY_VERSION = "2026-08-30-v4"
 CACHE_MAX_AGE_HOURS = 12
 CACHE_MAX_AGE_FAST_HOURS = 2
+BEIJING_TZ = datetime.timezone(datetime.timedelta(hours=8))
 
 
 def _build_ssl_context():
@@ -678,7 +679,8 @@ FETCH_STATUS = {
 
 
 def _now_iso():
-    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    """返回北京时间，避免 GitHub Actions (UTC) 与本地运行时区不一致。"""
+    return datetime.datetime.now(BEIJING_TZ).strftime("%Y-%m-%d %H:%M:%S")
 
 
 def _classify_request_error(e):
@@ -5684,7 +5686,8 @@ def refresh_traveldaily_only(cached_data):
     # 统一筛选管道: --td-only 替换进来的条目同样走硬排除+评分（与日更同一套规则）
     news_data = run_selection_pipeline(news_data)
     news_data["selection_report"]["quality"] = data_quality_check(news_data)
-    news_data["last_updated"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    news_data["last_updated"] = _now_iso()
+    news_data["last_updated_timezone"] = "Asia/Shanghai"
     news_data["update_mode"] = "traveldaily-only"
     save_cache(news_data)
     kept = news_data["domestic"]["china_industry"]
@@ -5740,7 +5743,8 @@ def main(fast_mode=False):
             "company_news": [],
         },
         "modules": {k: [] for k in MODULE_KEYS},
-        "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "last_updated": _now_iso(),
+        "last_updated_timezone": "Asia/Shanghai",
     }
     
     # ── 1. SEC EDGAR filings ──
@@ -5906,7 +5910,8 @@ def main(fast_mode=False):
         news_data["fetch_status"]["last_success_at"] = FETCH_STATUS["last_success_at"]
 
     # ── Update timestamp ──
-    news_data["last_updated"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    news_data["last_updated"] = _now_iso()
+    news_data["last_updated_timezone"] = "Asia/Shanghai"
     news_data["update_mode"] = mode_label.lower()
 
     # ── 退出码（改造项④）: 0=全部成功 / 2=部分失败(缓存兜底, 可部署需披露) / 1=彻底失败(无可用数据) ──
