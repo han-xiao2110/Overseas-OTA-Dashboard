@@ -28,7 +28,7 @@ REJECTED_OUTPUT = os.path.join(SCRIPT_DIR, "news_rejected_副本.json")
 MANUAL_LABELS_PATH = os.path.join(SCRIPT_DIR, "news_screening_labels_副本.json")
 TRANSLATION_CACHE_PATH = os.path.join(SCRIPT_DIR, "translation_cache_副本.json")
 REVIEW_WORKBOOK_HELPER = os.path.join(SCRIPT_DIR, "news_review_workbook_副本.mjs")
-POLICY_VERSION = "2026-08-30-v4"
+POLICY_VERSION = "2026-09-03-v5"
 CACHE_MAX_AGE_HOURS = 12
 CACHE_MAX_AGE_FAST_HOURS = 2
 BEIJING_TZ = datetime.timezone(datetime.timedelta(hours=8))
@@ -458,13 +458,31 @@ DOMESTIC_WEB_SOURCES = [
         "news_selector": "caac",
     },
     {
-        "name": "披露易 (港交所)",
+        "name": "披露易·携程",
         "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml",
         "category": "regulatory",
         "news_selector": "hkex",
-        # 中国东航 H股 (00670) 内部stockId，经 prefix.do 查询确认
-        "stock_id": "1558",
-        "stock_name": "中国东航",
+        # 携程集团 (09961) 披露易内部 stockId
+        "stock_id": "1000090312",
+        "stock_name": "携程",
+    },
+    {
+        "name": "披露易·同程",
+        "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml",
+        "category": "regulatory",
+        "news_selector": "hkex",
+        # 同程旅行 (00780) 披露易内部 stockId
+        "stock_id": "205645",
+        "stock_name": "同程",
+    },
+    {
+        "name": "披露易·嘀嗒出行",
+        "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml",
+        "category": "regulatory",
+        "news_selector": "hkex",
+        # 嘀嗒出行 (02559) 披露易内部 stockId
+        "stock_id": "1000226331",
+        "stock_name": "嘀嗒出行",
     },
 ]
 
@@ -523,7 +541,9 @@ DOMESTIC_SOURCE_FILTERS = {
             r"Delta|United|American Airlines|Lufthansa|Emirates|达美|美联航|美国航空|汉莎|阿联酋航空",
         ],
     },
-    "披露易 (港交所)": None,  # 公告检索结果本身即目标内容
+    "披露易·携程": None,
+    "披露易·同程": None,
+    "披露易·嘀嗒出行": None,
 }
 
 # 分源过滤统计: name -> {raw, kept, rejected, reasons{pattern: count}}
@@ -617,8 +637,10 @@ def reclassify_cached_traveldaily(news_data):
             seen.add(key)
         route_title = " ".join(x for x in (
             item.get("title", ""), item.get("title_original", "")) if x)
-        domestic = _td_is_domestic(route_title, item.get("summary", ""),
-                                   item.get("source_channel", ""))
+        region = _td_region(route_title, item.get("summary", ""),
+                            item.get("source_channel", ""))
+        item["region_classification"] = region
+        domestic = region == "domestic"
         item["category"] = "china_industry" if domestic else "industry_news"
         (td_dom if domestic else td_intl).append(item)
     news_data["international"]["industry_news"] = others_intl + td_intl
@@ -628,10 +650,22 @@ def reclassify_cached_traveldaily(news_data):
 # 国内公司新闻 RSS（Google News 中文源）
 CN_COMPANY_FEEDS = [
     {
-        "name": "中国东航",
-        "url": "https://news.google.com/rss/search?q=%E4%B8%9C%E8%88%AA+OR+%E4%B8%9C%E6%96%B9%E8%88%AA%E7%A9%BA+when:14d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "name": "携程 Google News",
+        "url": "https://news.google.com/rss/search?q=%E6%90%BA%E7%A8%8B+OR+%22Trip.com+Group%22+when:14d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
         "category": "company_news",
-        "company": "中国东航",
+        "company": "携程",
+    },
+    {
+        "name": "同程 Google News",
+        "url": "https://news.google.com/rss/search?q=%22%E5%90%8C%E7%A8%8B%E6%97%85%E8%A1%8C%22+OR+%22%E5%90%8C%E7%A8%8B%E6%97%85%E6%B8%B8%22+when:14d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "category": "company_news",
+        "company": "同程",
+    },
+    {
+        "name": "嘀嗒出行 Google News",
+        "url": "https://news.google.com/rss/search?q=%22%E5%98%80%E5%97%92%E5%87%BA%E8%A1%8C%22+OR+%22Dida+Inc%22+when:14d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "category": "company_news",
+        "company": "嘀嗒出行",
     },
     # 36氪快讯（2026-08-18 新增: 国内行业新闻源, 通过 Google News RSS 抓取 36kr.com 内容）
     # 36氪是 SPA 无公开 RSS, 借 Google News 索引获取最新快讯
@@ -3064,31 +3098,73 @@ OFFICIAL_KEEP_RULES = [
 OFFICIAL_EXCLUDE_RE = re.compile(
     r"董事名單|代表委任|股東週年大會通告|股东周年大会|董事會會議通告|董事会会议通告|召開.{0,8}會議通知|月報表|月报表")
 
-# 东航（company_news 栏目主体）实质运营动态保留规则（§7/§8, 2026-08-18 收窄）
-# 东航不是重点跟踪公司，抓取东航官网和中国民航网仅用于发现可能影响 OTA 机票业务的航空行业变化。
-# 必须命中以下"业务影响词"之一才保留：票价/退改签/运力/客座率/渠道/收费/航班取消/重大航线调整
-# 单独出现"上线/推出/行李/合作/旅客/航班"等过宽词不保留
+# 航司/航空新闻统一准入规则（2026-09-03）。不区分东航、国内航司或海外航司，
+# 只保留直接影响 OTA 机票业务的六类信息：票价/燃油附加费、行李收费、退改签、
+# 运力/客座率/旅客量/航班量、销售渠道/代理/佣金/OTA/直销、航线开通/复航/调整。
+# 机队、宽体机、航司财报/盈利信息硬排除；"运营数据/经营数据"本身不构成准入，
+# 只有同时披露上述具体流量或供给指标时才保留。
 CEAIR_LABELS = ("中国东航", "中国东方航空", "东航")
-# 业务影响词（必命中之一）
-# 2026-08-18 修复: 燃油附加费（民航标准说法，非"燃油费"）；航线调整支持"调整...航线"双向词序
-CEAIR_IMPACT_RE = re.compile(
-    r"票价|燃油附加费|燃油费|行李费|退改|退票|改签|手续费|免费退改|提前\d+天|"
-    r"运力|客座率|旅客量|航班量|吞吐量|运营数据|经营数据|"
-    r"渠道|代理|佣金|直销|OTA|客票|票务|"
-    r"航班取消|大范围取消|特殊退改|复航|新增.{0,8}航线|航线.{0,4}调整|调整.{0,4}航线|机队|宽体机|"
-    r"盈利预警|业绩|财报")
-# 排除词：无量化商业影响的宣传稿（即使命中 IMPACT_RE 也排除）
-CEAIR_EXCLUDE_RE = re.compile(
+AIRLINE_TOPIC_RE = re.compile(
+    r"航空公司|航司|民航|机票|客票|航班|航线|机场|"
+    r"国航|东航|南航|海航|川航|厦航|山航|深航|春秋航空|吉祥航空|"
+    r"达美|美联航|美国航空|汉莎|法航|英航|荷航|阿联酋航空|卡塔尔航空|"
+    r"新加坡航空|全日空|日航|大韩航空|亚洲航空|亚航|飞马航空|"
+    r"\bairlines?\b|\bairways\b|\bairport\b|\bflights?\b|\bDelta\b|\bRyanair\b|"
+    r"\bEasyJet\b|\bAirAsia\b|\bPegasus\b|\bLufthansa\b|\bEmirates\b",
+    re.IGNORECASE,
+)
+AIRLINE_NON_AVIATION_ROUTE_RE = re.compile(r"水路|水运|航运|邮轮|游轮|客轮|船舶|港口", re.IGNORECASE)
+AIRLINE_STRONG_TOPIC_RE = re.compile(
+    r"航空|航司|民航|机票|客票|航班|机场|"
+    r"\bairlines?\b|\bairways\b|\bairport\b|\bflights?\b|"
+    r"国航|东航|南航|海航|川航|厦航|山航|深航|春秋航空|吉祥航空|"
+    r"达美|美联航|汉莎|法航|英航|荷航|阿联酋航空|卡塔尔航空|"
+    r"新加坡航空|全日空|日航|大韩航空|亚洲航空|亚航|飞马航空",
+    re.IGNORECASE,
+)
+AIRLINE_IMPACT_RE = re.compile(
+    r"票价|燃油附加费|燃油费|"
+    r"行李(?:收费|费用|费)|托运行李.{0,8}(?:收费|费用)|"
+    r"退改签|退改|退票|改签|免费退改|特殊退改|"
+    r"运力|客座率|旅客(?:量|运输量|吞吐量)|航班(?:量|数量|班次|架次)|"
+    r"销售渠道|分销渠道|渠道政策|代理政策|代理佣金|佣金|\bOTA\b|直销|\bNDC\b|"
+    r"Trip\.com|携程|同程|飞猪|Booking\.com|Expedia|Agoda|"
+    r"复航|恢复.{0,10}航线|航线.{0,10}(?:开通|新增|复航|恢复|调整|取消|加密)|"
+    r"(?:开通|新增|复航|恢复|调整|取消|加密).{0,10}航线|"
+    r"fares?|fuel surcharge|baggage fees?|refunds?|ticket changes?|capacity|load factor|"
+    r"passenger volume|flight volume|distribution channel|agency commission|direct sales?|"
+    r"launch(?:es|ed)? a new route|route (?:launch|resumption|adjustment|cancellation)",
+    re.IGNORECASE,
+)
+AIRLINE_ALWAYS_EXCLUDE_RE = re.compile(
+    r"机队|宽体机|财报|业绩|盈利预警|盈利|亏损|净利润|营收|"
+    r"fleet|wide-?body|earnings|financial results?|revenue|profit|loss",
+    re.IGNORECASE,
+)
+# 排除词：无量化业务影响的宣传稿（即使同时命中准入词也排除）
+AIRLINE_EXCLUDE_RE = re.compile(
     r"智能机器人|机器人矩阵|远程医疗|急救平台|急救系统|"
     r"宠物进客舱|宠物进舱|篮球|婚礼|颁奖|荣获|斩获|获评|获奖|"
     r"救援故事|机上救援|备降救人|人物故事|员工故事|劳模|最美.{0,6}人|暖心故事|"
     r"提升出行品质|智慧服务|焕新|焕新出发|荣耀启程|网红|"
     r"机场部署|分公司|地方分公司|"
     r"行李状态推送|服务升级|体验升级|应用首[次发]|首次应用")
-# 14天免费退改 = 固定回归样本（必须高分保留）
-CEAIR_REFUND_RE = re.compile(r"提前\s*14\s*天|14\s*天.{0,4}免费退改|免费退改.{0,4}14\s*天")
 
 
+def is_airline_news_item(item):
+    """判断条目的主题是否为航司/民航，排除“水路航线”等同词异义。"""
+    source = str(item.get("source", "") or "")
+    source_channel = str(item.get("source_channel", "") or "")
+    probe = " ".join((
+        str(item.get("title", "") or ""),
+        str(item.get("title_original", "") or ""),
+        str(item.get("company", "") or ""),
+    ))
+    topic_match = bool(AIRLINE_TOPIC_RE.search(probe))
+    water_route_only = bool(AIRLINE_NON_AVIATION_ROUTE_RE.search(probe)) \
+        and not bool(AIRLINE_STRONG_TOPIC_RE.search(probe))
+    return source.startswith("中国民航网") or source_channel == "airline" \
+        or (topic_match and not water_route_only)
 def _sel_text(item):
     return "{} {} {} {}".format(
         item.get("title", "") or "", item.get("summary", "") or "",
@@ -3269,31 +3345,29 @@ def select_news_item(item, section, category):
                 reasons.append(f"官方来源保留清单({key})")
                 break
 
-    # 3. 东航航空业影响判定（2026-08-18 收窄: 仅保留影响 OTA 机票业务的航空新闻）
-    # 东航不再享受保底加分；必须命中 CEAIR_IMPACT_RE 业务影响词且不命中 CEAIR_EXCLUDE_RE 宣传词
-    ceair_floor = False
-    score_boost = 0
-    co_field = str(item.get("company", "") or "")
-    is_ceair_item = any(a in co_field or a in title for a in CEAIR_LABELS)
-    if is_ceair_item:
-        if CEAIR_EXCLUDE_RE.search(text):
+    # 3. 航司/航空新闻统一准入：所有来源都只保留直接影响 OTA 机票业务的六类信息。
+    airline_floor = False
+    is_airline_item = is_airline_news_item(item)
+    if is_airline_item:
+        matched_rule_ids.append("topic.airline")
+        if AIRLINE_ALWAYS_EXCLUDE_RE.search(text):
             item["substantive_company_change"] = False
-            reasons.append("东航宣传稿排除(机器人/救援/庆典/服务升级等)")
-            return _finalize(False, 0, "东航宣传稿(CiftonEXCLUDE_RE)")
-        if CEAIR_REFUND_RE.search(text):
-            # 14天免费退改 = 固定回归样本，高分保留
-            ceair_floor = True
-            reasons.append("东航14天免费退改(固定保留样本)")
-            score_boost = 30
-        elif CEAIR_IMPACT_RE.search(text):
-            ceair_floor = True
-            reasons.append("东航航空业影响(票价/退改签/运力/客座率/渠道/收费)")
-            score_boost = 0
+            reasons.append("航空低价值类型排除(机队/宽体机/财报/盈利)")
+            matched_rule_ids.append("exclude.airline.fleet_or_financials")
+            return _finalize(False, 0, "航空机队/宽体机/财报")
+        if AIRLINE_EXCLUDE_RE.search(text):
+            item["substantive_company_change"] = False
+            reasons.append("航空宣传稿排除(机器人/救援/庆典/服务升级等)")
+            matched_rule_ids.append("exclude.airline.promotion")
+            return _finalize(False, 0, "航空宣传稿")
+        if AIRLINE_IMPACT_RE.search(text):
+            airline_floor = True
+            reasons.append("航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)")
+            matched_rule_ids.append("topic.airline.allowed_impact")
         else:
-            # 命中东航标签但未命中业务影响词 → 拒绝
             item["substantive_company_change"] = False
-            reasons.append("东航非业务影响(无票价/退改签/运力/客座率/渠道/收费)")
-            return _finalize(False, 0, "东航非业务影响词")
+            reasons.append("航空新闻未命中六类准入主题")
+            return _finalize(False, 0, "航空非准入主题")
 
     # 4. 重点公司实质动态判定
     media_insider_sale = bool(MEDIA_INSIDER_SALE_RE.search(text))
@@ -3358,12 +3432,7 @@ def select_news_item(item, section, category):
         reasons.append("媒体高管售股事实保留（非核心公司动态）")
         score = max(score, CORE_KEEP_THRESHOLD)
 
-    # 保底: 重点公司实质动态 / 官方保留清单 / 东航实质动态 → 最低准入分 60
-    # 注：东航 14 天免费退改样本额外加 score_boost（仅 ceair_refund 路径设置过 score_boost）
-    if score_boost:
-        score += score_boost
-        reasons.append(f"东航14天退改样本加分(+{score_boost})")
-    
+    # 保底: 重点公司实质动态 / 官方保留清单 / 航空六类准入主题 → 最低准入分 60
     # 保底: IR 官方新闻稿 / Bloomberg Travel/Mobility 垂直频道
     # 这些来源本身就是高度相关的旅游/OTA新闻, 不应因评分低被误杀
     ir_floor = bool(item.get("is_ir_source")) or ("IR" in source and entity_id in CORE_COMPANY_IDS)
@@ -3373,7 +3442,7 @@ def select_news_item(item, section, category):
             reasons.append("IR/ Bloomberg垂直源保底60")
         score = max(score, CORE_KEEP_THRESHOLD)
     
-    if (is_core and substantive) or official_floor or ceair_floor:
+    if (is_core and substantive) or official_floor or airline_floor:
         if score < CORE_KEEP_THRESHOLD:
             reasons.append("实质动态/官方清单保底60")
         score = max(score, CORE_KEEP_THRESHOLD)
@@ -3853,8 +3922,9 @@ def fetch_ir_press_releases():
 
 
 # ── 环球旅讯国内外分类 (2026-08-18 用户需求): 国内条目留 china_industry, 国际条目并入国际行业新闻 ──
-# 判定顺序: 先国内品牌/监管(如"携程收购Skyscanner"仍是国内公司新闻), 再国际品牌/市场, 默认国内
-# (环球旅讯以中国旅游业报道为主, 两边都没命中的大概率是国内行业新闻)
+# 判定顺序: 先国内品牌/监管(如"携程收购Skyscanner"仍是国内公司新闻),
+# 再国际品牌/市场/跨境上下文。无明确国内证据时不再默认归入国内，避免中文报道的
+# 海外航司、海外市场和跨境旅游科技交易被误分类。
 TD_DOMESTIC_MARKERS = [
     # OTA/平台
     '携程', '飞猪', '美团', '同程', '去哪儿', '马蜂窝', '穷游', '途牛', '小红书', '抖音', '豆包', '滴滴',
@@ -3880,31 +3950,48 @@ TD_INTL_MARKERS = [
     # 国际航司
     '达美', '美联航', '美国航空', '汉莎', '法航', '英航', '荷航', '阿联酋航空', '卡塔尔航空',
     '新加坡航空', '全日空', '日航', '大韩航空', '酷航', '瑞安航空', '易捷', '土耳其航空',
+    '亚洲航空', '亚航', '飞马航空', 'AirAsia', 'Pegasus Airlines',
     # 品牌/市场
     '新秀丽', '迪士尼', '环球影城', '美国', '欧洲', '中东', '日本', '韩国', '东南亚', '泰国',
     '新加坡', '越南', '马来西亚', '印尼', '印度', '澳大利亚', '英国', '法国', '德国', '非洲', '拉美',
-    '意大利', '荷兰', '西班牙', '加拿大', '瑞士', '迪拜',
+    '意大利', '荷兰', '西班牙', '加拿大', '瑞士', '迪拜', '伊斯坦布尔',
 ]
 
+TD_INTL_CONTEXT_RE = re.compile(
+    r"亚欧之间|跨境.{0,8}(?:航线|航班|旅游|分销|合作)|"
+    r"海外.{0,8}(?:市场|航司|平台|公司|收购|融资)|"
+    r"(?:外国|海外|国际).{0,8}(?:航空公司|低成本航司)|"
+    r"Europe.{0,20}Asia|Asia.{0,20}Europe",
+    re.IGNORECASE,
+)
 
-def _td_is_domestic(title, summary="", source_channel=""):
-    """环球旅讯国内外分流：显式国内优先，海外/跨境科技交易进入国际。"""
+
+def _td_region(title, summary="", source_channel=""):
+    """返回 domestic / international / unknown，供分流与按需标注共用。"""
     text = f"{title} {summary}"
     for kw in TD_DOMESTIC_MARKERS:
         if kw in text:
-            return True
+            return "domestic"
     for kw in TD_INTL_MARKERS:
-        if kw in text:
-            return False
-    # traveltech/distribute 频道常见海外初创公司并购，标题可能只有英文公司名而无国家词。
-    # 至少两个英文专名 + 交易动作时按国际处理；避免再次把 eTravel/Accent、
-    # VayKLife/Xplorie、Spotnana/Troop 默认归为国内。
+        if kw.lower() in text.lower():
+            return "international"
+    if TD_INTL_CONTEXT_RE.search(text):
+        return "international"
+    # traveltech/distribute 频道常见海外初创公司并购，标题可能只有英文公司名。
     if re.search(r"收购|并购|融资|合并|投资|acquir|merger|funding", text, re.I):
         names = [n for n in re.findall(r"(?<![A-Za-z])[A-Za-z][A-Za-z0-9.&-]{2,}", title)
                  if n.lower() not in {"ota", "ai", "travel", "events", "group"}]
         if len(set(n.lower() for n in names)) >= 2:
-            return False
-    return True
+            return "international"
+    return "unknown"
+
+
+def _td_is_domestic(title, summary="", source_channel=""):
+    """环球旅讯国内外分流：只有明确国内证据才返回 True。
+
+    unknown 默认不进国内，并由 _td_region 保留待复核状态。
+    """
+    return _td_region(title, summary, source_channel) == "domestic"
 
 
 def fetch_traveldaily(source):
@@ -3945,7 +4032,10 @@ def fetch_traveldaily(source):
     # 国内外分流: 国际条目改标 industry_news, 由 main() 路由到国际分区
     intl_n = 0
     for it in all_items:
-        if not _td_is_domestic(it.get("title", ""), it.get("summary", ""), it.get("source_channel", "")):
+        region = _td_region(it.get("title", ""), it.get("summary", ""),
+                            it.get("source_channel", ""))
+        it["region_classification"] = region
+        if region != "domestic":
             it["category"] = "industry_news"
             intl_n += 1
     if all_items:
@@ -4077,11 +4167,7 @@ def extract_news_from_html(html, source_name, category, base_url, selector_type,
 
 
 def extract_caac_news(html, source_name, category, base_url, max_items):
-    """Parse CAAC News (caacnews.com.cn) and keep only 东航-related items.
-
-    用于补充"东航官网新闻公告"：东航官网 IR 子站(wcm.ceair.com)已无法解析，
-    改从行业权威源中国民航网筛选东航相关新闻，company 固定标注为 中国东航。
-    """
+    """Parse CAAC News (caacnews.com.cn); 航空业务准入在统一筛选管道执行。"""
     items = []
     parsed = urlparse(base_url)
     base_domain = f"{parsed.scheme}://{parsed.netloc}"
@@ -4100,10 +4186,6 @@ def extract_caac_news(html, source_name, category, base_url, max_items):
         # Clean title
         title = re.sub(r'<[^>]+>', '', title_raw).strip()
         if not title or len(title) < 4:
-            continue
-
-        # 只保留东航相关新闻
-        if not any(kw in title for kw in ("东航", "东方航空")):
             continue
 
         # Skip non-news links by title
@@ -4140,16 +4222,12 @@ def extract_caac_news(html, source_name, category, base_url, max_items):
         except ValueError:
             date_str = None
         
-        # company 固定标注为 中国东航（本函数已按东航关键词过滤）
-        company_tag = "中国东航"
-
         items.append({
             "date": date_str,
             "title": title,
             "url": url,
             "source": source_name,
             "category": category,
-            "company": company_tag,
         })
     
     return items
@@ -5064,10 +5142,6 @@ SOURCE_BLOCKLIST = {
     "Miami Dolphins", "Chase Bank", "RSU by PriceLabs", "Refresh Miami",
     "WTVB", "The Boca Raton Tribune", "AI CERTs",
 }
-# 东航动态栏目只保留东航相关条目
-CEAIR_ALIASES = ("中国东航", "中国东方航空", "东航")
-
-
 # 各列表最大条数 (2026-08-20: 大幅提升上限, 避免截断 IR/Bloomberg 等重要源)
 MAX_ITEMS = {
     ("international", "sec_filings"): 80,
@@ -5157,13 +5231,6 @@ def prune_and_dedupe(news_data):
 
                 # 全部 SEC/IR 与新闻统一保留 14 天。
                 item_retention = retention
-
-                # 东航动态栏目：只保留东航相关条目（清理旧缓存的错误标签数据）
-                if (section, cat) == ("domestic", "company_news"):
-                    co = str(item.get("company", ""))
-                    title = str(item.get("title", ""))
-                    if not any(a in co or a in title for a in CEAIR_ALIASES):
-                        continue
 
                 # 保留期: 有发布日期按发布日期; 无日期按抓取时间（不再永久保留）
                 date_str = _valid_date_str(item.get("date"))
@@ -5273,9 +5340,13 @@ def build_review_candidates(news_data=None, rejected_data=None, size=30):
         current_module = module_map.get(key, "未展示")
         td_should_domestic = None
         if str(proposal.get("source", "") or "").startswith("环球旅讯"):
-            td_should_domestic = _td_is_domestic(
+            td_region = _td_region(
                 proposal.get("title", ""), proposal.get("summary", ""),
                 proposal.get("source_channel", ""))
+            td_should_domestic = td_region == "domestic"
+            if td_region == "unknown":
+                tags.append("地域待复核")
+                priority += 35
             if (current_module == "dom_industry" and not td_should_domestic) or \
                     (current_module == "intl_industry" and td_should_domestic):
                 tags.append("国内外分类冲突")
@@ -5359,8 +5430,10 @@ def export_policy_diff(path, news_data=None, rejected_data=None):
         if str(item.get("source", "") or "").startswith("环球旅讯"):
             route_title = " ".join(x for x in (
                 item.get("title", ""), item.get("title_original", "")) if x)
-            is_domestic = _td_is_domestic(route_title, item.get("summary", ""),
-                                          item.get("source_channel", ""))
+            region = _td_region(route_title, item.get("summary", ""),
+                                item.get("source_channel", ""))
+            item["region_classification"] = region
+            is_domestic = region == "domestic"
             section, category = (("domestic", "china_industry") if is_domestic
                                  else ("international", "industry_news"))
         kept, reason = select_news_item(item, section, category)

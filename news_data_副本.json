@@ -25,7 +25,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -67,7 +67,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -109,7 +109,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -149,7 +149,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -191,7 +191,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -205,7 +205,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -232,7 +233,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -246,7 +247,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -273,7 +275,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -314,7 +316,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -356,7 +358,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -370,7 +372,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -397,7 +400,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -439,7 +442,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -453,7 +456,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -480,7 +484,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -521,7 +525,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -563,7 +567,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -577,7 +581,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -604,7 +609,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -646,7 +651,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -660,7 +665,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -687,7 +693,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -701,7 +707,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -728,7 +735,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -769,7 +776,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -810,7 +817,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -844,7 +851,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -853,7 +860,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关13/重要4/基本面0/证据10/来源4)",
+          "评分(相关13/重要4/基本面0/证据4/来源4)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -861,7 +868,7 @@
         "title_original": "Amadeus Brings Travel Tech Into Claude",
         "summary_original": "Weeks after closing its self-service developer portal, Amadeus revealed that building new ties to connect its travel systems to Claude, both for developers and the travel workforce.",
         "display_ready": false,
-        "translation_status": "pending_summary",
+        "translation_status": "pending",
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-09-04 09:19:33"
       },
@@ -879,7 +886,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -888,7 +895,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关3/重要4/基本面0/证据10/来源4)",
+          "评分(相关3/重要4/基本面0/证据4/来源4)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -898,7 +905,7 @@
         "title_original": "The Race for Chinese Travel Demand Is Now a Fight to Get on the AI Shortlist",
         "summary_original": "Travel marketers have spent decades convincing Chinese travelers to pick them. Now they have to convince AI to mention them.",
         "display_ready": false,
-        "translation_status": "pending_summary",
+        "translation_status": "pending",
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-09-04 09:19:33"
       },
@@ -916,7 +923,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -925,7 +932,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关10/重要22/基本面0/证据20/来源4)",
+          "评分(相关10/重要22/基本面0/证据14/来源4)",
           "重要并购/融资保底60"
         ],
         "rejection_reason": null,
@@ -936,7 +943,7 @@
         "title_original": "Payments-first OTA Laters.com raises $1.5M in seed funding",
         "summary_original": "Payments-first OTA Laters.com raises $1.5M in seed funding&nbsp;&nbsp;phocuswire.com",
         "display_ready": true,
-        "translation_status": "pending_summary",
+        "translation_status": "ready",
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-09-04 09:19:33"
       },
@@ -954,7 +961,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -963,8 +970,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要22/基本面0/证据10/来源4)",
-          "摘要重复标题(-20)",
+          "评分(相关0/重要22/基本面0/证据20/来源4)",
           "重要并购/融资保底60"
         ],
         "rejection_reason": null,
@@ -994,20 +1000,18 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception"
         ],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 65,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关14/重要14/基本面0/证据14/来源4)",
-          "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关14/重要14/基本面0/证据8/来源4)",
+          "重点公司(BKNG)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -1017,7 +1021,7 @@
         "title_original": "Google AI books hotels. Eurovision taps Agoda. Heat influences travel decisions. Acai Desk launched.",
         "summary_original": "Google AI books hotels. Eurovision taps Agoda. Heat influences travel decisions. Acai Desk launched.&nbsp;&nbsp;webintravel.com",
         "display_ready": false,
-        "translation_status": "pending_summary",
+        "translation_status": "pending",
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-09-04 09:19:33"
       },
@@ -1033,19 +1037,18 @@
         "published_at": "2026-09-03",
         "date_status": "known",
         "event_id": "ev_1f2c3f8f03",
-        "folded_into": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcVl5alJqM1ZxZjRKYUxCSk4yR3F2S1J5bVlucGxlMWYxMktpNDFQY0hFUU41ekhwamZ0cFp2RWo0UzNXWHBGLXd3OUJxeC15VHI3NjBhYmpEejNKX2dOYml4U201Tm4tdGZ0MEFIN0dad0hicG5ISTVObkhya0FHU044czFuTFJY?oc=5",
         "entity_id": "ABNB",
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(ABNB)",
           "正式制度/组织变化"
         ],
@@ -1075,7 +1078,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -1083,7 +1086,6 @@
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关10/重要4/基本面0/证据10/来源4)",
-          "摘要重复标题(-20)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
@@ -1111,7 +1113,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1120,7 +1122,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "评分(相关3/重要22/基本面0/证据4/来源4)",
           "重要并购/融资保底60"
         ],
         "rejection_reason": null,
@@ -1131,7 +1133,7 @@
         "title_original": "WeTravel acquires Tourwriter to broaden custom travel focus",
         "summary_original": "WeTravel acquires Tourwriter to broaden custom travel focus&nbsp;&nbsp;phocuswire.com",
         "display_ready": true,
-        "translation_status": "pending_summary",
+        "translation_status": "ready",
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-09-04 09:19:33"
       },
@@ -1149,22 +1151,21 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "content_type": "management_org",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 89,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要24/基本面0/证据10/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "正式制度/组织变化"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "cooperation",
+          "organization",
           "core_company"
         ],
         "title_original": "Agoda Named Official Travel Partner of Eurovision's Inaugural Asian Edition",
@@ -1189,13 +1190,17 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
         "selection_score": 65,
         "selection_status": "kept",
         "selection_reasons": [
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关14/重要14/基本面0/证据10/来源2)",
           "重点公司(BKNG)"
         ],
@@ -1225,7 +1230,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -1257,19 +1262,21 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "content_type": "product",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
-        "substantive_company_change": false,
+        "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据10/来源4)",
+          "评分(相关10/重要25/基本面0/证据10/来源4)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
+        "impact_dimensions": [
+          "product"
+        ],
         "title_original": "Uber, Wayve Unleash Supervised Robotaxis on London’s Winding Streets",
         "summary_original": "Uber, Wayve Unleash Supervised Robotaxis on London’s Winding Streets&nbsp;&nbsp;Bloomberg.com",
         "display_ready": false,
@@ -1291,62 +1298,27 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "content_type": "management_org",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
-        "substantive_company_change": false,
+        "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要4/基本面0/证据20/来源4)",
-          "摘要重复标题(-20)",
+          "评分(相关0/重要14/基本面0/证据20/来源4)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
+        "impact_dimensions": [
+          "organization"
+        ],
         "title_original": "Uber Reportedly Plans To Slash 10% Of Its Workforce — Wells Fargo Says The Move Could Unlock $580M In Cost Savings",
         "summary_original": "Uber Reportedly Plans To Slash 10% Of Its Workforce — Wells Fargo Says The Move Could Unlock $580M In Cost Savings&nbsp;&nbsp;TradingView",
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
         "summary_generated_at": "2026-09-04 09:19:33"
-      },
-      {
-        "date": "2026-09-02",
-        "source": "Skift",
-        "category": "industry_news",
-        "title": "西南航空将在Chase Partnership推出“至少” 11个机场休息室",
-        "url": "https://skift.com/2026/09/02/southwest-to-launch-airport-lounges-in-2027/",
-        "summary": "西南航空将于 2027 年在奥斯汀、巴尔的摩、纳什维尔和檀香山开设休息室，并与摩根大通合作并推出新的信用卡。",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-09-02",
-        "date_status": "known",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:17:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "product",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关11/重要24/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product"
-        ],
-        "title_original": "Southwest to Launch ‘at Least’ 11 Airport Lounges in Chase Partnership",
-        "display_ready": true,
-        "translation_status": "ready"
       },
       {
         "date": "2026-09-02",
@@ -1364,7 +1336,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "regulation",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1401,7 +1373,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1436,13 +1408,17 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关6/重要10/基本面0/证据10/来源2)",
           "重点公司(TCOM)",
           "实质动态/官方清单保底60"
@@ -1474,7 +1450,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1485,7 +1461,6 @@
         "selection_reasons": [
           "评分(相关0/重要14/基本面0/证据14/来源4)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -1514,7 +1489,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1524,7 +1499,6 @@
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关3/重要4/基本面0/证据10/来源4)",
-          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -1552,7 +1526,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -1577,49 +1551,6 @@
       },
       {
         "date": "2026-09-01",
-        "title": "Expedia Group推出Vrbo和Escapia有史以来最大的产品，加速度假租赁增长",
-        "url": "https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-Accelerates-Vacation-Rental-Growth-With-Largest-Ever-Product-Launch-For-Vrbo-And-Escapia/default.aspx",
-        "summary": "Vrbo赞助广告帮助合作伙伴在高级Vrbo搜索展示位置上做广告，无需预付费用新费率和促销活动，如限时优惠和不可退款费率，允许合作伙伴",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official_q4",
-        "is_ir_source": true,
-        "ir_release_kind": "core_action",
-        "content_type": "earnings",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-09-01",
-        "date_status": "known",
-        "merged_same_article": 2,
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "topic.hotel",
-          "topic.hotel.ota_direct_exception"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 74,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要25/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "title_original": "Expedia Group Accelerates Vacation Rental Growth With Largest-Ever Product Launch For Vrbo And Escapia",
-        "summary_original": "Vrbo Sponsored Listings Helps Partners Advertise in Premium Vrbo Search Placements with No Upfront Costs New Rates and Promotions, like Limited Time Offers and Non-Refundable Rates, Allow Partners to ",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33"
-      },
-      {
-        "date": "2026-09-01",
         "source": "PhocusWire",
         "category": "industry_news",
         "title": "巴西旅行社B2B分销平台融资150万$",
@@ -1632,7 +1563,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1671,7 +1602,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -1711,7 +1642,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1747,7 +1678,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -1784,7 +1715,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception"
@@ -1823,7 +1754,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -1860,7 +1791,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -1897,7 +1828,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -1934,7 +1865,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -1969,7 +1900,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -2006,7 +1937,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -2044,7 +1975,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -2081,7 +2012,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -2121,7 +2052,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -2147,46 +2078,6 @@
       },
       {
         "date": "2026-08-30",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "Airbnb让我们重新思考“直接预订”的真正含义",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWJ0a1UxVkxaT09xd0RTMEJzbEhtYVRFblppdTdfMFJKeDJXQWJLbUwxSXZZVnNfRmplX0FOWFNZSXRVTjlrRWRya25FWjJwN0ZtSVh2aWN4V05MM1FaSkY4RU9fRHVJMUpBNXkzRlpJY1BCeTBOalBTUEY3QzVhUHNfcV9QUjZ2LW14MnJnWVVyUQ?oc=5",
-        "summary": "Airbnb 让我们重新思考“直接预订”的真正含义&nbsp;&nbsp;phocuswire.com",
-        "company": "ABNB",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源4)",
-          "重点公司(ABNB)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Airbnb is making us rethink what a 'direct booking' really means",
-        "summary_original": "Airbnb is making us rethink what a 'direct booking' really means&nbsp;&nbsp;phocuswire.com",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33",
-        "suppress_core_badge": true
-      },
-      {
-        "date": "2026-08-30",
         "source": "Trip.com",
         "category": "industry_news",
         "title": "锦江酒店与携程合作",
@@ -2199,7 +2090,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception"
@@ -2243,7 +2134,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "policy_commission",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -2283,7 +2174,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "operating_data",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -2320,7 +2211,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
@@ -2359,25 +2250,24 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "content_type": "product",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
           "vertical.allowed_theme"
         ],
         "manual_label": null,
-        "substantive_company_change": false,
+        "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关16/重要4/基本面0/证据10/来源4)",
-          "摘要重复标题(-20)",
+          "评分(相关16/重要14/基本面0/证据10/来源4)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "technology"
+          "product"
         ],
         "title_original": "Google’s Agentic Hotel Booking Tool Comes to AI Mode",
         "summary_original": "Google’s Agentic Hotel Booking Tool Comes to AI Mode&nbsp;&nbsp;Skift",
@@ -2387,7 +2277,10 @@
         "summary_status": "generated",
         "summary_generated_at": "2026-09-04 09:19:33",
         "event_id": "ev_a346632d69",
-        "folded_into": "https://skift.com/2026/08/27/googles-agentic-hotel-booking-tool-comes-to-ai-mode/"
+        "folded_into": "https://skift.com/2026/08/27/googles-agentic-hotel-booking-tool-comes-to-ai-mode/",
+        "related_sources": [
+          "Skift"
+        ]
       },
       {
         "date": "2026-08-27",
@@ -2403,8 +2296,10 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact",
           "vertical.allowed_theme"
         ],
         "manual_label": null,
@@ -2412,6 +2307,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关11/重要14/基本面0/证据10/来源4)",
           "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
@@ -2445,7 +2341,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
@@ -2472,7 +2368,8 @@
         "event_id": "ev_a346632d69",
         "related_sources": [
           "Skift"
-        ]
+        ],
+        "folded_into": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMzVxSWNONkpaZWpVVkVkMUxzamtxNUlyc2JGalBKQkR2c3pPdkVwcWlMNm5BWTQ5NzY3VkVOVmJwYjlwWnJKOWZSMUlOaVJuV1BtU1NhbUo1bUhESEVmck9oRXhIS0dENlJZWm9aVVVpWVpwQmN0T29ic2xGYm5haVlUaWl5Q1hz?oc=5"
       },
       {
         "date": "2026-08-27",
@@ -2490,7 +2387,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -2512,82 +2409,6 @@
         "translation_status": "ready"
       },
       {
-        "date": "2026-08-27",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "差旅管理公司eTravel收购罗马尼亚同行 Accent旅行和活动多数股权",
-        "url": "https://www.traveldaily.cn/expressPage/190607/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-08-27",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:17:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "title_original": "差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权",
-        "display_ready": true,
-        "translation_status": "ready"
-      },
-      {
-        "date": "2026-08-27",
-        "source": "环球旅讯",
-        "category": "industry_news",
-        "title": "斯波差旅平台特纳纳收购会议管理平台部队",
-        "url": "https://www.traveldaily.cn/expressPage/190605/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-08-27",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:17:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
-          "重要并购/融资保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition"
-        ],
-        "title_original": "差旅平台Spotnana收购会议管理平台Troop",
-        "display_ready": true,
-        "translation_status": "ready"
-      },
-      {
         "date": "2026-08-26",
         "title": "Booking Holdings 将在高盛Communacopia +技术大会上发表演讲",
         "url": "https://ir.bookingholdings.com/news/news-details/2026/Booking-Holdings-Inc--to-Present-at-the-Goldman-Sachs-Communacopia--Technology-Conference/default.aspx",
@@ -2604,7 +2425,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-26",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -2643,7 +2464,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-26",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -2680,7 +2501,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -2717,7 +2538,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "market.insider_sale_fact",
           "manual.keep"
@@ -2776,7 +2597,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-28 03:23:18",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -2817,7 +2638,7 @@
         ],
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-08-28 03:23:18",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "display_ready": true,
@@ -2856,7 +2677,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-28 03:23:18",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
@@ -2901,7 +2722,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "exclude.hard.股价_估值评论",
           "manual.keep",
@@ -2942,7 +2763,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -2979,7 +2800,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "display_ready": true,
@@ -3000,7 +2821,7 @@
         "translation_status": "ready",
         "is_core_company": true,
         "source_channel": "",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "manual.keep"
         ],
@@ -3027,44 +2848,6 @@
       },
       {
         "date": "2026-08-25",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "航空公司寻求代理AI来帮助提高效率",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbklRWUJoYzFfSndMS2xpa0t5RzRLbG5YZzIxUGhHRzE5WjgyQUp0akRjVVo0ZWV3MTNtMzNqNUlGWThkb2gxMUpKajRWRFJLdE9pUlZYTGJodEI4QU5xZWd5VkREY0RrMWdOZ0NFbDhGVkFxNEQweWg3Z2xjMXBsdjdMSkxTWFpLNkhZ?oc=5",
-        "summary": "航空公司寻求代理人工智能来提高效率 &nbsp;&nbsp;phocuswire.com",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-08-25",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme",
-          "manual.keep"
-        ],
-        "manual_label": "保留",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "technology"
-        ],
-        "title_original": "Airlines look to agentic AI for help with efficiency",
-        "summary_original": "Airlines look to agentic AI for help with efficiency&nbsp;&nbsp;phocuswire.com",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33"
-      },
-      {
-        "date": "2026-08-25",
         "title": "Booking Holdings 将在花旗2026全球TMT大会上发表演讲",
         "url": "https://ir.bookingholdings.com/news/news-details/2026/Booking-Holdings-Inc--to-Present-at-the-Citi-2026-Global-TMT-Conference/default.aspx",
         "summary": "Booking Holdings （纳斯达克股票代码： BKNG ）今天宣布，首席执行官格伦·福格尔（ Glenn Fogel ）将参加9月份在纽约市举行的花旗2026全球TMT大会的主题演讲",
@@ -3080,7 +2863,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-25",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -3119,7 +2902,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-25",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -3156,7 +2939,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -3194,7 +2977,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "market.insider_sale_fact"
         ],
@@ -3235,7 +3018,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -3290,7 +3073,7 @@
           "product",
           "distribution"
         ],
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -3314,16 +3097,16 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -3353,14 +3136,14 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -3381,6 +3164,42 @@
         ]
       },
       {
+        "title": "Which day is best for flight booking? Travel expert shares tips for finding cheaper airfares",
+        "title_original": "",
+        "summary": "",
+        "source": "Skyscanner",
+        "date": "2026-08-22",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMkNfbDlYa0pBRzZCeWJ2UGVWLUxTMm12ZTB5bV9YZGs4c24zUEdYLWllek1HdF9GU2ZKZGtPblhETFhienEwSVpuT3BrT1luSXk4RnM0WUt4b2tZb05INkh2Sy02YXZxQXUwdHRMeFpQUkh6dU8yakM1eFpjRTdKMGFtbTBpUzA1U0hCMmsxbEc4WHFxRXBtZW9BaGJ3WEptMC1jWi1rWnlXaTBQX1RkaGtIakV3Z0dON2lYLTNoeEx1dlFxNGN2aWVvcEx4QVBEVkp5UVhuONIB3AFBVV95cUxORUFQV1hBNWNaZVg3MDJ3NGtiTGNnSENpN2FKc2ZyM3NZZGw0WElSMG9mQUF0X3l4TFRCd3RaZVM0RFJLRWRSbHdBV0poSWFNOTRCc1lhcGM1QURZVHlxUUpQOWFuMmhqazJkSE5QUWNGemh6NEp4aF90ZVkteG4yRndkVnRjMHpaUkR3dW5FYkU2T2xMeldXSkx5di1waldmNjFIX0c3bTkwMEowSUhkdGU1QW1CTnBYT3VoLTQxbTZ0R2tEMVNfNW9nN1dXS1V3WldEWmdPTlhyd1Rp?oc=5",
+        "section": "international",
+        "category": "industry_news",
+        "entity_id": null,
+        "content_type": "general",
+        "selection_score": 60,
+        "selection_reasons": [
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
+          "评分(相关13/重要4/基本面0/证据6/来源2)",
+          "摘要重复标题(-20)",
+          "实质动态/官方清单保底60"
+        ],
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
+        "policy_version": "2026-09-03-v5",
+        "manual_label": null,
+        "rejection_reason": null,
+        "is_core_company": false,
+        "source_channel": "",
+        "substantive_company_change": false,
+        "selection_status": "kept",
+        "impact_dimensions": [],
+        "display_ready": false,
+        "translation_status": "pending_summary",
+        "summary_original": "Which day is best for flight booking? Travel expert shares tips for finding cheaper airfares&nbsp;&nbsp;The Korea Times",
+        "summary_status": "insufficient_evidence",
+        "summary_generated_at": "2026-09-04 13:37:19"
+      },
+      {
         "date": "2026-08-21",
         "source": "PhocusWire",
         "category": "industry_news",
@@ -3395,7 +3214,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -3438,17 +3257,15 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 67,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要14/基本面0/证据10/来源2)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关5/重要25/基本面0/证据10/来源2)",
+          "重点公司(ABNB)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -3462,11 +3279,11 @@
         "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-09-04 09:19:33",
-        "suppress_core_badge": true,
         "event_id": "ev_0c81bc6f8a",
         "related_sources": [
           "Malay Mail"
-        ]
+        ],
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-21",
@@ -3483,7 +3300,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -3509,8 +3326,8 @@
         "related_sources": [
           "Yahoo"
         ],
-        "suppress_core_badge": true,
-        "folded_into": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNSE5OemNlSl9lSnlzTWJxR1NreFdXRHhBdFpBNUFrQkJiTEItc0phSGZKemhrNWpQNFhVMFdXZ0tvYjdheEdaZ25aNUFzSEc4d1huV1MtSWFZVDZXdEtfYUhnYi02Q0tEeWNrUXo4MzY2Ujh1Q3A1VGxFX1ZZRVZLRkQ1RUoxbWl1RzFsMWJ1dWlIVFZhUWN3ejBFQzFfZ1M0eE9mdWgwdGlrT3dFeHl4NHNGdHVCTF9vS0NYWTNMWjBoMjlIWnhZMG5vRUdOS03SAdQBQVVfeXFMTWk0Q19KczlEa2E1WjBRbks2czFYTDFCZnpSazA1bExnN1JBR2JVaU44SndRR2RNU09SYVBrbEtrSTV2bkVDd3BIampJSFA1emVGTElPYVN4ZnJlUl9pV3RVRE9JaWNBZm1mVl9MLTlsZlE1RVNtajNTVEVhM0JkMDJOSWpHSE1HZ1R5eXo0MlltSER6ZmNEU1hzbkVsZ3NJc1NucTNJbmVNQ1dPdVktMkdqQmRkYlN1RkRIQ1F6NkJ1NDEzYjhFNGdGdm5pTDRPQmdtLWU?oc=5"
+        "folded_into": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNSE5OemNlSl9lSnlzTWJxR1NreFdXRHhBdFpBNUFrQkJiTEItc0phSGZKemhrNWpQNFhVMFdXZ0tvYjdheEdaZ25aNUFzSEc4d1huV1MtSWFZVDZXdEtfYUhnYi02Q0tEeWNrUXo4MzY2Ujh1Q3A1VGxFX1ZZRVZLRkQ1RUoxbWl1RzFsMWJ1dWlIVFZhUWN3ejBFQzFfZ1M0eE9mdWgwdGlrT3dFeHl4NHNGdHVCTF9vS0NYWTNMWjBoMjlIWnhZMG5vRUdOS03SAdQBQVVfeXFMTWk0Q19KczlEa2E1WjBRbks2czFYTDFCZnpSazA1bExnN1JBR2JVaU44SndRR2RNU09SYVBrbEtrSTV2bkVDd3BIampJSFA1emVGTElPYVN4ZnJlUl9pV3RVRE9JaWNBZm1mVl9MLTlsZlE1RVNtajNTVEVhM0JkMDJOSWpHSE1HZ1R5eXo0MlltSER6ZmNEU1hzbkVsZ3NJc1NucTNJbmVNQ1dPdVktMkdqQmRkYlN1RkRIQ1F6NkJ1NDEzYjhFNGdGdm5pTDRPQmdtLWU?oc=5",
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-21",
@@ -3527,7 +3344,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -3579,12 +3396,90 @@
         "impact_dimensions": [],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "display_ready": true,
         "translation_status": "ready",
         "summary_translated": true
+      },
+      {
+        "date": "2026-08-27",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "差旅管理公司eTravel收购罗马尼亚同行 Accent旅行和活动多数股权",
+        "url": "https://www.traveldaily.cn/expressPage/190607/",
+        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+        "source_channel": "express",
+        "fetched_at": "2026-09-04 09:17:30",
+        "published_at": "2026-08-27",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-04 09:17:43",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "ma_investment",
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "重要并购/融资保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "title_original": "差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权",
+        "display_ready": true,
+        "translation_status": "ready",
+        "region_classification": "international"
+      },
+      {
+        "date": "2026-08-27",
+        "source": "环球旅讯",
+        "category": "industry_news",
+        "title": "斯波差旅平台特纳纳收购会议管理平台部队",
+        "url": "https://www.traveldaily.cn/expressPage/190605/",
+        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
+        "source_channel": "express",
+        "fetched_at": "2026-09-04 09:17:30",
+        "published_at": "2026-08-27",
+        "date_status": "known",
+        "merged_same_article": 1,
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-04 09:17:43",
+        "entity_id": null,
+        "is_core_company": false,
+        "content_type": "ma_investment",
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "vertical.allowed_theme"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "重要并购/融资保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition"
+        ],
+        "title_original": "差旅平台Spotnana收购会议管理平台Troop",
+        "display_ready": true,
+        "translation_status": "ready",
+        "region_classification": "international"
       },
       {
         "date": "2026-08-21",
@@ -3600,7 +3495,7 @@
         "entity_id": null,
         "is_core_company": false,
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
@@ -3621,48 +3516,13 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33"
+        "summary_generated_at": "2026-09-04 09:19:33",
+        "region_classification": "international"
       }
     ]
   },
   "domestic": {
     "china_industry": [
-      {
-        "date": "2026-09-02",
-        "source": "环球旅讯",
-        "category": "china_industry",
-        "title": "亚洲航空与土耳其领先低成本航空公司飞马航空达成划时代代码共享合作，并计划将伊斯坦布尔航班增至每日一班",
-        "url": "https://www.traveldaily.cn/expressPage/190627/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-09-02",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:17:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关9/重要10/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "cooperation"
-        ],
-        "display_ready": true,
-        "translation_status": "ready"
-      },
       {
         "date": "2026-08-28",
         "source": "环球旅讯",
@@ -3677,7 +3537,7 @@
         "entity_id": null,
         "is_core_company": false,
         "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -3696,7 +3556,8 @@
         "summary_status": "generated",
         "summary_generated_at": "2026-08-30 17:28:55",
         "display_ready": true,
-        "translation_status": "ready"
+        "translation_status": "ready",
+        "region_classification": "domestic"
       }
     ],
     "regulatory": [
@@ -3716,7 +3577,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -3742,42 +3603,6 @@
         "date": "2026-09-02",
         "source": "中国民航网",
         "category": "company_news",
-        "title": "东航飞机维修工程有限公司揭牌 亚洲最大宽体机维修机库投运",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBnaHZPOG5YUmlyWmExa3ZqMnhjbzZpVHdTOVhWOGRackY2Q3lsOWRUZ2MzOTRvQVAzQmhJLS1BMnB5b0c3RWcyaTY0MmNhc2lRWkE2eU9JcGdKeGQxdU5JVnNDYkNMS2o5NHpTNw?oc=5",
-        "summary": "东航飞机维修工程有限公司揭牌 亚洲最大宽体机维修机库投运&nbsp;&nbsp;中国民航网",
-        "company": "中国东航",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-09-02",
-        "date_status": "known",
-        "merged_same_article": 2,
-        "event_id": "ev_f1f6a21cde",
-        "folded_into": "http://www.caacnews.com.cn/1/6/202609/t20260902_1397066.html",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关5/重要4/基本面0/证据10/来源5)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33"
-      },
-      {
-        "date": "2026-09-02",
-        "source": "中国民航网",
-        "category": "company_news",
         "title": "东航2026暑运在武汉航班量与客运量均创新高",
         "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5uNm44VGV6LXV2TlpBSnJJcE5WcGY0aGpKUGhuWFdPQlJwbldHM25RTlNCZzJMQzBZVW1haDlKTmIyTHAzbjcxblg5eG9mTWJPUmVVMzB0dFRSZFlpWEJsa0pETUdHbFRQZlFiTw?oc=5",
         "summary": "东航2026暑运在武汉航班量与客运量均创新高&nbsp;&nbsp;中国民航网",
@@ -3786,19 +3611,21 @@
         "published_at": "2026-09-02",
         "date_status": "known",
         "event_id": "ev_0c142ec884",
-        "folded_into": "http://www.caacnews.com.cn/1/6/202609/t20260902_1397064.html",
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
         "content_type": "operating_data",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "substantive_company_change": false,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关11/重要4/基本面16/证据10/来源5)",
           "实质动态/官方清单保底60"
         ],
@@ -3812,7 +3639,8 @@
         "summary_generated_at": "2026-09-04 09:19:33",
         "related_sources": [
           "中国民航网"
-        ]
+        ],
+        "folded_into": "http://www.caacnews.com.cn/1/6/202609/t20260902_1397064.html"
       },
       {
         "date": "2026-09-02",
@@ -3832,14 +3660,17 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "operating_data",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
         "selection_score": 68,
         "selection_status": "kept",
         "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关14/重要4/基本面25/证据20/来源5)"
         ],
         "rejection_reason": null,
@@ -3855,39 +3686,6 @@
           "中国民航网"
         ],
         "folded_into": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5uNm44VGV6LXV2TlpBSnJJcE5WcGY0aGpKUGhuWFdPQlJwbldHM25RTlNCZzJMQzBZVW1haDlKTmIyTHAzbjcxblg5eG9mTWJPUmVVMzB0dFRSZFlpWEJsa0pETUdHbFRQZlFiTw?oc=5"
-      },
-      {
-        "date": "2026-09-02",
-        "source": "guandian.cn",
-        "category": "company_news",
-        "title": "中国东航亚洲最大宽体机维修机库投运 东航飞机维修工程同日揭牌",
-        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBFdk50WGVId1ZqY0tURWFHU0d3SkZ1aExTNTluamozb0doZ0p2aWMzX2V0Uko2dGlBcXU5RGRLWkxMS1FQQ1hGTkthRGxPdw?oc=5",
-        "summary": "中国东航亚洲最大宽体机维修机库投运 东航飞机维修工程同日揭牌&nbsp;&nbsp;guandian.cn",
-        "company": "中国东航",
-        "fetched_at": "2026-09-03 01:24:18",
-        "published_at": "2026-09-02",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关5/重要4/基本面0/证据6/来源2)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-03 01:25:36"
       },
       {
         "date": "2026-08-26",
@@ -3911,7 +3709,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关14/重要14/基本面14/证据10/来源5)",
           "实质动态/官方清单保底60"
         ],
@@ -3924,8 +3722,11 @@
         "related_sources": [
           "中国民航网"
         ],
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "display_ready": true,
         "translation_status": "ready"
@@ -3934,6 +3735,45 @@
   },
   "modules": {
     "intl_core_company": [
+      {
+        "date": "2026-09-03",
+        "source": "safariindia.com",
+        "category": "industry_news",
+        "title": "Airbnb 任命新首席商务官",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9NWE9tcVNSeU82Ukw0d1prZnBsRFlKWGVYME9CdmdTZzRkMDROSjZQYUdodU1sNHIzUWJPdVhMSXJIQTdqWjZfdW5rZHh6Njdpa0lSZWdsNmNRdEZkYWxUY2Q3WFhDM1FDYWhUTXE3M1R1SzAtaXc?oc=5",
+        "summary": "Airbnb 任命新首席商务官 safariindia.com",
+        "company": "ABNB",
+        "fetched_at": "2026-09-04 09:17:30",
+        "published_at": "2026-09-03",
+        "date_status": "known",
+        "event_id": "ev_1f2c3f8f03",
+        "entity_id": "ABNB",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 76,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
+          "重点公司(ABNB)",
+          "正式制度/组织变化"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization",
+          "core_company"
+        ],
+        "title_original": "Airbnb Appoints New Chief Business Officer",
+        "summary_original": "Airbnb Appoints New Chief Business Officer&nbsp;&nbsp;safariindia.com",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-04 09:19:33"
+      },
       {
         "date": "2026-09-02",
         "source": "Yahoo Finance",
@@ -3948,22 +3788,21 @@
         "entity_id": "BKNG",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "content_type": "management_org",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 89,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要24/基本面0/证据10/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "正式制度/组织变化"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "cooperation",
+          "organization",
           "core_company"
         ],
         "title_original": "Agoda Named Official Travel Partner of Eurovision's Inaugural Asian Edition",
@@ -3988,13 +3827,17 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
         "selection_score": 65,
         "selection_status": "kept",
         "selection_reasons": [
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关14/重要14/基本面0/证据10/来源2)",
           "重点公司(BKNG)"
         ],
@@ -4025,7 +3868,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -4036,7 +3879,6 @@
         "selection_reasons": [
           "评分(相关0/重要14/基本面0/证据14/来源4)",
           "重点公司(EXPE)",
-          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -4046,49 +3888,6 @@
         ],
         "title_original": "Vrbo launches sponsored search listings globally amid wider product rollout",
         "summary_original": "Vrbo launches sponsored search listings globally amid wider product rollout&nbsp;&nbsp;phocuswire.com",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33"
-      },
-      {
-        "date": "2026-09-01",
-        "title": "Expedia Group推出Vrbo和Escapia有史以来最大的产品，加速度假租赁增长",
-        "url": "https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-Accelerates-Vacation-Rental-Growth-With-Largest-Ever-Product-Launch-For-Vrbo-And-Escapia/default.aspx",
-        "summary": "Vrbo赞助广告帮助合作伙伴在高级Vrbo搜索展示位置上做广告，无需预付费用新费率和促销活动，如限时优惠和不可退款费率，允许合作伙伴",
-        "source": "Expedia Group IR",
-        "category": "industry_news",
-        "entity_id": "EXPE",
-        "company": "EXPE",
-        "is_core_company": true,
-        "source_channel": "ir_official_q4",
-        "is_ir_source": true,
-        "ir_release_kind": "core_action",
-        "content_type": "earnings",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-09-01",
-        "date_status": "known",
-        "merged_same_article": 2,
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "topic.hotel",
-          "topic.hotel.ota_direct_exception"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 74,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关5/重要25/基本面0/证据14/来源5)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "financials",
-          "core_company"
-        ],
-        "title_original": "Expedia Group Accelerates Vacation Rental Growth With Largest-Ever Product Launch For Vrbo And Escapia",
-        "summary_original": "Vrbo Sponsored Listings Helps Partners Advertise in Premium Vrbo Search Placements with No Upfront Costs New Rates and Promotions, like Limited Time Offers and Non-Refundable Rates, Allow Partners to ",
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
@@ -4109,7 +3908,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4150,7 +3949,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception"
@@ -4189,7 +3988,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4226,7 +4025,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4264,7 +4063,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4302,7 +4101,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4339,7 +4138,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4379,7 +4178,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4420,7 +4219,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "policy_commission",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4460,7 +4259,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "operating_data",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -4500,7 +4299,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-26",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -4539,7 +4338,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-26",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -4576,7 +4375,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4615,7 +4414,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-25",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -4654,7 +4453,7 @@
         "fetched_at": "2026-09-04 09:17:30",
         "published_at": "2026-08-25",
         "date_status": "known",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -4691,16 +4490,16 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据10/来源2)",
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
           "重点公司(BKNG)",
-          "摘要重复标题(-20)",
+          "只有标题无公开证据(-15)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -4730,14 +4529,14 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 66,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
           "重点公司(EXPE)",
           "正式制度/组织变化"
         ],
@@ -4772,7 +4571,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -4812,7 +4611,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -4821,7 +4620,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关10/重要22/基本面0/证据20/来源4)",
+          "评分(相关10/重要22/基本面0/证据14/来源4)",
           "重要并购/融资保底60"
         ],
         "rejection_reason": null,
@@ -4832,7 +4631,7 @@
         "title_original": "Payments-first OTA Laters.com raises $1.5M in seed funding",
         "summary_original": "Payments-first OTA Laters.com raises $1.5M in seed funding&nbsp;&nbsp;phocuswire.com",
         "display_ready": true,
-        "translation_status": "pending_summary",
+        "translation_status": "ready",
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-09-04 09:19:33"
       },
@@ -4850,7 +4649,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -4859,8 +4658,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要22/基本面0/证据10/来源4)",
-          "摘要重复标题(-20)",
+          "评分(相关0/重要22/基本面0/证据20/来源4)",
           "重要并购/融资保底60"
         ],
         "rejection_reason": null,
@@ -4889,7 +4687,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -4897,7 +4695,6 @@
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关10/重要4/基本面0/证据10/来源4)",
-          "摘要重复标题(-20)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
@@ -4925,7 +4722,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -4934,7 +4731,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关3/重要22/基本面0/证据10/来源4)",
+          "评分(相关3/重要22/基本面0/证据4/来源4)",
           "重要并购/融资保底60"
         ],
         "rejection_reason": null,
@@ -4945,7 +4742,7 @@
         "title_original": "WeTravel acquires Tourwriter to broaden custom travel focus",
         "summary_original": "WeTravel acquires Tourwriter to broaden custom travel focus&nbsp;&nbsp;phocuswire.com",
         "display_ready": true,
-        "translation_status": "pending_summary",
+        "translation_status": "ready",
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-09-04 09:19:33"
       },
@@ -4963,7 +4760,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -4995,62 +4792,27 @@
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "content_type": "management_org",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
-        "substantive_company_change": false,
+        "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关0/重要4/基本面0/证据20/来源4)",
-          "摘要重复标题(-20)",
+          "评分(相关0/重要14/基本面0/证据20/来源4)",
           "IR/ Bloomberg垂直源保底60"
         ],
         "rejection_reason": null,
-        "impact_dimensions": [],
+        "impact_dimensions": [
+          "organization"
+        ],
         "title_original": "Uber Reportedly Plans To Slash 10% Of Its Workforce — Wells Fargo Says The Move Could Unlock $580M In Cost Savings",
         "summary_original": "Uber Reportedly Plans To Slash 10% Of Its Workforce — Wells Fargo Says The Move Could Unlock $580M In Cost Savings&nbsp;&nbsp;TradingView",
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
         "summary_generated_at": "2026-09-04 09:19:33"
-      },
-      {
-        "date": "2026-09-02",
-        "source": "Skift",
-        "category": "industry_news",
-        "title": "西南航空将在Chase Partnership推出“至少” 11个机场休息室",
-        "url": "https://skift.com/2026/09/02/southwest-to-launch-airport-lounges-in-2027/",
-        "summary": "西南航空将于 2027 年在奥斯汀、巴尔的摩、纳什维尔和檀香山开设休息室，并与摩根大通合作并推出新的信用卡。",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-09-02",
-        "date_status": "known",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:17:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "product",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关11/重要24/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product"
-        ],
-        "title_original": "Southwest to Launch ‘at Least’ 11 Airport Lounges in Chase Partnership",
-        "display_ready": true,
-        "translation_status": "ready"
       },
       {
         "date": "2026-09-02",
@@ -5068,7 +4830,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "regulation",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5105,7 +4867,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5140,13 +4902,17 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关6/重要10/基本面0/证据10/来源2)",
           "重点公司(TCOM)",
           "实质动态/官方清单保底60"
@@ -5177,7 +4943,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5187,7 +4953,6 @@
         "selection_status": "kept",
         "selection_reasons": [
           "评分(相关3/重要4/基本面0/证据10/来源4)",
-          "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
         ],
         "rejection_reason": null,
@@ -5215,7 +4980,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -5252,7 +5017,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5292,7 +5057,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5328,7 +5093,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5363,7 +5128,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -5399,7 +5164,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": false,
@@ -5434,7 +5199,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5458,46 +5223,6 @@
       },
       {
         "date": "2026-08-30",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "Airbnb让我们重新思考“直接预订”的真正含义",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQLWJ0a1UxVkxaT09xd0RTMEJzbEhtYVRFblppdTdfMFJKeDJXQWJLbUwxSXZZVnNfRmplX0FOWFNZSXRVTjlrRWRya25FWjJwN0ZtSVh2aWN4V05MM1FaSkY4RU9fRHVJMUpBNXkzRlpJY1BCeTBOalBTUEY3QzVhUHNfcV9QUjZ2LW14MnJnWVVyUQ?oc=5",
-        "summary": "Airbnb 让我们重新思考“直接预订”的真正含义&nbsp;&nbsp;phocuswire.com",
-        "company": "ABNB",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "entity_id": "ABNB",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据14/来源4)",
-          "重点公司(ABNB)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "title_original": "Airbnb is making us rethink what a 'direct booking' really means",
-        "summary_original": "Airbnb is making us rethink what a 'direct booking' really means&nbsp;&nbsp;phocuswire.com",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33",
-        "suppress_core_badge": true
-      },
-      {
-        "date": "2026-08-30",
         "source": "Trip.com",
         "category": "industry_news",
         "title": "锦江酒店与携程合作",
@@ -5510,7 +5235,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception"
@@ -5551,7 +5276,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "earnings",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
@@ -5591,8 +5316,10 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact",
           "vertical.allowed_theme"
         ],
         "manual_label": null,
@@ -5600,6 +5327,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关11/重要14/基本面0/证据10/来源4)",
           "摘要重复标题(-20)",
           "垂直媒体允许主题保底60"
@@ -5620,52 +5348,6 @@
         "date": "2026-08-27",
         "source": "Skift",
         "category": "industry_news",
-        "title": "谷歌智能体酒店预订工具上线AI模式",
-        "url": "https://skift.com/2026/08/27/googles-agentic-hotel-booking-tool-comes-to-ai-mode/",
-        "summary": "谷歌首次预告该功能九个月后，智能体酒店预订功能正式上线 AI模式。",
-        "fetched_at": "2026-09-01 01:54:43",
-        "published_at": "2026-08-27",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-01 01:54:54",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "product",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "topic.hotel",
-          "topic.hotel.ota_direct_exception",
-          "vertical.allowed_theme",
-          "manual.keep"
-        ],
-        "manual_label": "保留",
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关11/重要14/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product"
-        ],
-        "title_original": "谷歌智能体酒店预订工具上线AI Mode",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_translated": true,
-        "summary_original": "谷歌首次预告该功能九个月后，智能体酒店预订功能正式上线AI Mode。",
-        "event_id": "ev_a346632d69",
-        "related_sources": [
-          "Skift"
-        ]
-      },
-      {
-        "date": "2026-08-27",
-        "source": "Skift",
-        "category": "industry_news",
         "title": "Motel 6的力量 ： Prism的年度报告揭示了其首次公开募股前的情况",
         "url": "https://skift.com/2026/08/27/motel-6s-power-what-prisms-annual-report-reveals-ahead-of-its-ipo/",
         "summary": "随着OYO母公司 Prism准备推出首次公开募股 ，奥约棱镜奥约棱镜其最新的年度报告显示，这家公司看起来与我们五年前认识的公司不同。",
@@ -5678,7 +5360,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5716,7 +5398,7 @@
         "entity_id": null,
         "is_core_company": false,
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5735,7 +5417,8 @@
         ],
         "title_original": "差旅管理公司eTravel收购罗马尼亚同行Accent Travel & Events多数股权",
         "display_ready": true,
-        "translation_status": "ready"
+        "translation_status": "ready",
+        "region_classification": "international"
       },
       {
         "date": "2026-08-27",
@@ -5754,7 +5437,7 @@
         "entity_id": null,
         "is_core_company": false,
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5773,7 +5456,8 @@
         ],
         "title_original": "差旅平台Spotnana收购会议管理平台Troop",
         "display_ready": true,
-        "translation_status": "ready"
+        "translation_status": "ready",
+        "region_classification": "international"
       },
       {
         "date": "2026-08-26",
@@ -5790,7 +5474,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "market.insider_sale_fact",
           "manual.keep"
@@ -5849,7 +5533,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-28 03:23:18",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -5890,7 +5574,7 @@
         ],
         "summary_status": "insufficient_evidence",
         "summary_generated_at": "2026-08-28 03:23:18",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "display_ready": true,
@@ -5929,7 +5613,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-28 03:23:18",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
@@ -5974,7 +5658,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "exclude.hard.股价_估值评论",
           "manual.keep",
@@ -6015,7 +5699,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -6052,7 +5736,7 @@
         ],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "display_ready": true,
@@ -6073,7 +5757,7 @@
         "translation_status": "ready",
         "is_core_company": true,
         "source_channel": "",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "manual.keep"
         ],
@@ -6100,44 +5784,6 @@
       },
       {
         "date": "2026-08-25",
-        "source": "PhocusWire",
-        "category": "industry_news",
-        "title": "航空公司寻求代理AI来帮助提高效率",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbklRWUJoYzFfSndMS2xpa0t5RzRLbG5YZzIxUGhHRzE5WjgyQUp0akRjVVo0ZWV3MTNtMzNqNUlGWThkb2gxMUpKajRWRFJLdE9pUlZYTGJodEI4QU5xZWd5VkREY0RrMWdOZ0NFbDhGVkFxNEQweWg3Z2xjMXBsdjdMSkxTWFpLNkhZ?oc=5",
-        "summary": "航空公司寻求代理人工智能来提高效率 &nbsp;&nbsp;phocuswire.com",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-08-25",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme",
-          "manual.keep"
-        ],
-        "manual_label": "保留",
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关6/重要4/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "technology"
-        ],
-        "title_original": "Airlines look to agentic AI for help with efficiency",
-        "summary_original": "Airlines look to agentic AI for help with efficiency&nbsp;&nbsp;phocuswire.com",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33"
-      },
-      {
-        "date": "2026-08-25",
         "source": "MarketBeat",
         "category": "industry_news",
         "title": "内幕销售Expedia Group（纳斯达克股票代码：EXPE）内幕销售$ 336,340.00股票",
@@ -6151,7 +5797,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "market.insider_sale_fact"
         ],
@@ -6192,7 +5838,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -6247,7 +5893,7 @@
           "product",
           "distribution"
         ],
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -6271,17 +5917,15 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 67,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要14/基本面0/证据10/来源2)",
-          "重点公司(ABNB)",
-          "摘要重复标题(-20)",
-          "实质动态/官方清单保底60"
+          "评分(相关5/重要25/基本面0/证据10/来源2)",
+          "重点公司(ABNB)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -6295,11 +5939,11 @@
         "summary_translated": true,
         "summary_status": "generated",
         "summary_generated_at": "2026-09-04 09:19:33",
-        "suppress_core_badge": true,
         "event_id": "ev_0c81bc6f8a",
         "related_sources": [
           "Malay Mail"
-        ]
+        ],
+        "suppress_core_badge": true
       },
       {
         "date": "2026-08-21",
@@ -6329,7 +5973,7 @@
         "impact_dimensions": [],
         "summary_status": "generated",
         "summary_generated_at": "2026-08-27 10:00:46",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "display_ready": true,
@@ -6350,7 +5994,7 @@
         "entity_id": null,
         "is_core_company": false,
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "topic.hotel",
           "topic.hotel.ota_direct_exception",
@@ -6371,7 +6015,8 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:19:33"
+        "summary_generated_at": "2026-09-04 09:19:33",
+        "region_classification": "international"
       }
     ],
     "intl_disclosures": [
@@ -6399,7 +6044,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6441,7 +6086,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6483,7 +6128,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "general",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6523,7 +6168,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6565,7 +6210,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6579,7 +6224,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -6606,7 +6252,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6620,7 +6266,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -6647,7 +6294,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6688,7 +6335,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6730,7 +6377,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6744,7 +6391,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -6771,7 +6419,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6813,7 +6461,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6827,7 +6475,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -6854,7 +6503,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6895,7 +6544,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6937,7 +6586,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -6951,7 +6600,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -6978,7 +6628,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -7020,7 +6670,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -7034,7 +6684,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -7061,7 +6712,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -7075,7 +6726,8 @@
         "rejection_reason": null,
         "impact_dimensions": [
           "capital",
-          "competition"
+          "competition",
+          "core_company"
         ]
       },
       {
@@ -7102,7 +6754,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -7143,7 +6795,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "management_org",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -7184,7 +6836,7 @@
         "is_core_company": true,
         "source_channel": "",
         "content_type": "ma_investment",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "official.sec.filing"
         ],
@@ -7205,75 +6857,6 @@
     ],
     "dom_industry": [
       {
-        "date": "2026-09-02",
-        "source": "环球旅讯",
-        "category": "china_industry",
-        "title": "亚洲航空与土耳其领先低成本航空公司飞马航空达成划时代代码共享合作，并计划将伊斯坦布尔航班增至每日一班",
-        "url": "https://www.traveldaily.cn/expressPage/190627/",
-        "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
-        "source_channel": "express",
-        "fetched_at": "2026-09-04 09:17:30",
-        "published_at": "2026-09-02",
-        "date_status": "known",
-        "merged_same_article": 1,
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-04 09:17:43",
-        "entity_id": null,
-        "is_core_company": false,
-        "content_type": "partnership",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [
-          "vertical.allowed_theme"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关9/重要10/基本面0/证据10/来源4)",
-          "垂直媒体允许主题保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "cooperation"
-        ],
-        "display_ready": true,
-        "translation_status": "ready"
-      },
-      {
-        "date": "2026-09-02",
-        "source": "guandian.cn",
-        "category": "company_news",
-        "title": "中国东航亚洲最大宽体机维修机库投运 东航飞机维修工程同日揭牌",
-        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBFdk50WGVId1ZqY0tURWFHU0d3SkZ1aExTNTluamozb0doZ0p2aWMzX2V0Uko2dGlBcXU5RGRLWkxMS1FQQ1hGTkthRGxPdw?oc=5",
-        "summary": "中国东航亚洲最大宽体机维修机库投运 东航飞机维修工程同日揭牌&nbsp;&nbsp;guandian.cn",
-        "company": "中国东航",
-        "fetched_at": "2026-09-03 01:24:18",
-        "published_at": "2026-09-02",
-        "date_status": "known",
-        "entity_id": null,
-        "is_core_company": false,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
-          "评分(相关5/重要4/基本面0/证据6/来源2)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-03 01:25:36"
-      },
-      {
         "date": "2026-08-28",
         "source": "环球旅讯",
         "category": "china_industry",
@@ -7287,7 +6870,7 @@
         "entity_id": null,
         "is_core_company": false,
         "content_type": "ai_application",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [
           "vertical.allowed_theme"
         ],
@@ -7306,7 +6889,8 @@
         "summary_status": "generated",
         "summary_generated_at": "2026-08-30 17:28:55",
         "display_ready": true,
-        "translation_status": "ready"
+        "translation_status": "ready",
+        "region_classification": "domestic"
       },
       {
         "date": "2026-08-26",
@@ -7330,7 +6914,7 @@
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "东航航空业影响(票价/退改签/运力/客座率/渠道/收费)",
+          "航空业务影响(票价/行李费/退改签/供给流量/渠道/航线)",
           "评分(相关14/重要14/基本面14/证据10/来源5)",
           "实质动态/官方清单保底60"
         ],
@@ -7343,8 +6927,11 @@
         "related_sources": [
           "中国民航网"
         ],
-        "policy_version": "2026-08-30-v4",
-        "matched_rule_ids": [],
+        "policy_version": "2026-09-03-v5",
+        "matched_rule_ids": [
+          "topic.airline",
+          "topic.airline.allowed_impact"
+        ],
         "manual_label": null,
         "display_ready": true,
         "translation_status": "ready"
@@ -7367,7 +6954,7 @@
         "is_core_company": false,
         "source_channel": "",
         "content_type": "product",
-        "policy_version": "2026-08-30-v4",
+        "policy_version": "2026-09-03-v5",
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
@@ -7392,34 +6979,34 @@
   "last_updated": "2026-09-04 09:19:33",
   "last_updated_timezone": "Asia/Shanghai",
   "selection_report": {
-    "run_at": "2026-09-04 01:18:31",
-    "policy_version": "2026-08-30-v4",
-    "raw_count": 242,
-    "kept_count": 100,
-    "rejected_count": 142,
+    "run_at": "2026-09-04 13:37:19",
+    "policy_version": "2026-09-03-v5",
+    "raw_count": 192,
+    "kept_count": 94,
+    "rejected_count": 98,
     "by_reason": {
-      "Hotel非OTA相关": 23,
-      "评分低于60且无保底资格": 80,
-      "无新事实短评": 7,
-      "股价/估值评论": 1,
-      "观点评论/趋势展望": 1,
-      "软广/优惠促销/榜单": 1,
-      "前高管在第三方公司履新": 1,
+      "航空非准入主题": 8,
+      "软广/优惠促销/榜单": 2,
+      "评分低于60且无保底资格": 46,
+      "Hotel非OTA相关": 17,
+      "观点评论/泛分析": 2,
+      "观点评论/趋势展望": 3,
       "新闻合集/无具体事件页": 2,
       "品牌营销代理宣传": 1,
-      "公益/救灾宣传": 1,
+      "股价/估值评论": 1,
+      "前高管在第三方公司履新": 1,
+      "人工标注排除": 5,
+      "公益/救灾宣传": 2,
       "被动机构持仓变动": 1,
-      "观点评论/泛分析": 2,
+      "无新事实短评": 4,
       "体育赞助/庆典/获奖/公益": 1,
-      "东航非业务影响词": 18,
-      "东航宣传稿(CiftonEXCLUDE_RE)": 1,
-      "社群广告": 1
+      "航空机队/宽体机/财报": 2
     },
     "quality": {
       "empty_categories": [],
-      "total_items": 100,
+      "total_items": 94,
       "unknown_date_count": 0,
-      "no_summary_count": 14
+      "no_summary_count": 15
     }
   },
   "update_status": "success",
@@ -7678,5 +7265,7 @@
       }
     }
   },
-  "update_mode": "full"
+  "update_mode": "full",
+  "policy_version": "2026-09-03-v5",
+  "policy_reprocessed_at": "2026-09-04 13:37:19"
 }

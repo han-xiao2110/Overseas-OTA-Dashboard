@@ -237,11 +237,11 @@
       "title": "Airlines look to agentic AI for help with efficiency",
       "source": "PhocusWire",
       "date": "2026-08-25",
-      "label": "保留",
-      "reason": "",
-      "notes": "用户说明：和关注的重点公司未来战略相关；用户所填原因：其他",
-      "policy_version": "2026-08-30-v3",
-      "updated_at": "2026-08-30 02:13:53"
+      "label": "排除",
+      "reason": "低价值",
+      "notes": "2026-09-03用户明确收窄所有航司/航空新闻：仅保留票价、行李收费、退改签、运力/客座率/旅客量/航班量、渠道佣金及航线变动。",
+      "policy_version": "2026-09-03-v5",
+      "updated_at": "2026-09-03 11:01:30"
     },
     {
       "key": "url:https://news.google.com/rss/articles/CBMilAFBVV95cUxNTjlQQnd6bjdiTTZFNDFWQ3dLVVk5WU15TTZzbXd2OFE2R2h5LTE3YTBBS1ltZWlfUFNyVGt0cXVXb0ZVdmRVZHB6ZzRRUnp5RDg1Mm9WVGgtRTR4dURQQThmN3dsMFA4UTJCNWZoWlg0Z2stVXppUTZfdGVJSjU3blhTZlNRTGVhNVc3YTV2eDVqa2x3?oc=5",

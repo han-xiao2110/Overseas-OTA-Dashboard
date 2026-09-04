@@ -442,6 +442,21 @@ def test_domestic_filters():
     out = fn.filter_domestic_items("环球旅讯", list(td))
     check("F5 环球旅讯排除消费者实测攻略", len(out) == 1 and "华住" in out[0]["title"])
 
+    hkex = {s.get("stock_name"): s.get("stock_id") for s in fn.DOMESTIC_WEB_SOURCES
+            if s.get("news_selector") == "hkex"}
+    check("F6 披露易仅抓取携程/同程/嘀嗒出行",
+          hkex == {"携程": "1000090312", "同程": "205645", "嘀嗒出行": "1000226331"})
+    company_feeds = {f.get("company") for f in fn.CN_COMPANY_FEEDS if f.get("company")}
+    check("F7 Google News定向源为携程/同程/嘀嗒出行",
+          company_feeds == {"携程", "同程", "嘀嗒出行"})
+
+    caac_html = ('<a href="/tt/202609/t20260903_10001.html">国航新增北京至新加坡航线</a>'
+                 '<a href="/tt/202609/t20260903_10002.html">东航调整国内航线燃油附加费</a>')
+    caac_items = fn.extract_caac_news(caac_html, "中国民航网", "company_news",
+                                      "http://www.caacnews.com.cn/", 10)
+    check("F8 中国民航网解析不再只限东航",
+          len(caac_items) == 2 and any("国航" in x["title"] for x in caac_items))
+
 
 # ════════════════ C. 来源状态 / 失败回退（main 集成, fixture 不联网） ════════════════
 
@@ -848,10 +863,17 @@ def test_selection():
     check("G9a 海外交易即使来自express入口也进国际",
           fn._td_is_domestic(td_cases[0][0], "", "express") is False and
           fn._td_is_domestic(td_cases[2][0], "", "express") is False)
+    airasia_title = "亚洲航空与土耳其领先低成本航空公司飞马航空达成划时代代码共享合作，并计划将伊斯坦布尔航班增至每日一班"
+    check("G9b 亚洲航空与飞马航空代码共享识别为国际",
+          fn._td_region(airasia_title, "双方将在亚欧之间开辟100余条新航线", "airline") == "international" and
+          fn._td_is_domestic(airasia_title, "", "airline") is False)
+    check("G9c 无地域证据的环球旅讯条目不再默认国内",
+          fn._td_region("旅游平台发布新功能", "", "express") == "unknown" and
+          fn._td_is_domestic("旅游平台发布新功能", "", "express") is False)
     vayk = _sel_item(td_cases[1][0], "环球旅讯", "international", "industry_news")
     vayk["summary"] = "度假租赁宾客服务平台VayKLife完成对旅游科技平台Xplorie的收购。"
     vayk_kept, _ = fn.select_news_item(vayk, "international", "industry_news")
-    check("G9b 两条人工样本确认后排除度假租赁宾客服务并购", not vayk_kept)
+    check("G9d 两条人工样本确认后排除度假租赁宾客服务并购", not vayk_kept)
 
     # G10 人工标注校验与精确覆盖结构
     sample_rows = [{"标题": "Test", "来源": "Skift", "日期": "2026-08-28",
@@ -935,18 +957,13 @@ def test_selection():
 
 # ════════════════ H. 东航收窄规则回归（2026-08-18） ════════════════
 def test_ceair_narrowing():
-    """东航不是重点公司，仅作为航空行业观察来源。
-    - 必须命中 CEAIR_IMPACT_RE 业务影响词（票价/退改签/运力/客座率/渠道/收费等）才保留
-    - 命中 CEAIR_EXCLUDE_RE 宣传词直接拒绝
-    - 14天免费退改 = 固定回归样本，必须保留
-    - 东航公司名本身不触发 is_core 加分
-    """
-    print("\n— H. 东航收窄规则回归 —")
+    """所有航司/航空新闻只保留六类 OTA 机票业务影响主题。"""
+    print("\n— H. 航司/航空新闻统一收窄规则 —")
 
-    def _select(title, summary=""):
-        item = {"title": title, "summary": summary, "source": "中国民航网",
-                "company": "中国东航", "entity_id": "CEAIR"}
-        return fn.select_news_item(item, "domestic", "company_news")
+    def _select(title, summary="", source="中国民航网", section="domestic"):
+        item = {"title": title, "summary": summary, "source": source}
+        category = "company_news" if section == "domestic" else "industry_news"
+        return fn.select_news_item(item, section, category)
 
     # H1-H3: 三个固定回归样本
     kept, _ = _select("东航国内客票提前14天免费退改")
@@ -974,28 +991,47 @@ def test_ceair_narrowing():
           "CEAIR" not in fn.CORE_COMPANY_IDS
           and item_h4.get("is_core_company") is False)
 
-    # H5: 东航无业务影响词 → 拒绝
-    for title in ("东航升级机上餐饮服务", "东航推出特色旅游产品", "东航新航线开通"):
+    # H5: 无六类业务影响词 → 拒绝
+    for title in ("东航升级机上餐饮服务", "东航推出特色旅游产品", "达美航空宣布新的品牌形象"):
         kept, _ = _select(title)
         check(f"H5 无业务影响词拒绝: {title[:20]}",
               kept is False)
 
-    # H6: 东航命中业务影响词 → 保留
+    # H6: 国内外航司命中六类业务影响词 → 保留
     for title in (
         "东航调整国内航线燃油附加费",
-        "民航局公布东航月度旅客量和客座率数据",
-        "东航宣布OTA渠道佣金新政策",
-        "东航因台风大范围航班取消启动特殊退改",
+        "达美航空上调托运行李收费",
+        "新加坡航空公布月度运力、旅客量和客座率",
+        "美联航调整OTA渠道代理佣金政策",
+        "英航复航伦敦至北京航线",
+        "汉莎航空因天气取消部分航线并启动特殊退改",
     ):
-        kept, _ = _select(title)
+        kept, _ = _select(title, source="PhocusWire", section="international")
         check(f"H6 业务影响词保留: {title[:20]}",
               kept is True)
+
+    kept, _ = _select("国航新增北京至新加坡航线")
+    check("H6b 中国民航网的其他航司合格新闻可保留", kept is True)
+
+    for title in (
+        "中国东航亚洲最大宽体机维修机库投运",
+        "美联航公布2026年第二季度财报与净利润",
+        "某航空公司发布月度经营数据",
+        "达美航空扩大机队规模",
+    ):
+        kept, _ = _select(title, source="Skift", section="international")
+        check(f"H6c 航空低价值主题排除: {title[:20]}", kept is False)
 
     # H7: 排除词优先级高于业务影响词
     # "东航机器人矩阵提升客座率" 虽含"客座率"但应被 EXCLUDE_RE 拒绝
     kept, _ = _select("东航机器人矩阵提升客座率")
-    check("H7 EXCLUDE_RE 优先于 IMPACT_RE",
+    check("H7 AIRLINE_EXCLUDE_RE 优先于 AIRLINE_IMPACT_RE",
           kept is False)
+
+    water_item = {"title": "19个典型案例入选国内水路旅游客运精品航线", "summary": "",
+                  "source": "交通运输部"}
+    kept, _ = fn.select_news_item(water_item, "domestic", "regulatory")
+    check("H8 水路客运航线不被误当作航空新闻", kept is True)
 
 
 # ════════════════ I. 模块路由验收（2026-08-18: 5模块结构 + IR路由 + 同事件去重） ════════════════
