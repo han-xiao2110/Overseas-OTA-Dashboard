@@ -3132,10 +3132,13 @@ HARD_EXCLUDE_COMPILED = [(re.compile(p, re.IGNORECASE), label) for p, label in H
 
 def hard_exclude_reason(item, content_type=None):
     """硬排除判定: 返回拒绝原因标签或 None。"""
-    title_only = str(item.get("title", "") or "")
+    # 同时检查原文和译文。公共翻译可能把 Mega Sale / stock
+    # rating 等关键词译成不稳定的中文，只看译文会让软广和股评绕过硬排除。
+    title_only = "{} {}".format(
+        str(item.get("title", "") or ""), str(item.get("title_original", "") or ""))
     if re.search(r"[?？]\s*$", title_only):
         return "无新事实短评"
-    text = "{} {}".format(title_only, item.get("summary", "") or "")
+    text = _sel_text(item)
     for pat, label in HARD_EXCLUDE_COMPILED:
         if pat.search(text):
             return label

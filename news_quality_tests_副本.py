@@ -950,6 +950,15 @@ def test_selection():
             item["summary"] = "The travel platform launched packaged tours and a new Uber distribution channel."
         kept, _ = fn.select_news_item(item, "international", "industry_news")
         case_results.append(kept == expected)
+    translated_promo = _sel_item(
+        "两天，超级优惠：Trip.com 9月销售土地，澳大利亚国内航班$29",
+        "Trip.com", "international", "industry_news")
+    translated_promo["title_original"] = (
+        "Two Days, Mega Savings: Trip.com's September Sale Lands with $29 Domestic Flights "
+        "and Up to 50% Off Travel Deals in Australia")
+    translated_promo_kept, _ = fn.select_news_item(
+        translated_promo, "international", "industry_news")
+    case_results.append(not translated_promo_kept)
     check("G7 v6保留事实新闻并排除Hotel扩张、股价评论、促销和观点", all(case_results))
 
     # G8 取消统一筛选前的每来源10条上限
