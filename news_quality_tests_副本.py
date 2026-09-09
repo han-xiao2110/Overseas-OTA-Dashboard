@@ -457,6 +457,106 @@ def test_domestic_filters():
     check("F8 中国民航网解析不再只限东航",
           len(caac_items) == 2 and any("国航" in x["title"] for x in caac_items))
 
+    ir_sources = {s["name"]: s for s in fn.DOMESTIC_IR_SOURCES}
+    check("F9 国内三家公司IR入口齐全",
+          set(ir_sources) == {"Trip.com Group IR", "同程旅行 IR", "嘀嗒出行 IR"} and
+          any("quarterly-results" in u for u in ir_sources["Trip.com Group IR"]["pages"]) and
+          any("financials" in u for u in ir_sources["同程旅行 IR"]["pages"]) and
+          any("ir_ann" in u for u in ir_sources["嘀嗒出行 IR"]["pages"]))
+
+    check("F10 Trip.com SEC CIK及重点表格已配置",
+          fn.COMPANIES.get("TCOM", {}).get("cik") == "0001269238" and
+          all(form in fn.SEC_FILING_TYPES for form in
+              ("6-K", "20-F", "F-3", "424B5", "SC 13D/A", "SC 13G/A")))
+
+    recent_ir_date = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
+    ir_html = f'''<div class="news-item"><span>{recent_ir_date}</span>
+      <a href="/zh-hans/news-releases/news-release-details/q2-results">
+      携程集团将公布2026年第二季度财务业绩</a></div>
+      <div><span>{recent_ir_date}</span><a href="/news-center/strategic-partnership">
+      同程旅行宣布与铁路平台达成战略合作</a></div>'''
+    trip_src = ir_sources["Trip.com Group IR"]
+    ir_items = fn.extract_domestic_ir_page(
+        ir_html, trip_src, "https://investors.trip.com/zh-hans")
+    check("F11 国内IR解析保留日期、官方URL和实体",
+          len(ir_items) == 2 and ir_items[0]["date"] == recent_ir_date and
+          ir_items[0]["url"].startswith("https://investors.trip.com/") and
+          all(x.get("entity_id") == "TCOM" and x.get("is_ir_source") for x in ir_items))
+    check("F12 国内IR业绩与战略新闻分流",
+          ir_items[0]["ir_release_kind"] == "earnings_disclosure" and
+          ir_items[1]["ir_release_kind"] == "core_action" and
+          fn._route_single_item(ir_items[0], "domestic", "regulatory") == "dom_disclosures" and
+          fn._route_single_item(ir_items[1], "domestic", "company_news") == "dom_industry")
+
+    tcom_sec = {"date": "2026-09-02", "company": "TCOM", "entity_id": "TCOM",
+                "type": "6-K", "title": "境外发行人报告 (6-K)",
+                "url": "https://www.sec.gov/Archives/tcom-6k", "source": "SEC EDGAR"}
+    sec_kept, _ = fn.select_news_item(tcom_sec, "domestic", "regulatory")
+    check("F13 Trip.com SEC文件进国内披露且强制保留",
+          sec_kept and fn._route_single_item(tcom_sec, "domestic", "regulatory") == "dom_disclosures")
+
+    caac_official = [
+        {"title": "中国民航局发布7月旅客运输量和客座率", "summary": ""},
+        {"title": "某航空公司引进三架宽体机扩充机队", "summary": ""},
+    ]
+    caac_kept = fn.filter_domestic_items("中国民用航空局", caac_official)
+    check("F14 民航局保留明确流量数据并排除机队宽体机",
+          len(caac_kept) == 1 and "客座率" in caac_kept[0]["title"])
+
+    media_names = {f["name"] for f in fn.CN_COMPANY_FEEDS}
+    check("F15 行业与财经媒体发现源已覆盖",
+          {"中国旅游报", "品橙旅游", "旅界", "Reuters 中国旅游",
+           "Bloomberg 中国旅游", "财新", "第一财经", "证券时报", "上海证券报",
+           "21世纪经济报道", "界面新闻", "澎湃新闻"}.issubset(media_names))
+
+    overseas_cn_media = {"title": "亚洲航空与飞马航空在伊斯坦布尔达成代码共享",
+                         "summary": "为亚欧之间开辟新航线"}
+    check("F16 中文媒体的海外事件仍判为国际",
+          fn._td_region(overseas_cn_media["title"], overseas_cn_media["summary"], "") == "international")
+
+    media_financial = {"title": "携程发布季度业绩", "summary": "营收同比增长",
+                       "source": "第一财经", "entity_id": "TCOM", "content_type": "earnings"}
+    check("F17 媒体财报报道不进官方披露",
+          fn._route_single_item(media_financial, "domestic", "company_news") == "dom_industry")
+
+    source_by_name = {s["name"]: s for s in fn.DOMESTIC_WEB_SOURCES}
+    check(
+        "F18 监管首页使用非JS跳转落地页",
+        source_by_name["交通运输部·政府信息公开"]["url"].endswith("/zhengce/")
+        and source_by_name["中国民用航空局"]["url"].endswith("/index.html")
+        and source_by_name["交通运输部·统计数据"]["news_selector"] == "generic"
+        and source_by_name["中国民用航空局"]["news_selector"] == "gov_list",
+    )
+
+    mot_stats_html = '''
+      <div class="stat-item"><a href="https://xxgk.mot.gov.cn/jigou/zhghs/202609/t20260903_4229999.html">
+        2026年1-8月公路水路旅客运输量
+      </a></div>
+    '''
+    mot_stats_items = fn.extract_news_from_html(
+        mot_stats_html, "交通运输部·统计数据", "regulatory",
+        "https://www.mot.gov.cn/shuju/", "generic", 10,
+    )
+    check(
+        "F19 交通部统计链接从URL恢复日期",
+        len(mot_stats_items) == 1 and mot_stats_items[0].get("date") == "2026-09-03",
+    )
+
+    mct_suffix_kept = fn.filter_domestic_items(
+        "文旅部·统计信息",
+        [{"title": "全国博物馆藏品管理办法", "summary": ""}],
+        record_stats=False,
+    )
+    caac_stats_kept = fn.filter_domestic_items(
+        "中国民用航空局·统计数据",
+        [{"title": "中国民航2026年7月份主要生产指标统计", "summary": ""}],
+        record_stats=False,
+    )
+    check(
+        "F20 栏目后缀继承母来源过滤规则",
+        not mct_suffix_kept and len(caac_stats_kept) == 1,
+    )
+
 
 # ════════════════ C. 来源状态 / 失败回退（main 集成, fixture 不联网） ════════════════
 

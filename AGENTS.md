@@ -1,7 +1,8 @@
 # AGENTS.md — BKNG/EXPE/ABNB OTA 业绩看板
 
-> **最后更新**: 2026-09-03（Codex 交接版）
-> **部署状态**: ✅ 已部署（自动）—— https://bkng-expe-abnb-1q26.surge.sh/
+> **最后更新**: 2026-09-05（Codex 交接版）
+> **线上状态**: ✅ 上次验证版已部署—— https://bkng-expe-abnb-1q26.surge.sh/
+> **本地状态**: 🟡 新闻策略 v6 与国内来源扩展已本地实现并验证，尚未推送或部署
 > **GitHub**: https://github.com/han-xiao2110/Overseas-OTA-Dashboard（Private）
 
 ---
@@ -42,9 +43,9 @@
   3. `pip install -r requirements.txt`
   4. `npm install -g surge`
   5. **按触发时段执行**：06:16 仅 Fetch stock prices；07:36 仅 Fetch news；手动触发两者都执行
-  7. **Generate dashboard**（读 Excel→注入模板→生成 `deploy/`）
-  8. **Deploy to Surge**（环境变量传 SURGE_TOKEN）
-  9. **Commit & push**（股价+新闻数据回仓库）
+  6. **Generate dashboard**（读 Excel→注入模板→生成 `deploy/`）
+  7. **Deploy to Surge**（环境变量传 SURGE_TOKEN）
+  8. **Commit & push**（股价+新闻数据回仓库）
 - **失败告警**: 自动邮件到 GitHub 邮箱
 
 ### 手动触发
@@ -83,7 +84,7 @@ bash deploy_local.sh
 ```
 RSS/官网抓取(safe_request, TLS 只验证)
 → 相关性过滤（三层：白名单→强排除→关键词）
-→ 实体识别（BKNG/EXPE/ABNB/CEAIR）
+→ 实体识别（国际 BKNG/EXPE/ABNB；国内 TCOM/同程/嘀嗒及行业实体）
 → 确定性筛选管道（五维评分≥60 保留）
 → 最终保留新闻翻译（三路回退+持久缓存；标题未译不展示，摘要未译留空待重试）
 → 合并缓存
@@ -96,10 +97,14 @@ RSS/官网抓取(safe_request, TLS 只验证)
 ```
 
 ### 数据源（纯程序化，无 AI）
-- RSS 源: Skift, PhocusWire, Travel Weekly, 环球旅讯, 36氪, Google News
-- 国内官网: 环球旅讯（首页/快讯/OTA/分销/TravelTech/AI/酒店/航空等频道）、文旅部、交通运输部、中国民航网
+- RSS 与发现源: Skift, PhocusWire, Travel Weekly, 环球旅讯, 36氪, Google News
+- 国内官网: 环球旅讯（首页/快讯/OTA/分销/TravelTech/AI/住宿/航空/出行/商旅频道）、文旅部（政策+统计）、交通运输部（新闻+数据+政府信息公开）、中国民用航空局（首页+统计）、中国民航网
 - 披露易(港交所): 携程 09961、同程 00780、嘀嗒出行 02559
-- 国内 Google News 定向源: 携程、同程、嘀嗒出行；另保留 36氪旅游行业检索
+- 国内公司 IR: Trip.com Group、同程旅行、嘀嗒出行官方新闻/财务/公告页；业绩和资本治理进国内披露，经营/战略动作进国内行业
+- SEC EDGAR: BKNG、EXPE、ABNB，以及 Trip.com Group（CIK 0001269238）；Trip.com 文件路由到国内披露
+- 新闻发现检索: 携程/同程/嘀嗒、OTA 渠道、航空分销、旅游科技/监管；补充中国旅游报、品橙旅游、旅界及主流财经媒体定向检索
+- 中文来源不等于国内事件；只有中国主体、中国市场、中国监管或明确影响中国用户/商户/OTA 时才进国内模块
+- 带栏目后缀的监管来源继承母来源 include/exclude；政府首页如仅返回 JavaScript 跳转壳，配置必须指向真实落地页
 - 航司/航空新闻统一只保留: 票价/燃油附加费、行李收费、退改签、运力/客座率/旅客量/航班量、渠道/代理/佣金/OTA/直销、航线开通/复航/调整。机队、宽体机、航司财报/盈利类硬排除；笼统运营/经营数据未含具体准入指标时不保留。
 - 公司 IR: Booking Holdings IR, Expedia Group IR, Airbnb IR（直读三家官网 Q4 PressRelease feed，不经 Google News）
 - IR 路由: 业绩/财报/股东信/业绩材料进“披露与文件”；投资者大会、路演、产品、并购、合作、战略和管理层动作进“核心公司动态”
@@ -120,8 +125,8 @@ RSS/官网抓取(safe_request, TLS 只验证)
 | `deploy_local.sh` | 本地一键部署 | 紧急手动上线用 |
 | `news_ai_helpers_副本.py` | AI 辅助模块 | ⚠️ 已禁用（AI_MODULE_AVAILABLE=False） |
 | `agent_translate_副本.py` | AI 翻译桥接 | ⚠️ 已禁用（改用 deep-translator） |
-| `news_quality_tests_副本.py` | 离线质量测试（152 项） | 不含 AI 依赖 |
-| `news_smoke_副本.js` | 前端烟雾测试（52 项） | |
+| `news_quality_tests_副本.py` | 离线质量测试（180 项） | 不含 AI 依赖 |
+| `news_smoke_副本.js` | 前端烟雾测试（56 项） | |
 | `market_smoke_副本.js` | 市场行情与股东回报测试（36 项） | |
 | `translation_cache_副本.json` | 成功译文持久缓存 | GitHub Actions 每次更新后回仓库 |
 | `requirements.txt` | Python 依赖 | yfinance, feedparser, deep-translator, openpyxl, requests, beautifulsoup4, certifi |
@@ -156,7 +161,7 @@ RSS/官网抓取(safe_request, TLS 只验证)
 ## GitHub Secrets
 
 仓库 Settings → Secrets and variables → Actions 中配置:
-- `SURGE_TOKEN`: Surge.sh API token（当前值: `50cdbd8c01842d4ff413345fa4bfcbb6`）
+- `SURGE_TOKEN`: Surge.sh API token。只保存在 GitHub Actions Secret，不得将值写入仓库、文档或日志。
 
 ---
 
@@ -171,6 +176,8 @@ RSS/官网抓取(safe_request, TLS 只验证)
 7. **缓存备份**: `news_cache_backups/` 保留最近 3 个版本，自动轮转
 8. **SEC/IR 保留期**: 全部披露与新闻统一 14 天；SEC 同一 accession 的目录链接与正文链接只保留证据更完整的一条
 9. **IR 跨公司去重**: 不同公司参加同一投资者大会时必须分别展示，不得因标题相似折叠
+10. **监管站跳转壳**: `xxgk.mot.gov.cn/` 和 `caac.gov.cn/` 根路径依赖浏览器 JavaScript；抓取配置使用 `/zhengce/` 和 `/index.html`
+11. **新闻策略发布边界**: 修改规则后先跑离线回归和真实来源只读烟测；未执行全量抓取和部署前，线上仍是旧策略/旧缓存
 
 ---
 
@@ -180,10 +187,10 @@ RSS/官网抓取(safe_request, TLS 只验证)
 # 语法检查
 python3 -c "import ast; [ast.parse(open(f).read()) for f in ['fetch_news_副本.py','fetch_stock_prices_副本.py','generate_副本.py']]; print('AST OK')"
 
-# 离线质量测试（152 项）
+# 离线质量测试（180 项）
 python3 news_quality_tests_副本.py
 
-# 前端烟雾测试（52 项）
+# 前端烟雾测试（56 项）
 node news_smoke_副本.js dashboard.html
 
 # 市场行情与股东回报测试（36 项）

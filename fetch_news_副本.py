@@ -28,7 +28,7 @@ REJECTED_OUTPUT = os.path.join(SCRIPT_DIR, "news_rejected_副本.json")
 MANUAL_LABELS_PATH = os.path.join(SCRIPT_DIR, "news_screening_labels_副本.json")
 TRANSLATION_CACHE_PATH = os.path.join(SCRIPT_DIR, "translation_cache_副本.json")
 REVIEW_WORKBOOK_HELPER = os.path.join(SCRIPT_DIR, "news_review_workbook_副本.mjs")
-POLICY_VERSION = "2026-09-03-v5"
+POLICY_VERSION = "2026-09-04-v6"
 CACHE_MAX_AGE_HOURS = 12
 CACHE_MAX_AGE_FAST_HOURS = 2
 BEIJING_TZ = datetime.timezone(datetime.timedelta(hours=8))
@@ -65,6 +65,9 @@ COMPANIES = {
     "BKNG": {"cik": "0001075531", "name": "Booking Holdings Inc.", "ticker": "BKNG"},
     "EXPE": {"cik": "0001324424", "name": "Expedia Group, Inc.", "ticker": "EXPE"},
     "ABNB": {"cik": "0001559720", "name": "Airbnb, Inc.", "ticker": "ABNB"},
+    # Trip.com is a foreign private issuer. Its SEC documents are routed to the
+    # domestic disclosure module because it is one of the China focus names.
+    "TCOM": {"cik": "0001269238", "name": "Trip.com Group Limited", "ticker": "TCOM"},
 }
 
 SEC_FILING_TYPES = {
@@ -78,6 +81,17 @@ SEC_FILING_TYPES = {
     "DEFA14A": "代理声明 (Proxy)",
     "S-1": "注册声明 (S-1)",
     "4/A": "Form 4 修订",
+    "6-K": "境外发行人报告 (6-K)",
+    "6-K/A": "6-K 修订",
+    "20-F": "年度报告 (20-F)",
+    "20-F/A": "20-F 修订",
+    "F-3": "证券注册声明 (F-3)",
+    "F-3/A": "F-3 修订",
+    "424B2": "招股书补充文件 (424B2)",
+    "424B3": "招股书补充文件 (424B3)",
+    "424B5": "招股书补充文件 (424B5)",
+    "SC 13D/A": "大股东变动修订 (13D/A)",
+    "SC 13G/A": "机构持仓修订 (13G/A)",
 }
 
 # International RSS feeds
@@ -446,8 +460,46 @@ DOMESTIC_WEB_SOURCES = [
         "news_selector": "gov_list",
     },
     {
+        "name": "文旅部·政策法规",
+        "url": "https://www.mct.gov.cn/whzx/zcfg2020/",
+        "category": "regulatory",
+        "news_selector": "gov_list",
+    },
+    {
+        "name": "文旅部·统计信息",
+        "url": "https://zwgk.mct.gov.cn/zfxxgkml/447/465/index_3081.html",
+        "category": "regulatory",
+        "news_selector": "gov_list",
+    },
+    {
         "name": "交通运输部",
         "url": "https://www.mot.gov.cn/xinwen/jiaotongyaowen/",
+        "category": "regulatory",
+        "news_selector": "gov_list",
+    },
+    {
+        "name": "交通运输部·统计数据",
+        "url": "https://www.mot.gov.cn/shuju/",
+        "category": "regulatory",
+        "news_selector": "generic",
+    },
+    {
+        "name": "交通运输部·政府信息公开",
+        # 根路径只返回 JavaScript 跳转壳，直读真实落地页。
+        "url": "https://xxgk.mot.gov.cn/zhengce/",
+        "category": "regulatory",
+        "news_selector": "gov_list",
+    },
+    {
+        "name": "中国民用航空局",
+        # 根路径依赖浏览器 JavaScript 跳转，抓取端使用桌面版落地页。
+        "url": "https://www.caac.gov.cn/index.html",
+        "category": "regulatory",
+        "news_selector": "gov_list",
+    },
+    {
+        "name": "中国民用航空局·统计数据",
+        "url": "https://www.caac.gov.cn/XXGK/XXGK/TJSJ/TJSJ_1/",
         "category": "regulatory",
         "news_selector": "gov_list",
     },
@@ -504,13 +556,13 @@ DOMESTIC_SOURCE_FILTERS = {
         # 仅保留与旅客出行直接相关的数据/政策/监管文件
         # 排除宣传稿（暑运繁忙/热力十足/流动的XX/圆满完成/顺利进行）
         "include": [
-            r"民航|航空|机场|航班|航线|旅客|客运|客流|春运|暑运|黄金周|节假日|自驾|城际|高铁|铁路|出行|网约车|出租车|道路客运|票价|退改签|退改|吞吐量",
+            r"民航|航空|机场|航班|航线|旅客|客运|客流|春运|暑运|黄金周|节假日|自驾|城际|高铁|铁路|出行|网约车|出租车|道路客运|公路水路运输量|票价|退改签|退改|吞吐量",
         ],
         "exclude": [
             r"招标公告", r"采购", r"询价", r"成交公告", r"人事", r"任免", r"任前公示",
             r"意见征集", r"征求意见", r"听证", r"招聘", r"遴选",
             r"货运|快递|邮政|大宗散货|集装箱|渔船|危险源|危化|中欧班列|卸船机|海事执法|物流园",
-            r"道路施工|公路建设|旅游公路|项目建设|港口|码头",
+            r"道路施工|公路建设|旅游公路|项目建设|工程建设|通用航空|港口|码头",
             # 宣传稿/活动稿（2026-08-18 收紧: 用户要求"普通政府新闻、工程宣传不得进入"）
             r"热力十足|流动的.{0,6}|圆满完成|顺利进行|成效显著|展现.{0,6}风采|谱写.{0,6}篇章|助力.{0,6}发展|服务.{0,6}升级|保障.{0,6}有力",
         ],
@@ -523,6 +575,18 @@ DOMESTIC_SOURCE_FILTERS = {
         "exclude": [
             r"招标", r"采购", r"招聘", r"培训通知", r"征文", r"摄影大赛", r"答题",
             r"篮球|集体婚礼|人物故事|劳模|高温坚守|防汛|救援队",
+        ],
+    },
+    "中国民用航空局": {
+        "include": [
+            r"旅客运输量|航班量|航班架次|客座率|运力|机场吞吐量|"
+            r"主要生产指标统计|"
+            r"航线.{0,10}(开通|复航|恢复|调整|取消|加密)|"
+            r"机票|客票|销售渠道|代理|佣金|NDC|票价|燃油附加费|行李收费|退改签|退票|改签",
+        ],
+        "exclude": [
+            r"机队|宽体机|飞机维修|维修设施|航司财报|净利润|盈利|亏损",
+            r"招标|采购|招聘|培训通知|征文|摄影大赛",
         ],
     },
     "环球旅讯": {
@@ -546,6 +610,37 @@ DOMESTIC_SOURCE_FILTERS = {
     "披露易·嘀嗒出行": None,
 }
 
+# 中国核心公司官方 IR 候选页。最终仍统一经过 14 天保留、
+# 硬排除、准入评分和同事件去重。
+DOMESTIC_IR_SOURCES = [
+    {
+        "name": "Trip.com Group IR", "entity_id": "TCOM",
+        "pages": [
+            "https://investors.trip.com/zh-hans",
+            "https://investors.trip.com/zh-hans/news-events/news-releases",
+            "https://investors.trip.com/zh-hans/news-events/events-calendar",
+            "https://investors.trip.com/zh-hans/news-events/webcasts-presentations",
+            "https://investors.trip.com/zh-hans/financial-information/quarterly-results",
+            "https://investors.trip.com/zh-hans/financial-information/annual-reports",
+        ],
+    },
+    {
+        "name": "同程旅行 IR", "entity_id": "TONGCHENG",
+        "pages": [
+            "https://www.tongchengir.com/cn/news-center/",
+            "https://www.tongchengir.com/cn/financials/",
+        ],
+    },
+    {
+        "name": "嘀嗒出行 IR", "entity_id": "DIDA",
+        "pages": [
+            "https://www.didapinche.com/homepage/tc/performance",
+            "https://www.didapinche.com/ir/tc/ir_ann.php",
+            "https://www.didapinche.com/ir/tc/ir_report.php",
+        ],
+    },
+]
+
 # 分源过滤统计: name -> {raw, kept, rejected, reasons{pattern: count}}
 DOMESTIC_FILTER_STATS = {}
 
@@ -553,6 +648,15 @@ DOMESTIC_FILTER_STATS = {}
 def _domestic_filter_decision(name, item):
     """返回 (是否保留, 拒绝原因)，供新抓取和旧缓存使用同一套规则。"""
     rule = DOMESTIC_SOURCE_FILTERS.get(name)
+    if rule is None and name not in DOMESTIC_SOURCE_FILTERS:
+        # 栏目级来源（如“文旅部·统计信息”）继承母来源的
+        # include/exclude，避免因显示名增加后缀而绕过过滤。
+        parent = next(
+            (key for key in sorted(DOMESTIC_SOURCE_FILTERS, key=len, reverse=True)
+             if name.startswith(key + "·")),
+            None,
+        )
+        rule = DOMESTIC_SOURCE_FILTERS.get(parent) if parent else None
     if not rule:
         return True, None
     text = f"{item.get('title', '')} {item.get('summary', '')}"
@@ -647,23 +751,29 @@ def reclassify_cached_traveldaily(news_data):
     news_data["domestic"]["china_industry"] = others_dom + td_dom
     return news_data
 
-# 国内公司新闻 RSS（Google News 中文源）
+# 国内公司/行业发现 RSS。聚合器只做线索发现，条目仍经来源识别、
+# 地域分类、质量筛选和权威度去重；不得因为来自中文聚合页就归入国内。
+def _cn_google_news_url(query):
+    return "https://news.google.com/rss/search?q=" + urllib.parse.quote_plus(query) + \
+        "&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+
+
 CN_COMPANY_FEEDS = [
     {
         "name": "携程 Google News",
-        "url": "https://news.google.com/rss/search?q=%E6%90%BA%E7%A8%8B+OR+%22Trip.com+Group%22+when:14d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "url": _cn_google_news_url('(携程 OR "携程集团" OR "Trip.com Group" OR TCOM OR 09961) when:14d'),
         "category": "company_news",
         "company": "携程",
     },
     {
         "name": "同程 Google News",
-        "url": "https://news.google.com/rss/search?q=%22%E5%90%8C%E7%A8%8B%E6%97%85%E8%A1%8C%22+OR+%22%E5%90%8C%E7%A8%8B%E6%97%85%E6%B8%B8%22+when:14d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "url": _cn_google_news_url('(同程 OR "同程旅行" OR "Tongcheng Travel" OR 00780) when:14d'),
         "category": "company_news",
         "company": "同程",
     },
     {
         "name": "嘀嗒出行 Google News",
-        "url": "https://news.google.com/rss/search?q=%22%E5%98%80%E5%97%92%E5%87%BA%E8%A1%8C%22+OR+%22Dida+Inc%22+when:14d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "url": _cn_google_news_url('(嘀嗒 OR "嘀嗒出行" OR Dida OR 02559) when:14d'),
         "category": "company_news",
         "company": "嘀嗒出行",
     },
@@ -671,9 +781,27 @@ CN_COMPANY_FEEDS = [
     # 36氪是 SPA 无公开 RSS, 借 Google News 索引获取最新快讯
     {
         "name": "36氪",
-        "url": "https://news.google.com/rss/search?q=site:36kr.com+when:7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "url": _cn_google_news_url('site:36kr.com (携程 OR 同程 OR 嘀嗒 OR OTA OR 在线旅游 OR 酒店预订 OR 旅游平台 OR 旅游科技 OR 出行平台) when:14d'),
         "category": "china_industry",
     },
+    # 国内垂直行业媒体
+    {"name": "中国旅游报", "url": _cn_google_news_url('site:ctnews.com.cn (旅游 OR OTA OR 出行) when:14d'), "category": "china_industry"},
+    {"name": "品橙旅游", "url": _cn_google_news_url('site:pinchain.com (旅游 OR OTA OR 酒店 OR 航空) when:14d'), "category": "china_industry"},
+    {"name": "旅界", "url": _cn_google_news_url('site:tripvivid.com (旅游 OR OTA OR 酒店 OR 出行) when:14d'), "category": "china_industry"},
+    # 主流财经媒体：只补充事件背景，不会因来源进入官方披露。
+    {"name": "Reuters 中国旅游", "url": _cn_google_news_url('site:reuters.com (携程 OR 同程 OR 嘀嗒 OR "China travel") when:14d'), "category": "china_industry"},
+    {"name": "Bloomberg 中国旅游", "url": _cn_google_news_url('site:bloomberg.com (携程 OR 同程 OR 嘀嗒 OR "China travel") when:14d'), "category": "china_industry"},
+    {"name": "财新", "url": _cn_google_news_url('site:caixin.com (携程 OR 同程 OR 嘀嗒 OR OTA OR 在线旅游) when:14d'), "category": "china_industry"},
+    {"name": "第一财经", "url": _cn_google_news_url('site:yicai.com (携程 OR 同程 OR 嘀嗒 OR OTA OR 旅游平台) when:14d'), "category": "china_industry"},
+    {"name": "证券时报", "url": _cn_google_news_url('site:stcn.com (携程 OR 同程 OR 嘀嗒 OR OTA OR 在线旅游) when:14d'), "category": "china_industry"},
+    {"name": "上海证券报", "url": _cn_google_news_url('site:cnstock.com (携程 OR 同程 OR 嘀嗒 OR OTA OR 在线旅游) when:14d'), "category": "china_industry"},
+    {"name": "21世纪经济报道", "url": _cn_google_news_url('site:21jingji.com (携程 OR 同程 OR 嘀嗒 OR OTA OR 旅游平台) when:14d'), "category": "china_industry"},
+    {"name": "界面新闻", "url": _cn_google_news_url('site:jiemian.com (携程 OR 同程 OR 嘀嗒 OR OTA OR 旅游平台) when:14d'), "category": "china_industry"},
+    {"name": "澎湃新闻", "url": _cn_google_news_url('site:thepaper.cn (携程 OR 同程 OR 嘀嗒 OR OTA OR 在线旅游) when:14d'), "category": "china_industry"},
+    # 跨来源主题发现：国内地域门槛在解析后单独判定。
+    {"name": "国内 OTA 渠道检索", "url": _cn_google_news_url('(OTA 佣金 OR OTA 酒店 OR "酒店 直销 OTA" OR "酒店 独家 平台") when:14d'), "category": "china_industry"},
+    {"name": "国内航空分销检索", "url": _cn_google_news_url('(机票代理 OR 航空分销 OR NDC OR 航线复航 OR 燃油附加费 OR 退改签) when:14d'), "category": "china_industry"},
+    {"name": "国内旅游科技监管检索", "url": _cn_google_news_url('("AI预订" 旅游 OR "在线旅游" 监管 OR "在线旅游" 反垄断) when:14d'), "category": "china_industry"},
 ]
 
 
@@ -869,7 +997,7 @@ def fetch_sec_filings_edgar_fulltext(ticker, cik, company_name):
     
     # Search URL - use company name with CIK entity filter
     encoded_name = company_name.replace(' ', '+').replace(',', '%2C')
-    forms_filter = "10-Q,10-K,8-K,4,144,SC%2013D,SC%2013G,DEFA14A,S-1"
+    forms_filter = urllib.parse.quote(",".join(SEC_FILING_TYPES.keys()), safe=",")
     
     search_url = (
         f"https://efts.sec.gov/LATEST/search-index?"
@@ -1732,7 +1860,15 @@ def sec_metadata_summary(f):
     if form == "10-K":
         period = f"截至{report_date}的" if report_date else ""
         return f"{comp}于{date}提交{period}年度报告，包含全年财务报表、业务回顾及风险披露。"
-    if form in ("SC 13D", "SC 13G"):
+    if form in ("6-K", "6-K/A"):
+        period = f"报告期截至{report_date}，" if report_date else ""
+        return f"{comp}于{date}提交{form}，{period}披露境外发行人的重要公告或经营与财务信息。"
+    if form in ("20-F", "20-F/A"):
+        period = f"截至{report_date}的" if report_date else ""
+        return f"{comp}于{date}提交{period}年度报告，包含财务报表、业务回顾及风险披露。"
+    if form in ("F-3", "F-3/A", "424B2", "424B3", "424B5"):
+        return f"{comp}于{date}提交{form}证券发行或招股文件，涉及融资安排及相关风险披露。"
+    if form in ("SC 13D", "SC 13G", "SC 13D/A", "SC 13G/A"):
         return f"{comp}于{date}提交大股东持仓申报，披露申报方的持股及受益所有权情况。"
     if form == "DEFA14A":
         return f"{comp}于{date}提交补充代理征集材料，内容与股东大会或股东表决事项有关。"
@@ -1915,10 +2051,14 @@ DISCLOSURE_CONTENT_TYPES = {"earnings", "operating_data", "governance_legal", "r
 
 # 披露类来源（即使 content_type 未归类，来源命中即视为披露）
 DISCLOSURE_SOURCE_KEYWORDS = (
-    "SEC EDGAR", "披露易", "民航局", "文旅部", "交通运输部",
+    "SEC EDGAR", "披露易", "民航局", "中国民用航空局", "文旅部", "交通运输部",
     "Booking Holdings IR", "Expedia Group IR", "Airbnb IR",
+    "Trip.com Group IR", "同程旅行 IR", "嘀嗒出行 IR",
 )
-IR_SOURCE_KEYWORDS = ("Booking Holdings IR", "Expedia Group IR", "Airbnb IR")
+IR_SOURCE_KEYWORDS = (
+    "Booking Holdings IR", "Expedia Group IR", "Airbnb IR",
+    "Trip.com Group IR", "同程旅行 IR", "嘀嗒出行 IR",
+)
 
 
 def _route_single_item(item, section, category):
@@ -1935,6 +2075,12 @@ def _route_single_item(item, section, category):
     # 避免条目由行业转入核心后仍错误隐藏公司徽章。
     item.pop("suppress_core_badge", None)
 
+    # Trip.com 为中国关注公司，其 SEC 文件进国内披露；不因文件在
+    # EDGAR 发布就归入国际模块。
+    if (category == "sec_filings" or "SEC EDGAR" in src) \
+            and (entity_id == "TCOM" or item.get("company") == "TCOM"):
+        return "dom_disclosures"
+
     # SEC 官方备案必须先于“媒体高管售股”规则路由。
     # 历史错误：Rule 144 摘要含“出售”后被送进国际行业新闻，
     # 又被行业模块的同事件折叠，导致披露区缺失。
@@ -1948,6 +2094,13 @@ def _route_single_item(item, section, category):
 
     # 国内分区
     if section == "domestic":
+        # 国内公司 IR：业绩/报告/资本与治理事项进披露；产品、合作、
+        # 投资并购、管理层及重大经营变化进国内行业动态。
+        if item.get("is_ir_source"):
+            release_kind = str(item.get("ir_release_kind", "") or "")
+            if release_kind in ("earnings_disclosure", "capital_governance"):
+                return "dom_disclosures"
+            return "dom_industry"
         # 披露与文件: 仅接受官方源（披露易/民航局/文旅部/交通运输部/东航公告等）
         # 行业媒体（环球旅讯/36氪/中国民航网）的公司财报/并购新闻不进披露模块, 留在 dom_industry 带公司标签
         if any(k in src for k in DISCLOSURE_SOURCE_KEYWORDS):
@@ -2679,6 +2832,9 @@ IR_ENTITY_NAMES_ZH = {
     "BKNG": "Booking Holdings",
     "EXPE": "Expedia Group",
     "ABNB": "Airbnb",
+    "TCOM": "Trip.com Group",
+    "TONGCHENG": "同程旅行",
+    "DIDA": "嘀嗒出行",
 }
 
 
@@ -3089,7 +3245,11 @@ OFFICIAL_KEEP_RULES = [
         r"在线旅游|旅游监管|入境游|出境游|国内旅游|旅游统计|游客量|旅游收入|假日|酒店|住宿|"
         r"旅行社|平台监管|签证|消费政策|市场数据|旅游市场|文旅消费|旅游消费|游客")),
     ("交通运输部", re.compile(
+        r"跨区域人员流动量|道路客运量|城市客运量|网约车|出租车|"
         r"民航|航班|机场|吞吐量|旅客|客运|客流|票价|退改|春运|暑运|黄金周|航空")),
+    ("中国民用航空局", re.compile(
+        r"旅客运输量|航班量|客座率|运力|机场吞吐量|航线|机票|客票|"
+        r"销售渠道|代理|佣金|NDC|票价|燃油附加费|行李收费|退改")),
     ("披露易", re.compile(
         r"月報表|月报表|月度|运营|運營|業績|业绩|盈利預警|盈利预警|虧損|亏损|報告|报告|"
         r"运力|客座率|旅客|航線|航线|票價|票价|退改|渠道|重大交易|融資|融资|管理層|管理层")),
@@ -3237,18 +3397,22 @@ def _sel_source(item):
     src = str(item.get("source", "") or "")
     if "SEC" in src or "EDGAR" in src:
         return 5
-    if any(k in src for k in ("文旅部", "交通运输部", "披露易", "民航网")):
+    if any(k in src for k in ("文旅部", "交通运输部", "披露易", "民航局", "民航网")):
         return 5
     # IR 官方源 (2026-08-20 新增): 公司官方新闻稿, 最高质量
-    if any(k in src for k in ("Booking Holdings IR", "Expedia Group IR", "Airbnb IR")):
+    if any(k in src for k in IR_SOURCE_KEYWORDS):
         return 5
     if any(k in src for k in ("Skift", "PhocusWire", "环球旅讯", "Travel Weekly", "WebInTravel",
-                              "Hospitality Net", "Breaking Travel News")):
+                              "Hospitality Net", "Breaking Travel News", "中国旅游报", "品橙旅游", "旅界")):
         return 4
     # Bloomberg Travel/Mobility (2026-08-20 调整): 旅游垂直 Bloomberg, 给 4 分
     if any(k in src for k in ("Bloomberg Travel", "Bloomberg Mobility")):
         return 4
-    if any(k in src for k in ("Bloomberg", "Reuters", "CNBC", "WSJ", "Financial Times")):
+    if any(k in src for k in ("Bloomberg", "Reuters", "CNBC", "WSJ", "Financial Times",
+                              "财新", "第一财经", "证券时报", "上海证券报",
+                              "21世纪经济报道", "界面新闻", "澎湃新闻")):
+        return 4
+    if "36氪" in src:
         return 3
     return 2
 
@@ -3296,7 +3460,7 @@ def select_news_item(item, section, category):
         return kept, rejection_reason
 
     # SEC 备案文件: 重点公司强制披露, 直接保留（确定性）
-    if category == "sec_filings":
+    if category == "sec_filings" or "SEC EDGAR" in source:
         item["substantive_company_change"] = True
         item["entity_id"] = entity_id or item.get("company")
         item["is_core_company"] = (item["entity_id"] in CORE_COMPANY_IDS) or bool(item.get("company"))
@@ -3306,6 +3470,10 @@ def select_news_item(item, section, category):
 
     # 1. 硬排除（§6）: 活动/采购/攻略/赞助/人物稿/软文/合集/短评
     hr = hard_exclude_reason(item, ctype)
+    # 公司 IR 官方公布的投资者活动是授权范围，不等同于媒体的会议招募。
+    if hr == "活动报名/会议预告" and item.get("is_ir_source") \
+            and item.get("ir_release_kind") == "investor_event":
+        hr = None
     if hr:
         item["substantive_company_change"] = False
         reasons.append(f"硬排除: {hr}")
@@ -3581,6 +3749,8 @@ TD_CHANNELS = [
     ("ai", "https://www.traveldaily.cn/ai/"),
     ("hotel", "https://www.traveldaily.cn/hotel/"),
     ("airline", "https://www.traveldaily.cn/airline/"),
+    ("transportation", "https://www.traveldaily.cn/transportation/"),
+    ("biztravel", "https://www.traveldaily.cn/biztravel/"),
 ]
 
 # 低价值内容直接排除（采购对接/活动报名/招聘广告/单店软文等）
@@ -3921,13 +4091,146 @@ def fetch_ir_press_releases():
     return all_items
 
 
+def classify_domestic_ir_release(title, url=""):
+    """国内公司 IR 内容分流：返回业绩披露、资本治理、投资者活动、
+    经营战略动作或其他。官方来源只提供证据身份，不跳过后续去重和保留期。"""
+    text = f"{title} {url}"
+    if re.search(
+            r"业绩|季度报告|季报|年报|年度报告|中报|中期报告|财务报告|"
+            r"盈利预警|盈利预告|financial results?|annual reports?|interim reports?|"
+            r"quarterly results?|earnings|results announcement|financials?", text, re.I):
+        return "earnings_disclosure"
+    if re.search(
+            r"投资者活动|投资者会议|路演|业绩会|电话会议|网络直播|"
+            r"investor event|investor conference|presentation|webcast|roadshow", text, re.I):
+        return "investor_event"
+    if re.search(
+            r"收购|并购|投资|出售|战略合作|合作|产品|功能|AI|管理层|"
+            r"任命|辞任|顺风车|出租车|业务变化|acquir|merger|invest|partner|"
+            r"launch|appoint|management|strategy", text, re.I):
+        return "core_action"
+    if re.search(
+            r"回购|股权|股本|股份|配售|发债|债券|融资|通函|公告|"
+            r"董事|公司秘书|关联交易|须予公布的交易|收购守则|"
+            r"repurchase|share capital|placing|offering|circular|director|governance", text, re.I):
+        return "capital_governance"
+    return "other"
+
+
+def _ir_date_from_context(context):
+    """从 IR 卡片附近提取日期，兼容 2026-09-02 / 2026.09.02 / 09/02/26。"""
+    m = re.search(r"(20\d{2})[-./年](\d{1,2})[-./月](\d{1,2})日?", context or "")
+    if m:
+        return f"{int(m.group(1)):04d}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+    m = re.search(r"(?<!\d)(\d{1,2})/(\d{1,2})/(\d{2,4})(?!\d)", context or "")
+    if m:
+        year = int(m.group(3))
+        year = 2000 + year if year < 100 else year
+        try:
+            return datetime.date(year, int(m.group(1)), int(m.group(2))).isoformat()
+        except ValueError:
+            return None
+    return None
+
+
+def extract_domestic_ir_page(page_text, src, page_url, max_items=60):
+    """从携程/同程/嘀嗒 IR 列表页抽取官方链接。标题和 URL 必须具备 IR 内容
+    特征，避免把导航、招聘或客服链接收入候选池。"""
+    items, seen = [], set()
+    link_re = re.compile(
+        r'<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>', re.I)
+    allowed_url_re = re.compile(
+        r"news-release|news-center|financial|annual|quarter|event|presentation|performance|"
+        r"ir_ann|ir_report|announcement|circular|wisdomir|\.pdf(?:$|\?)", re.I)
+    allowed_title_re = re.compile(
+        r"新闻|业绩|报告|年报|中报|公告|通函|回购|融资|股权|收购|投资|"
+        r"合作|董事|管理层|顺风车|出租车|电话会议|投资者|"
+        r"results?|reports?|announcement|circular|repurchase|acquisition|partnership|director", re.I)
+    skip_titles = {
+        "首页", "更多", "更多 >", "back", "en", "繁", "简", "新闻稿", "电话会议", "6-k表格",
+        "公告及通函", "财务报告", "企业管治", "投资者查询", "业绩回顾",
+        "美国证交会公告", "网络广播及演示", "合作伙伴隐私政策", "投资者常见问题",
+    }
+    for match in link_re.finditer(page_text or ""):
+        href = html_lib.unescape(match.group(1)).strip()
+        title = html_lib.unescape(re.sub(r"<[^>]+>", " ", match.group(2)))
+        title = re.sub(r"\s+", " ", title).strip()
+        if not title or title.lower() in skip_titles or len(title) < 6:
+            continue
+        if not allowed_url_re.search(href) and not allowed_title_re.search(title):
+            continue
+        url = urljoin(page_url, href)
+        if url in seen or url.startswith("javascript:"):
+            continue
+        seen.add(url)
+        context = page_text[max(0, match.start() - 260):match.end() + 260]
+        date_str = _ir_date_from_context(re.sub(r"<[^>]+>", " ", context))
+        # 无明确发布日期时无法执行 14 天保留期，也容易把导航或
+        # 历史报告误当当日内容；因此不进入候选池。
+        if not date_str:
+            continue
+        try:
+            if (datetime.date.today() - datetime.date.fromisoformat(date_str)).days > NEWS_RETENTION_DAYS:
+                continue
+        except ValueError:
+            continue
+        kind = classify_domestic_ir_release(title, url)
+        items.append({
+            "date": date_str,
+            "title": title,
+            "url": url,
+            "summary": "",
+            "source": src["name"],
+            "category": "regulatory" if kind in ("earnings_disclosure", "capital_governance") else "company_news",
+            "entity_id": src["entity_id"],
+            "company": src["entity_id"],
+            "is_core_company": src["entity_id"] in CORE_COMPANY_IDS,
+            "source_channel": "domestic_ir_official",
+            "is_ir_source": True,
+            "ir_release_kind": kind,
+            "content_type": "earnings" if kind == "earnings_disclosure" else
+                            ("governance_legal" if kind == "capital_governance" else "general"),
+            "region_classification": "domestic",
+        })
+        if len(items) >= max_items:
+            break
+    return items
+
+
+def fetch_domestic_ir_releases():
+    """直读携程、同程、嘀嗒官方 IR。单页失败不会清空其他页结果。"""
+    all_items = []
+    for src in DOMESTIC_IR_SOURCES:
+        source_items, seen = [], set()
+        successful_pages = 0
+        print(f"  Fetching {src['name']}...")
+        for page_url in src["pages"]:
+            content = safe_request(page_url, timeout=15, retries=2)
+            if not content:
+                continue
+            successful_pages += 1
+            for item in extract_domestic_ir_page(content, src, page_url):
+                key = _norm_url(item.get("url", ""))
+                if key and key not in seen:
+                    seen.add(key)
+                    source_items.append(item)
+            time.sleep(0.35)
+        if successful_pages:
+            mark_source(src["name"], "success", item_count=len(source_items))
+        else:
+            mark_source(src["name"], "failed", item_count=0, error_code="fetch_failed")
+        all_items.extend(source_items)
+        print(f"    Found {len(source_items)} items from {src['name']}")
+    return all_items
+
+
 # ── 环球旅讯国内外分类 (2026-08-18 用户需求): 国内条目留 china_industry, 国际条目并入国际行业新闻 ──
 # 判定顺序: 先国内品牌/监管(如"携程收购Skyscanner"仍是国内公司新闻),
 # 再国际品牌/市场/跨境上下文。无明确国内证据时不再默认归入国内，避免中文报道的
 # 海外航司、海外市场和跨境旅游科技交易被误分类。
 TD_DOMESTIC_MARKERS = [
     # OTA/平台
-    '携程', '飞猪', '美团', '同程', '去哪儿', '马蜂窝', '穷游', '途牛', '小红书', '抖音', '豆包', '滴滴',
+    '携程', '飞猪', '美团', '同程', '嘀嗒', '去哪儿', '马蜂窝', '穷游', '途牛', '小红书', '抖音', '豆包', '滴滴',
     # 酒店集团
     '华住', '锦江', '首旅', '如家', '亚朵', '君亭', '东呈', '尚美', '德胧', '开元', '万达', '复星',
     # 航司/机场
@@ -4045,7 +4348,8 @@ def fetch_traveldaily(source):
 
 def fetch_domestic_news():
     """Fetch news from Chinese domestic websites（改造项④⑥: 分源状态+分源过滤）。"""
-    all_items = []
+    # 官方 IR 优先直读，聚合新闻只用于后续补充发现。
+    all_items = fetch_domestic_ir_releases()
 
     for source in DOMESTIC_WEB_SOURCES:
         name = source["name"]
@@ -4118,6 +4422,17 @@ def fetch_domestic_news():
                 # 仅当 feed 配置了 company 字段时才打公司标签（36氪无 company, 是来源而非公司）
                 if feed.get("company"):
                     it["company"] = feed["company"]
+                    it["region_classification"] = "domestic"
+                else:
+                    # 中文媒体/聚合器不等于国内事件。没有中国主体、
+                    # 中国市场或中国监管证据的条目送国际候选池。
+                    region = _td_region(it.get("title", ""), it.get("summary", ""), "")
+                    probe = f"{it.get('title', '')} {it.get('summary', '')}"
+                    if re.search(r"中国(?:市场|用户|商户|游客|旅游|航空|酒店|平台|监管)|国内OTA|国内在线旅游", probe, re.I):
+                        region = "domestic"
+                    it["region_classification"] = region
+                    if region != "domestic":
+                        it["category"] = "industry_news"
             # 分源过滤（36氪 include/exclude 等）
             items = filter_domestic_items(name, items)
             all_items.extend(items)
@@ -4366,10 +4681,11 @@ def extract_generic_news(html, source_name, category, base_url, max_items):
                     continue
                     
                 found_urls.add(href)
-                date_str = date_str.replace('/', '-')
+                if date_str:
+                    date_str = date_str.replace('/', '-')
                 
                 items.append({
-                    "date": date_str,
+                    "date": date_str or _gov_date_from_url(href),
                     "source": source_name,
                     "category": category,
                     "title": title,
@@ -4430,6 +4746,8 @@ def extract_generic_news(html, source_name, category, base_url, max_items):
                 date_match = re.search(r'(\d{4}[-/]\d{1,2}[-/]\d{1,2})', context)
                 if date_match:
                     date_str = date_match.group(1).replace('/', '-')
+            if not date_str:
+                date_str = _gov_date_from_url(href)
             
             items.append({
                 "date": date_str,
@@ -4571,14 +4889,7 @@ def extract_gov_list(html, source_name, category, base_url, max_items=15):
     base_dir = base_url.rsplit("/", 1)[0] + "/"
 
     def resolve(href):
-        href = href.strip()
-        if href.startswith("http"):
-            return href
-        if href.startswith("./"):
-            return base_dir + href[2:]
-        if href.startswith("/"):
-            return origin + href
-        return base_dir + href
+        return urljoin(base_url, href.strip())
 
     seen = set()
     # 模式1: 交通运输部 news-link 结构
@@ -4623,6 +4934,32 @@ def extract_gov_list(html, source_name, category, base_url, max_items=15):
         seen.add(url)
         items.append({
             "date": _valid_date_str(date) or _gov_date_from_url(href),
+            "source": source_name,
+            "category": category,
+            "title": title,
+            "url": url,
+            "summary": "",
+        })
+        if len(items) >= max_items:
+            break
+
+    # 模式3：统计专页常只在 URL 中携带 tYYYYMMDD，列表不再单独
+    # 渲染发布日期。例：文旅部统计信息和民航局主要生产指标列表。
+    for m in re.finditer(
+        r'<a[^>]+href="([^"]*t20\d{6}_\d+\.html?)"[^>]*?(?:title="([^"]+)")?[^>]*>([\s\S]*?)</a>',
+        html, re.I,
+    ):
+        href, title_attr, title_html = m.groups()
+        title = html_lib.unescape(title_attr or re.sub(r"<[^>]+>", " ", title_html))
+        title = re.sub(r"\s+", " ", title).strip()
+        if not title or len(title) < 6:
+            continue
+        url = resolve(href)
+        if url in seen:
+            continue
+        seen.add(url)
+        items.append({
+            "date": _gov_date_from_url(href),
             "source": source_name,
             "category": category,
             "title": title,
@@ -4788,7 +5125,9 @@ SOURCE_RANK_MAP = {
     # 一手文件/官方公告
     "SEC EDGAR": 110,
     "披露易": 108, "文旅部": 105, "交通运输部": 105,
+    "中国民用航空局": 105,
     "Booking Holdings IR": 100, "Expedia Group IR": 100, "Airbnb IR": 100,
+    "Trip.com Group IR": 100, "同程旅行 IR": 100, "嘀嗒出行 IR": 100,
     # 通讯社/主流财经媒体
     "Reuters": 96,
     "Bloomberg": 94, "Bloomberg Markets": 94, "Bloomberg Technology": 94,
@@ -4796,13 +5135,16 @@ SOURCE_RANK_MAP = {
     "Wall Street Journal": 91, "WSJ": 91,
     "Financial Times": 90, "FT": 90,
     "CNBC": 86,
+    "财新": 89, "第一财经": 87, "证券时报": 86, "上海证券报": 86,
+    "21世纪经济报道": 84, "界面新闻": 82, "澎湃新闻": 82,
     # 公司 newsroom 和垂直行业媒体
     "Expedia": 85, "Booking.com": 85, "Airbnb": 85,
     "Skift": 76, "PhocusWire": 73, "Travel Weekly": 70,
-    "环球旅讯": 65, "民航网": 64,
+    "环球旅讯": 65, "民航网": 64, "中国旅游报": 68,
+    "品橙旅游": 64, "旅界": 62, "36氪": 58,
 }
 # 官方公告/公司官方来源（同事件优先当主条目）
-OFFICIAL_SOURCE_RE = re.compile(r'SEC|EDGAR|披露易|文旅部|交通运输部|民航网|官方网站|Newsroom|IR|Investor Relations|investors\.', re.IGNORECASE)
+OFFICIAL_SOURCE_RE = re.compile(r'SEC|EDGAR|披露易|文旅部|交通运输部|民航局|民航网|官方网站|Newsroom|IR|Investor Relations|investors\.', re.IGNORECASE)
 
 
 def _source_rank(item):
@@ -5204,8 +5546,10 @@ def prune_and_dedupe(news_data):
             items = sec_data.get(cat, [])
             if not isinstance(items, list):
                 continue
-            if (section, cat) == ("international", "sec_filings"):
-                items = dedupe_sec_accessions(items)
+            if any("SEC EDGAR" in str(item.get("source", "")) for item in items):
+                sec_items = [item for item in items if "SEC EDGAR" in str(item.get("source", ""))]
+                non_sec_items = [item for item in items if "SEC EDGAR" not in str(item.get("source", ""))]
+                items = dedupe_sec_accessions(sec_items) + non_sec_items
             retention = NEWS_RETENTION_DAYS
             cap = MAX_ITEMS.get((section, cat), 50)
 
@@ -5225,7 +5569,7 @@ def prune_and_dedupe(news_data):
                     continue
 
                 # SEC INFO 占位条目（抓取失败时的"去看EDGAR"链接）不进入列表
-                if (section, cat) == ("international", "sec_filings") \
+                if "SEC EDGAR" in str(item.get("source", "")) \
                         and str(item.get("type", "")) == "INFO":
                     continue
 
@@ -5249,10 +5593,12 @@ def prune_and_dedupe(news_data):
                     continue
                 kept.append(item)
 
-            # SEC 列表不做标题级去重（同名"季度报告(10-Q)"靠日期+URL区分）
-            if (section, cat) != ("international", "sec_filings"):
-                kept = dedupe_same_article(kept)
-                kept = group_same_events(kept)
+            # SEC 文件不做标题级去重（同名 6-K/10-Q 靠 accession 区分）；
+            # 国内 regulatory 是 SEC 与其他官方来源的混合列表，需要分开处理。
+            sec_kept = [item for item in kept if "SEC EDGAR" in str(item.get("source", ""))]
+            ordinary_kept = [item for item in kept if "SEC EDGAR" not in str(item.get("source", ""))]
+            ordinary_kept = group_same_events(dedupe_same_article(ordinary_kept))
+            kept = sec_kept + ordinary_kept
 
             # 去重后重新按日期降序排列（去重可能打乱顺序）
             # 关键修复: 确保最新的新闻永远在最上面
@@ -5824,12 +6170,18 @@ def main(fast_mode=False):
     print("\n[1/3] Fetching SEC EDGAR filings...")
     try:
         sec_filings = fetch_all_sec_filings()
-        news_data["international"]["sec_filings"] = sec_filings
+        news_data["international"]["sec_filings"] = [
+            item for item in sec_filings if item.get("company") != "TCOM"]
+        news_data["domestic"]["regulatory"].extend(
+            item for item in sec_filings if item.get("company") == "TCOM")
         print(f"  Total SEC filings: {len(sec_filings)}")
     except Exception as e:
         print(f"  SEC fetch failed: {e}")
         if cached_data:
             news_data["international"]["sec_filings"] = cached_data.get("international", {}).get("sec_filings", [])
+            news_data["domestic"]["regulatory"].extend(
+                item for item in cached_data.get("domestic", {}).get("regulatory", [])
+                if item.get("source") == "SEC EDGAR" and item.get("company") == "TCOM")
     
     # ── 2. International RSS feeds ──
     print("\n[2/3] Fetching international RSS feeds...")
@@ -5906,7 +6258,7 @@ def main(fast_mode=False):
         if intl_extra:
             tag_company_news(intl_extra)
             news_data["international"]["industry_news"].extend(intl_extra)
-            print(f"  Traveldaily intl items → international industry_news: {len(intl_extra)}")
+            print(f"  Domestic-source international items → international industry_news: {len(intl_extra)}")
         print(f"  Total domestic news: {len(domestic_items)}")
     except Exception as e:
         print(f"  Domestic news fetch failed: {e}")
@@ -5942,7 +6294,11 @@ def main(fast_mode=False):
 
     # SEC披露卡片读取官方原始文件：Form 4/Rule 144提取交易人、股数、价格等，
     # 其他表单按8-K条款或报告期生成有业务含义的确定性摘要。
-    enrich_sec_filing_summaries(news_data.get("international", {}).get("sec_filings", []))
+    sec_for_summary = list(news_data.get("international", {}).get("sec_filings", []))
+    sec_for_summary.extend(
+        item for items in news_data.get("domestic", {}).values() if isinstance(items, list)
+        for item in items if "SEC EDGAR" in str(item.get("source", "")))
+    enrich_sec_filing_summaries(sec_for_summary)
 
     # ── 保留期修剪 + 三级去重（改造项⑦）──
     news_data = prune_and_dedupe(news_data)
@@ -5959,6 +6315,11 @@ def main(fast_mode=False):
     # rejected ads/opinions/noise.
     retained_intl = news_data.get("international", {}).get("industry_news", [])
     translate_news_items(retained_intl)
+    retained_domestic_ir = [
+        item for items in news_data.get("domestic", {}).values() if isinstance(items, list)
+        for item in items if item.get("is_ir_source")
+    ]
+    translate_news_items(retained_domestic_ir)
     news_data = prepare_chinese_news_display(news_data)
     save_translation_cache()
 
