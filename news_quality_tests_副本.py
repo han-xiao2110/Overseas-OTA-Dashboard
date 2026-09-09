@@ -1416,10 +1416,13 @@ def test_module_routing():
     check("I11e SEC同一accession的目录与正文只留详细版",
           len(sec_deduped) == 1 and sec_deduped[0].get("sec_summary_kind") == "document_detail")
 
+    ir_fixture_today = datetime.date.today()
     multi_company_ir = [
-        {"date": "2026-08-26", "title": "Expedia Group to Participate in Goldman Sachs Communacopia Conference",
+        {"date": (ir_fixture_today - datetime.timedelta(days=1)).isoformat(),
+         "title": "Expedia Group to Participate in Goldman Sachs Communacopia Conference",
          "url": "https://ir.expedia/a", "source": "Expedia Group IR", "entity_id": "EXPE"},
-        {"date": "2026-08-25", "title": "Airbnb to Participate in Goldman Sachs Communacopia Conference",
+        {"date": (ir_fixture_today - datetime.timedelta(days=2)).isoformat(),
+         "title": "Airbnb to Participate in Goldman Sachs Communacopia Conference",
          "url": "https://investors.airbnb/b", "source": "Airbnb IR", "entity_id": "ABNB"},
     ]
     fn.group_same_events(multi_company_ir)
