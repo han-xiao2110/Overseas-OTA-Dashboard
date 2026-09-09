@@ -3091,7 +3091,8 @@ HARD_EXCLUDE_PATTERNS = [
     (r"实测|亲测|打卡|攻略|怎么玩|保级升卡|会员升级指南|自驾.*(实测|流程|多方便)|路线推荐|避坑指南|省钱秘籍", "消费者攻略/实测"),
     (r"篮球|足球赛|集体婚礼|庆典|颁奖|荣获|斩获|摘得.{0,4}奖|获评|获奖|公益|慈善|捐赠|志愿服务|爱心助考", "体育赞助/庆典/获奖/公益"),
     (r"救援故事|紧急救援|机上救援|成功救援|备降救人|坚守岗位|高温坚守|防汛抗|人物故事|员工故事|劳模|最美.{0,6}人|暖心故事|走红|紧急救助|旅客.{0,6}突发疾病", "救援/员工个人故事/坚守"),
-    (r"短评|随笔|行业鸡汤|流向何方|趋势漫谈|超哥|闲话|漫谈", "无新事实短评"),
+    (r"短评|随笔|行业鸡汤|流向何方|趋势漫谈|超哥|闲话|漫谈|嘉宾访谈|"
+     r"差异化优势与.{0,16}分析", "无新事实短评"),
     (r"如何避开|差旅大坑|踩坑指南|如何避坑|有哪些坑", "泛观点/攻略型长文"),
     (r"新玩法|满分口碑|深度好眠|种草|安利|宝藏|天花板|绝绝子|焕新出发|重磅升级|荣耀启程|网红", "品牌软文"),
     (r"一周要闻|新闻合集|本周速览|行业动态合集|周报盘点|每日速览|投融资动态|这\d+笔交易|\d+笔交易值得关注|"
@@ -3099,12 +3100,16 @@ HARD_EXCLUDE_PATTERNS = [
     (r"investors? raise the bar|ai trip planning is outpacing|ai transformation in travel\s*:|"
      r"destinations? rethink marketing amid", "观点评论/趋势展望"),
     (r"股票股价|股价行情|_股价_|行情_讨论|股吧", "社群广告"),
-    (r"返现|返还\s*\d+|消费满.{0,12}(?:返|减)|满\s*\d+.{0,8}(?:返|减)|优惠券|折扣码|"
+    (r"返现|返还\s*\d+|消费满.{0,12}(?:返|减)|满\s*\d+.{0,8}(?:返|减)|优惠券|折扣码|大促|特价|"
      r"限时优惠|会员促销|targeted|cash\s*back|get\s*\$?\d+\s*back|promo\s*code|"
+     r"(?:mega|autumn|summer|september|holiday|travel)\s+(?:sale|savings)|travel\s+deals?|"
+     r"up\s+to\s+\d+%\s+off|\d+%\s+off|mega\s+sale|mega\s+savings|"
      r"best\s+hotels?|top\s+\d+|according\s+to\s+reviews", "软广/优惠促销/榜单"),
     (r"股价.{0,12}(?:走高|上涨|下跌|跑赢|表现)|(?:该股|股票).{0,12}(?:走高|上涨|下跌|跑赢|表现)|(?:stock|shares?).{0,20}(?:rise|rally|gain|fall|"
      r"outperform)|估值讨论|投资建议|分析师.{0,8}(?:上调|下调|评级|目标价)|"
-     r"wall street.{0,12}(?:believe|bullish|bearish)|how investors? (?:are )?reacting|"
+     r"wall street.{0,12}(?:believe|bullish|bearish)|"
+     r"(?:stock|shares?).{0,18}(?:rating|bull\s+case|bear\s+case|price\s+target|upgrade|downgrade)|"
+     r"(?:upgrade|downgrade).{0,30}(?:stock|shares?).{0,12}rating|how investors? (?:are )?reacting|"
      r"how .{0,90} will impact .{0,24}investors?", "股价/估值评论"),
     (r"(?:bank|trust|management|capital|fund|holdings?).{0,45}(?:acquires?|buys?|purchases?|adds?)"
      r".{0,30}(?:shares?|stake|position).{0,45}(?:BKNG|EXPE|ABNB|Booking Holdings|Expedia Group|Airbnb)|"

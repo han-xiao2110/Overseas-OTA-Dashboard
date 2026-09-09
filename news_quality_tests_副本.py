@@ -934,6 +934,12 @@ def test_selection():
         ("Skift 全球论坛前瞻：维珍航空首席执行官谈人工智能", "Skift", False),
         ("案例与合作伙伴征集｜2026下半年AI旅游应用洞察报告", "环球旅讯", False),
         ("Expedia 集团公司 尽管当天亏损，但该股的表现仍优于竞争对手", "Expedia", False),
+        ("Expedia Launches Autumn Travel Sale with Up to 30% Off Hotels", "TRAICY Global", False),
+        ("Trip.com unveils 9.9 Mega Sale travel deals", "Trip.com", False),
+        ("Vrbo Product Rollout Tests Expedia Stock Bull Case", "Simply Wall St", False),
+        ("Raymond James upgrades Airbnb stock rating on AI growth potential", "Investing.com", False),
+        ("嘉宾访谈 | 携程集团目的地合作部副总经理：助力入境旅游市场提质扩容", "商业媒体", False),
+        ("AI驱动差旅管理新范式：携程商旅AI开放平台差异化优势与企业适配分析", "中宏网", False),
     ]
     case_results = []
     for title, source, expected in cases:
@@ -944,7 +950,7 @@ def test_selection():
             item["summary"] = "The travel platform launched packaged tours and a new Uber distribution channel."
         kept, _ = fn.select_news_item(item, "international", "industry_news")
         case_results.append(kept == expected)
-    check("G7 v3保留Google/Ixigo/售股事实并排除Hotel扩张、股价评论、返现和观点", all(case_results))
+    check("G7 v6保留事实新闻并排除Hotel扩张、股价评论、促销和观点", all(case_results))
 
     # G8 取消统一筛选前的每来源10条上限
     many = [_sel_item(f"Travel platform launches booking product {i}", "Skift",
