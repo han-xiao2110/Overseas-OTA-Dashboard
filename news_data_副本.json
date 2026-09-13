@@ -12,13 +12,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-09-01",
         "file_description": "4",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-03",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526382108/ownership.xml",
         "summary": "Bernstein David C（首席会计官）于2026-09-01申报ABNB股票变动：行权取得5,224股A类普通股（申报价40.18美元/股），交易后直接持有53,737.05股；出售5,224股A类普通股（申报价182.49美元/股），交易后直接持有48,513.05股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:32",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -54,13 +54,13 @@
         "primary_document": "xslF345X06/form4-09022026_040901.xml",
         "report_date": "2026-09-01",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000121460726000016/form4-09022026_040901.xml",
         "summary": "MYLOD ROBERT J JR（董事）于2026-09-01申报BKNG股票变动：出售1,000股普通股（申报价200.00美元/股），交易后间接持有14,000股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "BKNG",
@@ -96,13 +96,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-08-28",
         "file_description": "4/A",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526379365/ownership.xml",
         "summary": "Chesky Brian（首席执行官、董事、10%以上股东）于2026-08-28申报ABNB股票变动：转换取得76,500股A类普通股；赠与76,500股A类普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -136,13 +136,13 @@
         "primary_document": "xslF345X06/form4-09012026_040901.xml",
         "report_date": "2026-08-31",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000187574126000006/form4-09012026_040901.xml",
         "summary": "Pisano Paulo（CHIEF HUMAN RESOURCES OFFICER）于2026-08-31申报BKNG股票变动：出售3,000股普通股（申报价203.48美元/股），交易后直接持有73,400股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "BKNG",
@@ -178,13 +178,13 @@
         "primary_document": "xsl144X01/primary_doc.xml",
         "report_date": "",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000196922326000976/primary_doc.xml",
         "summary": "MYLOD ROBERT J JR（chairman）拟于2026-09-01出售1,000股Common，申报总市值约19.8万美元，经纪商为UBS Financial Services, Inc.。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "BKNG",
@@ -219,13 +219,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-08-28",
         "file_description": "4",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526379115/ownership.xml",
         "summary": "Chesky Brian（首席执行官、董事、10%以上股东）于2026-08-28申报ABNB股票变动：赠与76,500股A类普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -260,13 +260,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-08-28",
         "file_description": "4",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526379003/ownership.xml",
         "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-28申报ABNB股票变动：转换取得74,852股A类普通股；出售70,775股A类普通股（申报价185.67–191.20美元/股），交易后间接持有20,567股；赠与4,077股A类普通股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:34",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -302,13 +302,13 @@
         "primary_document": "xsl144X01/primary_doc.xml",
         "report_date": "",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006591/primary_doc.xml",
         "summary": "Bernstein David C（高管）拟于2026-09-01出售5,224股A类股，申报总市值约95.3万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:34",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -343,13 +343,13 @@
         "primary_document": "xsl144X01/primary_doc.xml",
         "report_date": "",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-08-31",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006546/primary_doc.xml",
         "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-31出售13,615股A类股，申报总市值约255万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:34",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -382,7 +382,7 @@
         "title": "中东复苏再次陷入停滞： Skift旅行健康指数",
         "url": "https://skift.com/2026/09/11/middle-easts-recovery-stalled-again-skift-travel-health-index/",
         "summary": "中东的复苏仍然脆弱。 更新的旅行警告使快速反弹的可能性降低，使住宿提供商专注于重建需求和恢复定价能力。",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": null,
@@ -408,7 +408,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
@@ -417,7 +417,7 @@
         "title": "印度旅游平台Travelxp推出代理AI旅程礼宾服务",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQT2ttNy0xYXpQWVl4VGVYYVJLU0VCbU9xWExKRlp5WjZFOVF0TTIwR0d1bHlrdTgxd2lTdkJxUW9rVm5aTS1QekV5aWJvTWdZRHlBaDkwSzZJRGo0SzlqX3RldV9qcHZjSUFUUW90NV82YlJOMkh0bVFpYkNEMHdTV1c5Rng3cloyR2JOVU90czdOdmptcDdnd3Z1cnZULXJUUzhzTDMzMlRkNE1QV3c?oc=5",
         "summary": "印度旅游平台Travelxp推出代理AI旅行礼宾服务PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": null,
@@ -446,7 +446,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
@@ -456,7 +456,7 @@
         "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE80SlBZQ1gyREJ2SktFZzQ0ZU9uMlFOcFZQMVBYOHVaTlhkMFdqbjRaN1RQbjljNi03UDVuSWtTYmRTNUloSmhZSlZKMXlxZ2c?oc=5",
         "summary": "",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -485,7 +485,45 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-11",
+        "source": "safariindia.com",
+        "category": "industry_news",
+        "title": "Expedia Group任命新的首席财务官",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQbnhmNTJTM2ppdTQ3NjFiUWR4YXBZV29qRmN2VzRoQWtfVUJtUDVfVmxXcW91ZVJ3b2tFWVpIZ0wzb19kQUoyLWpXOUxCTHM5bW43cnJnbHhpaVdYNnluTmNGTUZOX09NakNrbzJfOFBTbXNFMVhOY2JzeC1fYl90UA?oc=5",
+        "summary": "Expedia Group任命新的首席财务官safariindia.com",
+        "company": "EXPE",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-11",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 66,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "重点公司(EXPE)",
+          "正式制度/组织变化"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization",
+          "core_company"
+        ],
+        "title_original": "Expedia Group Appoints New Chief Financial Officer",
+        "summary_original": "Expedia Group Appoints New Chief Financial Officer&nbsp;&nbsp;safariindia.com",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
@@ -494,7 +532,7 @@
         "title": "借助Spotnana优惠，万豪将忠诚度纳入企业预订工具",
         "url": "https://skift.com/2026/09/10/marriott-brings-loyalty-into-corporate-booking-tools-with-spotnana-deal/",
         "summary": "万豪赢得商务旅行者的最佳武器是其忠诚度计划。 但到目前为止，它无法在预订门户网站中显示忠诚度信息，公司迫使员工向我们",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": null,
@@ -522,7 +560,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
@@ -532,7 +570,7 @@
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMHR4dFpCdVZ3VnpiN2tJbUpVY2ZGQjlsTjctd0pQOWpZXzVMTWl3am1UZnprZ01UTDZqTlBqM0YybmxOOXM0c1hzNDcwcUFQbFBmeC00U1phWXFGT2pwQlNSSHEtSkZxSG1TMGFNOG9HY1FYeGMweUlqSHhveU9SQ2hBclVnbTVNaTNqajBCSVZmLW1FdXBfd2lzY3JldmhSc3dFNFBELTBPLWM?oc=5",
         "summary": "Expedia首席执行官，负责人工智能在旅行规划和预订方面日益重要的作用PhocusWire",
         "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -563,7 +601,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "suppress_core_badge": true
       },
       {
@@ -573,7 +611,7 @@
         "title": "Navan在第二季度增加收入，收购BoomPop以提高在线会议能力",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcTFVVlhIWDNweGJxa3BBVWNfamFPb1BpdzZuaUl1MjB1czNhS2IyN1NadVJfZGs2UF9VWlVjdnpjLXU0c3BzbXFVODdNTTdvVDlfaWJHUzdIc21ZUFVWTTNFSDc3OXlTNWtZMUV6NEdTWEMzSzZ0RVloTTVacUhCRUVubHpnUjQ?oc=5",
         "summary": "Navan在第二季度增加收入，收购BoomPop以提高在线会议功能PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": null,
@@ -602,17 +640,17 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
-        "source": "Yahoo Finance UK",
+        "source": "PR Newswire",
         "category": "industry_news",
         "title": "Agoda与高雄市政府合作支持全球旅游认可",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOcGg1clUxZ0VjTTVHUXlEZ0hoVklEbmNEemlwYlBrMXdUWE50TG1uR2ZSbkt4alVxSVNfUnYwbVh0MWtzczJaR0JSNU1XRzFST2lkS2hLVlgwdkladEFULXRVTkpFZkFqMEhmNC1QNldWS0tIeGJMNTA3YnJEYVd6eldSUjQ5OUV0amZ0TXUzRjJWVU0?oc=5",
-        "summary": "",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVTJjZ1BfRF8wbjNDWTJWdjVwNkV3bzd2MG9Qc0xfdU1wbk5GNVJabEpFSEJpNFlFd19IYlc4VjBKVUxlLU04VEg5NlFPWjBuamdZcnFfazZ3d3hVSENnb2RnV3Y4VWJnbXBUaFllX1BuSnh3eHFEUFQ1Zk5ZVEpLV3JzbWc2MFhQYjFLS1o2Sm1LWVl2Wno5U2RHQ2Jka3JUeHExU0dtZlpQVjNjNUJvSkJvVkRlanVCcWlYbFJraHlWX2twU2ZMZHFWa2Q2X0tIekJ3MTdn?oc=5",
+        "summary": "Agoda与高雄市政府合作，支持全球旅游认可PR Newswire",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -628,6 +666,7 @@
         "selection_reasons": [
           "评分(相关8/重要10/基本面0/证据10/来源2)",
           "重点公司(BKNG)",
+          "摘要重复标题(-20)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -636,11 +675,11 @@
           "core_company"
         ],
         "title_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition",
-        "summary_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition&nbsp;&nbsp;Yahoo Finance UK",
+        "summary_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition&nbsp;&nbsp;PR Newswire",
         "display_ready": true,
         "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "merged_same_article": 1
       },
       {
@@ -648,10 +687,10 @@
         "source": "Voyages d'affaires",
         "category": "industry_news",
         "title": "Booking.com因收购Etraveli被欧洲法院阻止",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORXpzdlowS2I3ZVNkNGJFaXUwVjNOSjBtcHdCR2lETTFFMExTcmY4djlHSTlZbGo2SzZUQ1RoOG5HWFBqaUpTUWYxM1hGbFA2NWMtWFBpc3VZX3JiQUZUQTVORWRuTjJtbi00a1p6MlNVYzZaSDIzMDB4RW5tcW15WEdTU3lKQQ?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQT2lJT2t1emJQeVJXRGJJUzNWakJWOVZ2aXp6VGhCN2lFX1d4Y3RRZHJvX1lKbkpUQUF3SGNDWXdtOWVQLUhPXzR1TFJ2V01ld3BleFRkaEltdm91ZzZTcFd5RTE3STB1LW1FVDRXODZ0YlFKZGl0eTUtT0J5eGpMd1pKaU16UHM?oc=5",
         "summary": "Booking.com因收购Etraveli Voyages d 'affaires被欧洲法院阻止",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -679,7 +718,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "suppress_core_badge": true
       },
       {
@@ -690,7 +729,7 @@
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNOEFkU25ybFp1RTJUU2tOR3Rfc3duUkhmMWVYa29rTGdPam01Mm15ZGl4TE1yQTdzcGNhMkNmNVZuUjdCeUx4a0Zjcl9TUnBYVERpRDRzRDdWS01uT3liQVh3UzVUWGR2ZHQ1akxobU4waURWRTZ1MDMxajVTaXZGUHVkQmhXYl91RF9TZW0xUEFBOERSREszZg?oc=5",
         "summary": "欧盟法院维持阻止Booking.com € 16.3亿Etraveli收购TravelMole",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -719,7 +758,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "suppress_core_badge": true
       },
       {
@@ -730,7 +769,7 @@
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNOFRZc185aVI0TGptb3VOdnp1bmd6dHhnb3hnTkVwRmxpandHYUUyY1VyemdWc2pPdzhoUXc0eEtGaFlpSmExWnJ3dkZwSU9VWVZtLWZPMk83RmpsZ2U3Qld4aWE0Q0RUVWJnajgycDlTdVBiRVFDRV9adzlmbm5WLUp0aWJoMEgwUlU0RUw3d3BXSENtNFNPbkMwUS1TVThmVEdwdFg5a0tnQndlTklUT1I1RzZlRkpma2hJ?oc=5",
         "summary": "Agoda与高雄市政府合作提升目的地形象traveldailynews.asia",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -758,7 +797,86 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-10",
+        "source": "Yahoo Finance UK",
+        "category": "industry_news",
+        "title": "Agoda与高雄市政府合作支持全球旅游认可",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOcGg1clUxZ0VjTTVHUXlEZ0hoVklEbmNEemlwYlBrMXdUWE50TG1uR2ZSbkt4alVxSVNfUnYwbVh0MWtzczJaR0JSNU1XRzFST2lkS2hLVlgwdkladEFULXRVTkpFZkFqMEhmNC1QNldWS0tIeGJMNTA3YnJEYVd6eldSUjQ5OUV0amZ0TXUzRjJWVU0?oc=5",
+        "summary": "",
+        "company": "BKNG",
+        "fetched_at": "2026-09-12 09:30:32",
+        "published_at": "2026-09-10",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "partnership",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关8/重要10/基本面0/证据4/来源2)",
+          "重点公司(BKNG)",
+          "只有标题无公开证据(-15)",
+          "实质动态/官方清单保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "cooperation",
+          "core_company"
+        ],
+        "title_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition",
+        "summary_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition&nbsp;&nbsp;Yahoo Finance UK",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "insufficient_evidence",
+        "summary_generated_at": "2026-09-12 09:31:35",
+        "merged_same_article": 1
+      },
+      {
+        "date": "2026-09-10",
+        "source": "Voyages d'affaires",
+        "category": "industry_news",
+        "title": "Booking.com因收购Etraveli被欧洲法院阻止",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORXpzdlowS2I3ZVNkNGJFaXUwVjNOSjBtcHdCR2lETTFFMExTcmY4djlHSTlZbGo2SzZUQ1RoOG5HWFBqaUpTUWYxM1hGbFA2NWMtWFBpc3VZX3JiQUZUQTVORWRuTjJtbi00a1p6MlNVYzZaSDIzMDB4RW5tcW15WEdTU3lKQQ?oc=5",
+        "summary": "Booking.com 因收购Etraveli Voyages d 'affaires被欧洲法院阻止",
+        "company": "BKNG",
+        "fetched_at": "2026-09-12 09:30:32",
+        "published_at": "2026-09-10",
+        "date_status": "known",
+        "entity_id": "BKNG",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 72,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关13/重要22/基本面0/证据10/来源2)",
+          "重点公司(BKNG)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "title_original": "Booking.com blocked by European court over acquisition of Etraveli",
+        "summary_original": "Booking.com blocked by European court over acquisition of Etraveli&nbsp;&nbsp;Voyages d'affaires",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-12 09:31:35",
+        "merged_same_article": 1
       },
       {
         "date": "2026-09-10",
@@ -766,7 +884,7 @@
         "category": "industry_news",
         "title": "Trip.com集团（ TCOM ）预计周四公布收益",
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQZUFTVnhkMDVYZ3VYU1hZNThIZTY5RXNNTEctRkZUaVp5ck90QzJoN2xXWkxMdGZUSjZPWDB2QVlBWm5naWV3WEkyWVRGV1NLbmlhc0JqTnVfS09aU0FjMjB2d29DazgzVEVQb0ZjaXpOYnRjT2VVcXNTVjNkVUV4bG9wRWFFMTEzbENQSFlPY0hNRTFkMFNqMHRDTzZ2djJ6Q3NjN1kzVS1HZ2VnNmIzWlhpbXNUQmlidHhJ?oc=5",
-        "summary": "Trip.com 集团（ TCOM ）预计将于周四 MarketBeat公布收益",
+        "summary": "Trip.com集团（ TCOM ）预计周四MarketBeat公布收益",
         "fetched_at": "2026-09-11 09:26:22",
         "published_at": "2026-09-10",
         "date_status": "known",
@@ -798,90 +916,13 @@
         "summary_generated_at": "2026-09-11 09:27:29"
       },
       {
-        "date": "2026-09-10",
-        "source": "Voyages d'affaires",
-        "category": "industry_news",
-        "title": "Booking.com因收购Etraveli被欧洲法院阻止",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNSmlKcUxQMGdfcXM5dzFPYmFjN2pZSjR0Um01Qmttc3phaEM3bWl6WElQMnJ6ZDFFeHdfeHd5T2V3SzdfaWx2S2ZMTnZhVHZOVjAwc2k4bEMtUnJFWTdTdHZUak8yajlCTXRmR0tocjhjdmxjdDlEckFxMy1XcUFQd2hXUWVaRDZRZ2lUV1VVdjNpNEdFb1lZbTQxTWxIZw?oc=5",
-        "summary": "Booking.com 因收购Etraveli Voyages d 'affaires被欧洲法院阻止",
-        "company": "BKNG",
-        "fetched_at": "2026-09-11 09:26:22",
-        "published_at": "2026-09-10",
-        "date_status": "known",
-        "entity_id": "BKNG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "ma_investment",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 72,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关13/重要22/基本面0/证据10/来源2)",
-          "重点公司(BKNG)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "capital",
-          "competition",
-          "core_company"
-        ],
-        "title_original": "Booking.com blocked by European court over acquisition of Etraveli",
-        "summary_original": "Booking.com blocked by European court over acquisition of Etraveli&nbsp;&nbsp;Voyages d'affaires",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-11 09:27:29"
-      },
-      {
-        "date": "2026-09-10",
-        "source": "The Manila Times",
-        "category": "industry_news",
-        "title": "Agoda与高雄市政府合作支持全球旅游认可",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNczlmWExJekVzOUx6cDVBYzFaYXdHUGJuR0xDNWctNWU0NGp2ZVlIVVh2aGlhUmpBNTZzNHo5UlU0TG9jRkIxem10R19iMlZ0OFNoVTlKbVJzUzdBVnllSXQ1STB6T0J0NGsycWNzb0RoanJfWlY3X2hYeFhyUGJaOUxGWmVBRnpiVkl6Q2FrSG5RZFdiODByaTVtY1lPNzc5RG1NWk9tWU5QS2RZZ2FYbk9RRXVLc2JqcXQ5UV9zNjJubDhQUUJDXzlHR0pvQmlOSkhCLVZYSXdjc2JhYWRVMkRBeDHSAeoBQVVfeXFMUGw1OWZyY0xhS0xrQlJqVXhrWHJnOHlEaVFzcllrMHNUaHp5MjV6QXpyWnBtRlJMOGh4U000NXZHNlVhRzNNM2o4dnpCQVpKd0VHcE5wbjNIZ2RMOU5fUjExNE41MXdfejBQRTNYZUNLNmJGdkFMWmlNWFRQNG5WQlJ2NzVLWXFUb2I1VTg0LUxVZHNHaEEteTdMbjFOOFp3YktHQzR1S1RRaVMxT3RGQXk3WDQ3UkRiYl9vNXFXX2FRdFcxVjFnZ29aUE5GRktQU05EeXhhV21MOVFFNDFnM0lTZld0Z3dZdUVB?oc=5",
-        "summary": "",
-        "company": "BKNG",
-        "fetched_at": "2026-09-11 09:26:22",
-        "published_at": "2026-09-10",
-        "date_status": "known",
-        "entity_id": "BKNG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "partnership",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关8/重要10/基本面0/证据4/来源2)",
-          "重点公司(BKNG)",
-          "只有标题无公开证据(-15)",
-          "实质动态/官方清单保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "cooperation",
-          "core_company"
-        ],
-        "title_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition",
-        "summary_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition&nbsp;&nbsp;The Manila Times",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-11 09:27:29"
-      },
-      {
         "date": "2026-09-09",
         "source": "PhocusWire",
         "category": "industry_news",
         "title": "Meta推出具有差旅预订功能的AI代理",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZll6LXpINWtHMmQzZERvaTZfejdyQ2gzM2NCWElVX242WW53SG1LSDVTaklVN1A5Z1pXUldweGRMWTZqMEFiVWFoc2VwMHRGY1NzV1JJTWVINzdJd0NXTHdwa05ycTlZYkJrUHFId0xMdHd4bEN1dkZZcXV6RWJBcmdoN2NLS2c?oc=5",
         "summary": "Meta推出具有旅行预订功能的AI代理PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": null,
@@ -909,7 +950,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -918,7 +959,7 @@
         "title": "预订失去Etraveli的收购吸引力",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVFloV2lqdTNOOEhtV0NQZksyM0xYXzF4Zi15VjctdTlpZ3lLUy1KVTZnSEcyWGVIZW13UGJIVWwzWWlPalh3UnZfaGp5Tmd2NzY3Y3BnVTlHTkNuS3dpZjBHVjFPOUFSYWVEVU5TaUl5LWg4R3oxMnYwekRVSzFEM1FMRkhlRjctUl9yaUlkVF9GR29WS05udzZTQUdseDBDWTZxWElwS0VLUQ?oc=5",
         "summary": "预订失去Etraveli收购诉求PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": null,
@@ -947,57 +988,17 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
-        "source": "FTN news",
-        "category": "industry_news",
-        "title": "Hotels.com推出商务差旅预订工具",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRFpiY3BwOXhvekdwZ3ZYRUR6MTJtOGZTRVF6TmFKNjJWVDkzaDV4LXgxaWticU0xT0FrR1BaSFpqY0RtVU90SWZpanNsV0djelZOdlNSY3ZYSE8ySUhTQ0FBYTlIUW5Mc0VXenBIeHRKanUtRkN5Y0dOdXFjdjdwMVRrd0ljcW00cUhsTk1HcTg?oc=5",
-        "summary": "",
-        "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
-        "published_at": "2026-09-09",
-        "date_status": "known",
-        "entity_id": "EXPE",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "product",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [
-          "topic.hotel",
-          "topic.hotel.ota_direct_exception"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 70,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关19/重要14/基本面0/证据10/来源2)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product",
-          "core_company"
-        ],
-        "title_original": "Hotels.com Launches Business Travel Booking Tools",
-        "summary_original": "Hotels.com Launches Business Travel Booking Tools&nbsp;&nbsp;FTN news",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
-      },
-      {
-        "date": "2026-09-09",
-        "source": "Investing.com",
+        "source": "Expedia",
         "category": "industry_news",
         "title": "Expedia Group亮相高盛Communacopia +技术大会： AI PUSH",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOc1NMVUVReTBTajZCXzBlVGtSbkZEM0hRSG0wNndJVGx5S2tYRzdmLUgybFRMWS1LMWlzeHU4TlZUNkE1RnkyRWhJRzRxYk1XYWZIbjJDYkd6cXNHNkdpTDZPaGlZS01HVFdCUnhZc2NROEpXRDdVSUlVdmFrWXZMXzZCLUJVdUd2M01sS0xQOHVrUGtEOEpvNWJudGtxMUN5MXNrMnJXcGx5b3FMRjdXcTlrSmJ0T1hxQWtRX0NDWjBoOV9XdEFYM0VB?oc=5",
         "summary": "Expedia Group亮相高盛Communacopia +技术大会： ai push Investing.com",
         "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -1027,7 +1028,47 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-09",
+        "source": "FTN news",
+        "category": "industry_news",
+        "title": "Hotels.com推出商务差旅预订工具",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRFpiY3BwOXhvekdwZ3ZYRUR6MTJtOGZTRVF6TmFKNjJWVDkzaDV4LXgxaWticU0xT0FrR1BaSFpqY0RtVU90SWZpanNsV0djelZOdlNSY3ZYSE8ySUhTQ0FBYTlIUW5Mc0VXenBIeHRKanUtRkN5Y0dOdXFjdjdwMVRrd0ljcW00cUhsTk1HcTg?oc=5",
+        "summary": "",
+        "company": "EXPE",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-09",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "product",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 70,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关19/重要14/基本面0/证据10/来源2)",
+          "重点公司(EXPE)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "product",
+          "core_company"
+        ],
+        "title_original": "Hotels.com Launches Business Travel Booking Tools",
+        "summary_original": "Hotels.com Launches Business Travel Booking Tools&nbsp;&nbsp;FTN news",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "insufficient_evidence",
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -1037,7 +1078,7 @@
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSXVsTFBmQkpMU1ZXN2VSNnV0Nm5MSEFqVU5EaW1XYnFHQldoc1pORTQ3emwybGE5bElaWDNfdEVyV2VTeUQyUmdja0ZNOWVNaUxvUmx5LVo1T1FBbnlJWUYzTE5OY2NadTlKblhoQXNiVHZJV3lSVTNKd0Mxb0JaZHdPRHdhNkVRS2JMN3B0YjkxQjg?oc=5",
         "summary": "",
         "company": "ABNB",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -1068,7 +1109,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -1078,7 +1119,7 @@
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZU5hZEJRWEtxMEN1TGZrOC1vdEliNm9ZZmVjRjFlTFJGc0lRSkk1TTRGckQ2N3ZZVDRzdXd0SlJyNHR0bkRJSDctTE55eERDMXEyRnRjbGh3OWJ0UXVuQ1VrbFVUZjhUU0hEQmRCZVBFUkl6VnhCTHp0NDlfeWttMGFkeXE5My1BRDN1S3Zha0FWVzhLMlJtWFhRandsSnJxSnprTGFKbWVFRHpoNF9aSzhLeGZ3d2hNdHc?oc=5",
         "summary": "Airbnb任命TBWA为英国首家全球创意机构Campaign UK",
         "company": "ABNB",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -1106,7 +1147,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -1115,7 +1156,7 @@
         "title": "Lyft开始在纳什维尔通过其应用程序提供Waymo机器人出租车服务",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPM3RJcEEtNkpUUkstUFY0VmJhSlVFSTg2WlBLeFJVQzdKZHVoR05jbUFYcVNjSG1BNm5Udks1cS14M0pLVW5rUlVpeERCZjEyVzJITU5Ha0tCWU1SV1k2dE1aeXl0LVllWWd0bzVhZkFZTzhpaTR0OUNrLWJWSHlKcjVQV0d2R3psbjhhNEY4dWtzZkUzQkZHZ3lOY2lZaGZFZV9sLW1vb3NJV2RhajZGcXl1N0FjZUU?oc=5",
         "summary": "Lyft开始在纳什维尔Bloomberg.com的应用程序中提供Waymo机器人出租车服务",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": null,
@@ -1139,7 +1180,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -1260,7 +1301,7 @@
         "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNQ0ktQldTak9rYzBLT0tESlBiVDZubFgtdmplckNLVC1mRkJhOFgwM1RtTUNISXp6WHQyamVQUlZLVWtqM1kzSXFzRUVJeXNtdFpXYnhzLV9ITk5JYzAzMm5GSGVYcjc4SzdzTHBDSEIyamMzZmNmUEczbzJQc1ZqU2V0QnB2dm9IeTVlVTRJZlpiNFVGMDVtblZpTG5Vblo3bTNjbzVfRVBsZVdhNTVwQUdtaXV2OUxiY2F4dXNJaw?oc=5",
         "summary": "",
         "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-08",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -1289,7 +1330,85 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-08",
+        "source": "Investing.com",
+        "category": "industry_news",
+        "title": "Airbnb在高盛会议上： Chesky在Investing.com上看到了更广阔的发展轨迹",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNM3dzRV80S0ZBUUZTb21icEZiWTFvY0dKUjJVSHk3QVE1QXJnTGpSdUtwNUU4c2FfTk5mTE1tejNwaVVxeVRNT0F4TEo4V3REUlJLS2NsbXFuSEJwcERqX2lRd3U1ZlRrdzhDdU9rRWdWRnZyVlFZeDlmMFYtaXpteXBGTzQzY0swTTQwY1Fsc3BFMDQydDJHLUw1SXVxWl8wRlhBekt1WTdkU0EtSW5EZkp5bFJDa1BOelpLNg?oc=5",
+        "summary": "Airbnb在高盛会议上： Chesky看到了更广阔的发展轨迹Investing.com Investing.com UK",
+        "company": "ABNB",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-08",
+        "date_status": "known",
+        "entity_id": "ABNB",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "重点公司(ABNB)",
+          "实质动态/官方清单保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "title_original": "Airbnb at Goldman Sachs conference: Chesky sees wider runway By Investing.com",
+        "summary_original": "Airbnb at Goldman Sachs conference: Chesky sees wider runway By Investing.com&nbsp;&nbsp;Investing.com UK",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-08",
+        "source": "Investing.com",
+        "category": "industry_news",
+        "title": "为什么今天Airbnb股票攀升？ 作者： Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQktIYTNqdGZVT1hqNlNIRktkV1Rsb0FfMFB6dU5RSW1aQ3cwOS1ySVNTXzg3c0FKWnlvVUhnR3lEd1dRSDFsU1hCeEFOOVh6MUxQTHZqYmFEY1JyTDhIcEtMdFlja0N0UzNBRC14R1dxTnRqbi1hTTZ4VnByWjZPOEc3RTFrSUFoZzMyMm81SUFnSGFMcWpIY2dUUQ?oc=5",
+        "summary": "为什么今天Airbnb股票攀升？ 作者： Investing.com Investing.com英国",
+        "company": "ABNB",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-08",
+        "date_status": "known",
+        "entity_id": "ABNB",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "重点公司(ABNB)",
+          "实质动态/官方清单保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "title_original": "Why is Airbnb stock climbing today? By Investing.com",
+        "summary_original": "Why is Airbnb stock climbing today? By Investing.com&nbsp;&nbsp;Investing.com UK",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-08",
@@ -1493,7 +1612,7 @@
         "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9jWTY3Z1JsQ1MzUEVzNERUUWxXUnhfX3dCSjVuUUhMcGJfQ05WZVFmZkc0aUNVSm5oRUIxV1pwejZMMVdWY0dJMU85dkVqM2Y0?oc=5",
         "summary": "飞猪与易斯达航空达成合作&nbsp;&nbsp;品橙旅游",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": "FLIGGY",
@@ -1518,17 +1637,17 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
-        "source": "stcn.com",
+        "source": "证券时报",
         "category": "china_industry",
         "title": "飞猪：与易斯达航空达成合作 围绕AI等领域深化合作",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8tQ1FKcTZXYTJ5QmtwQ3dWYjV0U0FXMXFTSEJrSHhmUHdONHh2VE90V3E0c2pYYmlCbjJCcnlKZXlCRHBrUzRxTDhFQmdMNGoyMTJPaTctSVotUzQ?oc=5",
-        "summary": "飞猪：与易斯达航空达成合作 围绕AI等领域深化合作&nbsp;&nbsp;stcn.com",
+        "summary": "飞猪：与易斯达航空达成合作 围绕AI等领域深化合作&nbsp;&nbsp;证券时报",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": "FLIGGY",
@@ -1539,12 +1658,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 64,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关11/重要10/基本面0/证据10/来源2)",
-          "重点公司(FLIGGY)",
-          "实质动态/官方清单保底60"
+          "评分(相关11/重要10/基本面0/证据14/来源4)",
+          "重点公司(FLIGGY)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -1554,7 +1672,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
@@ -1565,12 +1683,12 @@
         "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
         "source_channel": "express",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "merged_same_article": 1,
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:45",
+        "summary_generated_at": "2026-09-13 09:24:35",
         "entity_id": "TCOM",
         "is_core_company": true,
         "content_type": "ma_investment",
@@ -1639,7 +1757,7 @@
         "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1iSVgzdEI1a2hnN1IzZWhLRmJoUGlablE3bGJ1LS1zZWRSY0MyZENXZWpJOF9MQXNZMjlQWVpQaVo2YjBDbjhHOFR3?oc=5",
         "summary": "吉祥航空调整涉及日本航线燃油附加费&nbsp;&nbsp;CARNOC.com",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-08-31",
         "date_status": "known",
         "entity_id": null,
@@ -1667,7 +1785,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-08-31",
@@ -1753,7 +1871,7 @@
         "title": "旅游市场强制消费问题典型案例（2026年第六批）",
         "url": "https://www.mct.gov.cn/whzx/whyw/202609/t20260911_967122.htm",
         "summary": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": null,
@@ -1776,7 +1894,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
@@ -1786,7 +1904,7 @@
         "title": "2026中期報告",
         "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0911/2026091100568_c.pdf",
         "summary": "財務報表&#x2f;環境、社會及管治資料 - [中期&#x2f;半年度報告",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "merged_same_article": 1,
@@ -1810,7 +1928,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -1827,7 +1945,7 @@
         "ir_release_kind": "capital_governance",
         "content_type": "general",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "policy_version": "2026-09-04-v6",
@@ -1845,7 +1963,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -1862,7 +1980,7 @@
         "ir_release_kind": "capital_governance",
         "content_type": "general",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "policy_version": "2026-09-04-v6",
@@ -1880,7 +1998,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-03",
@@ -1897,7 +2015,7 @@
         "ir_release_kind": "capital_governance",
         "content_type": "general",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-03",
         "date_status": "known",
         "policy_version": "2026-09-04-v6",
@@ -1915,7 +2033,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-02",
@@ -1928,12 +2046,12 @@
         "primary_document": "d431415d6k.htm",
         "report_date": "2026-09-02",
         "file_description": "FORM 6-K",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "summary": "Trip.com Group Limited于2026-09-02提交6-K，报告期截至2026-09-02，披露境外发行人的重要公告或经营与财务信息。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:44",
+        "summary_generated_at": "2026-09-13 09:24:34",
         "sec_summary_version": 3,
         "sec_summary_kind": "metadata_detail",
         "entity_id": "TCOM",
@@ -1966,7 +2084,7 @@
         "title": "審計委員會會議日期及2026年第二季度及上半年業績公告日期",
         "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0902/2026090201798_c.pdf",
         "summary": "董事會召開日期",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "entity_id": null,
@@ -1989,7 +2107,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-02",
@@ -2081,7 +2199,7 @@
         "ir_release_kind": "capital_governance",
         "content_type": "general",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-08-30",
         "date_status": "known",
         "event_id": "ev_c9c885a292",
@@ -2101,21 +2219,59 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       }
     ],
     "company_news": [
       {
         "date": "2026-09-11",
-        "source": "bjnews.com.cn",
+        "source": "川观新闻",
+        "category": "company_news",
+        "title": "携程助力入境游红利向更多城市延伸，上半年四五线城市入境酒店商家增速均超46%",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE85S3dyQ3AyNWdoMnlmeVlFaVJFcjhyNk0xQWRaN3hzbnUydmxoZXNkOWZCSTJXSjYwbDE1elAteGI3ZzJ5RjVGNTN0OV9rZw?oc=5",
+        "summary": "携程助力入境游红利向更多城市延伸，上半年四五线城市入境酒店商家增速均超46%&nbsp;&nbsp;川观新闻",
+        "company": "携程",
+        "region_classification": "domestic",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-11",
+        "date_status": "known",
+        "entity_id": "TCOM",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "general",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception"
+        ],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 76,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关11/重要4/基本面14/证据20/来源2)",
+          "重点公司(TCOM)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "core_company"
+        ],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-10",
+        "source": "新京报",
         "category": "company_news",
         "title": "携程计划吸引两亿海外游客 成龙担任入境游大使亲自参与广告创意",
         "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1lcU5BSnZDUWlqUXZtenZwbmk2WlFhMk1PV01lWFpwZ1FVSGtVdUxZNlY4cHBlTGgzdlc5MDVfUzQ2VkxuWUNaUjZUSTk1VHNrOWUwcjU2eWM3N1IwLUNjZ3BjVnA?oc=5",
-        "summary": "携程计划吸引两亿海外游客 成龙担任入境游大使亲自参与广告创意&nbsp;&nbsp;bjnews.com.cn",
+        "summary": "携程计划吸引两亿海外游客 成龙担任入境游大使亲自参与广告创意&nbsp;&nbsp;新京报",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
-        "published_at": "2026-09-11",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "TCOM",
         "is_core_company": true,
@@ -2140,18 +2296,18 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
-        "source": "观点网",
+        "source": "上观新闻",
         "category": "company_news",
-        "title": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区",
-        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE81ZnhLcVRjUlNPS3F2Sno3SEFhdWdQU2pYbEpGeHoyRjNsbzlnVTFOTmxfcUdSYlE0cl8tTElpbVFlX3dvYUFGelYwejNrdw?oc=5",
-        "summary": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区&nbsp;&nbsp;观点网",
+        "title": "携程发布2027全球高端餐厅榜单，把味觉坐标装进旅途",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCOW1xdUJpNTBRN01mempPbmRfMW91bFNKa2JJZDVFVmF0UWpaVnNPMTZkSVhYNXM4UmtTLUdxZHdSTE44bVdJeV9PWkNCSkxtb1ZzT1dFbUNTZw?oc=5",
+        "summary": "携程发布2027全球高端餐厅榜单，把味觉坐标装进旅途&nbsp;&nbsp;上观新闻",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "TCOM",
@@ -2177,54 +2333,55 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
-        "source": "Sina",
+        "source": "观点网",
         "category": "company_news",
-        "title": "服贸观澜｜携程高级副总裁王韦：入境游市场正从头部城市向纵深下沉，多语种AI工具成关键助力",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1iaGdLd0c3clExbHYzMWhfS09pRi1JajgyMGRyMlk4d3dYUVdDNkV2ZGV0Q0N0SkZoWGw2Y3RPVXZPQmFIVHg4M0k0LWFuTTlVa0dJTFU0RzZSVHdLUzdpNE1BblJQWUk0dmpwYVNuRS1mQk1YV0d0WTlmd29TdUk?oc=5",
-        "summary": "服贸观澜｜携程高级副总裁王韦：入境游市场正从头部城市向纵深下沉，多语种AI工具成关键助力&nbsp;&nbsp;k.sina.com.cn",
+        "title": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE81ZnhLcVRjUlNPS3F2Sno3SEFhdWdQU2pYbEpGeHoyRjNsbzlnVTFOTmxfcUdSYlE0cl8tTElpbVFlX3dvYUFGelYwejNrdw?oc=5",
+        "summary": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区&nbsp;&nbsp;观点网",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "TCOM",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "product",
         "policy_version": "2026-09-04-v6",
         "matched_rule_ids": [],
         "manual_label": null,
-        "substantive_company_change": false,
+        "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面14/证据10/来源2)",
-          "重点公司(TCOM)"
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
+          "重点公司(TCOM)",
+          "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "product",
           "core_company"
         ],
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
-        "source": "新浪财经",
+        "source": "东方财富",
         "category": "company_news",
         "title": "携程美食林发布2027年度高端餐厅榜单",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ORnp0Y2hteVZsLU9IQ1pxdXRaNUx5T3N0cHozd0o1RTV0d2taQnEtTldKWUxCS1MtdkJvNExYR3p1R01DLXI4LXU1RklTdUxXQzZRMG9nZ0p0RVJIT0NFMWo2V2pWUkU4V2E4YUtZOFR1U3lhZWZoZg?oc=5",
-        "summary": "携程美食林发布2027年度高端餐厅榜单&nbsp;&nbsp;新浪财经",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1lQ2wxdlZCR053ek1FNHd5QmV1Q2ZhWl9QcFIwY1ZWSDc1VlFDS2E1T3lNNk54WnNEZ0JCcmsyWVN2QUdnTHpja1YzYkkwdUlXVDM0UXFDaFRsUnNLaGM2OGZpNlhsUQ?oc=5",
+        "summary": "携程美食林发布2027年度高端餐厅榜单&nbsp;&nbsp;东方财富",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "merged_same_article": 1,
@@ -2251,18 +2408,18 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
-        "source": "Sina",
+        "source": "新浪网",
         "category": "company_news",
         "title": "罚没51.79亿元 中国官方对携程作出处罚",
         "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE53WTExOHN1OGItSjBNYlZVREFJTy1NZVpJanZpUHQtM1pVX21kaHBIWVJDeEJIUUhkeTFxUlRpWGVFemwwVURhNVcxQ0dFa0N4UDF6Zmw1T2tFSVNtV1lGdUNmdHBaTXViZ0J2dHFvQXk?oc=5",
-        "summary": "罚没51.79亿元 中国官方对携程作出处罚&nbsp;&nbsp;k.sina.com.cn",
+        "summary": "罚没51.79亿元 中国官方对携程作出处罚&nbsp;&nbsp;新浪网",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "TCOM",
@@ -2287,7 +2444,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -2373,7 +2530,7 @@
         "summary": "同程、携程、飞猪、去哪儿、美团完成机票超售整改&nbsp;&nbsp;鞭牛士",
         "company": "同程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-08",
         "date_status": "known",
         "event_id": "ev_4fd2511e44",
@@ -2407,7 +2564,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-08",
@@ -2492,12 +2649,12 @@
         "source": "中国民航网",
         "category": "company_news",
         "transport_security": "http",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-07",
         "date_status": "known",
         "summary": "该航线由厦门航空使用波音787宽体客机执飞，每周三、周五、周日各执行一班。去程航班MF821计划北京时间00:50自厦门起飞，当地时间06:35抵达伦敦希思罗机场；回程航班MF822计划当地时间12:35从伦敦起飞，预计北京时间次日07:00返回厦门。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:45",
+        "summary_generated_at": "2026-09-13 09:24:35",
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
@@ -2873,185 +3030,6 @@
         "translation_status": "ready",
         "summary_status": "generated",
         "summary_generated_at": "2026-09-12 09:31:35"
-      },
-      {
-        "date": "2026-09-01",
-        "source": "亿邦动力网",
-        "category": "company_news",
-        "title": "同程旅行暑期夜游报告：夜游产品预订热度增长52%",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WLWtfMTdSMzI4NzQ0U2xIZFViRVo2MFo4VUFmQUF6WUlmMkNGeU9ZRUpwbXI5Z0h0Ykd3T3pfSkpaZGZ2TFhrQ0pzYmtKWFU1WWYzZjhLLTk?oc=5",
-        "summary": "同程旅行暑期夜游报告：夜游产品预订热度增长52%&nbsp;&nbsp;亿邦动力网",
-        "company": "同程",
-        "fetched_at": "2026-09-08 09:22:27",
-        "published_at": "2026-09-01",
-        "date_status": "known",
-        "event_id": "ev_8517e2cd00",
-        "related_sources": [
-          "证券之星"
-        ],
-        "entity_id": "TONGCHENG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 61,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据20/来源2)",
-          "重点公司(TONGCHENG)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-08 09:26:31"
-      },
-      {
-        "date": "2026-08-31",
-        "source": "证券之星",
-        "category": "company_news",
-        "title": "同程旅行：暑期夜经济相关产品预订热度同比增长52%",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBCQW5zbl9nTW1UTm9PbGJJWmZJOG44OFVmdUJGTzlaWjhYRkRCTVA1SzRHNUFxa1J5NDNOTUtqTS1qcE9DTEhCYk5QcFc3dHBPazNCbXhfdWJ5ak1WQTRBbQ?oc=5",
-        "summary": "同程旅行：暑期夜经济相关产品预订热度同比增长52%&nbsp;&nbsp;证券之星",
-        "company": "同程",
-        "fetched_at": "2026-09-07 09:17:38",
-        "published_at": "2026-08-31",
-        "date_status": "known",
-        "event_id": "ev_8517e2cd00",
-        "folded_into": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WLWtfMTdSMzI4NzQ0U2xIZFViRVo2MFo4VUFmQUF6WUlmMkNGeU9ZRUpwbXI5Z0h0Ykd3T3pfSkpaZGZ2TFhrQ0pzYmtKWFU1WWYzZjhLLTk?oc=5",
-        "entity_id": "TONGCHENG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 61,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据20/来源2)",
-          "重点公司(TONGCHENG)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-07 09:18:39"
-      },
-      {
-        "date": "2026-08-31",
-        "source": "新浪财经",
-        "category": "company_news",
-        "title": "中国很“Cool” 服务很暖|携程|游客|入境|旅游|景区",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSjhPenJZajhGQmxUd3hoODdLa1NFTl9wNk1ldm5nRjM1RlRXY0dXdm9LSXllTDZSdHVINDRldDVtVXB3bXNlbTc0ZVdEWGtkSUlUYlVBMHctYjg0T1g4TGtOSFR0SG1fMldCYXFhSTB2SThTSXNnQ2htX1dVYzRYOXJnWTh2THlUWUhzR1UzcVppZkJxb1ZqeA?oc=5",
-        "summary": "中国很“Cool” 服务很暖|携程|游客|入境|旅游|景区&nbsp;&nbsp;新浪财经",
-        "company": "携程",
-        "fetched_at": "2026-09-06 09:18:55",
-        "published_at": "2026-08-31",
-        "date_status": "known",
-        "entity_id": "TCOM",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 63,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关8/重要4/基本面14/证据10/来源2)",
-          "重点公司(TCOM)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company",
-          "demand"
-        ],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-06 09:19:54"
-      },
-      {
-        "date": "2026-08-30",
-        "title": "2026.08.30 環境、社會及管治委員會之工作範圍",
-        "url": "https://manager.wisdomir.com/files/594/2026/0830/20260830191501_46573104_tc.pdf",
-        "summary": "",
-        "source": "嘀嗒出行 IR",
-        "category": "company_news",
-        "entity_id": "DIDA",
-        "company": "DIDA",
-        "is_core_company": false,
-        "source_channel": "domestic_ir_official",
-        "is_ir_source": true,
-        "ir_release_kind": "other",
-        "content_type": "general",
-        "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关0/重要4/基本面0/证据4/来源5)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
-      },
-      {
-        "date": "2026-08-30",
-        "title": "2026.08.28 (1) 首席執行官變更 (2) 首席財務官變更 (3) 辭任副總裁 (4) 公司秘書變更 (5) 授權代表變更及(6) 法律程序文件代理人變更",
-        "url": "https://manager.wisdomir.com/files/594/2026/0828/20260828193001_58120499_tc.pdf",
-        "summary": "",
-        "source": "嘀嗒出行 IR",
-        "category": "company_news",
-        "entity_id": "DIDA",
-        "company": "DIDA",
-        "is_core_company": false,
-        "source_channel": "domestic_ir_official",
-        "is_ir_source": true,
-        "ir_release_kind": "other",
-        "content_type": "general",
-        "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关0/重要4/基本面18/证据4/来源5)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
       }
     ]
   },
@@ -3065,7 +3043,7 @@
         "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE80SlBZQ1gyREJ2SktFZzQ0ZU9uMlFOcFZQMVBYOHVaTlhkMFdqbjRaN1RQbjljNi03UDVuSWtTYmRTNUloSmhZSlZKMXlxZ2c?oc=5",
         "summary": "",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3094,17 +3072,55 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-11",
+        "source": "safariindia.com",
+        "category": "industry_news",
+        "title": "Expedia Group任命新的首席财务官",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQbnhmNTJTM2ppdTQ3NjFiUWR4YXBZV29qRmN2VzRoQWtfVUJtUDVfVmxXcW91ZVJ3b2tFWVpIZ0wzb19kQUoyLWpXOUxCTHM5bW43cnJnbHhpaVdYNnluTmNGTUZOX09NakNrbzJfOFBTbXNFMVhOY2JzeC1fYl90UA?oc=5",
+        "summary": "Expedia Group任命新的首席财务官safariindia.com",
+        "company": "EXPE",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-11",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "management_org",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 66,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "重点公司(EXPE)",
+          "正式制度/组织变化"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "organization",
+          "core_company"
+        ],
+        "title_original": "Expedia Group Appoints New Chief Financial Officer",
+        "summary_original": "Expedia Group Appoints New Chief Financial Officer&nbsp;&nbsp;safariindia.com",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
-        "source": "Yahoo Finance UK",
+        "source": "PR Newswire",
         "category": "industry_news",
         "title": "Agoda与高雄市政府合作支持全球旅游认可",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOcGg1clUxZ0VjTTVHUXlEZ0hoVklEbmNEemlwYlBrMXdUWE50TG1uR2ZSbkt4alVxSVNfUnYwbVh0MWtzczJaR0JSNU1XRzFST2lkS2hLVlgwdkladEFULXRVTkpFZkFqMEhmNC1QNldWS0tIeGJMNTA3YnJEYVd6eldSUjQ5OUV0amZ0TXUzRjJWVU0?oc=5",
-        "summary": "",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVTJjZ1BfRF8wbjNDWTJWdjVwNkV3bzd2MG9Qc0xfdU1wbk5GNVJabEpFSEJpNFlFd19IYlc4VjBKVUxlLU04VEg5NlFPWjBuamdZcnFfazZ3d3hVSENnb2RnV3Y4VWJnbXBUaFllX1BuSnh3eHFEUFQ1Zk5ZVEpLV3JzbWc2MFhQYjFLS1o2Sm1LWVl2Wno5U2RHQ2Jka3JUeHExU0dtZlpQVjNjNUJvSkJvVkRlanVCcWlYbFJraHlWX2twU2ZMZHFWa2Q2X0tIekJ3MTdn?oc=5",
+        "summary": "Agoda与高雄市政府合作，支持全球旅游认可PR Newswire",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3120,6 +3136,7 @@
         "selection_reasons": [
           "评分(相关8/重要10/基本面0/证据10/来源2)",
           "重点公司(BKNG)",
+          "摘要重复标题(-20)",
           "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
@@ -3128,11 +3145,11 @@
           "core_company"
         ],
         "title_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition",
-        "summary_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition&nbsp;&nbsp;Yahoo Finance UK",
+        "summary_original": "Agoda Partners Kaohsiung City Government to Support Global Tourism Recognition&nbsp;&nbsp;PR Newswire",
         "display_ready": true,
         "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "merged_same_article": 1
       },
       {
@@ -3143,7 +3160,7 @@
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNOFRZc185aVI0TGptb3VOdnp1bmd6dHhnb3hnTkVwRmxpandHYUUyY1VyemdWc2pPdzhoUXc0eEtGaFlpSmExWnJ3dkZwSU9VWVZtLWZPMk83RmpsZ2U3Qld4aWE0Q0RUVWJnajgycDlTdVBiRVFDRV9adzlmbm5WLUp0aWJoMEgwUlU0RUw3d3BXSENtNFNPbkMwUS1TVThmVEdwdFg5a0tnQndlTklUT1I1RzZlRkpma2hJ?oc=5",
         "summary": "Agoda与高雄市政府合作提升目的地形象traveldailynews.asia",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3171,17 +3188,17 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
         "source": "Voyages d'affaires",
         "category": "industry_news",
         "title": "Booking.com因收购Etraveli被欧洲法院阻止",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNSmlKcUxQMGdfcXM5dzFPYmFjN2pZSjR0Um01Qmttc3phaEM3bWl6WElQMnJ6ZDFFeHdfeHd5T2V3SzdfaWx2S2ZMTnZhVHZOVjAwc2k4bEMtUnJFWTdTdHZUak8yajlCTXRmR0tocjhjdmxjdDlEckFxMy1XcUFQd2hXUWVaRDZRZ2lUV1VVdjNpNEdFb1lZbTQxTWxIZw?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORXpzdlowS2I3ZVNkNGJFaXUwVjNOSjBtcHdCR2lETTFFMExTcmY4djlHSTlZbGo2SzZUQ1RoOG5HWFBqaUpTUWYxM1hGbFA2NWMtWFBpc3VZX3JiQUZUQTVORWRuTjJtbi00a1p6MlNVYzZaSDIzMDB4RW5tcW15WEdTU3lKQQ?oc=5",
         "summary": "Booking.com 因收购Etraveli Voyages d 'affaires被欧洲法院阻止",
         "company": "BKNG",
-        "fetched_at": "2026-09-11 09:26:22",
+        "fetched_at": "2026-09-12 09:30:32",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3209,57 +3226,18 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-11 09:27:29"
+        "summary_generated_at": "2026-09-12 09:31:35",
+        "merged_same_article": 1
       },
       {
         "date": "2026-09-09",
-        "source": "FTN news",
-        "category": "industry_news",
-        "title": "Hotels.com推出商务差旅预订工具",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRFpiY3BwOXhvekdwZ3ZYRUR6MTJtOGZTRVF6TmFKNjJWVDkzaDV4LXgxaWticU0xT0FrR1BaSFpqY0RtVU90SWZpanNsV0djelZOdlNSY3ZYSE8ySUhTQ0FBYTlIUW5Mc0VXenBIeHRKanUtRkN5Y0dOdXFjdjdwMVRrd0ljcW00cUhsTk1HcTg?oc=5",
-        "summary": "",
-        "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
-        "published_at": "2026-09-09",
-        "date_status": "known",
-        "entity_id": "EXPE",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "product",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [
-          "topic.hotel",
-          "topic.hotel.ota_direct_exception"
-        ],
-        "manual_label": null,
-        "substantive_company_change": true,
-        "selection_score": 70,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关19/重要14/基本面0/证据10/来源2)",
-          "重点公司(EXPE)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "product",
-          "core_company"
-        ],
-        "title_original": "Hotels.com Launches Business Travel Booking Tools",
-        "summary_original": "Hotels.com Launches Business Travel Booking Tools&nbsp;&nbsp;FTN news",
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
-      },
-      {
-        "date": "2026-09-09",
-        "source": "Investing.com",
+        "source": "Expedia",
         "category": "industry_news",
         "title": "Expedia Group亮相高盛Communacopia +技术大会： AI PUSH",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOc1NMVUVReTBTajZCXzBlVGtSbkZEM0hRSG0wNndJVGx5S2tYRzdmLUgybFRMWS1LMWlzeHU4TlZUNkE1RnkyRWhJRzRxYk1XYWZIbjJDYkd6cXNHNkdpTDZPaGlZS01HVFdCUnhZc2NROEpXRDdVSUlVdmFrWXZMXzZCLUJVdUd2M01sS0xQOHVrUGtEOEpvNWJudGtxMUN5MXNrMnJXcGx5b3FMRjdXcTlrSmJ0T1hxQWtRX0NDWjBoOV9XdEFYM0VB?oc=5",
         "summary": "Expedia Group亮相高盛Communacopia +技术大会： ai push Investing.com",
         "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -3289,7 +3267,47 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-09",
+        "source": "FTN news",
+        "category": "industry_news",
+        "title": "Hotels.com推出商务差旅预订工具",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRFpiY3BwOXhvekdwZ3ZYRUR6MTJtOGZTRVF6TmFKNjJWVDkzaDV4LXgxaWticU0xT0FrR1BaSFpqY0RtVU90SWZpanNsV0djelZOdlNSY3ZYSE8ySUhTQ0FBYTlIUW5Mc0VXenBIeHRKanUtRkN5Y0dOdXFjdjdwMVRrd0ljcW00cUhsTk1HcTg?oc=5",
+        "summary": "",
+        "company": "EXPE",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-09",
+        "date_status": "known",
+        "entity_id": "EXPE",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "product",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception"
+        ],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 70,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关19/重要14/基本面0/证据10/来源2)",
+          "重点公司(EXPE)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "product",
+          "core_company"
+        ],
+        "title_original": "Hotels.com Launches Business Travel Booking Tools",
+        "summary_original": "Hotels.com Launches Business Travel Booking Tools&nbsp;&nbsp;FTN news",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "insufficient_evidence",
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -3299,7 +3317,7 @@
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSXVsTFBmQkpMU1ZXN2VSNnV0Nm5MSEFqVU5EaW1XYnFHQldoc1pORTQ3emwybGE5bElaWDNfdEVyV2VTeUQyUmdja0ZNOWVNaUxvUmx5LVo1T1FBbnlJWUYzTE5OY2NadTlKblhoQXNiVHZJV3lSVTNKd0Mxb0JaZHdPRHdhNkVRS2JMN3B0YjkxQjg?oc=5",
         "summary": "",
         "company": "ABNB",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -3330,7 +3348,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -3340,7 +3358,7 @@
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZU5hZEJRWEtxMEN1TGZrOC1vdEliNm9ZZmVjRjFlTFJGc0lRSkk1TTRGckQ2N3ZZVDRzdXd0SlJyNHR0bkRJSDctTE55eERDMXEyRnRjbGh3OWJ0UXVuQ1VrbFVUZjhUU0hEQmRCZVBFUkl6VnhCTHp0NDlfeWttMGFkeXE5My1BRDN1S3Zha0FWVzhLMlJtWFhRandsSnJxSnprTGFKbWVFRHpoNF9aSzhLeGZ3d2hNdHc?oc=5",
         "summary": "Airbnb任命TBWA为英国首家全球创意机构Campaign UK",
         "company": "ABNB",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "ABNB",
@@ -3368,7 +3386,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -3415,7 +3433,7 @@
         "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNQ0ktQldTak9rYzBLT0tESlBiVDZubFgtdmplckNLVC1mRkJhOFgwM1RtTUNISXp6WHQyamVQUlZLVWtqM1kzSXFzRUVJeXNtdFpXYnhzLV9ITk5JYzAzMm5GSGVYcjc4SzdzTHBDSEIyamMzZmNmUEczbzJQc1ZqU2V0QnB2dm9IeTVlVTRJZlpiNFVGMDVtblZpTG5Vblo3bTNjbzVfRVBsZVdhNTVwQUdtaXV2OUxiY2F4dXNJaw?oc=5",
         "summary": "",
         "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-08",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -3444,7 +3462,85 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-08",
+        "source": "Investing.com",
+        "category": "industry_news",
+        "title": "Airbnb在高盛会议上： Chesky在Investing.com上看到了更广阔的发展轨迹",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNM3dzRV80S0ZBUUZTb21icEZiWTFvY0dKUjJVSHk3QVE1QXJnTGpSdUtwNUU4c2FfTk5mTE1tejNwaVVxeVRNT0F4TEo4V3REUlJLS2NsbXFuSEJwcERqX2lRd3U1ZlRrdzhDdU9rRWdWRnZyVlFZeDlmMFYtaXpteXBGTzQzY0swTTQwY1Fsc3BFMDQydDJHLUw1SXVxWl8wRlhBekt1WTdkU0EtSW5EZkp5bFJDa1BOelpLNg?oc=5",
+        "summary": "Airbnb在高盛会议上： Chesky看到了更广阔的发展轨迹Investing.com Investing.com UK",
+        "company": "ABNB",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-08",
+        "date_status": "known",
+        "entity_id": "ABNB",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "重点公司(ABNB)",
+          "实质动态/官方清单保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "title_original": "Airbnb at Goldman Sachs conference: Chesky sees wider runway By Investing.com",
+        "summary_original": "Airbnb at Goldman Sachs conference: Chesky sees wider runway By Investing.com&nbsp;&nbsp;Investing.com UK",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-08",
+        "source": "Investing.com",
+        "category": "industry_news",
+        "title": "为什么今天Airbnb股票攀升？ 作者： Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQktIYTNqdGZVT1hqNlNIRktkV1Rsb0FfMFB6dU5RSW1aQ3cwOS1ySVNTXzg3c0FKWnlvVUhnR3lEd1dRSDFsU1hCeEFOOVh6MUxQTHZqYmFEY1JyTDhIcEtMdFlja0N0UzNBRC14R1dxTnRqbi1hTTZ4VnByWjZPOEc3RTFrSUFoZzMyMm81SUFnSGFMcWpIY2dUUQ?oc=5",
+        "summary": "为什么今天Airbnb股票攀升？ 作者： Investing.com Investing.com英国",
+        "company": "ABNB",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-08",
+        "date_status": "known",
+        "entity_id": "ABNB",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "ma_investment",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": true,
+        "selection_score": 60,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关5/重要4/基本面0/证据10/来源2)",
+          "重点公司(ABNB)",
+          "实质动态/官方清单保底60"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "capital",
+          "competition",
+          "core_company"
+        ],
+        "title_original": "Why is Airbnb stock climbing today? By Investing.com",
+        "summary_original": "Why is Airbnb stock climbing today? By Investing.com&nbsp;&nbsp;Investing.com UK",
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-08",
@@ -3493,7 +3589,7 @@
         "title": "中东复苏再次陷入停滞： Skift旅行健康指数",
         "url": "https://skift.com/2026/09/11/middle-easts-recovery-stalled-again-skift-travel-health-index/",
         "summary": "中东的复苏仍然脆弱。 更新的旅行警告使快速反弹的可能性降低，使住宿提供商专注于重建需求和恢复定价能力。",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": null,
@@ -3519,7 +3615,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
@@ -3528,7 +3624,7 @@
         "title": "印度旅游平台Travelxp推出代理AI旅程礼宾服务",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQT2ttNy0xYXpQWVl4VGVYYVJLU0VCbU9xWExKRlp5WjZFOVF0TTIwR0d1bHlrdTgxd2lTdkJxUW9rVm5aTS1QekV5aWJvTWdZRHlBaDkwSzZJRGo0SzlqX3RldV9qcHZjSUFUUW90NV82YlJOMkh0bVFpYkNEMHdTV1c5Rng3cloyR2JOVU90czdOdmptcDdnd3Z1cnZULXJUUzhzTDMzMlRkNE1QV3c?oc=5",
         "summary": "印度旅游平台Travelxp推出代理AI旅行礼宾服务PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": null,
@@ -3557,7 +3653,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
@@ -3566,7 +3662,7 @@
         "title": "借助Spotnana优惠，万豪将忠诚度纳入企业预订工具",
         "url": "https://skift.com/2026/09/10/marriott-brings-loyalty-into-corporate-booking-tools-with-spotnana-deal/",
         "summary": "万豪赢得商务旅行者的最佳武器是其忠诚度计划。 但到目前为止，它无法在预订门户网站中显示忠诚度信息，公司迫使员工向我们",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": null,
@@ -3594,7 +3690,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
@@ -3604,7 +3700,7 @@
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMHR4dFpCdVZ3VnpiN2tJbUpVY2ZGQjlsTjctd0pQOWpZXzVMTWl3am1UZnprZ01UTDZqTlBqM0YybmxOOXM0c1hzNDcwcUFQbFBmeC00U1phWXFGT2pwQlNSSHEtSkZxSG1TMGFNOG9HY1FYeGMweUlqSHhveU9SQ2hBclVnbTVNaTNqajBCSVZmLW1FdXBfd2lzY3JldmhSc3dFNFBELTBPLWM?oc=5",
         "summary": "Expedia首席执行官，负责人工智能在旅行规划和预订方面日益重要的作用PhocusWire",
         "company": "EXPE",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "EXPE",
@@ -3635,7 +3731,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "suppress_core_badge": true
       },
       {
@@ -3645,7 +3741,7 @@
         "title": "Navan在第二季度增加收入，收购BoomPop以提高在线会议能力",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcTFVVlhIWDNweGJxa3BBVWNfamFPb1BpdzZuaUl1MjB1czNhS2IyN1NadVJfZGs2UF9VWlVjdnpjLXU0c3BzbXFVODdNTTdvVDlfaWJHUzdIc21ZUFVWTTNFSDc3OXlTNWtZMUV6NEdTWEMzSzZ0RVloTTVacUhCRUVubHpnUjQ?oc=5",
         "summary": "Navan在第二季度增加收入，收购BoomPop以提高在线会议功能PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": null,
@@ -3674,17 +3770,17 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
         "source": "Voyages d'affaires",
         "category": "industry_news",
         "title": "Booking.com因收购Etraveli被欧洲法院阻止",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORXpzdlowS2I3ZVNkNGJFaXUwVjNOSjBtcHdCR2lETTFFMExTcmY4djlHSTlZbGo2SzZUQ1RoOG5HWFBqaUpTUWYxM1hGbFA2NWMtWFBpc3VZX3JiQUZUQTVORWRuTjJtbi00a1p6MlNVYzZaSDIzMDB4RW5tcW15WEdTU3lKQQ?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQT2lJT2t1emJQeVJXRGJJUzNWakJWOVZ2aXp6VGhCN2lFX1d4Y3RRZHJvX1lKbkpUQUF3SGNDWXdtOWVQLUhPXzR1TFJ2V01ld3BleFRkaEltdm91ZzZTcFd5RTE3STB1LW1FVDRXODZ0YlFKZGl0eTUtT0J5eGpMd1pKaU16UHM?oc=5",
         "summary": "Booking.com因收购Etraveli Voyages d 'affaires被欧洲法院阻止",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3712,7 +3808,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "suppress_core_badge": true
       },
       {
@@ -3723,7 +3819,7 @@
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNOEFkU25ybFp1RTJUU2tOR3Rfc3duUkhmMWVYa29rTGdPam01Mm15ZGl4TE1yQTdzcGNhMkNmNVZuUjdCeUx4a0Zjcl9TUnBYVERpRDRzRDdWS01uT3liQVh3UzVUWGR2ZHQ1akxobU4waURWRTZ1MDMxajVTaXZGUHVkQmhXYl91RF9TZW0xUEFBOERSREszZg?oc=5",
         "summary": "欧盟法院维持阻止Booking.com € 16.3亿Etraveli收购TravelMole",
         "company": "BKNG",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "BKNG",
@@ -3752,7 +3848,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35",
+        "summary_generated_at": "2026-09-13 09:25:15",
         "suppress_core_badge": true
       },
       {
@@ -3761,7 +3857,7 @@
         "category": "industry_news",
         "title": "Trip.com集团（ TCOM ）预计周四公布收益",
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQZUFTVnhkMDVYZ3VYU1hZNThIZTY5RXNNTEctRkZUaVp5ck90QzJoN2xXWkxMdGZUSjZPWDB2QVlBWm5naWV3WEkyWVRGV1NLbmlhc0JqTnVfS09aU0FjMjB2d29DazgzVEVQb0ZjaXpOYnRjT2VVcXNTVjNkVUV4bG9wRWFFMTEzbENQSFlPY0hNRTFkMFNqMHRDTzZ2djJ6Q3NjN1kzVS1HZ2VnNmIzWlhpbXNUQmlidHhJ?oc=5",
-        "summary": "Trip.com 集团（ TCOM ）预计将于周四 MarketBeat公布收益",
+        "summary": "Trip.com集团（ TCOM ）预计周四MarketBeat公布收益",
         "fetched_at": "2026-09-11 09:26:22",
         "published_at": "2026-09-10",
         "date_status": "known",
@@ -3799,7 +3895,7 @@
         "title": "Meta推出具有差旅预订功能的AI代理",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZll6LXpINWtHMmQzZERvaTZfejdyQ2gzM2NCWElVX242WW53SG1LSDVTaklVN1A5Z1pXUldweGRMWTZqMEFiVWFoc2VwMHRGY1NzV1JJTWVINzdJd0NXTHdwa05ycTlZYkJrUHFId0xMdHd4bEN1dkZZcXV6RWJBcmdoN2NLS2c?oc=5",
         "summary": "Meta推出具有旅行预订功能的AI代理PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": null,
@@ -3827,7 +3923,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -3836,7 +3932,7 @@
         "title": "预订失去Etraveli的收购吸引力",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVFloV2lqdTNOOEhtV0NQZksyM0xYXzF4Zi15VjctdTlpZ3lLUy1KVTZnSEcyWGVIZW13UGJIVWwzWWlPalh3UnZfaGp5Tmd2NzY3Y3BnVTlHTkNuS3dpZjBHVjFPOUFSYWVEVU5TaUl5LWg4R3oxMnYwekRVSzFEM1FMRkhlRjctUl9yaUlkVF9GR29WS05udzZTQUdseDBDWTZxWElwS0VLUQ?oc=5",
         "summary": "预订失去Etraveli收购诉求PhocusWire",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": null,
@@ -3865,7 +3961,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -3874,7 +3970,7 @@
         "title": "Lyft开始在纳什维尔通过其应用程序提供Waymo机器人出租车服务",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPM3RJcEEtNkpUUkstUFY0VmJhSlVFSTg2WlBLeFJVQzdKZHVoR05jbUFYcVNjSG1BNm5Udks1cS14M0pLVW5rUlVpeERCZjEyVzJITU5Ha0tCWU1SV1k2dE1aeXl0LVllWWd0bzVhZkFZTzhpaTR0OUNrLWJWSHlKcjVQV0d2R3psbjhhNEY4dWtzZkUzQkZHZ3lOY2lZaGZFZV9sLW1vb3NJV2RhajZGcXl1N0FjZUU?oc=5",
         "summary": "Lyft开始在纳什维尔Bloomberg.com的应用程序中提供Waymo机器人出租车服务",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": null,
@@ -3898,7 +3994,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -4139,13 +4235,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-09-01",
         "file_description": "4",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-03",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526382108/ownership.xml",
         "summary": "Bernstein David C（首席会计官）于2026-09-01申报ABNB股票变动：行权取得5,224股A类普通股（申报价40.18美元/股），交易后直接持有53,737.05股；出售5,224股A类普通股（申报价182.49美元/股），交易后直接持有48,513.05股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:32",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -4181,13 +4277,13 @@
         "primary_document": "xslF345X06/form4-09022026_040901.xml",
         "report_date": "2026-09-01",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000121460726000016/form4-09022026_040901.xml",
         "summary": "MYLOD ROBERT J JR（董事）于2026-09-01申报BKNG股票变动：出售1,000股普通股（申报价200.00美元/股），交易后间接持有14,000股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "BKNG",
@@ -4223,13 +4319,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-08-28",
         "file_description": "4/A",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526379365/ownership.xml",
         "summary": "Chesky Brian（首席执行官、董事、10%以上股东）于2026-08-28申报ABNB股票变动：转换取得76,500股A类普通股；赠与76,500股A类普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -4263,13 +4359,13 @@
         "primary_document": "xslF345X06/form4-09012026_040901.xml",
         "report_date": "2026-08-31",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000187574126000006/form4-09012026_040901.xml",
         "summary": "Pisano Paulo（CHIEF HUMAN RESOURCES OFFICER）于2026-08-31申报BKNG股票变动：出售3,000股普通股（申报价203.48美元/股），交易后直接持有73,400股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "BKNG",
@@ -4305,13 +4401,13 @@
         "primary_document": "xsl144X01/primary_doc.xml",
         "report_date": "",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1075531/000196922326000976/primary_doc.xml",
         "summary": "MYLOD ROBERT J JR（chairman）拟于2026-09-01出售1,000股Common，申报总市值约19.8万美元，经纪商为UBS Financial Services, Inc.。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:23",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "BKNG",
@@ -4346,13 +4442,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-08-28",
         "file_description": "4",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526379115/ownership.xml",
         "summary": "Chesky Brian（首席执行官、董事、10%以上股东）于2026-08-28申报ABNB股票变动：赠与76,500股A类普通股。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:33",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -4387,13 +4483,13 @@
         "primary_document": "xslF345X06/ownership.xml",
         "report_date": "2026-08-28",
         "file_description": "4",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526379003/ownership.xml",
         "summary": "Blecharczyk Nathan（首席战略官、董事、10%以上股东）于2026-08-28申报ABNB股票变动：转换取得74,852股A类普通股；出售70,775股A类普通股（申报价185.67–191.20美元/股），交易后间接持有20,567股；赠与4,077股A类普通股。文件标注交易依据10b5-1计划执行。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:34",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -4429,13 +4525,13 @@
         "primary_document": "xsl144X01/primary_doc.xml",
         "report_date": "",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-01",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006591/primary_doc.xml",
         "summary": "Bernstein David C（高管）拟于2026-09-01出售5,224股A类股，申报总市值约95.3万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:34",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -4470,13 +4566,13 @@
         "primary_document": "xsl144X01/primary_doc.xml",
         "report_date": "",
         "file_description": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-08-31",
         "date_status": "known",
         "sec_detail_url": "https://www.sec.gov/Archives/edgar/data/1559720/000195917326006546/primary_doc.xml",
         "summary": "Blecharczyk Nathan（高管、董事）拟于2026-08-31出售13,615股A类股，申报总市值约255万美元，经纪商为Fidelity Brokerage Services LLC。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:34",
+        "summary_generated_at": "2026-09-13 09:24:24",
         "sec_summary_version": 3,
         "sec_summary_kind": "document_detail",
         "entity_id": "ABNB",
@@ -4510,7 +4606,7 @@
         "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9jWTY3Z1JsQ1MzUEVzNERUUWxXUnhfX3dCSjVuUUhMcGJfQ05WZVFmZkc0aUNVSm5oRUIxV1pwejZMMVdWY0dJMU85dkVqM2Y0?oc=5",
         "summary": "飞猪与易斯达航空达成合作&nbsp;&nbsp;品橙旅游",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": "FLIGGY",
@@ -4535,17 +4631,17 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
-        "source": "stcn.com",
+        "source": "证券时报",
         "category": "china_industry",
         "title": "飞猪：与易斯达航空达成合作 围绕AI等领域深化合作",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8tQ1FKcTZXYTJ5QmtwQ3dWYjV0U0FXMXFTSEJrSHhmUHdONHh2VE90V3E0c2pYYmlCbjJCcnlKZXlCRHBrUzRxTDhFQmdMNGoyMTJPaTctSVotUzQ?oc=5",
-        "summary": "飞猪：与易斯达航空达成合作 围绕AI等领域深化合作&nbsp;&nbsp;stcn.com",
+        "summary": "飞猪：与易斯达航空达成合作 围绕AI等领域深化合作&nbsp;&nbsp;证券时报",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": "FLIGGY",
@@ -4556,12 +4652,11 @@
         "matched_rule_ids": [],
         "manual_label": null,
         "substantive_company_change": true,
-        "selection_score": 60,
+        "selection_score": 64,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关11/重要10/基本面0/证据10/来源2)",
-          "重点公司(FLIGGY)",
-          "实质动态/官方清单保底60"
+          "评分(相关11/重要10/基本面0/证据14/来源4)",
+          "重点公司(FLIGGY)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
@@ -4571,44 +4666,45 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
-        "source": "bjnews.com.cn",
+        "source": "川观新闻",
         "category": "company_news",
-        "title": "携程计划吸引两亿海外游客 成龙担任入境游大使亲自参与广告创意",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1lcU5BSnZDUWlqUXZtenZwbmk2WlFhMk1PV01lWFpwZ1FVSGtVdUxZNlY4cHBlTGgzdlc5MDVfUzQ2VkxuWUNaUjZUSTk1VHNrOWUwcjU2eWM3N1IwLUNjZ3BjVnA?oc=5",
-        "summary": "携程计划吸引两亿海外游客 成龙担任入境游大使亲自参与广告创意&nbsp;&nbsp;bjnews.com.cn",
+        "title": "携程助力入境游红利向更多城市延伸，上半年四五线城市入境酒店商家增速均超46%",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE85S3dyQ3AyNWdoMnlmeVlFaVJFcjhyNk0xQWRaN3hzbnUydmxoZXNkOWZCSTJXSjYwbDE1elAteGI3ZzJ5RjVGNTN0OV9rZw?oc=5",
+        "summary": "携程助力入境游红利向更多城市延伸，上半年四五线城市入境酒店商家增速均超46%&nbsp;&nbsp;川观新闻",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": "TCOM",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "strategy_marketing",
+        "content_type": "general",
         "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
+        "matched_rule_ids": [
+          "topic.hotel",
+          "topic.hotel.ota_direct_exception"
+        ],
         "manual_label": null,
         "substantive_company_change": false,
-        "selection_score": 63,
+        "selection_score": 76,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关8/重要4/基本面14/证据10/来源2)",
+          "评分(相关11/重要4/基本面14/证据20/来源2)",
           "重点公司(TCOM)"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "marketing",
-          "core_company",
-          "demand"
+          "core_company"
         ],
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
@@ -4619,12 +4715,12 @@
         "summary": "环球旅讯是全球领先的旅游财经和科技内容平台，以独立的态度，关注影响旅游业发展的新趋势、新模式和新科技。",
         "source_channel": "express",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "merged_same_article": 1,
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:45",
+        "summary_generated_at": "2026-09-13 09:24:35",
         "entity_id": "TCOM",
         "is_core_company": true,
         "content_type": "ma_investment",
@@ -4651,14 +4747,51 @@
       },
       {
         "date": "2026-09-10",
-        "source": "观点网",
+        "source": "新京报",
         "category": "company_news",
-        "title": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区",
-        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE81ZnhLcVRjUlNPS3F2Sno3SEFhdWdQU2pYbEpGeHoyRjNsbzlnVTFOTmxfcUdSYlE0cl8tTElpbVFlX3dvYUFGelYwejNrdw?oc=5",
-        "summary": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区&nbsp;&nbsp;观点网",
+        "title": "携程计划吸引两亿海外游客 成龙担任入境游大使亲自参与广告创意",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1lcU5BSnZDUWlqUXZtenZwbmk2WlFhMk1PV01lWFpwZ1FVSGtVdUxZNlY4cHBlTGgzdlc5MDVfUzQ2VkxuWUNaUjZUSTk1VHNrOWUwcjU2eWM3N1IwLUNjZ3BjVnA?oc=5",
+        "summary": "携程计划吸引两亿海外游客 成龙担任入境游大使亲自参与广告创意&nbsp;&nbsp;新京报",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
+        "published_at": "2026-09-10",
+        "date_status": "known",
+        "entity_id": "TCOM",
+        "is_core_company": true,
+        "source_channel": "",
+        "content_type": "strategy_marketing",
+        "policy_version": "2026-09-04-v6",
+        "matched_rule_ids": [],
+        "manual_label": null,
+        "substantive_company_change": false,
+        "selection_score": 63,
+        "selection_status": "kept",
+        "selection_reasons": [
+          "评分(相关8/重要4/基本面14/证据10/来源2)",
+          "重点公司(TCOM)"
+        ],
+        "rejection_reason": null,
+        "impact_dimensions": [
+          "marketing",
+          "core_company",
+          "demand"
+        ],
+        "display_ready": true,
+        "translation_status": "ready",
+        "summary_status": "generated",
+        "summary_generated_at": "2026-09-13 09:25:15"
+      },
+      {
+        "date": "2026-09-10",
+        "source": "上观新闻",
+        "category": "company_news",
+        "title": "携程发布2027全球高端餐厅榜单，把味觉坐标装进旅途",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCOW1xdUJpNTBRN01mempPbmRfMW91bFNKa2JJZDVFVmF0UWpaVnNPMTZkSVhYNXM4UmtTLUdxZHdSTE44bVdJeV9PWkNCSkxtb1ZzT1dFbUNTZw?oc=5",
+        "summary": "携程发布2027全球高端餐厅榜单，把味觉坐标装进旅途&nbsp;&nbsp;上观新闻",
+        "company": "携程",
+        "region_classification": "domestic",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "TCOM",
@@ -4684,54 +4817,55 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
-        "source": "Sina",
+        "source": "观点网",
         "category": "company_news",
-        "title": "服贸观澜｜携程高级副总裁王韦：入境游市场正从头部城市向纵深下沉，多语种AI工具成关键助力",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1iaGdLd0c3clExbHYzMWhfS09pRi1JajgyMGRyMlk4d3dYUVdDNkV2ZGV0Q0N0SkZoWGw2Y3RPVXZPQmFIVHg4M0k0LWFuTTlVa0dJTFU0RzZSVHdLUzdpNE1BblJQWUk0dmpwYVNuRS1mQk1YV0d0WTlmd29TdUk?oc=5",
-        "summary": "服贸观澜｜携程高级副总裁王韦：入境游市场正从头部城市向纵深下沉，多语种AI工具成关键助力&nbsp;&nbsp;k.sina.com.cn",
+        "title": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE81ZnhLcVRjUlNPS3F2Sno3SEFhdWdQU2pYbEpGeHoyRjNsbzlnVTFOTmxfcUdSYlE0cl8tTElpbVFlX3dvYUFGelYwejNrdw?oc=5",
+        "summary": "携程美食林发布2027全球高端餐厅榜单 已覆盖66个国家和地区&nbsp;&nbsp;观点网",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "entity_id": "TCOM",
         "is_core_company": true,
         "source_channel": "",
-        "content_type": "management_org",
+        "content_type": "product",
         "policy_version": "2026-09-04-v6",
         "matched_rule_ids": [],
         "manual_label": null,
-        "substantive_company_change": false,
+        "substantive_company_change": true,
         "selection_score": 60,
         "selection_status": "kept",
         "selection_reasons": [
-          "评分(相关5/重要4/基本面14/证据10/来源2)",
-          "重点公司(TCOM)"
+          "评分(相关5/重要14/基本面0/证据10/来源2)",
+          "重点公司(TCOM)",
+          "实质动态/官方清单保底60"
         ],
         "rejection_reason": null,
         "impact_dimensions": [
-          "organization",
+          "product",
           "core_company"
         ],
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-10",
-        "source": "新浪财经",
+        "source": "东方财富",
         "category": "company_news",
         "title": "携程美食林发布2027年度高端餐厅榜单",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ORnp0Y2hteVZsLU9IQ1pxdXRaNUx5T3N0cHozd0o1RTV0d2taQnEtTldKWUxCS1MtdkJvNExYR3p1R01DLXI4LXU1RklTdUxXQzZRMG9nZ0p0RVJIT0NFMWo2V2pWUkU4V2E4YUtZOFR1U3lhZWZoZg?oc=5",
-        "summary": "携程美食林发布2027年度高端餐厅榜单&nbsp;&nbsp;新浪财经",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1lQ2wxdlZCR053ek1FNHd5QmV1Q2ZhWl9QcFIwY1ZWSDc1VlFDS2E1T3lNNk54WnNEZ0JCcmsyWVN2QUdnTHpja1YzYkkwdUlXVDM0UXFDaFRsUnNLaGM2OGZpNlhsUQ?oc=5",
+        "summary": "携程美食林发布2027年度高端餐厅榜单&nbsp;&nbsp;东方财富",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-10",
         "date_status": "known",
         "merged_same_article": 1,
@@ -4758,18 +4892,18 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
-        "source": "Sina",
+        "source": "新浪网",
         "category": "company_news",
         "title": "罚没51.79亿元 中国官方对携程作出处罚",
         "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE53WTExOHN1OGItSjBNYlZVREFJTy1NZVpJanZpUHQtM1pVX21kaHBIWVJDeEJIUUhkeTFxUlRpWGVFemwwVURhNVcxQ0dFa0N4UDF6Zmw1T2tFSVNtV1lGdUNmdHBaTXViZ0J2dHFvQXk?oc=5",
-        "summary": "罚没51.79亿元 中国官方对携程作出处罚&nbsp;&nbsp;k.sina.com.cn",
+        "summary": "罚没51.79亿元 中国官方对携程作出处罚&nbsp;&nbsp;新浪网",
         "company": "携程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "entity_id": "TCOM",
@@ -4794,7 +4928,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -4916,7 +5050,7 @@
         "summary": "同程、携程、飞猪、去哪儿、美团完成机票超售整改&nbsp;&nbsp;鞭牛士",
         "company": "同程",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-08",
         "date_status": "known",
         "event_id": "ev_4fd2511e44",
@@ -4950,7 +5084,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-08",
@@ -4993,12 +5127,12 @@
         "source": "中国民航网",
         "category": "company_news",
         "transport_security": "http",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-07",
         "date_status": "known",
         "summary": "该航线由厦门航空使用波音787宽体客机执飞，每周三、周五、周日各执行一班。去程航班MF821计划北京时间00:50自厦门起飞，当地时间06:35抵达伦敦希思罗机场；回程航班MF822计划当地时间12:35从伦敦起飞，预计北京时间次日07:00返回厦门。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:45",
+        "summary_generated_at": "2026-09-13 09:24:35",
         "entity_id": null,
         "is_core_company": false,
         "source_channel": "",
@@ -5288,44 +5422,6 @@
         "summary_generated_at": "2026-09-12 09:31:35"
       },
       {
-        "date": "2026-09-01",
-        "source": "亿邦动力网",
-        "category": "company_news",
-        "title": "同程旅行暑期夜游报告：夜游产品预订热度增长52%",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WLWtfMTdSMzI4NzQ0U2xIZFViRVo2MFo4VUFmQUF6WUlmMkNGeU9ZRUpwbXI5Z0h0Ykd3T3pfSkpaZGZ2TFhrQ0pzYmtKWFU1WWYzZjhLLTk?oc=5",
-        "summary": "同程旅行暑期夜游报告：夜游产品预订热度增长52%&nbsp;&nbsp;亿邦动力网",
-        "company": "同程",
-        "fetched_at": "2026-09-08 09:22:27",
-        "published_at": "2026-09-01",
-        "date_status": "known",
-        "event_id": "ev_8517e2cd00",
-        "related_sources": [
-          "证券之星"
-        ],
-        "entity_id": "TONGCHENG",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 61,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关10/重要4/基本面0/证据20/来源2)",
-          "重点公司(TONGCHENG)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company"
-        ],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-08 09:26:31"
-      },
-      {
         "date": "2026-08-31",
         "source": "CARNOC.com",
         "category": "china_industry",
@@ -5333,7 +5429,7 @@
         "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1iSVgzdEI1a2hnN1IzZWhLRmJoUGlablE3bGJ1LS1zZWRSY0MyZENXZWpJOF9MQXNZMjlQWVpQaVo2YjBDbjhHOFR3?oc=5",
         "summary": "吉祥航空调整涉及日本航线燃油附加费&nbsp;&nbsp;CARNOC.com",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-08-31",
         "date_status": "known",
         "entity_id": null,
@@ -5361,7 +5457,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-08-31",
@@ -5397,111 +5493,6 @@
         "translation_status": "ready",
         "summary_status": "generated",
         "summary_generated_at": "2026-09-09 18:00:36"
-      },
-      {
-        "date": "2026-08-31",
-        "source": "新浪财经",
-        "category": "company_news",
-        "title": "中国很“Cool” 服务很暖|携程|游客|入境|旅游|景区",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSjhPenJZajhGQmxUd3hoODdLa1NFTl9wNk1ldm5nRjM1RlRXY0dXdm9LSXllTDZSdHVINDRldDVtVXB3bXNlbTc0ZVdEWGtkSUlUYlVBMHctYjg0T1g4TGtOSFR0SG1fMldCYXFhSTB2SThTSXNnQ2htX1dVYzRYOXJnWTh2THlUWUhzR1UzcVppZkJxb1ZqeA?oc=5",
-        "summary": "中国很“Cool” 服务很暖|携程|游客|入境|旅游|景区&nbsp;&nbsp;新浪财经",
-        "company": "携程",
-        "fetched_at": "2026-09-06 09:18:55",
-        "published_at": "2026-08-31",
-        "date_status": "known",
-        "entity_id": "TCOM",
-        "is_core_company": true,
-        "source_channel": "",
-        "content_type": "general",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 63,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关8/重要4/基本面14/证据10/来源2)",
-          "重点公司(TCOM)"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [
-          "core_company",
-          "demand"
-        ],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "generated",
-        "summary_generated_at": "2026-09-06 09:19:54"
-      },
-      {
-        "date": "2026-08-30",
-        "title": "2026.08.30 環境、社會及管治委員會之工作範圍",
-        "url": "https://manager.wisdomir.com/files/594/2026/0830/20260830191501_46573104_tc.pdf",
-        "summary": "",
-        "source": "嘀嗒出行 IR",
-        "category": "company_news",
-        "entity_id": "DIDA",
-        "company": "DIDA",
-        "is_core_company": false,
-        "source_channel": "domestic_ir_official",
-        "is_ir_source": true,
-        "ir_release_kind": "other",
-        "content_type": "general",
-        "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关0/重要4/基本面0/证据4/来源5)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
-      },
-      {
-        "date": "2026-08-30",
-        "title": "2026.08.28 (1) 首席執行官變更 (2) 首席財務官變更 (3) 辭任副總裁 (4) 公司秘書變更 (5) 授權代表變更及(6) 法律程序文件代理人變更",
-        "url": "https://manager.wisdomir.com/files/594/2026/0828/20260828193001_58120499_tc.pdf",
-        "summary": "",
-        "source": "嘀嗒出行 IR",
-        "category": "company_news",
-        "entity_id": "DIDA",
-        "company": "DIDA",
-        "is_core_company": false,
-        "source_channel": "domestic_ir_official",
-        "is_ir_source": true,
-        "ir_release_kind": "other",
-        "content_type": "general",
-        "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
-        "published_at": "2026-08-30",
-        "date_status": "known",
-        "policy_version": "2026-09-04-v6",
-        "matched_rule_ids": [],
-        "manual_label": null,
-        "substantive_company_change": false,
-        "selection_score": 60,
-        "selection_status": "kept",
-        "selection_reasons": [
-          "评分(相关0/重要4/基本面18/证据4/来源5)",
-          "IR/ Bloomberg垂直源保底60"
-        ],
-        "rejection_reason": null,
-        "impact_dimensions": [],
-        "display_ready": true,
-        "translation_status": "ready",
-        "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
       }
     ],
     "dom_disclosures": [
@@ -5552,7 +5543,7 @@
         "title": "旅游市场强制消费问题典型案例（2026年第六批）",
         "url": "https://www.mct.gov.cn/whzx/whyw/202609/t20260911_967122.htm",
         "summary": "",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "entity_id": null,
@@ -5575,7 +5566,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-11",
@@ -5585,7 +5576,7 @@
         "title": "2026中期報告",
         "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0911/2026091100568_c.pdf",
         "summary": "財務報表&#x2f;環境、社會及管治資料 - [中期&#x2f;半年度報告",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-11",
         "date_status": "known",
         "merged_same_article": 1,
@@ -5609,7 +5600,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -5626,7 +5617,7 @@
         "ir_release_kind": "capital_governance",
         "content_type": "general",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "policy_version": "2026-09-04-v6",
@@ -5644,7 +5635,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-09",
@@ -5661,7 +5652,7 @@
         "ir_release_kind": "capital_governance",
         "content_type": "general",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-09",
         "date_status": "known",
         "policy_version": "2026-09-04-v6",
@@ -5679,7 +5670,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-03",
@@ -5696,7 +5687,7 @@
         "ir_release_kind": "capital_governance",
         "content_type": "general",
         "region_classification": "domestic",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-03",
         "date_status": "known",
         "policy_version": "2026-09-04-v6",
@@ -5714,7 +5705,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "insufficient_evidence",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-02",
@@ -5727,12 +5718,12 @@
         "primary_document": "d431415d6k.htm",
         "report_date": "2026-09-02",
         "file_description": "FORM 6-K",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "summary": "Trip.com Group Limited于2026-09-02提交6-K，报告期截至2026-09-02，披露境外发行人的重要公告或经营与财务信息。",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:30:44",
+        "summary_generated_at": "2026-09-13 09:24:34",
         "sec_summary_version": 3,
         "sec_summary_kind": "metadata_detail",
         "entity_id": "TCOM",
@@ -5765,7 +5756,7 @@
         "title": "審計委員會會議日期及2026年第二季度及上半年業績公告日期",
         "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0902/2026090201798_c.pdf",
         "summary": "董事會召開日期",
-        "fetched_at": "2026-09-12 09:30:32",
+        "fetched_at": "2026-09-13 09:24:23",
         "published_at": "2026-09-02",
         "date_status": "known",
         "entity_id": null,
@@ -5788,7 +5779,7 @@
         "display_ready": true,
         "translation_status": "ready",
         "summary_status": "generated",
-        "summary_generated_at": "2026-09-12 09:31:35"
+        "summary_generated_at": "2026-09-13 09:25:15"
       },
       {
         "date": "2026-09-02",
@@ -5867,165 +5858,166 @@
       }
     ]
   },
-  "last_updated": "2026-09-12 09:31:35",
+  "last_updated": "2026-09-13 09:25:15",
   "last_updated_timezone": "Asia/Shanghai",
   "selection_report": {
-    "run_at": "2026-09-12 01:31:15",
+    "run_at": "2026-09-13 01:25:04",
     "policy_version": "2026-09-04-v6",
-    "raw_count": 216,
-    "kept_count": 80,
+    "raw_count": 215,
+    "kept_count": 79,
     "rejected_count": 136,
     "by_reason": {
-      "Hotel非OTA相关": 13,
-      "航空非准入主题": 8,
-      "评分低于60且无保底资格": 95,
+      "评分低于60且无保底资格": 90,
+      "Hotel非OTA相关": 15,
       "观点评论/趋势展望": 1,
-      "新闻合集/无具体事件页": 1,
       "股价/估值评论": 2,
+      "航空非准入主题": 7,
       "被动机构持仓变动": 1,
-      "无新事实短评": 7,
       "航空机队/宽体机/财报": 1,
-      "软广/优惠促销/榜单": 4,
-      "观点评论/泛分析": 3
+      "软广/优惠促销/榜单": 6,
+      "无新事实短评": 6,
+      "消费者攻略/实测": 2,
+      "社群广告": 1,
+      "观点评论/泛分析": 4
     },
     "quality": {
       "empty_categories": [],
-      "total_items": 80,
+      "total_items": 79,
       "unknown_date_count": 0,
-      "no_summary_count": 13
+      "no_summary_count": 10
     }
   },
   "update_status": "partial",
   "fetch_status": {
-    "attempted_at": "2026-09-12 09:28:25",
+    "attempted_at": "2026-09-13 09:22:13",
     "last_success_at": "2026-09-09 18:10:18",
     "status": "partial",
     "sources": {
       "SEC EDGAR BKNG": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:25",
+        "last_success_at": "2026-09-13 09:22:14",
         "item_count": 86,
-        "attempted_at": "2026-09-12 09:28:25"
+        "attempted_at": "2026-09-13 09:22:14"
       },
       "SEC EDGAR EXPE": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:28",
+        "last_success_at": "2026-09-13 09:22:15",
         "item_count": 91,
-        "attempted_at": "2026-09-12 09:28:28"
+        "attempted_at": "2026-09-13 09:22:15"
       },
       "SEC EDGAR ABNB": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:31",
+        "last_success_at": "2026-09-13 09:22:16",
         "item_count": 98,
-        "attempted_at": "2026-09-12 09:28:31"
+        "attempted_at": "2026-09-13 09:22:16"
       },
       "Skift": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:35",
+        "last_success_at": "2026-09-13 09:22:18",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:28:35"
+        "attempted_at": "2026-09-13 09:22:18"
       },
       "Bloomberg Markets": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:36",
+        "last_success_at": "2026-09-13 09:22:19",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:36"
+        "attempted_at": "2026-09-13 09:22:19"
       },
       "Bloomberg Technology": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:37",
-        "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:37"
+        "last_success_at": "2026-09-13 09:22:20",
+        "item_count": 10,
+        "attempted_at": "2026-09-13 09:22:20"
       },
       "PhocusWire": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:38",
-        "item_count": 47,
-        "attempted_at": "2026-09-12 09:28:38"
+        "last_success_at": "2026-09-13 09:22:21",
+        "item_count": 44,
+        "attempted_at": "2026-09-13 09:22:21"
       },
       "Travel Weekly": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:39",
+        "last_success_at": "2026-09-13 09:22:22",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:39"
+        "attempted_at": "2026-09-13 09:22:22"
       },
       "Skyscanner": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:40",
+        "last_success_at": "2026-09-13 09:22:23",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:40"
+        "attempted_at": "2026-09-13 09:22:23"
       },
       "Klook": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:41",
+        "last_success_at": "2026-09-13 09:22:24",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:41"
+        "attempted_at": "2026-09-13 09:22:24"
       },
       "MakeMyTrip": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:42",
+        "last_success_at": "2026-09-13 09:22:25",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:42"
+        "attempted_at": "2026-09-13 09:22:25"
       },
       "Traveloka": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:43",
+        "last_success_at": "2026-09-13 09:22:26",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:43"
+        "attempted_at": "2026-09-13 09:22:26"
       },
       "Agoda": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:44",
+        "last_success_at": "2026-09-13 09:22:26",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:44"
+        "attempted_at": "2026-09-13 09:22:26"
       },
       "Trip.com": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:45",
+        "last_success_at": "2026-09-13 09:22:27",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:45"
+        "attempted_at": "2026-09-13 09:22:27"
       },
       "Booking.com": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:46",
+        "last_success_at": "2026-09-13 09:22:28",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:46"
+        "attempted_at": "2026-09-13 09:22:28"
       },
       "Expedia": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:47",
+        "last_success_at": "2026-09-13 09:22:29",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:47"
+        "attempted_at": "2026-09-13 09:22:29"
       },
       "Airbnb": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:48",
+        "last_success_at": "2026-09-13 09:22:30",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:48"
+        "attempted_at": "2026-09-13 09:22:30"
       },
       "Tripadvisor": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:49",
+        "last_success_at": "2026-09-13 09:22:31",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:49"
+        "attempted_at": "2026-09-13 09:22:31"
       },
       "Bloomberg Travel (GN)": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:52",
+        "last_success_at": "2026-09-13 09:22:35",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:52"
+        "attempted_at": "2026-09-13 09:22:35"
       },
       "Bloomberg Mobility (GN)": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:53",
+        "last_success_at": "2026-09-13 09:22:35",
         "item_count": 12,
-        "attempted_at": "2026-09-12 09:28:53"
+        "attempted_at": "2026-09-13 09:22:35"
       },
       "环球旅讯": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:46",
+        "last_success_at": "2026-09-13 09:23:32",
         "item_count": 70,
-        "attempted_at": "2026-09-12 09:29:46",
+        "attempted_at": "2026-09-13 09:23:32",
         "filter": {
           "raw": 70,
           "kept": 70,
@@ -6035,9 +6027,9 @@
       },
       "文旅部": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:48",
+        "last_success_at": "2026-09-13 09:23:35",
         "item_count": 11,
-        "attempted_at": "2026-09-12 09:29:48",
+        "attempted_at": "2026-09-13 09:23:35",
         "filter": {
           "raw": 11,
           "kept": 8,
@@ -6050,9 +6042,9 @@
       },
       "交通运输部": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:54",
+        "last_success_at": "2026-09-13 09:23:41",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:29:54",
+        "attempted_at": "2026-09-13 09:23:41",
         "filter": {
           "raw": 10,
           "kept": 0,
@@ -6065,9 +6057,9 @@
       },
       "中国民航网": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:11",
+        "last_success_at": "2026-09-13 09:23:57",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:30:11",
+        "attempted_at": "2026-09-13 09:23:57",
         "filter": {
           "raw": 10,
           "kept": 6,
@@ -6089,59 +6081,59 @@
       },
       "Booking Holdings IR": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:55",
+        "last_success_at": "2026-09-13 09:22:37",
         "item_count": 16,
-        "attempted_at": "2026-09-12 09:28:55"
+        "attempted_at": "2026-09-13 09:22:37"
       },
       "Expedia Group IR": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:57",
+        "last_success_at": "2026-09-13 09:22:39",
         "item_count": 36,
-        "attempted_at": "2026-09-12 09:28:57"
+        "attempted_at": "2026-09-13 09:22:39"
       },
       "Airbnb IR": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:58",
+        "last_success_at": "2026-09-13 09:22:39",
         "item_count": 7,
-        "attempted_at": "2026-09-12 09:28:58"
+        "attempted_at": "2026-09-13 09:22:39"
       },
       "36氪": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:20",
-        "item_count": 2,
-        "attempted_at": "2026-09-12 09:30:20",
+        "last_success_at": "2026-09-13 09:24:11",
+        "item_count": 3,
+        "attempted_at": "2026-09-13 09:24:11",
         "filter": {
           "raw": 15,
-          "kept": 2,
-          "rejected": 13,
+          "kept": 3,
+          "rejected": 12,
           "reasons": {
-            "include未命中": 13
+            "include未命中": 12
           }
         }
       },
       "Core BKNG Watch": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:49",
-        "item_count": 38,
-        "attempted_at": "2026-09-12 09:28:49"
+        "last_success_at": "2026-09-13 09:22:32",
+        "item_count": 39,
+        "attempted_at": "2026-09-13 09:22:32"
       },
       "Core EXPE Watch": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:50",
-        "item_count": 39,
-        "attempted_at": "2026-09-12 09:28:50"
+        "last_success_at": "2026-09-13 09:22:33",
+        "item_count": 40,
+        "attempted_at": "2026-09-13 09:22:33"
       },
       "Core ABNB Watch": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:51",
+        "last_success_at": "2026-09-13 09:22:34",
         "item_count": 40,
-        "attempted_at": "2026-09-12 09:28:51"
+        "attempted_at": "2026-09-13 09:22:34"
       },
       "披露易·携程": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:12",
+        "last_success_at": "2026-09-13 09:24:00",
         "item_count": 2,
-        "attempted_at": "2026-09-12 09:30:12",
+        "attempted_at": "2026-09-13 09:24:00",
         "filter": {
           "raw": 2,
           "kept": 2,
@@ -6151,9 +6143,9 @@
       },
       "披露易·同程": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:15",
+        "last_success_at": "2026-09-13 09:24:04",
         "item_count": 11,
-        "attempted_at": "2026-09-12 09:30:15",
+        "attempted_at": "2026-09-13 09:24:04",
         "filter": {
           "raw": 11,
           "kept": 11,
@@ -6163,9 +6155,9 @@
       },
       "披露易·嘀嗒出行": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:17",
+        "last_success_at": "2026-09-13 09:24:08",
         "item_count": 25,
-        "attempted_at": "2026-09-12 09:30:17",
+        "attempted_at": "2026-09-13 09:24:08",
         "filter": {
           "raw": 25,
           "kept": 25,
@@ -6175,9 +6167,9 @@
       },
       "携程 Google News": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:18",
+        "last_success_at": "2026-09-13 09:24:08",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:18",
+        "attempted_at": "2026-09-13 09:24:08",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6187,9 +6179,9 @@
       },
       "同程 Google News": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:19",
+        "last_success_at": "2026-09-13 09:24:09",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:19",
+        "attempted_at": "2026-09-13 09:24:09",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6199,9 +6191,9 @@
       },
       "嘀嗒出行 Google News": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:20",
+        "last_success_at": "2026-09-13 09:24:10",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:20",
+        "attempted_at": "2026-09-13 09:24:10",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6211,34 +6203,34 @@
       },
       "SEC EDGAR TCOM": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:28:34",
+        "last_success_at": "2026-09-13 09:22:17",
         "item_count": 74,
-        "attempted_at": "2026-09-12 09:28:34"
+        "attempted_at": "2026-09-13 09:22:17"
       },
       "Trip.com Group IR": {
         "status": "failed",
         "last_success_at": "2026-09-09 18:08:15",
         "item_count": 0,
-        "attempted_at": "2026-09-12 09:29:14",
+        "attempted_at": "2026-09-13 09:22:55",
         "error_code": "fetch_failed"
       },
       "同程旅行 IR": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:17",
+        "last_success_at": "2026-09-13 09:22:59",
         "item_count": 0,
-        "attempted_at": "2026-09-12 09:29:17"
+        "attempted_at": "2026-09-13 09:22:59"
       },
       "嘀嗒出行 IR": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:23",
+        "last_success_at": "2026-09-13 09:23:06",
         "item_count": 6,
-        "attempted_at": "2026-09-12 09:29:23"
+        "attempted_at": "2026-09-13 09:23:06"
       },
       "文旅部·政策法规": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:49",
+        "last_success_at": "2026-09-13 09:23:36",
         "item_count": 11,
-        "attempted_at": "2026-09-12 09:29:49",
+        "attempted_at": "2026-09-13 09:23:36",
         "filter": {
           "raw": 11,
           "kept": 6,
@@ -6251,9 +6243,9 @@
       },
       "文旅部·统计信息": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:51",
+        "last_success_at": "2026-09-13 09:23:38",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:29:51",
+        "attempted_at": "2026-09-13 09:23:38",
         "filter": {
           "raw": 10,
           "kept": 5,
@@ -6265,9 +6257,9 @@
       },
       "交通运输部·统计数据": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:56",
+        "last_success_at": "2026-09-13 09:23:43",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:29:56",
+        "attempted_at": "2026-09-13 09:23:43",
         "filter": {
           "raw": 10,
           "kept": 10,
@@ -6277,9 +6269,9 @@
       },
       "交通运输部·政府信息公开": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:29:59",
+        "last_success_at": "2026-09-13 09:23:45",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:29:59",
+        "attempted_at": "2026-09-13 09:23:45",
         "filter": {
           "raw": 10,
           "kept": 5,
@@ -6292,9 +6284,9 @@
       },
       "中国民用航空局": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:07",
+        "last_success_at": "2026-09-13 09:23:53",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:30:07",
+        "attempted_at": "2026-09-13 09:23:53",
         "filter": {
           "raw": 10,
           "kept": 0,
@@ -6306,9 +6298,9 @@
       },
       "中国民用航空局·统计数据": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:08",
+        "last_success_at": "2026-09-13 09:23:55",
         "item_count": 10,
-        "attempted_at": "2026-09-12 09:30:08",
+        "attempted_at": "2026-09-13 09:23:55",
         "filter": {
           "raw": 10,
           "kept": 10,
@@ -6318,9 +6310,9 @@
       },
       "中国旅游报": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:21",
+        "last_success_at": "2026-09-13 09:24:12",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:21",
+        "attempted_at": "2026-09-13 09:24:12",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6330,9 +6322,9 @@
       },
       "品橙旅游": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:22",
+        "last_success_at": "2026-09-13 09:24:13",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:22",
+        "attempted_at": "2026-09-13 09:24:13",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6342,9 +6334,9 @@
       },
       "旅界": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:23",
+        "last_success_at": "2026-09-13 09:24:14",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:23",
+        "attempted_at": "2026-09-13 09:24:14",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6354,9 +6346,9 @@
       },
       "Reuters 中国旅游": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:24",
+        "last_success_at": "2026-09-13 09:24:14",
         "item_count": 0,
-        "attempted_at": "2026-09-12 09:30:24",
+        "attempted_at": "2026-09-13 09:24:14",
         "filter": {
           "raw": 0,
           "kept": 0,
@@ -6366,9 +6358,9 @@
       },
       "Bloomberg 中国旅游": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:24",
+        "last_success_at": "2026-09-13 09:24:15",
         "item_count": 0,
-        "attempted_at": "2026-09-12 09:30:24",
+        "attempted_at": "2026-09-13 09:24:15",
         "filter": {
           "raw": 0,
           "kept": 0,
@@ -6378,21 +6370,21 @@
       },
       "财新": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:25",
-        "item_count": 1,
-        "attempted_at": "2026-09-12 09:30:25",
+        "last_success_at": "2026-09-13 09:24:16",
+        "item_count": 0,
+        "attempted_at": "2026-09-13 09:24:16",
         "filter": {
-          "raw": 1,
-          "kept": 1,
+          "raw": 0,
+          "kept": 0,
           "rejected": 0,
           "reasons": {}
         }
       },
       "第一财经": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:26",
+        "last_success_at": "2026-09-13 09:24:16",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:26",
+        "attempted_at": "2026-09-13 09:24:16",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6402,21 +6394,21 @@
       },
       "证券时报": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:26",
-        "item_count": 14,
-        "attempted_at": "2026-09-12 09:30:26",
+        "last_success_at": "2026-09-13 09:24:17",
+        "item_count": 12,
+        "attempted_at": "2026-09-13 09:24:17",
         "filter": {
-          "raw": 14,
-          "kept": 14,
+          "raw": 12,
+          "kept": 12,
           "rejected": 0,
           "reasons": {}
         }
       },
       "上海证券报": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:27",
+        "last_success_at": "2026-09-13 09:24:18",
         "item_count": 1,
-        "attempted_at": "2026-09-12 09:30:27",
+        "attempted_at": "2026-09-13 09:24:18",
         "filter": {
           "raw": 1,
           "kept": 1,
@@ -6426,9 +6418,9 @@
       },
       "21世纪经济报道": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:28",
+        "last_success_at": "2026-09-13 09:24:18",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:28",
+        "attempted_at": "2026-09-13 09:24:18",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6438,9 +6430,9 @@
       },
       "界面新闻": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:29",
+        "last_success_at": "2026-09-13 09:24:19",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:29",
+        "attempted_at": "2026-09-13 09:24:19",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6450,9 +6442,9 @@
       },
       "澎湃新闻": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:29",
+        "last_success_at": "2026-09-13 09:24:20",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:29",
+        "attempted_at": "2026-09-13 09:24:20",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6462,9 +6454,9 @@
       },
       "国内 OTA 渠道检索": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:30",
+        "last_success_at": "2026-09-13 09:24:21",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:30",
+        "attempted_at": "2026-09-13 09:24:21",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6474,9 +6466,9 @@
       },
       "国内航空分销检索": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:31",
+        "last_success_at": "2026-09-13 09:24:21",
         "item_count": 15,
-        "attempted_at": "2026-09-12 09:30:31",
+        "attempted_at": "2026-09-13 09:24:21",
         "filter": {
           "raw": 15,
           "kept": 15,
@@ -6486,9 +6478,9 @@
       },
       "国内旅游科技监管检索": {
         "status": "success",
-        "last_success_at": "2026-09-12 09:30:32",
+        "last_success_at": "2026-09-13 09:24:22",
         "item_count": 0,
-        "attempted_at": "2026-09-12 09:30:32",
+        "attempted_at": "2026-09-13 09:24:22",
         "filter": {
           "raw": 0,
           "kept": 0,
